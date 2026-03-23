@@ -1,0 +1,30 @@
+---
+import type { FlowContent } from '../content/site';
+import SectionIntro from './SectionIntro.astro';
+
+interface Props {
+  content: FlowContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section class="section-block" id="how-it-works">
+  <div class="section-shell">
+    <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+
+    <div class="panel mt-10 rounded-[2rem] p-5 md:p-8">
+      <div class="grid gap-4 lg:grid-cols-7">
+        {content.flow.map((item, index) => (
+          <div class="rounded-[1.5rem] border border-slate-200/70 bg-white/92 p-5 text-center shadow-sm">
+            <div class="mx-auto flex size-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-extrabold text-white">
+              {index + 1}
+            </div>
+            <p class="mt-4 text-base font-bold text-slate-950">{item}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 max-w-4xl text-base leading-7 text-slate-600">{content.supporting}</p>
+    </div>
+  </div>
+</section>

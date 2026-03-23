@@ -1,0 +1,25 @@
+---
+import type { FooterContent } from '../content/site';
+
+interface Props {
+  content: FooterContent;
+}
+
+const { content } = Astro.props;
+---
+
+<footer class="border-t border-white/60 py-8">
+  <div class="section-shell flex flex-col gap-5 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-3">
+      <span class="flex size-10 items-center justify-center rounded-2xl bg-slate-950 font-extrabold text-white">V</span>
+      <span class="font-bold text-slate-950">{content.brand}</span>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-5">
+      <a href="/">{content.languageNl}</a>
+      <a href="/en/">{content.languageEn}</a>
+      <a href="#contact">{content.contact}</a>
+      <span class="text-slate-400">{content.privacy}</span>
+    </div>
+  </div>
+</footer>

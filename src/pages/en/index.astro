@@ -1,0 +1,18 @@
+---
+import OnePageSite from '../../components/OnePageSite.astro';
+import { siteContent } from '../../content/site';
+import Layout from '../../layouts/Layout.astro';
+
+const content = siteContent.en;
+---
+
+<Layout
+  locale="en"
+  title={content.meta.title}
+  description={content.meta.description}
+  ogTitle={content.meta.ogTitle}
+  ogDescription={content.meta.ogDescription}
+  path="/en/"
+>
+  <OnePageSite locale="en" content={content} />
+</Layout>

@@ -1,0 +1,144 @@
+---
+import type { ContactContent } from '../content/site';
+import SectionIntro from './SectionIntro.astro';
+
+interface Props {
+  content: ContactContent;
+}
+
+const { content } = Astro.props;
+const formTexts = {
+  required: content.errors.required,
+  email: content.errors.email,
+  phone: content.errors.phone,
+  generic: content.errors.generic,
+  success: content.success,
+};
+---
+
+<section class="section-block" id="contact">
+  <div class="section-shell">
+    <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+      <div class="panel rounded-[2rem] p-6 md:p-8">
+        <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+
+        <div class="mt-10 rounded-[1.5rem] border border-slate-200 bg-white/90 p-5">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">{content.directEmailLabel}</p>
+          <a class="mt-3 inline-block text-lg font-bold text-slate-950 hover:text-teal-700" href={`mailto:${content.directEmailValue}`}>
+            {content.directEmailValue}
+          </a>
+        </div>
+      </div>
+
+      <form class="panel rounded-[2rem] p-6 md:p-8" data-contact-form novalidate>
+        <div class="grid gap-5 md:grid-cols-2">
+          <label class="block">
+            <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.name}</span>
+            <input class="field-input" name="name" type="text" placeholder={content.placeholders.name} data-required="true" />
+            <span class="field-error" data-error-for="name"></span>
+          </label>
+          <label class="block">
+            <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.organisation}</span>
+            <input class="field-input" name="organisation" type="text" placeholder={content.placeholders.organisation} data-required="true" />
+            <span class="field-error" data-error-for="organisation"></span>
+          </label>
+          <label class="block">
+            <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.email}</span>
+            <input class="field-input" name="email" type="email" placeholder={content.placeholders.email} data-required="true" />
+            <span class="field-error" data-error-for="email"></span>
+          </label>
+          <label class="block">
+            <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.phone}</span>
+            <input class="field-input" name="phone" type="tel" placeholder={content.placeholders.phone} />
+            <span class="field-error" data-error-for="phone"></span>
+          </label>
+        </div>
+
+        <label class="mt-5 block">
+          <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.message}</span>
+          <textarea class="field-input min-h-40 resize-y" name="message" placeholder={content.placeholders.message} data-required="true"></textarea>
+          <span class="field-error" data-error-for="message"></span>
+        </label>
+
+        <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="status-copy text-slate-500" data-form-status></p>
+          <button class="button-primary" type="submit" data-submit-button>{content.labels.submit}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ formTexts }}>
+  const forms = document.querySelectorAll('[data-contact-form]');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[+()0-9\s-]{6,}$/;
+
+  for (const form of forms) {
+    const statusNode = form.querySelector('[data-form-status]');
+    const submitButton = form.querySelector('[data-submit-button]');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      let hasErrors = false;
+
+      const fields = Array.from(form.querySelectorAll('input, textarea'));
+      for (const field of fields) {
+        const errorNode = form.querySelector(`[data-error-for="${field.name}"]`);
+        if (errorNode) {
+          errorNode.textContent = '';
+        }
+
+        const value = field.value.trim();
+        if (field.dataset.required === 'true' && !value) {
+          hasErrors = true;
+          if (errorNode) errorNode.textContent = formTexts.required;
+          continue;
+        }
+
+        if (field.name === 'email' && value && !emailRegex.test(value)) {
+          hasErrors = true;
+          if (errorNode) errorNode.textContent = formTexts.email;
+        }
+
+        if (field.name === 'phone' && value && !phoneRegex.test(value)) {
+          hasErrors = true;
+          if (errorNode) errorNode.textContent = formTexts.phone;
+        }
+      }
+
+      if (statusNode) {
+        statusNode.textContent = '';
+        statusNode.dataset.state = '';
+      }
+
+      if (hasErrors) {
+        if (statusNode) {
+          statusNode.textContent = formTexts.generic;
+          statusNode.dataset.state = 'error';
+        }
+        return;
+      }
+
+      submitButton?.setAttribute('disabled', 'true');
+      submitButton?.setAttribute('aria-busy', 'true');
+
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 700));
+        form.reset();
+        if (statusNode) {
+          statusNode.textContent = formTexts.success;
+          statusNode.dataset.state = 'success';
+        }
+      } catch {
+        if (statusNode) {
+          statusNode.textContent = formTexts.generic;
+          statusNode.dataset.state = 'error';
+        }
+      } finally {
+        submitButton?.removeAttribute('disabled');
+        submitButton?.removeAttribute('aria-busy');
+      }
+    });
+  }
+</script>

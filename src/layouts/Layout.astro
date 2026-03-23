@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  locale: 'nl' | 'en';
+  title: string;
+  description: string;
+  ogTitle: string;
+  ogDescription: string;
+  path: string;
+}
+
+const { locale, title, description, ogTitle, ogDescription, path } = Astro.props;
+const siteUrl = 'https://velvoix.com';
+const canonical = new URL(path, siteUrl).toString();
+const alternateNl = new URL('/', siteUrl).toString();
+const alternateEn = new URL('/en/', siteUrl).toString();
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0d4f5d" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="nl-NL" href={alternateNl} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateNl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Velvoix" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og-cover.svg', siteUrl).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={new URL('/og-cover.svg', siteUrl).toString()} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-950 text-slate-900">
+    <slot />
+  </body>
+</html>

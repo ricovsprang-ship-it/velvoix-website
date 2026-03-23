@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Velvoix">
+  <defs>
+    <linearGradient id="velvoix-brand" x1="20" x2="108" y1="14" y2="114" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16807b" />
+      <stop offset="1" stop-color="#0d4f5d" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#eff5f8" />
+  <path d="M31 34h18l15 38 15-38h18L71 95H57L31 34Z" fill="url(#velvoix-brand)" />
+</svg>
