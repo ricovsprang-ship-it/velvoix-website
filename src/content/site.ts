@@ -45,6 +45,17 @@ export interface WhyVelvoixContent extends SectionIntroContent {
   cards: Array<{ title: string; description: string }>;
 }
 
+export interface CompareChainsContent extends SectionIntroContent {
+  traditionalTitle: string;
+  traditionalSteps: string[];
+  velvoixTitle: string;
+  velvoixSteps: string[];
+}
+
+export interface SnapshotSectionContent extends SectionIntroContent {
+  cards: Array<{ title: string; caption: string; image: string; tone: string }>;
+}
+
 export interface PilotContent extends SectionIntroContent {
   points: string[];
   primaryCta: string;
@@ -95,7 +106,9 @@ export interface SiteContent {
   challenge: ChallengeContent;
   flow: FlowContent;
   howItWorks: HowItWorksContent;
+  compareChains: CompareChainsContent;
   whyVelvoix: WhyVelvoixContent;
+  snapshots: SnapshotSectionContent;
   pilot: PilotContent;
   contact: ContactContent;
   footer: FooterContent;
@@ -183,26 +196,68 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
-    whyVelvoix: {
-      eyebrow: 'Waarom Velvoix',
-      title: 'Ontworpen voor duidelijkheid, opvolging en beheersing',
+    compareChains: {
+      eyebrow: 'Ketenverschil',
+      title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
       description:
-        'Geen losse notificatielaag, maar een platform dat operationele zorgworkflow beter hanteerbaar maakt.',
+        'De kern van Velvoix zit in de hele keten. Niet alleen tonen dat er iets is gebeurd, maar signalen semantisch structureren tot een werkbare en uitlegbare uitkomst.',
+      traditionalTitle: 'Traditionele keten',
+      traditionalSteps: ['Signaal', 'Melding', 'Handmatige interpretatie'],
+      velvoixTitle: 'Velvoix-keten',
+      velvoixSteps: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
+    },
+    whyVelvoix: {
+      eyebrow: 'Waarom Velvoix anders is',
+      title: 'Systeemverschillen die operationeel voelbaar zijn',
+      description:
+        'Velvoix positioneert zich niet als notificatieproduct, maar als een gecontroleerde keten voor triage, opvolging en reconstructie.',
       cards: [
         {
-          title: 'Uitlegbaar',
+          title: 'Geen notificatielaag',
           description:
-            'Urgentie en aanbevolen opvolging moeten begrijpelijk zijn. Velvoix is gericht op heldere en uitlegbare uitkomsten.',
+            'Velvoix laat signalen niet als losse meldingen rondzingen, maar zet ze om naar werkbare events met context en opvolging.',
         },
         {
-          title: 'Operationeel bruikbaar',
+          title: 'Uitlegbare triage',
           description:
-            'Velvoix ondersteunt niet alleen signalering, maar vooral duidelijke opvolging, eigenaarschap en workflow op de werkvloer.',
+            'Niet black-box scoren, maar een duidelijke combinatie van urgentie, context en aanbevolen aanpak in zorgtaal.',
         },
         {
-          title: 'Beheersbaar en modulair',
+          title: 'Event truth voor workflow en audit',
           description:
-            'Velvoix is bedoeld om gecontroleerd in te passen in bestaande omgevingen, met ruimte voor modulaire integraties.',
+            'Eén operationele waarheid voor status, eigenaarschap, escalatie en reconstructie.',
+        },
+      ],
+    },
+    snapshots: {
+      eyebrow: 'Product snapshots',
+      title: 'Kleine bewijslagen, geen producttour',
+      description:
+        'Geen volledige dashboardpagina’s, maar compacte fragmentshots die laten zien hoe Velvoix operationele duidelijkheid, explainability en beheersing zichtbaar maakt.',
+      cards: [
+        {
+          title: 'Meldingenlijst',
+          caption: 'Urgentie, bewoner en opvolging direct scanbaar in één werkkaart.',
+          image: '/products/snapshot-events-list.png',
+          tone: 'operations',
+        },
+        {
+          title: 'Meldingdetail',
+          caption: 'Waarom en aanbevolen aanpak in een rustige, uitlegbare detailopbouw.',
+          image: '/products/snapshot-event-detail.png',
+          tone: 'explainability',
+        },
+        {
+          title: 'Bewonercontext',
+          caption: 'Relevante cliëntcontext en zorgsignalen zonder ruis of interpretatiewerk.',
+          image: '/products/snapshot-resident-preview.png',
+          tone: 'context',
+        },
+        {
+          title: 'Beheer en control',
+          caption: 'Ook beheer blijft productmatig rustig, scanbaar en bestuurbaar.',
+          image: '/products/snapshot-facility-preview.png',
+          tone: 'control',
         },
       ],
     },
@@ -340,26 +395,68 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
       ],
     },
-    whyVelvoix: {
-      eyebrow: 'Why Velvoix',
-      title: 'Built for clarity, follow-up and control',
+    compareChains: {
+      eyebrow: 'Chain difference',
+      title: 'Not from alert to interpretation, but from signal to controllable workflow',
       description:
-        'Not a loose notification layer, but a platform that makes operational care workflow easier to handle.',
+        'The value of Velvoix sits in the full chain. Not only surfacing that something happened, but structuring signals into a workable and explainable outcome.',
+      traditionalTitle: 'Traditional chain',
+      traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
+      velvoixTitle: 'Velvoix chain',
+      velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
+    },
+    whyVelvoix: {
+      eyebrow: 'Why Velvoix is different',
+      title: 'System differences that matter operationally',
+      description:
+        'Velvoix is not positioned as a notification product, but as a controlled chain for triage, follow-up and reconstruction.',
       cards: [
         {
-          title: 'Explainable',
+          title: 'Not a notification layer',
           description:
-            'Urgency and recommended follow-up should be understandable. Velvoix is designed for clear and explainable outcomes.',
+            'Velvoix does not let signals circulate as isolated alerts, but turns them into workable events with context and follow-up.',
         },
         {
-          title: 'Operationally usable',
+          title: 'Explainable triage',
           description:
-            'Velvoix supports not only signalling, but especially clear follow-up, ownership and workflow on the care floor.',
+            'Not black-box scoring, but a clear combination of urgency, context and recommended action in care language.',
         },
         {
-          title: 'Controlled and modular',
+          title: 'Event truth for workflow and audit',
           description:
-            'Velvoix is intended to fit into existing environments in a controlled way, with room for modular integrations.',
+            'One operational truth for status, ownership, escalation and reconstruction.',
+        },
+      ],
+    },
+    snapshots: {
+      eyebrow: 'Product snapshots',
+      title: 'Selected proof layers, not a product tour',
+      description:
+        'Not full dashboard pages, but compact product fragments that show how Velvoix makes operational clarity, explainability and control visible.',
+      cards: [
+        {
+          title: 'Events worklist',
+          caption: 'Urgency, resident and follow-up remain directly scannable in a compact work card.',
+          image: '/products/snapshot-events-list.png',
+          tone: 'operations',
+        },
+        {
+          title: 'Event detail',
+          caption: 'Why and recommended action are structured into a calm, explainable detail view.',
+          image: '/products/snapshot-event-detail.png',
+          tone: 'explainability',
+        },
+        {
+          title: 'Resident context',
+          caption: 'Relevant resident context and care signals without visual noise or interpretation burden.',
+          image: '/products/snapshot-resident-preview.png',
+          tone: 'context',
+        },
+        {
+          title: 'Management and control',
+          caption: 'The management layer stays calm, scannable and operationally controlled as well.',
+          image: '/products/snapshot-facility-preview.png',
+          tone: 'control',
         },
       ],
     },
