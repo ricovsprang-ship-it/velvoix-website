@@ -1,0 +1,77 @@
+---
+import type { Locale, SiteContent } from '../content/site';
+import ContactForm from './ContactForm.astro';
+import FeatureCards from './FeatureCards.astro';
+import FlowSection from './FlowSection.astro';
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import HeroSection from './HeroSection.astro';
+import PilotSection from './PilotSection.astro';
+import SectionIntro from './SectionIntro.astro';
+
+interface Props {
+  locale: Locale;
+  content: SiteContent;
+}
+
+const { locale, content } = Astro.props;
+---
+
+<div class="site-shell">
+  <Header locale={locale} nav={content.nav} />
+
+  <main>
+    <HeroSection locale={locale} content={content.hero} />
+
+    <section class="section-block">
+      <div class="section-shell grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <SectionIntro
+            eyebrow={content.challenge.eyebrow}
+            title={content.challenge.title}
+            description={content.challenge.description}
+          />
+        </div>
+        <div class="panel rounded-[2rem] p-6 md:p-8">
+          <ul class="space-y-4">
+            {content.challenge.points.map((point) => (
+              <li class="flex items-start gap-4 rounded-[1.5rem] border border-slate-200 bg-white/92 px-5 py-4">
+                <span class="mt-1 size-2.5 shrink-0 rounded-full bg-teal-600"></span>
+                <span class="text-base font-medium leading-7 text-slate-700">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <FlowSection content={content.flow} />
+
+    <section class="section-block">
+      <div class="section-shell">
+        <SectionIntro
+          eyebrow={content.howItWorks.eyebrow}
+          title={content.howItWorks.title}
+          description={content.howItWorks.description}
+        />
+        <FeatureCards cards={content.howItWorks.steps} variant="steps" />
+      </div>
+    </section>
+
+    <section class="section-block" id="why-velvoix">
+      <div class="section-shell">
+        <SectionIntro
+          eyebrow={content.whyVelvoix.eyebrow}
+          title={content.whyVelvoix.title}
+          description={content.whyVelvoix.description}
+        />
+        <FeatureCards cards={content.whyVelvoix.cards} />
+      </div>
+    </section>
+
+    <PilotSection content={content.pilot} />
+    <ContactForm content={content.contact} />
+  </main>
+
+  <Footer content={content.footer} />
+</div>

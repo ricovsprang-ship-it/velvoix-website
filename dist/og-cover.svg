@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Velvoix social preview">
+  <defs>
+    <linearGradient id="bg" x1="164" x2="1032" y1="56" y2="590" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef4f7" />
+      <stop offset="1" stop-color="#dce8ee" />
+    </linearGradient>
+    <linearGradient id="brand" x1="266" x2="948" y1="118" y2="526" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16807b" />
+      <stop offset="1" stop-color="#0d4f5d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g opacity=".8">
+    <circle cx="997" cy="132" r="160" fill="#d6ebe8" />
+    <circle cx="191" cy="514" r="144" fill="#eaf2d8" />
+  </g>
+  <rect x="108" y="92" width="984" height="446" rx="36" fill="rgba(255,255,255,.82)" stroke="rgba(17,32,51,.08)" />
+  <text x="154" y="176" fill="#607088" font-family="Manrope, Segoe UI, sans-serif" font-size="28" font-weight="700" letter-spacing="7">
+    VELVOIX
+  </text>
+  <text x="154" y="274" fill="#112033" font-family="Manrope, Segoe UI, sans-serif" font-size="62" font-weight="800">
+    Van signaal naar duidelijke zorgactie
+  </text>
+  <text x="154" y="342" fill="#4c5f76" font-family="Manrope, Segoe UI, sans-serif" font-size="30" font-weight="500">
+    Uitlegbare triage. Gestructureerde workflow. Auditbare opvolging.
+  </text>
+  <g transform="translate(154 402)">
+    <rect width="174" height="58" rx="29" fill="url(#brand)" />
+    <text x="87" y="37" text-anchor="middle" fill="#fff" font-family="Manrope, Segoe UI, sans-serif" font-size="24" font-weight="700">
+      Velvoix
+    </text>
+  </g>
+  <g transform="translate(706 172)">
+    <rect width="260" height="72" rx="20" fill="#fff" stroke="rgba(17,32,51,.08)" />
+    <text x="28" y="31" fill="#607088" font-family="Manrope, Segoe UI, sans-serif" font-size="15" font-weight="700" letter-spacing="3">
+      FLOW
+    </text>
+    <text x="28" y="58" fill="#112033" font-family="Manrope, Segoe UI, sans-serif" font-size="22" font-weight="700">
+      Signaal → Context → Triage
+    </text>
+  </g>
+  <g transform="translate(648 282)">
+    <rect width="318" height="164" rx="24" fill="#0e2230" />
+    <text x="28" y="42" fill="#8fb7b2" font-family="Manrope, Segoe UI, sans-serif" font-size="15" font-weight="700" letter-spacing="3">
+      WHY
+    </text>
+    <text x="28" y="78" fill="#fff" font-family="Manrope, Segoe UI, sans-serif" font-size="28" font-weight="700">
+      Workflow
+    </text>
+    <text x="28" y="112" fill="#d7e5f0" font-family="Manrope, Segoe UI, sans-serif" font-size="24" font-weight="600">
+      Escalatie
+    </text>
+    <text x="28" y="146" fill="#d7e5f0" font-family="Manrope, Segoe UI, sans-serif" font-size="24" font-weight="600">
+      Reconstructie
+    </text>
+  </g>
+</svg>

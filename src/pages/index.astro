@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OnePageSite from '../components/OnePageSite.astro';
+import { siteContent } from '../content/site';
+
+const content = siteContent.nl;
+---
+
+<Layout
+  locale="nl"
+  title={content.meta.title}
+  description={content.meta.description}
+  ogTitle={content.meta.ogTitle}
+  ogDescription={content.meta.ogDescription}
+  path="/"
+>
+  <OnePageSite locale="nl" content={content} />
+</Layout>
