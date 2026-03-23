@@ -1,0 +1,46 @@
+---
+import type { CompareChainsContent } from '../content/site';
+import SectionIntro from './SectionIntro.astro';
+
+interface Props {
+  content: CompareChainsContent;
+}
+
+const { content } = Astro.props;
+---
+
+<section class="section-block" id="how-it-works">
+  <div class="section-shell">
+    <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      <article class="panel rounded-[2rem] p-6 md:p-8">
+        <p class="eyebrow">Traditional</p>
+        <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-950">{content.traditionalTitle}</h3>
+        <div class="mt-6 space-y-3">
+          {content.traditionalSteps.map((step, index) => (
+            <div class="flex items-center gap-4 rounded-[1.5rem] border border-slate-200 bg-white/90 px-5 py-4">
+              <span class="flex size-10 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-500">
+                {index + 1}
+              </span>
+              <span class="text-base font-semibold text-slate-700">{step}</span>
+            </div>
+          ))}
+        </div>
+      </article>
+
+      <article class="overflow-hidden rounded-[2rem] bg-[linear-gradient(180deg,#183053_0%,#11233c_100%)] p-6 text-white shadow-[0_22px_50px_rgba(32,59,99,0.18)] md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Velvoix</p>
+        <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-white">{content.velvoixTitle}</h3>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          {content.velvoixSteps.map((step, index) => (
+            <div class="rounded-[1.5rem] border border-white/10 bg-white/6 px-5 py-4 backdrop-blur-sm">
+              <p class="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-slate-300">0{index + 1}</p>
+              <p class="mt-2 text-base font-semibold text-white">{step}</p>
+            </div>
+          ))}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
