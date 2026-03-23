@@ -14,7 +14,7 @@ const { content } = Astro.props;
     <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
     <div class="mt-10 grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-      <article class="rounded-[2.2rem] bg-[linear-gradient(135deg,#183053_0%,#12223a_100%)] p-7 text-white shadow-[0_22px_50px_rgba(32,59,99,0.16)] md:p-9">
+      <article class="rounded-[2.4rem] bg-[linear-gradient(135deg,#183053_0%,#12223a_100%)] p-7 text-white shadow-[0_22px_50px_rgba(32,59,99,0.16)] md:p-9">
         <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">01</p>
         <h3 class="mt-4 text-3xl font-extrabold tracking-tight">{content.cards[0]?.title}</h3>
         <p class="mt-5 max-w-xl text-lg leading-8 text-slate-200">{content.cards[0]?.description}</p>
@@ -22,7 +22,7 @@ const { content } = Astro.props;
 
       <div class="grid gap-5">
         {content.cards.slice(1).map((card, index) => (
-          <article class="panel rounded-[2rem] p-6 md:p-7">
+          <article class="rounded-[2rem] border border-slate-200/85 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(239,245,248,0.9))] p-6 shadow-[0_18px_34px_rgba(31,53,87,0.06)] md:p-7">
             <p class="eyebrow">0{index + 2}</p>
             <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-950">{card.title}</h3>
             <p class="mt-4 text-base leading-7 text-slate-600">{card.description}</p>

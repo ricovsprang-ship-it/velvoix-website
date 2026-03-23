@@ -3,16 +3,16 @@
 
 :root {
   color-scheme: light;
-  --vx-ink: #203b63;
-  --vx-muted: #5f6f83;
-  --vx-line: rgba(32, 59, 99, 0.1);
-  --vx-panel: rgba(255, 255, 255, 0.9);
+  --vx-ink: #1f3557;
+  --vx-muted: #63758b;
+  --vx-line: rgba(31, 53, 87, 0.1);
+  --vx-panel: rgba(255, 255, 255, 0.92);
   --vx-panel-strong: #ffffff;
-  --vx-surface: #f5f0e5;
-  --vx-brand: #203b63;
-  --vx-brand-strong: #162b49;
-  --vx-accent: #3e71be;
-  --vx-warm: #d2d5d8;
+  --vx-surface: #f5f8fb;
+  --vx-brand: #1f3557;
+  --vx-brand-strong: #162847;
+  --vx-accent: #198279;
+  --vx-cool: #eaf1f6;
 }
 
 html {
@@ -24,8 +24,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(62, 113, 190, 0.1), transparent 28rem),
-    linear-gradient(180deg, #f7f4ea 0%, #f6f3eb 30%, #edf2f7 100%);
+    radial-gradient(circle at top right, rgba(25, 130, 121, 0.08), transparent 28rem),
+    radial-gradient(circle at top left, rgba(62, 113, 190, 0.08), transparent 24rem),
+    linear-gradient(180deg, #f6f9fc 0%, #f4f8fb 38%, #edf3f7 100%);
   color: var(--vx-ink);
   font-family: "Open Sans", "Segoe UI Variable Text", "Segoe UI", sans-serif;
   text-rendering: optimizeLegibility;
@@ -106,7 +107,7 @@ section[id] {
 
 .panel {
   border: 1px solid var(--vx-line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 247, 242, 0.92));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(245, 249, 252, 0.94));
   box-shadow:
     0 18px 42px rgba(32, 59, 99, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.55);
@@ -172,7 +173,7 @@ section[id] {
 
 .button-secondary {
   border: 1px solid rgba(32, 59, 99, 0.16);
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.78);
   color: var(--vx-brand);
 }
 
@@ -229,7 +230,7 @@ section[id] {
 .language-pill {
   border-radius: 999px;
   border: 1px solid rgba(96, 112, 136, 0.2);
-  background: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.78);
   padding: 0.25rem;
 }
 
@@ -238,6 +239,14 @@ section[id] {
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 1;
+}
+
+.surface-band {
+  background: linear-gradient(180deg, rgba(236, 243, 247, 0.88), rgba(244, 248, 251, 0.72));
+}
+
+.surface-band-alt {
+  background: linear-gradient(180deg, rgba(237, 245, 243, 0.9), rgba(245, 249, 252, 0.72));
 }
 
 @media (max-width: 768px) {

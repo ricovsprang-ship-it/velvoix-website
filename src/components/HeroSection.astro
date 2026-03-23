@@ -9,8 +9,8 @@ interface Props {
 const { locale, content } = Astro.props;
 const visualLabels =
   locale === 'nl'
-    ? ['Signaal ontvangen', 'Context toegevoegd', 'Triage verklaard', 'Workflow actief']
-    : ['Signal received', 'Context added', 'Triage explained', 'Workflow active'];
+    ? ['Van signaal naar context en triage', 'Werkbaar event voor opvolging', 'Reconstructie en audit blijven intact']
+    : ['From signal to context and triage', 'Workable event for operational follow-up', 'Reconstruction and audit stay intact'];
 ---
 
 <section id="home" class="section-block pt-12 md:pt-20">
@@ -27,10 +27,10 @@ const visualLabels =
       </div>
       <p class="mt-6 max-w-2xl text-sm font-medium text-slate-500">{content.supporting}</p>
 
-      <div class="mt-10 grid gap-3 sm:grid-cols-1">
+      <div class="mt-10 space-y-3 border-t border-slate-200/80 pt-6">
         {content.metrics.map((metric) => (
-          <div class="flex items-start gap-4 rounded-[1.4rem] border border-slate-200/70 bg-white/72 px-5 py-4">
-            <span class="mt-1 size-2.5 shrink-0 rounded-full bg-emerald-500"></span>
+          <div class="flex items-start gap-4 rounded-[1.2rem] border border-slate-200/70 bg-white/68 px-5 py-4">
+            <span class="mt-1 size-2.5 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
             <div>
               <div class="text-base font-extrabold text-slate-950">{metric.value}</div>
               <p class="mt-1 text-sm leading-6 text-slate-600">{metric.label}</p>
@@ -41,30 +41,34 @@ const visualLabels =
     </div>
 
     <div class="relative">
-      <div class="absolute -left-8 top-10 h-48 w-48 rounded-full bg-emerald-300/18 blur-3xl"></div>
-      <div class="panel relative overflow-hidden rounded-[2.4rem]">
-        <div class="relative min-h-[34rem]">
+      <div class="absolute -left-10 top-12 h-48 w-48 rounded-full bg-[rgba(25,130,121,0.16)] blur-3xl"></div>
+      <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-[rgba(62,113,190,0.12)] blur-3xl"></div>
+      <div class="relative overflow-hidden rounded-[2.6rem] border border-slate-200/75 bg-white shadow-[0_22px_48px_rgba(31,53,87,0.1)]">
+        <div class="relative min-h-[35rem]">
           <img
             src="/media/care-team.jpg"
             alt={locale === 'nl' ? 'Zorgmedewerker in gesprek in een zorgomgeving' : 'Care professional in conversation in a care environment'}
             class="absolute inset-0 h-full w-full object-cover"
             loading="eager"
           />
-          <div class="absolute inset-0 bg-gradient-to-tr from-[#142746]/78 via-[#142746]/22 to-transparent"></div>
-          <div class="absolute right-5 top-5 rounded-full border border-white/16 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm md:right-8 md:top-8">
-            {locale === 'nl' ? 'Uitlegbaar en auditbaar' : 'Explainable and auditable'}
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#132742]/72 via-[#132742]/24 to-transparent"></div>
+          <div class="absolute right-5 top-5 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm md:right-8 md:top-8">
+            {locale === 'nl' ? 'Geen notificatielaag' : 'Not a notification layer'}
           </div>
-          <div class="absolute bottom-5 right-5 left-5 rounded-[2rem] bg-[linear-gradient(180deg,rgba(17,34,58,0.94),rgba(21,40,66,0.9))] p-5 text-white shadow-[0_18px_40px_rgba(10,20,36,0.3)] backdrop-blur-sm md:bottom-8 md:left-auto md:right-8 md:w-[25rem] md:p-6">
-            <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Velvoix chain</p>
+          <div class="absolute bottom-5 left-5 right-5 rounded-[2rem] bg-[linear-gradient(180deg,rgba(18,40,71,0.94),rgba(18,40,71,0.88))] p-5 text-white shadow-[0_18px_40px_rgba(10,20,36,0.32)] backdrop-blur-sm md:bottom-8 md:left-auto md:right-8 md:w-[26rem] md:p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Velvoix flow</p>
             <p class="mt-3 text-2xl font-extrabold tracking-tight">
-              {locale === 'nl' ? 'Van trigger naar bestuurbare opvolging' : 'From trigger to controllable follow-up'}
+              {locale === 'nl' ? 'Signaal -> context -> triage -> event' : 'Signal -> context -> triage -> event'}
             </p>
-            <div class="mt-5 space-y-3">
-              {visualLabels.map((label, index) => (
-                <div class="flex items-center gap-3 rounded-[1.35rem] border border-white/10 bg-white/5 px-4 py-3">
-                  <div class="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-extrabold text-white">
-                    0{index + 1}
-                  </div>
+            <p class="mt-2 text-sm leading-6 text-slate-200">
+              {locale === 'nl'
+                ? 'Niet meer losse meldingen, maar een gecontroleerde workflow voor opvolging, escalatie en reconstructie.'
+                : 'Not isolated alerts, but a controlled workflow for follow-up, escalation and reconstruction.'}
+            </p>
+            <div class="mt-5 space-y-2.5">
+              {visualLabels.map((label) => (
+                <div class="flex items-center gap-3 rounded-[1.2rem] border border-white/10 bg-white/5 px-4 py-3">
+                  <span class="size-2.5 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
                   <p class="text-sm font-semibold text-white md:text-base">{label}</p>
                 </div>
               ))}

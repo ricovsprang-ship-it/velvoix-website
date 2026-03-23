@@ -149,9 +149,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       primaryCta: 'Plan een pilotgesprek',
       secondaryCta: 'Bekijk hoe het werkt',
       metrics: [
-        { value: 'Uitlegbaar', label: 'Van signaal naar begrijpelijke opvolging' },
-        { value: 'Auditbaar', label: 'Traceerbaar statusverloop en reconstructie' },
-        { value: 'Modulair', label: 'Inpasbaar in bestaande zorgomgevingen' },
+        { value: 'Uitlegbaar', label: 'Van signaal naar context, triage en duidelijke opvolging' },
+        { value: 'Auditbaar', label: 'Eventverloop, eigenaarschap en reconstructie blijven herleidbaar' },
+        { value: 'Beheersbaar', label: 'Past in bestaande zorgomgevingen zonder losse notificatielaag' },
       ],
     },
     challenge: {
@@ -215,7 +215,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Ketenverschil',
       title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
       description:
-        'De kern van Velvoix zit in de hele keten. Niet alleen tonen dat er iets is gebeurd, maar signalen semantisch structureren tot een werkbare en uitlegbare uitkomst.',
+        'De kern van Velvoix zit in de hele keten: signalen worden niet alleen getoond, maar gestructureerd tot een uitlegbare, bestuurbare en auditbare operationele uitkomst.',
       traditionalTitle: 'Traditionele keten',
       traditionalSteps: ['Signaal', 'Melding', 'Handmatige interpretatie'],
       velvoixTitle: 'Velvoix-keten',
@@ -230,7 +230,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Geen notificatielaag',
           description:
-            'Velvoix laat signalen niet als losse meldingen rondzingen, maar zet ze om naar werkbare events met context en opvolging.',
+            'Velvoix laat signalen niet als losse meldingen rondzingen, maar zet ze om naar werkbare events met context, eigenaarschap en opvolging.',
         },
         {
           title: 'Uitlegbare triage',
@@ -240,33 +240,39 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Event truth voor workflow en audit',
           description:
-            'Eén operationele waarheid voor status, eigenaarschap, escalatie en reconstructie.',
+            'Een operationele waarheid voor status, eigenaarschap, escalatie en reconstructie.',
         },
       ],
     },
     snapshots: {
       eyebrow: 'Product snapshots',
-      title: 'Kleine bewijslagen, geen producttour',
+      title: 'Compacte bewijsfragmenten uit het product',
       description:
-        'Geen volledige dashboardpagina’s, maar compacte fragmentshots die laten zien hoe Velvoix operationele duidelijkheid, explainability en beheersing zichtbaar maakt.',
+        'Geen volledige schermen, maar gerichte uitsneden die laten zien hoe Velvoix operations, explainability, control en governance zichtbaar maakt.',
       cards: [
         {
           title: 'Meldingenlijst',
-          caption: 'Urgentie, bewoner en opvolging direct scanbaar in één werkkaart.',
-          image: '/products/snapshot-events-list.png',
-          tone: 'operations',
+          caption: 'Urgentie, bewoner en kernsignaal blijven direct scanbaar in een rustige worklist.',
+          image: '/products/proof-operations.png',
+          tone: 'Operations',
         },
         {
           title: 'Meldingdetail',
-          caption: 'Waarom en aanbevolen aanpak in een rustige, uitlegbare detailopbouw.',
-          image: '/products/snapshot-event-detail.png',
-          tone: 'explainability',
+          caption: 'Waarom en aanbevolen aanpak worden zichtbaar als uitlegbare onderbouwing.',
+          image: '/products/proof-explainability.png',
+          tone: 'Explainability',
         },
         {
-          title: 'Beheer en control',
-          caption: 'Ook beheer blijft productmatig rustig, scanbaar en bestuurbaar.',
-          image: '/products/snapshot-facility-preview.png',
-          tone: 'control',
+          title: 'Koppelingen en beheer',
+          caption: 'Operationele controle blijft rustig en bestuurbaar in de beheerlaag.',
+          image: '/products/proof-control.png',
+          tone: 'Control',
+        },
+        {
+          title: 'Governance en profielen',
+          caption: 'Governance blijft productmatig beheerst via profielkaarten en triagebeheer.',
+          image: '/products/proof-governance.png',
+          tone: 'Governance',
         },
       ],
     },
@@ -274,11 +280,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Pilot',
       title: 'Interesse in een pilot?',
       description:
-        'Velvoix is bedoeld voor zorgorganisaties die niet alleen signalen willen ontvangen, maar vooral meer duidelijkheid, betere prioritering en strakkere opvolging willen organiseren.',
+        'Velvoix is bedoeld voor zorgorganisaties die willen verkennen hoe signalen, opvolging en werkdruk beter georganiseerd kunnen worden in een uitlegbare pilotcontext.',
       points: [
-        'Verpleeghuizen',
-        'Langdurige zorg',
-        'Organisaties die zoeken naar meer operationele duidelijkheid',
+        'Verpleeghuizen en langdurige zorg',
+        'Teams die zoeken naar meer operationele duidelijkheid',
+        'Pilotverkenning rond opvolging, triage en zorgproces',
       ],
       primaryCta: 'Plan een pilotgesprek',
       secondaryCta: 'Vraag informatie aan',
@@ -354,9 +360,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       primaryCta: 'Schedule a pilot conversation',
       secondaryCta: 'See how it works',
       metrics: [
-        { value: 'Explainable', label: 'From incoming signal to understandable follow-up' },
-        { value: 'Auditable', label: 'Traceable status flow and reconstruction' },
-        { value: 'Modular', label: 'Designed to fit existing care environments' },
+        { value: 'Explainable', label: 'From signal to context, triage and understandable follow-up' },
+        { value: 'Auditable', label: 'Event flow, ownership and reconstruction remain traceable' },
+        { value: 'Controlled', label: 'Fits care environments without becoming another notification layer' },
       ],
     },
     challenge: {
@@ -420,7 +426,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Chain difference',
       title: 'Not from alert to interpretation, but from signal to controllable workflow',
       description:
-        'The value of Velvoix sits in the full chain. Not only surfacing that something happened, but structuring signals into a workable and explainable outcome.',
+        'The value of Velvoix sits in the full chain: signals are not merely surfaced, but structured into an explainable, controllable and auditable operational outcome.',
       traditionalTitle: 'Traditional chain',
       traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
       velvoixTitle: 'Velvoix chain',
@@ -435,7 +441,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Not a notification layer',
           description:
-            'Velvoix does not let signals circulate as isolated alerts, but turns them into workable events with context and follow-up.',
+            'Velvoix does not let signals circulate as isolated alerts, but turns them into workable events with context, ownership and follow-up.',
         },
         {
           title: 'Explainable triage',
@@ -451,27 +457,33 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     snapshots: {
       eyebrow: 'Product snapshots',
-      title: 'Selected proof layers, not a product tour',
+      title: 'Compact proof fragments from the product',
       description:
-        'Not full dashboard pages, but compact product fragments that show how Velvoix makes operational clarity, explainability and control visible.',
+        'Not full screens, but focused crops that show how Velvoix makes operations, explainability, control and governance visible.',
       cards: [
         {
           title: 'Events worklist',
-          caption: 'Urgency, resident and follow-up remain directly scannable in a compact work card.',
-          image: '/products/snapshot-events-list.png',
-          tone: 'operations',
+          caption: 'Urgency, resident and core signal remain directly scannable in a calm worklist.',
+          image: '/products/proof-operations.png',
+          tone: 'Operations',
         },
         {
           title: 'Event detail',
-          caption: 'Why and recommended action are structured into a calm, explainable detail view.',
-          image: '/products/snapshot-event-detail.png',
-          tone: 'explainability',
+          caption: 'Why and recommended action become visible as explainable operational reasoning.',
+          image: '/products/proof-explainability.png',
+          tone: 'Explainability',
         },
         {
-          title: 'Management and control',
-          caption: 'The management layer stays calm, scannable and operationally controlled as well.',
-          image: '/products/snapshot-facility-preview.png',
-          tone: 'control',
+          title: 'Linking and control',
+          caption: 'Operational control stays calm and manageable in the management layer.',
+          image: '/products/proof-control.png',
+          tone: 'Control',
+        },
+        {
+          title: 'Governance and profiles',
+          caption: 'Governance remains controlled through profile cards and triage management.',
+          image: '/products/proof-governance.png',
+          tone: 'Governance',
         },
       ],
     },
@@ -479,11 +491,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Pilot',
       title: 'Interested in a pilot?',
       description:
-        'Velvoix is designed for healthcare organisations that want more than incoming alerts. It is built for teams that want clearer follow-up, better prioritisation and stronger operational control.',
+        'Velvoix is designed for healthcare organisations that want to explore how signals, follow-up and workload can be organised more clearly in a practical pilot setting.',
       points: [
-        'Nursing homes',
-        'Long-term care environments',
-        'Organisations looking for greater operational clarity',
+        'Nursing homes and long-term care',
+        'Teams looking for greater operational clarity',
+        'Pilot exploration around follow-up, triage and care process',
       ],
       primaryCta: 'Schedule a pilot conversation',
       secondaryCta: 'Request information',

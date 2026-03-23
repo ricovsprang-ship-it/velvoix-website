@@ -34,24 +34,24 @@ const { locale, content } = Astro.props;
             description={content.challenge.description}
           />
         </div>
-        <div class="rounded-[2.4rem] bg-[linear-gradient(180deg,#f1eee5_0%,#edf3f6_100%)] p-4 md:p-5">
+        <div class="rounded-[2.4rem] bg-[linear-gradient(180deg,rgba(236,243,247,0.88),rgba(245,249,252,0.94))] p-4 md:p-5">
           <div class="relative overflow-hidden rounded-[2rem]">
-          <div class="relative min-h-[21rem]">
-            <img
-              src="/media/care-resident.jpg"
-              alt={locale === 'nl' ? 'Zorgmedewerker bij bewoner' : 'Care professional with resident'}
-              class="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/58 via-slate-950/12 to-transparent"></div>
-          </div>
-          <div class="grid gap-3 p-5 md:p-6">
-            {content.challenge.points.map((point) => (
-              <div class="rounded-[1.35rem] border border-slate-200/80 bg-white/88 px-5 py-4 text-base font-semibold text-slate-700 shadow-sm">
-                {point}
-              </div>
-            ))}
-          </div>
+            <div class="relative min-h-[21rem]">
+              <img
+                src="/media/care-resident.jpg"
+                alt={locale === 'nl' ? 'Zorgmedewerker bij bewoner' : 'Care professional with resident'}
+                class="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/58 via-slate-950/12 to-transparent"></div>
+            </div>
+            <div class="grid gap-3 p-5 md:p-6">
+              {content.challenge.points.map((point) => (
+                <div class="rounded-[1.35rem] border border-slate-200/80 bg-white/90 px-5 py-4 text-base font-semibold text-slate-700 shadow-sm">
+                  {point}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -62,7 +62,9 @@ const { locale, content } = Astro.props;
     <HowItWorksSection content={content.howItWorks} />
     <WhyDifferentSection content={content.whyVelvoix} />
 
-    <SnapshotSection content={content.snapshots} />
+    <div class="surface-band">
+      <SnapshotSection content={content.snapshots} />
+    </div>
     <PilotSection content={content.pilot} />
     <ContactForm content={content.contact} />
   </main>

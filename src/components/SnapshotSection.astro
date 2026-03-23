@@ -13,18 +13,31 @@ const { content } = Astro.props;
   <div class="section-shell">
     <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
-    <div class="mt-10 grid gap-6 xl:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       {content.cards.map((card) => (
-        <article class="panel overflow-hidden rounded-[2rem]">
-          <div class="bg-[linear-gradient(180deg,#f6f2e9_0%,#eef3f7_100%)] p-5">
-            <div class="overflow-hidden rounded-[1.5rem] border border-slate-200/70 bg-white shadow-[0_14px_28px_rgba(32,59,99,0.08)]">
-                <img src={card.image} alt={card.title} class="h-full w-full object-cover object-top" loading="lazy" />
+        <article class="overflow-hidden rounded-[2rem] border border-slate-200/85 bg-white/92 shadow-[0_18px_34px_rgba(31,53,87,0.06)]">
+          <div class="bg-[linear-gradient(180deg,rgba(236,243,247,0.82),rgba(245,249,252,0.92))] p-4">
+            <div class="overflow-hidden rounded-[1.45rem] border border-slate-200/70 bg-white shadow-[0_14px_28px_rgba(32,59,99,0.08)]">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  class:list={[
+                    'h-[15rem] w-full object-cover',
+                    card.tone === 'Operations' && 'object-[28%_36%]',
+                    card.tone === 'Explainability' && 'object-[50%_34%]',
+                    card.tone === 'Control' && 'object-[30%_24%]',
+                    card.tone === 'Governance' && 'object-[48%_32%]',
+                  ]}
+                  loading="lazy"
+                />
             </div>
           </div>
           <div class="p-6">
-            <p class="eyebrow">{card.tone}</p>
-            <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-950">{card.title}</h3>
-            <p class="mt-4 text-base leading-7 text-slate-600">{card.caption}</p>
+            <span class="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-600">
+              {card.tone}
+            </span>
+            <h3 class="mt-4 text-xl font-extrabold tracking-tight text-slate-950">{card.title}</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">{card.caption}</p>
           </div>
         </article>
       ))}
