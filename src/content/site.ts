@@ -38,7 +38,10 @@ export interface FlowContent extends SectionIntroContent {
 }
 
 export interface HowItWorksContent extends SectionIntroContent {
+  panelLabel: string;
+  panelSupporting: string;
   steps: Array<{ title: string; description: string }>;
+  stepNotes: string[];
 }
 
 export interface WhyVelvoixContent extends SectionIntroContent {
@@ -63,6 +66,10 @@ export interface PilotContent extends SectionIntroContent {
 }
 
 export interface ContactContent extends SectionIntroContent {
+  inquiryTypes: {
+    pilot: string;
+    general: string;
+  };
   labels: {
     name: string;
     organisation: string;
@@ -173,6 +180,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Een duidelijke keten van input naar opvolging',
       description:
         'Publiek begrijpelijk, operationeel bruikbaar en ontworpen om onder zorgdruk rustig te blijven.',
+      panelLabel: 'Operationele keten',
+      panelSupporting: 'Velvoix structureert input, duiding, eventvorming en opvolging als één rustige keten.',
       steps: [
         {
           title: 'Input',
@@ -194,6 +203,12 @@ export const siteContent: Record<Locale, SiteContent> = {
           description:
             'Acties, statusverloop en opvolging blijven herleidbaar voor evaluatie, kwaliteitsverbetering en operationeel overzicht.',
         },
+      ],
+      stepNotes: [
+        'Brengt signalen gecontroleerd binnen',
+        'Maakt urgentie en context uitlegbaar',
+        'Maakt eigenaarschap en workflow werkbaar',
+        'Houdt evaluatie en reconstructie intact',
       ],
     },
     compareChains: {
@@ -248,12 +263,6 @@ export const siteContent: Record<Locale, SiteContent> = {
           tone: 'explainability',
         },
         {
-          title: 'Bewonercontext',
-          caption: 'Relevante cliëntcontext en zorgsignalen zonder ruis of interpretatiewerk.',
-          image: '/products/snapshot-resident-preview.png',
-          tone: 'context',
-        },
-        {
           title: 'Beheer en control',
           caption: 'Ook beheer blijft productmatig rustig, scanbaar en bestuurbaar.',
           image: '/products/snapshot-facility-preview.png',
@@ -279,6 +288,10 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Laten we verder praten',
       description:
         'Wilt u meer weten over Velvoix of verkennen of een pilot past bij uw organisatie? Laat uw gegevens achter.',
+      inquiryTypes: {
+        pilot: 'Pilotverkenning',
+        general: 'Algemene vraag',
+      },
       labels: {
         name: 'Naam',
         organisation: 'Organisatie',
@@ -372,6 +385,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'A clear chain from input to follow-up',
       description:
         'Publicly understandable, operationally useful and designed to stay calm under care pressure.',
+      panelLabel: 'Operational chain',
+      panelSupporting: 'Velvoix structures input, interpretation, event formation and follow-up as one calm chain.',
       steps: [
         {
           title: 'Input',
@@ -393,6 +408,12 @@ export const siteContent: Record<Locale, SiteContent> = {
           description:
             'Actions, status progression and follow-up remain traceable for evaluation, quality improvement and operational oversight.',
         },
+      ],
+      stepNotes: [
+        'Brings signals into a controlled intake path',
+        'Makes urgency and context explainable',
+        'Makes ownership and workflow operationally workable',
+        'Keeps evaluation and reconstruction intact',
       ],
     },
     compareChains: {
@@ -447,12 +468,6 @@ export const siteContent: Record<Locale, SiteContent> = {
           tone: 'explainability',
         },
         {
-          title: 'Resident context',
-          caption: 'Relevant resident context and care signals without visual noise or interpretation burden.',
-          image: '/products/snapshot-resident-preview.png',
-          tone: 'context',
-        },
-        {
           title: 'Management and control',
           caption: 'The management layer stays calm, scannable and operationally controlled as well.',
           image: '/products/snapshot-facility-preview.png',
@@ -478,6 +493,10 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Let us continue the conversation',
       description:
         'Would you like to learn more about Velvoix or explore whether a pilot fits your organisation? Leave your details below.',
+      inquiryTypes: {
+        pilot: 'Pilot exploration',
+        general: 'General inquiry',
+      },
       labels: {
         name: 'Name',
         organisation: 'Organisation',

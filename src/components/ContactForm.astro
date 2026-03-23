@@ -1,5 +1,6 @@
 ---
 import type { ContactContent } from '../content/site';
+import InquiryToggle from './InquiryToggle.astro';
 import SectionIntro from './SectionIntro.astro';
 
 interface Props {
@@ -31,6 +32,7 @@ const formTexts = {
       </div>
 
       <form class="panel rounded-[2rem] p-6 md:p-8" data-contact-form novalidate>
+        <InquiryToggle labels={content.inquiryTypes} />
         <div class="grid gap-5 md:grid-cols-2">
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.name}</span>

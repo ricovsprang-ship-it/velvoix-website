@@ -91,6 +91,7 @@ section[id] {
 
 .site-shell {
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 .section-shell {
