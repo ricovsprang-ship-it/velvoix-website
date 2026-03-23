@@ -21,16 +21,25 @@ const { content } = Astro.props;
           </div>
         </div>
 
-        <div class="rounded-[1.75rem] bg-slate-950 p-6 text-white">
-          <p class="text-xs font-bold uppercase tracking-[0.24em] text-teal-300">Pilot focus</p>
-          <ul class="mt-5 space-y-3">
-            {content.points.map((point) => (
-              <li class="flex items-start gap-3 rounded-2xl border border-white/8 bg-white/4 px-4 py-4">
-                <span class="mt-1 size-2 shrink-0 rounded-full bg-teal-300"></span>
+        <div class="relative overflow-hidden rounded-[1.75rem]">
+          <img
+            src="/media/care-resident.jpg"
+            alt="Care setting"
+            class="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-slate-950/78 via-slate-950/38 to-slate-900/72"></div>
+          <div class="relative p-6 text-white md:p-8">
+            <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Pilot focus</p>
+            <ul class="mt-5 space-y-3">
+              {content.points.map((point) => (
+                <li class="flex items-start gap-3 rounded-2xl border border-white/12 bg-white/7 px-4 py-4 backdrop-blur-sm">
+                  <span class="mt-1 size-2 shrink-0 rounded-full bg-sky-300"></span>
                 <span class="text-base font-medium text-slate-100">{point}</span>
-              </li>
-            ))}
-          </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

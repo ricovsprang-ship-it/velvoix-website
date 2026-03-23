@@ -32,7 +32,17 @@ const { locale, content } = Astro.props;
             description={content.challenge.description}
           />
         </div>
-        <div class="panel rounded-[2rem] p-6 md:p-8">
+        <div class="panel overflow-hidden rounded-[2rem]">
+          <div class="relative min-h-[16rem]">
+            <img
+              src="/media/care-resident.jpg"
+              alt={locale === 'nl' ? 'Zorgmedewerker bij bewoner' : 'Care professional with resident'}
+              class="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/58 via-slate-950/12 to-transparent"></div>
+          </div>
+          <div class="p-6 md:p-8">
           <ul class="space-y-4">
             {content.challenge.points.map((point) => (
               <li class="flex items-start gap-4 rounded-[1.5rem] border border-slate-200 bg-white/92 px-5 py-4">
@@ -41,6 +51,7 @@ const { locale, content } = Astro.props;
               </li>
             ))}
           </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -10,10 +10,7 @@ const { content } = Astro.props;
 
 <footer class="border-t border-white/60 py-8">
   <div class="section-shell flex flex-col gap-5 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
-    <div class="flex items-center gap-3">
-      <span class="flex size-10 items-center justify-center rounded-2xl bg-slate-950 font-extrabold text-white">V</span>
-      <span class="font-bold text-slate-950">{content.brand}</span>
-    </div>
+    <div class="vx-wordmark text-[1.5rem] text-slate-950">{content.brand}</div>
 
     <div class="flex flex-wrap items-center gap-5">
       <a href="/">{content.languageNl}</a>
