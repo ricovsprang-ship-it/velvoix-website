@@ -7,43 +7,360 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const isEnglish = content.eyebrow.toLowerCase().includes('how');
+
+const sectionContent = isEnglish
+  ? {
+      eyebrow: 'How it works',
+      title: 'From signal to workable event outcome',
+      description:
+        'Velvoix does not just register signals, but enriches them with context, triage and follow-up oriented event behaviour, so care teams understand faster what needs attention and which follow-up makes sense.',
+      outcomes: [
+        'Understand faster what needs attention',
+        'Recommended action becomes workable immediately',
+        'Audit and reconstruction remain intact',
+      ],
+      panelLabel: 'Event assembly',
+      panelSupporting: 'From raw input to a workable event with context, recommended action, status and audit.',
+      layers: [
+        {
+          label: 'Input received',
+          title: 'Signal received',
+          description: 'A button call, voice input or other care-related signal is received in a controlled way.',
+        },
+        {
+          label: 'Context added',
+          title: 'Context added',
+          description: 'Repeat behaviour, history and situational context are added immediately.',
+        },
+        {
+          label: 'Triage structured',
+          title: 'Triage structured',
+          description: 'Urgency and recommended action become visible in explainable care language.',
+          meta: [
+            { label: 'Urgency', value: 'Direct' },
+            { label: 'Why', value: 'Repeated within a short interval' },
+            { label: 'Action', value: 'Go directly to the resident; check the situation' },
+          ],
+          emphasis: true,
+        },
+        {
+          label: 'Operational event created',
+          title: 'Operational event created',
+          description: 'Status, ownership and team follow-up become directly controllable.',
+          meta: [
+            { label: 'Status', value: 'Open' },
+            { label: 'Ownership', value: 'Not yet assigned' },
+            { label: 'Follow-up', value: 'Workable for team handling' },
+          ],
+        },
+        {
+          label: 'Audit attached',
+          title: 'Audit attached',
+          description: 'Status flow and reconstruction remain traceable for evaluation and audit.',
+        },
+      ],
+    }
+  : {
+      eyebrow: 'Hoe het werkt',
+      title: 'Van signaal naar werkbare eventuitkomst',
+      description:
+        'Velvoix registreert signalen niet alleen, maar verrijkt ze met context, triage en opvolgbaar eventgedrag, zodat zorgmedewerkers sneller begrijpen wat aandacht vraagt en welke opvolging logisch is.',
+      outcomes: [
+        'Sneller begrijpen wat aandacht vraagt',
+        'Aanpak wordt direct werkbaar',
+        'Audit en reconstructie blijven intact',
+      ],
+      panelLabel: 'Event assembly',
+      panelSupporting: 'Van ruwe input naar een werkbaar event met context, aanpak, status en reconstructie.',
+      layers: [
+        {
+          label: 'Input received',
+          title: 'Signaal ontvangen',
+          description: 'Knopoproep, spraakinput of ander zorgsignaal komt gecontroleerd binnen.',
+        },
+        {
+          label: 'Context added',
+          title: 'Context toegevoegd',
+          description: 'Herhaling, historie en situatie worden direct meegewogen.',
+        },
+        {
+          label: 'Triage structured',
+          title: 'Triage gestructureerd',
+          description: 'Urgentie en aanbevolen aanpak worden zichtbaar in zorgtaal.',
+          meta: [
+            { label: 'Urgentie', value: 'Direct' },
+            { label: 'Waarom', value: 'Herhaald binnen korte tijd' },
+            { label: 'Aanpak', value: 'Ga direct naar bewoner; controleer situatie' },
+          ],
+          emphasis: true,
+        },
+        {
+          label: 'Operational event created',
+          title: 'Werkbaar event opgebouwd',
+          description: 'Status, eigenaarschap en teamopvolging worden direct bestuurbaar.',
+          meta: [
+            { label: 'Status', value: 'Open' },
+            { label: 'Ownership', value: 'Nog niet toegewezen' },
+            { label: 'Follow-up', value: 'Werkbaar voor teamopvolging' },
+          ],
+        },
+        {
+          label: 'Audit attached',
+          title: 'Audit gekoppeld',
+          description: 'Statusverloop en reconstructie blijven herleidbaar voor evaluatie en audit.',
+        },
+      ],
+    };
 ---
 
 <section class="section-block">
-  <div class="section-shell grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-    <div class="max-w-[32rem]">
-      <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start" data-event-assembly-block>
+    <div class="max-w-[31rem]" data-event-assembly-intro>
+      <SectionIntro
+        eyebrow={sectionContent.eyebrow}
+        title={sectionContent.title}
+        description={sectionContent.description}
+      />
 
-      <div class="mt-7 space-y-3">
-        {content.steps.map((step, index) => (
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
-            <span class="flex size-6 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-[0.72rem] font-bold text-slate-500">
-              {index + 1}
-            </span>
-            <span>{step.title}</span>
+      <div class="mt-7 space-y-3.5">
+        {sectionContent.outcomes.map((outcome) => (
+          <div class="flex items-start gap-3 text-sm font-medium leading-6 text-slate-700">
+            <span class="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
+            <span>{outcome}</span>
           </div>
         ))}
       </div>
     </div>
 
-    <div class="rounded-[2.2rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.98),rgba(240,246,249,0.92))] p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-8">
-      <div class="space-y-5">
-        {content.steps.map((step, index) => (
-          <div class="relative pl-9">
-            {index < content.steps.length - 1 && (
-              <span class="absolute left-[0.68rem] top-7 h-[calc(100%+0.8rem)] w-px bg-[linear-gradient(180deg,rgba(25,130,121,0.28),rgba(31,53,87,0.08))]"></span>
-            )}
-            <span class="absolute left-0 top-1.5 size-3 rounded-full bg-[var(--vx-accent)] ring-4 ring-[rgba(25,130,121,0.08)]"></span>
-            <div class="rounded-[1.35rem] border border-slate-200/75 bg-white/92 px-5 py-4 shadow-[0_10px_22px_rgba(31,53,87,0.04)]">
-              <div class="flex items-baseline gap-3">
-                <p class="text-base font-bold tracking-tight text-slate-950">{step.title}</p>
-                <p class="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-slate-400">0{index + 1}</p>
+    <div
+      class="event-panel rounded-[1.9rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.98),rgba(239,245,248,0.95))] p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-8"
+      data-event-panel
+    >
+      <div class="event-panel-shell">
+        <div class="flex flex-col gap-2 border-b border-slate-200/80 pb-5">
+          <p class="text-[0.74rem] font-bold uppercase tracking-[0.18em] text-slate-500">{sectionContent.panelLabel}</p>
+          <p class="max-w-[42rem] text-sm leading-6 text-slate-600">{sectionContent.panelSupporting}</p>
+        </div>
+
+        <div class="event-assembly mt-5" data-assembly>
+          <span class="event-assembly-rail" aria-hidden="true"></span>
+
+          {sectionContent.layers.map((layer) => (
+            <section
+              class:list={[
+                'assembly-layer',
+                layer.emphasis && 'is-emphasis',
+              ]}
+              data-assembly-layer
+            >
+              <span class="assembly-layer-node" aria-hidden="true"></span>
+              <div class="assembly-layer-surface">
+                <div class="flex flex-col gap-1.5 lg:flex-row lg:items-start lg:justify-between">
+                  <div class="min-w-0">
+                    <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{layer.label}</p>
+                    <h3 class="mt-2 text-[1.08rem] font-semibold tracking-tight text-slate-950">{layer.title}</h3>
+                    <p class="mt-2 max-w-[34rem] text-sm leading-6 text-slate-600">{layer.description}</p>
+                  </div>
+
+                  {layer.meta && (
+                    <div
+                      class:list={[
+                        'assembly-meta',
+                        layer.emphasis && 'is-emphasis',
+                      ]}
+                      data-assembly-meta
+                    >
+                      {layer.meta.map((item) => (
+                        <div class="assembly-meta-row">
+                          <span class="assembly-meta-label">{item.label}</span>
+                          <span class="assembly-meta-value">{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
-              <p class="mt-2 text-sm leading-6 text-slate-600">{step.description}</p>
-            </div>
-          </div>
-        ))}
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  [data-event-assembly-block] .event-panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  [data-event-assembly-block] .event-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 22%);
+    pointer-events: none;
+  }
+
+  [data-event-assembly-block] .event-panel-shell {
+    position: relative;
+    z-index: 1;
+  }
+
+  [data-event-assembly-block] .event-assembly {
+    position: relative;
+    display: grid;
+    gap: 0.95rem;
+    padding-left: 1.35rem;
+  }
+
+  [data-event-assembly-block] .event-assembly-rail {
+    position: absolute;
+    left: 0.28rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(25, 130, 121, 0.22), rgba(31, 53, 87, 0.08));
+  }
+
+  [data-event-assembly-block] .assembly-layer {
+    position: relative;
+  }
+
+  [data-event-assembly-block] .assembly-layer-node {
+    position: absolute;
+    left: -1.35rem;
+    top: 1.05rem;
+    z-index: 1;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(25, 130, 121, 0.9), rgba(25, 130, 121, 0.62));
+    box-shadow: 0 0 0 4px rgba(25, 130, 121, 0.08);
+  }
+
+  [data-event-assembly-block] .assembly-layer-surface {
+    border-radius: 1.25rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 252, 0.98));
+    padding: 1rem 1rem 1rem 1.05rem;
+    box-shadow: 0 10px 24px rgba(31, 53, 87, 0.05);
+  }
+
+  [data-event-assembly-block] .assembly-layer.is-emphasis .assembly-layer-surface {
+    border-color: rgba(25, 130, 121, 0.22);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(243, 249, 248, 0.98));
+    box-shadow: 0 14px 28px rgba(31, 53, 87, 0.06);
+  }
+
+  [data-event-assembly-block] .assembly-meta {
+    display: grid;
+    gap: 0.55rem;
+    min-width: min(100%, 17rem);
+    margin-top: 0.75rem;
+    padding: 0.9rem 0.95rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    background: rgba(248, 250, 252, 0.88);
+  }
+
+  [data-event-assembly-block] .assembly-meta.is-emphasis {
+    border-color: rgba(25, 130, 121, 0.18);
+    background: linear-gradient(180deg, rgba(247, 251, 250, 0.98), rgba(242, 248, 247, 0.96));
+  }
+
+  [data-event-assembly-block] .assembly-meta-row {
+    display: grid;
+    gap: 0.18rem;
+  }
+
+  [data-event-assembly-block] .assembly-meta-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(100 116 139);
+  }
+
+  [data-event-assembly-block] .assembly-meta-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: rgb(30 41 59);
+  }
+
+  @media (min-width: 1024px) {
+    [data-event-assembly-block] .assembly-meta {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const blocks = document.querySelectorAll('[data-event-assembly-block]');
+
+  for (const block of blocks) {
+    if (!(block instanceof HTMLElement)) continue;
+    if (block.dataset.gsapBound === 'true') continue;
+    block.dataset.gsapBound = 'true';
+
+    const intro = block.querySelector<HTMLElement>('[data-event-assembly-intro]');
+    const panel = block.querySelector<HTMLElement>('[data-event-panel]');
+    const layers = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-assembly-layer]'));
+    const emphasisMeta = block.querySelector<HTMLElement>('.assembly-meta.is-emphasis');
+
+    if (prefersReducedMotion) {
+      gsap.set([intro, panel, layers, emphasisMeta], { clearProps: 'all' });
+      continue;
+    }
+
+    gsap.set(intro, { autoAlpha: 0, y: 18 });
+    gsap.set(panel, { autoAlpha: 0, y: 22 });
+    gsap.set(layers, { autoAlpha: 0, y: 14 });
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'power2.out' },
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 72%',
+        once: true,
+      },
+    });
+
+    timeline
+      .to(intro, { autoAlpha: 1, y: 0, duration: 0.46 })
+      .to(panel, { autoAlpha: 1, y: 0, duration: 0.54 }, '-=0.24')
+      .to(
+        layers,
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.34,
+          stagger: 0.14,
+        },
+        '-=0.12'
+      );
+
+    if (emphasisMeta) {
+      timeline
+        .to(
+          emphasisMeta,
+          {
+            borderColor: 'rgba(25, 130, 121, 0.28)',
+            boxShadow: '0 12px 22px rgba(25,130,121,0.08)',
+            duration: 0.22,
+          },
+          '-=0.06'
+        )
+        .to(emphasisMeta, { borderColor: 'rgba(25, 130, 121, 0.18)', boxShadow: 'none', duration: 0.24 });
+    }
+  }
+</script>

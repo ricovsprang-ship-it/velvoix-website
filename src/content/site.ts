@@ -51,8 +51,16 @@ export interface FlowContent extends SectionIntroContent {
 export interface HowItWorksContent extends SectionIntroContent {
   panelLabel: string;
   panelSupporting: string;
-  steps: Array<{ title: string; description: string }>;
-  stepNotes: string[];
+  steps?: Array<{ title: string; description: string }>;
+  stepNotes?: string[];
+  outcomes?: string[];
+  layers?: Array<{
+    label: string;
+    title: string;
+    description: string;
+    meta?: Array<{ label: string; value: string }>;
+    emphasis?: boolean;
+  }>;
 }
 
 export interface WhyVelvoixContent extends SectionIntroContent {
