@@ -44,6 +44,85 @@ const sectionContent = isEnglish
     };
 
 const firstDomain = sectionContent.domains[0];
+const detailContent = isEnglish
+  ? {
+      openLabel: 'Open product detail',
+      closeLabel: 'Close',
+      whatTitle: 'What this shows',
+      whyTitle: 'Why this matters',
+      valueTitle: 'Operational value',
+      domains: {
+        'event-page': {
+          what: 'A desktop worklist where queue, urgency, resident context and recommended action stay visible together.',
+          why: 'This shows that Velvoix is not just a signal feed, but an operational workspace for teams.',
+          value: 'Teams can scan faster, understand faster and act with less interpretation burden.',
+        },
+        handling: {
+          what: 'A handling surface with recommended action, urgency, SLA, ownership and direct action controls.',
+          why: 'This proves that follow-up becomes workable inside the product, not something teams have to reconstruct manually.',
+          value: 'Ownership, transfer and completion stay controllable in daily care workflow.',
+        },
+        'box-management': {
+          what: 'A management view for device state, resident linking, room assignment and last check-in.',
+          why: 'This shows that operational control over hardware and care context stays in one calm layer.',
+          value: 'Support and care operations can manage availability and linking without fragmentation.',
+        },
+        'technical-insight': {
+          what: 'A high-level governance view with active configuration, publication state and explainability visibility.',
+          why: 'This demonstrates manageability without exposing rulesets, phrase packs or other sensitive internals.',
+          value: 'The platform remains governable, publishable and operationally trustworthy.',
+        },
+        'kpi-overview': {
+          what: 'A compact steering workspace with open events, SLA performance, escalations and workload context.',
+          why: 'This shows that Velvoix also supports operational steering, not only event handling.',
+          value: 'Teams and managers can steer on follow-up quality without analytics overload.',
+        },
+        'client-history': {
+          what: 'A resident-oriented history view that keeps recent events, follow-up and pattern context connected.',
+          why: 'This shows how context and reconstruction stay close to the resident instead of being spread across systems.',
+          value: 'Care teams can understand patterns and follow-up history faster and with more confidence.',
+        },
+      },
+    }
+  : {
+      openLabel: 'Open productdetail',
+      closeLabel: 'Sluiten',
+      whatTitle: 'Wat laat dit zien',
+      whyTitle: 'Waarom dit belangrijk is',
+      valueTitle: 'Operationele waarde',
+      domains: {
+        'event-page': {
+          what: 'Een desktopwerkvoorraad waarin queue, urgentie, bewonercontext en aanbevolen aanpak samen zichtbaar blijven.',
+          why: 'Dit laat zien dat Velvoix niet alleen een signalenstroom is, maar een operationele workspace voor teams.',
+          value: 'Teams kunnen sneller scannen, sneller begrijpen en handelen met minder interpretatielast.',
+        },
+        handling: {
+          what: 'Een afhandelscherm met aanbevolen aanpak, urgentie, SLA, eigenaarschap en directe actieknoppen.',
+          why: 'Dit bewijst dat opvolging werkbaar wordt binnen het product zelf, niet iets wat teams handmatig moeten reconstrueren.',
+          value: 'Eigenaarschap, overdracht en afronding blijven bestuurbaar in de dagelijkse zorgworkflow.',
+        },
+        'box-management': {
+          what: 'Een beheerweergave voor devicestatus, bewonerkoppeling, kamerkoppeling en laatste check-in.',
+          why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in één rustige laag blijft.',
+          value: 'Support en zorgoperations kunnen beschikbaarheid en koppelingen beheren zonder versnippering.',
+        },
+        'technical-insight': {
+          what: 'Een high-level governanceweergave met actieve configuratie, publicatiestatus en explainability-zichtbaarheid.',
+          why: 'Dit toont beheerbaarheid zonder rulesets, phrase packs of andere gevoelige internals prijs te geven.',
+          value: 'Het platform blijft governable, publiceerbaar en operationeel betrouwbaar.',
+        },
+        'kpi-overview': {
+          what: 'Een compacte sturingsworkspace met open events, SLA-prestatie, escalaties en werkvoorraadcontext.',
+          why: 'Dit laat zien dat Velvoix ook operationele sturing ondersteunt, niet alleen eventafhandeling.',
+          value: 'Teams en managers kunnen sturen op opvolgkwaliteit zonder analytics-overload.',
+        },
+        'client-history': {
+          what: 'Een bewonergerichte historie waarin recente events, opvolging en patrooncontext verbonden blijven.',
+          why: 'Dit laat zien hoe context en reconstructie dicht bij de bewoner blijven in plaats van verspreid over meerdere systemen.',
+          value: 'Zorgteams begrijpen patronen en opvolghistorie sneller en met meer vertrouwen.',
+        },
+      },
+    };
 ---
 
 <section class="section-block" data-product-showcase>
@@ -79,7 +158,10 @@ const firstDomain = sectionContent.domains[0];
             <p class="showcase-kicker" data-showcase-kicker>{firstDomain.kicker}</p>
             <h3 class="showcase-title" data-showcase-title>{firstDomain.title}</h3>
           </div>
-          <p class="showcase-description" data-showcase-description>{firstDomain.description}</p>
+          <div class="showcase-head-actions">
+            <p class="showcase-description" data-showcase-description>{firstDomain.description}</p>
+            <button type="button" class="showcase-open-button" data-showcase-open>{detailContent.openLabel}</button>
+          </div>
         </div>
 
         <div class="showcase-stage">
@@ -364,6 +446,44 @@ const firstDomain = sectionContent.domains[0];
           </article>
         </div>
       </div>
+
+      <div class="showcase-overlay" data-showcase-overlay hidden aria-hidden="true">
+        <div class="showcase-overlay__backdrop" data-showcase-close></div>
+        <div
+          class="showcase-overlay__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="showcase-overlay-title"
+          tabindex="-1"
+          data-showcase-overlay-panel
+        >
+          <div class="showcase-overlay__header">
+            <div>
+              <p class="showcase-kicker" data-overlay-kicker>{firstDomain.kicker}</p>
+              <h3 class="showcase-title" id="showcase-overlay-title" data-overlay-title>{firstDomain.title}</h3>
+            </div>
+            <button type="button" class="showcase-overlay__close" data-showcase-close>{detailContent.closeLabel}</button>
+          </div>
+
+          <div class="showcase-overlay__body">
+            <div class="showcase-overlay__preview" data-overlay-preview></div>
+            <aside class="showcase-overlay__copy">
+              <div class="showcase-overlay__copyblock">
+                <div class="showcase-overlay__copylabel">{detailContent.whatTitle}</div>
+                <p data-overlay-what>{detailContent.domains['event-page'].what}</p>
+              </div>
+              <div class="showcase-overlay__copyblock">
+                <div class="showcase-overlay__copylabel">{detailContent.whyTitle}</div>
+                <p data-overlay-why>{detailContent.domains['event-page'].why}</p>
+              </div>
+              <div class="showcase-overlay__copyblock">
+                <div class="showcase-overlay__copylabel">{detailContent.valueTitle}</div>
+                <p data-overlay-value>{detailContent.domains['event-page'].value}</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -392,9 +512,15 @@ const firstDomain = sectionContent.domains[0];
   [data-product-showcase] .showcase-frame-head {
     display: grid; gap: 0.9rem; padding: 1.35rem 1.35rem 1.1rem; border-bottom: 1px solid rgba(223,230,238,0.88);
   }
+  [data-product-showcase] .showcase-head-actions { display: grid; gap: 0.8rem; align-items: end; }
   [data-product-showcase] .showcase-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(84 101 128); }
   [data-product-showcase] .showcase-title { margin-top: 0.3rem; font-size: 1.34rem; font-weight: 700; letter-spacing: -0.03em; color: rgb(15 23 42); }
   [data-product-showcase] .showcase-description { max-width: 42rem; font-size: 0.94rem; line-height: 1.7; color: rgb(71 85 105); }
+  [data-product-showcase] .showcase-open-button {
+    justify-self: start; min-height: 2.2rem; padding: 0.5rem 0.85rem; border-radius: 0.78rem;
+    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
+    font-size: 0.84rem; font-weight: 600; color: rgb(30 41 59);
+  }
   [data-product-showcase] .showcase-stage { position: relative; min-height: 31rem; padding: 1.25rem; }
   [data-product-showcase] .showcase-panel { position: absolute; inset: 1.25rem; }
 
@@ -511,6 +637,49 @@ const firstDomain = sectionContent.domains[0];
   [data-product-showcase] .history-node:first-child { border-top: 0; padding-top: 0; }
   [data-product-showcase] .history-node > span { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(100 116 139); }
 
+  [data-product-showcase] .showcase-overlay[hidden] { display: none; }
+  [data-product-showcase] .showcase-overlay {
+    position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 1.5rem;
+  }
+  [data-product-showcase] .showcase-overlay__backdrop {
+    position: absolute; inset: 0; background: rgba(15, 23, 42, 0.38); backdrop-filter: blur(4px);
+  }
+  [data-product-showcase] .showcase-overlay__panel {
+    position: relative; z-index: 1; width: min(1220px, calc(100vw - 3rem)); max-height: calc(100vh - 3rem);
+    overflow: auto; border-radius: 1.4rem; border: 1px solid rgba(214,223,233,0.96);
+    background: linear-gradient(180deg, rgba(252,253,255,0.99), rgba(244,248,251,0.98));
+    box-shadow: 0 28px 70px rgba(15,23,42,0.18);
+  }
+  [data-product-showcase] .showcase-overlay__header {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    padding: 1.15rem 1.2rem; border-bottom: 1px solid rgba(223,230,238,0.88);
+  }
+  [data-product-showcase] .showcase-overlay__close {
+    min-height: 2.2rem; padding: 0.48rem 0.82rem; border-radius: 0.78rem;
+    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
+    font-size: 0.84rem; font-weight: 600; color: rgb(30 41 59);
+  }
+  [data-product-showcase] .showcase-overlay__body {
+    display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.75fr); gap: 1rem; padding: 1.15rem;
+  }
+  [data-product-showcase] .showcase-overlay__preview { min-width: 0; }
+  [data-product-showcase] .showcase-overlay__preview .showcase-panel {
+    position: static; inset: auto; display: block !important;
+  }
+  [data-product-showcase] .showcase-overlay__preview .product-workspace { min-height: 35rem; }
+  [data-product-showcase] .showcase-overlay__copy {
+    display: grid; gap: 0.9rem; align-content: start;
+  }
+  [data-product-showcase] .showcase-overlay__copyblock {
+    border: 1px solid rgba(223,230,238,0.94); border-radius: 1rem; background: rgba(255,255,255,0.96); padding: 1rem;
+  }
+  [data-product-showcase] .showcase-overlay__copylabel {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(84 101 128);
+  }
+  [data-product-showcase] .showcase-overlay__copyblock p {
+    margin-top: 0.45rem; font-size: 0.92rem; line-height: 1.7; color: rgb(71 85 105);
+  }
+
   @media (min-width: 1024px) {
     [data-product-showcase] .showcase-frame-head { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: end; gap: 1.4rem; }
   }
@@ -520,7 +689,8 @@ const firstDomain = sectionContent.domains[0];
     [data-product-showcase] .workspace-grid--handling,
     [data-product-showcase] .workspace-grid--management,
     [data-product-showcase] .workspace-grid--kpi-detail,
-    [data-product-showcase] .workspace-grid--history { grid-template-columns: 1fr; }
+    [data-product-showcase] .workspace-grid--history,
+    [data-product-showcase] .showcase-overlay__body { grid-template-columns: 1fr; }
   }
   @media (max-width: 767px) {
     [data-product-showcase] .showcase-rail-item.is-active { transform: none; }
@@ -531,6 +701,8 @@ const firstDomain = sectionContent.domains[0];
     [data-product-showcase] .workspace-table-head,
     [data-product-showcase] .workspace-table-row { grid-template-columns: 1fr; }
     [data-product-showcase] .workspace-metricrow { grid-template-columns: 1fr; }
+    [data-product-showcase] .showcase-overlay { padding: 0.8rem; }
+    [data-product-showcase] .showcase-overlay__panel { width: calc(100vw - 1.6rem); max-height: calc(100vh - 1.6rem); }
   }
 </style>
 
@@ -543,6 +715,73 @@ const firstDomain = sectionContent.domains[0];
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const blocks = document.querySelectorAll('[data-product-showcase]');
 
+  const overlayDetails = {
+    en: {
+      'event-page': {
+        what: 'A desktop worklist where queue, urgency, resident context and recommended action stay visible together.',
+        why: 'This shows that Velvoix is not just a signal feed, but an operational workspace for teams.',
+        value: 'Teams can scan faster, understand faster and act with less interpretation burden.',
+      },
+      handling: {
+        what: 'A handling surface with recommended action, urgency, SLA, ownership and direct action controls.',
+        why: 'This proves that follow-up becomes workable inside the product, not something teams have to reconstruct manually.',
+        value: 'Ownership, transfer and completion stay controllable in daily care workflow.',
+      },
+      'box-management': {
+        what: 'A management view for device state, resident linking, room assignment and last check-in.',
+        why: 'This shows that operational control over hardware and care context stays in one calm layer.',
+        value: 'Support and care operations can manage availability and linking without fragmentation.',
+      },
+      'technical-insight': {
+        what: 'A high-level governance view with active configuration, publication state and explainability visibility.',
+        why: 'This demonstrates manageability without exposing rulesets, phrase packs or other sensitive internals.',
+        value: 'The platform remains governable, publishable and operationally trustworthy.',
+      },
+      'kpi-overview': {
+        what: 'A compact steering workspace with open events, SLA performance, escalations and workload context.',
+        why: 'This shows that Velvoix also supports operational steering, not only event handling.',
+        value: 'Teams and managers can steer on follow-up quality without analytics overload.',
+      },
+      'client-history': {
+        what: 'A resident-oriented history view that keeps recent events, follow-up and pattern context connected.',
+        why: 'This shows how context and reconstruction stay close to the resident instead of being spread across systems.',
+        value: 'Care teams can understand patterns and follow-up history faster and with more confidence.',
+      },
+    },
+    nl: {
+      'event-page': {
+        what: 'Een desktopwerkvoorraad waarin queue, urgentie, bewonercontext en aanbevolen aanpak samen zichtbaar blijven.',
+        why: 'Dit laat zien dat Velvoix niet alleen een signalenstroom is, maar een operationele workspace voor teams.',
+        value: 'Teams kunnen sneller scannen, sneller begrijpen en handelen met minder interpretatielast.',
+      },
+      handling: {
+        what: 'Een afhandelscherm met aanbevolen aanpak, urgentie, SLA, eigenaarschap en directe actieknoppen.',
+        why: 'Dit bewijst dat opvolging werkbaar wordt binnen het product zelf, niet iets wat teams handmatig moeten reconstrueren.',
+        value: 'Eigenaarschap, overdracht en afronding blijven bestuurbaar in de dagelijkse zorgworkflow.',
+      },
+      'box-management': {
+        what: 'Een beheerweergave voor devicestatus, bewonerkoppeling, kamerkoppeling en laatste check-in.',
+        why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in één rustige laag blijft.',
+        value: 'Support en zorgoperations kunnen beschikbaarheid en koppelingen beheren zonder versnippering.',
+      },
+      'technical-insight': {
+        what: 'Een high-level governanceweergave met actieve configuratie, publicatiestatus en explainability-zichtbaarheid.',
+        why: 'Dit toont beheerbaarheid zonder rulesets, phrase packs of andere gevoelige internals prijs te geven.',
+        value: 'Het platform blijft governable, publiceerbaar en operationeel betrouwbaar.',
+      },
+      'kpi-overview': {
+        what: 'Een compacte sturingsworkspace met open events, SLA-prestatie, escalaties en werkvoorraadcontext.',
+        why: 'Dit laat zien dat Velvoix ook operationele sturing ondersteunt, niet alleen eventafhandeling.',
+        value: 'Teams en managers kunnen sturen op opvolgkwaliteit zonder analytics-overload.',
+      },
+      'client-history': {
+        what: 'Een bewonergerichte historie waarin recente events, opvolging en patrooncontext verbonden blijven.',
+        why: 'Dit laat zien hoe context en reconstructie dicht bij de bewoner blijven in plaats van verspreid over meerdere systemen.',
+        value: 'Zorgteams begrijpen patronen en opvolghistorie sneller en met meer vertrouwen.',
+      },
+    },
+  } as const;
+
   for (const block of blocks) {
     if (!(block instanceof HTMLElement)) continue;
     if (block.dataset.gsapBound === 'true') continue;
@@ -553,10 +792,22 @@ const firstDomain = sectionContent.domains[0];
     const kickerTarget = block.querySelector<HTMLElement>('[data-showcase-kicker]');
     const titleTarget = block.querySelector<HTMLElement>('[data-showcase-title]');
     const descriptionTarget = block.querySelector<HTMLElement>('[data-showcase-description]');
+    const openButton = block.querySelector<HTMLElement>('[data-showcase-open]');
+    const overlay = block.querySelector<HTMLElement>('[data-showcase-overlay]');
+    const overlayPanel = block.querySelector<HTMLElement>('[data-showcase-overlay-panel]');
+    const overlayPreview = block.querySelector<HTMLElement>('[data-overlay-preview]');
+    const overlayKicker = block.querySelector<HTMLElement>('[data-overlay-kicker]');
+    const overlayTitle = block.querySelector<HTMLElement>('[data-overlay-title]');
+    const overlayWhat = block.querySelector<HTMLElement>('[data-overlay-what]');
+    const overlayWhy = block.querySelector<HTMLElement>('[data-overlay-why]');
+    const overlayValue = block.querySelector<HTMLElement>('[data-overlay-value]');
+    const closeButtons = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-close]'));
     const triggers = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-trigger]'));
     const panels = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-panel]'));
+    const locale = block.querySelector('.showcase-rail-label')?.textContent?.includes('Eventpagina') ? 'nl' : 'en';
 
     let activeId = triggers.find((trigger) => trigger.classList.contains('is-active'))?.dataset.domainId ?? 'event-page';
+    let lastFocused: HTMLElement | null = null;
 
     const setActiveState = (nextId: string) => {
       activeId = nextId;
@@ -628,8 +879,75 @@ const firstDomain = sectionContent.domains[0];
         .to(nextPanel, { autoAlpha: 1, y: 0, duration: 0.2 }, '-=0.04');
     };
 
+    const populateOverlay = (domainId: string) => {
+      if (!overlayPreview || !overlayKicker || !overlayTitle || !overlayWhat || !overlayWhy || !overlayValue) return;
+      const activeTrigger = triggers.find((trigger) => trigger.dataset.domainId === domainId);
+      const activePanel = panels.find((panel) => panel.dataset.showcasePanel === domainId);
+      const detail = overlayDetails[locale][domainId as keyof (typeof overlayDetails)[typeof locale]];
+      if (!activeTrigger || !activePanel || !detail) return;
+
+      overlayKicker.textContent = activeTrigger.dataset.kicker ?? '';
+      overlayTitle.textContent = activeTrigger.dataset.title ?? '';
+      overlayWhat.textContent = detail.what;
+      overlayWhy.textContent = detail.why;
+      overlayValue.textContent = detail.value;
+
+      const clone = activePanel.cloneNode(true);
+      if (clone instanceof HTMLElement) {
+        clone.hidden = false;
+        overlayPreview.replaceChildren(clone);
+      }
+    };
+
+    const openOverlay = (domainId: string = activeId) => {
+      if (!overlay || !overlayPanel) return;
+      lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      populateOverlay(domainId);
+      overlay.hidden = false;
+      overlay.setAttribute('aria-hidden', 'false');
+      document.documentElement.style.overflow = 'hidden';
+
+      if (prefersReducedMotion) {
+        overlayPanel.focus();
+        return;
+      }
+
+      gsap.set(overlayPanel, { autoAlpha: 0, y: 18, scale: 0.985 });
+      gsap.to(overlayPanel, { autoAlpha: 1, y: 0, scale: 1, duration: 0.22, ease: 'power2.out' });
+      overlayPanel.focus();
+    };
+
+    const closeOverlay = () => {
+      if (!overlay || !overlayPanel) return;
+
+      const completeClose = () => {
+        overlay.hidden = true;
+        overlay.setAttribute('aria-hidden', 'true');
+        document.documentElement.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+      };
+
+      if (prefersReducedMotion) {
+        completeClose();
+        return;
+      }
+
+      gsap.to(overlayPanel, {
+        autoAlpha: 0,
+        y: 12,
+        scale: 0.99,
+        duration: 0.18,
+        ease: 'power2.in',
+        onComplete: completeClose,
+      });
+    };
+
     for (const trigger of triggers) {
-      trigger.addEventListener('click', () => showPanel(trigger));
+      trigger.addEventListener('click', () => {
+        const nextId = trigger.dataset.domainId ?? activeId;
+        showPanel(trigger);
+        requestAnimationFrame(() => openOverlay(nextId));
+      });
       trigger.addEventListener('keydown', (event) => {
         if (!(event instanceof KeyboardEvent)) return;
         const currentIndex = triggers.indexOf(trigger);
@@ -645,8 +963,19 @@ const firstDomain = sectionContent.domains[0];
           nextTrigger.focus();
           showPanel(nextTrigger);
         }
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openOverlay();
+        }
       });
     }
+
+    openButton?.addEventListener('click', openOverlay);
+    for (const closeButton of closeButtons) closeButton.addEventListener('click', closeOverlay);
+    overlay?.addEventListener('keydown', (event) => {
+      if (!(event instanceof KeyboardEvent)) return;
+      if (event.key === 'Escape') closeOverlay();
+    });
 
     if (prefersReducedMotion) continue;
 
