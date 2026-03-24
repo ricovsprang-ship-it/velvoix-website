@@ -1,4 +1,4 @@
-import type { SiteContent } from './site';
+ï»¿import type { SiteContent } from './site';
 
 export const deContent: SiteContent = {
   locale: 'de',
@@ -163,7 +163,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Technischer Kern',
     title: 'Fur verlassliche Nachverfolgung unter Druck entwickelt',
     description:
-      'Die Starke von Velvoix liegt nicht in einem einzelnen Modell, Bildschirm oder Eingangssignal, sondern in einem Produktkern, der Event-Wahrheit, erklarbare Triage, Nachverfolgung und Governance kontrolliert zusammenhalt - auch wenn der Betrieb unter Druck steht oder Teile der Kette eingeschrankt sind.',
+      'Die Starke von Velvoix liegt nicht in einem einzelnen Modell, Bildschirm oder Eingangssignal, sondern in einem Produktkern, der Event-Wahrheit, erklarbare Triage, Nachverfolgung und Governance kontrolliert zusammenhaelt - auch wenn der Betrieb unter Druck steht oder Teile der Kette eingeschrankt sind.',
     capabilities: [
       'Backend-Wahrheit',
       'Ehrlicher Fallback',
@@ -253,7 +253,7 @@ export const deContent: SiteContent = {
   },
   pilot: {
     eyebrow: 'Pilot und Zusammenarbeit',
-    title: 'Mit Velvoix erkunden, was steuerbarer Pflegeworkflow in der Praxis bringt',
+    title: 'Mit Velvoix erkunden, was steuerbarer Pflege-Workflow bringt',
     description:
       'Ein Pilot macht sichtbar, wie Velvoix in Ihre Pflegepraxis, Teamroutinen und operativen Prozesse passt.',
     points: [
@@ -261,12 +261,12 @@ export const deContent: SiteContent = {
       'Teams, die mehr Klarheit in der Nachverfolgung wollen',
       'Partner, die Passung zu Prozessen und Integrationen prufen mochten',
     ],
-    primaryCta: 'Pilotgesprach planen',
+    primaryCta: 'Pilotgesprach vereinbaren',
     secondaryCta: 'Zusammenarbeit besprechen',
   },
   contact: {
     eyebrow: 'Kontakt',
-    title: 'Lassen Sie uns weiter sprechen',
+    title: 'Lassen Sie uns ins Gesprach kommen',
     description:
       'Mochten Sie prufen, ob Velvoix zu Ihrer Organisation, einem Pilotkontext oder einer Zusammenarbeit passt? Hinterlassen Sie Ihre Daten, und wir melden uns gezielt bei Ihnen.',
     inquiryTypes: {
@@ -275,11 +275,11 @@ export const deContent: SiteContent = {
       general: 'Allgemeine Anfrage',
     },
     reasons: [
-      'Pilotgesprach fur Pflegeorganisationen',
-      'Zusammenarbeit oder Partnerschaft besprechen',
+      'Pilot fur Pflegeorganisationen',
+      'Zusammenarbeit oder Partnerschaft',
       'Allgemeine Frage zur Plattform oder zum Einsatzkontext',
     ],
-    directEmailNote: 'Fur geschaftliche Fragen, Pilotgesprache und Partnerschaften.',
+    directEmailNote: 'Fur Anfragen zu Pilot, Zusammenarbeit und Plattform.',
     routeContent: {
       pilot: {
         helper: 'Wahlen Sie diesen Weg, wenn Sie einen Pilotkontext oder eine praktische Erprobung besprechen mochten.',
@@ -287,7 +287,7 @@ export const deContent: SiteContent = {
         submit: 'Gesprach planen',
       },
       partnership: {
-        helper: 'Wahlen Sie diesen Weg, wenn Sie eine Zusammenarbeit, Integration oder strategische Partnerschaft besprechen mochten.',
+        helper: 'Wahlen Sie diesen Weg, wenn Sie uber Zusammenarbeit, Integration oder Partnerschaft sprechen mochten.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welche Form der Zusammenarbeit Sie besprechen mochten.',
         submit: 'Zusammenarbeit besprechen',
       },
@@ -334,7 +334,7 @@ export const deContent: SiteContent = {
     privacy: 'Datenschutzerklarung',
     cookies: 'Cookie-Richtlinie',
     terms: 'Allgemeine Geschaftsbedingungen',
-    copyright: '© 2026 Velvoix® · Alle Rechte vorbehalten.',
+    copyright: 'ï¿½ 2026 Velvoixï¿½ ï¿½ Alle Rechte vorbehalten.',
   },
 };
 
@@ -401,7 +401,7 @@ export const esContent: SiteContent = {
     title: 'Velvoix aporta estructura entre la senal y el seguimiento',
     description:
       'Velvoix convierte las senales en un resultado operativo viable con contexto, triaje y seguimiento.',
-    flow: ['Senal', 'Contexto', 'Triaje', 'Evento', 'Workflow', 'Escalada', 'Reconstruccion'],
+    flow: ['Senal', 'Contexto', 'Triaje', 'Evento', 'Flujo', 'Escalada', 'Reconstruccion'],
     supporting:
       'Asi el seguimiento resulta mas claro, mas coherente y mas facil de reconstruir.',
   },
@@ -439,7 +439,7 @@ export const esContent: SiteContent = {
     traditionalTitle: 'Cadena tradicional',
     traditionalSteps: ['Senal', 'Alerta', 'Interpretacion manual'],
     velvoixTitle: 'Cadena Velvoix',
-    velvoixSteps: ['Senal', 'Contexto', 'Triaje', 'Evento', 'Workflow', 'Escalada', 'Reconstruccion'],
+    velvoixSteps: ['Senal', 'Contexto', 'Triaje', 'Evento', 'Flujo', 'Escalada', 'Reconstruccion'],
     velvoixSupporting: 'Cada capa adicional aporta significado y hace gobernables el seguimiento, la escalada y la auditoria.',
     stepDetails: [
       {
@@ -599,14 +599,14 @@ export const esContent: SiteContent = {
       'Equipos que buscan un seguimiento mas claro',
       'Partners que quieren explorar el encaje con procesos e integraciones',
     ],
-    primaryCta: 'Programar una conversacion piloto',
+    primaryCta: 'Solicitar conversacion piloto',
     secondaryCta: 'Hablar de colaboracion',
   },
   contact: {
     eyebrow: 'Contacto',
-    title: 'Sigamos la conversacion',
+    title: 'Hablemos',
     description:
-      'Quiere explorar si Velvoix encaja con su organizacion, un contexto piloto o una colaboracion? Dejenos sus datos y nos pondremos en contacto de forma dirigida.',
+      'Quiere explorar si Velvoix encaja en su organizacion, un piloto o una colaboracion? Dejenos sus datos y nos pondremos en contacto con usted.',
     inquiryTypes: {
       pilot: 'Exploracion piloto',
       partnership: 'Colaboracion',
@@ -614,10 +614,10 @@ export const esContent: SiteContent = {
     },
     reasons: [
       'Exploracion piloto para organizaciones asistenciales',
-      'Hablar de colaboracion estrategica',
+      'Colaboracion o partnership',
       'Pregunta general sobre la plataforma o el contexto de despliegue',
     ],
-    directEmailNote: 'Para consultas comerciales, pilotos y conversaciones de colaboracion.',
+    directEmailNote: 'Para consultas comerciales, pilotos y colaboraciones.',
     routeContent: {
       pilot: {
         helper: 'Elija esta via si quiere hablar de un piloto, del contexto asistencial o de una exploracion practica.',
@@ -672,9 +672,11 @@ export const esContent: SiteContent = {
     privacy: 'Politica de privacidad',
     cookies: 'Politica de cookies',
     terms: 'Terminos y condiciones',
-    copyright: '© 2026 Velvoix® · Todos los derechos reservados.',
+    copyright: 'ï¿½ 2026 Velvoixï¿½ ï¿½ Todos los derechos reservados.',
   },
 };
+
+
 
 
 
