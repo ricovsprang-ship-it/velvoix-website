@@ -19,7 +19,7 @@ const sectionContent = isEnglish
         'A curated tour, not a document viewer: readable desktop views that show how Velvoix keeps worklist, context and operational control together.',
       cta: 'Open fullscreen platform tour',
       previewLabel: 'Preview',
-      previewTitle: 'Nine curated desktop views',
+      previewTitle: 'Ten curated desktop views',
       previewBody:
         'From worklist to event detail, assignment, handling, management and governance.',
       overlayLabel: 'Platform tour',
@@ -41,7 +41,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/login.png',
           alt: 'Velvoix login screen',
           objectPosition: 'center center',
-          baseScale: 1.42,
+          baseScale: 1,
           zoomOrigin: '50% 58%',
         },
         {
@@ -51,6 +51,17 @@ const sectionContent = isEnglish
           text: 'Urgency, status and actions remain readable so teams can act faster without losing context.',
           image: '/products/platformtour/worklist.png',
           alt: 'Velvoix events worklist',
+          objectPosition: 'center top',
+          baseScale: 0.96,
+          zoomOrigin: '50% 0%',
+        },
+        {
+          id: 'notifications',
+          label: 'Notifications',
+          title: 'New notifications without noise',
+          text: 'A calm notification layer helps teams see quickly what truly needs attention.',
+          image: '/products/platformtour/notifications.png',
+          alt: 'Velvoix notifications view',
           objectPosition: 'center top',
           baseScale: 1,
           zoomOrigin: '50% 0%',
@@ -96,7 +107,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/client-context.png',
           alt: 'Velvoix client context view',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.96,
           zoomOrigin: '50% 0%',
         },
         {
@@ -118,7 +129,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/management.png',
           alt: 'Velvoix management and linking view',
           objectPosition: 'center top',
-          baseScale: 1.08,
+          baseScale: 1,
           zoomOrigin: '50% 22%',
         },
         {
@@ -129,7 +140,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/governance-v2.png',
           alt: 'Velvoix governance and profile view',
           objectPosition: 'center top',
-          baseScale: 1.08,
+          baseScale: 1,
           zoomOrigin: '50% 26%',
         },
       ],
@@ -143,7 +154,7 @@ const sectionContent = isEnglish
         'Een gecureerde tour, geen documentviewer: leesbare desktopweergaven die laten zien hoe Velvoix werkvoorraad, context en operationele controle samenhoudt.',
       cta: 'Open fullscreen platformtour',
       previewLabel: 'Preview',
-      previewTitle: 'Negen gecureerde desktopweergaven',
+      previewTitle: 'Tien gecureerde desktopweergaven',
       previewBody:
         'Van werkvoorraad tot eventdetail, toewijzen, afhandeling, beheer en governance.',
       overlayLabel: 'Platformtour',
@@ -165,7 +176,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/login.png',
           alt: 'Velvoix login scherm',
           objectPosition: 'center center',
-          baseScale: 1.42,
+          baseScale: 1,
           zoomOrigin: '50% 58%',
         },
         {
@@ -175,6 +186,17 @@ const sectionContent = isEnglish
           text: 'Urgentie, status en acties blijven helder zodat teams sneller kunnen handelen zonder contextverlies.',
           image: '/products/platformtour/worklist.png',
           alt: 'Velvoix meldingenlijst',
+          objectPosition: 'center top',
+          baseScale: 1,
+          zoomOrigin: '50% 0%',
+        },
+        {
+          id: 'notifications',
+          label: 'Notificaties',
+          title: 'Nieuwe meldingen zonder ruis',
+          text: 'Een rustige notificatielaag helpt teams snel te zien wat echt aandacht vraagt.',
+          image: '/products/platformtour/notifications.png',
+          alt: 'Velvoix notificaties',
           objectPosition: 'center top',
           baseScale: 1,
           zoomOrigin: '50% 0%',
@@ -221,6 +243,17 @@ const sectionContent = isEnglish
           alt: 'Velvoix cliëntcontext',
         },
         {
+          id: 'client-context',
+          label: 'CliÃ«ntcontext',
+          title: 'Relevante context op Ã©Ã©n plek',
+          text: 'Zorgcontext, privacygrenzen en contactinformatie blijven direct beschikbaar voor veilige opvolging.',
+          image: '/products/platformtour/client-context.png',
+          alt: 'Velvoix cliÃ«ntcontext',
+          objectPosition: 'center top',
+          baseScale: 0.96,
+          zoomOrigin: '50% 0%',
+        },
+        {
           id: 'care-overview',
           label: 'Zorgoverzicht',
           title: 'Managementflow in plaats van losse dashboards',
@@ -239,7 +272,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/management.png',
           alt: 'Velvoix beheer en koppelingen',
           objectPosition: 'center top',
-          baseScale: 1.08,
+          baseScale: 1,
           zoomOrigin: '50% 22%',
         },
         {
@@ -250,7 +283,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/governance-v2.png',
           alt: 'Velvoix governance en kernprofielen',
           objectPosition: 'center top',
-          baseScale: 1.08,
+          baseScale: 1,
           zoomOrigin: '50% 26%',
         },
       ],
@@ -607,6 +640,8 @@ const previewSlide = sectionContent.slides[2];
     transform-origin: center top;
     transition: transform 180ms ease;
     will-change: transform;
+    cursor: default;
+    user-select: none;
   }
 
   [data-platform-tour] .platform-tour-copy {
@@ -809,6 +844,13 @@ const previewSlide = sectionContent.slides[2];
     let activeIndex = 0;
     let lastFocused = null;
     let zoomFactor = 1;
+    let panX = 0;
+    let panY = 0;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let dragOriginX = 0;
+    let dragOriginY = 0;
     const preloaded = new Set();
 
     const focusableSelector =
@@ -829,6 +871,12 @@ const previewSlide = sectionContent.slides[2];
       }
     };
 
+    const syncDragCursor = () => {
+      const image = getActiveImage();
+      if (!(image instanceof HTMLElement)) return;
+      image.style.cursor = zoomFactor > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default';
+    };
+
     const applyZoom = (value) => {
       zoomFactor = Math.max(1, Math.min(2.4, value));
       const image = getActiveImage();
@@ -836,12 +884,17 @@ const previewSlide = sectionContent.slides[2];
       if (image instanceof HTMLElement) {
         image.style.objectPosition = meta.objectPosition ?? 'center top';
         image.style.transformOrigin = meta.zoomOrigin ?? '50% 0%';
-        image.style.transform = `scale(${(meta.baseScale ?? 1) * zoomFactor})`;
+        image.style.transform = `translate(${panX}px, ${panY}px) scale(${(meta.baseScale ?? 1) * zoomFactor})`;
       }
+      syncDragCursor();
       syncZoomValue();
     };
 
-    const resetZoom = () => applyZoom(1);
+    const resetZoom = () => {
+      panX = 0;
+      panY = 0;
+      applyZoom(1);
+    };
 
     const setZoomOriginFromPointer = (event) => {
       const image = getActiveImage();
@@ -852,6 +905,31 @@ const previewSlide = sectionContent.slides[2];
       const x = ((event.clientX - rect.left) / rect.width) * 100;
       const y = ((event.clientY - rect.top) / rect.height) * 100;
       image.style.transformOrigin = `${Math.max(0, Math.min(100, x))}% ${Math.max(0, Math.min(100, y))}%`;
+    };
+
+    const beginDrag = (event) => {
+      if (!(event instanceof PointerEvent) || zoomFactor <= 1) return;
+      const image = getActiveImage();
+      if (!(image instanceof HTMLElement)) return;
+      isDragging = true;
+      dragStartX = event.clientX;
+      dragStartY = event.clientY;
+      dragOriginX = panX;
+      dragOriginY = panY;
+      image.setPointerCapture?.(event.pointerId);
+      syncDragCursor();
+    };
+
+    const updateDrag = (event) => {
+      if (!(event instanceof PointerEvent) || !isDragging || zoomFactor <= 1) return;
+      panX = dragOriginX + (event.clientX - dragStartX);
+      panY = dragOriginY + (event.clientY - dragStartY);
+      applyZoom(zoomFactor);
+    };
+
+    const endDrag = () => {
+      isDragging = false;
+      syncDragCursor();
     };
 
     const preloadSlide = (index) => {
@@ -1027,6 +1105,11 @@ const previewSlide = sectionContent.slides[2];
     zoomResetButton?.addEventListener('click', resetZoom);
 
     const stage = block.querySelector('[data-tour-stage]');
+    stage?.addEventListener('pointerdown', beginDrag);
+    stage?.addEventListener('pointermove', updateDrag);
+    stage?.addEventListener('pointerup', endDrag);
+    stage?.addEventListener('pointercancel', endDrag);
+    stage?.addEventListener('pointerleave', endDrag);
     stage?.addEventListener(
       'wheel',
       (event) => {
