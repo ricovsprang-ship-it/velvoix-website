@@ -16,102 +16,30 @@ const sectionContent = isEnglish
       description:
         'Velvoix does not only surface signals, but brings triage, follow-up, management and reconstruction together in one care-oriented operational environment.',
       supporting:
-        'Not full screens, but readable product fragments that show how operational clarity, explainability and control come together.',
+        'Not full screens, but reconstructed product slices that stay readable while showing more of the desktop dashboard language.',
       domains: [
-        {
-          id: 'event-page',
-          label: 'Event page',
-          kicker: 'Operations',
-          title: 'Scannable event worklist',
-          description: 'Residents, urgency, room and signal remain directly readable in one calm worklist.',
-        },
-        {
-          id: 'handling',
-          label: 'Handling',
-          kicker: 'Follow-up',
-          title: 'Workable action and ownership',
-          description: 'Recommended action, SLA status and handling decisions stay structured and immediately usable.',
-        },
-        {
-          id: 'box-management',
-          label: 'Box management',
-          kicker: 'Control',
-          title: 'Operational control over devices and linking',
-          description: 'Device status, resident linking and room assignment remain manageable without becoming technical noise.',
-        },
-        {
-          id: 'technical-insight',
-          label: 'Technical insight',
-          kicker: 'Governance',
-          title: 'Managed configuration at a high level',
-          description: 'Publication state, active configuration and explainability governance stay visible without exposing internals.',
-        },
-        {
-          id: 'kpi-overview',
-          label: 'KPI overview',
-          kicker: 'Steering',
-          title: 'Operational steering without analytics overload',
-          description: 'A small set of metrics keeps attention on open workload, response performance and escalations.',
-        },
-        {
-          id: 'client-history',
-          label: 'Client history',
-          kicker: 'Context',
-          title: 'Recent signal and follow-up history in one line of sight',
-          description: 'Recent events and follow-up stay readable as a calm history, not as fragmented notes.',
-        },
+        { id: 'event-page', label: 'Event page', kicker: 'Operations', title: 'Event worklist in desktop context', description: 'Queue, filters and detail live together in one scannable operations workspace.' },
+        { id: 'handling', label: 'Handling', kicker: 'Follow-up', title: 'Action flow with ownership and status', description: 'Recommended action, status flow and assignment stay directly workable for teams.' },
+        { id: 'box-management', label: 'Box management', kicker: 'Control', title: 'Management view for linking and device state', description: 'Boxes, rooms and residents stay manageable in one calm control surface.' },
+        { id: 'technical-insight', label: 'Technical insight', kicker: 'Governance', title: 'Governance visible at a high level', description: 'Publication state, active configuration and explainability governance stay visible without leaking internals.' },
+        { id: 'kpi-overview', label: 'KPI overview', kicker: 'Steering', title: 'Operational steering without analytics overload', description: 'A compact KPI workspace keeps attention on workload, SLA and escalations.' },
+        { id: 'client-history', label: 'Client history', kicker: 'Context', title: 'Resident context and event history in one view', description: 'Recent signals, follow-up and pattern context stay connected instead of fragmented.' },
       ],
     }
   : {
       eyebrow: 'Productshowcase',
       title: 'Een gecontroleerd inkijkje in het platform',
       description:
-        'Velvoix toont niet alleen signalen, maar brengt triage, opvolging, beheer en reconstructie samen in één zorggerichte operationele omgeving.',
+        'Velvoix toont niet alleen signalen, maar brengt triage, opvolging, beheer en reconstructie samen in een zorggerichte operationele omgeving.',
       supporting:
-        'Niet volledige schermen, maar leesbare productfragmenten die laten zien hoe operationele duidelijkheid, explainability en beheer samenkomen.',
+        'Geen volledige schermen, maar gereconstrueerde productuitsneden die duidelijker de desktop-dashboardtaal laten zien.',
       domains: [
-        {
-          id: 'event-page',
-          label: 'Eventpagina',
-          kicker: 'Operations',
-          title: 'Scanbare eventwerkvoorraad',
-          description: 'Bewoner, urgentie, kamer en kernsignaal blijven direct leesbaar in één rustige worklist.',
-        },
-        {
-          id: 'handling',
-          label: 'Afhandeling',
-          kicker: 'Follow-up',
-          title: 'Werkbare aanpak en eigenaarschap',
-          description: 'Aanbevolen aanpak, SLA-status en afhandelkeuzes blijven gestructureerd en direct bruikbaar.',
-        },
-        {
-          id: 'box-management',
-          label: 'Boxbeheer',
-          kicker: 'Control',
-          title: 'Operationele controle op devices en koppelingen',
-          description: 'Boxstatus, bewonerkoppeling en kamertoewijzing blijven beheersbaar zonder technische ruis te worden.',
-        },
-        {
-          id: 'technical-insight',
-          label: 'Technisch inzicht',
-          kicker: 'Governance',
-          title: 'Beheerste configuratie op hoofdlijnen',
-          description: 'Publicatiestatus, actieve configuratie en explainability-governance blijven zichtbaar zonder internals prijs te geven.',
-        },
-        {
-          id: 'kpi-overview',
-          label: 'KPI-overzicht',
-          kicker: 'Sturing',
-          title: 'Operationele sturing zonder analytics-overload',
-          description: 'Een kleine set metrics houdt de aandacht op open werkvoorraad, opvolgsnelheid en escalaties.',
-        },
-        {
-          id: 'client-history',
-          label: 'Cliënthistorie',
-          kicker: 'Context',
-          title: 'Recente signalen en opvolging in één zichtlijn',
-          description: 'Gebeurtenissen en opvolging blijven leesbaar als rustige historie, niet als losse notities.',
-        },
+        { id: 'event-page', label: 'Eventpagina', kicker: 'Operations', title: 'Eventwerkvoorraad in desktop-context', description: 'Werkvoorraad, filters en detail leven samen in een scanbare operations-workspace.' },
+        { id: 'handling', label: 'Afhandeling', kicker: 'Follow-up', title: 'Actieflow met eigenaarschap en status', description: 'Aanbevolen aanpak, statusverloop en toewijzing blijven direct werkbaar voor teams.' },
+        { id: 'box-management', label: 'Boxbeheer', kicker: 'Control', title: 'Beheerweergave voor koppeling en devicestatus', description: 'Boxen, kamers en bewoners blijven beheersbaar in een rustig controlescherm.' },
+        { id: 'technical-insight', label: 'Technisch inzicht', kicker: 'Governance', title: 'Governance zichtbaar op hoofdlijnen', description: 'Publicatiestatus, actieve configuratie en explainability-governance blijven zichtbaar zonder internals te lekken.' },
+        { id: 'kpi-overview', label: 'KPI-overzicht', kicker: 'Sturing', title: 'Operationele sturing zonder analytics-overload', description: 'Een compacte KPI-workspace houdt de aandacht op werkvoorraad, SLA en escalaties.' },
+        { id: 'client-history', label: 'Clienthistorie', kicker: 'Context', title: 'Bewonercontext en eventhistorie in een zichtlijn', description: 'Recente signalen, opvolging en patrooncontext blijven verbonden in plaats van versnipperd.' },
       ],
     };
 
@@ -119,18 +47,12 @@ const firstDomain = sectionContent.domains[0];
 ---
 
 <section class="section-block" data-product-showcase>
-  <div class="section-shell grid gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.37fr_0.63fr] lg:items-start">
     <div class="max-w-[31rem]" data-showcase-intro>
-      <SectionIntro
-        eyebrow={sectionContent.eyebrow}
-        title={sectionContent.title}
-        description={sectionContent.description}
-      />
-      <p class="mt-5 max-w-[30rem] text-sm leading-6 text-slate-500">
-        {sectionContent.supporting}
-      </p>
+      <SectionIntro eyebrow={sectionContent.eyebrow} title={sectionContent.title} description={sectionContent.description} />
+      <p class="mt-5 max-w-[30rem] text-sm leading-6 text-slate-500">{sectionContent.supporting}</p>
 
-      <div class="showcase-rail mt-8" role="tablist" aria-label={sectionContent.eyebrow} data-showcase-rail>
+      <div class="showcase-rail mt-8" role="tablist" aria-label={sectionContent.eyebrow}>
         {sectionContent.domains.map((domain, index) => (
           <button
             type="button"
@@ -160,219 +82,283 @@ const firstDomain = sectionContent.domains[0];
           <p class="showcase-description" data-showcase-description>{firstDomain.description}</p>
         </div>
 
-        <div class="showcase-stage" data-showcase-stage>
-          <article class="showcase-panel is-active" data-showcase-panel="event-page">
-            <div class="product-window">
-              <div class="window-toolbar">
-                <span class="window-chip">{isEnglish ? 'Worklist' : 'Werkvoorraad'}</span>
-                <span class="window-meta">{isEnglish ? 'Updated 07:42' : 'Laatste update 07:42'}</span>
+        <div class="showcase-stage">
+          <article class="showcase-panel" data-showcase-panel="event-page">
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'Events' : 'Meldingen'}</span>
+                <div class="workspace-topmeta">
+                  <span>{isEnglish ? 'Current shift' : 'Huidige dienst'}</span>
+                  <span>{isEnglish ? 'Updated 07:42' : 'Laatste update 07:42'}</span>
+                </div>
               </div>
-              <div class="event-list">
-                <article class="event-row is-priority">
-                  <div class="event-row-main">
-                    <div class="event-row-top">
-                      <span class="event-time">07:39</span>
-                      <span class="event-urgency">{isEnglish ? 'Direct' : 'Direct'}</span>
+              <div class="workspace-grid workspace-grid--events">
+                <aside class="workspace-sidebar">
+                  <div class="workspace-sidebar-block">
+                    <div class="workspace-label">{isEnglish ? 'Filters' : 'Filters'}</div>
+                    <div class="workspace-filter-list">
+                      <span class="workspace-filter">{isEnglish ? 'All departments' : 'Alle afdelingen'}</span>
+                      <span class="workspace-filter is-active">{isEnglish ? 'Direct' : 'Direct'}</span>
+                      <span class="workspace-filter">{isEnglish ? 'Open' : 'Open'}</span>
                     </div>
-                    <h4>{isEnglish ? 'Mrs Anna de Vries · Room 01A-001' : 'Mevrouw Anna de Vries · Kamer 01A-001'}</h4>
-                    <p>{isEnglish ? 'Help button was triggered repeatedly within a short interval.' : 'Helpknop is herhaald binnen korte tijd.'}</p>
                   </div>
-                  <div class="event-row-status">
-                    <span>{isEnglish ? 'Open' : 'Open'}</span>
-                    <span>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</span>
+                  <div class="workspace-sidebar-block">
+                    <div class="workspace-label">{isEnglish ? 'Queue' : 'Werkvoorraad'}</div>
+                    <div class="workspace-kpi-stack">
+                      <div><span>{isEnglish ? 'Open' : 'Open'}</span><strong>38</strong></div>
+                      <div><span>{isEnglish ? 'In progress' : 'In behandeling'}</span><strong>11</strong></div>
+                    </div>
                   </div>
-                </article>
+                </aside>
 
-                <article class="event-row">
-                  <div class="event-row-main">
-                    <div class="event-row-top">
-                      <span class="event-time">07:31</span>
-                      <span class="event-urgency is-medium">{isEnglish ? 'Monitor' : 'Volgen'}</span>
+                <section class="workspace-listpanel">
+                  <div class="workspace-table-head">
+                    <span>{isEnglish ? 'Resident' : 'Bewoner'}</span>
+                    <span>{isEnglish ? 'Signal' : 'Signaal'}</span>
+                    <span>{isEnglish ? 'Status' : 'Status'}</span>
+                  </div>
+                  <article class="workspace-table-row is-active">
+                    <div>
+                      <strong>{isEnglish ? 'Mrs Anna de Vries' : 'Mevrouw Anna de Vries'}</strong>
+                      <span>{isEnglish ? 'Room 01A-001' : 'Kamer 01A-001'}</span>
                     </div>
-                    <h4>{isEnglish ? 'Mr Jan Willems · Room 01A-008' : 'Meneer Jan Willems · Kamer 01A-008'}</h4>
-                    <p>{isEnglish ? 'Voice input asks for additional observation.' : 'Spraakinput vraagt aanvullende observatie.'}</p>
-                  </div>
-                  <div class="event-row-status">
-                    <span>{isEnglish ? 'In progress' : 'In behandeling'}</span>
-                    <span>{isEnglish ? 'Assigned' : 'Toegewezen'}</span>
-                  </div>
-                </article>
+                    <div>
+                      <strong>{isEnglish ? 'Repeated help call' : 'Helpoproep herhaald'}</strong>
+                      <span>07:39</span>
+                    </div>
+                    <div class="workspace-status-group">
+                      <span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Direct' : 'Direct'}</span>
+                      <span class="workspace-ring">{isEnglish ? 'Open' : 'Open'}</span>
+                    </div>
+                  </article>
+                  <article class="workspace-table-row">
+                    <div>
+                      <strong>{isEnglish ? 'Mr Jan Willems' : 'Meneer Jan Willems'}</strong>
+                      <span>{isEnglish ? 'Room 01A-008' : 'Kamer 01A-008'}</span>
+                    </div>
+                    <div>
+                      <strong>{isEnglish ? 'Voice input' : 'Spraakinput'}</strong>
+                      <span>07:31</span>
+                    </div>
+                    <div class="workspace-status-group">
+                      <span class="workspace-ring workspace-ring--follow">{isEnglish ? 'Monitor' : 'Volgen'}</span>
+                      <span class="workspace-ring">{isEnglish ? 'Assigned' : 'Toegewezen'}</span>
+                    </div>
+                  </article>
+                  <article class="workspace-table-row">
+                    <div>
+                      <strong>{isEnglish ? 'Mrs Lotte Bakker' : 'Mevrouw Lotte Bakker'}</strong>
+                      <span>{isEnglish ? 'Room 01A-003' : 'Kamer 01A-003'}</span>
+                    </div>
+                    <div>
+                      <strong>{isEnglish ? 'Movement signal outside pattern' : 'Bewegingssignaal buiten patroon'}</strong>
+                      <span>07:18</span>
+                    </div>
+                    <div class="workspace-status-group">
+                      <span class="workspace-ring workspace-ring--today">{isEnglish ? 'Today' : 'Vandaag'}</span>
+                      <span class="workspace-ring">{isEnglish ? 'Visible to team' : 'Team zichtbaar'}</span>
+                    </div>
+                  </article>
+                </section>
 
-                <article class="event-row">
-                  <div class="event-row-main">
-                    <div class="event-row-top">
-                      <span class="event-time">07:18</span>
-                      <span class="event-urgency is-low">{isEnglish ? 'Today' : 'Vandaag'}</span>
-                    </div>
-                    <h4>{isEnglish ? 'Mrs Lotte Bakker · Room 01A-003' : 'Mevrouw Lotte Bakker · Kamer 01A-003'}</h4>
-                    <p>{isEnglish ? 'Movement signal deviates from the normal pattern.' : 'Bewegingssignaal wijkt af van normaal patroon.'}</p>
+                <aside class="workspace-detail">
+                  <div class="workspace-label">{isEnglish ? 'Selected event' : 'Geselecteerd event'}</div>
+                  <h4>{isEnglish ? 'Recommended action' : 'Aanbevolen aanpak'}</h4>
+                  <p>{isEnglish ? 'Go directly to the resident; check the situation.' : 'Ga direct naar bewoner; controleer situatie.'}</p>
+                  <div class="workspace-detail-grid">
+                    <div><span>{isEnglish ? 'Urgency' : 'Urgentie'}</span><strong>{isEnglish ? 'Direct' : 'Direct'}</strong></div>
+                    <div><span>{isEnglish ? 'Why' : 'Waarom'}</span><strong>{isEnglish ? 'Repeated shortly' : 'Herhaald kort na elkaar'}</strong></div>
+                    <div><span>{isEnglish ? 'Owner' : 'Eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
                   </div>
-                  <div class="event-row-status">
-                    <span>{isEnglish ? 'Open' : 'Open'}</span>
-                    <span>{isEnglish ? 'Visible to team' : 'Team zichtbaar'}</span>
-                  </div>
-                </article>
+                </aside>
               </div>
             </div>
           </article>
 
           <article class="showcase-panel" data-showcase-panel="handling" hidden>
-            <div class="product-window">
-              <div class="handling-grid">
-                <section class="handling-main">
-                  <p class="window-chip is-soft">{isEnglish ? 'Recommended action' : 'Aanbevolen aanpak'}</p>
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'Handling' : 'Afhandeling'}</span>
+                <div class="workspace-topmeta"><span>{isEnglish ? 'Action flow' : 'Actieflow'}</span></div>
+              </div>
+              <div class="workspace-grid workspace-grid--handling">
+                <section class="workspace-primary-card">
+                  <div class="workspace-card-head">
+                    <div class="workspace-label">{isEnglish ? 'Explainable triage' : 'Uitlegbare triage'}</div>
+                    <span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Direct' : 'Direct'}</span>
+                  </div>
                   <h4>{isEnglish ? 'Go directly to the resident; check the situation.' : 'Ga direct naar bewoner; controleer situatie.'}</h4>
-                  <p>
-                    {isEnglish
-                      ? 'Explainable triage combines repeat behaviour, context and urgency into one workable next step.'
-                      : 'Uitlegbare triage bundelt herhaling, context en urgentie tot één werkbare vervolgactie.'}
-                  </p>
-                </section>
-
-                <section class="handling-meta">
-                  <div class="meta-pill">
-                    <span>{isEnglish ? 'Urgency' : 'Urgentie'}</span>
-                    <strong>{isEnglish ? 'Direct' : 'Direct'}</strong>
+                  <p>{isEnglish ? 'Repeat behaviour, context and urgency are combined into one workable next step.' : 'Herhaling, context en urgentie worden samengebracht tot een werkbare vervolgactie.'}</p>
+                  <div class="workspace-detail-grid">
+                    <div><span>{isEnglish ? 'SLA' : 'SLA'}</span><strong>{isEnglish ? 'Critical' : 'Kritisch'}</strong></div>
+                    <div><span>{isEnglish ? 'Status' : 'Status'}</span><strong>{isEnglish ? 'Open' : 'Open'}</strong></div>
+                    <div><span>{isEnglish ? 'Owner' : 'Eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
                   </div>
-                  <div class="meta-pill">
-                    <span>{isEnglish ? 'SLA status' : 'SLA-status'}</span>
-                    <strong>{isEnglish ? 'SLA critical' : 'SLA kritisch'}</strong>
-                  </div>
-                  <div class="meta-pill">
-                    <span>Ownership</span>
-                    <strong>{isEnglish ? 'Not yet assigned' : 'Nog niet toegewezen'}</strong>
+                  <div class="workspace-actionbar">
+                    <button type="button" class="workspace-action workspace-action--primary">{isEnglish ? 'Claim' : 'Pak op'}</button>
+                    <button type="button" class="workspace-action">{isEnglish ? 'Assign' : 'Toewijzen'}</button>
+                    <button type="button" class="workspace-action">{isEnglish ? 'Transfer' : 'Overdragen'}</button>
+                    <button type="button" class="workspace-action">{isEnglish ? 'Resolve' : 'Afhandelen'}</button>
                   </div>
                 </section>
 
-                <section class="status-flow">
-                  <span class="status-node is-active">Open</span>
-                  <span class="status-connector"></span>
-                  <span class="status-node">{isEnglish ? 'Claimed' : 'Opgepakt'}</span>
-                  <span class="status-connector"></span>
-                  <span class="status-node">{isEnglish ? 'Resolved' : 'Afgehandeld'}</span>
-                </section>
-
-                <section class="action-row">
-                  <button type="button" class="action-button is-primary">{isEnglish ? 'Claim' : 'Pak op'}</button>
-                  <button type="button" class="action-button">{isEnglish ? 'Assign' : 'Toewijzen'}</button>
-                  <button type="button" class="action-button">{isEnglish ? 'Transfer' : 'Overdragen'}</button>
-                  <button type="button" class="action-button">{isEnglish ? 'Resolve' : 'Afhandelen'}</button>
-                </section>
+                <aside class="workspace-sidecolumn">
+                  <section class="workspace-sidecard">
+                    <div class="workspace-label">{isEnglish ? 'Status flow' : 'Statusverloop'}</div>
+                    <div class="workspace-flowline">
+                      <span class="workspace-flowstep is-active">{isEnglish ? 'Open' : 'Open'}</span>
+                      <span class="workspace-flowstep">{isEnglish ? 'Claimed' : 'Opgepakt'}</span>
+                      <span class="workspace-flowstep">{isEnglish ? 'Resolved' : 'Afgehandeld'}</span>
+                    </div>
+                  </section>
+                  <section class="workspace-sidecard">
+                    <div class="workspace-label">{isEnglish ? 'Assignment' : 'Toewijzing'}</div>
+                    <div class="workspace-minirows">
+                      <div><span>{isEnglish ? 'Team' : 'Team'}</span><strong>{isEnglish ? 'Somatic care' : 'Somatiek'}</strong></div>
+                      <div><span>{isEnglish ? 'Current owner' : 'Huidige eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
+                    </div>
+                  </section>
+                </aside>
               </div>
             </div>
           </article>
 
           <article class="showcase-panel" data-showcase-panel="box-management" hidden>
-            <div class="product-window">
-              <div class="window-toolbar">
-                <span class="window-chip">{isEnglish ? 'Box management' : 'Boxbeheer'}</span>
-                <button type="button" class="inline-tool">{isEnglish ? 'Add box' : 'Box toevoegen'}</button>
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'Box management' : 'Boxbeheer'}</span>
+                <div class="workspace-topmeta">
+                  <button type="button" class="workspace-inline-action">{isEnglish ? 'Add box' : 'Box toevoegen'}</button>
+                  <button type="button" class="workspace-inline-action">{isEnglish ? 'Bulk link' : 'Bulk koppelen'}</button>
+                </div>
               </div>
-
-              <div class="box-grid">
-                <article class="box-row">
-                  <div>
-                    <h4>BX-01A-004</h4>
-                    <p>{isEnglish ? 'Linked to DEMO-ROOM-01A-004 · Mrs L. Bakker' : 'Gekoppeld aan DEMO-ROOM-01A-004 · Mevrouw L. Bakker'}</p>
+              <div class="workspace-grid workspace-grid--management">
+                <section class="workspace-listpanel">
+                  <div class="workspace-table-head">
+                    <span>{isEnglish ? 'Box' : 'Box'}</span>
+                    <span>{isEnglish ? 'Resident / room' : 'Bewoner / kamer'}</span>
+                    <span>{isEnglish ? 'State' : 'Status'}</span>
                   </div>
-                  <div class="box-state is-online">{isEnglish ? 'Online' : 'Online'}</div>
-                </article>
+                  <article class="workspace-table-row is-active">
+                    <div><strong>BX-01A-004</strong><span>Demo floor 01A</span></div>
+                    <div><strong>{isEnglish ? 'Mrs L. Bakker' : 'Mevrouw L. Bakker'}</strong><span>{isEnglish ? 'Room 01A-004' : 'Kamer 01A-004'}</span></div>
+                    <div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Online' : 'Online'}</span></div>
+                  </article>
+                  <article class="workspace-table-row">
+                    <div><strong>BX-01A-006</strong><span>Demo floor 01A</span></div>
+                    <div><strong>{isEnglish ? 'Available' : 'Beschikbaar'}</strong><span>{isEnglish ? 'Living room slot' : 'Woonkamerslot'}</span></div>
+                    <div class="workspace-status-group"><span class="workspace-ring workspace-ring--today">{isEnglish ? 'Available' : 'Beschikbaar'}</span></div>
+                  </article>
+                  <article class="workspace-table-row">
+                    <div><strong>BX-01A-009</strong><span>Demo floor 01A</span></div>
+                    <div><strong>{isEnglish ? 'Check required' : 'Controle nodig'}</strong><span>{isEnglish ? 'Last seen 06:54' : 'Laatst gezien 06:54'}</span></div>
+                    <div class="workspace-status-group"><span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Offline' : 'Offline'}</span></div>
+                  </article>
+                </section>
 
-                <article class="box-row">
-                  <div>
-                    <h4>BX-01A-006</h4>
-                    <p>{isEnglish ? 'Available for linking · Living room' : 'Beschikbaar voor koppeling · Woonkamer'}</p>
+                <aside class="workspace-detail">
+                  <div class="workspace-label">{isEnglish ? 'Link detail' : 'Koppeldetail'}</div>
+                  <h4>BX-01A-004</h4>
+                  <div class="workspace-detail-grid">
+                    <div><span>{isEnglish ? 'Resident' : 'Bewoner'}</span><strong>{isEnglish ? 'Mrs L. Bakker' : 'Mevrouw L. Bakker'}</strong></div>
+                    <div><span>{isEnglish ? 'Room' : 'Kamer'}</span><strong>01A-004</strong></div>
+                    <div><span>{isEnglish ? 'Last check-in' : 'Laatste check-in'}</span><strong>07:11</strong></div>
                   </div>
-                  <div class="box-state is-idle">{isEnglish ? 'Available' : 'Beschikbaar'}</div>
-                </article>
-
-                <article class="box-row">
-                  <div>
-                    <h4>BX-01A-009</h4>
-                    <p>{isEnglish ? 'Check required · Last check-in 06:54' : 'Controle nodig · Laatste check-in 06:54'}</p>
-                  </div>
-                  <div class="box-state is-offline">{isEnglish ? 'Offline' : 'Offline'}</div>
-                </article>
+                </aside>
               </div>
             </div>
           </article>
 
           <article class="showcase-panel" data-showcase-panel="technical-insight" hidden>
-            <div class="product-window">
-              <div class="technical-stack">
-                <article class="technical-card">
-                  <p class="window-chip is-soft">{isEnglish ? 'Active configuration' : 'Actieve configuratie'}</p>
-                  <h4>{isEnglish ? 'Demo care location · Production' : 'Zorglocatie Demo · Productie'}</h4>
-                  <p>{isEnglish ? 'Latest publication 07:10 · controlled release for operations.' : 'Laatste publicatie 07:10 · gecontroleerd vrijgegeven voor operations.'}</p>
-                </article>
-
-                <article class="technical-card">
-                  <p class="window-chip is-soft">Explainability governance</p>
-                  <h4>{isEnglish ? 'Triage explanation active' : 'Triage-uitleg actief'}</h4>
-                  <p>{isEnglish ? 'Rationale and care-language output are publishable and visible for follow-up.' : 'Onderbouwing en zorgtaal zijn publiceerbaar en zichtbaar voor opvolging.'}</p>
-                </article>
-
-                <article class="technical-card">
-                  <p class="window-chip is-soft">{isEnglish ? 'Governance state' : 'Beheerstatus'}</p>
-                  <h4>{isEnglish ? 'Controllable without internals' : 'Controleerbaar zonder internals'}</h4>
-                  <p>{isEnglish ? 'Publication state, version control and management context stay visible at a high level.' : 'Publicatiestatus, versiecontrole en beheercontext zijn zichtbaar op hoofdlijnen.'}</p>
-                </article>
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'Technical insight' : 'Technisch inzicht'}</span>
+                <div class="workspace-topmeta"><span>{isEnglish ? 'High-level governance only' : 'Alleen hoofdlijnen'}</span></div>
+              </div>
+              <div class="workspace-grid workspace-grid--technical">
+                <section class="workspace-primary-card">
+                  <div class="workspace-metricrow">
+                    <div class="workspace-metriccard"><span>{isEnglish ? 'Publication' : 'Publicatie'}</span><strong>{isEnglish ? 'Active' : 'Actief'}</strong></div>
+                    <div class="workspace-metriccard"><span>{isEnglish ? 'Explainability' : 'Explainability'}</span><strong>{isEnglish ? 'Visible' : 'Zichtbaar'}</strong></div>
+                  </div>
+                  <div class="workspace-table-head">
+                    <span>{isEnglish ? 'Control area' : 'Beheerlaag'}</span>
+                    <span>{isEnglish ? 'State' : 'Status'}</span>
+                  </div>
+                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Active configuration' : 'Actieve configuratie'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Published' : 'Gepubliceerd'}</span></div></article>
+                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Triage governance' : 'Triagegovernance'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Managed' : 'Beheerst'}</span></div></article>
+                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Version control' : 'Versiebeheer'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Traceable' : 'Herleidbaar'}</span></div></article>
+                </section>
               </div>
             </div>
           </article>
 
           <article class="showcase-panel" data-showcase-panel="kpi-overview" hidden>
-            <div class="product-window">
-              <div class="kpi-grid">
-                <article class="kpi-card">
-                  <span>{isEnglish ? 'Open events' : 'Open events'}</span>
-                  <strong>38</strong>
-                  <p>{isEnglish ? 'currently visible in team worklist' : 'actueel zichtbaar in teamwerkvoorraad'}</p>
-                </article>
-                <article class="kpi-card">
-                  <span>{isEnglish ? 'Avg. response time' : 'Gem. opvolgtijd'}</span>
-                  <strong>4m 12s</strong>
-                  <p>{isEnglish ? 'from open to first action' : 'vanaf open naar eerste actie'}</p>
-                </article>
-                <article class="kpi-card">
-                  <span>{isEnglish ? 'Picked up within SLA' : 'Binnen SLA opgepakt'}</span>
-                  <strong>94%</strong>
-                  <p>{isEnglish ? 'for direct events this shift' : 'voor directe meldingen deze dienst'}</p>
-                </article>
-                <article class="kpi-card">
-                  <span>{isEnglish ? 'Recent escalations' : 'Recente escalaties'}</span>
-                  <strong>3</strong>
-                  <p>{isEnglish ? 'visible for operational steering' : 'zichtbaar voor operationele bijsturing'}</p>
-                </article>
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'KPI overview' : 'KPI-overzicht'}</span>
+                <div class="workspace-topmeta"><span>{isEnglish ? 'Operational steering' : 'Operationele sturing'}</span></div>
+              </div>
+              <div class="workspace-grid workspace-grid--kpi">
+                <section class="workspace-metricrow">
+                  <article class="workspace-metriccard"><span>{isEnglish ? 'Open events' : 'Open events'}</span><strong>38</strong></article>
+                  <article class="workspace-metriccard"><span>{isEnglish ? 'Avg. response time' : 'Gem. opvolgtijd'}</span><strong>4m 12s</strong></article>
+                  <article class="workspace-metriccard"><span>{isEnglish ? 'Within SLA' : 'Binnen SLA'}</span><strong>94%</strong></article>
+                  <article class="workspace-metriccard"><span>{isEnglish ? 'Escalations' : 'Escalaties'}</span><strong>3</strong></article>
+                </section>
+                <section class="workspace-grid workspace-grid--kpi-detail">
+                  <div class="workspace-sidecard">
+                    <div class="workspace-label">{isEnglish ? 'Current workload' : 'Huidige werkvoorraad'}</div>
+                    <div class="workspace-minirows">
+                      <div><span>{isEnglish ? 'Direct' : 'Direct'}</span><strong>12</strong></div>
+                      <div><span>{isEnglish ? 'In progress' : 'In behandeling'}</span><strong>11</strong></div>
+                      <div><span>{isEnglish ? 'Escalated' : 'Geescaleerd'}</span><strong>3</strong></div>
+                    </div>
+                  </div>
+                  <div class="workspace-sidecard">
+                    <div class="workspace-label">{isEnglish ? 'Follow-up quality' : 'Opvolgkwaliteit'}</div>
+                    <div class="workspace-minirows">
+                      <div><span>{isEnglish ? 'Claimed in SLA' : 'Op tijd opgepakt'}</span><strong>94%</strong></div>
+                      <div><span>{isEnglish ? 'Avg. handoff' : 'Gem. overdracht'}</span><strong>2m 08s</strong></div>
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
           </article>
 
           <article class="showcase-panel" data-showcase-panel="client-history" hidden>
-            <div class="product-window">
-              <div class="history-stack">
-                <article class="history-row">
-                  <span class="history-time">07:39</span>
-                  <div>
-                    <h4>{isEnglish ? 'Repeated help call' : 'Helpoproep herhaald'}</h4>
-                    <p>{isEnglish ? 'Claimed directly · resident visited · follow-up recorded' : 'Direct opgepakt · bewoner bezocht · vervolg geregistreerd'}</p>
+            <div class="product-workspace">
+              <div class="workspace-topbar">
+                <span class="workspace-chip">{isEnglish ? 'Client history' : 'Clienthistorie'}</span>
+                <div class="workspace-topmeta"><span>{isEnglish ? 'Resident context' : 'Bewonercontext'}</span></div>
+              </div>
+              <div class="workspace-grid workspace-grid--history">
+                <section class="workspace-primary-card">
+                  <div class="workspace-card-head">
+                    <div>
+                      <h4>{isEnglish ? 'Mrs Anna de Vries' : 'Mevrouw Anna de Vries'}</h4>
+                      <p>{isEnglish ? 'Room 01A-001 - Somatic care' : 'Kamer 01A-001 - Somatiek'}</p>
+                    </div>
+                    <div class="workspace-status-group">
+                      <span class="workspace-ring">{isEnglish ? '2 open' : '2 open'}</span>
+                    </div>
                   </div>
-                </article>
-                <article class="history-row">
-                  <span class="history-time">06:12</span>
-                  <div>
-                    <h4>{isEnglish ? 'Voice input: restlessness reported' : 'Spraakinput: onrust gemeld'}</h4>
-                    <p>{isEnglish ? 'Set to in progress · observation added to resident context' : 'In behandeling gezet · observatie toegevoegd aan dossiercontext'}</p>
+                  <div class="history-timeline">
+                    <article class="history-node"><span>07:39</span><div><strong>{isEnglish ? 'Repeated help call' : 'Helpoproep herhaald'}</strong><p>{isEnglish ? 'Claimed directly - resident visited - follow-up recorded' : 'Direct opgepakt - bewoner bezocht - vervolg geregistreerd'}</p></div></article>
+                    <article class="history-node"><span>06:12</span><div><strong>{isEnglish ? 'Voice input: restlessness reported' : 'Spraakinput: onrust gemeld'}</strong><p>{isEnglish ? 'Set to in progress - observation added to resident context' : 'In behandeling gezet - observatie toegevoegd aan dossiercontext'}</p></div></article>
+                    <article class="history-node"><span>{isEnglish ? 'Yesterday' : 'Gisteren'}</span><div><strong>{isEnglish ? 'Movement signal outside pattern' : 'Bewegingssignaal buiten patroon'}</strong><p>{isEnglish ? 'Monitored without escalation - pattern history updated' : 'Gevolgd zonder escalatie - patroonhistorie bijgewerkt'}</p></div></article>
                   </div>
-                </article>
+                </section>
 
-                <article class="history-row">
-                  <span class="history-time">{isEnglish ? 'Yesterday' : 'Gisteren'}</span>
-                  <div>
-                    <h4>{isEnglish ? 'Movement signal outside pattern' : 'Bewegingssignaal buiten patroon'}</h4>
-                    <p>{isEnglish ? 'Monitored without escalation · pattern history updated' : 'Gevolgd zonder escalatie · patroonhistorie bijgewerkt'}</p>
+                <aside class="workspace-sidecard">
+                  <div class="workspace-label">{isEnglish ? 'Pattern context' : 'Patrooncontext'}</div>
+                  <div class="workspace-minirows">
+                    <div><span>{isEnglish ? 'Recent signal type' : 'Recent signaaltype'}</span><strong>{isEnglish ? 'Help button' : 'Helpknop'}</strong></div>
+                    <div><span>{isEnglish ? 'Follow-up state' : 'Opvolgstatus'}</span><strong>{isEnglish ? 'Stable' : 'Stabiel'}</strong></div>
+                    <div><span>{isEnglish ? 'Last check-in' : 'Laatste check-in'}</span><strong>07:11</strong></div>
                   </div>
-                </article>
+                </aside>
               </div>
             </div>
           </article>
@@ -383,475 +369,168 @@ const firstDomain = sectionContent.domains[0];
 </section>
 
 <style>
-  [data-product-showcase] .showcase-rail {
-    display: grid;
-    gap: 0.6rem;
-  }
-
+  [data-product-showcase] .showcase-rail { display: grid; gap: 0.6rem; }
   [data-product-showcase] .showcase-rail-item {
-    display: grid;
-    gap: 0.14rem;
-    width: 100%;
-    padding: 0.95rem 1rem;
-    text-align: left;
-    border-radius: 1rem;
-    border: 1px solid rgba(226, 232, 240, 0.86);
-    background: rgba(255, 255, 255, 0.7);
-    transition:
-      border-color 160ms ease,
-      background-color 160ms ease,
-      box-shadow 160ms ease,
-      transform 160ms ease;
+    display: grid; gap: 0.14rem; width: 100%; padding: 0.95rem 1rem; text-align: left;
+    border-radius: 0.95rem; border: 1px solid rgba(214,223,233,0.95); background: rgba(255,255,255,0.74);
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
   }
-
   [data-product-showcase] .showcase-rail-item:hover,
   [data-product-showcase] .showcase-rail-item:focus-visible,
   [data-product-showcase] .showcase-rail-item.is-active {
-    border-color: rgba(31, 53, 87, 0.18);
-    background: rgba(248, 251, 252, 0.96);
-    box-shadow: 0 10px 22px rgba(31, 53, 87, 0.06);
-    outline: none;
+    border-color: rgba(31,53,87,0.18); background: rgba(248,251,252,0.98); box-shadow: 0 8px 18px rgba(31,53,87,0.05); outline: none;
   }
-
-  [data-product-showcase] .showcase-rail-item.is-active {
-    transform: translateX(3px);
-  }
-
-  [data-product-showcase] .showcase-rail-label {
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: rgb(15 23 42);
-  }
-
-  [data-product-showcase] .showcase-rail-kicker {
-    font-size: 0.73rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgb(100 116 139);
-  }
-
-  [data-product-showcase] .showcase-shell {
-    min-width: 0;
-  }
-
+  [data-product-showcase] .showcase-rail-item.is-active { transform: translateX(3px); }
+  [data-product-showcase] .showcase-rail-label { font-size: 0.98rem; font-weight: 600; color: rgb(15 23 42); }
+  [data-product-showcase] .showcase-rail-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(100 116 139); }
+  [data-product-showcase] .showcase-shell { min-width: 0; }
   [data-product-showcase] .showcase-frame {
-    border-radius: 1.9rem;
-    border: 1px solid rgba(226, 232, 240, 0.86);
-    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(240, 246, 248, 0.96));
-    box-shadow: 0 18px 36px rgba(31, 53, 87, 0.06);
-    overflow: hidden;
+    border-radius: 1.55rem; border: 1px solid rgba(221,228,236,0.96);
+    background: linear-gradient(180deg, rgba(248,250,252,0.99), rgba(241,246,249,0.96));
+    box-shadow: 0 16px 34px rgba(31,53,87,0.06); overflow: hidden;
   }
-
   [data-product-showcase] .showcase-frame-head {
-    display: grid;
-    gap: 0.9rem;
-    padding: 1.4rem 1.4rem 1.2rem;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    display: grid; gap: 0.9rem; padding: 1.35rem 1.35rem 1.1rem; border-bottom: 1px solid rgba(223,230,238,0.88);
   }
+  [data-product-showcase] .showcase-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(84 101 128); }
+  [data-product-showcase] .showcase-title { margin-top: 0.3rem; font-size: 1.34rem; font-weight: 700; letter-spacing: -0.03em; color: rgb(15 23 42); }
+  [data-product-showcase] .showcase-description { max-width: 42rem; font-size: 0.94rem; line-height: 1.7; color: rgb(71 85 105); }
+  [data-product-showcase] .showcase-stage { position: relative; min-height: 31rem; padding: 1.25rem; }
+  [data-product-showcase] .showcase-panel { position: absolute; inset: 1.25rem; }
 
-  [data-product-showcase] .showcase-kicker {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgb(84 101 128);
+  [data-product-showcase] .product-workspace {
+    height: 100%; border-radius: 1.1rem; border: 1px solid rgba(216,224,232,0.96);
+    background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(247,250,252,0.98));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.72); overflow: hidden;
   }
+  [data-product-showcase] .dashboard-window { color: rgb(30 41 59); }
+  [data-product-showcase] .workspace-topbar {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(223,230,238,0.9); background: rgba(248,250,252,0.96);
+  }
+  [data-product-showcase] .workspace-chip {
+    display: inline-flex; align-items: center; min-height: 1.72rem; padding: 0.18rem 0.58rem;
+    border-radius: 0.6rem; border: 1px solid rgba(211,220,229,0.96); background: #fff;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(71 85 105);
+  }
+  [data-product-showcase] .workspace-topmeta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.75rem; font-size: 0.8rem; color: rgb(100 116 139); }
+  [data-product-showcase] .workspace-inline-action,
+  [data-product-showcase] .workspace-action {
+    min-height: 2rem; padding: 0.45rem 0.78rem; border-radius: 0.72rem;
+    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
+    font-size: 0.82rem; font-weight: 600; color: rgb(30 41 59);
+  }
+  [data-product-showcase] .workspace-action--primary { background: rgb(22 63 103); border-color: rgba(22,63,103,0.24); color: #fff; }
+  [data-product-showcase] .workspace-grid { display: grid; gap: 0.95rem; padding: 1rem; }
+  [data-product-showcase] .workspace-grid--events { grid-template-columns: 0.9fr 1.6fr 1.05fr; }
+  [data-product-showcase] .workspace-grid--handling { grid-template-columns: 1.5fr 0.95fr; }
+  [data-product-showcase] .workspace-grid--management { grid-template-columns: 1.55fr 0.95fr; }
+  [data-product-showcase] .workspace-grid--technical,
+  [data-product-showcase] .workspace-grid--history,
+  [data-product-showcase] .workspace-grid--kpi { grid-template-columns: 1fr; }
+  [data-product-showcase] .workspace-grid--kpi-detail { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
 
-  [data-product-showcase] .showcase-title {
-    margin-top: 0.35rem;
-    font-size: 1.38rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: rgb(15 23 42);
+  [data-product-showcase] .workspace-sidebar,
+  [data-product-showcase] .workspace-listpanel,
+  [data-product-showcase] .workspace-detail,
+  [data-product-showcase] .workspace-primary-card,
+  [data-product-showcase] .workspace-sidecard {
+    border: 1px solid rgba(223,230,238,0.94); border-radius: 0.95rem; background: rgba(255,255,255,0.98);
   }
+  [data-product-showcase] .workspace-sidebar,
+  [data-product-showcase] .workspace-detail,
+  [data-product-showcase] .workspace-primary-card,
+  [data-product-showcase] .workspace-sidecard { padding: 0.95rem; }
+  [data-product-showcase] .workspace-listpanel { overflow: hidden; }
+  [data-product-showcase] .workspace-sidebar-block + .workspace-sidebar-block { margin-top: 0.95rem; padding-top: 0.95rem; border-top: 1px solid rgba(229,235,241,0.9); }
+  [data-product-showcase] .workspace-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(100 116 139); }
+  [data-product-showcase] .workspace-filter-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.7rem; }
+  [data-product-showcase] .workspace-filter {
+    display: inline-flex; align-items: center; min-height: 1.7rem; padding: 0.14rem 0.56rem;
+    border-radius: 0.55rem; border: 1px solid rgba(220,227,235,0.95); background: rgba(248,250,252,0.96);
+    font-size: 0.74rem; font-weight: 600; color: rgb(71 85 105);
+  }
+  [data-product-showcase] .workspace-filter.is-active { border-color: rgba(30,64,175,0.18); color: rgb(30 64 175); }
+  [data-product-showcase] .workspace-kpi-stack { display: grid; gap: 0.7rem; margin-top: 0.75rem; }
+  [data-product-showcase] .workspace-kpi-stack div,
+  [data-product-showcase] .workspace-metriccard {
+    padding: 0.8rem 0.9rem; border: 1px solid rgba(223,230,238,0.92); border-radius: 0.82rem; background: rgba(248,250,252,0.94);
+  }
+  [data-product-showcase] .workspace-kpi-stack span,
+  [data-product-showcase] .workspace-metriccard span,
+  [data-product-showcase] .workspace-detail-grid span,
+  [data-product-showcase] .workspace-minirows span { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(100 116 139); }
+  [data-product-showcase] .workspace-kpi-stack strong,
+  [data-product-showcase] .workspace-metriccard strong,
+  [data-product-showcase] .workspace-detail-grid strong,
+  [data-product-showcase] .workspace-minirows strong { display: block; margin-top: 0.38rem; font-size: 0.96rem; font-weight: 600; color: rgb(15 23 42); }
 
-  [data-product-showcase] .showcase-description {
-    max-width: 42rem;
-    font-size: 0.94rem;
-    line-height: 1.7;
-    color: rgb(71 85 105);
+  [data-product-showcase] .workspace-table-head,
+  [data-product-showcase] .workspace-table-row {
+    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.15fr) minmax(0, 0.9fr); gap: 0.8rem; align-items: center;
   }
+  [data-product-showcase] .workspace-table-head {
+    padding: 0.78rem 0.95rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgb(100 116 139); background: rgba(248,250,252,0.9); border-bottom: 1px solid rgba(223,230,238,0.9);
+  }
+  [data-product-showcase] .workspace-table-row { padding: 0.9rem 0.95rem; border-top: 1px solid rgba(235,239,244,0.86); }
+  [data-product-showcase] .workspace-table-row.is-active { background: rgba(248,250,252,0.92); }
+  [data-product-showcase] .workspace-table-row strong,
+  [data-product-showcase] .history-node strong { display: block; font-size: 0.92rem; font-weight: 600; color: rgb(15 23 42); }
+  [data-product-showcase] .workspace-table-row span,
+  [data-product-showcase] .history-node p,
+  [data-product-showcase] .workspace-primary-card p,
+  [data-product-showcase] .workspace-detail p { font-size: 0.84rem; line-height: 1.55; color: rgb(71 85 105); }
+  [data-product-showcase] .workspace-status-group { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: flex-start; }
+  [data-product-showcase] .workspace-ring {
+    display: inline-flex; align-items: center; min-height: 1.72rem; padding: 0.12rem 0.56rem;
+    border-radius: 999px; border: 1px solid rgba(216,224,232,0.95); background: rgba(248,250,252,0.96);
+    font-size: 0.73rem; font-weight: 700; color: rgb(51 65 85);
+  }
+  [data-product-showcase] .workspace-ring--urgent { border-color: rgba(244, 172, 79, 0.32); background: rgba(255,247,236,0.96); color: rgb(168 111 21); }
+  [data-product-showcase] .workspace-ring--follow { border-color: rgba(25,130,121,0.18); background: rgba(244,250,249,0.96); color: rgb(17 94 89); }
+  [data-product-showcase] .workspace-ring--today { border-color: rgba(191,219,254,0.78); background: rgba(239,246,255,0.96); color: rgb(30 64 175); }
 
-  [data-product-showcase] .showcase-stage {
-    position: relative;
-    min-height: 28rem;
-    padding: 1.35rem;
+  [data-product-showcase] .workspace-detail h4,
+  [data-product-showcase] .workspace-primary-card h4,
+  [data-product-showcase] .workspace-card-head h4 { margin-top: 0.55rem; font-size: 1.02rem; font-weight: 600; letter-spacing: -0.02em; color: rgb(15 23 42); }
+  [data-product-showcase] .workspace-detail-grid { display: grid; gap: 0.65rem; margin-top: 0.85rem; }
+  [data-product-showcase] .workspace-actionbar { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+  [data-product-showcase] .workspace-sidecolumn { display: grid; gap: 0.95rem; }
+  [data-product-showcase] .workspace-flowline { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.7rem; }
+  [data-product-showcase] .workspace-flowstep {
+    display: inline-flex; align-items: center; min-height: 1.8rem; padding: 0.18rem 0.62rem; border-radius: 0.7rem;
+    border: 1px solid rgba(216,224,232,0.95); background: rgba(248,250,252,0.98); font-size: 0.78rem; font-weight: 600; color: rgb(51 65 85);
   }
-
-  [data-product-showcase] .showcase-panel {
-    position: absolute;
-    inset: 1.35rem;
-  }
-
-  [data-product-showcase] .product-window {
-    height: 100%;
-    border-radius: 1.45rem;
-    border: 1px solid rgba(226, 232, 240, 0.92);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 252, 0.98));
-    box-shadow: 0 12px 30px rgba(31, 53, 87, 0.06);
-    padding: 1.1rem;
-  }
-
-  [data-product-showcase] .window-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  [data-product-showcase] .window-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 1.9rem;
-    padding: 0.22rem 0.72rem;
-    border-radius: 0.78rem;
-    border: 1px solid rgba(205, 215, 227, 0.9);
-    background: rgba(248, 250, 252, 0.95);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(71 85 105);
-  }
-
-  [data-product-showcase] .window-chip.is-soft {
-    border-color: rgba(25, 130, 121, 0.16);
-    background: rgba(244, 250, 249, 0.96);
-    color: rgb(56 88 101);
-  }
-
-  [data-product-showcase] .window-meta {
-    font-size: 0.84rem;
-    color: rgb(100 116 139);
-  }
-
-  [data-product-showcase] .event-list,
-  [data-product-showcase] .box-grid,
-  [data-product-showcase] .technical-stack,
-  [data-product-showcase] .history-stack {
-    display: grid;
-    gap: 0.78rem;
-  }
-
-  [data-product-showcase] .event-row,
-  [data-product-showcase] .box-row,
-  [data-product-showcase] .technical-card,
-  [data-product-showcase] .history-row {
-    border-radius: 1.1rem;
-    border: 1px solid rgba(226, 232, 240, 0.88);
-    background: rgba(255, 255, 255, 0.97);
-    padding: 0.95rem 1rem;
-  }
-
-  [data-product-showcase] .event-row {
-    display: grid;
-    gap: 0.85rem;
-  }
-
-  [data-product-showcase] .event-row.is-priority {
-    border-color: rgba(25, 130, 121, 0.18);
-    box-shadow: 0 10px 22px rgba(25, 130, 121, 0.06);
-  }
-
-  [data-product-showcase] .event-row-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  [data-product-showcase] .event-time {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: rgb(100 116 139);
-  }
-
-  [data-product-showcase] .event-urgency {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 1.65rem;
-    padding: 0.12rem 0.58rem;
-    border-radius: 0.72rem;
-    border: 1px solid rgba(241, 169, 79, 0.3);
-    background: rgba(255, 247, 236, 0.96);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(168 111 21);
-  }
-
-  [data-product-showcase] .event-urgency.is-medium {
-    border-color: rgba(25, 130, 121, 0.18);
-    background: rgba(244, 250, 249, 0.96);
-    color: rgb(17 94 89);
-  }
-
-  [data-product-showcase] .event-urgency.is-low {
-    border-color: rgba(191, 219, 254, 0.65);
-    background: rgba(239, 246, 255, 0.96);
-    color: rgb(30 64 175);
-  }
-
-  [data-product-showcase] .event-row h4,
-  [data-product-showcase] .box-row h4,
-  [data-product-showcase] .technical-card h4,
-  [data-product-showcase] .history-row h4,
-  [data-product-showcase] .handling-main h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: rgb(15 23 42);
-  }
-
-  [data-product-showcase] .event-row p,
-  [data-product-showcase] .box-row p,
-  [data-product-showcase] .technical-card p,
-  [data-product-showcase] .history-row p,
-  [data-product-showcase] .handling-main p,
-  [data-product-showcase] .kpi-card p {
-    margin-top: 0.25rem;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: rgb(71 85 105);
-  }
-
-  [data-product-showcase] .event-row-status {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  [data-product-showcase] .event-row-status span,
-  [data-product-showcase] .box-state,
-  [data-product-showcase] .meta-pill strong {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 1.8rem;
-    padding: 0.12rem 0.65rem;
-    border-radius: 0.72rem;
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    background: rgba(248, 250, 252, 0.98);
-    font-size: 0.76rem;
-    font-weight: 700;
-    color: rgb(51 65 85);
-  }
-
-  [data-product-showcase] .handling-grid {
-    display: grid;
-    gap: 1rem;
-  }
-
-  [data-product-showcase] .handling-main,
-  [data-product-showcase] .handling-meta,
-  [data-product-showcase] .status-flow,
-  [data-product-showcase] .action-row {
-    border-radius: 1.1rem;
-    border: 1px solid rgba(226, 232, 240, 0.88);
-    background: rgba(255, 255, 255, 0.97);
-    padding: 1rem;
-  }
-
-  [data-product-showcase] .handling-main {
-    border-color: rgba(25, 130, 121, 0.18);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(244, 249, 248, 0.96));
-  }
-
-  [data-product-showcase] .handling-meta {
-    display: grid;
-    gap: 0.7rem;
-  }
-
-  [data-product-showcase] .meta-pill {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  [data-product-showcase] .meta-pill span {
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(100 116 139);
-  }
-
-  [data-product-showcase] .status-flow {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    overflow-x: auto;
-  }
-
-  [data-product-showcase] .status-node {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2rem;
-    padding: 0.22rem 0.78rem;
-    border-radius: 0.82rem;
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    background: rgba(248, 250, 252, 0.98);
-    font-size: 0.82rem;
-    font-weight: 600;
-    white-space: nowrap;
-    color: rgb(51 65 85);
-  }
-
-  [data-product-showcase] .status-node.is-active {
-    border-color: rgba(25, 130, 121, 0.24);
-    background: rgba(244, 250, 249, 0.98);
-    color: rgb(15 118 110);
-  }
-
-  [data-product-showcase] .status-connector {
-    width: 1.4rem;
-    height: 1px;
-    background: rgba(203, 213, 225, 0.95);
-    flex: 0 0 auto;
-  }
-
-  [data-product-showcase] .action-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.65rem;
-  }
-
-  [data-product-showcase] .action-button,
-  [data-product-showcase] .inline-tool {
-    min-height: 2.45rem;
-    padding: 0.55rem 0.95rem;
-    border-radius: 0.85rem;
-    border: 1px solid rgba(203, 213, 225, 0.92);
-    background: rgba(255, 255, 255, 0.96);
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: rgb(30 41 59);
-  }
-
-  [data-product-showcase] .action-button.is-primary {
-    border-color: rgba(31, 53, 87, 0.12);
-    background: rgb(31 53 87);
-    color: white;
-  }
-
-  [data-product-showcase] .box-row,
-  [data-product-showcase] .history-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  [data-product-showcase] .box-state.is-online {
-    color: rgb(15 118 110);
-  }
-
-  [data-product-showcase] .box-state.is-idle {
-    color: rgb(30 64 175);
-  }
-
-  [data-product-showcase] .box-state.is-offline {
-    color: rgb(180 83 9);
-  }
-
-  [data-product-showcase] .technical-stack {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
-  [data-product-showcase] .kpi-grid {
-    display: grid;
-    gap: 0.8rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  [data-product-showcase] .kpi-card {
-    border-radius: 1.1rem;
-    border: 1px solid rgba(226, 232, 240, 0.88);
-    background: rgba(255, 255, 255, 0.97);
-    padding: 1rem;
-  }
-
-  [data-product-showcase] .kpi-card span {
-    font-size: 0.77rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(100 116 139);
-  }
-
-  [data-product-showcase] .kpi-card strong {
-    display: block;
-    margin-top: 0.55rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    color: rgb(15 23 42);
-  }
-
-  [data-product-showcase] .history-time {
-    flex: 0 0 auto;
-    min-width: 4rem;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgb(100 116 139);
-  }
+  [data-product-showcase] .workspace-flowstep.is-active { border-color: rgba(25,130,121,0.22); background: rgba(244,250,249,0.98); color: rgb(15 118 110); }
+  [data-product-showcase] .workspace-minirows { display: grid; gap: 0.7rem; margin-top: 0.7rem; }
+  [data-product-showcase] .workspace-metricrow { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-product-showcase] .dash-toolbar-actions { display: flex; gap: 0.5rem; }
+  [data-product-showcase] .history-timeline { display: grid; gap: 0.7rem; margin-top: 0.9rem; }
+  [data-product-showcase] .history-node { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 0.8rem; padding-top: 0.75rem; border-top: 1px solid rgba(231,236,241,0.9); }
+  [data-product-showcase] .history-node:first-child { border-top: 0; padding-top: 0; }
+  [data-product-showcase] .history-node > span { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(100 116 139); }
 
   @media (min-width: 1024px) {
-    [data-product-showcase] .showcase-frame-head {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      align-items: end;
-      gap: 1.5rem;
-    }
+    [data-product-showcase] .showcase-frame-head { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: end; gap: 1.4rem; }
   }
-
   @media (max-width: 1023px) {
-    [data-product-showcase] .showcase-stage {
-      min-height: 31rem;
-    }
+    [data-product-showcase] .showcase-stage { min-height: 39rem; }
+    [data-product-showcase] .workspace-grid--events,
+    [data-product-showcase] .workspace-grid--handling,
+    [data-product-showcase] .workspace-grid--management,
+    [data-product-showcase] .workspace-grid--kpi-detail,
+    [data-product-showcase] .workspace-grid--history { grid-template-columns: 1fr; }
   }
-
   @media (max-width: 767px) {
-    [data-product-showcase] .showcase-rail-item.is-active {
-      transform: none;
-    }
-
-    [data-product-showcase] .showcase-frame-head,
-    [data-product-showcase] .showcase-stage,
-    [data-product-showcase] .showcase-panel,
-    [data-product-showcase] .product-window {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    [data-product-showcase] .showcase-stage {
-      min-height: 36rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-    }
-
-    [data-product-showcase] .showcase-panel {
-      inset: 1rem;
-    }
-
-    [data-product-showcase] .kpi-grid {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-
-    [data-product-showcase] .box-row,
-    [data-product-showcase] .history-row,
-    [data-product-showcase] .window-toolbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    [data-product-showcase] .showcase-rail-item.is-active { transform: none; }
+    [data-product-showcase] .showcase-stage { min-height: 43rem; padding: 1rem; }
+    [data-product-showcase] .showcase-panel { inset: 1rem; }
+    [data-product-showcase] .workspace-topbar { flex-direction: column; align-items: flex-start; }
+    [data-product-showcase] .workspace-topmeta { justify-content: flex-start; }
+    [data-product-showcase] .workspace-table-head,
+    [data-product-showcase] .workspace-table-row { grid-template-columns: 1fr; }
+    [data-product-showcase] .workspace-metricrow { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -906,23 +585,13 @@ const firstDomain = sectionContent.domains[0];
 
       gsap
         .timeline({ defaults: { ease: 'power2.out' } })
-        .to([kickerTarget, titleTarget, descriptionTarget], {
-          autoAlpha: 0,
-          y: 6,
-          duration: 0.14,
-          stagger: 0.02,
-        })
+        .to([kickerTarget, titleTarget, descriptionTarget], { autoAlpha: 0, y: 6, duration: 0.14, stagger: 0.02 })
         .add(() => {
           kickerTarget.textContent = next.kicker;
           titleTarget.textContent = next.title;
           descriptionTarget.textContent = next.description;
         })
-        .to([kickerTarget, titleTarget, descriptionTarget], {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.2,
-          stagger: 0.03,
-        });
+        .to([kickerTarget, titleTarget, descriptionTarget], { autoAlpha: 1, y: 0, duration: 0.2, stagger: 0.03 });
     };
 
     const showPanel = (trigger: HTMLElement) => {
@@ -961,7 +630,6 @@ const firstDomain = sectionContent.domains[0];
 
     for (const trigger of triggers) {
       trigger.addEventListener('click', () => showPanel(trigger));
-
       trigger.addEventListener('keydown', (event) => {
         if (!(event instanceof KeyboardEvent)) return;
         const currentIndex = triggers.indexOf(trigger);
@@ -984,15 +652,14 @@ const firstDomain = sectionContent.domains[0];
 
     gsap.set([intro, shell], { autoAlpha: 0, y: 18 });
 
-    gsap
-      .timeline({
-        defaults: { ease: 'power2.out' },
-        scrollTrigger: {
-          trigger: block,
-          start: 'top 72%',
-          once: true,
-        },
-      })
+    gsap.timeline({
+      defaults: { ease: 'power2.out' },
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 72%',
+        once: true,
+      },
+    })
       .to(intro, { autoAlpha: 1, y: 0, duration: 0.44 })
       .to(shell, { autoAlpha: 1, y: 0, duration: 0.52 }, '-=0.24');
   }
