@@ -628,7 +628,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     const resetZoom = () => {
       panX = 0;
       panY = 0;
-      applyZoom(1);
+      const meta = getSlideMeta(activeIndex);
+      applyZoom(meta.initialZoom ?? 1);
     };
 
     const setZoomOriginFromPointer = (event) => {

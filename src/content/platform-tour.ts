@@ -9,6 +9,7 @@ export interface PlatformTourSlide {
   alt: string;
   objectPosition?: string;
   baseScale?: number;
+  initialZoom?: number;
   zoomOrigin?: string;
   offsetX?: number;
   offsetY?: number;
@@ -38,7 +39,7 @@ export interface PlatformTourContent {
 }
 
 const slideFraming = {
-  login: { image: '/products/platformtour/login.png', objectPosition: 'center center', baseScale: 0.86, zoomOrigin: '50% 58%', offsetY: -88 },
+  login: { image: '/products/platformtour/login.png', objectPosition: 'center center', baseScale: 1, initialZoom: 1.56, zoomOrigin: '50% 58%', offsetY: 0 },
   worklist: { image: '/products/platformtour/worklist.png', objectPosition: 'center top', baseScale: 0.96, zoomOrigin: '50% 0%' },
   notifications: { image: '/products/platformtour/notifications.png', objectPosition: 'center top', baseScale: 0.92, zoomOrigin: '50% 0%' },
   'event-detail': { image: '/products/platformtour/event-detail.png', objectPosition: 'center top', baseScale: 0.92, zoomOrigin: '50% 0%' },
