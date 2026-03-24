@@ -497,7 +497,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       error:
         'Er ging iets mis bij het versturen van uw bericht. Probeer het opnieuw of neem rechtstreeks contact op.',
       directEmailLabel: 'Rechtstreeks contact',
-      directEmailValue: 'hello@velvoix.com',
+      directEmailValue: 'info@velvoix.com',
     },
     footer: {
       brand: 'Velvoix',
@@ -828,7 +828,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       error:
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
-      directEmailValue: 'hello@velvoix.com',
+      directEmailValue: 'info@velvoix.com',
     },
     footer: {
       brand: 'Velvoix',
