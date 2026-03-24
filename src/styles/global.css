@@ -11,6 +11,8 @@
   --vx-surface: #f5f8fb;
   --vx-brand: #1f3557;
   --vx-brand-strong: #162847;
+  --vx-button: #214178;
+  --vx-button-strong: #1b3563;
   --vx-accent: #198279;
   --vx-cool: #eaf1f6;
 }
@@ -160,27 +162,29 @@ section[id] {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--vx-brand), #27497b);
+  border: 1px solid rgba(33, 65, 120, 0.12);
+  background: var(--vx-button);
   color: white;
-  box-shadow: 0 16px 32px rgba(32, 59, 99, 0.18);
+  box-shadow: 0 16px 32px rgba(33, 65, 120, 0.2);
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
+  background: var(--vx-button-strong);
   transform: translateY(-1px);
-  box-shadow: 0 18px 38px rgba(32, 59, 99, 0.24);
+  box-shadow: 0 18px 38px rgba(27, 53, 99, 0.24);
 }
 
 .button-secondary {
-  border: 1px solid rgba(32, 59, 99, 0.16);
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--vx-brand);
+  border: 1px solid rgba(33, 65, 120, 0.14);
+  background: rgba(33, 65, 120, 0.08);
+  color: var(--vx-button);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  border-color: rgba(32, 59, 99, 0.28);
-  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(33, 65, 120, 0.24);
+  background: rgba(33, 65, 120, 0.14);
 }
 
 .field-input {
