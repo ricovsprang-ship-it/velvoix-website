@@ -9,26 +9,17 @@ interface Props {
 const { content } = Astro.props;
 ---
 
-<section class="section-block surface-band" id="how-it-works">
+<section class="section-block surface-band" id="how-it-works" data-chain-block>
   <div class="section-shell grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
-    <div class="max-w-[32rem]">
+    <div class="max-w-[32rem] chain-intro">
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
-
-      <div class="mt-7 space-y-3">
-        {content.outcomes.map((outcome) => (
-          <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
-            <span class="size-2 rounded-full bg-[var(--vx-accent)]"></span>
-            <span>{outcome}</span>
-          </div>
-        ))}
-      </div>
     </div>
 
-    <div class="rounded-[2.2rem] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_40px_rgba(31,53,87,0.06)] md:p-8">
+    <div class="chain-compare rounded-[2.2rem] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_40px_rgba(31,53,87,0.06)] md:p-8">
       <p class="text-[0.74rem] font-bold uppercase tracking-[0.18em] text-slate-500">{content.compareLabel}</p>
 
       <div class="mt-6 space-y-4">
-        <div class="rounded-[1.7rem] border border-slate-200/85 bg-slate-50/88 p-5">
+        <div class="chain-row chain-row-traditional rounded-[1.55rem] border border-slate-200/85 bg-slate-50/88 p-5" data-chain-row="traditional">
           <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div class="shrink-0 lg:w-[11rem]">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
@@ -37,7 +28,7 @@ const { content } = Astro.props;
             <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
               {content.traditionalSteps.map((step, index) => (
                 <>
-                  <div class="inline-flex min-h-11 items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  <div class="inline-flex min-h-10 items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
                     {step}
                   </div>
                   {index < content.traditionalSteps.length - 1 && (
@@ -49,29 +40,203 @@ const { content } = Astro.props;
           </div>
         </div>
 
-        <div class="rounded-[1.85rem] border border-[rgba(31,53,87,0.12)] bg-[linear-gradient(180deg,rgba(234,241,246,0.96),rgba(245,249,252,0.98))] p-5 shadow-[0_18px_34px_rgba(31,53,87,0.06)]">
+        <div class="chain-row chain-row-velvoix rounded-[1.85rem] border border-[rgba(31,53,87,0.12)] bg-[linear-gradient(180deg,rgba(234,241,246,0.96),rgba(245,249,252,0.98))] p-5 shadow-[0_18px_34px_rgba(31,53,87,0.06)]" data-chain-row="velvoix">
           <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div class="shrink-0 lg:w-[11rem]">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
             </div>
 
-            <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
-              {content.velvoixSteps.map((step, index) => (
-                <>
-                  <div class="inline-flex min-h-11 items-center rounded-full border border-[rgba(31,53,87,0.12)] bg-white/96 px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_8px_18px_rgba(31,53,87,0.05)]">
-                    {step}
+            <div class="min-w-0 flex-1">
+              <div class="chain-flow relative flex min-w-0 flex-wrap items-center gap-2.5" data-chain-flow>
+                <span class="chain-flow-line hidden md:block" aria-hidden="true"></span>
+                {content.velvoixSteps.map((step, index) => (
+                  <>
+                    <div
+                      class="chain-node inline-flex min-h-11 items-center rounded-full border border-[rgba(31,53,87,0.12)] bg-white/96 px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_8px_18px_rgba(31,53,87,0.05)]"
+                      data-chain-node
+                      style={`--chain-delay:${index};`}
+                      tabindex="0"
+                    >
+                      {step}
+                    </div>
+                    {index < content.velvoixSteps.length - 1 && (
+                      <span class="chain-arrow text-sm font-semibold text-slate-400" data-chain-arrow style={`--chain-delay:${index};`}>
+                        ->
+                      </span>
+                    )}
+                  </>
+                ))}
+                <span class="chain-highlight hidden md:block" aria-hidden="true"></span>
+              </div>
+
+              <p class="mt-5 max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
+
+              <div class="chain-results mt-5 flex flex-wrap gap-2.5" data-chain-results>
+                {content.outcomes.map((outcome) => (
+                  <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/88 px-3 py-1.5 text-[0.82rem] font-semibold text-slate-700">
+                    <span class="size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
+                    <span>{outcome}</span>
                   </div>
-                  {index < content.velvoixSteps.length - 1 && (
-                    <span class="text-sm font-semibold text-slate-400">-></span>
-                  )}
-                </>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
-
-          <p class="mt-5 max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  [data-chain-block] .chain-intro,
+  [data-chain-block] .chain-compare,
+  [data-chain-block] .chain-row-traditional,
+  [data-chain-block] .chain-node,
+  [data-chain-block] .chain-arrow,
+  [data-chain-block] .chain-results {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 560ms ease,
+      transform 560ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  [data-chain-block].is-visible .chain-intro,
+  [data-chain-block].is-visible .chain-compare,
+  [data-chain-block].is-visible .chain-row-traditional,
+  [data-chain-block].is-visible .chain-results {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-chain-block].is-visible .chain-compare {
+    transition-delay: 120ms;
+  }
+
+  [data-chain-block].is-visible .chain-row-traditional {
+    transition-delay: 180ms;
+  }
+
+  [data-chain-block] .chain-node,
+  [data-chain-block] .chain-arrow {
+    transition-delay: calc(240ms + (var(--chain-delay) * 85ms));
+  }
+
+  [data-chain-block].is-visible .chain-node,
+  [data-chain-block].is-visible .chain-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-chain-block] .chain-results {
+    transition-delay: 940ms;
+  }
+
+  [data-chain-block] .chain-flow {
+    isolation: isolate;
+  }
+
+  [data-chain-block] .chain-flow-line {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(25, 130, 121, 0.18), rgba(31, 53, 87, 0.18));
+    transform: translateY(-50%) scaleX(0.35);
+    transform-origin: left center;
+    opacity: 0;
+    transition: transform 700ms ease 320ms, opacity 700ms ease 320ms;
+    z-index: -2;
+  }
+
+  [data-chain-block].is-visible .chain-flow-line {
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1);
+  }
+
+  [data-chain-block] .chain-highlight {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    width: 5.5rem;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(25, 130, 121, 0), rgba(25, 130, 121, 0.42), rgba(25, 130, 121, 0));
+    transform: translateY(-50%) translateX(-1rem);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  [data-chain-block].is-visible .chain-highlight {
+    animation: chain-highlight-pass 850ms ease 1080ms 1 forwards;
+  }
+
+  [data-chain-block] .chain-node:is(:hover, :focus-visible) {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(25, 130, 121, 0.26);
+    box-shadow: 0 10px 22px rgba(31, 53, 87, 0.08);
+    outline: none;
+  }
+
+  @keyframes chain-highlight-pass {
+    0% {
+      opacity: 0;
+      transform: translateY(-50%) translateX(-1rem);
+    }
+    18% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-50%) translateX(28rem);
+    }
+  }
+
+  @media (max-width: 767px) {
+    [data-chain-block] .chain-results {
+      gap: 0.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-chain-block] .chain-intro,
+    [data-chain-block] .chain-compare,
+    [data-chain-block] .chain-row-traditional,
+    [data-chain-block] .chain-node,
+    [data-chain-block] .chain-arrow,
+    [data-chain-block] .chain-results,
+    [data-chain-block] .chain-flow-line,
+    [data-chain-block] .chain-highlight {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  const chainBlocks = document.querySelectorAll('[data-chain-block]');
+
+  for (const block of chainBlocks) {
+    if (block.dataset.bound === 'true') continue;
+    block.dataset.bound = 'true';
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.28 }
+    );
+
+    observer.observe(block);
+  }
+</script>
