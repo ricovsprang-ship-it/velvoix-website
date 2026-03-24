@@ -126,6 +126,8 @@ export interface FooterContent {
   languageEn: string;
   contact: string;
   privacy: string;
+  cookies: string;
+  terms: string;
   copyright: string;
 }
 
@@ -219,7 +221,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Velvoix brengt signalen niet alleen binnen, maar verrijkt ze met context, triage en opvolgbaar eventgedrag, zodat zorgmedewerkers sneller begrijpen wat aandacht vraagt en wat logisch vervolg is.',
       panelLabel: 'Operationele flow',
-      panelSupporting: 'Velvoix structureert input, duiding, eventvorming en opvolging als één rustige keten.',
+      panelSupporting: 'Velvoix structureert input, duiding, eventvorming en opvolging als een rustige keten.',
       steps: [
         {
           title: 'Input',
@@ -284,7 +286,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Event',
           description:
-            'De uitkomst wordt één werkbare operationele eenheid voor status, eigenaarschap en vervolg.',
+            'De uitkomst wordt een werkbare operationele eenheid voor status, eigenaarschap en vervolg.',
         },
         {
           title: 'Workflow',
@@ -409,7 +411,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageNl: 'Nederlands',
       languageEn: 'English',
       contact: 'Contact',
-      privacy: 'Privacy',
+      privacy: 'Privacyverklaring',
+      cookies: 'Cookiebeleid',
+      terms: 'Algemene voorwaarden',
       copyright: '© 2026 Velvoix® · Alle rechten voorbehouden.',
     },
   },
@@ -676,7 +680,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageNl: 'Nederlands',
       languageEn: 'English',
       contact: 'Contact',
-      privacy: 'Privacy',
+      privacy: 'Privacy Policy',
+      cookies: 'Cookie Policy',
+      terms: 'Terms & Conditions',
       copyright: '© 2026 Velvoix® · All rights reserved.',
     },
   },

@@ -1,0 +1,23 @@
+---
+import LegalPage from '../../components/LegalPage.astro';
+import { legalContent } from '../../content/legal';
+import { siteContent } from '../../content/site';
+import Layout from '../../layouts/Layout.astro';
+
+const locale = 'en' as const;
+const page = legalContent[locale].cookies;
+const footer = siteContent[locale].footer;
+---
+
+<Layout
+  locale={locale}
+  title={page.meta.title}
+  description={page.meta.description}
+  ogTitle={page.meta.ogTitle}
+  ogDescription={page.meta.ogDescription}
+  path="/en/cookie-policy"
+  alternateNlPath="/cookie-policy"
+  alternateEnPath="/en/cookie-policy"
+>
+  <LegalPage locale={locale} content={page} footer={footer} languagePaths={{ nl: '/cookie-policy', en: '/en/cookie-policy' }} />
+</Layout>

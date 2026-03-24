@@ -8,13 +8,15 @@ interface Props {
   ogTitle: string;
   ogDescription: string;
   path: string;
+  alternateNlPath?: string;
+  alternateEnPath?: string;
 }
 
-const { locale, title, description, ogTitle, ogDescription, path } = Astro.props;
+const { locale, title, description, ogTitle, ogDescription, path, alternateNlPath = '/', alternateEnPath = '/en/' } = Astro.props;
 const siteUrl = 'https://velvoix.com';
 const canonical = new URL(path, siteUrl).toString();
-const alternateNl = new URL('/', siteUrl).toString();
-const alternateEn = new URL('/en/', siteUrl).toString();
+const alternateNl = new URL(alternateNlPath, siteUrl).toString();
+const alternateEn = new URL(alternateEnPath, siteUrl).toString();
 ---
 
 <!doctype html>
