@@ -1,4 +1,4 @@
-import type { Locale } from './site';
+﻿import type { Locale } from './site';
 
 export interface LegalMetaContent {
   title: string;
@@ -39,7 +39,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'Deze privacyverklaring legt uit hoe Velvoix persoonsgegevens verwerkt in verband met de website, contactaanvragen, pilotverkenningen, samenwerkingen en het gebruik van aan Velvoix gerelateerde diensten of platforms.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 maart 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Privacyverklaring',
@@ -54,19 +54,18 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'wie-wij-zijn',
           title: '1. Wie wij zijn',
           paragraphs: [
-            '[LEGAL_ENTITY_NAME], handelend onder de naam Velvoix, is in beginsel de verwerkingsverantwoordelijke voor de persoonsgegevens waarop deze privacyverklaring ziet.',
-            'Velvoix is bereikbaar via [CONTACT_EMAIL] en voor privacygerelateerde vragen via [PRIVACY_EMAIL]. Indien van toepassing kan ook contact worden opgenomen met [DPO_OR_PRIVACY_CONTACT].',
+            'Velvoix Holding B.V, handelend onder de naam Velvoix, is in beginsel de verwerkingsverantwoordelijke voor de persoonsgegevens waarop deze privacyverklaring ziet.',
+            'Velvoix is bereikbaar via founder@velvoix.com en voor privacygerelateerde vragen via support@velvoix.com.',
           ],
           bullets: [
-            'Juridische entiteit: [LEGAL_ENTITY_NAME]',
-            'Handelsnaam: Velvoix / [TRADE_NAME]',
-            'KvK-nummer: [KVK_NUMBER]',
-            'Btw-nummer: [VAT_NUMBER]',
-            'Vestigingsadres: [REGISTERED_ADDRESS]',
-            'Postcode / plaats / land: [POSTAL_CODE_CITY_COUNTRY]',
-            'Algemeen contact: [CONTACT_EMAIL]',
-            'Privacycontact: [PRIVACY_EMAIL]',
-            'Telefoonnummer: [PHONE_NUMBER]',
+            'Juridische entiteit: Velvoix Holding B.V',
+            'Handelsnaam: Velvoix / Velvoix',
+            'KvK-nummer: -',
+            'Btw-nummer: -',
+            'Postcode / plaats / land: 2313 NS, Leiden, The Netherlands',
+            'Algemeen contact: founder@velvoix.com',
+            'Privacycontact: support@velvoix.com',
+            'Telefoonnummer: 0031610222775',
           ],
         },
         {
@@ -131,13 +130,13 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '6. Cookies, analytics en vergelijkbare technieken',
           paragraphs: [
             'Velvoix kan functionele cookies en, afhankelijk van de inrichting van de website, analytische cookies of vergelijkbare technieken gebruiken om de website bruikbaar, veilig en inzichtelijk te houden.',
-            'Specifieke tooling en instellingen kunnen later worden ingevuld of nader gespecificeerd, bijvoorbeeld via [COOKIE_TOOLS] en [ANALYTICS_TOOLS]. Indien een cookiebanner of voorkeursinstelling beschikbaar is, kunnen keuzes daar worden beheerd.',
+            'Specifieke tooling en instellingen kunnen later nader worden gespecificeerd zodra deze definitief zijn vastgesteld. Indien een cookiebanner of voorkeursinstelling beschikbaar is, kunnen keuzes daar worden beheerd.',
           ],
           bullets: [
             'Functionele cookies voor basiswerking en beveiliging',
             'Analytische cookies of vergelijkbare metingen voor gebruiksinzicht',
-            'Eventuele aanvullende tooling: [COOKIE_TOOLS]',
-            'Eventuele analytics tooling: [ANALYTICS_TOOLS]',
+            'Aanvullende tooling wordt alleen ingezet en gespecificeerd waar dat daadwerkelijk van toepassing is.',
+            'Analytics wordt alleen gebruikt en gespecificeerd waar dat functioneel en juridisch passend is.',
           ],
         },
         {
@@ -145,10 +144,10 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '7. Met wie wij gegevens kunnen delen',
           paragraphs: [
             'Velvoix kan persoonsgegevens delen met dienstverleners of partijen die nodig zijn voor hosting, infrastructuur, websitebeheer, communicatie, CRM, support, implementatie of samenwerking, voor zover dat nodig is voor de betreffende verwerking.',
-            'Velvoix verkoopt persoonsgegevens niet. Indien relevant kan een overzicht van subverwerkers of betrokken dienstverleners beschikbaar worden gesteld via [SUBPROCESSOR_LIST_URL].',
+            'Velvoix verkoopt persoonsgegevens niet. Indien relevant kan een overzicht van subverwerkers of betrokken dienstverleners op verzoek beschikbaar worden gesteld.',
           ],
           bullets: [
-            'Hosting- en infrastructuurproviders, waaronder [HOSTING_PROVIDER]',
+            'Hosting- en infrastructuurproviders',
             'Analytics- en websiteproviders',
             'E-mail- en communicatiedienstverleners',
             'CRM-, support- of samenwerkingsplatformen',
@@ -169,7 +168,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '9. Bewaartermijnen',
           paragraphs: [
             'Velvoix bewaart persoonsgegevens niet langer dan nodig is voor het doel waarvoor zij zijn verzameld, tenzij een langere bewaartermijn wettelijk verplicht is of aantoonbaar nodig is voor een gerechtvaardigd belang, zoals beveiliging, contractbeheer of geschilafhandeling.',
-            'Bewaartermijnen kunnen verschillen per categorie gegevens, bijvoorbeeld voor contactaanvragen, pilot- of samenwerkingscommunicatie, accountgegevens, gebruikslogs of wettelijke administratieverplichtingen. Exacte categorieen of termijnen kunnen later nader worden ingevuld met placeholders of contractdocumentatie.',
+            'Bewaartermijnen kunnen verschillen per categorie gegevens, bijvoorbeeld voor contactaanvragen, pilot- of samenwerkingscommunicatie, accountgegevens, gebruikslogs of wettelijke administratieverplichtingen. Exacte categorieen of termijnen kunnen later nader worden ingevuld in aanvullende contractdocumentatie waar dat nodig is.',
           ],
           bullets: [
             'Contact- en informatieverzoeken: zolang nodig voor opvolging en redelijke archivering',
@@ -208,7 +207,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'verzoeken',
           title: '12. Hoe iemand een verzoek kan indienen',
           paragraphs: [
-            'Een privacyverzoek kan worden gestuurd naar [PRIVACY_EMAIL]. Om misbruik te voorkomen kan Velvoix om aanvullende informatie of verificatie vragen voordat een verzoek inhoudelijk wordt afgehandeld.',
+            'Een privacyverzoek kan worden gestuurd naar support@velvoix.com. Om misbruik te voorkomen kan Velvoix om aanvullende informatie of verificatie vragen voordat een verzoek inhoudelijk wordt afgehandeld.',
             'Velvoix behandelt verzoeken in overeenstemming met de toepasselijke wetgeving en laat weten wanneer aanvullende context, verificatie of contractuele afstemming nodig is.',
           ],
         },
@@ -224,23 +223,21 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '14. Wijzigingen in deze privacyverklaring',
           paragraphs: [
             'Velvoix kan deze privacyverklaring aanpassen wanneer de website, dienstverlening, wetgeving of verwerking verandert. De meest recente versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: [LAST_UPDATED_DATE].',
+            'Laatste update: 24 maart 2026.',
           ],
         },
         {
           id: 'contact',
           title: '15. Contact',
           paragraphs: [
-            'Voor vragen over deze privacyverklaring of over de manier waarop Velvoix persoonsgegevens verwerkt, kan contact worden opgenomen via onderstaande placeholders.',
+            'Voor vragen over deze privacyverklaring of over de manier waarop Velvoix persoonsgegevens verwerkt, kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[REGISTERED_ADDRESS]',
-            '[POSTAL_CODE_CITY_COUNTRY]',
-            '[CONTACT_EMAIL]',
-            '[PRIVACY_EMAIL]',
-            '[PHONE_NUMBER]',
-            '[DPO_OR_PRIVACY_CONTACT]',
+            'Velvoix Holding B.V',
+            '2313 NS, Leiden, The Netherlands',
+            'founder@velvoix.com',
+            'support@velvoix.com',
+            '0031610222775',
           ],
         },
       ],
@@ -251,7 +248,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'Dit cookiebeleid legt uit hoe Velvoix cookies en vergelijkbare technieken gebruikt op de website, welke categorieen cookies kunnen worden ingezet en hoe voorkeuren kunnen worden beheerd.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 maart 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Cookiebeleid',
@@ -279,7 +276,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           bullets: [
             'Functionele cookies voor basiswerking, beveiliging en voorkeuren',
             'Analytische cookies of vergelijkbare technieken voor gebruiksinzicht',
-            'Eventuele aanvullende tooling of categorieen via [COOKIE_TOOLS] en [ANALYTICS_TOOLS]',
+            'Aanvullende tooling of categorieen worden alleen ingezet en gespecificeerd waar dat daadwerkelijk van toepassing is.',
           ],
         },
         {
@@ -299,12 +296,11 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling en leveranciers',
           paragraphs: [
-            'Specifieke cookie- en analysetooling kan worden ingevuld of aangepast naarmate de website-inrichting verder wordt uitgewerkt. Voor die tooling kunnen placeholders of latere aanvullingen worden gebruikt.',
+            'Specifieke cookie- en analysetooling kan later worden ingevuld of aangepast naarmate de website-inrichting verder wordt uitgewerkt.',
           ],
           bullets: [
-            'Cookie tooling: [COOKIE_TOOLS]',
-            'Analytics tooling: [ANALYTICS_TOOLS]',
-            'Hosting / infrastructuur: [HOSTING_PROVIDER]',
+            'Cookie- en analysetooling wordt nader gespecificeerd zodra deze definitief is vastgesteld.',
+            'Hosting- en infrastructuurleveranciers worden waar nodig contractueel ingezet.',
           ],
         },
         {
@@ -320,20 +316,19 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '6. Wijzigingen in dit cookiebeleid',
           paragraphs: [
             'Velvoix kan dit cookiebeleid aanpassen wanneer de website, de gebruikte tooling of wettelijke vereisten veranderen. De meest actuele versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: [LAST_UPDATED_DATE].',
+            'Laatste update: 24 maart 2026.',
           ],
         },
         {
           id: 'contact',
           title: '7. Contact',
           paragraphs: [
-            'Voor vragen over dit cookiebeleid of over de manier waarop websitegegevens worden verwerkt, kan contact worden opgenomen via onderstaande placeholders.',
+            'Voor vragen over dit cookiebeleid of over de manier waarop websitegegevens worden verwerkt, kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[CONTACT_EMAIL]',
-            '[PRIVACY_EMAIL]',
-            '[HOSTING_PROVIDER]',
+            'Velvoix Holding B.V',
+            'founder@velvoix.com',
+            'support@velvoix.com',
           ],
         },
       ],
@@ -344,7 +339,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'Deze algemene voorwaarden beschrijven op hoofdlijnen onder welke voorwaarden de website van Velvoix wordt gebruikt en hoe zakelijke interacties, demo\'s, pilots en overige trajecten rondom Velvoix worden benaderd.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 maart 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Algemene voorwaarden',
@@ -359,7 +354,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'toepasselijkheid',
           title: '1. Toepasselijkheid en wie wij zijn',
           paragraphs: [
-            '[LEGAL_ENTITY_NAME], handelend onder de naam Velvoix, gebruikt deze voorwaarden voor het gebruik van de website en, waar relevant, voor informatieverzoeken, demo\'s, pilotverkenningen en overige zakelijke interacties rondom Velvoix.',
+            'Velvoix Holding B.V, handelend onder de naam Velvoix, gebruikt deze voorwaarden voor het gebruik van de website en, waar relevant, voor informatieverzoeken, demo\'s, pilotverkenningen en overige zakelijke interacties rondom Velvoix.',
             'Wanneer afzonderlijke offertes, overeenkomsten, pilotovereenkomsten, serviceafspraken of verwerkersafspraken worden gesloten, hebben die voorrang voor zover dat uitdrukkelijk is afgesproken.',
           ],
         },
@@ -452,7 +447,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '12. Wijzigingen in deze voorwaarden',
           paragraphs: [
             'Velvoix kan deze voorwaarden van tijd tot tijd wijzigen. De meest actuele versie wordt op de website gepubliceerd en voorzien van een datum van laatste update.',
-            'Laatste update: [LAST_UPDATED_DATE].',
+            'Laatste update: 24 maart 2026.',
           ],
         },
         {
@@ -466,14 +461,13 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'contact',
           title: '14. Contact',
           paragraphs: [
-            'Voor vragen over deze voorwaarden of zakelijke interacties rondom Velvoix kunnen de volgende placeholders worden gebruikt.',
+            'Voor vragen over deze voorwaarden of zakelijke interacties rondom Velvoix kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[REGISTERED_ADDRESS]',
-            '[POSTAL_CODE_CITY_COUNTRY]',
-            '[CONTACT_EMAIL]',
-            '[PHONE_NUMBER]',
+            'Velvoix Holding B.V',
+            '2313 NS, Leiden, The Netherlands',
+            'founder@velvoix.com',
+            '0031610222775',
           ],
         },
       ],
@@ -486,7 +480,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'This privacy policy explains how Velvoix processes personal data in connection with the website, contact requests, pilot explorations, partnerships, and the use of Velvoix-related services or platforms.',
       updatedLabel: 'Last updated',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 March 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Privacy Policy',
@@ -501,19 +495,18 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'who-we-are',
           title: '1. Who we are',
           paragraphs: [
-            '[LEGAL_ENTITY_NAME], trading under the name Velvoix, is generally the controller for the personal data covered by this privacy policy.',
-            'Velvoix can be contacted via [CONTACT_EMAIL] and for privacy-related questions via [PRIVACY_EMAIL]. Where applicable, [DPO_OR_PRIVACY_CONTACT] may also be contacted.',
+            'Velvoix Holding B.V, trading under the name Velvoix, is generally the controller for the personal data covered by this privacy policy.',
+            'Velvoix can be contacted via founder@velvoix.com and for privacy-related questions via support@velvoix.com.',
           ],
           bullets: [
-            'Legal entity: [LEGAL_ENTITY_NAME]',
-            'Trade name: Velvoix / [TRADE_NAME]',
-            'Chamber of Commerce number: [KVK_NUMBER]',
-            'VAT number: [VAT_NUMBER]',
-            'Registered address: [REGISTERED_ADDRESS]',
-            'Postal code / city / country: [POSTAL_CODE_CITY_COUNTRY]',
-            'General contact: [CONTACT_EMAIL]',
-            'Privacy contact: [PRIVACY_EMAIL]',
-            'Phone number: [PHONE_NUMBER]',
+            'Legal entity: Velvoix Holding B.V',
+            'Trade name: Velvoix / Velvoix',
+            'Chamber of Commerce number: -',
+            'VAT number: -',
+            'Postal code / city / country: 2313 NS, Leiden, The Netherlands',
+            'General contact: founder@velvoix.com',
+            'Privacy contact: support@velvoix.com',
+            'Phone number: 0031610222775',
           ],
         },
         {
@@ -578,13 +571,13 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '6. Cookies, analytics and similar technologies',
           paragraphs: [
             'Velvoix may use functional cookies and, depending on the website setup, analytics cookies or similar technologies to keep the website usable, secure and measurable.',
-            'Specific tooling and settings may be completed or specified later, for example via [COOKIE_TOOLS] and [ANALYTICS_TOOLS]. Where a cookie banner or preference centre is available, choices can be managed there.',
+            'Specific tooling and settings may be specified later once they are definitively established. Where a cookie banner or preference centre is available, choices can be managed there.',
           ],
           bullets: [
             'Functional cookies for core website operation and security',
             'Analytics cookies or similar measurement tools for website insight',
-            'Cookie-related tooling: [COOKIE_TOOLS]',
-            'Analytics tooling: [ANALYTICS_TOOLS]',
+            'Additional tooling is only used and specified where it is actually relevant.',
+            'Analytics is only used and specified where it is functionally and legally appropriate.',
           ],
         },
         {
@@ -592,10 +585,10 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '7. With whom we may share data',
           paragraphs: [
             'Velvoix may share personal data with service providers or parties needed for hosting, infrastructure, website management, communication, CRM, support, implementation or collaboration, where this is necessary for the relevant purpose.',
-            'Velvoix does not sell personal data. Where relevant, an overview of subprocessors or service providers may be made available via [SUBPROCESSOR_LIST_URL].',
+            'Velvoix does not sell personal data. Where relevant, an overview of subprocessors or service providers may be made available on request.',
           ],
           bullets: [
-            'Hosting and infrastructure providers, including [HOSTING_PROVIDER]',
+            'Hosting and infrastructure providers',
             'Analytics and website providers',
             'Email and communication service providers',
             'CRM, support or collaboration tooling',
@@ -616,7 +609,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '9. Retention periods',
           paragraphs: [
             'Velvoix does not keep personal data longer than necessary for the purpose for which it was collected, unless a longer retention period is required by law or demonstrably necessary for a legitimate interest such as security, contract management or dispute handling.',
-            'Retention periods may differ per category of data, for example for contact requests, pilot or partnership communication, account data, usage logs or statutory recordkeeping obligations. Exact categories or periods may be completed later through placeholders or contract documents.',
+            'Retention periods may differ per category of data, for example for contact requests, pilot or partnership communication, account data, usage logs or statutory recordkeeping obligations. Exact categories or periods may be specified later in supplementary contract documentation where needed.',
           ],
           bullets: [
             'Contact and information requests: as long as needed for follow-up and reasonable archive purposes',
@@ -655,7 +648,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'requests',
           title: '12. How to submit a request',
           paragraphs: [
-            'A privacy-related request can be sent to [PRIVACY_EMAIL]. To prevent misuse, Velvoix may ask for additional information or verification before handling a request in substance.',
+            'A privacy-related request can be sent to support@velvoix.com. To prevent misuse, Velvoix may ask for additional information or verification before handling a request in substance.',
             'Velvoix handles requests in accordance with applicable law and will indicate where additional context, verification or contractual alignment is required.',
           ],
         },
@@ -671,23 +664,21 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '14. Changes to this privacy policy',
           paragraphs: [
             'Velvoix may update this privacy policy when the website, services, law or processing activities change. The most recent version will be published on this page.',
-            'Last updated: [LAST_UPDATED_DATE].',
+            'Last updated: 24 March 2026.',
           ],
         },
         {
           id: 'contact',
           title: '15. Contact',
           paragraphs: [
-            'For questions about this privacy policy or the way Velvoix processes personal data, the placeholders below can be used.',
+            'For questions about this privacy policy or the way Velvoix processes personal data, the contact details below can be used.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[REGISTERED_ADDRESS]',
-            '[POSTAL_CODE_CITY_COUNTRY]',
-            '[CONTACT_EMAIL]',
-            '[PRIVACY_EMAIL]',
-            '[PHONE_NUMBER]',
-            '[DPO_OR_PRIVACY_CONTACT]',
+            'Velvoix Holding B.V',
+            '2313 NS, Leiden, The Netherlands',
+            'founder@velvoix.com',
+            'support@velvoix.com',
+            '0031610222775',
           ],
         },
       ],
@@ -698,7 +689,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'This cookie policy explains how Velvoix uses cookies and similar technologies on the website, which categories may be used and how preferences can be managed.',
       updatedLabel: 'Last updated',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 March 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Cookie Policy',
@@ -726,7 +717,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           bullets: [
             'Functional cookies for core operation, security and preferences',
             'Analytics cookies or similar technologies for website insight',
-            'Possible additional tooling or categories via [COOKIE_TOOLS] and [ANALYTICS_TOOLS]',
+            'Additional tooling or categories are only used and specified where they are actually relevant.',
           ],
         },
         {
@@ -746,12 +737,11 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling and providers',
           paragraphs: [
-            'Specific cookie and analytics tooling may be completed or adjusted as the website setup evolves. Placeholders or later updates may therefore be used.',
+            'Specific cookie and analytics tooling may be completed or adjusted as the website setup evolves.',
           ],
           bullets: [
-            'Cookie tooling: [COOKIE_TOOLS]',
-            'Analytics tooling: [ANALYTICS_TOOLS]',
-            'Hosting / infrastructure: [HOSTING_PROVIDER]',
+            'Cookie and analytics tooling will be specified once it has been definitively established.',
+            'Hosting and infrastructure providers are engaged contractually where required.',
           ],
         },
         {
@@ -767,20 +757,19 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '6. Changes to this cookie policy',
           paragraphs: [
             'Velvoix may update this cookie policy when the website, tooling or legal requirements change. The most current version will be published on this page.',
-            'Last updated: [LAST_UPDATED_DATE].',
+            'Last updated: 24 March 2026.',
           ],
         },
         {
           id: 'contact',
           title: '7. Contact',
           paragraphs: [
-            'For questions about this cookie policy or about the processing of website-related data, the placeholders below can be used.',
+            'For questions about this cookie policy or about the processing of website-related data, the contact details below can be used.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[CONTACT_EMAIL]',
-            '[PRIVACY_EMAIL]',
-            '[HOSTING_PROVIDER]',
+            'Velvoix Holding B.V',
+            'founder@velvoix.com',
+            'support@velvoix.com',
           ],
         },
       ],
@@ -791,7 +780,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       intro:
         'These terms and conditions describe at a high level the conditions under which the Velvoix website is used and how business interactions, demos, pilots and related trajectories around Velvoix are approached.',
       updatedLabel: 'Last updated',
-      lastUpdated: '[LAST_UPDATED_DATE]',
+      lastUpdated: '24 March 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Terms & Conditions',
@@ -806,7 +795,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'scope',
           title: '1. Applicability and who we are',
           paragraphs: [
-            '[LEGAL_ENTITY_NAME], trading under the name Velvoix, uses these terms for the use of the website and, where relevant, for information requests, demos, pilot explorations and other business interactions around Velvoix.',
+            'Velvoix Holding B.V, trading under the name Velvoix, uses these terms for the use of the website and, where relevant, for information requests, demos, pilot explorations and other business interactions around Velvoix.',
             'Where separate quotations, agreements, pilot agreements, service arrangements or processor agreements are concluded, those documents prevail where expressly agreed.',
           ],
         },
@@ -899,7 +888,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '12. Changes to these terms',
           paragraphs: [
             'Velvoix may amend these terms from time to time. The most current version will be published on the website and marked with a last updated date.',
-            'Last updated: [LAST_UPDATED_DATE].',
+            'Last updated: 24 March 2026.',
           ],
         },
         {
@@ -913,17 +902,19 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'contact',
           title: '14. Contact',
           paragraphs: [
-            'For questions about these terms or business interactions around Velvoix, the placeholders below can be used.',
+            'For questions about these terms or business interactions around Velvoix, the contact details below can be used.',
           ],
           bullets: [
-            '[LEGAL_ENTITY_NAME]',
-            '[REGISTERED_ADDRESS]',
-            '[POSTAL_CODE_CITY_COUNTRY]',
-            '[CONTACT_EMAIL]',
-            '[PHONE_NUMBER]',
+            'Velvoix Holding B.V',
+            '2313 NS, Leiden, The Netherlands',
+            'founder@velvoix.com',
+            '0031610222775',
           ],
         },
       ],
     },
   },
 };
+
+
+
