@@ -67,6 +67,16 @@ export interface WhyVelvoixContent extends SectionIntroContent {
   cards: Array<{ title: string; description: string }>;
 }
 
+export interface TechnicalCoreContent extends SectionIntroContent {
+  rows: Array<{
+    index: string;
+    title: string;
+    description: string;
+    effect: string;
+  }>;
+  closingLine: string;
+}
+
 export interface CompareChainsContent extends SectionIntroContent {
   compareLabel: string;
   outcomes: string[];
@@ -141,6 +151,7 @@ export interface SiteContent {
   howItWorks: HowItWorksContent;
   compareChains: CompareChainsContent;
   whyVelvoix: WhyVelvoixContent;
+  technicalCore: TechnicalCoreContent;
   snapshots: SnapshotSectionContent;
   pilot: PilotContent;
   contact: ContactContent;
@@ -324,6 +335,44 @@ export const siteContent: Record<Locale, SiteContent> = {
             'Een operationele waarheid voor status, eigenaarschap, escalatie en reconstructie.',
         },
       ],
+    },
+    technicalCore: {
+      eyebrow: 'Technische kern',
+      title: 'Waarom Velvoix technisch moeilijk te vervangen is',
+      description:
+        'De kracht van Velvoix zit niet in een model, scherm of signaalbron op zichzelf, maar in een samenhangende productkern waarin triage, eventvorming, workflow, audit en beheer elkaar gecontroleerd versterken.',
+      rows: [
+        {
+          index: '01',
+          title: 'Canonieke eventwaarheid',
+          description:
+            'Velvoix behandelt niet de melding of het externe systeem als waarheid, maar het event zelf. Daardoor blijven status, escalatie, opvolging en reconstructie consistent.',
+          effect: 'Een operationele waarheid in plaats van losse signalen en afgeleide UI-logica.',
+        },
+        {
+          index: '02',
+          title: 'Uitlegbare triageketen',
+          description:
+            'Triage levert niet alleen een urgentie, maar ook context, recommended action en explainability in zorgtaal.',
+          effect: 'Begrijpelijke prioritering in plaats van een black-box score.',
+        },
+        {
+          index: '03',
+          title: 'Governance en control-plane',
+          description:
+            'Configuratie, publicatiestatus en kwaliteitsbewaking zijn onderdeel van het product, niet losse beheerbijlagen.',
+          effect: 'Beheersbare uitrol zonder semantische drift.',
+        },
+        {
+          index: '04',
+          title: 'Adapterarchitectuur zonder vendor lock-in',
+          description:
+            'Integraties leveren input of ontvangen output, maar bepalen niet de productsemantiek van Velvoix.',
+          effect: 'Modulair koppelen zonder de kern te vervuilen.',
+        },
+      ],
+      closingLine:
+        'Samen zorgen deze lagen ervoor dat Velvoix geen meldingenlaag blijft, maar een uitlegbaar en bestuurbaar zorgplatform wordt.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',
@@ -593,6 +642,44 @@ export const siteContent: Record<Locale, SiteContent> = {
             'One operational truth for status, ownership, escalation and reconstruction.',
         },
       ],
+    },
+    technicalCore: {
+      eyebrow: 'Technical core',
+      title: 'Why Velvoix is technically hard to replace',
+      description:
+        'The strength of Velvoix does not sit in one model, screen or signal source, but in a connected product core where triage, event formation, workflow, audit and governance reinforce each other in a controlled way.',
+      rows: [
+        {
+          index: '01',
+          title: 'Canonical event truth',
+          description:
+            'Velvoix does not treat the alert or external system as the truth, but the event itself. That keeps status, escalation, follow-up and reconstruction consistent.',
+          effect: 'One operational truth instead of disconnected signals and derived UI logic.',
+        },
+        {
+          index: '02',
+          title: 'Explainable triage chain',
+          description:
+            'Triage produces not only urgency, but also context, recommended action and explainability in care language.',
+          effect: 'Understandable prioritisation instead of a black-box score.',
+        },
+        {
+          index: '03',
+          title: 'Governance and control plane',
+          description:
+            'Configuration, publication state and quality control are part of the product itself, not loose admin appendices.',
+          effect: 'Governable rollout without semantic drift.',
+        },
+        {
+          index: '04',
+          title: 'Adapter architecture without vendor lock-in',
+          description:
+            'Integrations provide input or receive output, but they do not define the product semantics of Velvoix.',
+          effect: 'Modular integration without polluting the core.',
+        },
+      ],
+      closingLine:
+        'Together, these layers keep Velvoix from becoming a notification layer and turn it into an explainable, governable care platform.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',

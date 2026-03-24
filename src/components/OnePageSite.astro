@@ -9,6 +9,7 @@ import HeroSection from './HeroSection.astro';
 import HowItWorksSection from './HowItWorksSection.astro';
 import PilotSection from './PilotSection.astro';
 import SnapshotSection from './SnapshotSection.astro';
+import TechnicalCoreSection from './TechnicalCoreSection.astro';
 import WhyDifferentSection from './WhyDifferentSection.astro';
 
 interface Props {
@@ -31,6 +32,7 @@ const { locale, content } = Astro.props;
 
     <HowItWorksSection content={content.howItWorks} />
     <WhyDifferentSection content={content.whyVelvoix} />
+    <TechnicalCoreSection content={content.technicalCore} />
 
     <div class="surface-band">
       <SnapshotSection content={content.snapshots} />
