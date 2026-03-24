@@ -70,11 +70,7 @@ const otherLanguages = languages.filter((language) => language.locale !== locale
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    min-height: 2.55rem;
-    padding: 0.45rem 0.8rem 0.45rem 0.9rem;
-    border: 1px solid rgba(211, 220, 230, 0.96);
-    border-radius: 0.9rem;
-    background: rgba(255, 255, 255, 0.94);
+    padding: 0;
     color: rgb(15 23 42);
     font-size: 0.88rem;
     font-weight: 700;
@@ -91,14 +87,12 @@ const otherLanguages = languages.filter((language) => language.locale !== locale
 
   .language-switcher__summary:hover,
   .language-switcher__summary:focus-visible {
-    border-color: rgba(20, 184, 166, 0.28);
-    background: rgba(248, 252, 251, 0.98);
     color: rgb(15 118 110);
   }
 
   .language-switcher__chevron {
-    width: 0.95rem;
-    height: 0.95rem;
+    width: 0.8rem;
+    height: 0.8rem;
     color: rgb(100 116 139);
     transition: transform 180ms ease, color 160ms ease;
   }
