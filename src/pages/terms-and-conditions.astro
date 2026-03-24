@@ -1,0 +1,23 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { legalContent } from '../content/legal';
+import { siteContent } from '../content/site';
+import Layout from '../layouts/Layout.astro';
+
+const locale = 'nl' as const;
+const page = legalContent[locale].terms;
+const footer = siteContent[locale].footer;
+---
+
+<Layout
+  locale={locale}
+  title={page.meta.title}
+  description={page.meta.description}
+  ogTitle={page.meta.ogTitle}
+  ogDescription={page.meta.ogDescription}
+  path="/terms-and-conditions"
+  alternateNlPath="/terms-and-conditions"
+  alternateEnPath="/en/terms-and-conditions"
+>
+  <LegalPage locale={locale} content={page} footer={footer} languagePaths={{ nl: '/terms-and-conditions', en: '/en/terms-and-conditions' }} />
+</Layout>

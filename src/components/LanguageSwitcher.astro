@@ -3,15 +3,17 @@ import type { Locale } from '../content/site';
 
 interface Props {
   locale: Locale;
+  nlPath?: string;
+  enPath?: string;
 }
 
-const { locale } = Astro.props;
+const { locale, nlPath = '/', enPath = '/en/' } = Astro.props;
 const isNl = locale === 'nl';
 ---
 
 <div class="inline-flex items-center gap-2 text-sm font-medium text-slate-500">
   <a
-    href="/"
+    href={nlPath}
     class:list={[
       'relative px-0.5 py-1 transition-colors',
       isNl ? 'font-semibold text-slate-950' : 'text-slate-500 hover:text-slate-800',
@@ -23,7 +25,7 @@ const isNl = locale === 'nl';
   </a>
   <span class="text-slate-300">|</span>
   <a
-    href="/en/"
+    href={enPath}
     class:list={[
       'relative px-0.5 py-1 transition-colors',
       !isNl ? 'font-semibold text-slate-950' : 'text-slate-500 hover:text-slate-800',

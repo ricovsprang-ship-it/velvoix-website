@@ -5,9 +5,13 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 interface Props {
   locale: Locale;
   nav: NavItem[];
+  languagePaths?: {
+    nl: string;
+    en: string;
+  };
 }
 
-const { locale, nav } = Astro.props;
+const { locale, nav, languagePaths } = Astro.props;
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[rgba(249,251,253,0.92)] backdrop-blur-xl">
@@ -25,7 +29,7 @@ const { locale, nav } = Astro.props;
     </div>
 
     <div class="hidden lg:flex lg:items-center">
-      <LanguageSwitcher locale={locale} />
+      <LanguageSwitcher locale={locale} nlPath={languagePaths?.nl} enPath={languagePaths?.en} />
     </div>
 
     <details class="relative lg:hidden">
@@ -34,7 +38,7 @@ const { locale, nav } = Astro.props;
       </summary>
       <div class="panel absolute right-0 top-14 w-[18rem] rounded-3xl p-4">
         <div class="mb-4">
-          <LanguageSwitcher locale={locale} />
+          <LanguageSwitcher locale={locale} nlPath={languagePaths?.nl} enPath={languagePaths?.en} />
         </div>
         <div class="flex flex-col gap-1">
           {nav.map((item) => (
