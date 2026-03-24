@@ -197,7 +197,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Veel systemen kunnen wel registreren dat er iets gebeurt, maar helpen onvoldoende bij de volgende stap: wat is er waarschijnlijk aan de hand, hoe urgent is het, welke opvolging past daarbij en hoe blijft dat achteraf goed te reconstrueren?',
       proofPanels: {
-        explainabilityLabel: 'Explainability',
+        explainabilityLabel: 'Uitlegbaarheid',
         explainabilityTitle: 'Waarom',
         explainabilitySummary: 'Helpknop is herhaald binnen korte tijd.',
         explainabilitySupporting: 'Gebaseerd op triageregels en meldingscontext.',
@@ -206,7 +206,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: 'Kernwaarneming', value: 'Opvolging is waarschijnlijk opnieuw nodig.' },
           { label: 'Triagebasis', value: 'Herhaling in korte tijd en context van deze melding.' },
         ],
-        followUpLabel: 'Operational follow-up',
+        followUpLabel: 'Werkbare opvolging',
         followUpTitle: 'Aanbevolen aanpak',
         followUpSummary: 'Ga direct naar bewoner; controleer situatie.',
         followUpItems: [
@@ -353,12 +353,12 @@ export const siteContent: Record<Locale, SiteContent> = {
           index: '02',
           title: 'Uitlegbare triageketen',
           description:
-            'Triage levert niet alleen een urgentie, maar ook context, recommended action en explainability in zorgtaal.',
+            'Triage levert niet alleen een urgentie, maar ook context, aanbevolen aanpak en uitlegbaarheid in zorgtaal.',
           effect: 'Begrijpelijke prioritering in plaats van een black-box score.',
         },
         {
           index: '03',
-          title: 'Governance en control-plane',
+          title: 'Governance en besturingslaag',
           description:
             'Configuratie, publicatiestatus en kwaliteitsbewaking zijn onderdeel van het product, niet losse beheerbijlagen.',
           effect: 'Beheersbare uitrol zonder semantische drift.',
@@ -378,7 +378,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Product snapshots',
       title: 'Compacte bewijsfragmenten uit het product',
       description:
-        'Geen volledige schermen, maar gerichte uitsneden die laten zien hoe Velvoix operations, explainability, control en governance zichtbaar maakt.',
+        'Geen volledige schermen, maar gerichte uitsneden die laten zien hoe Velvoix werkvoorraad, uitlegbaarheid, beheer en governance zichtbaar maakt.',
       cards: [
         {
           title: 'Meldingenlijst',
