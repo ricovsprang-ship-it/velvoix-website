@@ -53,16 +53,16 @@ const { content } = Astro.props;
                 <div class="chain-rail chain-rail-primary">
                   {content.velvoixSteps.slice(0, 4).map((step, index) => (
                     <>
-                      <button
-                        type="button"
-                        class="chain-node chain-module chain-module-velvoix"
-                        data-chain-node
-                        data-chain-node-index={index}
-                        data-chain-detail-title={content.stepDetails[index]?.title}
-                        data-chain-detail-description={content.stepDetails[index]?.description}
-                        aria-pressed={index === 0 ? 'true' : 'false'}
-                        aria-controls="chain-step-detail"
-                      >
+                    <button
+                      type="button"
+                      class="chain-node chain-module chain-module-velvoix"
+                      data-chain-node
+                      data-chain-node-index={index}
+                      data-chain-step-title={content.stepDetails[index]?.title}
+                      data-chain-step-description={content.stepDetails[index]?.description}
+                      aria-pressed={index === 0 ? 'true' : 'false'}
+                      aria-controls="chain-step-detail"
+                    >
                         <span class="chain-node-label">{step}</span>
                       </button>
                       {index < 3 && (
@@ -84,8 +84,8 @@ const { content } = Astro.props;
                           class="chain-node chain-module chain-module-velvoix"
                           data-chain-node
                           data-chain-node-index={index}
-                          data-chain-detail-title={content.stepDetails[index]?.title}
-                          data-chain-detail-description={content.stepDetails[index]?.description}
+                          data-chain-step-title={content.stepDetails[index]?.title}
+                          data-chain-step-description={content.stepDetails[index]?.description}
                           aria-pressed="false"
                           aria-controls="chain-step-detail"
                         >
@@ -115,10 +115,10 @@ const { content } = Astro.props;
                 <div class="flex items-start gap-3">
                   <span class="mt-1.5 size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
                   <div class="min-w-0">
-                    <p class="chain-detail-title text-[0.84rem] font-semibold uppercase tracking-[0.12em] text-slate-700" data-chain-detail-title>
+                    <p class="chain-detail-title text-[0.84rem] font-semibold uppercase tracking-[0.12em] text-slate-700" data-chain-detail-title-target>
                       {content.stepDetails[0]?.title}
                     </p>
-                    <p class="chain-detail-description mt-2 text-sm leading-6 text-slate-600" data-chain-detail-description>
+                    <p class="chain-detail-description mt-2 text-sm leading-6 text-slate-600" data-chain-detail-description-target>
                       {content.stepDetails[0]?.description}
                     </p>
                   </div>
@@ -354,8 +354,8 @@ const { content } = Astro.props;
     const flowLine = block.querySelector('[data-chain-flow-line]');
     const highlight = block.querySelector('[data-chain-highlight]');
     const detail = block.querySelector<HTMLElement>('[data-chain-detail]');
-    const detailTitle = block.querySelector<HTMLElement>('[data-chain-detail-title]');
-    const detailDescription = block.querySelector<HTMLElement>('[data-chain-detail-description]');
+    const detailTitle = block.querySelector<HTMLElement>('[data-chain-detail-title-target]');
+    const detailDescription = block.querySelector<HTMLElement>('[data-chain-detail-description-target]');
     const nodes = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-node]'));
     const arrows = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-arrow]'));
     const results = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-result]'));
@@ -374,8 +374,8 @@ const { content } = Astro.props;
         node.setAttribute('aria-pressed', nodeIndex === index ? 'true' : 'false');
       }
 
-      const nextTitle = activeNode.dataset.chainDetailTitle ?? activeNode.textContent?.trim() ?? '';
-      const nextDescription = activeNode.dataset.chainDetailDescription ?? '';
+      const nextTitle = activeNode.dataset.chainStepTitle ?? activeNode.textContent?.trim() ?? '';
+      const nextDescription = activeNode.dataset.chainStepDescription ?? '';
 
       if (prefersReducedMotion) {
         detailTitle.textContent = nextTitle;
