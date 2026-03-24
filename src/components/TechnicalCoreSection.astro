@@ -10,7 +10,7 @@ const { content } = Astro.props;
 ---
 
 <section class="section-block surface-band-alt" id="technical-core" data-technical-core>
-  <div class="section-shell grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:items-start lg:gap-12">
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
     <div class="max-w-[31rem]" data-technical-core-intro>
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
       {content.capabilities?.length ? (
@@ -25,22 +25,22 @@ const { content } = Astro.props;
       ) : null}
     </div>
 
-    <div class="grid gap-3.5 lg:self-start" data-technical-core-rows>
+    <div class="space-y-3.5" data-technical-core-rows>
       {content.rows.map((row) => (
         <article
           class="technical-row rounded-[1.28rem] border border-slate-200/85 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(244,248,251,0.92))] px-5 py-5 shadow-[0_12px_24px_rgba(31,53,87,0.045)] md:px-6"
           data-technical-row
         >
-          <div class="grid gap-4 md:grid-cols-[4.15rem_minmax(0,1fr)] md:items-start md:gap-5">
-            <div class="shrink-0">
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div class="shrink-0 md:w-[4.15rem]">
               <p class="text-[0.74rem] font-bold uppercase tracking-[0.2em] text-slate-400">{row.index}</p>
             </div>
 
             <div class="min-w-0 flex-1">
               <h3 class="text-[1.13rem] font-semibold tracking-tight text-slate-950">{row.title}</h3>
               <p class="mt-2 max-w-[44rem] text-sm leading-6 text-slate-600">{row.description}</p>
-              <p class="mt-3 grid grid-cols-[0.38rem_minmax(0,1fr)] items-start gap-x-2.5 text-[0.88rem] font-medium text-slate-700">
-                <span class="mt-[0.42rem] block size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
+              <p class="mt-3 flex items-start gap-2.5 text-[0.88rem] font-medium text-slate-700">
+                <span class="mt-[0.42rem] size-1.5 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
                 <span>{row.effect}</span>
               </p>
             </div>
@@ -57,12 +57,12 @@ const { content } = Astro.props;
 
 <style>
   [data-technical-core] .technical-capability-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.72rem 1rem;
+    display: grid;
+    gap: 0.72rem;
   }
   [data-technical-core] .technical-capability-item {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 0.38rem minmax(0, 1fr);
     align-items: center;
     gap: 0.55rem;
     color: rgb(71 85 105);
@@ -81,13 +81,11 @@ const { content } = Astro.props;
   [data-technical-core] .technical-row {
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   }
-  [data-technical-core] [data-technical-core-rows] {
-    width: 100%;
-  }
-  @media (min-width: 1024px) {
-    [data-technical-core] [data-technical-core-rows] {
-      max-width: 43rem;
-      justify-self: end;
+  @media (min-width: 768px) {
+    [data-technical-core] .technical-capability-strip {
+      grid-template-columns: repeat(2, minmax(0, max-content));
+      column-gap: 1.2rem;
+      align-items: start;
     }
   }
   [data-technical-core] .technical-row:hover {
