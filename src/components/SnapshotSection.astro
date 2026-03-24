@@ -6,711 +6,666 @@ interface Props {
   content: SnapshotSectionContent;
 }
 
-const { content } = Astro.props;
+const { content: _content } = Astro.props;
 const isEnglish = Astro.url.pathname.startsWith('/en');
 
 const sectionContent = isEnglish
   ? {
-      eyebrow: 'Product showcase',
+      eyebrow: 'Product Showcase',
       title: 'A controlled view into the platform',
       description:
-        'Velvoix does not only surface signals, but keeps event truth, explainable follow-up, management and reconstruction together in one care-oriented operational environment.',
+        'A calm product tour through the screens that make the operational difference: events, context, follow-up, management and governance.',
       supporting:
-        'Not full screens, but readable desktop fragments that show how one operational truth carries status, explanation, ownership and management together.',
-      domains: [
-        { id: 'event-page', label: 'Event Page', kicker: 'Worklist', title: 'One operational event truth instead of loose signals', description: 'Urgency, resident context, recommended action and status stay tied to the same workable event.' },
-        { id: 'handling', label: 'Handling', kicker: 'Follow-up', title: 'Explainability, SLA and action in one follow-up surface', description: 'Recommended action, ownership, transfer and completion stay part of the same operational object.' },
-        { id: 'box-management', label: 'Box Management', kicker: 'Control', title: 'Management that stays controlled across rooms and devices', description: 'Box state, resident linking and availability stay visible in a role-aware management layer.' },
-        { id: 'technical-insight', label: 'Technical Insight', kicker: 'Governance', title: 'Governance and observability without exposing internals', description: 'Publication state, active configuration and operational visibility stay clear without revealing product internals.' },
-        { id: 'kpi-overview', label: 'KPI Overview', kicker: 'Steering', title: 'Steering from backend truth, not dashboard noise', description: 'Open events, SLA performance and escalations stay readable as operational steering rather than dashboard clutter.' },
-        { id: 'client-history', label: 'Client History', kicker: 'Context', title: 'Reconstruction stays close to resident context', description: 'Recent events, follow-up history and pattern context stay connected instead of being spread across systems.' },
+        'A curated tour, not a document viewer: readable desktop views that show how Velvoix keeps worklist, context and operational control together.',
+      cta: 'Open fullscreen platform tour',
+      previewLabel: 'Preview',
+      previewTitle: 'Nine curated desktop views',
+      previewBody:
+        'From worklist to event detail, assignment, handling, management and governance.',
+      overlayLabel: 'Platform tour',
+      counterLabel: 'Slide',
+      closeLabel: 'Close',
+      previousLabel: 'Previous',
+      nextLabel: 'Next',
+      railLabel: 'Tour sections',
+      slides: [
+        {
+          id: 'login',
+          label: 'Start',
+          title: 'A calm entry into the platform',
+          text: 'Velvoix starts with a clear and quiet entry point into the operational workflow.',
+          image: '/products/platformtour/login.png',
+          alt: 'Velvoix login screen',
+        },
+        {
+          id: 'worklist',
+          label: 'Worklist',
+          title: 'Events that stay workable',
+          text: 'Urgency, status and actions remain readable so teams can act faster without losing context.',
+          image: '/products/platformtour/worklist.png',
+          alt: 'Velvoix events worklist',
+        },
+        {
+          id: 'event-detail',
+          label: 'Event Detail',
+          title: 'Why, action and context together',
+          text: 'The event detail view keeps reason, context, timeline and actions together in one operational object.',
+          image: '/products/platformtour/event-detail.png',
+          alt: 'Velvoix event detail screen',
+        },
+        {
+          id: 'assign',
+          label: 'Assign',
+          title: 'Link the right colleague quickly',
+          text: 'Assignment stays calm and targeted without forcing teams to leave the event context.',
+          image: '/products/platformtour/assign.png',
+          alt: 'Velvoix assignment dialog',
+        },
+        {
+          id: 'handover',
+          label: 'Handling',
+          title: 'Transfer and resolve with a clear reason',
+          text: 'Transfer and completion remain structured, explainable and suitable for logging and audit.',
+          image: '/products/platformtour/handover.png',
+          alt: 'Velvoix handover and completion dialog',
+        },
+        {
+          id: 'client-context',
+          label: 'Client Context',
+          title: 'Relevant context in one place',
+          text: 'Care context, privacy boundaries and contact information remain directly available for safe follow-up.',
+          image: '/products/platformtour/client-context.png',
+          alt: 'Velvoix client context view',
+        },
+        {
+          id: 'care-overview',
+          label: 'Care Overview',
+          title: 'Management flow instead of dashboard noise',
+          text: 'Operational insight shows where pressure, trend and SLA risk rise most clearly.',
+          image: '/products/platformtour/care-overview.png',
+          alt: 'Velvoix care overview dashboard',
+        },
+        {
+          id: 'management',
+          label: 'Management',
+          title: 'Control that remains calm and purposeful',
+          text: 'Linking, availability and work order stay understandable without turning management into a burden.',
+          image: '/products/platformtour/management.png',
+          alt: 'Velvoix management and linking view',
+        },
+        {
+          id: 'governance',
+          label: 'Governance',
+          title: 'Governance stays visible and manageable',
+          text: 'Profiles, quality and the technical foundation remain understandable without overloading the work floor.',
+          image: '/products/platformtour/governance.png',
+          alt: 'Velvoix governance and profile view',
+        },
       ],
     }
   : {
       eyebrow: 'Productshowcase',
       title: 'Een gecontroleerd inkijkje in het platform',
       description:
-        'Velvoix toont niet alleen signalen, maar houdt eventwaarheid, uitlegbare opvolging, beheer en reconstructie samen in een zorggerichte operationele omgeving.',
+        'Een rustige producttour langs de schermen die in de dagelijkse operatie het verschil maken: events, context, opvolging, beheer en governance.',
       supporting:
-        'Geen volledige schermen, maar leesbare desktopfragmenten die laten zien hoe status, uitleg, eigenaarschap en beheer op een operationele waarheid samenkomen.',
-      domains: [
-        { id: 'event-page', label: 'Eventpagina', kicker: 'Werkvoorraad', title: 'Een operationele eventwaarheid in plaats van losse signalen', description: 'Urgentie, bewonercontext, aanbevolen aanpak en status blijven gekoppeld aan hetzelfde werkbare event.' },
-        { id: 'handling', label: 'Afhandeling', kicker: 'Opvolging', title: 'Uitleg, SLA en actie in een werkbaar afhandelvlak', description: 'Aanbevolen aanpak, eigenaarschap, overdracht en afronding blijven onderdeel van hetzelfde operationele object.' },
-        { id: 'box-management', label: 'Boxbeheer', kicker: 'Beheer', title: 'Beheer dat gecontroleerd blijft over kamers en devices', description: 'Boxstatus, bewonerkoppeling en beschikbaarheid blijven zichtbaar in een rolzuivere beheerlaag.' },
-        { id: 'technical-insight', label: 'Technisch inzicht', kicker: 'Besturing', title: 'Governance en observability zonder internals te tonen', description: 'Publicatiestatus, actieve configuratie en operationele zichtbaarheid blijven helder zonder productinternals prijs te geven.' },
-        { id: 'kpi-overview', label: 'KPI-overzicht', kicker: 'Sturing', title: 'Sturen vanuit backend-truth, niet vanuit dashboardruis', description: 'Open events, SLA-prestatie en escalaties blijven leesbaar als operationele sturing in plaats van dashboarddrukte.' },
-        { id: 'client-history', label: 'Cliënthistorie', kicker: 'Context', title: 'Reconstructie blijft dichtbij de bewonercontext', description: 'Recente events, opvolghistorie en patrooncontext blijven verbonden in plaats van verspreid over systemen.' },
+        'Een gecureerde tour, geen documentviewer: leesbare desktopweergaven die laten zien hoe Velvoix werkvoorraad, context en operationele controle samenhoudt.',
+      cta: 'Open fullscreen platformtour',
+      previewLabel: 'Preview',
+      previewTitle: 'Negen gecureerde desktopweergaven',
+      previewBody:
+        'Van werkvoorraad tot eventdetail, toewijzen, afhandeling, beheer en governance.',
+      overlayLabel: 'Platformtour',
+      counterLabel: 'Slide',
+      closeLabel: 'Sluiten',
+      previousLabel: 'Vorige',
+      nextLabel: 'Volgende',
+      railLabel: 'Onderdelen van de tour',
+      slides: [
+        {
+          id: 'login',
+          label: 'Start',
+          title: 'Rustige instap in het platform',
+          text: 'Velvoix begint met een duidelijke en rustige toegang tot de operationele workflow.',
+          image: '/products/platformtour/login.png',
+          alt: 'Velvoix login scherm',
+        },
+        {
+          id: 'worklist',
+          label: 'Werkvoorraad',
+          title: 'Meldingen die werkbaar blijven',
+          text: 'Urgentie, status en acties blijven helder zodat teams sneller kunnen handelen zonder contextverlies.',
+          image: '/products/platformtour/worklist.png',
+          alt: 'Velvoix meldingenlijst',
+        },
+        {
+          id: 'event-detail',
+          label: 'Eventdetail',
+          title: 'Waarom, aanpak en onderbouwing samen',
+          text: 'De melddetailpagina bundelt reden, context, tijdlijn en acties in een operationeel object.',
+          image: '/products/platformtour/event-detail.png',
+          alt: 'Velvoix eventdetailpagina',
+        },
+        {
+          id: 'assign',
+          label: 'Toewijzen',
+          title: 'Snel de juiste collega koppelen',
+          text: 'Toewijzen blijft rustig en doelgericht zonder de melddetailcontext te verlaten.',
+          image: '/products/platformtour/assign.png',
+          alt: 'Velvoix toewijzen dialoog',
+        },
+        {
+          id: 'handover',
+          label: 'Afhandeling',
+          title: 'Overdragen en afhandelen met duidelijke reden',
+          text: 'Overdracht en afhandeling blijven gestructureerd, uitlegbaar en geschikt voor log en audit.',
+          image: '/products/platformtour/handover.png',
+          alt: 'Velvoix overdracht- en afhandelingsdialoog',
+        },
+        {
+          id: 'client-context',
+          label: 'Cliëntcontext',
+          title: 'Relevante context op één plek',
+          text: 'Zorgcontext, privacygrenzen en contactinformatie blijven direct beschikbaar voor veilige opvolging.',
+          image: '/products/platformtour/client-context.png',
+          alt: 'Velvoix cliëntcontext',
+        },
+        {
+          id: 'care-overview',
+          label: 'Zorgoverzicht',
+          title: 'Managementflow in plaats van losse dashboards',
+          text: 'Operationeel inzicht maakt zichtbaar waar druk, trend en SLA-risico het meest oplopen.',
+          image: '/products/platformtour/care-overview.png',
+          alt: 'Velvoix zorgoverzicht',
+        },
+        {
+          id: 'management',
+          label: 'Koppelingen',
+          title: 'Beheer dat rustig en doelgericht blijft',
+          text: 'Koppelingen, beschikbaarheid en werkvolgorde blijven overzichtelijk zonder beheerdrukte.',
+          image: '/products/platformtour/management.png',
+          alt: 'Velvoix beheer en koppelingen',
+        },
+        {
+          id: 'governance',
+          label: 'Governance',
+          title: 'Governance zichtbaar en beheersbaar',
+          text: 'Profielen, kwaliteit en technische basis blijven inzichtelijk zonder de werkvloer te overladen.',
+          image: '/products/platformtour/governance.png',
+          alt: 'Velvoix governance en kernprofielen',
+        },
       ],
     };
 
-const firstDomain = sectionContent.domains[0];
-const detailContent = isEnglish
-  ? {
-      openLabel: 'Open product detail',
-      closeLabel: 'Close',
-      whatTitle: 'What this shows',
-      whyTitle: 'Why this matters',
-      valueTitle: 'Operational value',
-      domains: {
-        'event-page': {
-          what: 'A desktop worklist where queue, urgency, resident context, recommended action and status stay attached to the same event object.',
-          why: 'This shows that Velvoix is not just a signal feed, but one operational truth that remains workable for teams.',
-          value: 'Teams can scan faster and act with less interpretation burden because explanation and follow-up are already connected.',
-        },
-        handling: {
-          what: 'A handling surface with recommended action, urgency, SLA, ownership and direct action controls in one place.',
-          why: 'This proves that follow-up becomes workable inside the product, not something teams have to reconstruct from separate signals.',
-          value: 'Ownership, transfer and completion remain manageable in daily care workflow.',
-        },
-        'box-management': {
-          what: 'A management view for device state, resident linking, room assignment and last check-in.',
-          why: 'This shows that operational control over hardware and care context stays governed instead of drifting into ad hoc admin work.',
-          value: 'Support and care operations can manage availability and linking without fragmentation.',
-        },
-        'technical-insight': {
-          what: 'A high-level governance view with active configuration, publication state and operational visibility.',
-          why: 'This demonstrates observability and governance without exposing rulesets, phrase packs or other sensitive internals.',
-          value: 'The platform remains governable, observable and operationally trustworthy.',
-        },
-        'kpi-overview': {
-          what: 'A compact steering workspace with open events, SLA performance, escalations and workload context.',
-          why: 'This shows that Velvoix supports operational steering from the same underlying event truth, not from disconnected dashboard layers.',
-          value: 'Teams and managers can steer on follow-up quality without analytics overload.',
-        },
-        'client-history': {
-          what: 'A resident-oriented history view that keeps recent events, follow-up and pattern context connected.',
-          why: 'This shows how reconstruction stays close to resident context instead of being spread across systems and exports.',
-          value: 'Care teams can understand patterns and follow-up history faster and with more confidence.',
-        },
-      },
-    }
-  : {
-      openLabel: 'Open detailweergave',
-      closeLabel: 'Sluiten',
-      whatTitle: 'Wat laat dit zien',
-      whyTitle: 'Waarom dit belangrijk is',
-      valueTitle: 'Operationele waarde',
-      domains: {
-        'event-page': {
-          what: 'Een desktopwerkvoorraad waarin queue, urgentie, bewonercontext, aanbevolen aanpak en status gekoppeld blijven aan hetzelfde eventobject.',
-          why: 'Dit laat zien dat Velvoix niet alleen een signalenstroom is, maar een operationele waarheid die werkbaar blijft voor teams.',
-          value: 'Teams kunnen sneller scannen en handelen met minder interpretatielast omdat uitleg en opvolging al samenkomen.',
-        },
-        handling: {
-          what: 'Een afhandelscherm met aanbevolen aanpak, urgentie, SLA, eigenaarschap en directe actieknoppen in een vlak.',
-          why: 'Dit bewijst dat opvolging werkbaar wordt binnen het product zelf en niet opnieuw moet worden opgebouwd uit losse signalen.',
-          value: 'Eigenaarschap, overdracht en afronding blijven bestuurbaar in de dagelijkse zorgworkflow.',
-        },
-        'box-management': {
-          what: 'Een beheerweergave voor devicestatus, bewonerkoppeling, kamerkoppeling en laatste check-in.',
-          why: 'Dit laat zien dat operationele controle over hardware en zorgcontext beheerst blijft in plaats van te versnipperen in ad hoc beheerwerk.',
-          value: 'Support en zorgteams kunnen beschikbaarheid en koppelingen beheren zonder versnippering.',
-        },
-        'technical-insight': {
-          what: 'Een governanceweergave op hoofdlijnen met actieve configuratie, publicatiestatus en operationele zichtbaarheid in beeld.',
-          why: 'Dit toont observability en beheerbaarheid zonder rulesets, phrase packs of andere gevoelige internals prijs te geven.',
-          value: 'Het platform blijft bestuurbaar, observeerbaar en operationeel betrouwbaar.',
-        },
-        'kpi-overview': {
-          what: 'Een compacte sturingsweergave met open events, SLA-prestatie, escalaties en werkvoorraadcontext.',
-          why: 'Dit laat zien dat Velvoix ook operationele sturing ondersteunt vanuit dezelfde eventwaarheid, niet vanuit losse dashboardlagen.',
-          value: 'Teams en managers kunnen sturen op opvolgkwaliteit zonder analytics-overload.',
-        },
-        'client-history': {
-          what: 'Een clientgerichte historie waarin recente events, opvolging en patrooncontext verbonden blijven.',
-          why: 'Dit laat zien hoe reconstructie dicht bij de bewonercontext blijft in plaats van verspreid te raken over systemen en exports.',
-          value: 'Zorgteams begrijpen patronen en opvolghistorie sneller en met meer vertrouwen.',
-        },
-      },
-    };
+const previewSlide = sectionContent.slides[2];
 ---
 
-<section class="section-block" data-product-showcase>
-  <div class="section-shell grid gap-10 lg:grid-cols-[0.37fr_0.63fr] lg:items-start" data-showcase-locale={isEnglish ? 'en' : 'nl'}>
-    <div class="max-w-[31rem]" data-showcase-intro>
-      <SectionIntro eyebrow={sectionContent.eyebrow} title={sectionContent.title} description={sectionContent.description} />
-      <p class="mt-5 max-w-[30rem] text-sm leading-6 text-slate-500">{sectionContent.supporting}</p>
-
-      <div class="showcase-rail mt-8" role="tablist" aria-label={sectionContent.eyebrow}>
-        {sectionContent.domains.map((domain, index) => (
-          <button
-            type="button"
-            class:list={['showcase-rail-item', index === 0 && 'is-active']}
-            data-showcase-trigger
-            data-domain-id={domain.id}
-            data-kicker={domain.kicker}
-            data-title={domain.title}
-            data-description={domain.description}
-            data-overlay-what={detailContent.domains[domain.id as keyof typeof detailContent.domains].what}
-            data-overlay-why={detailContent.domains[domain.id as keyof typeof detailContent.domains].why}
-            data-overlay-value={detailContent.domains[domain.id as keyof typeof detailContent.domains].value}
-            aria-selected={index === 0 ? 'true' : 'false'}
-            tabindex={index === 0 ? '0' : '-1'}
-          >
-            <span class="showcase-rail-label">{domain.label}</span>
-            <span class="showcase-rail-kicker">{domain.kicker}</span>
+<section class="section-block" data-platform-tour>
+  <div class="section-shell">
+    <div class="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+      <div class="max-w-[33rem]" data-platform-tour-intro>
+        <SectionIntro eyebrow={sectionContent.eyebrow} title={sectionContent.title} description={sectionContent.description} />
+        <p class="mt-5 max-w-[31rem] text-sm leading-6 text-slate-500">{sectionContent.supporting}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <button type="button" class="platform-tour-button" data-tour-open>
+            {sectionContent.cta}
           </button>
-        ))}
+          <span class="platform-tour-footnote">
+            {sectionContent.slides.length} {isEnglish ? 'curated views' : 'gecureerde schermen'}
+          </span>
+        </div>
+      </div>
+
+      <div class="platform-tour-teaser" data-platform-tour-teaser>
+        <div class="platform-tour-teaser__frame">
+          <img
+            src={previewSlide.image}
+            alt={previewSlide.alt}
+            class="platform-tour-teaser__image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="platform-tour-teaser__copy">
+            <p class="platform-tour-teaser__label">{sectionContent.previewLabel}</p>
+            <h3>{sectionContent.previewTitle}</h3>
+            <p>{sectionContent.previewBody}</p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="showcase-shell" data-showcase-shell>
-      <div class="showcase-frame">
-        <div class="showcase-frame-head">
-          <div>
-            <p class="showcase-kicker" data-showcase-kicker>{firstDomain.kicker}</p>
-            <h3 class="showcase-title" data-showcase-title>{firstDomain.title}</h3>
-          </div>
-          <div class="showcase-head-actions">
-            <p class="showcase-description" data-showcase-description>{firstDomain.description}</p>
-            <button type="button" class="showcase-open-button" data-showcase-open>{detailContent.openLabel}</button>
-          </div>
-        </div>
-
-        <div class="showcase-stage">
-          <article class="showcase-panel" data-showcase-panel="event-page">
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Events' : 'Eventpagina'}</span>
-                <div class="workspace-topmeta">
-                  <span>{isEnglish ? 'Current shift' : 'Huidige dienst'}</span>
-                  <span>{isEnglish ? 'Updated 07:42' : 'Laatste update 07:42'}</span>
-                </div>
-              </div>
-              <div class="workspace-grid workspace-grid--events">
-                <aside class="workspace-sidebar">
-                  <div class="workspace-sidebar-block">
-                    <div class="workspace-label">{isEnglish ? 'Filters' : 'Filters'}</div>
-                    <div class="workspace-filter-list">
-                      <span class="workspace-filter">{isEnglish ? 'All departments' : 'Alle afdelingen'}</span>
-                      <span class="workspace-filter is-active">{isEnglish ? 'Direct' : 'Direct'}</span>
-                      <span class="workspace-filter">{isEnglish ? 'Open' : 'Open'}</span>
-                    </div>
-                  </div>
-                  <div class="workspace-sidebar-block">
-                    <div class="workspace-label">{isEnglish ? 'Queue' : 'Werkvoorraad'}</div>
-                    <div class="workspace-kpi-stack">
-                      <div><span>{isEnglish ? 'Open' : 'Open'}</span><strong>38</strong></div>
-                      <div><span>{isEnglish ? 'In progress' : 'In behandeling'}</span><strong>11</strong></div>
-                    </div>
-                  </div>
-                </aside>
-
-                <section class="workspace-listpanel">
-                  <div class="workspace-table-head">
-                    <span>{isEnglish ? 'Resident' : 'Bewoner'}</span>
-                    <span>{isEnglish ? 'Signal' : 'Signaal'}</span>
-                    <span>{isEnglish ? 'Status' : 'Status'}</span>
-                  </div>
-                  <article class="workspace-table-row is-active">
-                    <div>
-                      <strong>{isEnglish ? 'Mrs Anna de Vries' : 'Mevrouw Anna de Vries'}</strong>
-                      <span>{isEnglish ? 'Room 01A-001' : 'Kamer 01A-001'}</span>
-                    </div>
-                    <div>
-                      <strong>{isEnglish ? 'Repeated help call' : 'Helpoproep herhaald'}</strong>
-                      <span>07:39</span>
-                    </div>
-                    <div class="workspace-status-group">
-                      <span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Direct' : 'Direct'}</span>
-                      <span class="workspace-ring">{isEnglish ? 'Open' : 'Open'}</span>
-                    </div>
-                  </article>
-                  <article class="workspace-table-row">
-                    <div>
-                      <strong>{isEnglish ? 'Mr Jan Willems' : 'Meneer Jan Willems'}</strong>
-                      <span>{isEnglish ? 'Room 01A-008' : 'Kamer 01A-008'}</span>
-                    </div>
-                    <div>
-                      <strong>{isEnglish ? 'Voice input' : 'Spraakinput'}</strong>
-                      <span>07:31</span>
-                    </div>
-                    <div class="workspace-status-group">
-                      <span class="workspace-ring workspace-ring--follow">{isEnglish ? 'Under monitoring' : 'Volgen'}</span>
-                      <span class="workspace-ring">{isEnglish ? 'Assigned for follow-up' : 'Toegewezen'}</span>
-                    </div>
-                  </article>
-                  <article class="workspace-table-row">
-                    <div>
-                      <strong>{isEnglish ? 'Mrs Lotte Bakker' : 'Mevrouw Lotte Bakker'}</strong>
-                      <span>{isEnglish ? 'Room 01A-003' : 'Kamer 01A-003'}</span>
-                    </div>
-                    <div>
-                      <strong>{isEnglish ? 'Movement signal outside pattern' : 'Bewegingssignaal buiten patroon'}</strong>
-                      <span>07:18</span>
-                    </div>
-                    <div class="workspace-status-group">
-                      <span class="workspace-ring workspace-ring--today">{isEnglish ? 'Today' : 'Vandaag'}</span>
-                      <span class="workspace-ring">{isEnglish ? 'Visible to team' : 'Team zichtbaar'}</span>
-                    </div>
-                  </article>
-                </section>
-
-                <aside class="workspace-detail">
-                  <div class="workspace-label">{isEnglish ? 'Selected event' : 'Geselecteerd event'}</div>
-                  <h4>{isEnglish ? 'Recommended action' : 'Aanbevolen aanpak'}</h4>
-                  <p>{isEnglish ? 'Go directly to the resident; check the situation.' : 'Ga direct naar bewoner; controleer situatie.'}</p>
-                  <div class="workspace-detail-grid">
-                    <div><span>{isEnglish ? 'Urgency' : 'Urgentie'}</span><strong>{isEnglish ? 'Direct' : 'Direct'}</strong></div>
-                    <div><span>{isEnglish ? 'Why' : 'Waarom'}</span><strong>{isEnglish ? 'Repeated shortly' : 'Herhaald kort na elkaar'}</strong></div>
-                    <div><span>{isEnglish ? 'Owner' : 'Eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcase-panel" data-showcase-panel="handling" hidden>
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Handling' : 'Afhandeling'}</span>
-                <div class="workspace-topmeta"><span>{isEnglish ? 'Action flow' : 'Actieflow'}</span></div>
-              </div>
-              <div class="workspace-grid workspace-grid--handling">
-                <section class="workspace-primary-card">
-                  <div class="workspace-card-head">
-                    <div class="workspace-label">{isEnglish ? 'Explainable triage' : 'Uitlegbare triage'}</div>
-                    <span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Direct' : 'Direct'}</span>
-                  </div>
-                  <h4>{isEnglish ? 'Go directly to the resident; check the situation.' : 'Ga direct naar bewoner; controleer situatie.'}</h4>
-                  <p>{isEnglish ? 'Repeat behaviour, context and urgency are combined into one workable next step.' : 'Herhaling, context en urgentie worden samengebracht tot een werkbare vervolgactie.'}</p>
-                  <div class="workspace-detail-grid">
-                    <div><span>{isEnglish ? 'SLA' : 'SLA'}</span><strong>{isEnglish ? 'Critical' : 'Kritisch'}</strong></div>
-                    <div><span>{isEnglish ? 'Status' : 'Status'}</span><strong>{isEnglish ? 'Open' : 'Open'}</strong></div>
-                    <div><span>{isEnglish ? 'Owner' : 'Eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
-                  </div>
-                  <div class="workspace-actionbar">
-                    <button type="button" class="workspace-action workspace-action--primary">{isEnglish ? 'Take ownership' : 'Pak op'}</button>
-                    <button type="button" class="workspace-action">{isEnglish ? 'Assign' : 'Toewijzen'}</button>
-                    <button type="button" class="workspace-action">{isEnglish ? 'Transfer' : 'Overdragen'}</button>
-                    <button type="button" class="workspace-action">{isEnglish ? 'Resolve' : 'Afhandelen'}</button>
-                  </div>
-                </section>
-
-                <aside class="workspace-sidecolumn">
-                  <section class="workspace-sidecard">
-                    <div class="workspace-label">{isEnglish ? 'Status flow' : 'Statusverloop'}</div>
-                    <div class="workspace-flowline">
-                      <span class="workspace-flowstep is-active">{isEnglish ? 'Open' : 'Open'}</span>
-                      <span class="workspace-flowstep">{isEnglish ? 'Claimed' : 'Opgepakt'}</span>
-                      <span class="workspace-flowstep">{isEnglish ? 'Resolved' : 'Afgehandeld'}</span>
-                    </div>
-                  </section>
-                  <section class="workspace-sidecard">
-                    <div class="workspace-label">{isEnglish ? 'Assignment' : 'Toewijzing'}</div>
-                    <div class="workspace-minirows">
-                      <div><span>{isEnglish ? 'Team' : 'Team'}</span><strong>{isEnglish ? 'Somatic care' : 'Somatiek'}</strong></div>
-                      <div><span>{isEnglish ? 'Current owner' : 'Huidige eigenaar'}</span><strong>{isEnglish ? 'Unassigned' : 'Niet toegewezen'}</strong></div>
-                    </div>
-                  </section>
-                </aside>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcase-panel" data-showcase-panel="box-management" hidden>
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Box management' : 'Boxbeheer'}</span>
-                <div class="workspace-topmeta">
-                  <button type="button" class="workspace-inline-action">{isEnglish ? 'Add box' : 'Box toevoegen'}</button>
-                  <button type="button" class="workspace-inline-action">{isEnglish ? 'Bulk link' : 'Bulk koppelen'}</button>
-                </div>
-              </div>
-              <div class="workspace-grid workspace-grid--management">
-                <section class="workspace-listpanel">
-                  <div class="workspace-table-head">
-                    <span>{isEnglish ? 'Box' : 'Box'}</span>
-                    <span>{isEnglish ? 'Resident / room' : 'Bewoner / kamer'}</span>
-                    <span>{isEnglish ? 'State' : 'Status'}</span>
-                  </div>
-                  <article class="workspace-table-row is-active">
-                    <div><strong>BX-01A-004</strong><span>Demo floor 01A</span></div>
-                    <div><strong>{isEnglish ? 'Mrs L. Bakker' : 'Mevrouw L. Bakker'}</strong><span>{isEnglish ? 'Room 01A-004' : 'Kamer 01A-004'}</span></div>
-                    <div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Online' : 'Online'}</span></div>
-                  </article>
-                  <article class="workspace-table-row">
-                    <div><strong>BX-01A-006</strong><span>Demo floor 01A</span></div>
-                    <div><strong>{isEnglish ? 'Available' : 'Beschikbaar'}</strong><span>{isEnglish ? 'Living room slot' : 'Woonkamerslot'}</span></div>
-                    <div class="workspace-status-group"><span class="workspace-ring workspace-ring--today">{isEnglish ? 'Available' : 'Beschikbaar'}</span></div>
-                  </article>
-                  <article class="workspace-table-row">
-                    <div><strong>BX-01A-009</strong><span>Demo floor 01A</span></div>
-                    <div><strong>{isEnglish ? 'Check required' : 'Controle nodig'}</strong><span>{isEnglish ? 'Last seen 06:54' : 'Laatst gezien 06:54'}</span></div>
-                    <div class="workspace-status-group"><span class="workspace-ring workspace-ring--urgent">{isEnglish ? 'Offline' : 'Offline'}</span></div>
-                  </article>
-                </section>
-
-                <aside class="workspace-detail">
-                  <div class="workspace-label">{isEnglish ? 'Link detail' : 'Koppeldetail'}</div>
-                  <h4>BX-01A-004</h4>
-                  <div class="workspace-detail-grid">
-                    <div><span>{isEnglish ? 'Resident' : 'Bewoner'}</span><strong>{isEnglish ? 'Mrs L. Bakker' : 'Mevrouw L. Bakker'}</strong></div>
-                    <div><span>{isEnglish ? 'Room' : 'Kamer'}</span><strong>01A-004</strong></div>
-                    <div><span>{isEnglish ? 'Last check-in' : 'Laatste check-in'}</span><strong>07:11</strong></div>
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcase-panel" data-showcase-panel="technical-insight" hidden>
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Technical Insight' : 'Technisch inzicht'}</span>
-                <div class="workspace-topmeta"><span>{isEnglish ? 'High-level governance only' : 'Alleen hoofdlijnen'}</span></div>
-              </div>
-              <div class="workspace-grid workspace-grid--technical">
-                <section class="workspace-primary-card">
-                  <div class="workspace-metricrow">
-                    <div class="workspace-metriccard"><span>{isEnglish ? 'Publication' : 'Publicatie'}</span><strong>{isEnglish ? 'Active' : 'Actief'}</strong></div>
-                    <div class="workspace-metriccard"><span>{isEnglish ? 'Explainability' : 'Uitlegbaarheid'}</span><strong>{isEnglish ? 'Visible' : 'Zichtbaar'}</strong></div>
-                  </div>
-                  <div class="workspace-table-head">
-                    <span>{isEnglish ? 'Control area' : 'Beheerlaag'}</span>
-                    <span>{isEnglish ? 'State' : 'Status'}</span>
-                  </div>
-                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Active configuration' : 'Actieve configuratie'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Published' : 'Gepubliceerd'}</span></div></article>
-                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Triage governance' : 'Triagegovernance'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Managed' : 'Beheerst'}</span></div></article>
-                  <article class="workspace-table-row"><div><strong>{isEnglish ? 'Version control' : 'Versiebeheer'}</strong></div><div class="workspace-status-group"><span class="workspace-ring">{isEnglish ? 'Traceable' : 'Herleidbaar'}</span></div></article>
-                </section>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcase-panel" data-showcase-panel="kpi-overview" hidden>
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'KPI overview' : 'KPI-overzicht'}</span>
-                <div class="workspace-topmeta"><span>{isEnglish ? 'Operational steering' : 'Operationele sturing'}</span></div>
-              </div>
-              <div class="workspace-grid workspace-grid--kpi">
-                <section class="workspace-metricrow">
-                  <article class="workspace-metriccard"><span>{isEnglish ? 'Open events' : 'Open events'}</span><strong>38</strong></article>
-                  <article class="workspace-metriccard"><span>{isEnglish ? 'Avg. response time' : 'Gem. opvolgtijd'}</span><strong>4m 12s</strong></article>
-                  <article class="workspace-metriccard"><span>{isEnglish ? 'Within SLA' : 'Binnen SLA'}</span><strong>94%</strong></article>
-                  <article class="workspace-metriccard"><span>{isEnglish ? 'Escalations' : 'Escalaties'}</span><strong>3</strong></article>
-                </section>
-                <section class="workspace-grid workspace-grid--kpi-detail">
-                  <div class="workspace-sidecard">
-                    <div class="workspace-label">{isEnglish ? 'Current workload' : 'Huidige werkvoorraad'}</div>
-                    <div class="workspace-minirows">
-                      <div><span>{isEnglish ? 'Direct' : 'Direct'}</span><strong>12</strong></div>
-                      <div><span>{isEnglish ? 'In progress' : 'In behandeling'}</span><strong>11</strong></div>
-                      <div><span>{isEnglish ? 'Escalated' : 'Geëscaleerd'}</span><strong>3</strong></div>
-                    </div>
-                  </div>
-                  <div class="workspace-sidecard">
-                    <div class="workspace-label">{isEnglish ? 'Follow-up quality' : 'Opvolgkwaliteit'}</div>
-                    <div class="workspace-minirows">
-                      <div><span>{isEnglish ? 'Claimed in SLA' : 'Op tijd opgepakt'}</span><strong>94%</strong></div>
-                      <div><span>{isEnglish ? 'Avg. handoff' : 'Gem. overdracht'}</span><strong>2m 08s</strong></div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcase-panel" data-showcase-panel="client-history" hidden>
-            <div class="product-workspace">
-              <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Client History' : 'Cliënthistorie'}</span>
-                <div class="workspace-topmeta"><span>{isEnglish ? 'Resident context' : 'Bewonercontext'}</span></div>
-              </div>
-              <div class="workspace-grid workspace-grid--history">
-                <section class="workspace-primary-card">
-                  <div class="workspace-card-head">
-                    <div>
-                      <h4>{isEnglish ? 'Mrs Anna de Vries' : 'Mevrouw Anna de Vries'}</h4>
-                      <p>{isEnglish ? 'Room 01A-001 - Somatic care' : 'Kamer 01A-001 - Somatiek'}</p>
-                    </div>
-                    <div class="workspace-status-group">
-                      <span class="workspace-ring">{isEnglish ? '2 open' : '2 open'}</span>
-                    </div>
-                  </div>
-                  <div class="history-timeline">
-                    <article class="history-node"><span>07:39</span><div><strong>{isEnglish ? 'Repeated help call' : 'Helpoproep herhaald'}</strong><p>{isEnglish ? 'Claimed directly - resident visited - follow-up recorded' : 'Direct opgepakt - bewoner bezocht - vervolg geregistreerd'}</p></div></article>
-                    <article class="history-node"><span>06:12</span><div><strong>{isEnglish ? 'Voice input: restlessness reported' : 'Spraakinput: onrust gemeld'}</strong><p>{isEnglish ? 'Set to in progress - observation added to resident context' : 'In behandeling gezet - observatie toegevoegd aan dossiercontext'}</p></div></article>
-                    <article class="history-node"><span>{isEnglish ? 'Yesterday' : 'Gisteren'}</span><div><strong>{isEnglish ? 'Movement signal outside pattern' : 'Bewegingssignaal buiten patroon'}</strong><p>{isEnglish ? 'Monitored without escalation - pattern history updated' : 'Gevolgd zonder escalatie - patroonhistorie bijgewerkt'}</p></div></article>
-                  </div>
-                </section>
-
-                <aside class="workspace-sidecard">
-                  <div class="workspace-label">{isEnglish ? 'Pattern context' : 'Patrooncontext'}</div>
-                  <div class="workspace-minirows">
-                    <div><span>{isEnglish ? 'Recent signal type' : 'Recent signaaltype'}</span><strong>{isEnglish ? 'Help button' : 'Helpknop'}</strong></div>
-                    <div><span>{isEnglish ? 'Follow-up state' : 'Opvolgstatus'}</span><strong>{isEnglish ? 'Stable' : 'Stabiel'}</strong></div>
-                    <div><span>{isEnglish ? 'Last check-in' : 'Laatste check-in'}</span><strong>07:11</strong></div>
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="showcase-overlay" data-showcase-overlay hidden aria-hidden="true">
-        <div class="showcase-overlay__backdrop" data-showcase-close></div>
-        <div
-          class="showcase-overlay__panel"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="showcase-overlay-title"
-          tabindex="-1"
-          data-showcase-overlay-panel
-        >
-          <div class="showcase-overlay__header">
-            <div>
-              <p class="showcase-kicker" data-overlay-kicker>{firstDomain.kicker}</p>
-              <h3 class="showcase-title" id="showcase-overlay-title" data-overlay-title>{firstDomain.title}</h3>
-            </div>
-            <button type="button" class="showcase-overlay__close" data-showcase-close>{detailContent.closeLabel}</button>
-          </div>
-
-          <div class="showcase-overlay__body">
-            <div class="showcase-overlay__preview" data-overlay-preview></div>
-            <aside class="showcase-overlay__copy">
-              <div class="showcase-overlay__copyblock">
-                <div class="showcase-overlay__copylabel">{detailContent.whatTitle}</div>
-                <p data-overlay-what>{detailContent.domains['event-page'].what}</p>
-              </div>
-              <div class="showcase-overlay__copyblock">
-                <div class="showcase-overlay__copylabel">{detailContent.whyTitle}</div>
-                <p data-overlay-why>{detailContent.domains['event-page'].why}</p>
-              </div>
-              <div class="showcase-overlay__copyblock">
-                <div class="showcase-overlay__copylabel">{detailContent.valueTitle}</div>
-                <p data-overlay-value>{detailContent.domains['event-page'].value}</p>
-              </div>
-            </aside>
+  <div class="platform-tour-overlay" data-tour-overlay hidden aria-hidden="true">
+    <div class="platform-tour-overlay__backdrop" data-tour-close></div>
+    <div
+      class="platform-tour-overlay__panel"
+      data-tour-panel
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="platform-tour-title"
+      tabindex="-1"
+    >
+      <header class="platform-tour-overlay__header">
+        <div class="platform-tour-overlay__meta">
+          <p class="platform-tour-overlay__eyebrow">{sectionContent.overlayLabel}</p>
+          <div class="platform-tour-overlay__counter">
+            <span data-tour-counter-current>1</span>
+            <span>/</span>
+            <span>{sectionContent.slides.length}</span>
           </div>
         </div>
+        <div class="platform-tour-overlay__actions">
+          <button type="button" class="platform-tour-nav is-ghost" data-tour-prev>{sectionContent.previousLabel}</button>
+          <button type="button" class="platform-tour-nav is-ghost" data-tour-next>{sectionContent.nextLabel}</button>
+          <button type="button" class="platform-tour-close" data-tour-close>{sectionContent.closeLabel}</button>
+        </div>
+      </header>
+
+      <div class="platform-tour-overlay__body">
+        <div class="platform-tour-stage" data-tour-stage>
+          {sectionContent.slides.map((slide, index) => (
+            <article class="platform-tour-slide" data-tour-slide data-slide-id={slide.id} hidden={index !== 0}>
+              <figure class="platform-tour-slide__figure">
+                <img src={slide.image} alt={slide.alt} loading="lazy" decoding="async" />
+              </figure>
+            </article>
+          ))}
+        </div>
+
+        <aside class="platform-tour-copy">
+          <div class="platform-tour-copy__main">
+            <p class="platform-tour-copy__label" data-tour-label>{sectionContent.slides[0].label}</p>
+            <h3 id="platform-tour-title" data-tour-title>{sectionContent.slides[0].title}</h3>
+            <p data-tour-text>{sectionContent.slides[0].text}</p>
+          </div>
+
+          <nav class="platform-tour-rail" aria-label={sectionContent.railLabel}>
+            {sectionContent.slides.map((slide, index) => (
+              <button
+                type="button"
+                class:list={['platform-tour-rail__item', index === 0 && 'is-active']}
+                data-tour-jump={index}
+                aria-current={index === 0 ? 'true' : 'false'}
+              >
+                <span class="platform-tour-rail__index">{String(index + 1).padStart(2, '0')}</span>
+                <span class="platform-tour-rail__copy">
+                  <strong>{slide.label}</strong>
+                  <span>{slide.title}</span>
+                </span>
+              </button>
+            ))}
+          </nav>
+        </aside>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  [data-product-showcase] .showcase-rail { display: grid; gap: 0.6rem; }
-  [data-product-showcase] .showcase-rail-item {
-    display: grid; gap: 0.14rem; width: 100%; padding: 1rem 1rem 1rem 1.05rem; text-align: left;
-    border-radius: 0.82rem; border: 1px solid rgba(214,223,233,0.95); background: rgba(255,255,255,0.78);
-    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
-  }
-  [data-product-showcase] .showcase-rail-item:hover,
-  [data-product-showcase] .showcase-rail-item:focus-visible,
-  [data-product-showcase] .showcase-rail-item.is-active {
-    border-color: rgba(31,53,87,0.18); background: rgba(248,251,252,0.98); box-shadow: 0 10px 22px rgba(31,53,87,0.05); outline: none;
-  }
-  [data-product-showcase] .showcase-rail-item.is-active {
-    transform: translateX(3px);
-    box-shadow: inset 3px 0 0 rgba(22, 63, 103, 0.92), 0 10px 22px rgba(31,53,87,0.05);
-  }
-  [data-product-showcase] .showcase-rail-label { font-size: 0.98rem; font-weight: 600; color: rgb(15 23 42); }
-  [data-product-showcase] .showcase-rail-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(100 116 139); }
-  [data-product-showcase] .showcase-shell { min-width: 0; }
-  [data-product-showcase] .showcase-frame {
-    border-radius: 1.2rem; border: 1px solid rgba(221,228,236,0.96);
-    background: linear-gradient(180deg, rgba(248,250,252,0.99), rgba(241,246,249,0.96));
-    box-shadow: 0 18px 36px rgba(31,53,87,0.07); overflow: hidden;
-  }
-  [data-product-showcase] .showcase-frame-head {
-    display: grid; gap: 0.9rem; padding: 1.35rem 1.35rem 1.1rem; border-bottom: 1px solid rgba(223,230,238,0.88);
-  }
-  [data-product-showcase] .showcase-head-actions { display: grid; gap: 0.8rem; align-items: end; }
-  [data-product-showcase] .showcase-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(84 101 128); }
-  [data-product-showcase] .showcase-title { margin-top: 0.3rem; font-size: 1.34rem; font-weight: 700; letter-spacing: -0.03em; color: rgb(15 23 42); }
-  [data-product-showcase] .showcase-description { max-width: 42rem; font-size: 0.94rem; line-height: 1.7; color: rgb(71 85 105); }
-  [data-product-showcase] .showcase-open-button {
-    justify-self: start; min-height: 2.2rem; padding: 0.5rem 0.85rem; border-radius: 0.78rem;
-    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
-    font-size: 0.84rem; font-weight: 600; color: rgb(30 41 59);
-  }
-  [data-product-showcase] .showcase-stage { position: relative; min-height: 32rem; padding: 1rem; }
-  [data-product-showcase] .showcase-panel { position: absolute; inset: 1.25rem; }
-
-  [data-product-showcase] .product-workspace {
-    height: 100%; border-radius: 0.86rem; border: 1px solid rgba(216,224,232,0.96);
-    background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(247,250,252,0.98));
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.72); overflow: hidden;
-  }
-  [data-product-showcase] .dashboard-window { color: rgb(30 41 59); }
-  [data-product-showcase] .workspace-topbar {
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.9rem 1rem;
-    border-bottom: 1px solid rgba(223,230,238,0.9); background: rgba(248,250,252,0.96);
-  }
-  [data-product-showcase] .workspace-chip {
-    display: inline-flex; align-items: center; min-height: 1.72rem; padding: 0.18rem 0.58rem;
-    border-radius: 0.45rem; border: 1px solid rgba(211,220,229,0.96); background: #fff;
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(71 85 105);
-  }
-  [data-product-showcase] .workspace-topmeta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.75rem; font-size: 0.8rem; color: rgb(100 116 139); }
-  [data-product-showcase] .workspace-inline-action,
-  [data-product-showcase] .workspace-action {
-    min-height: 2rem; padding: 0.45rem 0.78rem; border-radius: 0.72rem;
-    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
-    font-size: 0.82rem; font-weight: 600; color: rgb(30 41 59);
-  }
-  [data-product-showcase] .workspace-inline-action:hover,
-  [data-product-showcase] .workspace-action:hover { border-color: rgba(148,163,184,0.95); background: rgba(248,250,252,0.98); }
-  [data-product-showcase] .workspace-action--primary { background: rgb(22 63 103); border-color: rgba(22,63,103,0.24); color: #fff; }
-  [data-product-showcase] .workspace-grid { display: grid; gap: 0.95rem; padding: 1rem; }
-  [data-product-showcase] .workspace-grid--events { grid-template-columns: 0.9fr 1.6fr 1.05fr; }
-  [data-product-showcase] .workspace-grid--handling { grid-template-columns: 1.5fr 0.95fr; }
-  [data-product-showcase] .workspace-grid--management { grid-template-columns: 1.55fr 0.95fr; }
-  [data-product-showcase] .workspace-grid--technical,
-  [data-product-showcase] .workspace-grid--history,
-  [data-product-showcase] .workspace-grid--kpi { grid-template-columns: 1fr; }
-  [data-product-showcase] .workspace-grid--kpi-detail { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0; }
-
-  [data-product-showcase] .workspace-sidebar,
-  [data-product-showcase] .workspace-listpanel,
-  [data-product-showcase] .workspace-detail,
-  [data-product-showcase] .workspace-primary-card,
-  [data-product-showcase] .workspace-sidecard {
-    border: 1px solid rgba(223,230,238,0.94); border-radius: 0.78rem; background: rgba(255,255,255,0.98);
-  }
-  [data-product-showcase] .workspace-sidebar,
-  [data-product-showcase] .workspace-detail,
-  [data-product-showcase] .workspace-primary-card,
-  [data-product-showcase] .workspace-sidecard { padding: 0.95rem; }
-  [data-product-showcase] .workspace-listpanel { overflow: hidden; }
-  [data-product-showcase] .workspace-sidebar-block + .workspace-sidebar-block { margin-top: 0.95rem; padding-top: 0.95rem; border-top: 1px solid rgba(229,235,241,0.9); }
-  [data-product-showcase] .workspace-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(100 116 139); }
-  [data-product-showcase] .workspace-filter-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.7rem; }
-  [data-product-showcase] .workspace-filter {
-    display: inline-flex; align-items: center; min-height: 1.7rem; padding: 0.14rem 0.56rem;
-    border-radius: 0.42rem; border: 1px solid rgba(220,227,235,0.95); background: rgba(248,250,252,0.96);
-    font-size: 0.74rem; font-weight: 600; color: rgb(71 85 105);
-  }
-  [data-product-showcase] .workspace-filter.is-active { border-color: rgba(30,64,175,0.18); color: rgb(30 64 175); }
-  [data-product-showcase] .workspace-kpi-stack { display: grid; gap: 0.7rem; margin-top: 0.75rem; }
-  [data-product-showcase] .workspace-kpi-stack div,
-  [data-product-showcase] .workspace-metriccard {
-    padding: 0.8rem 0.9rem; border: 1px solid rgba(223,230,238,0.92); border-radius: 0.62rem; background: rgba(248,250,252,0.94);
-  }
-  [data-product-showcase] .workspace-kpi-stack span,
-  [data-product-showcase] .workspace-metriccard span,
-  [data-product-showcase] .workspace-detail-grid span,
-  [data-product-showcase] .workspace-minirows span { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(100 116 139); }
-  [data-product-showcase] .workspace-kpi-stack strong,
-  [data-product-showcase] .workspace-metriccard strong,
-  [data-product-showcase] .workspace-detail-grid strong,
-  [data-product-showcase] .workspace-minirows strong { display: block; margin-top: 0.38rem; font-size: 0.96rem; font-weight: 600; color: rgb(15 23 42); }
-
-  [data-product-showcase] .workspace-table-head,
-  [data-product-showcase] .workspace-table-row {
-    display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.15fr) minmax(0, 0.9fr); gap: 0.8rem; align-items: center;
-  }
-  [data-product-showcase] .workspace-table-head {
-    padding: 0.78rem 0.95rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-    color: rgb(100 116 139); background: rgba(248,250,252,0.9); border-bottom: 1px solid rgba(223,230,238,0.9);
-  }
-  [data-product-showcase] .workspace-table-row { padding: 0.9rem 0.95rem; border-top: 1px solid rgba(235,239,244,0.86); }
-  [data-product-showcase] .workspace-table-row.is-active { background: rgba(248,250,252,0.92); }
-  [data-product-showcase] .workspace-table-row strong,
-  [data-product-showcase] .history-node strong { display: block; font-size: 0.92rem; font-weight: 600; color: rgb(15 23 42); }
-  [data-product-showcase] .workspace-table-row span,
-  [data-product-showcase] .history-node p,
-  [data-product-showcase] .workspace-primary-card p,
-  [data-product-showcase] .workspace-detail p { font-size: 0.84rem; line-height: 1.55; color: rgb(71 85 105); }
-  [data-product-showcase] .workspace-status-group { display: flex; flex-wrap: wrap; gap: 0.45rem; justify-content: flex-start; }
-  [data-product-showcase] .workspace-ring {
-    display: inline-flex; align-items: center; min-height: 1.72rem; padding: 0.12rem 0.56rem;
-    border-radius: 0.42rem; border: 1px solid rgba(216,224,232,0.95); background: rgba(248,250,252,0.96);
-    font-size: 0.73rem; font-weight: 700; color: rgb(51 65 85);
-  }
-  [data-product-showcase] .workspace-ring--urgent { border-color: rgba(244, 172, 79, 0.32); background: rgba(255,247,236,0.96); color: rgb(168 111 21); }
-  [data-product-showcase] .workspace-ring--follow { border-color: rgba(25,130,121,0.18); background: rgba(244,250,249,0.96); color: rgb(17 94 89); }
-  [data-product-showcase] .workspace-ring--today { border-color: rgba(191,219,254,0.78); background: rgba(239,246,255,0.96); color: rgb(30 64 175); }
-
-  [data-product-showcase] .workspace-detail h4,
-  [data-product-showcase] .workspace-primary-card h4,
-  [data-product-showcase] .workspace-card-head h4 { margin-top: 0.55rem; font-size: 1.02rem; font-weight: 600; letter-spacing: -0.02em; color: rgb(15 23 42); }
-  [data-product-showcase] .workspace-detail-grid { display: grid; gap: 0.65rem; margin-top: 0.85rem; }
-  [data-product-showcase] .workspace-actionbar { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
-  [data-product-showcase] .workspace-sidecolumn { display: grid; gap: 0.95rem; }
-  [data-product-showcase] .workspace-flowline { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.7rem; }
-  [data-product-showcase] .workspace-flowstep {
-    display: inline-flex; align-items: center; min-height: 1.8rem; padding: 0.18rem 0.62rem; border-radius: 0.7rem;
-    border: 1px solid rgba(216,224,232,0.95); background: rgba(248,250,252,0.98); font-size: 0.78rem; font-weight: 600; color: rgb(51 65 85);
-  }
-  [data-product-showcase] .workspace-flowstep.is-active { border-color: rgba(25,130,121,0.22); background: rgba(244,250,249,0.98); color: rgb(15 118 110); }
-  [data-product-showcase] .workspace-minirows { display: grid; gap: 0.7rem; margin-top: 0.7rem; }
-  [data-product-showcase] .workspace-metricrow { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  [data-product-showcase] .dash-toolbar-actions { display: flex; gap: 0.5rem; }
-  [data-product-showcase] .history-timeline { display: grid; gap: 0.7rem; margin-top: 0.9rem; }
-  [data-product-showcase] .history-node { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 0.8rem; padding-top: 0.75rem; border-top: 1px solid rgba(231,236,241,0.9); }
-  [data-product-showcase] .history-node:first-child { border-top: 0; padding-top: 0; }
-  [data-product-showcase] .history-node > span { font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(100 116 139); }
-
-  [data-product-showcase] .showcase-overlay[hidden] { display: none; }
-  [data-product-showcase] .showcase-overlay {
-    position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 1.5rem;
-  }
-  [data-product-showcase] .showcase-overlay__backdrop {
-    position: absolute; inset: 0; background: rgba(15, 23, 42, 0.38); backdrop-filter: blur(4px);
-  }
-  [data-product-showcase] .showcase-overlay__panel {
-    position: relative; z-index: 1; width: min(1220px, calc(100vw - 3rem)); max-height: calc(100vh - 3rem);
-    overflow: auto; border-radius: 1.05rem; border: 1px solid rgba(214,223,233,0.96);
-    background: linear-gradient(180deg, rgba(252,253,255,0.99), rgba(244,248,251,0.98));
-    box-shadow: 0 28px 70px rgba(15,23,42,0.18);
-  }
-  [data-product-showcase] .showcase-overlay__header {
-    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
-    padding: 1.15rem 1.2rem; border-bottom: 1px solid rgba(223,230,238,0.88);
-  }
-  [data-product-showcase] .showcase-overlay__close {
-    min-height: 2.2rem; padding: 0.48rem 0.82rem; border-radius: 0.78rem;
-    border: 1px solid rgba(208,217,227,0.95); background: rgba(255,255,255,0.98);
-    font-size: 0.84rem; font-weight: 600; color: rgb(30 41 59);
-  }
-  [data-product-showcase] .showcase-overlay__body {
-    display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.75fr); gap: 1rem; padding: 1.15rem;
-  }
-  [data-product-showcase] .showcase-overlay__preview { min-width: 0; }
-  [data-product-showcase] .showcase-overlay__preview .showcase-panel {
-    position: static; inset: auto; display: block !important;
-  }
-  [data-product-showcase] .showcase-overlay__preview .product-workspace { min-height: 35rem; }
-  [data-product-showcase] .showcase-overlay__copy {
-    display: grid; gap: 0.9rem; align-content: start;
-  }
-  [data-product-showcase] .showcase-overlay__copyblock {
-    border: 1px solid rgba(223,230,238,0.94); border-radius: 1rem; background: rgba(255,255,255,0.96); padding: 1rem;
-  }
-  [data-product-showcase] .showcase-overlay__copylabel {
-    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgb(84 101 128);
-  }
-  [data-product-showcase] .showcase-overlay__copyblock p {
-    margin-top: 0.45rem; font-size: 0.92rem; line-height: 1.7; color: rgb(71 85 105);
+  [data-platform-tour] .platform-tour-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.78rem 1.24rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(22, 36, 64, 0.14);
+    background: rgb(19 44 82);
+    color: rgba(248, 250, 252, 0.98);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: background-color 160ms ease, transform 160ms ease;
   }
 
-  @media (min-width: 1024px) {
-    [data-product-showcase] .showcase-frame-head { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: end; gap: 1.4rem; }
+  [data-platform-tour] .platform-tour-button:hover,
+  [data-platform-tour] .platform-tour-button:focus-visible {
+    background: rgb(15 36 70);
+    transform: translateY(-1px);
   }
+
+  [data-platform-tour] .platform-tour-footnote {
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: rgb(100 116 139);
+  }
+
+  [data-platform-tour] .platform-tour-teaser__frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(218, 226, 236, 0.92);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 252, 0.98));
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  }
+
+  [data-platform-tour] .platform-tour-teaser__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10.2;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  [data-platform-tour] .platform-tour-teaser__copy {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.25rem;
+    max-width: min(28rem, calc(100% - 2.5rem));
+    padding: 1rem 1.05rem;
+    border: 1px solid rgba(214, 223, 233, 0.94);
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+  }
+
+  [data-platform-tour] .platform-tour-teaser__label,
+  [data-platform-tour] .platform-tour-overlay__eyebrow,
+  [data-platform-tour] .platform-tour-copy__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(71 85 105);
+  }
+
+  [data-platform-tour] .platform-tour-teaser__copy h3 {
+    margin-top: 0.45rem;
+    font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: rgb(15 23 42);
+  }
+
+  [data-platform-tour] .platform-tour-teaser__copy p:last-child {
+    margin-top: 0.45rem;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: rgb(71 85 105);
+  }
+
+  [data-platform-tour] .platform-tour-overlay[hidden] {
+    display: none;
+  }
+
+  [data-platform-tour] .platform-tour-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: grid;
+    place-items: center;
+    padding: 1.4rem;
+  }
+
+  [data-platform-tour] .platform-tour-overlay__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.54);
+    backdrop-filter: blur(7px);
+  }
+
+  [data-platform-tour] .platform-tour-overlay__panel {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    width: min(1360px, calc(100vw - 2.8rem));
+    max-height: calc(100vh - 2.8rem);
+    overflow: hidden;
+    border: 1px solid rgba(214, 223, 233, 0.96);
+    border-radius: 1.45rem;
+    background: linear-gradient(180deg, rgba(251, 253, 255, 0.98), rgba(243, 248, 251, 0.98));
+    box-shadow: 0 30px 72px rgba(15, 23, 42, 0.24);
+  }
+
+  [data-platform-tour] .platform-tour-overlay__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.05rem 1.15rem;
+    border-bottom: 1px solid rgba(224, 231, 239, 0.92);
+  }
+
+  [data-platform-tour] .platform-tour-overlay__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  [data-platform-tour] .platform-tour-overlay__counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 2rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid rgba(216, 224, 232, 0.96);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: rgb(51 65 85);
+  }
+
+  [data-platform-tour] .platform-tour-overlay__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  [data-platform-tour] .platform-tour-nav,
+  [data-platform-tour] .platform-tour-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0.5rem 0.95rem;
+    border: 1px solid rgba(211, 220, 230, 0.96);
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.94);
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: rgb(30 41 59);
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+
+  [data-platform-tour] .platform-tour-nav:hover,
+  [data-platform-tour] .platform-tour-nav:focus-visible,
+  [data-platform-tour] .platform-tour-close:hover,
+  [data-platform-tour] .platform-tour-close:focus-visible {
+    border-color: rgba(20, 184, 166, 0.28);
+    color: rgb(15 118 110);
+    background: rgba(248, 252, 251, 0.98);
+  }
+
+  [data-platform-tour] .platform-tour-overlay__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(22rem, 0.68fr);
+    gap: 1.1rem;
+    min-height: 0;
+    padding: 1.15rem;
+  }
+
+  [data-platform-tour] .platform-tour-stage {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  [data-platform-tour] .platform-tour-slide,
+  [data-platform-tour] .platform-tour-slide__figure {
+    height: 100%;
+  }
+
+  [data-platform-tour] .platform-tour-slide__figure {
+    overflow: hidden;
+    border: 1px solid rgba(216, 224, 232, 0.96);
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  [data-platform-tour] .platform-tour-slide__figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+    background: linear-gradient(180deg, rgba(246, 249, 252, 1), rgba(241, 246, 250, 1));
+  }
+
+  [data-platform-tour] .platform-tour-copy {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 1rem;
+    min-height: 0;
+  }
+
+  [data-platform-tour] .platform-tour-copy__main,
+  [data-platform-tour] .platform-tour-rail {
+    border: 1px solid rgba(216, 224, 232, 0.94);
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  [data-platform-tour] .platform-tour-copy__main {
+    padding: 1.1rem 1.05rem;
+  }
+
+  [data-platform-tour] .platform-tour-copy__main h3 {
+    margin-top: 0.55rem;
+    font-size: clamp(1.4rem, 2vw, 1.82rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: rgb(15 23 42);
+  }
+
+  [data-platform-tour] .platform-tour-copy__main p:last-child {
+    margin-top: 0.6rem;
+    font-size: 0.97rem;
+    line-height: 1.72;
+    color: rgb(71 85 105);
+  }
+
+  [data-platform-tour] .platform-tour-rail {
+    overflow: auto;
+    padding: 0.35rem;
+  }
+
+  [data-platform-tour] .platform-tour-rail__item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.85rem;
+    width: 100%;
+    padding: 0.86rem 0.88rem;
+    border: 1px solid transparent;
+    border-radius: 0.9rem;
+    background: transparent;
+    text-align: left;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  }
+
+  [data-platform-tour] .platform-tour-rail__item + .platform-tour-rail__item {
+    margin-top: 0.28rem;
+  }
+
+  [data-platform-tour] .platform-tour-rail__item:hover,
+  [data-platform-tour] .platform-tour-rail__item:focus-visible {
+    border-color: rgba(203, 213, 225, 0.94);
+    background: rgba(248, 250, 252, 0.88);
+  }
+
+  [data-platform-tour] .platform-tour-rail__item.is-active {
+    border-color: rgba(20, 184, 166, 0.22);
+    background: rgba(244, 250, 249, 0.96);
+  }
+
+  [data-platform-tour] .platform-tour-rail__index {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(100 116 139);
+  }
+
+  [data-platform-tour] .platform-tour-rail__copy strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: rgb(15 23 42);
+  }
+
+  [data-platform-tour] .platform-tour-rail__copy span {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.83rem;
+    line-height: 1.5;
+    color: rgb(71 85 105);
+  }
+
   @media (max-width: 1023px) {
-    [data-product-showcase] .showcase-stage { min-height: 39rem; }
-    [data-product-showcase] .workspace-grid--events,
-    [data-product-showcase] .workspace-grid--handling,
-    [data-product-showcase] .workspace-grid--management,
-    [data-product-showcase] .workspace-grid--kpi-detail,
-    [data-product-showcase] .workspace-grid--history,
-    [data-product-showcase] .showcase-overlay__body { grid-template-columns: 1fr; }
+    [data-platform-tour] .platform-tour-overlay {
+      padding: 0.9rem;
+    }
+
+    [data-platform-tour] .platform-tour-overlay__panel {
+      width: calc(100vw - 1.8rem);
+      max-height: calc(100vh - 1.8rem);
+    }
+
+    [data-platform-tour] .platform-tour-overlay__body {
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      overflow: auto;
+    }
+
+    [data-platform-tour] .platform-tour-stage {
+      min-height: 19rem;
+    }
+
+    [data-platform-tour] .platform-tour-slide__figure img {
+      max-height: 54vh;
+    }
   }
+
   @media (max-width: 767px) {
-    [data-product-showcase] .showcase-rail-item.is-active { transform: none; }
-    [data-product-showcase] .showcase-stage { min-height: 43rem; padding: 1rem; }
-    [data-product-showcase] .showcase-panel { inset: 1rem; }
-    [data-product-showcase] .workspace-topbar { flex-direction: column; align-items: flex-start; }
-    [data-product-showcase] .workspace-topmeta { justify-content: flex-start; }
-    [data-product-showcase] .workspace-table-head,
-    [data-product-showcase] .workspace-table-row { grid-template-columns: 1fr; }
-    [data-product-showcase] .workspace-metricrow { grid-template-columns: 1fr; }
-    [data-product-showcase] .showcase-overlay { padding: 0.8rem; }
-    [data-product-showcase] .showcase-overlay__panel { width: calc(100vw - 1.6rem); max-height: calc(100vh - 1.6rem); }
+    [data-platform-tour] .platform-tour-teaser__copy {
+      position: static;
+      max-width: none;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: none;
+      backdrop-filter: none;
+    }
+
+    [data-platform-tour] .platform-tour-overlay__header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    [data-platform-tour] .platform-tour-overlay__actions {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    [data-platform-tour] .platform-tour-nav,
+    [data-platform-tour] .platform-tour-close {
+      flex: 1 1 30%;
+    }
+
+    [data-platform-tour] .platform-tour-copy {
+      grid-template-rows: auto auto;
+    }
+
+    [data-platform-tour] .platform-tour-rail {
+      max-height: 15rem;
+    }
   }
 </style>
 
@@ -721,215 +676,202 @@ const detailContent = isEnglish
   gsap.registerPlugin(ScrollTrigger);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const blocks = document.querySelectorAll('[data-product-showcase]');
+  const blocks = document.querySelectorAll('[data-platform-tour]');
 
   for (const block of blocks) {
     if (!(block instanceof HTMLElement)) continue;
-    if (block.dataset.gsapBound === 'true') continue;
-    block.dataset.gsapBound = 'true';
+    if (block.dataset.bound === 'true') continue;
+    block.dataset.bound = 'true';
 
-    const intro = block.querySelector<HTMLElement>('[data-showcase-intro]');
-    const shell = block.querySelector<HTMLElement>('[data-showcase-shell]');
-    const kickerTarget = block.querySelector<HTMLElement>('[data-showcase-kicker]');
-    const titleTarget = block.querySelector<HTMLElement>('[data-showcase-title]');
-    const descriptionTarget = block.querySelector<HTMLElement>('[data-showcase-description]');
-    const openButton = block.querySelector<HTMLElement>('[data-showcase-open]');
-    const overlay = block.querySelector<HTMLElement>('[data-showcase-overlay]');
-    const overlayPanel = block.querySelector<HTMLElement>('[data-showcase-overlay-panel]');
-    const overlayPreview = block.querySelector<HTMLElement>('[data-overlay-preview]');
-    const overlayKicker = block.querySelector<HTMLElement>('[data-overlay-kicker]');
-    const overlayTitle = block.querySelector<HTMLElement>('[data-overlay-title]');
-    const overlayWhat = block.querySelector<HTMLElement>('[data-overlay-what]');
-    const overlayWhy = block.querySelector<HTMLElement>('[data-overlay-why]');
-    const overlayValue = block.querySelector<HTMLElement>('[data-overlay-value]');
-    const closeButtons = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-close]'));
-    const triggers = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-trigger]'));
-    const panels = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-panel]'));
-    let activeId = triggers.find((trigger) => trigger.classList.contains('is-active'))?.dataset.domainId ?? 'event-page';
-    let lastFocused: HTMLElement | null = null;
+    const intro = block.querySelector('[data-platform-tour-intro]');
+    const teaser = block.querySelector('[data-platform-tour-teaser]');
+    const openButton = block.querySelector('[data-tour-open]');
+    const overlay = block.querySelector('[data-tour-overlay]');
+    const panel = block.querySelector('[data-tour-panel]');
+    const prevButton = block.querySelector('[data-tour-prev]');
+    const nextButton = block.querySelector('[data-tour-next]');
+    const closeButtons = block.querySelectorAll('[data-tour-close]');
+    const counterCurrent = block.querySelector('[data-tour-counter-current]');
+    const labelTarget = block.querySelector('[data-tour-label]');
+    const titleTarget = block.querySelector('[data-tour-title]');
+    const textTarget = block.querySelector('[data-tour-text]');
+    const slides = Array.from(block.querySelectorAll('[data-tour-slide]'));
+    const jumpButtons = Array.from(block.querySelectorAll('[data-tour-jump]'));
+    const slideData = JSON.parse(JSON.stringify(sectionContent.slides));
 
-    const setActiveState = (nextId: string) => {
-      activeId = nextId;
-      for (const trigger of triggers) {
-        const isActive = trigger.dataset.domainId === nextId;
-        trigger.classList.toggle('is-active', isActive);
-        trigger.setAttribute('aria-selected', isActive ? 'true' : 'false');
-        trigger.tabIndex = isActive ? 0 : -1;
-      }
+    let activeIndex = 0;
+    let lastFocused = null;
+
+    const focusableSelector =
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    const updateRail = () => {
+      jumpButtons.forEach((button, index) => {
+        const isActive = index === activeIndex;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
     };
 
-    const swapCopy = (trigger: HTMLElement) => {
-      if (!kickerTarget || !titleTarget || !descriptionTarget) return;
-      const next = {
-        kicker: trigger.dataset.kicker ?? '',
-        title: trigger.dataset.title ?? '',
-        description: trigger.dataset.description ?? '',
-      };
+    const renderCopy = (index, animate) => {
+      const slide = slideData[index];
+      if (!(labelTarget instanceof HTMLElement) || !(titleTarget instanceof HTMLElement) || !(textTarget instanceof HTMLElement)) return;
 
-      if (prefersReducedMotion) {
-        kickerTarget.textContent = next.kicker;
-        titleTarget.textContent = next.title;
-        descriptionTarget.textContent = next.description;
+      if (!animate || prefersReducedMotion) {
+        labelTarget.textContent = slide.label;
+        titleTarget.textContent = slide.title;
+        textTarget.textContent = slide.text;
         return;
       }
 
       gsap
         .timeline({ defaults: { ease: 'power2.out' } })
-        .to([kickerTarget, titleTarget, descriptionTarget], { autoAlpha: 0, y: 6, duration: 0.14, stagger: 0.02 })
+        .to([labelTarget, titleTarget, textTarget], { autoAlpha: 0, y: 8, duration: 0.14, stagger: 0.03 })
         .add(() => {
-          kickerTarget.textContent = next.kicker;
-          titleTarget.textContent = next.title;
-          descriptionTarget.textContent = next.description;
+          labelTarget.textContent = slide.label;
+          titleTarget.textContent = slide.title;
+          textTarget.textContent = slide.text;
         })
-        .to([kickerTarget, titleTarget, descriptionTarget], { autoAlpha: 1, y: 0, duration: 0.2, stagger: 0.03 });
+        .to([labelTarget, titleTarget, textTarget], { autoAlpha: 1, y: 0, duration: 0.2, stagger: 0.03 });
     };
 
-    const showPanel = (trigger: HTMLElement) => {
-      const nextId = trigger.dataset.domainId;
-      if (!nextId || nextId === activeId) return;
+    const renderSlide = (nextIndex, animate = true) => {
+      if (nextIndex < 0 || nextIndex >= slides.length) return;
+      const currentSlide = slides[activeIndex];
+      const nextSlide = slides[nextIndex];
+      if (!(nextSlide instanceof HTMLElement) || nextSlide === currentSlide) return;
 
-      const currentPanel = panels.find((panel) => panel.dataset.showcasePanel === activeId);
-      const nextPanel = panels.find((panel) => panel.dataset.showcasePanel === nextId);
-      if (!nextPanel) return;
+      if (counterCurrent instanceof HTMLElement) counterCurrent.textContent = String(nextIndex + 1);
 
-      if (prefersReducedMotion) {
-        if (currentPanel) currentPanel.hidden = true;
-        nextPanel.hidden = false;
-        setActiveState(nextId);
-        swapCopy(trigger);
+      if (!animate || prefersReducedMotion) {
+        if (currentSlide instanceof HTMLElement) currentSlide.hidden = true;
+        nextSlide.hidden = false;
+        activeIndex = nextIndex;
+        updateRail();
+        renderCopy(nextIndex, false);
         return;
       }
 
-      nextPanel.hidden = false;
-      gsap.set(nextPanel, { autoAlpha: 0, y: 12 });
+      nextSlide.hidden = false;
+      gsap.set(nextSlide, { autoAlpha: 0, y: 16 });
 
       gsap.timeline({
         defaults: { ease: 'power2.out' },
         onStart: () => {
-          setActiveState(nextId);
-          swapCopy(trigger);
+          activeIndex = nextIndex;
+          updateRail();
+          renderCopy(nextIndex, true);
         },
         onComplete: () => {
-          if (currentPanel) currentPanel.hidden = true;
-          gsap.set([currentPanel, nextPanel], { clearProps: 'opacity,visibility,transform' });
+          if (currentSlide instanceof HTMLElement) currentSlide.hidden = true;
+          gsap.set([currentSlide, nextSlide], { clearProps: 'opacity,visibility,transform' });
         },
       })
-        .to(currentPanel, { autoAlpha: 0, y: -10, duration: 0.16 })
-        .to(nextPanel, { autoAlpha: 1, y: 0, duration: 0.2 }, '-=0.04');
+        .to(currentSlide, { autoAlpha: 0, y: -10, duration: 0.18 })
+        .to(nextSlide, { autoAlpha: 1, y: 0, duration: 0.24 }, '-=0.02');
     };
 
-    const populateOverlay = (domainId: string) => {
-      if (!overlayPreview || !overlayKicker || !overlayTitle || !overlayWhat || !overlayWhy || !overlayValue) return;
-      const activeTrigger = triggers.find((trigger) => trigger.dataset.domainId === domainId);
-      const activePanel = panels.find((panel) => panel.dataset.showcasePanel === domainId);
-      if (!activeTrigger || !activePanel) return;
+    const trapFocus = (event) => {
+      if (!(event instanceof KeyboardEvent) || event.key !== 'Tab' || !(panel instanceof HTMLElement)) return;
+      const focusables = Array.from(panel.querySelectorAll(focusableSelector)).filter(
+        (element) => element instanceof HTMLElement && !element.hasAttribute('disabled')
+      );
+      if (!focusables.length) return;
 
-      overlayKicker.textContent = activeTrigger.dataset.kicker ?? '';
-      overlayTitle.textContent = activeTrigger.dataset.title ?? '';
-      overlayWhat.textContent = activeTrigger.dataset.overlayWhat ?? '';
-      overlayWhy.textContent = activeTrigger.dataset.overlayWhy ?? '';
-      overlayValue.textContent = activeTrigger.dataset.overlayValue ?? '';
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
 
-      const clone = activePanel.cloneNode(true);
-      if (clone instanceof HTMLElement) {
-        clone.hidden = false;
-        overlayPreview.replaceChildren(clone);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 
-    const openOverlay = (domainId: string = activeId) => {
-      if (!overlay || !overlayPanel) return;
+    const openOverlay = () => {
+      if (!(overlay instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
       lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-      populateOverlay(domainId);
       overlay.hidden = false;
       overlay.setAttribute('aria-hidden', 'false');
       document.documentElement.style.overflow = 'hidden';
 
       if (prefersReducedMotion) {
-        overlayPanel.focus();
+        panel.focus();
         return;
       }
 
-      gsap.set(overlayPanel, { autoAlpha: 0, y: 18, scale: 0.985 });
-      gsap.to(overlayPanel, { autoAlpha: 1, y: 0, scale: 1, duration: 0.22, ease: 'power2.out' });
-      overlayPanel.focus();
+      gsap.set(panel, { autoAlpha: 0, y: 22, scale: 0.985 });
+      gsap.to(panel, { autoAlpha: 1, y: 0, scale: 1, duration: 0.24, ease: 'power2.out' });
+      panel.focus();
     };
 
     const closeOverlay = () => {
-      if (!overlay || !overlayPanel) return;
+      if (!(overlay instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
 
-      const completeClose = () => {
+      const finish = () => {
         overlay.hidden = true;
         overlay.setAttribute('aria-hidden', 'true');
         document.documentElement.style.overflow = '';
-        if (lastFocused) lastFocused.focus();
+        if (lastFocused instanceof HTMLElement) lastFocused.focus();
       };
 
       if (prefersReducedMotion) {
-        completeClose();
+        finish();
         return;
       }
 
-      gsap.to(overlayPanel, {
+      gsap.to(panel, {
         autoAlpha: 0,
         y: 12,
         scale: 0.99,
         duration: 0.18,
         ease: 'power2.in',
-        onComplete: completeClose,
+        onComplete: finish,
       });
     };
 
-    for (const trigger of triggers) {
-      trigger.addEventListener('click', () => {
-        showPanel(trigger);
-      });
-      trigger.addEventListener('keydown', (event) => {
-        if (!(event instanceof KeyboardEvent)) return;
-        const currentIndex = triggers.indexOf(trigger);
-        if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
-          event.preventDefault();
-          const nextTrigger = triggers[(currentIndex + 1) % triggers.length];
-          nextTrigger.focus();
-          showPanel(nextTrigger);
-        }
-        if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
-          event.preventDefault();
-          const nextTrigger = triggers[(currentIndex - 1 + triggers.length) % triggers.length];
-          nextTrigger.focus();
-          showPanel(nextTrigger);
-        }
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openOverlay();
-        }
-      });
-    }
+    renderSlide(0, false);
 
     openButton?.addEventListener('click', openOverlay);
-    for (const closeButton of closeButtons) closeButton.addEventListener('click', closeOverlay);
+    prevButton?.addEventListener('click', () => renderSlide((activeIndex - 1 + slides.length) % slides.length));
+    nextButton?.addEventListener('click', () => renderSlide((activeIndex + 1) % slides.length));
+
+    jumpButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextIndex = Number(button.getAttribute('data-tour-jump'));
+        renderSlide(nextIndex);
+      });
+    });
+
+    closeButtons.forEach((button) => button.addEventListener('click', closeOverlay));
+
     overlay?.addEventListener('keydown', (event) => {
       if (!(event instanceof KeyboardEvent)) return;
       if (event.key === 'Escape') closeOverlay();
+      if (event.key === 'ArrowLeft') renderSlide((activeIndex - 1 + slides.length) % slides.length);
+      if (event.key === 'ArrowRight') renderSlide((activeIndex + 1) % slides.length);
+      trapFocus(event);
     });
 
-    if (prefersReducedMotion) continue;
+    if (!prefersReducedMotion) {
+      gsap.set([intro, teaser], { autoAlpha: 0, y: 20 });
 
-    gsap.set([intro, shell], { autoAlpha: 0, y: 18 });
-
-    gsap.timeline({
-      defaults: { ease: 'power2.out' },
-      scrollTrigger: {
-        trigger: block,
-        start: 'top 72%',
-        once: true,
-      },
-      onComplete: () => {
-        gsap.set([intro, shell], { clearProps: 'opacity,visibility,transform' });
-      },
-    })
-      .to(intro, { autoAlpha: 1, y: 0, duration: 0.44 })
-      .to(shell, { autoAlpha: 1, y: 0, duration: 0.52 }, '-=0.24');
+      gsap
+        .timeline({
+          defaults: { ease: 'power2.out' },
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 72%',
+            once: true,
+          },
+          onComplete: () => {
+            gsap.set([intro, teaser], { clearProps: 'opacity,visibility,transform' });
+          },
+        })
+        .to(intro, { autoAlpha: 1, y: 0, duration: 0.42 })
+        .to(teaser, { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.22');
+    }
   }
 </script>
-
