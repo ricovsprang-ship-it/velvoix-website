@@ -1,23 +1,27 @@
 ---
+import { localeRootPaths } from '../content/site';
 import type { Locale, NavItem } from '../content/site';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
   locale: Locale;
   nav: NavItem[];
-  languagePaths?: {
-    nl: string;
-    en: string;
-  };
+  languagePaths?: Partial<Record<Locale, string>>;
 }
 
 const { locale, nav, languagePaths } = Astro.props;
+const menuLabelByLocale: Record<Locale, string> = {
+  nl: 'Menu',
+  en: 'Menu',
+  de: 'Menü',
+  es: 'Menú',
+};
 ---
 
 <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[rgba(249,251,253,0.92)] backdrop-blur-xl">
   <div class="mx-auto flex h-[5.25rem] w-full max-w-[1280px] items-center justify-between px-5 md:px-10">
     <div class="flex min-w-0 items-center">
-      <a href={locale === 'nl' ? '/' : '/en/'} class="shrink-0 text-slate-950">
+      <a href={localeRootPaths[locale]} class="shrink-0 text-slate-950">
         <span class="vx-wordmark text-[1.72rem] md:text-[2.05rem]">Velvoix</span>
       </a>
 
@@ -29,16 +33,16 @@ const { locale, nav, languagePaths } = Astro.props;
     </div>
 
     <div class="hidden lg:flex lg:items-center">
-      <LanguageSwitcher locale={locale} nlPath={languagePaths?.nl} enPath={languagePaths?.en} />
+      <LanguageSwitcher locale={locale} languagePaths={languagePaths} />
     </div>
 
     <details class="relative lg:hidden">
       <summary class="flex cursor-pointer list-none items-center gap-2 rounded-full border border-slate-200 bg-white/92 px-4 py-2 text-sm font-semibold text-slate-800">
-        Menu
+        {menuLabelByLocale[locale]}
       </summary>
       <div class="panel absolute right-0 top-14 w-[18rem] rounded-3xl p-4">
         <div class="mb-4">
-          <LanguageSwitcher locale={locale} nlPath={languagePaths?.nl} enPath={languagePaths?.en} />
+          <LanguageSwitcher locale={locale} languagePaths={languagePaths} />
         </div>
         <div class="flex flex-col gap-1">
           {nav.map((item) => (

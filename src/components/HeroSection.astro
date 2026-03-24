@@ -7,13 +7,19 @@ interface Props {
 }
 
 const { locale, content } = Astro.props;
+const imageAltByLocale: Record<Locale, string> = {
+  nl: 'Handcontact in een zorgomgeving',
+  en: 'Hand contact in a care setting',
+  de: 'Handkontakt in einer Pflegeumgebung',
+  es: 'Contacto de manos en un entorno asistencial',
+};
 ---
 
 <section id="home" class="relative overflow-hidden">
   <div class="absolute inset-0" data-hero-media>
     <img
       src="/media/AdobeStock_1857436642.jpeg"
-      alt={locale === 'nl' ? 'Handcontact in een zorgomgeving' : 'Hand contact in a care setting'}
+      alt={imageAltByLocale[locale]}
       class="h-full w-full scale-[1.02] object-cover object-[72%_48%] md:object-[68%_45%]"
       data-hero-image
       loading="eager"

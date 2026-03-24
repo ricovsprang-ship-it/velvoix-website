@@ -1,4 +1,20 @@
-export type Locale = 'nl' | 'en';
+import { deContent, esContent } from './site-extra';
+
+export type Locale = 'nl' | 'en' | 'de' | 'es';
+
+export const localeRootPaths: Record<Locale, string> = {
+  nl: '/',
+  en: '/en/',
+  de: '/de/',
+  es: '/es/',
+};
+
+export const legalLocaleFallback: Record<Locale, 'nl' | 'en'> = {
+  nl: 'nl',
+  en: 'en',
+  de: 'en',
+  es: 'en',
+};
 
 export interface NavItem {
   label: string;
@@ -155,6 +171,8 @@ export interface FooterContent {
   brand: string;
   languageNl: string;
   languageEn: string;
+  languageDe: string;
+  languageEs: string;
   contact: string;
   privacy: string;
   cookies: string;
@@ -526,6 +544,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       brand: 'Velvoix',
       languageNl: 'Nederlands',
       languageEn: 'English',
+      languageDe: 'Deutsch',
+      languageEs: 'Español',
       contact: 'Contact',
       privacy: 'Privacyverklaring',
       cookies: 'Cookiebeleid',
@@ -879,6 +899,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       brand: 'Velvoix',
       languageNl: 'Nederlands',
       languageEn: 'English',
+      languageDe: 'Deutsch',
+      languageEs: 'Español',
       contact: 'Contact',
       privacy: 'Privacy Policy',
       cookies: 'Cookie Policy',
@@ -886,4 +908,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       copyright: '© 2026 Velvoix® · All rights reserved.',
     },
   },
+  de: deContent,
+  es: esContent,
 };
+

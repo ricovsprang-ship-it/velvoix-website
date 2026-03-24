@@ -1,4 +1,5 @@
 ---
+import { localeRootPaths } from '../content/site';
 import type { FooterContent, Locale, NavItem } from '../content/site';
 import type { LegalPageContent } from '../content/legal';
 import Footer from './Footer.astro';
@@ -8,21 +9,25 @@ interface Props {
   locale: Locale;
   content: LegalPageContent;
   footer: FooterContent;
-  languagePaths: {
-    nl: string;
-    en: string;
-  };
+  languagePaths: Partial<Record<Locale, string>>;
 }
 
 const { locale, content, footer, languagePaths } = Astro.props;
-const basePath = locale === 'nl' ? '' : '/en';
+const basePath = localeRootPaths[locale] ?? localeRootPaths.en;
+
+const navLabels: Record<Locale, { howItWorks: string; whyVelvoix: string; contact: string }> = {
+  nl: { howItWorks: 'Hoe het werkt', whyVelvoix: 'Waarom Velvoix', contact: 'Contact' },
+  en: { howItWorks: 'How it works', whyVelvoix: 'Why Velvoix', contact: 'Contact' },
+  de: { howItWorks: 'Wie es funktioniert', whyVelvoix: 'Warum Velvoix', contact: 'Kontakt' },
+  es: { howItWorks: 'Como funciona', whyVelvoix: 'Por que Velvoix', contact: 'Contacto' },
+};
 
 const nav: NavItem[] = [
   { label: 'Home', href: `${basePath}/#home` },
-  { label: locale === 'nl' ? 'Hoe het werkt' : 'How it works', href: `${basePath}/#how-it-works` },
-  { label: locale === 'nl' ? 'Waarom Velvoix' : 'Why Velvoix', href: `${basePath}/#why-velvoix` },
+  { label: navLabels[locale].howItWorks, href: `${basePath}/#how-it-works` },
+  { label: navLabels[locale].whyVelvoix, href: `${basePath}/#why-velvoix` },
   { label: 'Pilot', href: `${basePath}/#pilot` },
-  { label: locale === 'nl' ? 'Contact' : 'Contact', href: `${basePath}/#contact` },
+  { label: navLabels[locale].contact, href: `${basePath}/#contact` },
 ];
 ---
 

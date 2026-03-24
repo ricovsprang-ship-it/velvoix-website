@@ -1,16 +1,16 @@
 ---
-import type { HowItWorksContent } from '../content/site';
+import type { HowItWorksContent, Locale } from '../content/site';
 import SectionIntro from './SectionIntro.astro';
 
 interface Props {
+  locale: Locale;
   content: HowItWorksContent;
 }
 
-const { content } = Astro.props;
-const isEnglish = content.eyebrow.toLowerCase().includes('how');
+const { locale, content } = Astro.props;
 
-const sectionContent = isEnglish
-  ? {
+const sectionContentByLocale = {
+  en: {
       eyebrow: 'How it works',
       title: 'From signal to workable event outcome',
       description:
@@ -60,8 +60,8 @@ const sectionContent = isEnglish
           description: 'Status flow and reconstruction remain traceable for evaluation and audit.',
         },
       ],
-    }
-  : {
+    },
+  nl: {
       eyebrow: 'Hoe het werkt',
       title: 'Van signaal naar werkbare eventuitkomst',
       description:
@@ -111,7 +111,126 @@ const sectionContent = isEnglish
           description: 'Statusverloop en reconstructie blijven herleidbaar voor evaluatie en audit.',
         },
       ],
-    };
+    },
+  de: {
+      eyebrow: 'Wie es funktioniert',
+      title: 'Vom Signal zum handhabbaren Eventergebnis',
+      description:
+        'Velvoix registriert Signale nicht nur, sondern erganzt Kontext, Triage und handhabbare Eventlogik, damit Pflegeteams schneller sehen, was Aufmerksamkeit braucht und welche Folgeaktion sinnvoll ist.',
+      outcomes: [
+        'Schneller verstehen, was Aufmerksamkeit braucht',
+        'Empfohlene Massnahme wird sofort handhabbar',
+        'Audit und Rekonstruktion bleiben intakt',
+      ],
+      panelLabel: 'Eventaufbau',
+      panelSupporting: 'Von roher Eingabe zu einem handhabbaren Event mit Kontext, Massnahme, Status und Audit.',
+      layers: [
+        {
+          label: 'Eingang registriert',
+          title: 'Signal empfangen',
+          description: 'Ein Rufknopf, Spracheingabe oder anderes Pflegesignal kommt kontrolliert an.',
+        },
+        {
+          label: 'Kontext erganzt',
+          title: 'Kontext erganzt',
+          description: 'Wiederholungen, Historie und Situation werden sofort mit einbezogen.',
+        },
+        {
+          label: 'Triage strukturiert',
+          title: 'Triage strukturiert',
+          description: 'Dringlichkeit und empfohlene Massnahme werden in Pflegesprache sichtbar.',
+          meta: [
+            { label: 'Dringlichkeit', value: 'Direkt' },
+            { label: 'Warum', value: 'Mehrfach innerhalb kurzer Zeit' },
+            { label: 'Massnahme', value: 'Direkt zur Bewohnerin oder zum Bewohner gehen und die Situation prufen' },
+          ],
+          emphasis: true,
+        },
+        {
+          label: 'Operatives Event erstellt',
+          title: 'Operatives Event erstellt',
+          description: 'Status, Verantwortung und Teamnachverfolgung werden direkt steuerbar.',
+          meta: [
+            { label: 'Status', value: 'Offen' },
+            { label: 'Verantwortung', value: 'Noch nicht zugewiesen' },
+            { label: 'Nachverfolgung', value: 'Handhabbar fur das Team' },
+          ],
+        },
+        {
+          label: 'Audit verknupft',
+          title: 'Audit verknupft',
+          description: 'Statusverlauf und Rekonstruktion bleiben fur Auswertung und Audit nachvollziehbar.',
+        },
+      ],
+    },
+  es: {
+      eyebrow: 'Como funciona',
+      title: 'De la senal a un resultado operativo manejable',
+      description:
+        'Velvoix no solo registra senales, sino que anade contexto, triaje y una logica de evento accionable para que los equipos asistenciales vean antes que requiere atencion y que seguimiento tiene sentido.',
+      outcomes: [
+        'Comprender antes que requiere atencion',
+        'La accion recomendada se vuelve operativa de inmediato',
+        'La auditoria y la reconstruccion permanecen intactas',
+      ],
+      panelLabel: 'Construccion del evento',
+      panelSupporting: 'De la entrada en bruto a un evento manejable con contexto, accion recomendada, estado y auditoria.',
+      layers: [
+        {
+          label: 'Entrada recibida',
+          title: 'Senal recibida',
+          description: 'Una llamada de boton, una entrada por voz u otra senal asistencial se recibe de forma controlada.',
+        },
+        {
+          label: 'Contexto anadido',
+          title: 'Contexto anadido',
+          description: 'Se incorporan de inmediato repeticion, historial y situacion.',
+        },
+        {
+          label: 'Triaje estructurado',
+          title: 'Triaje estructurado',
+          description: 'La urgencia y la accion recomendada se vuelven visibles en lenguaje asistencial.',
+          meta: [
+            { label: 'Urgencia', value: 'Directa' },
+            { label: 'Por que', value: 'Repetido en un intervalo corto' },
+            { label: 'Accion', value: 'Acuda directamente al residente y compruebe la situacion' },
+          ],
+          emphasis: true,
+        },
+        {
+          label: 'Evento operativo creado',
+          title: 'Evento operativo creado',
+          description: 'El estado, la titularidad y el seguimiento del equipo pasan a ser gobernables.',
+          meta: [
+            { label: 'Estado', value: 'Abierto' },
+            { label: 'Titularidad', value: 'Aun sin asignar' },
+            { label: 'Seguimiento', value: 'Manejable para el equipo' },
+          ],
+        },
+        {
+          label: 'Auditoria vinculada',
+          title: 'Auditoria vinculada',
+          description: 'La evolucion del estado y la reconstruccion siguen siendo trazables para evaluacion y auditoria.',
+        },
+      ],
+    },
+} satisfies Record<Locale, {
+  eyebrow: string;
+  title: string;
+  description: string;
+  outcomes: string[];
+  panelLabel: string;
+  panelSupporting: string;
+  layers: Array<{
+    label: string;
+    title: string;
+    description: string;
+    meta?: Array<{ label: string; value: string }>;
+    emphasis?: boolean;
+  }>;
+}>;
+
+const sectionContent = sectionContentByLocale[locale];
 ---
 
 <section class="section-block">

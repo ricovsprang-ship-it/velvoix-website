@@ -30,14 +30,14 @@ const { locale, content } = Astro.props;
 
     <CompareChainsSection content={content.compareChains} />
 
-    <HowItWorksSection content={content.howItWorks} />
-    <WhyDifferentSection content={content.whyVelvoix} />
+    <HowItWorksSection locale={locale} content={content.howItWorks} />
+    <WhyDifferentSection locale={locale} content={content.whyVelvoix} />
     <TechnicalCoreSection content={content.technicalCore} />
 
     <div class="surface-band">
-      <SnapshotSection content={content.snapshots} />
+      <SnapshotSection locale={locale} content={content.snapshots} />
     </div>
-    <PilotSection content={content.pilot} />
+    <PilotSection locale={locale} content={content.pilot} />
     <ContactForm content={content.contact} />
   </main>
 

@@ -1,16 +1,16 @@
 ---
-import type { PilotContent } from '../content/site';
+import type { Locale, PilotContent } from '../content/site';
 import SectionIntro from './SectionIntro.astro';
 
 interface Props {
+  locale: Locale;
   content: PilotContent;
 }
 
-const { content } = Astro.props;
-const isEnglish = content.primaryCta.toLowerCase().includes('schedule');
+const { locale, content } = Astro.props;
 
-const sectionContent = isEnglish
-  ? {
+const sectionContentByLocale = {
+  en: {
       eyebrow: 'Pilot and partnership',
       title: 'Explore whether a pilot fits',
       description:
@@ -42,8 +42,8 @@ const sectionContent = isEnglish
       organisationBody: 'Focus on workload, follow-up, clarity and reconstruction.',
       partnerTitle: 'For partners',
       partnerBody: 'Focus on fit, operational value and strengthening the care chain.',
-    }
-  : {
+    },
+  nl: {
       eyebrow: 'Pilot en samenwerking',
       title: 'Verken of een pilot past',
       description:
@@ -75,7 +75,89 @@ const sectionContent = isEnglish
       organisationBody: 'Focus op werkdruk, opvolging, duidelijkheid en reconstructie.',
       partnerTitle: 'Voor partners',
       partnerBody: 'Focus op inpasbaarheid, operationele meerwaarde en versterking van de zorgketen.',
-    };
+    },
+  de: {
+      eyebrow: 'Pilot und Zusammenarbeit',
+      title: 'Prufen, ob ein Pilot passt',
+      description:
+        'Ein Pilot macht sichtbar, wie Velvoix in bestehende Pflegepraxis, Teamroutinen und operative Prozesse passt.',
+      audience:
+        'Geeignet fur Pflegeheime, Langzeitpflege, operative Pflegeteams und strategische Kooperationspartner.',
+      primaryCta: 'Pilotgesprach planen',
+      secondaryCta: 'Zusammenarbeit besprechen',
+      moduleTitle: 'In einem Pilot untersuchen wir',
+      rows: [
+        {
+          title: 'Operative Klarheit',
+          description: 'Schneller sehen, was Aufmerksamkeit braucht, warum das so ist und welche Folgeaktion sinnvoll ist.',
+        },
+        {
+          title: 'Handhabbare Nachverfolgung',
+          description: 'Verantwortung, Status und nachste Massnahme klarer in den Pflegealltag einbetten.',
+        },
+        {
+          title: 'Rekonstruktion und Auswertung',
+          description: 'Statusverlauf, Eskalation und Ruckschau fur Qualitatsverbesserung nutzbar machen.',
+        },
+        {
+          title: 'Passung und Integration',
+          description: 'Prufen, wie Velvoix an Teams, Prozesse, Gerate und die bestehende Umgebung anschliesst.',
+        },
+      ],
+      organisationTitle: 'Fur Pflegeorganisationen',
+      organisationBody: 'Fokus auf Arbeitsdruck, Nachverfolgung, Klarheit und Rekonstruktion.',
+      partnerTitle: 'Fur Partner',
+      partnerBody: 'Fokus auf Passung, operativen Mehrwert und Stärkung der Versorgungskette.',
+    },
+  es: {
+      eyebrow: 'Piloto y colaboracion',
+      title: 'Explorar si un piloto encaja',
+      description:
+        'Un piloto ayuda a comprobar como encaja Velvoix en la practica asistencial, las rutinas del equipo y los procesos operativos.',
+      audience:
+        'Adecuado para residencias, cuidados de larga duracion, equipos asistenciales operativos y partners de colaboracion estrategica.',
+      primaryCta: 'Programar una conversacion piloto',
+      secondaryCta: 'Hablar de colaboracion',
+      moduleTitle: 'En un piloto exploramos',
+      rows: [
+        {
+          title: 'Claridad operativa',
+          description: 'Ver antes que requiere atencion, por que ocurre y que seguimiento tiene sentido.',
+        },
+        {
+          title: 'Seguimiento viable',
+          description: 'Organizar mejor la titularidad, el estado y la siguiente accion dentro del trabajo diario.',
+        },
+        {
+          title: 'Reconstruccion y evaluacion',
+          description: 'Hacer utilizables la evolucion del estado, la escalada y la retrospectiva para mejorar calidad.',
+        },
+        {
+          title: 'Encaje e integracion',
+          description: 'Explorar como Velvoix conecta con equipos, procesos, dispositivos y entorno existente.',
+        },
+      ],
+      organisationTitle: 'Para organizaciones asistenciales',
+      organisationBody: 'Foco en carga de trabajo, seguimiento, claridad y reconstruccion.',
+      partnerTitle: 'Para partners',
+      partnerBody: 'Foco en encaje, valor operativo y refuerzo de la cadena asistencial.',
+    },
+} satisfies Record<Locale, {
+  eyebrow: string;
+  title: string;
+  description: string;
+  audience: string;
+  primaryCta: string;
+  secondaryCta: string;
+  moduleTitle: string;
+  rows: Array<{ title: string; description: string }>;
+  organisationTitle: string;
+  organisationBody: string;
+  partnerTitle: string;
+  partnerBody: string;
+}>;
+
+const sectionContent = sectionContentByLocale[locale];
 ---
 
 <section class="section-block surface-band-alt" id="pilot">

@@ -1,16 +1,16 @@
 ---
-import type { WhyVelvoixContent } from '../content/site';
+import type { Locale, WhyVelvoixContent } from '../content/site';
 import SectionIntro from './SectionIntro.astro';
 
 interface Props {
+  locale: Locale;
   content: WhyVelvoixContent;
 }
 
-const { content } = Astro.props;
-const isEnglish = content.eyebrow.toLowerCase().includes('why');
+const { locale, content } = Astro.props;
 
-const sectionContent = isEnglish
-  ? {
+const sectionContentByLocale = {
+  en: {
       eyebrow: 'Why Velvoix is different',
       title: 'Why Velvoix works differently in operations',
       description:
@@ -38,8 +38,8 @@ const sectionContent = isEnglish
           effect: 'Consistent workflow, traceable reconstruction.',
         },
       ],
-    }
-  : {
+    },
+  nl: {
       eyebrow: 'Waarom Velvoix anders is',
       title: 'Waarom Velvoix operationeel anders werkt',
       description:
@@ -67,7 +67,78 @@ const sectionContent = isEnglish
           effect: 'Consistente workflow, herleidbare reconstructie.',
         },
       ],
-    };
+    },
+  de: {
+      eyebrow: 'Warum Velvoix anders ist',
+      title: 'Warum Velvoix operativ anders arbeitet',
+      description:
+        'Velvoix ist nicht dafur gebaut, Signale nur weiterzugeben, sondern Pflegesituationen in einen erklarbaren, steuerbaren und auditierbaren Workflow zu uberfuhren.',
+      rows: [
+        {
+          index: '01',
+          title: 'Keine Benachrichtigungsschicht',
+          description:
+            'Velvoix reicht Signale nicht als isolierte Meldungen weiter, sondern macht daraus handhabbare Events mit Kontext, Verantwortung und Nachverfolgung.',
+          effect: 'Weniger Interpretationslast, straffere Nachverfolgung.',
+        },
+        {
+          index: '02',
+          title: 'Erklarbare Triage',
+          description:
+            'Velvoix zeigt nicht nur Dringlichkeit, sondern auch, warum etwas Aufmerksamkeit braucht und welche Folgeaktion in Pflegesprache sinnvoll ist.',
+          effect: 'Bessere Priorisierung, verstandlichere Aktion.',
+        },
+        {
+          index: '03',
+          title: 'Event-Wahrheit fur Workflow und Audit',
+          description:
+            'Status, Verantwortung, Eskalation und Rekonstruktion bauen auf einer gemeinsamen operativen Wahrheit auf.',
+          effect: 'Konsistenter Workflow, nachvollziehbare Rekonstruktion.',
+        },
+      ],
+    },
+  es: {
+      eyebrow: 'Por que Velvoix es diferente',
+      title: 'Por que Velvoix funciona de otra manera en la operacion',
+      description:
+        'Velvoix no esta pensado para reenviar senales, sino para estructurar situaciones asistenciales en un workflow explicable, gobernable y auditable.',
+      rows: [
+        {
+          index: '01',
+          title: 'No es una capa de notificaciones',
+          description:
+            'Velvoix no reenvia senales como alertas aisladas, sino que las convierte en eventos operativos con contexto, titularidad y seguimiento.',
+          effect: 'Menos carga interpretativa y un seguimiento mas estricto.',
+        },
+        {
+          index: '02',
+          title: 'Triaje explicable',
+          description:
+            'Velvoix no solo muestra urgencia, sino tambien por que algo requiere atencion y que seguimiento tiene sentido en lenguaje asistencial.',
+          effect: 'Mejor priorizacion y accion mas comprensible.',
+        },
+        {
+          index: '03',
+          title: 'Verdad del evento para workflow y auditoria',
+          description:
+            'Estado, titularidad, escalada y reconstruccion se apoyan en una unica verdad operativa.',
+          effect: 'Workflow coherente y reconstruccion trazable.',
+        },
+      ],
+    },
+} satisfies Record<Locale, {
+  eyebrow: string;
+  title: string;
+  description: string;
+  rows: Array<{
+    index: string;
+    title: string;
+    description: string;
+    effect: string;
+  }>;
+}>;
+
+const sectionContent = sectionContentByLocale[locale];
 ---
 
 <section class="section-block" id="why-velvoix">

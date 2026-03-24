@@ -1,22 +1,25 @@
 ---
+import type { Locale } from '../content/site';
+import { localeRootPaths } from '../content/site';
 import '../styles/global.css';
 
 interface Props {
-  locale: 'nl' | 'en';
+  locale: Locale;
   title: string;
   description: string;
   ogTitle: string;
   ogDescription: string;
   path: string;
-  alternateNlPath?: string;
-  alternateEnPath?: string;
+  alternatePaths?: Partial<Record<Locale, string>>;
 }
 
-const { locale, title, description, ogTitle, ogDescription, path, alternateNlPath = '/', alternateEnPath = '/en/' } = Astro.props;
+const { locale, title, description, ogTitle, ogDescription, path, alternatePaths = {} } = Astro.props;
 const siteUrl = 'https://velvoix.com';
 const canonical = new URL(path, siteUrl).toString();
-const alternateNl = new URL(alternateNlPath, siteUrl).toString();
-const alternateEn = new URL(alternateEnPath, siteUrl).toString();
+const alternates: Record<Locale, string> = {
+  ...localeRootPaths,
+  ...alternatePaths,
+};
 ---
 
 <!doctype html>
@@ -29,9 +32,11 @@ const alternateEn = new URL(alternateEnPath, siteUrl).toString();
     <meta name="theme-color" content="#0d4f5d" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="nl-NL" href={alternateNl} />
-    <link rel="alternate" hreflang="en" href={alternateEn} />
-    <link rel="alternate" hreflang="x-default" href={alternateNl} />
+    <link rel="alternate" hreflang="nl-NL" href={new URL(alternates.nl, siteUrl).toString()} />
+    <link rel="alternate" hreflang="en" href={new URL(alternates.en, siteUrl).toString()} />
+    <link rel="alternate" hreflang="de" href={new URL(alternates.de, siteUrl).toString()} />
+    <link rel="alternate" hreflang="es" href={new URL(alternates.es, siteUrl).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, siteUrl).toString()} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Velvoix" />
     <meta property="og:title" content={ogTitle} />
