@@ -7,55 +7,277 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const isEnglish = content.title.toLowerCase().includes('pilot');
+
+const sectionContent = isEnglish
+  ? {
+      eyebrow: 'Pilot and partnership',
+      title: 'Explore with Velvoix what controllable care workflow delivers in practice',
+      description:
+        'Velvoix is meant for healthcare organisations and partners that do not only want to receive signals, but primarily want to organise more clarity, better follow-up and better reconstruction. A pilot helps test how Velvoix fits existing care practice, team dynamics and operational processes.',
+      audience:
+        'Suitable for nursing homes, long-term care, operational care teams and strategic collaboration partners.',
+      primaryCta: 'Schedule a pilot conversation',
+      secondaryCta: 'Discuss collaboration',
+      moduleTitle: 'In a pilot we explore',
+      rows: [
+        {
+          title: 'Operational clarity',
+          description: 'See faster what needs attention, why that is the case and which follow-up makes sense.',
+        },
+        {
+          title: 'Workable follow-up',
+          description: 'Organise ownership, status and next action more clearly inside the daily care workflow.',
+        },
+        {
+          title: 'Reconstruction and evaluation',
+          description: 'Make status flow, escalation and retrospective visibility usable for quality improvement.',
+        },
+        {
+          title: 'Fit and integration',
+          description: 'Explore how Velvoix connects to teams, processes, devices and the existing environment.',
+        },
+      ],
+      organisationTitle: 'For healthcare organisations',
+      organisationBody: 'Focus on workload, follow-up, clarity and reconstruction.',
+      partnerTitle: 'For partners',
+      partnerBody: 'Focus on fit, operational value and strengthening the care chain.',
+    }
+  : {
+      eyebrow: 'Pilot en samenwerking',
+      title: 'Verken met Velvoix wat bestuurbare zorgworkflow in de praktijk oplevert',
+      description:
+        'Velvoix is bedoeld voor zorgorganisaties en partners die niet alleen signalen willen ontvangen, maar vooral meer duidelijkheid, betere opvolging en betere reconstructie willen organiseren. Een pilot helpt om te toetsen hoe Velvoix past binnen bestaande zorgpraktijk, teamdynamiek en operationele processen.',
+      audience:
+        'Geschikt voor verpleeghuizen, langdurige zorg, operationele zorgteams en strategische samenwerkingspartners.',
+      primaryCta: 'Plan een pilotgesprek',
+      secondaryCta: 'Bespreek samenwerking',
+      moduleTitle: 'In een pilot onderzoeken we',
+      rows: [
+        {
+          title: 'Operationele duidelijkheid',
+          description: 'Sneller zien wat aandacht vraagt, waarom dat zo is en welke opvolging logisch is.',
+        },
+        {
+          title: 'Werkbare opvolging',
+          description: 'Eigenaarschap, status en vervolgactie beter organiseren in de dagelijkse zorgworkflow.',
+        },
+        {
+          title: 'Reconstructie en evaluatie',
+          description: 'Statusverloop, escalatie en terugkijkbaarheid zichtbaar maken voor kwaliteitsverbetering.',
+        },
+        {
+          title: 'Inpasbaarheid',
+          description: 'Verkennen hoe Velvoix aansluit op teams, processen, devices en bestaande omgeving.',
+        },
+      ],
+      organisationTitle: 'Voor zorgorganisaties',
+      organisationBody: 'Focus op werkdruk, opvolging, duidelijkheid en reconstructie.',
+      partnerTitle: 'Voor partners',
+      partnerBody: 'Focus op inpasbaarheid, operationele meerwaarde en versterking van de zorgketen.',
+    };
 ---
 
 <section class="section-block surface-band-alt" id="pilot">
   <div class="section-shell">
-    <div class="rounded-[2.4rem] border border-slate-200/80 bg-white/82 p-6 shadow-[0_20px_42px_rgba(31,53,87,0.08)] md:p-10">
-      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
-          <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
-          <div class="mt-7 space-y-3">
-            {content.points.map((point) => (
-              <div class="flex items-start gap-3 rounded-[1.3rem] border border-slate-200/80 bg-slate-50/80 px-4 py-4">
-                <span class="mt-1.5 size-2 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
-                <span class="text-base font-semibold text-slate-700">{point}</span>
-              </div>
-            ))}
-          </div>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="button-primary" href="#contact">{content.primaryCta}</a>
-            <a class="button-secondary" href="#contact">{content.secondaryCta}</a>
-          </div>
-        </div>
+    <div class="pilot-proposition grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div class="pilot-proposition__intro">
+        <SectionIntro
+          eyebrow={sectionContent.eyebrow}
+          title={sectionContent.title}
+          description={sectionContent.description}
+        />
 
-        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200/70">
-          <img
-            src="/media/care-resident.jpg"
-            alt="Care setting"
-            class="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-gradient-to-br from-slate-950/72 via-slate-950/26 to-slate-900/68"></div>
-          <div class="relative p-6 text-white md:p-8">
-            <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Pilot focus</p>
-            <p class="mt-4 max-w-md text-lg font-semibold leading-8 text-white">
-              {content.title}
-            </p>
-            <p class="mt-4 max-w-md text-sm leading-7 text-slate-200">
-              {content.description}
-            </p>
-            <div class="mt-6 rounded-[1.4rem] border border-white/14 bg-white/8 px-5 py-4 backdrop-blur-sm">
-              <p class="text-sm font-semibold text-white">
-                {content.primaryCta}
-              </p>
-              <p class="mt-2 text-sm leading-6 text-slate-200">
-                {content.secondaryCta}
-              </p>
-            </div>
-          </div>
+        <p class="pilot-proposition__audience">{sectionContent.audience}</p>
+
+        <div class="pilot-proposition__actions">
+          <a class="button-primary" href="#contact">{sectionContent.primaryCta}</a>
+          <a class="button-secondary" href="#contact">{sectionContent.secondaryCta}</a>
         </div>
       </div>
+
+      <aside class="pilot-evidence">
+        <div class="pilot-evidence__head">
+          <div class="pilot-evidence__eyebrow">{sectionContent.eyebrow}</div>
+          <h3 class="pilot-evidence__title">{sectionContent.moduleTitle}</h3>
+        </div>
+
+        <div class="pilot-evidence__rows">
+          {sectionContent.rows.map((row, index) => (
+            <article class="pilot-evidence__row">
+              <div class="pilot-evidence__index">{String(index + 1).padStart(2, '0')}</div>
+              <div class="pilot-evidence__body">
+                <h4>{row.title}</h4>
+                <p>{row.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="pilot-evidence__split">
+          <div class="pilot-evidence__splitrow">
+            <div class="pilot-evidence__splitlabel">{sectionContent.organisationTitle}</div>
+            <div class="pilot-evidence__splittext">{sectionContent.organisationBody}</div>
+          </div>
+          <div class="pilot-evidence__splitrow">
+            <div class="pilot-evidence__splitlabel">{sectionContent.partnerTitle}</div>
+            <div class="pilot-evidence__splittext">{sectionContent.partnerBody}</div>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
+
+<style>
+  #pilot .pilot-proposition {
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(226, 232, 240, 0.86);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 249, 252, 0.96));
+    box-shadow: 0 18px 38px rgba(31, 53, 87, 0.07);
+  }
+
+  #pilot .pilot-proposition__intro {
+    max-width: 34rem;
+  }
+
+  #pilot .pilot-proposition__audience {
+    margin-top: 1.35rem;
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: rgb(71 85 105);
+  }
+
+  #pilot .pilot-proposition__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.7rem;
+  }
+
+  #pilot .pilot-evidence {
+    border-radius: 1.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.88);
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.35rem;
+    box-shadow: 0 14px 28px rgba(31, 53, 87, 0.05);
+  }
+
+  #pilot .pilot-evidence__head {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.82);
+  }
+
+  #pilot .pilot-evidence__eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(100 116 139);
+  }
+
+  #pilot .pilot-evidence__title {
+    margin-top: 0.55rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: rgb(15 23 42);
+  }
+
+  #pilot .pilot-evidence__rows {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  #pilot .pilot-evidence__row {
+    display: grid;
+    grid-template-columns: 3.1rem minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: start;
+    padding: 0.95rem 0;
+    border-top: 1px solid rgba(231, 236, 241, 0.9);
+  }
+
+  #pilot .pilot-evidence__row:first-child {
+    border-top: 0;
+    padding-top: 0.2rem;
+  }
+
+  #pilot .pilot-evidence__index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(214, 223, 233, 0.96);
+    background: rgba(248, 250, 252, 0.96);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgb(71 85 105);
+  }
+
+  #pilot .pilot-evidence__body h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: rgb(15 23 42);
+  }
+
+  #pilot .pilot-evidence__body p {
+    margin-top: 0.34rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgb(71 85 105);
+  }
+
+  #pilot .pilot-evidence__split {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.86);
+  }
+
+  #pilot .pilot-evidence__splitrow {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  #pilot .pilot-evidence__splitlabel {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(84 101 128);
+  }
+
+  #pilot .pilot-evidence__splittext {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgb(71 85 105);
+  }
+
+  @media (max-width: 767px) {
+    #pilot .pilot-proposition {
+      padding: 1.2rem;
+      border-radius: 1.5rem;
+    }
+
+    #pilot .pilot-evidence {
+      padding: 1rem;
+    }
+
+    #pilot .pilot-evidence__row {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    #pilot .pilot-evidence__index {
+      width: fit-content;
+      min-width: 2.6rem;
+    }
+  }
+</style>
