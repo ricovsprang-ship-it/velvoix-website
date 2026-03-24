@@ -551,7 +551,7 @@ const previewSlide = sectionContent.slides[2];
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center top;
+    object-position: center center;
     background: linear-gradient(180deg, rgba(246, 249, 252, 1), rgba(241, 246, 250, 1));
     transform-origin: center top;
     transition: transform 180ms ease;
@@ -782,6 +782,19 @@ const previewSlide = sectionContent.slides[2];
 
     const resetZoom = () => applyZoom(1);
 
+    const setZoomOriginFromPointer = (event) => {
+      const activeSlide = slides[activeIndex];
+      if (!(activeSlide instanceof HTMLElement)) return;
+      const image = activeSlide.querySelector('[data-tour-image]');
+      if (!(image instanceof HTMLElement)) return;
+      const rect = image.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      image.style.transformOrigin = `${Math.max(0, Math.min(100, x))}% ${Math.max(0, Math.min(100, y))}%`;
+    };
+
     const preloadSlide = (index) => {
       const slide = slideData[index];
       if (!slide || preloaded.has(slide.image)) return;
@@ -953,6 +966,18 @@ const previewSlide = sectionContent.slides[2];
     zoomOutButton?.addEventListener('click', () => applyZoom(zoomLevel - 0.2));
     zoomResetButton?.addEventListener('click', resetZoom);
 
+    const stage = block.querySelector('[data-tour-stage]');
+    stage?.addEventListener(
+      'wheel',
+      (event) => {
+        if (!(event instanceof WheelEvent) || overlay?.hidden) return;
+        event.preventDefault();
+        setZoomOriginFromPointer(event);
+        applyZoom(zoomLevel + (event.deltaY < 0 ? 0.14 : -0.14));
+      },
+      { passive: false }
+    );
+
     jumpButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const nextIndex = Number(button.getAttribute('data-tour-jump'));
@@ -967,6 +992,18 @@ const previewSlide = sectionContent.slides[2];
       if (event.key === 'Escape') closeOverlay();
       if (event.key === 'ArrowLeft') renderSlide((activeIndex - 1 + slides.length) % slides.length);
       if (event.key === 'ArrowRight') renderSlide((activeIndex + 1) % slides.length);
+      if (event.key === '+' || event.key === '=' || event.key === 'NumpadAdd') {
+        event.preventDefault();
+        applyZoom(zoomLevel + 0.2);
+      }
+      if (event.key === '-' || event.key === '_' || event.key === 'NumpadSubtract') {
+        event.preventDefault();
+        applyZoom(zoomLevel - 0.2);
+      }
+      if (event.key === '0' || event.key === 'Numpad0') {
+        event.preventDefault();
+        resetZoom();
+      }
       trapFocus(event);
     });
 
