@@ -200,7 +200,7 @@ const sectionContent = isEnglish
 const previewSlide = sectionContent.slides[2];
 ---
 
-<section class="section-block" data-platform-tour>
+<section class="section-block" data-platform-tour data-tour-slides={JSON.stringify(sectionContent.slides)}>
   <div class="section-shell">
     <div class="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
       <div class="max-w-[33rem]" data-platform-tour-intro>
@@ -697,7 +697,7 @@ const previewSlide = sectionContent.slides[2];
     const textTarget = block.querySelector('[data-tour-text]');
     const slides = Array.from(block.querySelectorAll('[data-tour-slide]'));
     const jumpButtons = Array.from(block.querySelectorAll('[data-tour-jump]'));
-    const slideData = JSON.parse(JSON.stringify(sectionContent.slides));
+    const slideData = JSON.parse(block.dataset.tourSlides ?? '[]');
 
     let activeIndex = 0;
     let lastFocused = null;
