@@ -2,6 +2,7 @@
 interface Props {
   labels: {
     pilot: string;
+    partnership: string;
     general: string;
   };
 }
@@ -9,13 +10,17 @@ interface Props {
 const { labels } = Astro.props;
 ---
 
-<div class="mb-6 rounded-[1.5rem] border border-slate-200 bg-white/86 p-2">
-  <div class="grid gap-2 sm:grid-cols-2">
-    <label class="cursor-pointer rounded-[1rem] border border-slate-950 bg-slate-950 px-4 py-3 text-sm font-semibold text-white">
+<div class="mb-6 rounded-[1.35rem] border border-slate-200/85 bg-slate-50/72 p-2">
+  <div class="grid gap-2 sm:grid-cols-3" role="radiogroup" aria-label="Inquiry type">
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-950 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition-colors has-[:checked]:border-slate-950 has-[:checked]:bg-slate-950 has-[:checked]:text-white hover:border-slate-300 hover:bg-white">
       <input class="sr-only" type="radio" name="inquiryType" value="pilot" checked />
       {labels.pilot}
     </label>
-    <label class="cursor-pointer rounded-[1rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50">
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition-colors has-[:checked]:border-slate-950 has-[:checked]:bg-slate-950 has-[:checked]:text-white hover:border-slate-300 hover:bg-white">
+      <input class="sr-only" type="radio" name="inquiryType" value="partnership" />
+      {labels.partnership}
+    </label>
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition-colors has-[:checked]:border-slate-950 has-[:checked]:bg-slate-950 has-[:checked]:text-white hover:border-slate-300 hover:bg-white">
       <input class="sr-only" type="radio" name="inquiryType" value="general" />
       {labels.general}
     </label>
