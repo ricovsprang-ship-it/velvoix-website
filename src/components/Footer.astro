@@ -34,10 +34,10 @@ const copyrightByLocale: Record<Locale, string> = {
     </div>
 
     <div class="flex flex-wrap items-center gap-5">
-      <a href={localeRootPaths.nl}>{languageLabels.nl}</a>
-      <a href={localeRootPaths.en}>{languageLabels.en}</a>
-      <a href={localeRootPaths.de}>{languageLabels.de}</a>
-      <a href={localeRootPaths.es}>{languageLabels.es}</a>
+      <a href={localeRootPaths.nl} data-language-link data-language-locale="nl">{languageLabels.nl}</a>
+      <a href={localeRootPaths.en} data-language-link data-language-locale="en">{languageLabels.en}</a>
+      <a href={localeRootPaths.de} data-language-link data-language-locale="de">{languageLabels.de}</a>
+      <a href={localeRootPaths.es} data-language-link data-language-locale="es">{languageLabels.es}</a>
       <a href={`${basePath}#contact`}>{content.contact}</a>
       <a href={`${legalBasePath}/privacy-policy`}>{content.privacy}</a>
       <a href={`${legalBasePath}/cookie-policy`}>{content.cookies}</a>
