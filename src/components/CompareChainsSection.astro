@@ -15,24 +15,24 @@ const { content } = Astro.props;
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
     </div>
 
-    <div class="chain-compare rounded-[2.2rem] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_40px_rgba(31,53,87,0.06)] md:p-8" data-chain-compare>
+    <div class="chain-compare rounded-[1.85rem] border border-slate-200/80 bg-white/92 p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-7" data-chain-compare>
       <p class="text-[0.74rem] font-bold uppercase tracking-[0.18em] text-slate-500">{content.compareLabel}</p>
 
-      <div class="mt-6 space-y-4">
-        <div class="chain-row chain-row-traditional rounded-[1.55rem] border border-slate-200/85 bg-slate-50/88 p-5" data-chain-row="traditional">
+      <div class="mt-5 space-y-4">
+        <div class="chain-row chain-row-traditional rounded-[1.15rem] border border-slate-200/90 bg-slate-50/80 px-4 py-4" data-chain-row="traditional">
           <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div class="shrink-0 lg:w-[11rem]">
+            <div class="shrink-0 lg:w-[10rem]">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
             </div>
 
-            <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
+            <div class="chain-track chain-track-traditional flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
               {content.traditionalSteps.map((step, index) => (
                 <>
-                  <div class="inline-flex min-h-10 items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  <div class="chain-module chain-module-traditional">
                     {step}
                   </div>
                   {index < content.traditionalSteps.length - 1 && (
-                    <span class="text-sm font-semibold text-slate-300">-></span>
+                    <span class="chain-arrow chain-arrow-traditional" aria-hidden="true">→</span>
                   )}
                 </>
               ))}
@@ -40,63 +40,94 @@ const { content } = Astro.props;
           </div>
         </div>
 
-        <div class="chain-row chain-row-velvoix rounded-[1.85rem] border border-[rgba(31,53,87,0.12)] bg-[linear-gradient(180deg,rgba(234,241,246,0.96),rgba(245,249,252,0.98))] p-5 shadow-[0_18px_34px_rgba(31,53,87,0.06)]" data-chain-row="velvoix">
+        <div class="chain-row chain-row-velvoix rounded-[1.35rem] border border-[rgba(31,53,87,0.13)] bg-[linear-gradient(180deg,rgba(236,242,246,0.98),rgba(246,249,252,0.99))] px-4 py-4 shadow-[0_16px_32px_rgba(31,53,87,0.055)] md:px-5 md:py-5" data-chain-row="velvoix">
           <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div class="shrink-0 lg:w-[11rem]">
+            <div class="shrink-0 lg:w-[10rem]">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
             </div>
 
-            <div class="min-w-0 flex-1">
-              <div class="chain-flow relative flex min-w-0 flex-wrap items-center gap-2.5" data-chain-flow>
-                <span class="chain-flow-line hidden origin-left md:block" aria-hidden="true" data-chain-flow-line></span>
-                {content.velvoixSteps.map((step, index) => (
-                  <>
-                    <button
-                      type="button"
-                      class="chain-node inline-flex min-h-11 items-center rounded-full border border-[rgba(31,53,87,0.12)] bg-white/96 px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_8px_18px_rgba(31,53,87,0.05)]"
-                      data-chain-node
-                      data-chain-node-index={index}
-                      data-chain-detail-title={content.stepDetails[index]?.title}
-                      data-chain-detail-description={content.stepDetails[index]?.description}
-                      aria-pressed={index === 0 ? 'true' : 'false'}
-                      aria-controls="chain-step-detail"
-                    >
-                      {step}
-                    </button>
-                    {index < content.velvoixSteps.length - 1 && (
-                      <span class="chain-arrow text-sm font-semibold text-slate-400" data-chain-arrow>
-                        ->
-                      </span>
-                    )}
-                  </>
-                ))}
+            <div class="min-w-0 flex-1 space-y-4">
+              <div class="chain-flow relative grid gap-3.5" data-chain-flow>
+                <span class="chain-flow-line hidden md:block" aria-hidden="true" data-chain-flow-line></span>
+
+                <div class="chain-rail chain-rail-primary">
+                  {content.velvoixSteps.slice(0, 4).map((step, index) => (
+                    <>
+                      <button
+                        type="button"
+                        class="chain-node chain-module chain-module-velvoix"
+                        data-chain-node
+                        data-chain-node-index={index}
+                        data-chain-detail-title={content.stepDetails[index]?.title}
+                        data-chain-detail-description={content.stepDetails[index]?.description}
+                        aria-pressed={index === 0 ? 'true' : 'false'}
+                        aria-controls="chain-step-detail"
+                      >
+                        <span class="chain-node-label">{step}</span>
+                      </button>
+                      {index < 3 && (
+                        <span class="chain-arrow chain-arrow-velvoix" data-chain-arrow aria-hidden="true">
+                          <span class="chain-arrow-line"></span>
+                        </span>
+                      )}
+                    </>
+                  ))}
+                </div>
+
+                <div class="chain-rail chain-rail-secondary">
+                  {content.velvoixSteps.slice(4).map((step, railIndex) => {
+                    const index = railIndex + 4;
+                    return (
+                      <>
+                        <button
+                          type="button"
+                          class="chain-node chain-module chain-module-velvoix"
+                          data-chain-node
+                          data-chain-node-index={index}
+                          data-chain-detail-title={content.stepDetails[index]?.title}
+                          data-chain-detail-description={content.stepDetails[index]?.description}
+                          aria-pressed="false"
+                          aria-controls="chain-step-detail"
+                        >
+                          <span class="chain-node-label">{step}</span>
+                        </button>
+                        {railIndex < 2 && (
+                          <span class="chain-arrow chain-arrow-velvoix" data-chain-arrow aria-hidden="true">
+                            <span class="chain-arrow-line"></span>
+                          </span>
+                        )}
+                      </>
+                    );
+                  })}
+                </div>
+
                 <span class="chain-highlight hidden md:block" aria-hidden="true" data-chain-highlight></span>
               </div>
 
-              <p class="mt-5 max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
+              <p class="max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
 
               <div
                 id="chain-step-detail"
-                class="chain-detail mt-5 rounded-[1.3rem] border border-slate-200/80 bg-white/84 px-4 py-3.5 shadow-[0_10px_22px_rgba(31,53,87,0.045)]"
+                class="chain-detail border border-slate-200/85 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,250,252,0.95))] px-4 py-3.5"
                 data-chain-detail
                 aria-live="polite"
               >
                 <div class="flex items-start gap-3">
-                  <span class="mt-1 size-2 rounded-full bg-[var(--vx-accent)]"></span>
+                  <span class="mt-1.5 size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
                   <div class="min-w-0">
-                    <p class="chain-detail-title text-sm font-semibold text-slate-900" data-chain-detail-title>
+                    <p class="chain-detail-title text-[0.84rem] font-semibold uppercase tracking-[0.12em] text-slate-700" data-chain-detail-title>
                       {content.stepDetails[0]?.title}
                     </p>
-                    <p class="chain-detail-description mt-1 text-sm leading-6 text-slate-600" data-chain-detail-description>
+                    <p class="chain-detail-description mt-2 text-sm leading-6 text-slate-600" data-chain-detail-description>
                       {content.stepDetails[0]?.description}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div class="chain-results mt-5 flex flex-wrap gap-2.5" data-chain-results>
+              <div class="chain-results grid gap-2.5 md:grid-cols-3" data-chain-results>
                 {content.outcomes.map((outcome) => (
-                  <div class="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/88 px-3 py-1.5 text-[0.82rem] font-semibold text-slate-700" data-chain-result>
+                  <div class="chain-result-item flex items-center gap-2.5 border-t border-slate-200/90 pt-2 text-[0.84rem] font-medium text-slate-700" data-chain-result>
                     <span class="size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
                     <span>{outcome}</span>
                   </div>
@@ -111,33 +142,86 @@ const { content } = Astro.props;
 </section>
 
 <style>
+  [data-chain-block] .chain-compare {
+    position: relative;
+  }
+
+  [data-chain-block] .chain-module {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.9rem;
+    border: 1px solid rgba(31, 53, 87, 0.1);
+    background: rgba(255, 255, 255, 0.94);
+    padding: 0.7rem 0.95rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: rgb(30 41 59);
+    box-shadow: 0 6px 16px rgba(31, 53, 87, 0.045);
+  }
+
+  [data-chain-block] .chain-module-traditional {
+    min-height: 2.55rem;
+    border-radius: 0.8rem;
+    border-color: rgba(203, 213, 225, 0.95);
+    background: rgba(255, 255, 255, 0.88);
+    padding-inline: 0.9rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: rgb(71 85 105);
+    box-shadow: none;
+  }
+
+  [data-chain-block] .chain-module-velvoix {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0.95rem;
+    border-color: rgba(31, 53, 87, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.98));
+    padding: 0.82rem 0.95rem;
+    text-align: left;
+  }
+
+  [data-chain-block] .chain-rail {
+    display: grid;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  [data-chain-block] .chain-rail-primary {
+    grid-template-columns: minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr);
+  }
+
+  [data-chain-block] .chain-rail-secondary {
+    grid-template-columns: minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr);
+  }
+
   [data-chain-block] .chain-flow {
     isolation: isolate;
   }
 
   [data-chain-block] .chain-row-traditional {
-    opacity: 0.84;
+    opacity: 0.82;
   }
 
   [data-chain-block] .chain-flow-line {
     position: absolute;
-    left: 1rem;
-    right: 1rem;
-    top: 50%;
+    left: 0.8rem;
+    right: 0.8rem;
+    top: 2.45rem;
     height: 1px;
-    background: linear-gradient(90deg, rgba(25, 130, 121, 0.18), rgba(31, 53, 87, 0.18));
-    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(25, 130, 121, 0.1), rgba(31, 53, 87, 0.14), rgba(31, 53, 87, 0.08));
     z-index: -2;
   }
 
   [data-chain-block] .chain-highlight {
     position: absolute;
-    left: 1rem;
-    top: 50%;
-    width: 5.5rem;
+    left: 0.8rem;
+    top: 2.45rem;
+    width: 6rem;
     height: 2px;
-    background: linear-gradient(90deg, rgba(25, 130, 121, 0), rgba(25, 130, 121, 0.42), rgba(25, 130, 121, 0));
-    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(25, 130, 121, 0), rgba(25, 130, 121, 0.34), rgba(25, 130, 121, 0));
     z-index: -1;
     pointer-events: none;
   }
@@ -147,21 +231,23 @@ const { content } = Astro.props;
       border-color 180ms ease,
       background-color 180ms ease,
       box-shadow 180ms ease,
-      color 180ms ease;
+      color 180ms ease,
+      transform 180ms ease;
     cursor: pointer;
   }
 
   [data-chain-block] .chain-node[aria-pressed='true'] {
     border-color: rgba(25, 130, 121, 0.34);
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 12px 24px rgba(31, 53, 87, 0.08);
+    box-shadow: 0 10px 22px rgba(31, 53, 87, 0.08);
   }
 
   [data-chain-block] .chain-node:is(:hover, :focus-visible) {
     background: rgba(255, 255, 255, 1);
     border-color: rgba(25, 130, 121, 0.26);
-    box-shadow: 0 10px 22px rgba(31, 53, 87, 0.08);
+    box-shadow: 0 9px 20px rgba(31, 53, 87, 0.075);
     color: rgb(15 23 42);
+    transform: translateY(-1px);
   }
 
   [data-chain-block] .chain-node:focus-visible {
@@ -169,13 +255,80 @@ const { content } = Astro.props;
     outline-offset: 2px;
   }
 
+  [data-chain-block] .chain-node-label {
+    display: block;
+  }
+
+  [data-chain-block] .chain-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-chain-block] .chain-arrow-traditional {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(148 163 184);
+  }
+
+  [data-chain-block] .chain-arrow-velvoix {
+    width: 100%;
+  }
+
+  [data-chain-block] .chain-arrow-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(148, 163, 184, 0.55), rgba(148, 163, 184, 0.18));
+  }
+
   [data-chain-block] .chain-detail {
-    min-height: 6.35rem;
+    min-height: 5.8rem;
+    border-radius: 0.95rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  [data-chain-block] .chain-results {
+    align-items: start;
+  }
+
+  [data-chain-block] .chain-result-item {
+    min-height: 2.2rem;
+  }
+
+  @media (max-width: 1023px) {
+    [data-chain-block] .chain-rail-primary,
+    [data-chain-block] .chain-rail-secondary {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    [data-chain-block] .chain-arrow-velvoix {
+      display: none;
+    }
+
+    [data-chain-block] .chain-flow-line,
+    [data-chain-block] .chain-highlight {
+      display: none;
+    }
   }
 
   @media (max-width: 767px) {
+    [data-chain-block] .chain-track-traditional {
+      gap: 0.55rem;
+    }
+
+    [data-chain-block] .chain-module-traditional {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    [data-chain-block] .chain-arrow-traditional {
+      display: none;
+    }
+
     [data-chain-block] .chain-results {
-      gap: 0.5rem;
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
     }
   }
 </style>
