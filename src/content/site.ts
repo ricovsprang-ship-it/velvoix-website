@@ -67,6 +67,7 @@ export interface CompareChainsContent extends SectionIntroContent {
   velvoixTitle: string;
   velvoixSteps: string[];
   velvoixSupporting: string;
+  stepDetails: Array<{ title: string; description: string }>;
 }
 
 export interface SnapshotSectionContent extends SectionIntroContent {
@@ -258,6 +259,38 @@ export const siteContent: Record<Locale, SiteContent> = {
       velvoixTitle: 'Velvoix-keten',
       velvoixSteps: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
       velvoixSupporting: 'Elke extra laag voegt betekenis toe en maakt opvolging, escalatie en audit bestuurbaar.',
+      stepDetails: [
+        {
+          title: 'Signaal',
+          description:
+            'Een knopoproep, spraakinput of ander zorgsignaal komt gecontroleerd binnen als startpunt voor opvolging.',
+        },
+        {
+          title: 'Context',
+          description: 'Meldingscontext, historie en situatie helpen om het signaal beter te begrijpen.',
+        },
+        {
+          title: 'Triage',
+          description: 'Urgentie en aanbevolen aanpak worden zichtbaar onderbouwd in zorgtaal.',
+        },
+        {
+          title: 'Event',
+          description:
+            'De uitkomst wordt één werkbare operationele eenheid voor status, eigenaarschap en vervolg.',
+        },
+        {
+          title: 'Workflow',
+          description: 'Opvolging wordt bestuurbaar met acties, statusverloop en duidelijke verantwoordelijkheid.',
+        },
+        {
+          title: 'Escalatie',
+          description: 'Als opvolging uitblijft of risico oploopt, blijft escalatie logisch en controleerbaar.',
+        },
+        {
+          title: 'Reconstructie',
+          description: 'Beslissingen, statusverloop en opvolging blijven herleidbaar voor evaluatie en audit.',
+        },
+      ],
     },
     whyVelvoix: {
       eyebrow: 'Waarom Velvoix anders is',
@@ -493,6 +526,38 @@ export const siteContent: Record<Locale, SiteContent> = {
       velvoixTitle: 'Velvoix chain',
       velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
       velvoixSupporting: 'Each extra layer adds meaning and makes follow-up, escalation and audit controllable.',
+      stepDetails: [
+        {
+          title: 'Signal',
+          description:
+            'A button call, voice input or other care-related signal enters in a controlled way as the starting point for follow-up.',
+        },
+        {
+          title: 'Context',
+          description: 'Event context, history and situation help teams understand the signal more clearly.',
+        },
+        {
+          title: 'Triage',
+          description: 'Urgency and recommended action become visible with explainable care wording.',
+        },
+        {
+          title: 'Event',
+          description:
+            'The outcome becomes one workable operational unit for status, ownership and next steps.',
+        },
+        {
+          title: 'Workflow',
+          description: 'Follow-up becomes controllable through actions, status flow and clear responsibility.',
+        },
+        {
+          title: 'Escalation',
+          description: 'If follow-up stalls or risk rises, escalation remains logical and controlled.',
+        },
+        {
+          title: 'Reconstruction',
+          description: 'Decisions, status flow and follow-up remain traceable for evaluation and audit.',
+        },
+      ],
     },
     whyVelvoix: {
       eyebrow: 'Why Velvoix is different',

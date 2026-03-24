@@ -51,13 +51,18 @@ const { content } = Astro.props;
                 <span class="chain-flow-line hidden origin-left md:block" aria-hidden="true" data-chain-flow-line></span>
                 {content.velvoixSteps.map((step, index) => (
                   <>
-                    <div
+                    <button
+                      type="button"
                       class="chain-node inline-flex min-h-11 items-center rounded-full border border-[rgba(31,53,87,0.12)] bg-white/96 px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_8px_18px_rgba(31,53,87,0.05)]"
                       data-chain-node
-                      tabindex="0"
+                      data-chain-node-index={index}
+                      data-chain-detail-title={content.stepDetails[index]?.title}
+                      data-chain-detail-description={content.stepDetails[index]?.description}
+                      aria-pressed={index === 0 ? 'true' : 'false'}
+                      aria-controls="chain-step-detail"
                     >
                       {step}
-                    </div>
+                    </button>
                     {index < content.velvoixSteps.length - 1 && (
                       <span class="chain-arrow text-sm font-semibold text-slate-400" data-chain-arrow>
                         ->
@@ -69,6 +74,25 @@ const { content } = Astro.props;
               </div>
 
               <p class="mt-5 max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
+
+              <div
+                id="chain-step-detail"
+                class="chain-detail mt-5 rounded-[1.3rem] border border-slate-200/80 bg-white/84 px-4 py-3.5 shadow-[0_10px_22px_rgba(31,53,87,0.045)]"
+                data-chain-detail
+                aria-live="polite"
+              >
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 size-2 rounded-full bg-[var(--vx-accent)]"></span>
+                  <div class="min-w-0">
+                    <p class="chain-detail-title text-sm font-semibold text-slate-900" data-chain-detail-title>
+                      {content.stepDetails[0]?.title}
+                    </p>
+                    <p class="chain-detail-description mt-1 text-sm leading-6 text-slate-600" data-chain-detail-description>
+                      {content.stepDetails[0]?.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               <div class="chain-results mt-5 flex flex-wrap gap-2.5" data-chain-results>
                 {content.outcomes.map((outcome) => (
@@ -122,14 +146,31 @@ const { content } = Astro.props;
     transition:
       border-color 180ms ease,
       background-color 180ms ease,
-      box-shadow 180ms ease;
+      box-shadow 180ms ease,
+      color 180ms ease;
+    cursor: pointer;
+  }
+
+  [data-chain-block] .chain-node[aria-pressed='true'] {
+    border-color: rgba(25, 130, 121, 0.34);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 12px 24px rgba(31, 53, 87, 0.08);
   }
 
   [data-chain-block] .chain-node:is(:hover, :focus-visible) {
     background: rgba(255, 255, 255, 1);
     border-color: rgba(25, 130, 121, 0.26);
     box-shadow: 0 10px 22px rgba(31, 53, 87, 0.08);
-    outline: none;
+    color: rgb(15 23 42);
+  }
+
+  [data-chain-block] .chain-node:focus-visible {
+    outline: 2px solid rgba(25, 130, 121, 0.22);
+    outline-offset: 2px;
+  }
+
+  [data-chain-block] .chain-detail {
+    min-height: 6.35rem;
   }
 
   @media (max-width: 767px) {
@@ -159,72 +200,114 @@ const { content } = Astro.props;
     const velvoixRow = block.querySelector('[data-chain-row="velvoix"]');
     const flowLine = block.querySelector('[data-chain-flow-line]');
     const highlight = block.querySelector('[data-chain-highlight]');
+    const detail = block.querySelector<HTMLElement>('[data-chain-detail]');
+    const detailTitle = block.querySelector<HTMLElement>('[data-chain-detail-title]');
+    const detailDescription = block.querySelector<HTMLElement>('[data-chain-detail-description]');
     const nodes = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-node]'));
     const arrows = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-arrow]'));
     const results = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-result]'));
 
     if (prefersReducedMotion) {
-      gsap.set([intro, compare, traditionalRow, velvoixRow, flowLine, highlight, nodes, arrows, results], {
+      gsap.set([intro, compare, traditionalRow, velvoixRow, flowLine, highlight, nodes, arrows, results, detail], {
         clearProps: 'all',
       });
-      continue;
     }
 
-    gsap.set([intro, compare], { autoAlpha: 0, y: 18 });
-    gsap.set(traditionalRow, { autoAlpha: 0, y: 12 });
-    gsap.set(velvoixRow, { autoAlpha: 1 });
-    gsap.set(nodes, { autoAlpha: 0, y: 8, scale: 0.985 });
-    gsap.set(arrows, { autoAlpha: 0, y: 4 });
-    gsap.set(flowLine, { autoAlpha: 0, scaleX: 0.36, transformOrigin: 'left center' });
-    gsap.set(highlight, { autoAlpha: 0, x: -16 });
-    gsap.set(results, { autoAlpha: 0, y: 10 });
+    const updateActiveStep = (index: number) => {
+      const activeNode = nodes[index];
+      if (!activeNode || !detailTitle || !detailDescription || !detail) return;
 
-    const timeline = gsap.timeline({
-      defaults: { ease: 'power2.out' },
-      scrollTrigger: {
-        trigger: block,
-        start: 'top 72%',
-        once: true,
-      },
-    });
+      for (const [nodeIndex, node] of nodes.entries()) {
+        node.setAttribute('aria-pressed', nodeIndex === index ? 'true' : 'false');
+      }
 
-    timeline
-      .to(intro, { autoAlpha: 1, y: 0, duration: 0.52 })
-      .to(compare, { autoAlpha: 1, y: 0, duration: 0.56 }, '-=0.32')
-      .to(traditionalRow, { autoAlpha: 0.84, y: 0, duration: 0.46 }, '-=0.18')
-      .to(
-        nodes,
-        {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.34,
-          stagger: 0.1,
+      const nextTitle = activeNode.dataset.chainDetailTitle ?? activeNode.textContent?.trim() ?? '';
+      const nextDescription = activeNode.dataset.chainDetailDescription ?? '';
+
+      if (prefersReducedMotion) {
+        detailTitle.textContent = nextTitle;
+        detailDescription.textContent = nextDescription;
+        return;
+      }
+
+      gsap.killTweensOf([detailTitle, detailDescription, detail]);
+      gsap
+        .timeline({ defaults: { ease: 'power2.out' } })
+        .to([detailTitle, detailDescription], { autoAlpha: 0, y: 4, duration: 0.14 })
+        .add(() => {
+          detailTitle.textContent = nextTitle;
+          detailDescription.textContent = nextDescription;
+        })
+        .to(detail, { borderColor: 'rgba(25, 130, 121, 0.18)', duration: 0.18 }, '<')
+        .to([detailTitle, detailDescription], { autoAlpha: 1, y: 0, duration: 0.18 })
+        .to(detail, { borderColor: 'rgba(226, 232, 240, 0.8)', duration: 0.22 }, '-=0.02');
+    };
+
+    for (const [index, node] of nodes.entries()) {
+      node.addEventListener('mouseenter', () => updateActiveStep(index));
+      node.addEventListener('focus', () => updateActiveStep(index));
+      node.addEventListener('click', () => updateActiveStep(index));
+    }
+
+    if (!prefersReducedMotion) {
+      gsap.set([intro, compare], { autoAlpha: 0, y: 18 });
+      gsap.set(traditionalRow, { autoAlpha: 0, y: 12 });
+      gsap.set(velvoixRow, { autoAlpha: 1 });
+      gsap.set(nodes, { autoAlpha: 0, y: 8, scale: 0.985 });
+      gsap.set(arrows, { autoAlpha: 0, y: 4 });
+      gsap.set(flowLine, { autoAlpha: 0, scaleX: 0.36, transformOrigin: 'left center' });
+      gsap.set(highlight, { autoAlpha: 0, x: -16 });
+      gsap.set(results, { autoAlpha: 0, y: 10 });
+
+      const timeline = gsap.timeline({
+        defaults: { ease: 'power2.out' },
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 72%',
+          once: true,
         },
-        '-=0.02'
-      )
-      .to(
-        arrows,
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.22,
-          stagger: 0.1,
-        },
-        '<0.08'
-      )
-      .to(flowLine, { autoAlpha: 1, scaleX: 1, duration: 0.5 }, '-=0.38')
-      .to(highlight, { autoAlpha: 0.95, x: 452, duration: 0.78, ease: 'power1.inOut' })
-      .to(highlight, { autoAlpha: 0, duration: 0.12 }, '-=0.08')
-      .to(
-        results,
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.28,
-          stagger: 0.08,
-        },
-        '-=0.02'
-      );
+      });
+
+      timeline
+        .to(intro, { autoAlpha: 1, y: 0, duration: 0.52 })
+        .to(compare, { autoAlpha: 1, y: 0, duration: 0.56 }, '-=0.32')
+        .to(traditionalRow, { autoAlpha: 0.84, y: 0, duration: 0.46 }, '-=0.18')
+        .to(
+          nodes,
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.34,
+            stagger: 0.1,
+          },
+          '-=0.02'
+        )
+        .to(
+          arrows,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.22,
+            stagger: 0.1,
+          },
+          '<0.08'
+        )
+        .to(flowLine, { autoAlpha: 1, scaleX: 1, duration: 0.5 }, '-=0.38')
+        .to(highlight, { autoAlpha: 0.95, x: 452, duration: 0.78, ease: 'power1.inOut' })
+        .to(highlight, { autoAlpha: 0, duration: 0.12 }, '-=0.08')
+        .to(
+          results,
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.28,
+            stagger: 0.08,
+          },
+          '-=0.02'
+        );
+    }
+
+    updateActiveStep(0);
   }
 </script>
