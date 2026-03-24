@@ -51,5 +51,65 @@ const alternates: Record<Locale, string> = {
   </head>
   <body class="bg-slate-950 text-slate-900">
     <slot />
+    <script is:inline define:vars={{ localeRootPaths }}>
+      (() => {
+        const storageKey = 'velvoix-preferred-locale';
+        const supportedLocales = ['nl', 'en', 'de', 'es'];
+        const path = window.location.pathname;
+
+        const detectLocaleFromPath = (pathname) => {
+          if (pathname.startsWith('/en/')) return 'en';
+          if (pathname.startsWith('/de/')) return 'de';
+          if (pathname.startsWith('/es/')) return 'es';
+          return 'nl';
+        };
+
+        const getPreferredLocale = () => {
+          const stored = window.localStorage.getItem(storageKey);
+          if (stored && supportedLocales.includes(stored)) return stored;
+
+          const browserLocales = Array.isArray(window.navigator.languages) && window.navigator.languages.length
+            ? window.navigator.languages
+            : [window.navigator.language];
+
+          for (const browserLocale of browserLocales) {
+            const normalized = (browserLocale ?? '').toLowerCase();
+            if (normalized.startsWith('nl')) return 'nl';
+            if (normalized.startsWith('de')) return 'de';
+            if (normalized.startsWith('es')) return 'es';
+            if (normalized.startsWith('en')) return 'en';
+          }
+
+          return 'en';
+        };
+
+        const isHomepageRoot = path === '/' || path === '';
+        if (isHomepageRoot) {
+          const preferredLocale = getPreferredLocale();
+          const preferredPath = localeRootPaths[preferredLocale];
+
+          if (preferredLocale !== 'nl' && typeof preferredPath === 'string' && preferredPath !== path) {
+            window.location.replace(preferredPath + window.location.search + window.location.hash);
+            return;
+          }
+        }
+
+        const currentLocale = detectLocaleFromPath(path);
+        window.localStorage.setItem(storageKey, currentLocale);
+
+        document.addEventListener('click', (event) => {
+          const target = event.target;
+          if (!(target instanceof Element)) return;
+
+          const link = target.closest('[data-language-link]');
+          if (!(link instanceof HTMLElement)) return;
+
+          const selectedLocale = link.dataset.languageLocale;
+          if (selectedLocale && supportedLocales.includes(selectedLocale)) {
+            window.localStorage.setItem(storageKey, selectedLocale);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
