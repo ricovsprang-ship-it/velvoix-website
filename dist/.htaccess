@@ -1,0 +1,3 @@
+<Files ".contact-mailer-config.php">
+  Require all denied
+</Files>

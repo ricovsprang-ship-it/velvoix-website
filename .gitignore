@@ -16,6 +16,8 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+public/.contact-mailer-config.php
+dist/.contact-mailer-config.php
 
 # macOS-specific files
 .DS_Store

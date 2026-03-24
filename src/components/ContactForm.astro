@@ -44,9 +44,16 @@ const routeTexts = content.routeContent;
         </div>
       </div>
 
-      <form class="rounded-[2rem] border border-slate-200/80 bg-white/96 p-6 shadow-[0_20px_42px_rgba(31,53,87,0.08)] md:p-8" data-contact-form novalidate>
+      <form
+        class="rounded-[2rem] border border-slate-200/80 bg-white/96 p-6 shadow-[0_20px_42px_rgba(31,53,87,0.08)] md:p-8"
+        action="/contact.php"
+        method="post"
+        data-contact-form
+        novalidate
+      >
         <InquiryToggle labels={content.inquiryTypes} />
         <input type="hidden" name="inquiryTypeValue" value="pilot" data-inquiry-type-input />
+        <input class="sr-only" type="text" name="companyWebsite" tabindex="-1" autocomplete="off" />
 
         <div class="mb-6 rounded-[1rem] border border-slate-200/80 bg-slate-50/80 px-4 py-3">
           <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500" data-route-label>{content.inquiryTypes.pilot}</p>
@@ -171,15 +178,30 @@ const routeTexts = content.routeContent;
       submitButton?.setAttribute('aria-busy', 'true');
 
       try {
-        await new Promise((resolve) => setTimeout(resolve, 700));
+        const formData = new FormData(form);
+        const response = await fetch(form.getAttribute('action') ?? '/contact.php', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: formData,
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok || payload.ok !== true) {
+          throw new Error(payload.error || formTexts.generic);
+        }
+
         form.reset();
+        applyRoute('pilot');
         if (statusNode) {
           statusNode.textContent = formTexts.success;
           statusNode.dataset.state = 'success';
         }
-      } catch {
+      } catch (error) {
         if (statusNode) {
-          statusNode.textContent = formTexts.generic;
+          statusNode.textContent = error instanceof Error && error.message ? error.message : formTexts.generic;
           statusNode.dataset.state = 'error';
         }
       } finally {
