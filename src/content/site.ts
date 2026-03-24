@@ -149,8 +149,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       primaryCta: 'Plan een pilotgesprek',
       secondaryCta: 'Bekijk hoe het werkt',
       metrics: [
-        { value: 'Uitlegbaar', label: 'Van signaal naar context, triage en duidelijke opvolging' },
-        { value: 'Auditbaar', label: 'Eventverloop, eigenaarschap en reconstructie blijven herleidbaar' },
+        { value: 'Uitlegbaar', label: 'Van signaal naar begrijpelijke opvolging' },
+        { value: 'Auditbaar', label: 'Statusverloop en reconstructie blijven herleidbaar' },
         { value: 'Beheersbaar', label: 'Past in bestaande zorgomgevingen zonder losse notificatielaag' },
       ],
     },
@@ -360,8 +360,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       primaryCta: 'Schedule a pilot conversation',
       secondaryCta: 'See how it works',
       metrics: [
-        { value: 'Explainable', label: 'From signal to context, triage and understandable follow-up' },
-        { value: 'Auditable', label: 'Event flow, ownership and reconstruction remain traceable' },
+        { value: 'Explainable', label: 'From signal to understandable follow-up' },
+        { value: 'Auditable', label: 'Event flow and reconstruction remain traceable' },
         { value: 'Controlled', label: 'Fits care environments without becoming another notification layer' },
       ],
     },
