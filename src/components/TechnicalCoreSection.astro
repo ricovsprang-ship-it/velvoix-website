@@ -13,6 +13,16 @@ const { content } = Astro.props;
   <div class="section-shell grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
     <div class="max-w-[31rem]" data-technical-core-intro>
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+      {content.capabilities?.length ? (
+        <div class="technical-capability-strip mt-6" aria-label={content.eyebrow}>
+          {content.capabilities.map((item) => (
+            <div class="technical-capability-item">
+              <span class="technical-capability-dot" aria-hidden="true"></span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
 
     <div class="space-y-3.5" data-technical-core-rows>
@@ -46,6 +56,28 @@ const { content } = Astro.props;
 </section>
 
 <style>
+  [data-technical-core] .technical-capability-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.72rem 1rem;
+  }
+  [data-technical-core] .technical-capability-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: rgb(71 85 105);
+    font-size: 0.79rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  [data-technical-core] .technical-capability-dot {
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 999px;
+    background: var(--vx-accent);
+    box-shadow: 0 0 0 4px rgba(25, 130, 121, 0.11);
+  }
   [data-technical-core] .technical-row {
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
   }
@@ -76,11 +108,12 @@ const { content } = Astro.props;
     block.dataset.gsapBound = 'true';
 
     const intro = block.querySelector<HTMLElement>('[data-technical-core-intro]');
+    const strip = block.querySelector<HTMLElement>('.technical-capability-strip');
     const rows = Array.from(block.querySelectorAll<HTMLElement>('[data-technical-row]'));
 
     if (prefersReducedMotion) continue;
 
-    gsap.set([intro, ...rows], { autoAlpha: 0, y: 16 });
+    gsap.set([intro, strip, ...rows], { autoAlpha: 0, y: 16 });
 
     gsap.timeline({
       defaults: { ease: 'power2.out' },
@@ -90,10 +123,11 @@ const { content } = Astro.props;
         once: true,
       },
       onComplete: () => {
-        gsap.set([intro, ...rows], { clearProps: 'opacity,visibility,transform' });
+        gsap.set([intro, strip, ...rows], { clearProps: 'opacity,visibility,transform' });
       },
     })
       .to(intro, { autoAlpha: 1, y: 0, duration: 0.42 })
-      .to(rows, { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.07 }, '-=0.18');
+      .to(strip, { autoAlpha: 1, y: 0, duration: 0.28 }, '-=0.16')
+      .to(rows, { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.07 }, '-=0.12');
   }
 </script>

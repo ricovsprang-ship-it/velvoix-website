@@ -68,6 +68,7 @@ export interface WhyVelvoixContent extends SectionIntroContent {
 }
 
 export interface TechnicalCoreContent extends SectionIntroContent {
+  capabilities?: string[];
   rows: Array<{
     index: string;
     title: string;
@@ -358,41 +359,63 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     technicalCore: {
       eyebrow: 'Technische kern',
-      title: 'Waarom Velvoix technisch moeilijk te vervangen is',
+      title: 'Gebouwd voor betrouwbare opvolging onder druk',
       description:
-        'De kracht van Velvoix zit niet in een model, scherm of signaalbron op zichzelf, maar in een samenhangende productkern waarin triage, eventvorming, workflow, audit en beheer elkaar gecontroleerd versterken.',
+        'De kracht van Velvoix zit niet in een los scherm, model of signaalbron, maar in een productkern die eventwaarheid, uitlegbare triage, opvolging en beheer gecontroleerd bijeenhoudt, ook wanneer de praktijk druk is of delen van de keten beperkt werken.',
+      capabilities: [
+        'Backend-truth',
+        'Eerlijke fallback',
+        'Auditbare opvolging',
+        'Rolzuivere toegang',
+        'Tenantgescheiden',
+        'Ketenobservability',
+      ],
       rows: [
         {
           index: '01',
-          title: 'Canonieke eventwaarheid',
+          title: 'Blijft bruikbaar bij deeluitval',
           description:
-            'Velvoix behandelt niet de melding of het externe systeem als waarheid, maar het event zelf. Daardoor blijven status, escalatie, opvolging en reconstructie consistent.',
-          effect: 'Een operationele waarheid in plaats van losse signalen en afgeleide UI-logica.',
+            'Velvoix is ontworpen zodat opvolging bruikbaar kan blijven als delen van de keten tijdelijk beperkt werken. Niet door schijnzekerheid te tonen, maar door kernstatus en vervolgstap beheerst zichtbaar te houden.',
+          effect: 'Betrouwbare workflow wanneer niet alles ideaal reageert.',
         },
         {
           index: '02',
-          title: 'Uitlegbare triageketen',
+          title: 'Geen schijnzekerheid',
           description:
-            'Triage levert niet alleen een urgentie, maar ook context, aanbevolen aanpak en uitlegbaarheid in zorgtaal.',
-          effect: 'Begrijpelijke prioritering in plaats van een black-box score.',
+            'Als context, kwaliteit of beschikbaarheid beperkt is, hoort dat zichtbaar en bestuurbaar te blijven in plaats van stil te verdwijnen achter ogenschijnlijk zekere output.',
+          effect: 'Eerlijke fallback in plaats van stille degradatie.',
         },
         {
           index: '03',
-          title: 'Governance en besturingslaag',
+          title: 'Backend-truth als kern',
           description:
-            'Configuratie, publicatiestatus en kwaliteitsbewaking zijn onderdeel van het product, niet losse beheerbijlagen.',
-          effect: 'Beheersbare uitrol zonder semantische drift.',
+            'De operationele waarheid over status, uitleg en opvolging wordt in de kern bewaakt, niet in losse schermlogica of afgeleide integratie-uitkomsten.',
+          effect: 'Backend-truth boven losse scherm- of integratielogica.',
         },
         {
           index: '04',
-          title: 'Adapterarchitectuur zonder vendor lock-in',
+          title: 'Rol- en tenantzuiver',
           description:
-            'Integraties leveren input of ontvangen output, maar bepalen niet de productsemantiek van Velvoix.',
-          effect: 'Modulair koppelen zonder de kern te vervuilen.',
+            'Toegang en acties blijven begrensd per organisatie, context en rol. Zo blijft Velvoix bestuurbaar wanneer meerdere teams en omgevingen naast elkaar werken.',
+          effect: 'Harde grenzen tussen organisaties, rollen en context.',
+        },
+        {
+          index: '05',
+          title: 'Reconstructeerbaar en auditbaar',
+          description:
+            'Opvolging, statusverloop en kritieke veranderingen blijven herleidbaar, zodat evaluatie en kwaliteitsverbetering niet afhankelijk worden van geheugen of losse exports.',
+          effect: 'Herleidbare opvolging in plaats van losse momentopnames.',
+        },
+        {
+          index: '06',
+          title: 'Operationeel beheersbaar',
+          description:
+            'Observability, eigenaarschap en governance horen bij het productgedrag. Daardoor blijft zichtbaar waar aandacht nodig is en hoe een team gecontroleerd moet reageren.',
+          effect: 'Beheersing als productdiscipline, niet als losse IT-bijlage.',
         },
       ],
       closingLine:
-        'Samen zorgen deze lagen ervoor dat Velvoix geen meldingenlaag blijft, maar een uitlegbaar en bestuurbaar zorgplatform wordt.',
+        'Samen zorgen deze lagen ervoor dat Velvoix geen meldingenlaag of black-box laag wordt, maar een uitlegbaar en bestuurbaar zorgplatform blijft.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',
@@ -689,41 +712,63 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     technicalCore: {
       eyebrow: 'Technical core',
-      title: 'Why Velvoix is technically hard to replace',
+      title: 'Built for reliable follow-up under pressure',
       description:
-        'The strength of Velvoix does not sit in one model, screen or signal source, but in a connected product core where triage, event formation, workflow, audit and governance reinforce each other in a controlled way.',
+        'The strength of Velvoix does not sit in a standalone screen, model or signal source, but in a product core that keeps event truth, explainable triage, follow-up and governance together in a controlled way, even when operations are under pressure or parts of the chain are temporarily limited.',
+      capabilities: [
+        'Backend truth',
+        'Honest fallback',
+        'Auditable follow-up',
+        'Role-bound access',
+        'Tenant separation',
+        'Chain observability',
+      ],
       rows: [
         {
           index: '01',
-          title: 'Canonical event truth',
+          title: 'Remains usable under partial failure',
           description:
-            'Velvoix does not treat the alert or external system as the truth, but the event itself. That keeps status, escalation, follow-up and reconstruction consistent.',
-          effect: 'One operational truth instead of disconnected signals and derived UI logic.',
+            'Velvoix is designed so follow-up can remain usable when parts of the chain are temporarily limited. Not by pretending certainty, but by keeping core status and next action visible in a controlled way.',
+          effect: 'Reliable workflow when not every part of the chain reacts perfectly.',
         },
         {
           index: '02',
-          title: 'Explainable triage chain',
+          title: 'No false certainty',
           description:
-            'Triage produces not only urgency, but also context, recommended action and explainability in care language.',
-          effect: 'Understandable prioritisation instead of a black-box score.',
+            'If context, quality or availability is limited, that should remain visible and manageable instead of disappearing behind apparently certain output.',
+          effect: 'Honest fallback instead of silent degradation.',
         },
         {
           index: '03',
-          title: 'Governance and control plane',
+          title: 'Backend truth at the core',
           description:
-            'Configuration, publication state and quality control are part of the product itself, not loose admin appendices.',
-          effect: 'Governable rollout without semantic drift.',
+            'The operational truth about status, explanation and follow-up is held in the core, not spread across screen logic or derived integration outcomes.',
+          effect: 'Backend-owned truth over fragmented UI or integration logic.',
         },
         {
           index: '04',
-          title: 'Adapter architecture without vendor lock-in',
+          title: 'Role- and tenant-bound',
           description:
-            'Integrations provide input or receive output, but they do not define the product semantics of Velvoix.',
-          effect: 'Modular integration without polluting the core.',
+            'Access and actions remain bounded by organisation, context and role. That keeps Velvoix governable when multiple teams and environments operate side by side.',
+          effect: 'Hard boundaries between organisations, roles and contexts.',
+        },
+        {
+          index: '05',
+          title: 'Reconstructable and auditable',
+          description:
+            'Follow-up, status changes and critical decisions remain traceable, so evaluation and quality improvement do not depend on memory or disconnected exports.',
+          effect: 'Traceable follow-up instead of isolated snapshots.',
+        },
+        {
+          index: '06',
+          title: 'Operationally governable',
+          description:
+            'Observability, ownership and governance are part of product behaviour. That keeps it visible where attention is needed and how teams should respond in a controlled way.',
+          effect: 'Operational control as product discipline, not an IT afterthought.',
         },
       ],
       closingLine:
-        'Together, these layers keep Velvoix from becoming a notification layer and turn it into an explainable, governable care platform.',
+        'Together, these layers keep Velvoix from becoming a notification layer or black-box layer and make it an explainable, governable care platform.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',
