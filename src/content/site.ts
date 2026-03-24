@@ -29,7 +29,18 @@ export interface SectionIntroContent {
 }
 
 export interface ChallengeContent extends SectionIntroContent {
-  points: string[];
+  proofPanels: {
+    explainabilityLabel: string;
+    explainabilityTitle: string;
+    explainabilitySummary: string;
+    explainabilitySupporting: string;
+    explainabilityItems: Array<{ label: string; value: string }>;
+    followUpLabel: string;
+    followUpTitle: string;
+    followUpSummary: string;
+    followUpItems: Array<{ label: string; value: string }>;
+    followUpAction: string;
+  };
 }
 
 export interface FlowContent extends SectionIntroContent {
@@ -160,12 +171,26 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Wanneer een signaal nog geen duidelijke zorgactie is',
       description:
         'Veel systemen kunnen wel registreren dat er iets gebeurt, maar helpen onvoldoende bij de volgende stap: wat is er waarschijnlijk aan de hand, hoe urgent is het, welke opvolging past daarbij en hoe blijft dat achteraf goed te reconstrueren?',
-      points: [
-        'Meer duidelijkheid over wat aandacht vraagt',
-        'Betere prioritering van opvolging',
-        'Minder interpretatielast op de werkvloer',
-        'Betere reconstructie van wat er is gebeurd',
-      ],
+      proofPanels: {
+        explainabilityLabel: 'Explainability',
+        explainabilityTitle: 'Waarom',
+        explainabilitySummary: 'Helpknop is herhaald binnen korte tijd.',
+        explainabilitySupporting: 'Gebaseerd op triageregels en meldingscontext.',
+        explainabilityItems: [
+          { label: 'Primair signaal', value: 'Herhaalde helpoproep' },
+          { label: 'Kernwaarneming', value: 'Opvolging is waarschijnlijk opnieuw nodig.' },
+          { label: 'Triagebasis', value: 'Herhaling in korte tijd en context van deze melding.' },
+        ],
+        followUpLabel: 'Operational follow-up',
+        followUpTitle: 'Aanbevolen aanpak',
+        followUpSummary: 'Ga direct naar bewoner; controleer situatie.',
+        followUpItems: [
+          { label: 'Urgentie', value: 'Direct' },
+          { label: 'SLA-status', value: 'SLA kritisch' },
+          { label: 'Verantwoordelijke', value: 'Nog niet toegewezen' },
+        ],
+        followUpAction: 'Pak op',
+      },
     },
     flow: {
       eyebrow: 'Wat Velvoix doet',
@@ -372,12 +397,26 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'When a signal is not yet a clear care action',
       description:
         'Many systems can register that something happened, but they do not sufficiently support the next step: what is likely going on, how urgent is it, what follow-up fits the situation and how can the full sequence later be reconstructed properly?',
-      points: [
-        'More clarity on what requires attention',
-        'Better prioritisation of follow-up',
-        'Less interpretation burden on staff',
-        'Better reconstruction of what happened',
-      ],
+      proofPanels: {
+        explainabilityLabel: 'Explainability',
+        explainabilityTitle: 'Why',
+        explainabilitySummary: 'Help button was triggered repeatedly within a short interval.',
+        explainabilitySupporting: 'Based on triage rules and event context.',
+        explainabilityItems: [
+          { label: 'Primary signal', value: 'Repeated help request' },
+          { label: 'Core observation', value: 'Follow-up is likely needed again.' },
+          { label: 'Triage basis', value: 'Repeat trigger in a short interval and contextual signal data.' },
+        ],
+        followUpLabel: 'Operational follow-up',
+        followUpTitle: 'Recommended action',
+        followUpSummary: 'Go directly to the resident; check the situation.',
+        followUpItems: [
+          { label: 'Urgency', value: 'Direct' },
+          { label: 'SLA status', value: 'SLA critical' },
+          { label: 'Owner', value: 'Not yet assigned' },
+        ],
+        followUpAction: 'Claim event',
+      },
     },
     flow: {
       eyebrow: 'What Velvoix does',
