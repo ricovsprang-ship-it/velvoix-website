@@ -329,12 +329,12 @@ export const deContent: SiteContent = {
     languageNl: 'Nederlands',
     languageEn: 'English',
     languageDe: 'Deutsch',
-    languageEs: 'Espanol',
+    languageEs: 'Espa\u00F1ol',
     contact: 'Kontakt',
     privacy: 'Datenschutzerklarung',
     cookies: 'Cookie-Richtlinie',
     terms: 'Allgemeine Geschaftsbedingungen',
-    copyright: '� 2026 Velvoix� � Alle Rechte vorbehalten.',
+    copyright: '\u00A9 2026 Velvoix\u00AE - Alle Rechte vorbehalten.',
   },
 };
 
@@ -597,7 +597,7 @@ export const esContent: SiteContent = {
     points: [
       'Residencias y cuidados de larga duracion',
       'Equipos que buscan un seguimiento mas claro',
-      'Partners que quieren explorar el encaje con procesos e integraciones',
+      'Socios que quieren explorar el encaje con procesos e integraciones',
     ],
     primaryCta: 'Solicitar conversacion piloto',
     secondaryCta: 'Hablar de colaboracion',
@@ -614,7 +614,7 @@ export const esContent: SiteContent = {
     },
     reasons: [
       'Exploracion piloto para organizaciones asistenciales',
-      'Colaboracion o partnership',
+      'Colaboracion o alianza',
       'Pregunta general sobre la plataforma o el contexto de despliegue',
     ],
     directEmailNote: 'Para consultas comerciales, pilotos y colaboraciones.',
@@ -625,7 +625,7 @@ export const esContent: SiteContent = {
         submit: 'Programar conversacion',
       },
       partnership: {
-        helper: 'Elija esta via si quiere hablar de colaboracion, integracion o colaboracion estrategica.',
+        helper: 'Elija esta via si quiere hablar de colaboracion, integracion o una alianza estrategica.',
         messagePlaceholder: 'Describa brevemente su organizacion, su rol y que tipo de colaboracion desea tratar.',
         submit: 'Hablar de colaboracion',
       },
@@ -667,14 +667,15 @@ export const esContent: SiteContent = {
     languageNl: 'Nederlands',
     languageEn: 'English',
     languageDe: 'Deutsch',
-    languageEs: 'Espanol',
+    languageEs: 'Espa\u00F1ol',
     contact: 'Contacto',
     privacy: 'Politica de privacidad',
     cookies: 'Politica de cookies',
     terms: 'Terminos y condiciones',
-    copyright: '� 2026 Velvoix� � Todos los derechos reservados.',
+    copyright: '\u00A9 2026 Velvoix\u00AE - Todos los derechos reservados.',
   },
 };
+
 
 
 

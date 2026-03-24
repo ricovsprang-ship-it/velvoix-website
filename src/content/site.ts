@@ -1,4 +1,4 @@
-import { deContent, esContent } from './site-extra';
+﻿import { deContent, esContent } from './site-extra';
 
 export type Locale = 'nl' | 'en' | 'de' | 'es';
 
@@ -356,7 +356,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Waarom Velvoix anders is',
       title: 'Systeemverschillen die operationeel voelbaar zijn',
       description:
-        'Het operationele verschil zit in productkeuzes rond eventvorming, uitlegbare triage en één operationele waarheid.',
+        'Het operationele verschil zit in productkeuzes rond eventvorming, uitlegbare triage en een operationele waarheid.',
       cards: [
         {
           title: 'Geen notificatielaag',
@@ -492,10 +492,10 @@ export const siteContent: Record<Locale, SiteContent> = {
       },
       reasons: [
         'Pilotverkenning voor zorgorganisaties',
-        'Samenwerking of partnership bespreken',
+        'Samenwerking bespreken',
         'Algemene vraag over platform of inzetcontext',
       ],
-      directEmailNote: 'Voor zakelijke vragen, pilotverkenningen en samenwerkingsgesprekken.',
+      directEmailNote: 'Voor zakelijke vragen, pilotverkenningen en samenwerking.',
       routeContent: {
         pilot: {
           helper: 'Kies deze route als u een pilot, zorgcontext of verkenning van inzet wilt bespreken.',
@@ -503,7 +503,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           submit: 'Plan een gesprek',
         },
         partnership: {
-          helper: 'Kies deze route als u een samenwerking, integratie of strategisch partnership wilt bespreken.',
+          helper: 'Kies deze route als u samenwerking, integratie of een partnergesprek wilt bespreken.',
           messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke vorm van samenwerking u wilt bespreken.',
           submit: 'Bespreek samenwerking',
         },
@@ -545,12 +545,12 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageNl: 'Nederlands',
       languageEn: 'English',
       languageDe: 'Deutsch',
-      languageEs: 'Español',
+      languageEs: 'Espa\u00F1ol',
       contact: 'Contact',
       privacy: 'Privacyverklaring',
       cookies: 'Cookiebeleid',
       terms: 'Algemene voorwaarden',
-      copyright: '© 2026 Velvoix® · Alle rechten voorbehouden.',
+      copyright: '\u00A9 2026 Velvoix\u00AE - Alle rechten voorbehouden.',
     },
   },
   en: {
@@ -781,7 +781,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           index: '06',
-          title: 'Operationally governable',
+          title: 'Operationally manageable',
           description:
             'Observability, ownership and governance are part of product behaviour. That keeps it visible where attention is needed and how teams should respond in a controlled way.',
           effect: 'Operational control as product discipline, not an IT afterthought.',
@@ -839,18 +839,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Let us continue the conversation',
       description:
-        'Would you like to explore whether Velvoix fits your organisation, pilot context or partnership model? Leave your details and we will follow up in a focused way.',
+        'Would you like to explore whether Velvoix fits your organisation, a pilot or a collaboration? Leave your details and we will follow up in a focused way.',
       inquiryTypes: {
         pilot: 'Pilot exploration',
-        partnership: 'Partnership',
+        partnership: 'Collaboration',
         general: 'General inquiry',
       },
       reasons: [
         'Pilot exploration for healthcare organisations',
-        'Discuss collaboration or partnership',
+        'Collaboration or integration discussion',
         'General question about the platform or deployment context',
       ],
-      directEmailNote: 'For business questions, pilot explorations and partnership conversations.',
+      directEmailNote: 'For business questions, pilot explorations and collaboration.',
       routeContent: {
         pilot: {
           helper: 'Choose this route if you want to discuss a pilot, care context or practical exploration.',
@@ -858,9 +858,9 @@ export const siteContent: Record<Locale, SiteContent> = {
           submit: 'Plan a conversation',
         },
         partnership: {
-          helper: 'Choose this route if you want to discuss collaboration, integration or a strategic partnership.',
+          helper: 'Choose this route if you want to discuss collaboration, integration or a partner conversation.',
           messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration you want to discuss.',
-          submit: 'Discuss partnership',
+          submit: 'Discuss collaboration',
         },
         general: {
           helper: 'Choose this route for a general business question about the platform or deployment context.',
@@ -900,15 +900,16 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageNl: 'Nederlands',
       languageEn: 'English',
       languageDe: 'Deutsch',
-      languageEs: 'Español',
+      languageEs: 'Espa\u00F1ol',
       contact: 'Contact',
       privacy: 'Privacy Policy',
       cookies: 'Cookie Policy',
       terms: 'Terms & Conditions',
-      copyright: '© 2026 Velvoix® · All rights reserved.',
+      copyright: '\u00A9 2026 Velvoix\u00AE - All rights reserved.',
     },
   },
   de: deContent,
   es: esContent,
 };
+
 
