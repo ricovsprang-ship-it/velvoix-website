@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const isEnglish = content.eyebrow.toLowerCase().includes('product');
+const isEnglish = Astro.url.pathname.startsWith('/en');
 
 const sectionContent = isEnglish
   ? {
@@ -103,7 +103,7 @@ const detailContent = isEnglish
         },
         'box-management': {
           what: 'Een beheerweergave voor devicestatus, bewonerkoppeling, kamerkoppeling en laatste check-in.',
-          why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in één rustige laag blijft.',
+          why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in een rustige laag blijft.',
           value: 'Support en zorgoperations kunnen beschikbaarheid en koppelingen beheren zonder versnippering.',
         },
         'technical-insight': {
@@ -126,7 +126,7 @@ const detailContent = isEnglish
 ---
 
 <section class="section-block" data-product-showcase>
-  <div class="section-shell grid gap-10 lg:grid-cols-[0.37fr_0.63fr] lg:items-start">
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.37fr_0.63fr] lg:items-start" data-showcase-locale={isEnglish ? 'en' : 'nl'}>
     <div class="max-w-[31rem]" data-showcase-intro>
       <SectionIntro eyebrow={sectionContent.eyebrow} title={sectionContent.title} description={sectionContent.description} />
       <p class="mt-5 max-w-[30rem] text-sm leading-6 text-slate-500">{sectionContent.supporting}</p>
@@ -761,7 +761,7 @@ const detailContent = isEnglish
       },
       'box-management': {
         what: 'Een beheerweergave voor devicestatus, bewonerkoppeling, kamerkoppeling en laatste check-in.',
-        why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in één rustige laag blijft.',
+        why: 'Dit laat zien dat operationele controle over hardware en zorgcontext in een rustige laag blijft.',
         value: 'Support en zorgoperations kunnen beschikbaarheid en koppelingen beheren zonder versnippering.',
       },
       'technical-insight': {
@@ -804,7 +804,7 @@ const detailContent = isEnglish
     const closeButtons = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-close]'));
     const triggers = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-trigger]'));
     const panels = Array.from(block.querySelectorAll<HTMLElement>('[data-showcase-panel]'));
-    const locale = block.querySelector('.showcase-rail-label')?.textContent?.includes('Eventpagina') ? 'nl' : 'en';
+    const locale = block.querySelector<HTMLElement>('[data-showcase-locale]')?.dataset.showcaseLocale === 'nl' ? 'nl' : 'en';
 
     let activeId = triggers.find((trigger) => trigger.classList.contains('is-active'))?.dataset.domainId ?? 'event-page';
     let lastFocused: HTMLElement | null = null;
@@ -944,9 +944,7 @@ const detailContent = isEnglish
 
     for (const trigger of triggers) {
       trigger.addEventListener('click', () => {
-        const nextId = trigger.dataset.domainId ?? activeId;
         showPanel(trigger);
-        requestAnimationFrame(() => openOverlay(nextId));
       });
       trigger.addEventListener('keydown', (event) => {
         if (!(event instanceof KeyboardEvent)) return;
@@ -987,6 +985,9 @@ const detailContent = isEnglish
         trigger: block,
         start: 'top 72%',
         once: true,
+      },
+      onComplete: () => {
+        gsap.set([intro, shell], { clearProps: 'opacity,visibility,transform' });
       },
     })
       .to(intro, { autoAlpha: 1, y: 0, duration: 0.44 })
