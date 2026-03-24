@@ -10,42 +10,68 @@ const { content } = Astro.props;
 ---
 
 <section class="section-block surface-band" id="how-it-works">
-  <div class="section-shell">
-    <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+    <div class="max-w-[32rem]">
+      <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
-    <div class="mt-12 grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
-      <article class="rounded-[2.2rem] border border-slate-200/80 bg-white/88 p-6 shadow-[0_18px_38px_rgba(31,53,87,0.06)] md:p-8">
-        <p class="eyebrow">Traditional chain</p>
-        <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-950">{content.traditionalTitle}</h3>
-        <div class="mt-6 space-y-3">
-          {content.traditionalSteps.map((step, index) => (
-            <div class="flex items-center gap-4 rounded-[1.5rem] border border-slate-200/80 bg-slate-50/90 px-5 py-4">
-              <span class="flex size-10 items-center justify-center rounded-full bg-white text-sm font-bold text-slate-500 shadow-sm">
-                {index + 1}
-              </span>
-              <span class="text-base font-semibold text-slate-700">{step}</span>
-            </div>
-          ))}
-        </div>
-      </article>
+      <div class="mt-7 space-y-3">
+        {content.outcomes.map((outcome) => (
+          <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+            <span class="size-2 rounded-full bg-[var(--vx-accent)]"></span>
+            <span>{outcome}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
-      <article class="overflow-hidden rounded-[2.4rem] bg-[linear-gradient(180deg,#183053_0%,#11233c_100%)] p-6 text-white shadow-[0_22px_50px_rgba(32,59,99,0.18)] md:p-8">
-        <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">Velvoix</p>
-        <div class="mt-4 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <h3 class="text-3xl font-extrabold tracking-tight text-white">{content.velvoixTitle}</h3>
-          <p class="max-w-md text-sm leading-6 text-slate-300">
-            {content.description}
-          </p>
-        </div>
-        <div class="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          {content.velvoixSteps.map((step, index) => (
-            <div class="rounded-[1.6rem] border border-white/12 bg-white/6 px-5 py-5 backdrop-blur-sm">
-              <p class="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-slate-300">0{index + 1}</p>
-              <p class="mt-3 text-base font-semibold text-white">{step}</p>
+    <div class="rounded-[2.2rem] border border-slate-200/80 bg-white/90 p-6 shadow-[0_20px_40px_rgba(31,53,87,0.06)] md:p-8">
+      <p class="text-[0.74rem] font-bold uppercase tracking-[0.18em] text-slate-500">{content.compareLabel}</p>
+
+      <div class="mt-6 space-y-4">
+        <div class="rounded-[1.7rem] border border-slate-200/85 bg-slate-50/88 p-5">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div class="shrink-0 lg:w-[11rem]">
+              <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
             </div>
-          ))}
+
+            <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
+              {content.traditionalSteps.map((step, index) => (
+                <>
+                  <div class="inline-flex min-h-11 items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                    {step}
+                  </div>
+                  {index < content.traditionalSteps.length - 1 && (
+                    <span class="text-sm font-semibold text-slate-300">-></span>
+                  )}
+                </>
+              ))}
+            </div>
+          </div>
         </div>
-      </article>
+
+        <div class="rounded-[1.85rem] border border-[rgba(31,53,87,0.12)] bg-[linear-gradient(180deg,rgba(234,241,246,0.96),rgba(245,249,252,0.98))] p-5 shadow-[0_18px_34px_rgba(31,53,87,0.06)]">
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div class="shrink-0 lg:w-[11rem]">
+              <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
+            </div>
+
+            <div class="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
+              {content.velvoixSteps.map((step, index) => (
+                <>
+                  <div class="inline-flex min-h-11 items-center rounded-full border border-[rgba(31,53,87,0.12)] bg-white/96 px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_8px_18px_rgba(31,53,87,0.05)]">
+                    {step}
+                  </div>
+                  {index < content.velvoixSteps.length - 1 && (
+                    <span class="text-sm font-semibold text-slate-400">-></span>
+                  )}
+                </>
+              ))}
+            </div>
+          </div>
+
+          <p class="mt-5 max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

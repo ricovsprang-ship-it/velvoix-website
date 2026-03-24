@@ -60,10 +60,13 @@ export interface WhyVelvoixContent extends SectionIntroContent {
 }
 
 export interface CompareChainsContent extends SectionIntroContent {
+  compareLabel: string;
+  outcomes: string[];
   traditionalTitle: string;
   traditionalSteps: string[];
   velvoixTitle: string;
   velvoixSteps: string[];
+  velvoixSupporting: string;
 }
 
 export interface SnapshotSectionContent extends SectionIntroContent {
@@ -242,10 +245,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
       description:
         'De kern van Velvoix zit in de hele keten: signalen worden niet alleen getoond, maar gestructureerd tot een uitlegbare, bestuurbare en auditbare operationele uitkomst.',
+      compareLabel: 'Vergelijking',
+      outcomes: ['Minder interpretatielast', 'Betere prioritering', 'Betere reconstructie'],
       traditionalTitle: 'Traditionele keten',
       traditionalSteps: ['Signaal', 'Melding', 'Handmatige interpretatie'],
       velvoixTitle: 'Velvoix-keten',
       velvoixSteps: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
+      velvoixSupporting: 'Elke extra laag voegt betekenis toe en maakt opvolging, escalatie en audit bestuurbaar.',
     },
     whyVelvoix: {
       eyebrow: 'Waarom Velvoix anders is',
@@ -468,10 +474,13 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Not from alert to interpretation, but from signal to controllable workflow',
       description:
         'The value of Velvoix sits in the full chain: signals are not merely surfaced, but structured into an explainable, controllable and auditable operational outcome.',
+      compareLabel: 'Comparison',
+      outcomes: ['Less interpretation burden', 'Better prioritisation', 'Better reconstruction'],
       traditionalTitle: 'Traditional chain',
       traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
       velvoixTitle: 'Velvoix chain',
       velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
+      velvoixSupporting: 'Each extra layer adds meaning and makes follow-up, escalation and audit controllable.',
     },
     whyVelvoix: {
       eyebrow: 'Why Velvoix is different',
