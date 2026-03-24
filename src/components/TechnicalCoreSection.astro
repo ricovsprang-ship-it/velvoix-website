@@ -10,7 +10,7 @@ const { content } = Astro.props;
 ---
 
 <section class="section-block surface-band-alt" id="technical-core" data-technical-core>
-  <div class="section-shell grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+  <div class="section-shell grid gap-10 xl:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] xl:items-start xl:gap-12">
     <div class="max-w-[31rem]" data-technical-core-intro>
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
       {content.capabilities?.length ? (
@@ -25,7 +25,7 @@ const { content } = Astro.props;
       ) : null}
     </div>
 
-    <div class="space-y-3.5" data-technical-core-rows>
+    <div class="grid gap-3.5 xl:self-start" data-technical-core-rows>
       {content.rows.map((row) => (
         <article
           class="technical-row rounded-[1.28rem] border border-slate-200/85 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(244,248,251,0.92))] px-5 py-5 shadow-[0_12px_24px_rgba(31,53,87,0.045)] md:px-6"
@@ -80,6 +80,15 @@ const { content } = Astro.props;
   }
   [data-technical-core] .technical-row {
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+  [data-technical-core] [data-technical-core-rows] {
+    width: 100%;
+  }
+  @media (min-width: 1280px) {
+    [data-technical-core] [data-technical-core-rows] {
+      max-width: 43rem;
+      justify-self: end;
+    }
   }
   [data-technical-core] .technical-row:hover {
     border-color: rgba(187, 197, 210, 0.96);
