@@ -204,7 +204,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Velvoix helpt zorgorganisaties om knopoproepen, spraakinput en andere zorgsignalen om te zetten in uitlegbare, geprioriteerde en auditbare zorgworkflow.',
       supporting:
         'Gebouwd voor zorgomgevingen waar duidelijkheid, opvolging en reconstructie tellen.',
-      primaryCta: 'Plan een pilotgesprek',
+      primaryCta: 'Verken Velvoix',
       secondaryCta: 'Bekijk hoe het werkt',
       metrics: [
         { value: 'Uitlegbaar', label: 'Van signaal naar begrijpelijke opvolging' },
@@ -242,10 +242,10 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Wat Velvoix doet',
       title: 'Velvoix brengt structuur tussen signaal en opvolging',
       description:
-        'Velvoix is ontworpen als een eventgedreven zorgworkflowplatform. Niet om simpelweg meer notificaties te tonen, maar om signalen te vertalen naar een werkbare, uitlegbare en bestuurbare operationele uitkomst.',
+        'Velvoix vertaalt signalen naar een werkbare operationele uitkomst met context, triage en opvolging.',
       flow: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
       supporting:
-        'Velvoix helpt om van een losse trigger naar een duidelijke zorgactie te gaan. Daardoor wordt opvolging overzichtelijker, consistenter en beter herleidbaar.',
+        'Zo wordt opvolging overzichtelijker, consistenter en beter herleidbaar.',
     },
     howItWorks: {
       eyebrow: 'Hoe het werkt',
@@ -293,7 +293,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Ketenverschil',
       title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
       description:
-        'De kern van Velvoix zit in de hele keten: signalen worden niet alleen getoond, maar gestructureerd tot een uitlegbare, bestuurbare en auditbare operationele uitkomst.',
+        'Het verschil zit in de keten: waar traditionele systemen stoppen bij een melding, voegt Velvoix context, triage en eventvorming toe zodat opvolging bestuurbaar wordt.',
       compareLabel: 'Vergelijking',
       outcomes: ['Minder interpretatielast', 'Betere prioritering', 'Betere reconstructie'],
       traditionalTitle: 'Traditionele keten',
@@ -338,7 +338,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Waarom Velvoix anders is',
       title: 'Systeemverschillen die operationeel voelbaar zijn',
       description:
-        'Velvoix positioneert zich niet als notificatieproduct, maar als een gecontroleerde keten voor triage, opvolging en reconstructie.',
+        'Het operationele verschil zit in productkeuzes rond eventvorming, uitlegbare triage en één operationele waarheid.',
       cards: [
         {
           title: 'Geen notificatielaag',
@@ -451,16 +451,16 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     pilot: {
       eyebrow: 'Pilot',
-      title: 'Interesse in een pilot?',
+      title: 'Verken of een pilot past',
       description:
-        'Velvoix is bedoeld voor zorgorganisaties die willen verkennen hoe signalen, opvolging en werkdruk beter georganiseerd kunnen worden in een uitlegbare pilotcontext.',
+        'Een pilot maakt zichtbaar hoe Velvoix past in uw zorgpraktijk, teamafspraken en operationele processen.',
       points: [
         'Verpleeghuizen en langdurige zorg',
-        'Teams die zoeken naar meer operationele duidelijkheid',
-        'Pilotverkenning rond opvolging, triage en zorgproces',
+        'Teams die meer duidelijkheid in opvolging willen',
+        'Partners die aansluiting op processen en integraties willen verkennen',
       ],
       primaryCta: 'Plan een pilotgesprek',
-      secondaryCta: 'Vraag informatie aan',
+      secondaryCta: 'Bespreek samenwerking',
     },
     contact: {
       eyebrow: 'Contact',
@@ -557,7 +557,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Velvoix helps healthcare organisations turn button calls, voice input and other care-related signals into explainable, prioritised and auditable care workflow.',
       supporting:
         'Built for care environments where clarity, follow-up and reconstruction matter.',
-      primaryCta: 'Schedule a pilot conversation',
+      primaryCta: 'Explore Velvoix',
       secondaryCta: 'See how it works',
       metrics: [
         { value: 'Explainable', label: 'From signal to understandable follow-up' },
@@ -595,18 +595,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'What Velvoix does',
       title: 'Velvoix adds structure between signal and follow-up',
       description:
-        'Velvoix is designed as an event-driven care workflow platform. Not to simply surface more notifications, but to translate signals into a workable, explainable and controllable operational outcome.',
+        'Velvoix turns signals into a workable operational outcome with context, triage and follow-up.',
       flow: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
       supporting:
-        'Velvoix helps move from an isolated trigger to a clear care action. That makes follow-up more structured, more consistent and easier to reconstruct.',
+        'That makes follow-up more structured, more consistent and easier to reconstruct.',
     },
     howItWorks: {
       eyebrow: 'How it works',
       title: 'From input to workable follow-up',
       description:
-        'Velvoix does not only ingest signals, but enriches them with context, triage and follow-up oriented event behaviour, so care teams understand faster what needs attention and what the logical next step is.',
+        'Velvoix does not only ingest signals, but enriches them with context, triage and actionable event flow, so care teams understand faster what needs attention and what the next step should be.',
       panelLabel: 'Operational flow',
-      panelSupporting: 'From input to context, triage and controllable follow-up.',
+      panelSupporting: 'From input to context, triage and workable follow-up.',
       steps: [
         {
           title: 'Input',
@@ -626,7 +626,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: 'Workflow',
-          description: 'Follow-up, ownership and status become controllable.',
+          description: 'Follow-up, ownership and status become manageable.',
         },
         {
           title: 'Audit',
@@ -638,22 +638,22 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Context enriches interpretation',
         'Triage makes urgency explainable',
         'Event shaping makes follow-up workable',
-        'Workflow makes status controllable',
+        'Workflow keeps status manageable',
         'Audit keeps reconstruction intact',
       ],
     },
     compareChains: {
       eyebrow: 'Chain difference',
-      title: 'Not from alert to interpretation, but from signal to controllable workflow',
+      title: 'Not from alert to interpretation, but from signal to structured workflow',
       description:
-        'The value of Velvoix sits in the full chain: signals are not merely surfaced, but structured into an explainable, controllable and auditable operational outcome.',
+        'The difference sits in the chain: where traditional systems stop at an alert, Velvoix adds context, triage and event formation so follow-up becomes manageable.',
       compareLabel: 'Comparison',
       outcomes: ['Less interpretation burden', 'Better prioritisation', 'Better reconstruction'],
       traditionalTitle: 'Traditional chain',
       traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
       velvoixTitle: 'Velvoix chain',
       velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
-      velvoixSupporting: 'Each extra layer adds meaning and makes follow-up, escalation and audit controllable.',
+      velvoixSupporting: 'Each extra layer adds meaning and makes follow-up, escalation and audit manageable.',
       stepDetails: [
         {
           title: 'Signal',
@@ -675,7 +675,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: 'Workflow',
-          description: 'Follow-up becomes controllable through actions, status flow and clear responsibility.',
+          description: 'Follow-up becomes manageable through actions, status flow and clear responsibility.',
         },
         {
           title: 'Escalation',
@@ -691,7 +691,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Why Velvoix is different',
       title: 'System differences that matter operationally',
       description:
-        'Velvoix is not positioned as a notification product, but as a controlled chain for triage, follow-up and reconstruction.',
+        'The operational difference sits in product choices around event formation, explainable triage and one operational truth.',
       cards: [
         {
           title: 'Not a notification layer',
@@ -804,16 +804,16 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     pilot: {
       eyebrow: 'Pilot',
-      title: 'Interested in a pilot?',
+      title: 'Explore whether a pilot fits',
       description:
-        'Velvoix is designed for healthcare organisations that want to explore how signals, follow-up and workload can be organised more clearly in a practical pilot setting.',
+        'A pilot helps make clear how Velvoix fits your care practice, team routines and operational processes.',
       points: [
         'Nursing homes and long-term care',
-        'Teams looking for greater operational clarity',
-        'Pilot exploration around follow-up, triage and care process',
+        'Teams looking for clearer follow-up',
+        'Partners exploring fit with existing processes and integrations',
       ],
       primaryCta: 'Schedule a pilot conversation',
-      secondaryCta: 'Request information',
+      secondaryCta: 'Discuss partnership',
     },
     contact: {
       eyebrow: 'Contact',

@@ -39,7 +39,7 @@ const sectionContent = isEnglish
         { id: 'box-management', label: 'Boxbeheer', kicker: 'Beheer', title: 'Beheer dat gecontroleerd blijft over kamers en devices', description: 'Boxstatus, bewonerkoppeling en beschikbaarheid blijven zichtbaar in een rolzuivere beheerlaag.' },
         { id: 'technical-insight', label: 'Technisch inzicht', kicker: 'Besturing', title: 'Governance en observability zonder internals te tonen', description: 'Publicatiestatus, actieve configuratie en operationele zichtbaarheid blijven helder zonder productinternals prijs te geven.' },
         { id: 'kpi-overview', label: 'KPI-overzicht', kicker: 'Sturing', title: 'Sturen vanuit backend-truth, niet vanuit dashboardruis', description: 'Open events, SLA-prestatie en escalaties blijven leesbaar als operationele sturing in plaats van dashboarddrukte.' },
-        { id: 'client-history', label: 'Clienthistorie', kicker: 'Context', title: 'Reconstructie blijft dichtbij de clientcontext', description: 'Recente events, opvolghistorie en patrooncontext blijven verbonden in plaats van verspreid over systemen.' },
+        { id: 'client-history', label: 'Cliënthistorie', kicker: 'Context', title: 'Reconstructie blijft dichtbij de bewonercontext', description: 'Recente events, opvolghistorie en patrooncontext blijven verbonden in plaats van verspreid over systemen.' },
       ],
     };
 
@@ -60,7 +60,7 @@ const detailContent = isEnglish
         handling: {
           what: 'A handling surface with recommended action, urgency, SLA, ownership and direct action controls in one place.',
           why: 'This proves that follow-up becomes workable inside the product, not something teams have to reconstruct from separate signals.',
-          value: 'Ownership, transfer and completion stay controllable in daily care workflow.',
+          value: 'Ownership, transfer and completion remain manageable in daily care workflow.',
         },
         'box-management': {
           what: 'A management view for device state, resident linking, room assignment and last check-in.',
@@ -118,7 +118,7 @@ const detailContent = isEnglish
         },
         'client-history': {
           what: 'Een clientgerichte historie waarin recente events, opvolging en patrooncontext verbonden blijven.',
-          why: 'Dit laat zien hoe reconstructie dicht bij de clientcontext blijft in plaats van verspreid te raken over systemen en exports.',
+          why: 'Dit laat zien hoe reconstructie dicht bij de bewonercontext blijft in plaats van verspreid te raken over systemen en exports.',
           value: 'Zorgteams begrijpen patronen en opvolghistorie sneller en met meer vertrouwen.',
         },
       },
@@ -226,8 +226,8 @@ const detailContent = isEnglish
                       <span>07:31</span>
                     </div>
                     <div class="workspace-status-group">
-                      <span class="workspace-ring workspace-ring--follow">{isEnglish ? 'Monitor' : 'Volgen'}</span>
-                      <span class="workspace-ring">{isEnglish ? 'Assigned' : 'Toegewezen'}</span>
+                      <span class="workspace-ring workspace-ring--follow">{isEnglish ? 'Under monitoring' : 'Volgen'}</span>
+                      <span class="workspace-ring">{isEnglish ? 'Assigned for follow-up' : 'Toegewezen'}</span>
                     </div>
                   </article>
                   <article class="workspace-table-row">
@@ -397,7 +397,7 @@ const detailContent = isEnglish
                     <div class="workspace-minirows">
                       <div><span>{isEnglish ? 'Direct' : 'Direct'}</span><strong>12</strong></div>
                       <div><span>{isEnglish ? 'In progress' : 'In behandeling'}</span><strong>11</strong></div>
-                      <div><span>{isEnglish ? 'Escalated' : 'Geescaleerd'}</span><strong>3</strong></div>
+                      <div><span>{isEnglish ? 'Escalated' : 'Geëscaleerd'}</span><strong>3</strong></div>
                     </div>
                   </div>
                   <div class="workspace-sidecard">
@@ -415,7 +415,7 @@ const detailContent = isEnglish
           <article class="showcase-panel" data-showcase-panel="client-history" hidden>
             <div class="product-workspace">
               <div class="workspace-topbar">
-                <span class="workspace-chip">{isEnglish ? 'Client History' : 'Clienthistorie'}</span>
+                <span class="workspace-chip">{isEnglish ? 'Client History' : 'Cliënthistorie'}</span>
                 <div class="workspace-topmeta"><span>{isEnglish ? 'Resident context' : 'Bewonercontext'}</span></div>
               </div>
               <div class="workspace-grid workspace-grid--history">
