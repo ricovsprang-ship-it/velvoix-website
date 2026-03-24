@@ -103,6 +103,7 @@ export interface FooterContent {
   languageEn: string;
   contact: string;
   privacy: string;
+  copyright: string;
 }
 
 export interface SiteContent {
@@ -331,6 +332,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageEn: 'English',
       contact: 'Contact',
       privacy: 'Privacy',
+      copyright: '© 2026 Velvoix® · Alle rechten voorbehouden.',
     },
   },
   en: {
@@ -542,6 +544,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       languageEn: 'English',
       contact: 'Contact',
       privacy: 'Privacy',
+      copyright: '© 2026 Velvoix® · All rights reserved.',
     },
   },
 };
