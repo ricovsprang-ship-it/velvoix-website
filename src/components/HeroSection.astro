@@ -10,29 +10,33 @@ const { locale, content } = Astro.props;
 ---
 
 <section id="home" class="relative overflow-hidden">
-  <div class="absolute inset-0">
+  <div class="absolute inset-0" data-hero-media>
     <img
       src="/media/AdobeStock_1857436642.jpeg"
       alt={locale === 'nl' ? 'Handcontact in een zorgomgeving' : 'Hand contact in a care setting'}
-      class="h-full w-full object-cover object-[72%_48%] md:object-[68%_45%]"
+      class="h-full w-full scale-[1.02] object-cover object-[72%_48%] md:object-[68%_45%]"
+      data-hero-image
       loading="eager"
     />
-    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,24,48,0.72)_0%,rgba(10,24,48,0.56)_24%,rgba(10,24,48,0.24)_46%,rgba(10,24,48,0.06)_68%,rgba(10,24,48,0)_100%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,24,48,0.7)_0%,rgba(10,24,48,0.54)_24%,rgba(10,24,48,0.22)_46%,rgba(10,24,48,0.05)_68%,rgba(10,24,48,0)_100%)]" data-hero-overlay></div>
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,249,252,0.08)_0%,rgba(246,249,252,0)_100%)]"></div>
   </div>
 
-  <div class="relative">
+  <div class="relative" data-hero-block>
     <div class="mx-auto flex min-h-[28.75rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[32.5rem] md:px-10 md:py-10 xl:min-h-[35rem] xl:max-h-[36.25rem]">
-      <div class="max-w-[35rem] text-white">
-        <p class="text-[0.8rem] font-bold uppercase tracking-[0.26em] text-white/76">{content.eyebrow}</p>
-        <h1 class="mt-4 max-w-[10.5ch] text-[2.7rem] font-extrabold tracking-[-0.055em] leading-[0.95] text-white sm:text-[3.05rem] md:text-[3.7rem] lg:text-[4.15rem]">
+      <div class="max-w-[34rem] text-white" data-hero-content>
+        <p class="text-[0.8rem] font-bold uppercase tracking-[0.26em] text-white/76" data-hero-eyebrow>{content.eyebrow}</p>
+        <h1
+          class="mt-4 max-w-[10.8ch] text-[2.55rem] font-extrabold leading-[0.96] tracking-[-0.055em] text-white sm:text-[2.95rem] md:text-[3.45rem] lg:text-[3.95rem]"
+          data-hero-title
+        >
           {content.title}
         </h1>
-        <p class="mt-5 max-w-[31rem] text-[0.98rem] leading-7 text-slate-100 md:text-[1.06rem] md:leading-7">
+        <p class="mt-5 max-w-[31rem] text-[0.98rem] leading-7 text-slate-100 md:text-[1.04rem] md:leading-7" data-hero-subtitle>
           {content.subtitle}
         </p>
 
-        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap" data-hero-ctas>
           <a
             class="inline-flex min-h-12 items-center justify-center rounded-[0.95rem] bg-[linear-gradient(135deg,#173156_0%,#223d66_100%)] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_28px_rgba(12,26,48,0.2)] hover:-translate-y-0.5 hover:shadow-[0_18px_34px_rgba(12,26,48,0.24)] focus-visible:outline-none"
             href="#pilot"
@@ -47,20 +51,92 @@ const { locale, content } = Astro.props;
           </a>
         </div>
 
-        <p class="mt-5 max-w-[31rem] text-[0.92rem] font-medium leading-6 text-white/74">{content.supporting}</p>
-
-        <div class="mt-6 grid gap-3 border-t border-white/12 pt-4 md:grid-cols-3 md:gap-4">
-          {content.metrics.map((metric) => (
-            <div class="min-w-0">
-              <div class="flex items-center gap-2">
-                <span class="size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
-                <p class="text-[0.92rem] font-semibold text-white">{metric.value}</p>
-              </div>
-              <p class="mt-1.5 text-[0.84rem] leading-6 text-slate-200/88">{metric.label}</p>
-            </div>
-          ))}
-        </div>
+        <p class="mt-6 max-w-[31rem] text-[0.92rem] font-medium leading-6 text-white/74" data-hero-supporting>{content.supporting}</p>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const heroBlocks = document.querySelectorAll('[data-hero-block]');
+
+  for (const heroBlock of heroBlocks) {
+    if (!(heroBlock instanceof HTMLElement)) continue;
+    if (heroBlock.dataset.gsapBound === 'true') continue;
+    heroBlock.dataset.gsapBound = 'true';
+
+    const eyebrow = heroBlock.querySelector<HTMLElement>('[data-hero-eyebrow]');
+    const title = heroBlock.querySelector<HTMLElement>('[data-hero-title]');
+    const subtitle = heroBlock.querySelector<HTMLElement>('[data-hero-subtitle]');
+    const ctas = heroBlock.querySelector<HTMLElement>('[data-hero-ctas]');
+    const supporting = heroBlock.querySelector<HTMLElement>('[data-hero-supporting]');
+    const content = heroBlock.querySelector<HTMLElement>('[data-hero-content]');
+    const media = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-media]');
+    const image = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-image]');
+    const overlay = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-overlay]');
+
+    if (prefersReducedMotion) {
+      gsap.set([eyebrow, title, subtitle, ctas, supporting, content, image, overlay], { clearProps: 'all' });
+      continue;
+    }
+
+    gsap.set([eyebrow, title, subtitle, ctas, supporting], { autoAlpha: 0, y: 14 });
+    gsap.set(title, { autoAlpha: 0, y: 18 });
+    gsap.set(image, { scale: 1.04, y: 0 });
+    gsap.set(content, { y: 0 });
+
+    const introTimeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
+    introTimeline
+      .to(eyebrow, { autoAlpha: 1, y: 0, duration: 0.22 })
+      .to(title, { autoAlpha: 1, y: 0, duration: 0.34 }, '-=0.06')
+      .to(subtitle, { autoAlpha: 1, y: 0, duration: 0.24 }, '-=0.08')
+      .to(ctas, { autoAlpha: 1, y: 0, duration: 0.22 }, '-=0.05')
+      .to(supporting, { autoAlpha: 1, y: 0, duration: 0.22 }, '-=0.04');
+
+    if (media && image) {
+      gsap.to(image, {
+        y: 18,
+        scale: 1.01,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroBlock,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.9,
+        },
+      });
+    }
+
+    if (content) {
+      gsap.to(content, {
+        y: -14,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroBlock,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.9,
+        },
+      });
+    }
+
+    if (overlay) {
+      gsap.to(overlay, {
+        opacity: 0.92,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroBlock,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 0.9,
+        },
+      });
+    }
+  }
+</script>
