@@ -41,7 +41,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/login.png',
           alt: 'Velvoix login screen',
           objectPosition: 'center center',
-          baseScale: 1,
+          baseScale: 0.86,
           zoomOrigin: '50% 58%',
         },
         {
@@ -63,7 +63,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/notifications.png',
           alt: 'Velvoix notifications view',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.92,
           zoomOrigin: '50% 0%',
         },
         {
@@ -74,7 +74,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/event-detail.png',
           alt: 'Velvoix event detail screen',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.92,
           zoomOrigin: '50% 0%',
         },
         {
@@ -85,7 +85,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/assign.png',
           alt: 'Velvoix assignment dialog',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.86,
           zoomOrigin: '50% 0%',
         },
         {
@@ -96,7 +96,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/handover.png',
           alt: 'Velvoix handover and completion dialog',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.92,
           zoomOrigin: '50% 0%',
         },
         {
@@ -118,7 +118,7 @@ const sectionContent = isEnglish
           image: '/products/platformtour/care-overview.png',
           alt: 'Velvoix care overview dashboard',
           objectPosition: 'center top',
-          baseScale: 1,
+          baseScale: 0.92,
           zoomOrigin: '50% 0%',
         },
         {
@@ -370,6 +370,7 @@ const previewSlide = sectionContent.slides[2];
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchpriority={index === 0 ? 'high' : 'auto'}
                   decoding="async"
+                  draggable="false"
                   data-tour-image
                 />
               </figure>
@@ -613,6 +614,7 @@ const previewSlide = sectionContent.slides[2];
   [data-platform-tour] .platform-tour-stage {
     min-width: 0;
     min-height: 0;
+    touch-action: none;
   }
 
   [data-platform-tour] .platform-tour-slide,
@@ -642,6 +644,8 @@ const previewSlide = sectionContent.slides[2];
     will-change: transform;
     cursor: default;
     user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
   }
 
   [data-platform-tour] .platform-tour-copy {
