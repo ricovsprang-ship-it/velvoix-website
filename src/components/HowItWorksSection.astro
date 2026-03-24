@@ -10,31 +10,39 @@ const { content } = Astro.props;
 ---
 
 <section class="section-block">
-  <div class="section-shell">
-    <div class="rounded-[2.6rem] bg-[linear-gradient(180deg,rgba(240,246,249,0.94),rgba(233,241,246,0.94))] p-6 md:p-10">
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+    <div class="max-w-[32rem]">
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
-      <div class="mt-10 grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
-        <div class="rounded-[2rem] bg-[linear-gradient(180deg,#183053_0%,#13263f_100%)] p-6 text-white md:p-8">
-          <p class="text-xs font-bold uppercase tracking-[0.24em] text-sky-200">{content.panelLabel}</p>
-          <p class="mt-4 text-3xl font-extrabold tracking-tight">
-            {content.steps[0]?.title} -> {content.steps[1]?.title} -> {content.steps[2]?.title} -> {content.steps[3]?.title}
-          </p>
-          <p class="mt-5 max-w-md text-base leading-7 text-slate-200">{content.panelSupporting}</p>
-        </div>
+      <div class="mt-7 space-y-3">
+        {content.steps.map((step, index) => (
+          <div class="flex items-center gap-3 text-sm font-semibold text-slate-700">
+            <span class="flex size-6 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-[0.72rem] font-bold text-slate-500">
+              {index + 1}
+            </span>
+            <span>{step.title}</span>
+          </div>
+        ))}
+      </div>
+    </div>
 
-        <div class="grid gap-4 md:grid-cols-2">
-          {content.steps.map((step, index) => (
-            <article class="panel rounded-[1.8rem] p-6">
-              <p class="eyebrow">0{index + 1}</p>
-              <h3 class="mt-4 text-xl font-extrabold tracking-tight text-slate-950">{step.title}</h3>
-              <p class="mt-4 text-base leading-7 text-slate-600">{step.description}</p>
-              <div class="mt-5 rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">
-                {content.stepNotes[index]}
+    <div class="rounded-[2.2rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(248,250,252,0.98),rgba(240,246,249,0.92))] p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-8">
+      <div class="space-y-5">
+        {content.steps.map((step, index) => (
+          <div class="relative pl-9">
+            {index < content.steps.length - 1 && (
+              <span class="absolute left-[0.68rem] top-7 h-[calc(100%+0.8rem)] w-px bg-[linear-gradient(180deg,rgba(25,130,121,0.28),rgba(31,53,87,0.08))]"></span>
+            )}
+            <span class="absolute left-0 top-1.5 size-3 rounded-full bg-[var(--vx-accent)] ring-4 ring-[rgba(25,130,121,0.08)]"></span>
+            <div class="rounded-[1.35rem] border border-slate-200/75 bg-white/92 px-5 py-4 shadow-[0_10px_22px_rgba(31,53,87,0.04)]">
+              <div class="flex items-baseline gap-3">
+                <p class="text-base font-bold tracking-tight text-slate-950">{step.title}</p>
+                <p class="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-slate-400">0{index + 1}</p>
               </div>
-            </article>
-          ))}
-        </div>
+              <p class="mt-2 text-sm leading-6 text-slate-600">{step.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>

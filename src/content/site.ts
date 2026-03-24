@@ -206,38 +206,44 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     howItWorks: {
       eyebrow: 'Hoe het werkt',
-      title: 'Een duidelijke keten van input naar opvolging',
+      title: 'Van input naar werkbare opvolging',
       description:
-        'Publiek begrijpelijk, operationeel bruikbaar en ontworpen om onder zorgdruk rustig te blijven.',
-      panelLabel: 'Operationele keten',
+        'Velvoix brengt signalen niet alleen binnen, maar verrijkt ze met context, triage en opvolgbaar eventgedrag, zodat zorgmedewerkers sneller begrijpen wat aandacht vraagt en wat logisch vervolg is.',
+      panelLabel: 'Operationele flow',
       panelSupporting: 'Velvoix structureert input, duiding, eventvorming en opvolging als één rustige keten.',
       steps: [
         {
           title: 'Input',
-          description:
-            'Knopoproepen, spraakinput en andere zorgsignalen komen binnen als startpunt voor opvolging.',
+          description: 'Knop, spraak of ander zorgsignaal.',
         },
         {
-          title: 'Interpretatie',
-          description:
-            'Velvoix helpt context, urgentie en een logisch handelingsvoorstel te structureren, zodat een signaal beter te begrijpen is.',
+          title: 'Context',
+          description: 'Historie, trigger en omgeving wegen mee.',
         },
         {
-          title: 'Operationele opvolging',
-          description:
-            'De uitkomst wordt een werkbaar event voor dashboard, statusopvolging, eigenaarschap en escalatie.',
+          title: 'Triage',
+          description: 'Urgentie en uitleg worden gestructureerd.',
         },
         {
-          title: 'Audit en overzicht',
-          description:
-            'Acties, statusverloop en opvolging blijven herleidbaar voor evaluatie, kwaliteitsverbetering en operationeel overzicht.',
+          title: 'Event',
+          description: 'Werkbare operationele eenheid ontstaat.',
+        },
+        {
+          title: 'Workflow',
+          description: 'Opvolging, eigenaarschap en status worden bestuurbaar.',
+        },
+        {
+          title: 'Audit',
+          description: 'Reconstructie en evaluatie blijven herleidbaar.',
         },
       ],
       stepNotes: [
-        'Brengt signalen gecontroleerd binnen',
-        'Maakt urgentie en context uitlegbaar',
-        'Maakt eigenaarschap en workflow werkbaar',
-        'Houdt evaluatie en reconstructie intact',
+        'Input komt gecontroleerd binnen',
+        'Context maakt duiding rijker',
+        'Triage maakt urgentie uitlegbaar',
+        'Eventvorming maakt opvolging werkbaar',
+        'Workflow maakt status bestuurbaar',
+        'Audit houdt reconstructie intact',
       ],
     },
     compareChains: {
@@ -435,38 +441,44 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     howItWorks: {
       eyebrow: 'How it works',
-      title: 'A clear chain from input to follow-up',
+      title: 'From input to workable follow-up',
       description:
-        'Publicly understandable, operationally useful and designed to stay calm under care pressure.',
-      panelLabel: 'Operational chain',
-      panelSupporting: 'Velvoix structures input, interpretation, event formation and follow-up as one calm chain.',
+        'Velvoix does not only ingest signals, but enriches them with context, triage and follow-up oriented event behaviour, so care teams understand faster what needs attention and what the logical next step is.',
+      panelLabel: 'Operational flow',
+      panelSupporting: 'From input to context, triage and controllable follow-up.',
       steps: [
         {
           title: 'Input',
-          description:
-            'Button calls, voice input and other care-related triggers enter the flow as the starting point for follow-up.',
+          description: 'Button, voice or other care signal.',
         },
         {
-          title: 'Interpretation',
-          description:
-            'Velvoix helps structure context, urgency and a logical course of action so a signal becomes easier to understand.',
+          title: 'Context',
+          description: 'History, trigger and setting are weighed.',
         },
         {
-          title: 'Operational follow-up',
-          description:
-            'The outcome becomes a workable event for dashboard handling, status flow, ownership and escalation.',
+          title: 'Triage',
+          description: 'Urgency and explanation are structured.',
         },
         {
-          title: 'Audit and oversight',
-          description:
-            'Actions, status progression and follow-up remain traceable for evaluation, quality improvement and operational oversight.',
+          title: 'Event',
+          description: 'A workable operational unit is created.',
+        },
+        {
+          title: 'Workflow',
+          description: 'Follow-up, ownership and status become controllable.',
+        },
+        {
+          title: 'Audit',
+          description: 'Reconstruction and evaluation remain traceable.',
         },
       ],
       stepNotes: [
-        'Brings signals into a controlled intake path',
-        'Makes urgency and context explainable',
-        'Makes ownership and workflow operationally workable',
-        'Keeps evaluation and reconstruction intact',
+        'Input enters in a controlled way',
+        'Context enriches interpretation',
+        'Triage makes urgency explainable',
+        'Event shaping makes follow-up workable',
+        'Workflow makes status controllable',
+        'Audit keeps reconstruction intact',
       ],
     },
     compareChains: {
