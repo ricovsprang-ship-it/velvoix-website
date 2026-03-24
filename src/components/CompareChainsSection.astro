@@ -20,12 +20,12 @@ const { content } = Astro.props;
 
       <div class="mt-5 space-y-4">
         <div class="chain-row chain-row-traditional rounded-[1.15rem] border border-slate-200/90 bg-slate-50/80 px-4 py-4" data-chain-row="traditional">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div class="shrink-0 lg:w-[10rem]">
+          <div class="flex flex-col gap-3">
+            <div class="shrink-0">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
             </div>
 
-            <div class="chain-track chain-track-traditional flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
+            <div class="chain-track chain-track-traditional flex min-w-0 flex-wrap items-center gap-2.5">
               {content.traditionalSteps.map((step, index) => (
                 <>
                   <div class="chain-module chain-module-traditional">
@@ -41,12 +41,12 @@ const { content } = Astro.props;
         </div>
 
         <div class="chain-row chain-row-velvoix rounded-[1.35rem] border border-[rgba(31,53,87,0.13)] bg-[linear-gradient(180deg,rgba(236,242,246,0.98),rgba(246,249,252,0.99))] px-4 py-4 shadow-[0_16px_32px_rgba(31,53,87,0.055)] md:px-5 md:py-5" data-chain-row="velvoix">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div class="shrink-0 lg:w-[10rem]">
+          <div class="flex flex-col gap-4">
+            <div class="shrink-0">
               <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
             </div>
 
-            <div class="min-w-0 flex-1 space-y-4">
+            <div class="min-w-0 space-y-4">
               <div class="chain-flow relative grid gap-3.5" data-chain-flow>
                 <span class="chain-flow-line hidden md:block" aria-hidden="true" data-chain-flow-line></span>
 
@@ -181,6 +181,7 @@ const { content } = Astro.props;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.98));
     padding: 0.82rem 0.95rem;
     text-align: left;
+    overflow: hidden;
   }
 
   [data-chain-block] .chain-rail {
@@ -206,13 +207,7 @@ const { content } = Astro.props;
   }
 
   [data-chain-block] .chain-flow-line {
-    position: absolute;
-    left: 0.8rem;
-    right: 0.8rem;
-    top: 2.45rem;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(25, 130, 121, 0.1), rgba(31, 53, 87, 0.14), rgba(31, 53, 87, 0.08));
-    z-index: -2;
+    display: none !important;
   }
 
   [data-chain-block] .chain-highlight {
@@ -257,6 +252,8 @@ const { content } = Astro.props;
 
   [data-chain-block] .chain-node-label {
     display: block;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   [data-chain-block] .chain-arrow {
@@ -294,6 +291,8 @@ const { content } = Astro.props;
 
   [data-chain-block] .chain-result-item {
     min-height: 2.2rem;
+    border-top: 0;
+    padding-top: 0;
   }
 
   @media (max-width: 1023px) {
