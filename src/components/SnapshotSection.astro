@@ -43,6 +43,7 @@ const sectionContent = isEnglish
           objectPosition: 'center center',
           baseScale: 0.86,
           zoomOrigin: '50% 58%',
+          offsetY: -88,
         },
         {
           id: 'worklist',
@@ -176,8 +177,9 @@ const sectionContent = isEnglish
           image: '/products/platformtour/login.png',
           alt: 'Velvoix login scherm',
           objectPosition: 'center center',
-          baseScale: 1,
+          baseScale: 0.86,
           zoomOrigin: '50% 58%',
+          offsetY: -88,
         },
         {
           id: 'worklist',
@@ -615,6 +617,7 @@ const previewSlide = sectionContent.slides[2];
     min-width: 0;
     min-height: 0;
     touch-action: none;
+    cursor: default;
   }
 
   [data-platform-tour] .platform-tour-slide,
@@ -844,6 +847,7 @@ const previewSlide = sectionContent.slides[2];
     const slides = Array.from(block.querySelectorAll('[data-tour-slide]'));
     const jumpButtons = Array.from(block.querySelectorAll('[data-tour-jump]'));
     const slideData = JSON.parse(block.dataset.tourSlides ?? '[]');
+    const stage = block.querySelector('[data-tour-stage]');
 
     let activeIndex = 0;
     let lastFocused = null;
@@ -851,6 +855,7 @@ const previewSlide = sectionContent.slides[2];
     let panX = 0;
     let panY = 0;
     let isDragging = false;
+    let dragPointerId = null;
     let dragStartX = 0;
     let dragStartY = 0;
     let dragOriginX = 0;
@@ -877,8 +882,9 @@ const previewSlide = sectionContent.slides[2];
 
     const syncDragCursor = () => {
       const image = getActiveImage();
-      if (!(image instanceof HTMLElement)) return;
-      image.style.cursor = zoomFactor > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default';
+      const nextCursor = zoomFactor > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default';
+      if (image instanceof HTMLElement) image.style.cursor = nextCursor;
+      if (stage instanceof HTMLElement) stage.style.cursor = nextCursor;
     };
 
     const applyZoom = (value) => {
@@ -886,9 +892,11 @@ const previewSlide = sectionContent.slides[2];
       const image = getActiveImage();
       const meta = getSlideMeta(activeIndex);
       if (image instanceof HTMLElement) {
+        const offsetX = meta.offsetX ?? 0;
+        const offsetY = meta.offsetY ?? 0;
         image.style.objectPosition = meta.objectPosition ?? 'center top';
         image.style.transformOrigin = meta.zoomOrigin ?? '50% 0%';
-        image.style.transform = `translate(${panX}px, ${panY}px) scale(${(meta.baseScale ?? 1) * zoomFactor})`;
+        image.style.transform = `translate(${offsetX + panX}px, ${offsetY + panY}px) scale(${(meta.baseScale ?? 1) * zoomFactor})`;
       }
       syncDragCursor();
       syncZoomValue();
@@ -912,27 +920,32 @@ const previewSlide = sectionContent.slides[2];
     };
 
     const beginDrag = (event) => {
-      if (!(event instanceof PointerEvent) || zoomFactor <= 1) return;
-      const image = getActiveImage();
-      if (!(image instanceof HTMLElement)) return;
+      if (!(event instanceof PointerEvent) || zoomFactor <= 1 || event.button !== 0) return;
+      if (!(stage instanceof HTMLElement)) return;
+      event.preventDefault();
       isDragging = true;
+      dragPointerId = event.pointerId;
       dragStartX = event.clientX;
       dragStartY = event.clientY;
       dragOriginX = panX;
       dragOriginY = panY;
-      image.setPointerCapture?.(event.pointerId);
+      stage.setPointerCapture?.(event.pointerId);
       syncDragCursor();
     };
 
     const updateDrag = (event) => {
       if (!(event instanceof PointerEvent) || !isDragging || zoomFactor <= 1) return;
+      if (dragPointerId !== null && event.pointerId !== dragPointerId) return;
+      event.preventDefault();
       panX = dragOriginX + (event.clientX - dragStartX);
       panY = dragOriginY + (event.clientY - dragStartY);
       applyZoom(zoomFactor);
     };
 
-    const endDrag = () => {
+    const endDrag = (event) => {
+      if (event instanceof PointerEvent && dragPointerId !== null && event.pointerId !== dragPointerId) return;
       isDragging = false;
+      dragPointerId = null;
       syncDragCursor();
     };
 
@@ -1108,12 +1121,10 @@ const previewSlide = sectionContent.slides[2];
     zoomOutButton?.addEventListener('click', () => applyZoom(zoomFactor - 0.2));
     zoomResetButton?.addEventListener('click', resetZoom);
 
-    const stage = block.querySelector('[data-tour-stage]');
     stage?.addEventListener('pointerdown', beginDrag);
     stage?.addEventListener('pointermove', updateDrag);
     stage?.addEventListener('pointerup', endDrag);
     stage?.addEventListener('pointercancel', endDrag);
-    stage?.addEventListener('pointerleave', endDrag);
     stage?.addEventListener(
       'wheel',
       (event) => {
