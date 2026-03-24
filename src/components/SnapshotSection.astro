@@ -27,6 +27,10 @@ const sectionContent = isEnglish
       closeLabel: 'Close',
       previousLabel: 'Previous',
       nextLabel: 'Next',
+      zoomInLabel: 'Zoom in',
+      zoomOutLabel: 'Zoom out',
+      zoomResetLabel: 'Reset zoom',
+      zoomLevelLabel: 'Zoom',
       railLabel: 'Tour sections',
       slides: [
         {
@@ -120,6 +124,10 @@ const sectionContent = isEnglish
       closeLabel: 'Sluiten',
       previousLabel: 'Vorige',
       nextLabel: 'Volgende',
+      zoomInLabel: 'Inzoomen',
+      zoomOutLabel: 'Uitzoomen',
+      zoomResetLabel: 'Herstel zoom',
+      zoomLevelLabel: 'Zoom',
       railLabel: 'Onderdelen van de tour',
       slides: [
         {
@@ -255,6 +263,12 @@ const previewSlide = sectionContent.slides[2];
           </div>
         </div>
         <div class="platform-tour-overlay__actions">
+          <div class="platform-tour-zoomtools">
+            <span class="platform-tour-zoomtools__value" data-tour-zoom-value>{sectionContent.zoomLevelLabel} 100%</span>
+            <button type="button" class="platform-tour-nav is-ghost" data-tour-zoom-out>{sectionContent.zoomOutLabel}</button>
+            <button type="button" class="platform-tour-nav is-ghost" data-tour-zoom-in>{sectionContent.zoomInLabel}</button>
+            <button type="button" class="platform-tour-nav is-ghost" data-tour-zoom-reset>{sectionContent.zoomResetLabel}</button>
+          </div>
           <button type="button" class="platform-tour-nav is-ghost" data-tour-prev>{sectionContent.previousLabel}</button>
           <button type="button" class="platform-tour-nav is-ghost" data-tour-next>{sectionContent.nextLabel}</button>
           <button type="button" class="platform-tour-close" data-tour-close>{sectionContent.closeLabel}</button>
@@ -266,7 +280,14 @@ const previewSlide = sectionContent.slides[2];
           {sectionContent.slides.map((slide, index) => (
             <article class="platform-tour-slide" data-tour-slide data-slide-id={slide.id} hidden={index !== 0}>
               <figure class="platform-tour-slide__figure">
-                <img src={slide.image} alt={slide.alt} loading="lazy" decoding="async" />
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
+                  decoding="async"
+                  data-tour-image
+                />
               </figure>
             </article>
           ))}
@@ -453,7 +474,23 @@ const previewSlide = sectionContent.slides[2];
   [data-platform-tour] .platform-tour-overlay__actions {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.65rem;
+    justify-content: flex-end;
+  }
+
+  [data-platform-tour] .platform-tour-zoomtools {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-right: 0.2rem;
+  }
+
+  [data-platform-tour] .platform-tour-zoomtools__value {
+    min-width: 5.8rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgb(71 85 105);
   }
 
   [data-platform-tour] .platform-tour-nav,
@@ -501,6 +538,8 @@ const previewSlide = sectionContent.slides[2];
 
   [data-platform-tour] .platform-tour-slide__figure {
     overflow: hidden;
+    display: grid;
+    place-items: center;
     border: 1px solid rgba(216, 224, 232, 0.96);
     border-radius: 1.15rem;
     background: rgba(255, 255, 255, 0.98);
@@ -514,6 +553,9 @@ const previewSlide = sectionContent.slides[2];
     object-fit: contain;
     object-position: center top;
     background: linear-gradient(180deg, rgba(246, 249, 252, 1), rgba(241, 246, 250, 1));
+    transform-origin: center top;
+    transition: transform 180ms ease;
+    will-change: transform;
   }
 
   [data-platform-tour] .platform-tour-copy {
@@ -650,13 +692,23 @@ const previewSlide = sectionContent.slides[2];
 
     [data-platform-tour] .platform-tour-overlay__actions {
       width: 100%;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
     [data-platform-tour] .platform-tour-nav,
     [data-platform-tour] .platform-tour-close {
-      flex: 1 1 30%;
+      flex: 1 1 9rem;
+    }
+
+    [data-platform-tour] .platform-tour-zoomtools {
+      width: 100%;
+      margin-right: 0;
+      flex-wrap: wrap;
+    }
+
+    [data-platform-tour] .platform-tour-zoomtools__value {
+      min-width: 100%;
     }
 
     [data-platform-tour] .platform-tour-copy {
@@ -690,6 +742,10 @@ const previewSlide = sectionContent.slides[2];
     const panel = block.querySelector('[data-tour-panel]');
     const prevButton = block.querySelector('[data-tour-prev]');
     const nextButton = block.querySelector('[data-tour-next]');
+    const zoomInButton = block.querySelector('[data-tour-zoom-in]');
+    const zoomOutButton = block.querySelector('[data-tour-zoom-out]');
+    const zoomResetButton = block.querySelector('[data-tour-zoom-reset]');
+    const zoomValue = block.querySelector('[data-tour-zoom-value]');
     const closeButtons = block.querySelectorAll('[data-tour-close]');
     const counterCurrent = block.querySelector('[data-tour-counter-current]');
     const labelTarget = block.querySelector('[data-tour-label]');
@@ -701,9 +757,58 @@ const previewSlide = sectionContent.slides[2];
 
     let activeIndex = 0;
     let lastFocused = null;
+    let zoomLevel = 1;
+    const preloaded = new Set();
 
     const focusableSelector =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    const syncZoomValue = () => {
+      if (zoomValue instanceof HTMLElement) {
+        zoomValue.textContent = `${zoomValue.textContent?.split(' ')[0] ?? 'Zoom'} ${Math.round(zoomLevel * 100)}%`;
+      }
+    };
+
+    const applyZoom = (value) => {
+      zoomLevel = Math.max(1, Math.min(2.4, value));
+      const activeSlide = slides[activeIndex];
+      if (!(activeSlide instanceof HTMLElement)) return;
+      const image = activeSlide.querySelector('[data-tour-image]');
+      if (image instanceof HTMLElement) {
+        image.style.transform = `scale(${zoomLevel})`;
+      }
+      syncZoomValue();
+    };
+
+    const resetZoom = () => applyZoom(1);
+
+    const preloadSlide = (index) => {
+      const slide = slideData[index];
+      if (!slide || preloaded.has(slide.image)) return;
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = slide.image;
+      preloaded.add(slide.image);
+    };
+
+    const preloadAround = (index) => {
+      preloadSlide(index);
+      preloadSlide((index + 1) % slideData.length);
+      preloadSlide((index + 2) % slideData.length);
+      preloadSlide((index - 1 + slideData.length) % slideData.length);
+    };
+
+    const queueBackgroundPreload = () => {
+      const runner = () => {
+        slideData.forEach((_, index) => preloadSlide(index));
+      };
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(runner, { timeout: 1800 });
+      } else {
+        window.setTimeout(runner, 700);
+      }
+    };
 
     const updateRail = () => {
       jumpButtons.forEach((button, index) => {
@@ -749,6 +854,8 @@ const previewSlide = sectionContent.slides[2];
         activeIndex = nextIndex;
         updateRail();
         renderCopy(nextIndex, false);
+        resetZoom();
+        preloadAround(nextIndex);
         return;
       }
 
@@ -761,6 +868,8 @@ const previewSlide = sectionContent.slides[2];
           activeIndex = nextIndex;
           updateRail();
           renderCopy(nextIndex, true);
+          resetZoom();
+          preloadAround(nextIndex);
         },
         onComplete: () => {
           if (currentSlide instanceof HTMLElement) currentSlide.hidden = true;
@@ -833,10 +942,16 @@ const previewSlide = sectionContent.slides[2];
     };
 
     renderSlide(0, false);
+    syncZoomValue();
+    preloadAround(0);
+    queueBackgroundPreload();
 
     openButton?.addEventListener('click', openOverlay);
     prevButton?.addEventListener('click', () => renderSlide((activeIndex - 1 + slides.length) % slides.length));
     nextButton?.addEventListener('click', () => renderSlide((activeIndex + 1) % slides.length));
+    zoomInButton?.addEventListener('click', () => applyZoom(zoomLevel + 0.2));
+    zoomOutButton?.addEventListener('click', () => applyZoom(zoomLevel - 0.2));
+    zoomResetButton?.addEventListener('click', resetZoom);
 
     jumpButtons.forEach((button) => {
       button.addEventListener('click', () => {
