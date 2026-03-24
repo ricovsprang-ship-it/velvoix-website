@@ -77,7 +77,6 @@ const { locale, content } = Astro.props;
     const ctas = heroBlock.querySelector<HTMLElement>('[data-hero-ctas]');
     const supporting = heroBlock.querySelector<HTMLElement>('[data-hero-supporting]');
     const content = heroBlock.querySelector<HTMLElement>('[data-hero-content]');
-    const media = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-media]');
     const image = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-image]');
     const overlay = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-overlay]');
 
@@ -88,8 +87,9 @@ const { locale, content } = Astro.props;
 
     gsap.set([eyebrow, title, subtitle, ctas, supporting], { autoAlpha: 0, y: 14 });
     gsap.set(title, { autoAlpha: 0, y: 18 });
-    gsap.set(image, { scale: 1.04, y: 0 });
+    gsap.set(image, { scale: 1.035, y: 0 });
     gsap.set(content, { y: 0 });
+    gsap.set(overlay, { opacity: 1 });
 
     const introTimeline = gsap.timeline({ defaults: { ease: 'power2.out' } });
     introTimeline
@@ -99,44 +99,64 @@ const { locale, content } = Astro.props;
       .to(ctas, { autoAlpha: 1, y: 0, duration: 0.22 }, '-=0.05')
       .to(supporting, { autoAlpha: 1, y: 0, duration: 0.22 }, '-=0.04');
 
-    if (media && image) {
-      gsap.to(image, {
-        y: 18,
-        scale: 1.01,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroBlock,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.9,
-        },
-      });
-    }
+    const mm = gsap.matchMedia();
 
-    if (content) {
-      gsap.to(content, {
-        y: -14,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroBlock,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.9,
-        },
-      });
-    }
+    mm.add(
+      {
+        desktop: '(min-width: 1024px)',
+        tablet: '(min-width: 768px) and (max-width: 1023px)',
+        mobile: '(max-width: 767px)',
+      },
+      (context) => {
+        const isDesktop = Boolean(context.conditions?.desktop);
+        const isTablet = Boolean(context.conditions?.tablet);
+        const imageShift = isDesktop ? 12 : isTablet ? 9 : 6;
+        const contentShift = isDesktop ? -16 : isTablet ? -12 : -8;
+        const imageScaleEnd = isDesktop ? 1 : isTablet ? 1.006 : 1.01;
+        const overlayOpacityEnd = isDesktop ? 0.9 : isTablet ? 0.93 : 0.96;
+        const scrubValue = isDesktop ? 0.75 : 0.55;
+        const scrollEnd = isDesktop ? 'bottom top' : '85% top';
 
-    if (overlay) {
-      gsap.to(overlay, {
-        opacity: 0.92,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: heroBlock,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.9,
-        },
-      });
-    }
+        if (image) {
+          gsap.to(image, {
+            y: imageShift,
+            scale: imageScaleEnd,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroBlock,
+              start: 'top top',
+              end: scrollEnd,
+              scrub: scrubValue,
+            },
+          });
+        }
+
+        if (content) {
+          gsap.to(content, {
+            y: contentShift,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroBlock,
+              start: 'top top',
+              end: scrollEnd,
+              scrub: scrubValue,
+            },
+          });
+        }
+
+        if (overlay) {
+          gsap.to(overlay, {
+            opacity: overlayOpacityEnd,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroBlock,
+              start: 'top top',
+              end: scrollEnd,
+              scrub: scrubValue,
+            },
+          });
+        }
+      }
+    );
   }
 </script>
