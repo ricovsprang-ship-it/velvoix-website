@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const isEnglish = content.title.toLowerCase().includes('pilot');
+const isEnglish = content.primaryCta.toLowerCase().includes('schedule');
 
 const sectionContent = isEnglish
   ? {
