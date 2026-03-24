@@ -34,32 +34,34 @@ const legalLinks = [
         <p class="footer-meta">{content.copyright}</p>
       </div>
 
-      <div class="footer-socials" aria-label="Social media">
-        <span class="footer-social-link" aria-label="LinkedIn link volgt later" title="LinkedIn link volgt later">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.94 8.5V18H3.8V8.5h3.14Zm.2-2.94c0 1-.75 1.8-1.78 1.8h-.02c-1 0-1.74-.8-1.74-1.8 0-1.03.76-1.81 1.77-1.81s1.75.78 1.77 1.8ZM20.2 12.13V18h-3.13v-5.5c0-1.38-.5-2.33-1.73-2.33-.95 0-1.5.64-1.75 1.26-.1.22-.12.54-.12.86V18H10.3s.04-9.02 0-9.5h3.13v1.35c.42-.65 1.16-1.58 2.84-1.58 2.07 0 3.63 1.35 3.63 4.25Z" />
-          </svg>
-        </span>
-        <span class="footer-social-link" aria-label="YouTube link volgt later" title="YouTube link volgt later">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21.1 7.2a2.9 2.9 0 0 0-2.03-2.04C17.28 4.67 12 4.67 12 4.67s-5.28 0-7.07.5A2.9 2.9 0 0 0 2.9 7.2c-.5 1.8-.5 4.8-.5 4.8s0 3 .5 4.8a2.9 2.9 0 0 0 2.03 2.03c1.79.5 7.07.5 7.07.5s5.28 0 7.07-.5a2.9 2.9 0 0 0 2.03-2.03c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8ZM10.3 15.03V8.97L15.57 12l-5.27 3.03Z" />
-          </svg>
-        </span>
+      <div class="footer-utility">
+        <div class="footer-socials" aria-label="Social media">
+          <span class="footer-social-link" aria-label="LinkedIn link volgt later" title="LinkedIn link volgt later">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.94 8.5V18H3.8V8.5h3.14Zm.2-2.94c0 1-.75 1.8-1.78 1.8h-.02c-1 0-1.74-.8-1.74-1.8 0-1.03.76-1.81 1.77-1.81s1.75.78 1.77 1.8ZM20.2 12.13V18h-3.13v-5.5c0-1.38-.5-2.33-1.73-2.33-.95 0-1.5.64-1.75 1.26-.1.22-.12.54-.12.86V18H10.3s.04-9.02 0-9.5h3.13v1.35c.42-.65 1.16-1.58 2.84-1.58 2.07 0 3.63 1.35 3.63 4.25Z" />
+            </svg>
+          </span>
+          <span class="footer-social-link" aria-label="YouTube link volgt later" title="YouTube link volgt later">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.1 7.2a2.9 2.9 0 0 0-2.03-2.04C17.28 4.67 12 4.67 12 4.67s-5.28 0-7.07.5A2.9 2.9 0 0 0 2.9 7.2c-.5 1.8-.5 4.8-.5 4.8s0 3 .5 4.8a2.9 2.9 0 0 0 2.03 2.03c1.79.5 7.07.5 7.07.5s5.28 0 7.07-.5a2.9 2.9 0 0 0 2.03-2.03c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8ZM10.3 15.03V8.97L15.57 12l-5.27 3.03Z" />
+            </svg>
+          </span>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer">
+          {legalLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+
+        <nav class="footer-languages" aria-label="Languages">
+          {languageLinks.map((link) => (
+            <a href={link.href} data-language-link data-language-locale={link.locale}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
-
-      <nav class="footer-links" aria-label="Footer">
-        {legalLinks.map((link) => (
-          <a href={link.href}>{link.label}</a>
-        ))}
-      </nav>
-
-      <nav class="footer-languages" aria-label="Languages">
-        {languageLinks.map((link) => (
-          <a href={link.href} data-language-link data-language-locale={link.locale}>
-            {link.label}
-          </a>
-        ))}
-      </nav>
     </div>
   </div>
 </footer>
@@ -97,6 +99,11 @@ const legalLinks = [
     color: rgb(71 85 105);
   }
 
+  .footer-utility {
+    display: grid;
+    gap: 0.8rem;
+  }
+
   .footer-links a,
   .footer-languages a {
     transition: color 160ms ease;
@@ -118,8 +125,9 @@ const legalLinks = [
     border: 1px solid rgba(203, 213, 225, 0.92);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.78);
-    color: rgb(37 99 235);
+    color: rgb(29 78 216);
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease, background-color 160ms ease;
   }
 
   .footer-social-link svg {
@@ -128,10 +136,39 @@ const legalLinks = [
     fill: currentColor;
   }
 
+  .footer-social-link:hover,
+  .footer-social-link:focus-visible {
+    border-color: rgba(29, 78, 216, 0.24);
+    background: rgba(239, 246, 255, 0.92);
+    color: rgb(30 64 175);
+    box-shadow: 0 14px 28px rgba(29, 78, 216, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .footer-languages {
+    font-size: 0.82rem;
+    color: rgb(100 116 139);
+  }
+
+  .footer-languages a {
+    position: relative;
+  }
+
+  .footer-languages a + a::before {
+    content: '·';
+    position: absolute;
+    left: -0.62rem;
+    color: rgba(148, 163, 184, 0.9);
+  }
+
   @media (min-width: 768px) {
     .footer-shell {
       grid-template-columns: minmax(0, 1fr) auto;
       align-items: start;
+    }
+
+    .footer-utility {
+      justify-items: end;
     }
 
     .footer-socials,
