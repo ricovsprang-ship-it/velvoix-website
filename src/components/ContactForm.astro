@@ -8,7 +8,6 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const isEnglish = content.labels.name === 'Name';
 const formTexts = {
   required: content.errors.required,
   email: content.errors.email,
@@ -16,27 +15,44 @@ const formTexts = {
   generic: content.errors.generic,
   success: content.success,
 };
+const routeTexts = content.routeContent;
 ---
 
 <section class="section-block" id="contact">
   <div class="section-shell">
-    <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
-      <div class="rounded-[2.2rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(237,245,243,0.88),rgba(245,249,252,0.92))] p-6 shadow-[0_18px_38px_rgba(31,53,87,0.06)] md:p-8">
+    <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+      <div class="rounded-[2rem] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(237,245,243,0.88),rgba(245,249,252,0.92))] p-6 shadow-[0_18px_38px_rgba(31,53,87,0.06)] md:p-8">
         <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
-        <div class="mt-10 rounded-[1.5rem] border border-slate-200 bg-white/90 p-5">
+        <div class="mt-8 space-y-3">
+          {content.reasons.map((reason) => (
+            <div class="flex items-start gap-3 rounded-[1rem] border border-slate-200/80 bg-white/78 px-4 py-3">
+              <span class="mt-2 size-1.5 shrink-0 rounded-full bg-[var(--vx-accent)]"></span>
+              <span class="text-sm font-medium leading-6 text-slate-700">{reason}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 rounded-[1.3rem] border border-slate-200 bg-white/92 p-5">
           <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">{content.directEmailLabel}</p>
           <a class="mt-3 inline-block text-lg font-bold text-slate-950 hover:text-teal-700" href={`mailto:${content.directEmailValue}`}>
             {content.directEmailValue}
           </a>
           <p class="mt-4 text-sm leading-6 text-slate-600">
-            {content.inquiryTypes.pilot} {isEnglish ? 'or' : 'of'} {content.inquiryTypes.general}
+            {content.directEmailNote}
           </p>
         </div>
       </div>
 
-      <form class="rounded-[2.2rem] border border-slate-200/80 bg-white/96 p-6 shadow-[0_20px_42px_rgba(31,53,87,0.08)] md:p-8" data-contact-form novalidate>
+      <form class="rounded-[2rem] border border-slate-200/80 bg-white/96 p-6 shadow-[0_20px_42px_rgba(31,53,87,0.08)] md:p-8" data-contact-form novalidate>
         <InquiryToggle labels={content.inquiryTypes} />
+        <input type="hidden" name="inquiryTypeValue" value="pilot" data-inquiry-type-input />
+
+        <div class="mb-6 rounded-[1rem] border border-slate-200/80 bg-slate-50/80 px-4 py-3">
+          <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500" data-route-label>{content.inquiryTypes.pilot}</p>
+          <p class="mt-2 text-sm leading-6 text-slate-600" data-route-helper>{routeTexts.pilot.helper}</p>
+        </div>
+
         <div class="grid gap-5 md:grid-cols-2">
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.name}</span>
@@ -62,20 +78,20 @@ const formTexts = {
 
         <label class="mt-5 block">
           <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.message}</span>
-          <textarea class="field-input min-h-40 resize-y" name="message" placeholder={content.placeholders.message} data-required="true"></textarea>
+          <textarea class="field-input min-h-40 resize-y" name="message" placeholder={routeTexts.pilot.messagePlaceholder} data-message-field data-required="true"></textarea>
           <span class="field-error" data-error-for="message"></span>
         </label>
 
         <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p class="status-copy text-slate-500" data-form-status></p>
-          <button class="button-primary" type="submit" data-submit-button>{content.labels.submit}</button>
+          <button class="button-primary" type="submit" data-submit-button>{routeTexts.pilot.submit}</button>
         </div>
       </form>
     </div>
   </div>
 </section>
 
-<script is:inline define:vars={{ formTexts }}>
+<script is:inline define:vars={{ formTexts, routeTexts }}>
   const forms = document.querySelectorAll('[data-contact-form]');
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^[+()0-9\s-]{6,}$/;
@@ -83,6 +99,31 @@ const formTexts = {
   for (const form of forms) {
     const statusNode = form.querySelector('[data-form-status]');
     const submitButton = form.querySelector('[data-submit-button]');
+    const inquiryInput = form.querySelector('[data-inquiry-type-input]');
+    const routeLabel = form.querySelector('[data-route-label]');
+    const routeHelper = form.querySelector('[data-route-helper]');
+    const messageField = form.querySelector('[data-message-field]');
+    const routeInputs = Array.from(form.querySelectorAll('input[name="inquiryType"]'));
+
+    const applyRoute = (route) => {
+      const selected = routeTexts[route] ?? routeTexts.pilot;
+      const selectedLabel = routeInputs.find((input) => input.value === route)?.parentElement?.textContent?.trim() ?? '';
+      if (inquiryInput instanceof HTMLInputElement) inquiryInput.value = route;
+      if (routeLabel) routeLabel.textContent = selectedLabel;
+      if (routeHelper) routeHelper.textContent = selected.helper;
+      if (messageField instanceof HTMLTextAreaElement) messageField.placeholder = selected.messagePlaceholder;
+      if (submitButton) submitButton.textContent = selected.submit;
+    };
+
+    for (const input of routeInputs) {
+      input.addEventListener('change', () => {
+        if (input instanceof HTMLInputElement && input.checked) {
+          applyRoute(input.value);
+        }
+      });
+    }
+
+    applyRoute('pilot');
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();

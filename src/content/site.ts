@@ -101,7 +101,27 @@ export interface PilotContent extends SectionIntroContent {
 export interface ContactContent extends SectionIntroContent {
   inquiryTypes: {
     pilot: string;
+    partnership: string;
     general: string;
+  };
+  reasons: string[];
+  directEmailNote: string;
+  routeContent: {
+    pilot: {
+      helper: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
+    partnership: {
+      helper: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
+    general: {
+      helper: string;
+      messagePlaceholder: string;
+      submit: string;
+    };
   };
   labels: {
     name: string;
@@ -423,10 +443,34 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Laten we verder praten',
       description:
-        'Wilt u meer weten over Velvoix of verkennen of een pilot past bij uw organisatie? Laat uw gegevens achter.',
+        'Wilt u verkennen of Velvoix past bij uw organisatie, pilotcontext of samenwerking? Laat uw gegevens achter en we nemen gericht contact met u op.',
       inquiryTypes: {
         pilot: 'Pilotverkenning',
+        partnership: 'Samenwerking',
         general: 'Algemene vraag',
+      },
+      reasons: [
+        'Pilotverkenning voor zorgorganisaties',
+        'Samenwerking of partnership bespreken',
+        'Algemene vraag over platform of inzetcontext',
+      ],
+      directEmailNote: 'Voor zakelijke vragen, pilotverkenningen en samenwerkingsgesprekken.',
+      routeContent: {
+        pilot: {
+          helper: 'Kies deze route als u een pilot, zorgcontext of verkenning van inzet wilt bespreken.',
+          messagePlaceholder: 'Beschrijf kort uw organisatie, context en wat u in een pilot wilt verkennen.',
+          submit: 'Plan een gesprek',
+        },
+        partnership: {
+          helper: 'Kies deze route als u een samenwerking, integratie of strategisch partnership wilt bespreken.',
+          messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke vorm van samenwerking u wilt bespreken.',
+          submit: 'Bespreek samenwerking',
+        },
+        general: {
+          helper: 'Kies deze route voor een algemene zakelijke vraag over het platform of de inzetcontext.',
+          messagePlaceholder: 'Beschrijf kort uw vraag of waar u meer over wilt weten.',
+          submit: 'Verstuur aanvraag',
+        },
       },
       labels: {
         name: 'Naam',
@@ -730,10 +774,34 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Let us continue the conversation',
       description:
-        'Would you like to learn more about Velvoix or explore whether a pilot fits your organisation? Leave your details below.',
+        'Would you like to explore whether Velvoix fits your organisation, pilot context or partnership model? Leave your details and we will follow up in a focused way.',
       inquiryTypes: {
         pilot: 'Pilot exploration',
+        partnership: 'Partnership',
         general: 'General inquiry',
+      },
+      reasons: [
+        'Pilot exploration for healthcare organisations',
+        'Discuss collaboration or partnership',
+        'General question about the platform or deployment context',
+      ],
+      directEmailNote: 'For business questions, pilot explorations and partnership conversations.',
+      routeContent: {
+        pilot: {
+          helper: 'Choose this route if you want to discuss a pilot, care context or practical exploration.',
+          messagePlaceholder: 'Briefly describe your organisation, context and what you would like to explore in a pilot.',
+          submit: 'Plan a conversation',
+        },
+        partnership: {
+          helper: 'Choose this route if you want to discuss collaboration, integration or a strategic partnership.',
+          messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration you want to discuss.',
+          submit: 'Discuss partnership',
+        },
+        general: {
+          helper: 'Choose this route for a general business question about the platform or deployment context.',
+          messagePlaceholder: 'Briefly describe your question or what you would like to learn more about.',
+          submit: 'Send request',
+        },
       },
       labels: {
         name: 'Name',
