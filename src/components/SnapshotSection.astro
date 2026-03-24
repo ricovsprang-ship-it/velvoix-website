@@ -15,7 +15,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
 <section class="section-block" data-platform-tour data-tour-slides={JSON.stringify(sectionContent.slides)}>
   <div class="section-shell">
-    <div class="grid gap-10 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] xl:items-center">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-center">
       <div class="max-w-[33rem]" data-platform-tour-intro>
         <SectionIntro eyebrow={sectionContent.eyebrow} title={sectionContent.title} description={sectionContent.description} />
         <p class="mt-5 max-w-[31rem] text-sm leading-6 text-slate-500">{sectionContent.supporting}</p>
@@ -465,7 +465,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     color: rgb(71 85 105);
   }
 
-  @media (max-width: 1179px) {
+  @media (max-width: 1023px) {
     [data-platform-tour] .platform-tour-overlay {
       padding: 0.9rem;
     }
