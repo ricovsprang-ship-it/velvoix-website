@@ -124,6 +124,7 @@ export interface PilotContent extends SectionIntroContent {
 }
 
 export interface ContactContent extends SectionIntroContent {
+  reasonsLabel: string;
   inquiryTypes: {
     pilot: string;
     partnership: string;
@@ -520,6 +521,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Start een gerichte verkenning',
       description:
         'Kies hieronder de route die past bij uw vraag: pilotverkenning, samenwerkingsroute of een algemene zakelijke vraag.',
+      reasonsLabel: 'Routes',
       inquiryTypes: {
         pilot: 'Pilotverkenning',
         partnership: 'Samenwerkingsroute',
@@ -901,6 +903,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: 'Start a focused exploration',
       description:
         'Choose the route that fits your request: pilot exploration, partnership route or a general business question.',
+      reasonsLabel: 'Routes',
       inquiryTypes: {
         pilot: 'Pilot exploration',
         partnership: 'Partnership route',

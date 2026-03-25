@@ -48,7 +48,7 @@ const slideFraming = {
 
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
   nl: {
-    eyebrow: 'Platformtour',
+    eyebrow: 'Producttour',
     title: 'Een gecontroleerd inkijkje in het platform',
     description:
       'Tien geselecteerde schermen laten zien hoe Velvoix werkvoorraad, context, opvolging, beheer en governance ordent.',
@@ -110,7 +110,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     ],
   },
   de: {
-    eyebrow: 'Plattformtour',
+    eyebrow: 'Produkttour',
     title: 'Ein kontrollierter Einblick in die Plattform',
     description:
       'Zehn ausgewahlte Ansichten zeigen, wie Velvoix Arbeitsvorrat, Kontext, Nachverfolgung, Verwaltung und Governance ordnet.',
@@ -121,7 +121,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     previewTitle: 'Eventdetail mit Kontext und Aktion',
     previewBody:
       'Ein Beispiel dafur, wie Begrundung, Kontext und Aktionen in einer ruhigen operativen Ansicht zusammenkommen.',
-    overlayLabel: 'Plattformtour',
+    overlayLabel: 'Produkttour',
     closeLabel: 'Schliessen',
     previousLabel: 'Zuruck',
     nextLabel: 'Weiter',
@@ -152,7 +152,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     previewTitle: 'Detalle del evento con contexto y accion',
     previewBody:
       'Un ejemplo de como motivo, contexto y acciones se reunen en una vista operativa serena.',
-    overlayLabel: 'Recorrido de la plataforma',
+    overlayLabel: 'Recorrido del producto',
     closeLabel: 'Cerrar',
     previousLabel: 'Anterior',
     nextLabel: 'Siguiente',

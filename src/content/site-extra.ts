@@ -295,6 +295,7 @@ export const deContent: SiteContent = {
     title: 'Starten Sie eine gezielte Prufung',
     description:
       'Wahlen Sie den Weg, der zu Ihrer Anfrage passt: Pilotprufung, Kooperationsweg oder allgemeine geschaftliche Frage.',
+    reasonsLabel: 'Wege',
     inquiryTypes: {
       pilot: 'Pilotgesprach',
       partnership: 'Kooperationsweg',
@@ -659,6 +660,7 @@ export const esContent: SiteContent = {
     title: 'Inicie una exploracion enfocada',
     description:
       'Elija la via que encaje con su solicitud: exploracion piloto, ruta de colaboracion o pregunta empresarial.',
+    reasonsLabel: 'Vias',
     inquiryTypes: {
       pilot: 'Exploracion piloto',
       partnership: 'Ruta de colaboracion',
