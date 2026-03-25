@@ -82,11 +82,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
             <article class="platform-tour-slide" data-tour-slide data-slide-id={slide.id} hidden={index !== 0}>
               <figure class="platform-tour-slide__figure">
                 <img
-                  src={slide.image}
                   alt={slide.alt}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  fetchpriority={index === 0 ? 'high' : 'auto'}
-                  decoding="async"
+                  data-tour-src={slide.image}
                   draggable="false"
                   data-tour-image
                 />
@@ -321,7 +318,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
   [data-platform-tour] .platform-tour-overlay__body {
     display: grid;
-    grid-template-columns: minmax(0, 1.62fr) minmax(21.5rem, 0.64fr);
+    grid-template-columns: minmax(0, 1.74fr) minmax(20.5rem, 0.56fr);
     gap: 1.1rem;
     min-height: 0;
     padding: 1.1rem;
@@ -342,6 +339,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     overflow: hidden;
     display: grid;
     place-items: center;
+    padding: clamp(0.7rem, 1vw, 1rem);
     border: 1px solid rgba(216, 224, 232, 0.96);
     border-radius: 1.2rem;
     background: rgba(255, 255, 255, 0.98);
@@ -357,6 +355,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     object-fit: contain;
     object-position: center center;
     background: linear-gradient(180deg, rgba(246, 249, 252, 1), rgba(241, 246, 250, 1));
+    border-radius: 0.95rem;
     transform-origin: center top;
     transition: transform 160ms ease;
     user-select: none;
@@ -565,11 +564,28 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
     const getSlideMeta = (index) => slideData[index] ?? {};
 
-    const getActiveImage = () => {
-      const activeSlide = slides[activeIndex];
-      if (!(activeSlide instanceof HTMLElement)) return null;
-      const image = activeSlide.querySelector('[data-tour-image]');
-      return image instanceof HTMLElement ? image : null;
+    const getSlideImage = (index) => {
+      const slide = slides[index];
+      if (!(slide instanceof HTMLElement)) return null;
+      const image = slide.querySelector('[data-tour-image]');
+      return image instanceof HTMLImageElement ? image : null;
+    };
+
+    const getActiveImage = () => getSlideImage(activeIndex);
+
+    const ensureSlideImage = (index, priority = 'auto') => {
+      const slide = slideData[index];
+      const image = getSlideImage(index);
+      if (!slide || !(image instanceof HTMLImageElement)) return;
+
+      if (!image.getAttribute('src')) {
+        image.src = slide.image;
+        image.decoding = 'async';
+        image.loading = priority === 'high' ? 'eager' : 'lazy';
+      }
+
+      image.fetchPriority = priority;
+      image.alt = slide.alt;
     };
 
     const applyFrame = () => {
@@ -593,21 +609,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
     const preloadAround = (index) => {
       preloadSlide(index);
-      preloadSlide((index + 1) % slideData.length);
-      preloadSlide((index + 2) % slideData.length);
-      preloadSlide((index - 1 + slideData.length) % slideData.length);
-    };
-
-    const queueBackgroundPreload = () => {
-      const runner = () => {
-        slideData.forEach((_, index) => preloadSlide(index));
-      };
-
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(runner, { timeout: 1800 });
-      } else {
-        window.setTimeout(runner, 700);
-      }
+      if (index + 1 < slideData.length) preloadSlide(index + 1);
+      if (index > 0) preloadSlide(index - 1);
     };
 
     const updateRail = () => {
@@ -646,7 +649,9 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       const nextSlide = slides[nextIndex];
       if (!(nextSlide instanceof HTMLElement) || nextSlide === currentSlide) return;
 
-        if (counterCurrent instanceof HTMLElement) counterCurrent.textContent = String(nextIndex + 1);
+      ensureSlideImage(nextIndex, 'high');
+
+      if (counterCurrent instanceof HTMLElement) counterCurrent.textContent = String(nextIndex + 1);
 
       if (!animate || prefersReducedMotion) {
         if (currentSlide instanceof HTMLElement) currentSlide.hidden = true;
@@ -702,6 +707,9 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     const openOverlay = () => {
       if (!(overlay instanceof HTMLElement) || !(panel instanceof HTMLElement)) return;
       lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      ensureSlideImage(activeIndex, 'high');
+      preloadAround(activeIndex);
+      applyFrame();
       overlay.hidden = false;
       overlay.setAttribute('aria-hidden', 'false');
       document.documentElement.style.overflow = 'hidden';
@@ -743,10 +751,16 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
     renderSlide(0, false);
     applyFrame();
-    preloadAround(0);
-    queueBackgroundPreload();
 
     openButton?.addEventListener('click', openOverlay);
+    openButton?.addEventListener('pointerenter', () => {
+      ensureSlideImage(activeIndex, 'high');
+      preloadAround(activeIndex);
+    }, { once: true });
+    openButton?.addEventListener('focus', () => {
+      ensureSlideImage(activeIndex, 'high');
+      preloadAround(activeIndex);
+    }, { once: true });
     prevButton?.addEventListener('click', () => renderSlide((activeIndex - 1 + slides.length) % slides.length));
     nextButton?.addEventListener('click', () => renderSlide((activeIndex + 1) % slides.length));
 
