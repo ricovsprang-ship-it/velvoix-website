@@ -43,7 +43,6 @@ export interface PropositionBridgeContent extends SectionIntroContent {
     label: string;
     title: string;
     description: string;
-    items: string[];
   }>;
 }
 
@@ -250,22 +249,19 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'Wat binnenkomt',
           title: 'Signalen uit de zorgpraktijk',
           description:
-            'Knopoproepen, spraakinput en andere zorgsignalen komen gecontroleerd binnen als startpunt voor opvolging.',
-          items: ['Knopoproepen', 'Spraakinput', 'Andere zorgsignalen'],
+            'Knopoproepen, spraakinput en andere zorgsignalen komen gecontroleerd binnen als het startpunt voor opvolging.',
         },
         {
           label: 'Wat Velvoix toevoegt',
           title: 'Duiding rond het signaal',
           description:
-            'Velvoix voegt context, triage, uitleg en eventvorming toe zodat een team sneller begrijpt wat aandacht vraagt.',
-          items: ['Context', 'Triage', 'Uitleg', 'Eigenaarschap', 'Eventvorming'],
+            'Velvoix voegt context, triage, uitleg, eigenaarschap en eventvorming toe zodat een team sneller begrijpt wat aandacht vraagt.',
         },
         {
           label: 'Wat dat oplevert',
           title: 'Werkbare opvolging',
           description:
             'Dat geeft duidelijkere vervolgacties, minder interpretatielast en betere reconstructie van wat er is gebeurd.',
-          items: ['Duidelijkere opvolging', 'Minder interpretatielast', 'Betere reconstructie'],
         },
       ],
     },
@@ -634,22 +630,19 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'What comes in',
           title: 'Signals from care operations',
           description:
-            'Button calls, voice input and other care-related signals enter in a controlled way as the start of follow-up.',
-          items: ['Button calls', 'Voice input', 'Other care signals'],
+            'Button calls, voice input and other care-related signals enter in a controlled way as the starting point for follow-up.',
         },
         {
           label: 'What Velvoix adds',
           title: 'Operational meaning around the signal',
           description:
-            'Velvoix adds context, triage, explanation and event shaping so teams understand faster what needs attention.',
-          items: ['Context', 'Triage', 'Explanation', 'Ownership', 'Event shaping'],
+            'Velvoix adds context, triage, explanation, ownership and event shaping so teams understand faster what needs attention.',
         },
         {
           label: 'What that delivers',
           title: 'Workable follow-up',
           description:
             'That leads to clearer next steps, less interpretation burden and better reconstruction of what happened.',
-          items: ['Clearer follow-up', 'Less interpretation burden', 'Better reconstruction'],
         },
       ],
     },

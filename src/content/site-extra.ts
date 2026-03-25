@@ -43,21 +43,18 @@ export const deContent: SiteContent = {
         title: 'Signale aus dem Pflegealltag',
         description:
           'Rufknopfe, Spracheingaben und andere Pflegesignale kommen kontrolliert als Ausgangspunkt fur die Nachverfolgung an.',
-        items: ['Rufknopfe', 'Spracheingaben', 'Andere Pflegesignale'],
       },
       {
         label: 'Was Velvoix hinzufugt',
         title: 'Operative Einordnung rund um das Signal',
         description:
-          'Velvoix fugt Kontext, Triage, Erklarung und Eventbildung hinzu, damit Teams schneller verstehen, was Aufmerksamkeit braucht.',
-        items: ['Kontext', 'Triage', 'Erklarung', 'Verantwortung', 'Eventbildung'],
+          'Velvoix fugt Kontext, Triage, Erklarung, Verantwortung und Eventbildung hinzu, damit Teams schneller verstehen, was Aufmerksamkeit braucht.',
       },
       {
         label: 'Was daraus entsteht',
         title: 'Handhabbare Nachverfolgung',
         description:
           'Das fuhrt zu klareren nachsten Schritten, weniger Interpretationslast und besserer Rekonstruktion des Ablaufs.',
-        items: ['Klarere Folgeaktion', 'Weniger Interpretationslast', 'Bessere Rekonstruktion'],
       },
     ],
   },
@@ -410,21 +407,18 @@ export const esContent: SiteContent = {
         title: 'Senales del trabajo asistencial',
         description:
           'Las llamadas de boton, la voz y otras senales asistenciales entran de forma controlada como punto de partida del seguimiento.',
-        items: ['Llamadas de boton', 'Entrada por voz', 'Otras senales asistenciales'],
       },
       {
         label: 'Que aporta Velvoix',
         title: 'Sentido operativo alrededor de la senal',
         description:
-          'Velvoix anade contexto, triaje, explicacion y formacion del evento para que el equipo entienda antes que requiere atencion.',
-        items: ['Contexto', 'Triaje', 'Explicacion', 'Titularidad', 'Formacion del evento'],
+          'Velvoix anade contexto, triaje, explicacion, titularidad y formacion del evento para que el equipo entienda antes que requiere atencion.',
       },
       {
         label: 'Que cambia despues',
         title: 'Seguimiento gobernable',
         description:
           'Eso se traduce en pasos mas claros, menos carga interpretativa y una mejor reconstruccion de lo ocurrido.',
-        items: ['Seguimiento mas claro', 'Menos carga interpretativa', 'Mejor reconstruccion'],
       },
     ],
   },
