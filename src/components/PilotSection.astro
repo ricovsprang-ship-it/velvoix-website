@@ -12,11 +12,11 @@ const { locale, content } = Astro.props;
 const sectionContentByLocale = {
   en: {
       eyebrow: 'Pilot and partnership',
-      title: 'Assess whether a pilot or partnership route fits',
+      title: 'Assess whether a pilot or partnership route is relevant',
       description:
-        'Use this route to assess whether Velvoix is relevant for a pilot setting, rollout discussion or strategic fit.',
+        'Use this route to assess whether Velvoix is relevant for a pilot setting, rollout discussion or partnership conversation.',
       audience:
-        'Relevant for healthcare organisations, operational care teams and partners exploring fit, rollout or integration.',
+        'Relevant for healthcare organisations, operational care teams and partners exploring rollout, integration or strategic collaboration.',
       primaryCta: 'Start pilot assessment',
       secondaryCta: 'Discuss partnership route',
       moduleTitle: 'A pilot assessment focuses on',
@@ -34,22 +34,22 @@ const sectionContentByLocale = {
           description: 'Make status flow, escalation and retrospective visibility usable for quality improvement.',
         },
         {
-          title: 'Fit and integration',
+          title: 'Integration and rollout',
           description: 'Explore how Velvoix connects to teams, processes, devices and the existing environment.',
         },
       ],
       organisationTitle: 'For healthcare organisations',
-      organisationBody: 'Focus on operational relevance, work pressure, follow-up and fit with care practice.',
+      organisationBody: 'Focus on operational relevance, work pressure, follow-up and alignment with care practice.',
       partnerTitle: 'For partners',
-      partnerBody: 'Focus on rollout fit, integration scope and operational value in the care chain.',
+      partnerBody: 'Focus on rollout scope, integration approach and operational value in the care chain.',
     },
   nl: {
       eyebrow: 'Pilot en samenwerking',
-      title: 'Toets of een pilot- of samenwerkingsroute past',
+      title: 'Toets of een pilot- of samenwerkingsroute relevant is',
       description:
         'Gebruik deze route om te toetsen of Velvoix relevant is voor een pilotsetting, uitrolverkenning of samenwerkingsgesprek.',
       audience:
-        'Relevant voor zorgorganisaties, operationele zorgteams en partners die fit, uitrol of integratie willen verkennen.',
+        'Relevant voor zorgorganisaties, operationele zorgteams en partners die uitrol, integratie of samenwerking willen verkennen.',
       primaryCta: 'Start pilotverkenning',
       secondaryCta: 'Bespreek samenwerkingsroute',
       moduleTitle: 'Een pilotverkenning richt zich op',
@@ -72,17 +72,17 @@ const sectionContentByLocale = {
         },
       ],
       organisationTitle: 'Voor zorgorganisaties',
-      organisationBody: 'Focus op operationele relevantie, werkdruk, opvolging en fit met de zorgpraktijk.',
+      organisationBody: 'Focus op operationele relevantie, werkdruk, opvolging en aansluiting op de zorgpraktijk.',
       partnerTitle: 'Voor partners',
-      partnerBody: 'Focus op uitrolfit, integratiescope en operationele meerwaarde in de zorgketen.',
+      partnerBody: 'Focus op uitrolscope, integratieaanpak en operationele meerwaarde in de zorgketen.',
     },
   de: {
       eyebrow: 'Pilot und Zusammenarbeit',
-      title: 'Prufen, ob ein Pilot- oder Kooperationsweg passt',
+      title: 'Prufen, ob ein Pilot- oder Kooperationsweg relevant ist',
       description:
-        'Nutzen Sie diesen Weg, um zu prufen, ob Velvoix fur einen Pilotkontext, eine Rollout-Prufung oder eine Zusammenarbeit relevant ist.',
+        'Nutzen Sie diesen Weg, um zu prufen, ob Velvoix fur einen Pilotkontext, eine Rollout-Prufung oder ein Kooperationsgesprach relevant ist.',
       audience:
-        'Relevant fur Pflegeorganisationen, operative Pflegeteams und Partner, die Passung, Rollout oder Integration prufen wollen.',
+        'Relevant fur Pflegeorganisationen, operative Pflegeteams und Partner, die Rollout, Integration oder Zusammenarbeit prufen wollen.',
       primaryCta: 'Pilotprufung starten',
       secondaryCta: 'Kooperationsweg besprechen',
       moduleTitle: 'Eine Pilotprufung konzentriert sich auf',
@@ -100,22 +100,22 @@ const sectionContentByLocale = {
           description: 'Statusverlauf, Eskalation und Ruckschau fur Qualitatsverbesserung nutzbar machen.',
         },
         {
-          title: 'Passung und Integration',
+          title: 'Integration und Rollout',
           description: 'Prufen, wie Velvoix an Teams, Prozesse, Gerate und die bestehende Umgebung anschliesst.',
         },
       ],
       organisationTitle: 'Fur Pflegeorganisationen',
-      organisationBody: 'Fokus auf operative Relevanz, Arbeitsdruck, Nachverfolgung und Passung zur Pflegepraxis.',
+      organisationBody: 'Fokus auf operative Relevanz, Arbeitsdruck, Nachverfolgung und Anschluss an die Pflegepraxis.',
       partnerTitle: 'Fur Partner',
-      partnerBody: 'Fokus auf Rollout-Passung, Integrationsumfang und operativen Mehrwert in der Versorgungskette.',
+      partnerBody: 'Fokus auf Rollout-Umfang, Integrationsansatz und operativen Mehrwert in der Versorgungskette.',
     },
   es: {
       eyebrow: 'Piloto y colaboracion',
-      title: 'Evale si encaja una ruta de piloto o colaboracion',
+      title: 'Evale si una ruta de piloto o colaboracion es relevante',
       description:
         'Utilice esta via para comprobar si Velvoix es relevante para un contexto piloto, una exploracion de despliegue o una conversacion de colaboracion.',
       audience:
-        'Relevante para organizaciones asistenciales, equipos operativos y socios que quieran explorar encaje, despliegue o integracion.',
+        'Relevante para organizaciones asistenciales, equipos operativos y socios que quieran explorar despliegue, integracion o colaboracion.',
       primaryCta: 'Iniciar exploracion piloto',
       secondaryCta: 'Tratar ruta de colaboracion',
       moduleTitle: 'Una exploracion piloto se centra en',
@@ -133,14 +133,14 @@ const sectionContentByLocale = {
           description: 'Hacer utilizables la evolucion del estado, la escalada y la retrospectiva para mejorar calidad.',
         },
         {
-          title: 'Encaje e integracion',
-          description: 'Explorar como Velvoix conecta con equipos, procesos, dispositivos y entorno existente.',
+          title: 'Integracion y despliegue',
+          description: 'Explorar como Velvoix conecta con equipos, procesos, dispositivos y el entorno existente.',
         },
       ],
       organisationTitle: 'Para organizaciones asistenciales',
-      organisationBody: 'Foco en relevancia operativa, carga de trabajo, seguimiento y encaje con la practica asistencial.',
+      organisationBody: 'Foco en relevancia operativa, carga de trabajo, seguimiento y alineacion con la practica asistencial.',
       partnerTitle: 'Para socios',
-      partnerBody: 'Foco en encaje de despliegue, alcance de integracion y valor operativo en la cadena asistencial.',
+      partnerBody: 'Foco en alcance de despliegue, enfoque de integracion y valor operativo en la cadena asistencial.',
     },
 } satisfies Record<Locale, {
   eyebrow: string;

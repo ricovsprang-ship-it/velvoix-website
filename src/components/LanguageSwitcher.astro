@@ -12,13 +12,23 @@ const paths: Record<Locale, string> = {
   ...localeRootPaths,
   ...languagePaths,
 };
+const orderedLocales: Locale[] = ['nl', 'en', 'de', 'es'];
+const hasScopedLanguagePaths = Object.keys(languagePaths).length > 0;
 
-const languages: Array<{ code: string; locale: Locale; href: string }> = [
-  { code: 'NL', locale: 'nl', href: paths.nl },
-  { code: 'EN', locale: 'en', href: paths.en },
-  { code: 'DE', locale: 'de', href: paths.de },
-  { code: 'ES', locale: 'es', href: paths.es },
-];
+const languageCodeByLocale: Record<Locale, string> = {
+  nl: 'NL',
+  en: 'EN',
+  de: 'DE',
+  es: 'ES',
+};
+
+const languages: Array<{ code: string; locale: Locale; href: string }> = orderedLocales
+  .filter((candidate) => !hasScopedLanguagePaths || Boolean(languagePaths[candidate]))
+  .map((candidate) => ({
+    code: languageCodeByLocale[candidate],
+    locale: candidate,
+    href: paths[candidate],
+  }));
 
 const activeLanguage = languages.find((language) => language.locale === locale) ?? languages[0];
 const otherLanguages = languages.filter((language) => language.locale !== locale);

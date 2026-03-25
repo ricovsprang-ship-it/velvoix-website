@@ -59,9 +59,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           ],
           bullets: [
             'Juridische entiteit: Velvoix Holding B.V',
-            'Handelsnaam: Velvoix / Velvoix',
-            'KvK-nummer: -',
-            'Btw-nummer: -',
+            'Handelsnaam: Velvoix',
             'Postcode / plaats / land: 2313 NS, Leiden, The Netherlands',
             'Algemeen contact: founder@velvoix.com',
             'Privacycontact: support@velvoix.com',
@@ -129,14 +127,13 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'cookies',
           title: '6. Cookies, analytics en vergelijkbare technieken',
           paragraphs: [
-            'Velvoix kan functionele cookies en, afhankelijk van de inrichting van de website, analytische cookies of vergelijkbare technieken gebruiken om de website bruikbaar, veilig en inzichtelijk te houden.',
-            'Specifieke tooling en instellingen kunnen later nader worden gespecificeerd zodra deze definitief zijn vastgesteld. Indien een cookiebanner of voorkeursinstelling beschikbaar is, kunnen keuzes daar worden beheerd.',
+            'Velvoix gebruikt op de publieke website functionele browsertechnieken om basiswerking, taalvoorkeur, contactafhandeling en beveiliging te ondersteunen.',
+            'Aanvullende analytische metingen worden alleen ingezet wanneer die expliciet zijn ingericht, juridisch passend zijn en ook in dit beleid zijn verwerkt.',
           ],
           bullets: [
-            'Functionele cookies voor basiswerking en beveiliging',
-            'Analytische cookies of vergelijkbare metingen voor gebruiksinzicht',
-            'Aanvullende tooling wordt alleen ingezet en gespecificeerd waar dat daadwerkelijk van toepassing is.',
-            'Analytics wordt alleen gebruikt en gespecificeerd waar dat functioneel en juridisch passend is.',
+            'Functionele technieken voor basiswerking, beveiliging en taalvoorkeur',
+            'Technieken rond contactformulieren, mailafhandeling en misbruikpreventie',
+            'Analytische metingen alleen wanneer deze expliciet live staan en in dit beleid zijn verwerkt',
           ],
         },
         {
@@ -168,7 +165,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '9. Bewaartermijnen',
           paragraphs: [
             'Velvoix bewaart persoonsgegevens niet langer dan nodig is voor het doel waarvoor zij zijn verzameld, tenzij een langere bewaartermijn wettelijk verplicht is of aantoonbaar nodig is voor een gerechtvaardigd belang, zoals beveiliging, contractbeheer of geschilafhandeling.',
-            'Bewaartermijnen kunnen verschillen per categorie gegevens, bijvoorbeeld voor contactaanvragen, pilot- of samenwerkingscommunicatie, accountgegevens, gebruikslogs of wettelijke administratieverplichtingen. Exacte categorieen of termijnen kunnen later nader worden ingevuld in aanvullende contractdocumentatie waar dat nodig is.',
+            'Bewaartermijnen kunnen verschillen per categorie gegevens, bijvoorbeeld voor contactaanvragen, pilot- of samenwerkingscommunicatie, accountgegevens, gebruikslogs of wettelijke administratieverplichtingen. Waar nadere afspraken nodig zijn, legt Velvoix die vast in contractdocumentatie of projectafspraken.',
           ],
           bullets: [
             'Contact- en informatieverzoeken: zolang nodig voor opvolging en redelijke archivering',
@@ -271,22 +268,23 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'welke-categorieen',
           title: '2. Welke categorieen Velvoix kan gebruiken',
           paragraphs: [
-            'Afhankelijk van de uiteindelijke inrichting van de website kan Velvoix functionele cookies, analytische cookies en, indien later relevant en toegestaan, aanvullende cookiecategorieen gebruiken.',
+            'De publieke website gebruikt op dit moment vooral functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Aanvullende analytische metingen of andere categorieen worden alleen toegevoegd wanneer die daadwerkelijk live staan en passend zijn ingericht.',
           ],
           bullets: [
-            'Functionele cookies voor basiswerking, beveiliging en voorkeuren',
-            'Analytische cookies of vergelijkbare technieken voor gebruiksinzicht',
-            'Aanvullende tooling of categorieen worden alleen ingezet en gespecificeerd waar dat daadwerkelijk van toepassing is.',
+            'Functionele technieken voor basiswerking, beveiliging en voorkeuren',
+            'Browseropslag voor taalkeuze en vergelijkbare functionele voorkeuren',
+            'Analytische metingen alleen wanneer deze expliciet zijn ingeschakeld en in dit beleid zijn verwerkt',
           ],
         },
         {
           id: 'waarvoor',
           title: '3. Waarvoor deze technieken worden gebruikt',
           paragraphs: [
-            'Velvoix kan cookies en vergelijkbare technieken gebruiken om de website goed te laten functioneren, prestaties te meten, formulieren werkbaar te houden, misbruik te beperken en inzicht te krijgen in het gebruik van de website.',
+            'Velvoix gebruikt deze technieken om de website goed te laten functioneren, taalkeuzes vast te houden, formulieren werkbaar te houden, misbruik te beperken en waar relevant prestaties of gebruik te begrijpen.',
           ],
           bullets: [
             'Websitefunctionaliteit en sessiebeheer',
+            'Taalvoorkeur en andere functionele instellingen',
             'Beveiliging en misbruikpreventie',
             'Prestatie- en foutanalyse',
             'Gebruiksinzichten voor verbetering van de website',
@@ -296,19 +294,20 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling en leveranciers',
           paragraphs: [
-            'Specifieke cookie- en analysetooling kan later worden ingevuld of aangepast naarmate de website-inrichting verder wordt uitgewerkt.',
+            'De publieke website gebruikt browseropslag voor taalvoorkeur en de website- en mailinrichting van Velvoix voor contactafhandeling. Aanvullende analytics- of consenttooling wordt pas benoemd zodra die daadwerkelijk live staat.',
           ],
           bullets: [
-            'Cookie- en analysetooling wordt nader gespecificeerd zodra deze definitief is vastgesteld.',
-            'Hosting- en infrastructuurleveranciers worden waar nodig contractueel ingezet.',
+            'Browseropslag voor functionele taalvoorkeuren op de publieke site',
+            'Website- en mailinfrastructuur voor contactverwerking en misbruikbeperking',
+            'Hosting- en infrastructuurleveranciers worden waar nodig contractueel ingezet',
           ],
         },
         {
           id: 'voorkeuren',
           title: '5. Voorkeuren beheren',
           paragraphs: [
-            'Wanneer een cookiebanner, voorkeurencentrum of vergelijkbare instelling beschikbaar is, kunnen keuzes daar worden beheerd. Daarnaast kunnen browsers vaak zo worden ingesteld dat cookies worden geweigerd of verwijderd.',
-            'Het uitschakelen van bepaalde cookies kan gevolgen hebben voor de werking of gebruikservaring van de website.',
+            'De huidige publieke website biedt geen apart voorkeurencentrum. Browserinstellingen kunnen wel worden gebruikt om cookies, lokale opslag of vergelijkbare browsergegevens te blokkeren of te verwijderen.',
+            'Het uitschakelen van functionele technieken kan gevolgen hebben voor de werking, taalkeuze of gebruikservaring van de website.',
           ],
         },
         {
@@ -500,9 +499,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           ],
           bullets: [
             'Legal entity: Velvoix Holding B.V',
-            'Trade name: Velvoix / Velvoix',
-            'Chamber of Commerce number: -',
-            'VAT number: -',
+            'Trade name: Velvoix',
             'Postal code / city / country: 2313 NS, Leiden, The Netherlands',
             'General contact: founder@velvoix.com',
             'Privacy contact: support@velvoix.com',
@@ -570,14 +567,13 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'cookies',
           title: '6. Cookies, analytics and similar technologies',
           paragraphs: [
-            'Velvoix may use functional cookies and, depending on the website setup, analytics cookies or similar technologies to keep the website usable, secure and measurable.',
-            'Specific tooling and settings may be specified later once they are definitively established. Where a cookie banner or preference centre is available, choices can be managed there.',
+            'Velvoix uses functional browser technologies on the public website to support core operation, language preference, contact handling and security.',
+            'Additional analytics measurement is only introduced where it has been explicitly configured, is legally appropriate and is reflected in this policy.',
           ],
           bullets: [
-            'Functional cookies for core website operation and security',
-            'Analytics cookies or similar measurement tools for website insight',
-            'Additional tooling is only used and specified where it is actually relevant.',
-            'Analytics is only used and specified where it is functionally and legally appropriate.',
+            'Functional technologies for core operation, security and language preference',
+            'Technologies related to contact forms, mail handling and misuse prevention',
+            'Analytics measurement only where it is explicitly live and described in this policy',
           ],
         },
         {
@@ -609,7 +605,7 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           title: '9. Retention periods',
           paragraphs: [
             'Velvoix does not keep personal data longer than necessary for the purpose for which it was collected, unless a longer retention period is required by law or demonstrably necessary for a legitimate interest such as security, contract management or dispute handling.',
-            'Retention periods may differ per category of data, for example for contact requests, pilot or partnership communication, account data, usage logs or statutory recordkeeping obligations. Exact categories or periods may be specified later in supplementary contract documentation where needed.',
+            'Retention periods may differ per category of data, for example for contact requests, pilot or partnership communication, account data, usage logs or statutory recordkeeping obligations. Where further detail is needed, Velvoix records this in contract documentation or project arrangements.',
           ],
           bullets: [
             'Contact and information requests: as long as needed for follow-up and reasonable archive purposes',
@@ -712,22 +708,23 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'categories',
           title: '2. Which categories Velvoix may use',
           paragraphs: [
-            'Depending on the final website setup, Velvoix may use functional cookies, analytics cookies and, where later relevant and permitted, additional cookie categories.',
+            'The public website currently relies primarily on functional browser technologies for core operation, language preference and contact handling. Additional analytics measurement or other categories are only added where they are actually live and appropriately configured.',
           ],
           bullets: [
-            'Functional cookies for core operation, security and preferences',
-            'Analytics cookies or similar technologies for website insight',
-            'Additional tooling or categories are only used and specified where they are actually relevant.',
+            'Functional technologies for core operation, security and preferences',
+            'Browser storage for language choice and similar functional preferences',
+            'Analytics measurement only where it has been explicitly enabled and reflected in this policy',
           ],
         },
         {
           id: 'purposes',
           title: '3. The purposes for which these technologies are used',
           paragraphs: [
-            'Velvoix may use cookies and similar technologies to keep the website functioning properly, measure performance, keep forms workable, reduce misuse and understand how the website is used.',
+            'Velvoix uses these technologies to keep the website functioning properly, retain language choices, keep forms workable, reduce misuse and, where relevant, understand performance or usage.',
           ],
           bullets: [
             'Website functionality and session handling',
+            'Language preference and similar functional settings',
             'Security and misuse prevention',
             'Performance and error analysis',
             'Usage insight to improve the website',
@@ -737,19 +734,20 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling and providers',
           paragraphs: [
-            'Specific cookie and analytics tooling may be completed or adjusted as the website setup evolves.',
+            'The public website uses browser storage for language preference and Velvoix website and mail infrastructure for contact handling. Additional analytics or consent tooling will only be named once it is actually live.',
           ],
           bullets: [
-            'Cookie and analytics tooling will be specified once it has been definitively established.',
-            'Hosting and infrastructure providers are engaged contractually where required.',
+            'Browser storage for functional language preferences on the public site',
+            'Website and mail infrastructure for contact processing and misuse reduction',
+            'Hosting and infrastructure providers are engaged contractually where required',
           ],
         },
         {
           id: 'preferences',
           title: '5. Managing preferences',
           paragraphs: [
-            'Where a cookie banner, preference centre or similar setting is available, choices can be managed there. In addition, browsers often allow cookies to be blocked or deleted.',
-            'Disabling certain cookies may affect the functionality or user experience of the website.',
+            'The current public website does not offer a separate preference centre. Browser settings can still be used to block or remove cookies, local storage or similar browser data.',
+            'Disabling functional technologies may affect the functionality, language selection or user experience of the website.',
           ],
         },
         {

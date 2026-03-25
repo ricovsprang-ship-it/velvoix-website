@@ -15,18 +15,18 @@ interface Props {
 const { locale, content, footer, languagePaths } = Astro.props;
 const basePath = localeRootPaths[locale] ?? localeRootPaths.en;
 
-const navLabels: Record<Locale, { howItWorks: string; whyVelvoix: string; contact: string }> = {
-  nl: { howItWorks: 'Hoe het werkt', whyVelvoix: 'Waarom Velvoix', contact: 'Contact' },
-  en: { howItWorks: 'How it works', whyVelvoix: 'Why Velvoix', contact: 'Contact' },
-  de: { howItWorks: 'Wie es funktioniert', whyVelvoix: 'Warum Velvoix', contact: 'Kontakt' },
-  es: { howItWorks: 'Como funciona', whyVelvoix: 'Por que Velvoix', contact: 'Contacto' },
+const navLabels: Record<Locale, { home: string; howItWorks: string; whyVelvoix: string; pilot: string; contact: string }> = {
+  nl: { home: 'Home', howItWorks: 'Hoe het werkt', whyVelvoix: 'Waarom Velvoix', pilot: 'Pilot', contact: 'Contact' },
+  en: { home: 'Home', howItWorks: 'How it works', whyVelvoix: 'Why Velvoix', pilot: 'Pilot', contact: 'Contact' },
+  de: { home: 'Start', howItWorks: 'Wie es funktioniert', whyVelvoix: 'Warum Velvoix', pilot: 'Pilot', contact: 'Kontakt' },
+  es: { home: 'Inicio', howItWorks: 'Como funciona', whyVelvoix: 'Por que Velvoix', pilot: 'Piloto', contact: 'Contacto' },
 };
 
 const nav: NavItem[] = [
-  { label: 'Home', href: `${basePath}#home` },
+  { label: navLabels[locale].home, href: `${basePath}#home` },
   { label: navLabels[locale].howItWorks, href: `${basePath}#how-it-works` },
   { label: navLabels[locale].whyVelvoix, href: `${basePath}#why-velvoix` },
-  { label: 'Pilot', href: `${basePath}#pilot` },
+  { label: navLabels[locale].pilot, href: `${basePath}#pilot` },
   { label: navLabels[locale].contact, href: `${basePath}#contact` },
 ];
 ---
@@ -39,8 +39,8 @@ const nav: NavItem[] = [
       <div class="section-shell py-14 md:py-18">
         <div class="max-w-[50rem]">
           <p class="eyebrow">{content.eyebrow}</p>
-          <h1 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">{content.title}</h1>
-          <p class="mt-6 max-w-[46rem] text-lg leading-8 text-slate-600">{content.intro}</p>
+          <h1 class="mt-4 max-w-[18ch] text-4xl font-extrabold tracking-tight text-slate-950 [text-wrap:balance] md:text-5xl">{content.title}</h1>
+          <p class="mt-6 max-w-[46rem] text-lg leading-8 text-slate-600 [text-wrap:pretty]">{content.intro}</p>
           <p class="mt-5 text-sm font-medium text-slate-500">
             {content.updatedLabel}: <span class="text-slate-700">{content.lastUpdated}</span>
           </p>
@@ -70,7 +70,7 @@ const nav: NavItem[] = [
           <div class="space-y-10">
             {content.sections.map((section) => (
               <section id={section.id} class="scroll-mt-28 border-t border-slate-200/75 pt-10 first:border-t-0 first:pt-0">
-                <h2 class="text-2xl font-bold tracking-tight text-slate-950 md:text-[1.9rem]">{section.title}</h2>
+                <h2 class="max-w-[24ch] text-2xl font-bold tracking-tight text-slate-950 [text-wrap:balance] md:text-[1.9rem]">{section.title}</h2>
                 <div class="mt-5 space-y-4">
                   {section.paragraphs.map((paragraph) => (
                     <p class="text-[1rem] leading-8 text-slate-600">{paragraph}</p>
