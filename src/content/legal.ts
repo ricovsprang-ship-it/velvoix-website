@@ -33,6 +33,11 @@ export interface LegalLocaleContent {
 
 type LegalBaseLocale = 'nl' | 'en';
 
+type LocalizedLegalSectionConfig = {
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
 type LocalizedLegalPageConfig = {
   eyebrow: string;
   title: string;
@@ -42,6 +47,7 @@ type LocalizedLegalPageConfig = {
   tocLabel: string;
   meta: LegalMetaContent;
   sectionTitles: Record<string, string>;
+  sections?: Record<string, LocalizedLegalSectionConfig>;
 };
 
 function localizeLegalPage(base: LegalPageContent, config: LocalizedLegalPageConfig): LegalPageContent {
@@ -54,10 +60,17 @@ function localizeLegalPage(base: LegalPageContent, config: LocalizedLegalPageCon
     lastUpdated: config.lastUpdated,
     tocLabel: config.tocLabel,
     meta: config.meta,
-    sections: base.sections.map((section) => ({
-      ...section,
-      title: config.sectionTitles[section.id] ?? section.title,
-    })),
+    sections: base.sections.map((section) => {
+      const sectionConfig = config.sections?.[section.id];
+      const bullets = sectionConfig?.bullets ?? section.bullets;
+
+      return {
+        ...section,
+        title: config.sectionTitles[section.id] ?? section.title,
+        paragraphs: sectionConfig?.paragraphs ?? section.paragraphs,
+        ...(bullets ? { bullets } : {}),
+      };
+    }),
   };
 }
 
@@ -964,8 +977,8 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     eyebrow: 'Rechtliche Hinweise',
     title: 'Datenschutzerklärung',
     intro:
-      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Datenschutzhinweise wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
-    updatedLabel: 'Aktualisiert am',
+      'Diese Datenschutzerklärung erläutert, wie Velvoix personenbezogene Daten im Zusammenhang mit der Website, Kontaktanfragen, Pilotprüfungen, Kooperationen und der Nutzung von Velvoix-bezogenen Diensten oder Plattformen verarbeitet.',
+    updatedLabel: 'Zuletzt aktualisiert',
     lastUpdated: '24. März 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
@@ -993,13 +1006,172 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: '14. Änderungen dieser Datenschutzerklärung',
       contact: '15. Kontakt',
     },
+    sections: {
+      'who-we-are': {
+        paragraphs: [
+          'Velvoix Holding B.V., handelnd unter dem Namen Velvoix, ist grundsätzlich Verantwortliche für die personenbezogenen Daten, auf die sich diese Datenschutzerklärung bezieht.',
+          'Velvoix ist unter founder@velvoix.com erreichbar; für datenschutzbezogene Fragen kann support@velvoix.com genutzt werden.',
+        ],
+        bullets: [
+          'Rechtliche Einheit: Velvoix Holding B.V.',
+          'Handelsname: Velvoix',
+          'Postleitzahl / Ort / Land: 2313 NS, Leiden, The Netherlands',
+          'Allgemeiner Kontakt: founder@velvoix.com',
+          'Datenschutzkontakt: support@velvoix.com',
+          'Telefonnummer: 0031610222775',
+        ],
+      },
+      scope: {
+        paragraphs: [
+          'Diese Datenschutzerklärung gilt für Besucherinnen und Besucher der Website, Personen, die Velvoix kontaktieren, Personen, die einen Piloten oder eine Zusammenarbeit prüfen, sowie Vertreterinnen und Vertreter von Pflegeorganisationen, Partnern oder anderen geschäftlichen Beziehungen.',
+          'Soweit relevant gilt sie auch für Nutzerinnen und Nutzer von Demos, Piloten oder geschäftlichen Velvoix-Umgebungen, sofern dafür keine speziellere Datenschutzregelung, Auftragsverarbeitungsvereinbarung oder Vertragsdokumentation gilt.',
+        ],
+        bullets: [
+          'Besucherinnen und Besucher der Website',
+          'Personen, die Kontaktformulare absenden',
+          'Pilot- und Kooperationskontakte',
+          'Vertreterinnen und Vertreter von Pflegeorganisationen und Partnern',
+          'Nutzerinnen und Nutzer von Demos, Piloten oder geschäftlichen Umgebungen, soweit anwendbar',
+        ],
+      },
+      'data-we-may-process': {
+        paragraphs: [
+          'Je nach Beziehung zu Velvoix können wir personenbezogene Daten wie Name, Rolle, Organisation, E-Mail-Adresse, Telefonnummer, Nachrichteninhalt, Kommunikationshistorie, Website- und Gerätedaten, Protokolldaten sowie Daten verarbeiten, die für Accountverwaltung, Demos, Piloten oder Projektkoordination erforderlich sind.',
+          'Die Website und allgemeinen Kontaktwege von Velvoix sind nicht dafür vorgesehen, unnötige sensible Patientendaten, medizinische Daten oder andere besondere Kategorien personenbezogener Daten zu übermitteln. Sofern dies nicht ausdrücklich vereinbart und angemessen abgesichert wurde, sollten solche Daten nicht über allgemeine Website-Formulare oder allgemeine Kontaktkanäle eingereicht werden.',
+        ],
+        bullets: [
+          'Name und Kontaktdaten',
+          'Rolle, Organisation und geschäftlicher Kontext',
+          'E-Mails, Nachrichten und Kommunikationshistorie',
+          'IP-Adresse, Browserdaten, Gerätedaten und Protokolldaten',
+          'Nutzungsdaten der Website, Demo- oder Pilotumgebung',
+          'Daten, die für Accountverwaltung, Projektkoordination oder Pilotplanung erforderlich sind',
+          'Daten, die von Organisationen oder Nutzerinnen und Nutzern direkt bereitgestellt werden',
+        ],
+      },
+      purposes: {
+        paragraphs: [
+          'Velvoix nutzt personenbezogene Daten für geschäftliche und operative Zwecke, die zur Website, zu Piloten, Kooperationen und zu Velvoix-bezogenen Diensten passen.',
+        ],
+        bullets: [
+          'Beantwortung von Kontaktanfragen und Informationsersuchen',
+          'Planung, Vorbereitung und Nachverfolgung von Pilotgesprächen',
+          'Bewertung und Besprechung von Partnerschaften und Kooperationsmöglichkeiten',
+          'Bearbeitung von Kunden-, Implementierungs- und Partnerkommunikation',
+          'Verwaltung von Accounts, Demos, Piloten oder geschäftlichen Umgebungen',
+          'Verbesserung der Website, der Dienste, der Performance und der Sicherheit',
+          'Erfüllung gesetzlicher Pflichten und Compliance-Anforderungen',
+          'Schutz vor Missbrauch, Sicherheitsvorfällen oder unbefugter Nutzung',
+        ],
+      },
+      'legal-bases': {
+        paragraphs: [
+          'Die anwendbare Rechtsgrundlage kann je nach Verarbeitungszweck unterschiedlich sein. Velvoix kann personenbezogene Daten unter anderem auf Grundlage einer Einwilligung, zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen, auf Grundlage berechtigter Interessen oder zur Erfüllung einer gesetzlichen Verpflichtung verarbeiten.',
+          'Soweit die Einwilligung die Rechtsgrundlage ist, kann sie grundsätzlich widerrufen werden. Soweit die Verarbeitung für vertragliche oder vorvertragliche Zwecke erforderlich ist, können bestimmte Anfragen, Piloten oder Dienste ohne die betreffenden Daten möglicherweise nicht durchgeführt werden.',
+        ],
+      },
+      cookies: {
+        paragraphs: [
+          'Velvoix nutzt auf der öffentlichen Website funktionale Browsertechnologien, um den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit zu unterstützen.',
+          'Zusätzliche Analytik wird nur eingesetzt, wenn sie tatsächlich eingerichtet, rechtlich passend und in dieser Erklärung beschrieben ist.',
+        ],
+        bullets: [
+          'Funktionale Technologien für Kernbetrieb, Sicherheit und Sprachpräferenz',
+          'Technologien im Zusammenhang mit Kontaktformularen, Mailverarbeitung und Missbrauchsprävention',
+          'Analytik nur dann, wenn sie tatsächlich live ist und in dieser Erklärung beschrieben wird',
+        ],
+      },
+      sharing: {
+        paragraphs: [
+          'Velvoix kann personenbezogene Daten an Dienstleister oder Parteien weitergeben, die für Hosting, Infrastruktur, Websiteverwaltung, Kommunikation, CRM, Support, Implementierung oder Zusammenarbeit erforderlich sind, soweit dies für den jeweiligen Zweck notwendig ist.',
+          'Velvoix verkauft keine personenbezogenen Daten. Soweit relevant, kann eine Übersicht über Subverarbeiter oder beteiligte Dienstleister auf Anfrage bereitgestellt werden.',
+        ],
+        bullets: [
+          'Hosting- und Infrastrukturanbieter',
+          'Analytics- und Website-Anbieter',
+          'E-Mail- und Kommunikationsdienstleister',
+          'CRM-, Support- oder Kollaborationstools',
+          'Implementierungs- oder Kooperationspartner, soweit relevant',
+          'Zuständige Behörden, wenn dies gesetzlich erforderlich ist',
+        ],
+      },
+      'international-transfers': {
+        paragraphs: [
+          'Wenn personenbezogene Daten außerhalb des Europäischen Wirtschaftsraums verarbeitet oder dort zugänglich gemacht werden, geschieht dies nur mit angemessenen Schutzmaßnahmen, etwa auf Grundlage eines Angemessenheitsbeschlusses oder geeigneter vertraglicher Maßnahmen.',
+          'Velvoix prüft je Verarbeitungstätigkeit, ob zusätzliche organisatorische oder vertragliche Schutzmaßnahmen erforderlich sind, um ein angemessenes Schutzniveau aufrechtzuerhalten.',
+        ],
+      },
+      retention: {
+        paragraphs: [
+          'Velvoix speichert personenbezogene Daten nicht länger als für den Zweck erforderlich, für den sie erhoben wurden, es sei denn, eine längere Aufbewahrungsfrist ist gesetzlich vorgeschrieben oder nachweisbar für ein berechtigtes Interesse wie Sicherheit, Vertragsmanagement oder Streitbeilegung erforderlich.',
+          'Aufbewahrungsfristen können je nach Datenkategorie unterschiedlich sein, etwa bei Kontaktanfragen, Pilot- oder Kooperationskommunikation, Accountdaten, Nutzungsprotokollen oder gesetzlichen Aufbewahrungspflichten. Soweit weitere Details erforderlich sind, dokumentiert Velvoix dies in Vertragsunterlagen oder Projektvereinbarungen.',
+        ],
+        bullets: [
+          'Kontakt- und Informationsanfragen: solange dies für Nachverfolgung und angemessene Archivierung erforderlich ist',
+          'Pilot- und Kooperationskommunikation: solange dies für Prüfung, Durchführung und Auswertung erforderlich ist',
+          'Accounts und Nutzungsprotokolle: solange dies für Verwaltung, Sicherheit und Fehlersuche erforderlich ist',
+          'Daten mit gesetzlichen Aufbewahrungspflichten: entsprechend der jeweils anwendbaren Pflicht',
+        ],
+      },
+      security: {
+        paragraphs: [
+          'Velvoix ergreift geeignete technische und organisatorische Maßnahmen zum Schutz personenbezogener Daten. Dazu können Zugangsbeschränkungen, Protokollierung, sichere Verbindungen, rollenbasierter Zugriff sowie weitere Maßnahmen gehören, die zur Phase, Art und zum Kontext der Dienste passen.',
+          'Da keine Umgebung absolut sicher gemacht werden kann, sollten auch Organisationen und Nutzerinnen und Nutzer mit Zugangsdaten, Kommunikationskanälen und dem Teilen von Informationen sorgfältig umgehen.',
+        ],
+      },
+      rights: {
+        paragraphs: [
+          'Je nach anwendbarem Recht können betroffene Personen Rechte in Bezug auf ihre personenbezogenen Daten haben. Velvoix behandelt solche Anfragen sorgfältig und innerhalb der geltenden gesetzlichen Fristen.',
+        ],
+        bullets: [
+          'Recht auf Information über die Verarbeitung',
+          'Recht auf Auskunft',
+          'Recht auf Berichtigung',
+          'Recht auf Löschung, soweit anwendbar',
+          'Recht auf Einschränkung der Verarbeitung',
+          'Recht auf Datenübertragbarkeit',
+          'Recht auf Widerspruch gegen bestimmte Verarbeitungen',
+          'Recht auf Widerruf einer Einwilligung, soweit die Einwilligung die Rechtsgrundlage ist',
+          'Recht auf Beschwerde bei der niederländischen Datenschutzbehörde',
+        ],
+      },
+      requests: {
+        paragraphs: [
+          'Eine datenschutzbezogene Anfrage kann an support@velvoix.com gesendet werden. Zur Vermeidung von Missbrauch kann Velvoix zusätzliche Informationen oder eine Verifizierung verlangen, bevor eine Anfrage inhaltlich bearbeitet wird.',
+          'Velvoix bearbeitet Anfragen im Einklang mit dem anwendbaren Recht und weist darauf hin, wenn zusätzlicher Kontext, Verifizierung oder vertragliche Abstimmung erforderlich ist.',
+        ],
+      },
+      'external-links': {
+        paragraphs: [
+          'Die Velvoix-Website kann Links zu externen Websites oder Diensten enthalten. Für diese externen Umgebungen gelten ihre eigenen Datenschutz- und Cookie-Richtlinien. Velvoix ist nicht für Inhalte oder Verarbeitungen Dritter verantwortlich, sofern das Gesetz nichts anderes zwingend vorschreibt.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix kann diese Datenschutzerklärung aktualisieren, wenn sich die Website, die Dienste, die Rechtslage oder Verarbeitungstätigkeiten ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
+          'Zuletzt aktualisiert: 24. März 2026.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Bei Fragen zu dieser Datenschutzerklärung oder zur Verarbeitung personenbezogener Daten durch Velvoix können die nachstehenden Kontaktdaten verwendet werden.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          '2313 NS, Leiden, The Netherlands',
+          'founder@velvoix.com',
+          'support@velvoix.com',
+          '0031610222775',
+        ],
+      },
+    },
   },
   cookies: {
     eyebrow: 'Rechtliche Hinweise',
     title: 'Cookie-Richtlinie',
     intro:
-      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Cookie-Richtlinie wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
-    updatedLabel: 'Aktualisiert am',
+      'Diese Cookie-Richtlinie erläutert, wie Velvoix Cookies und ähnliche Technologien auf der Website verwendet, welche Kategorien eingesetzt werden können und wie Präferenzen verwaltet werden können.',
+    updatedLabel: 'Zuletzt aktualisiert',
     lastUpdated: '24. März 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
@@ -1019,13 +1191,75 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: '6. Änderungen dieser Cookie-Richtlinie',
       contact: '7. Kontakt',
     },
+    sections: {
+      'what-are-cookies': {
+        paragraphs: [
+          'Cookies sind kleine Textdateien, die über eine Website auf einem Gerät gespeichert werden können. Ähnliche Technologien können eingesetzt werden, um Präferenzen, Sitzungen, Sicherheit oder Nutzungseinblicke zu unterstützen.',
+          'Velvoix verwendet diese Technologien ausschließlich für Zwecke, die zu einer professionellen, ruhigen und verlässlichen Website-Erfahrung passen.',
+        ],
+      },
+      categories: {
+        paragraphs: [
+          'Die öffentliche Website stützt sich derzeit in erster Linie auf funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Zusätzliche Analytik oder andere Kategorien werden nur dann ergänzt, wenn sie tatsächlich live und angemessen eingerichtet sind.',
+        ],
+        bullets: [
+          'Funktionale Technologien für Kernbetrieb, Sicherheit und Präferenzen',
+          'Browserspeicher für die Sprachauswahl und ähnliche funktionale Präferenzen',
+          'Analytik nur dann, wenn sie ausdrücklich aktiviert und in dieser Richtlinie beschrieben ist',
+        ],
+      },
+      purposes: {
+        paragraphs: [
+          'Velvoix verwendet diese Technologien, um die Website funktionsfähig zu halten, Sprachwahlen zu speichern, Formulare nutzbar zu machen, Missbrauch zu verringern und, soweit relevant, Leistung oder Nutzung besser zu verstehen.',
+        ],
+        bullets: [
+          'Website-Funktionalität und Sitzungsverwaltung',
+          'Sprachpräferenz und ähnliche funktionale Einstellungen',
+          'Sicherheit und Missbrauchsprävention',
+          'Leistungs- und Fehleranalyse',
+          'Nutzungseinblicke zur Verbesserung der Website',
+        ],
+      },
+      tooling: {
+        paragraphs: [
+          'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz sowie die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung. Zusätzliche Analytik- oder Consent-Tools werden erst benannt, wenn sie tatsächlich live sind.',
+        ],
+        bullets: [
+          'Browserspeicher für funktionale Sprachpräferenzen auf der öffentlichen Website',
+          'Website- und Mail-Infrastruktur für Kontaktverarbeitung und Missbrauchsreduktion',
+          'Hosting- und Infrastrukturanbieter werden, soweit erforderlich, vertraglich eingebunden',
+        ],
+      },
+      preferences: {
+        paragraphs: [
+          'Die aktuelle öffentliche Website bietet kein separates Präferenzzentrum. Browsereinstellungen können dennoch verwendet werden, um Cookies, Local Storage oder ähnliche Browserdaten zu blockieren oder zu löschen.',
+          'Die Deaktivierung funktionaler Technologien kann die Funktionalität, die Sprachauswahl oder die Nutzererfahrung der Website beeinträchtigen.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix kann diese Cookie-Richtlinie aktualisieren, wenn sich die Website, das Tooling oder die rechtlichen Anforderungen ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
+          'Zuletzt aktualisiert: 24. März 2026.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Bei Fragen zu dieser Cookie-Richtlinie oder zur Verarbeitung websitebezogener Daten können die nachstehenden Kontaktdaten verwendet werden.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          'founder@velvoix.com',
+          'support@velvoix.com',
+        ],
+      },
+    },
   },
   terms: {
     eyebrow: 'Rechtliche Hinweise',
     title: 'Allgemeine Geschäftsbedingungen',
     intro:
-      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Bedingungen wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
-    updatedLabel: 'Aktualisiert am',
+      'Diese allgemeinen Geschäftsbedingungen beschreiben in groben Zügen, unter welchen Bedingungen die Velvoix-Website genutzt wird und wie geschäftliche Interaktionen, Demos, Piloten und verwandte Vorhaben rund um Velvoix eingeordnet werden.',
+    updatedLabel: 'Zuletzt aktualisiert',
     lastUpdated: '24. März 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
@@ -1052,6 +1286,100 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       law: '13. Anwendbares Recht und zuständiges Gericht',
       contact: '14. Kontakt',
     },
+    sections: {
+      scope: {
+        paragraphs: [
+          'Velvoix Holding B.V., handelnd unter dem Namen Velvoix, verwendet diese Bedingungen für die Nutzung der Website und, soweit relevant, für Informationsanfragen, Demos, Pilotprüfungen und andere geschäftliche Interaktionen rund um Velvoix.',
+          'Werden gesonderte Angebote, Verträge, Pilotvereinbarungen, Leistungsvereinbarungen oder Auftragsverarbeitungsvereinbarungen geschlossen, gehen diese Dokumente vor, soweit dies ausdrücklich vereinbart wurde.',
+        ],
+      },
+      description: {
+        paragraphs: [
+          'Velvoix bietet Technologien und Dienste für Pflegesignale, Triage, Dashboard-Workflows, Management, Geräteeingaben und damit verbundene operative Unterstützung in Gesundheits- oder gesundheitsnahen Umgebungen an.',
+          'Die Website dient in erster Linie der Information und geschäftlichen Orientierung. Eine tatsächliche Bereitstellung, Implementierung oder Nutzung von Velvoix kann von gesonderten Vereinbarungen, technischen Voraussetzungen, Sicherheitsabsprachen und organisatorischen Rahmenbedingungen abhängen.',
+        ],
+      },
+      'website-use': {
+        paragraphs: [
+          'Die Website darf nur rechtmäßig, sorgfältig und im Einklang mit diesen Bedingungen genutzt werden. Es ist nicht zulässig, die Website in einer Weise zu verwenden, die den Betrieb, die Verfügbarkeit, die Sicherheit oder die Integrität von Velvoix oder Dritten beeinträchtigt.',
+        ],
+        bullets: [
+          'Kein Missbrauch und keine unbefugte Belastung der Website',
+          'Keine Versuche, den Betrieb zu stören, Schutzmaßnahmen zu umgehen oder unbefugten Zugriff zu erlangen',
+          'Kein Scraping, keine Extraktion und keine automatisierte Vervielfältigung, soweit dies nicht erlaubt ist',
+          'Keine Verbreitung schädlichen Codes oder irreführender Inhalte',
+        ],
+      },
+      availability: {
+        paragraphs: [
+          'Velvoix bemüht sich, auf der Website aktuelle und sorgfältige Informationen bereitzustellen, garantiert jedoch nicht, dass sämtliche Inhalte jederzeit vollständig, fehlerfrei oder unterbrechungsfrei verfügbar sind.',
+          'Die Website, Texte, Beispiele, Demos, Piloten, Vorschauen und Produktbeschreibungen können von Zeit zu Zeit geändert, erweitert, eingeschränkt oder entfernt werden.',
+        ],
+      },
+      'no-medical-advice': {
+        paragraphs: [
+          'Velvoix ist kein Ersatz für professionelle pflegerische Beurteilung, klinische Entscheidungsfindung oder organisatorische Verantwortung in der Versorgungspraxis. Informationen auf der Website und Produktbeispiele sind nicht als medizinischer Rat gedacht.',
+          'Etwaige Outputs, Beispiele oder Produktdemonstrationen sollten stets nur in einem passenden fachlichen, organisatorischen und vertraglichen Kontext verwendet werden und von zuständigen Fachpersonen und Organisationen bewertet werden.',
+        ],
+      },
+      'demos-pilots': {
+        paragraphs: [
+          'Demo- und Pilotumgebungen können eine begrenzte, sich entwickelnde oder kontextabhängige Version von Velvoix darstellen. Funktionalität, Umfang und Verfügbarkeit können sich von einer späteren Produktionsumgebung unterscheiden.',
+          'Verantwortlichkeiten, Sicherheit, Support, Evaluation, Umfang, Abnahme und eine etwaige produktive Nutzung werden, soweit relevant, in gesonderten Vereinbarungen oder Regelungen dokumentiert.',
+        ],
+      },
+      ip: {
+        paragraphs: [
+          'Sämtliche Rechte an der Website, der Marke, Texten, dem Design, der Software, den Dashboards, Konzepten, der Dokumentation und sonstigen Materialien liegen bei Velvoix oder dessen Lizenzgebern, sofern nicht ausdrücklich etwas anderes angegeben ist.',
+          'Die Nutzung ist auf zulässige geschäftliche Orientierung und, soweit anwendbar, vertraglich vereinbarte Nutzung beschränkt. Unbefugtes Kopieren, Offenlegen, Reverse Engineering oder ableitende Verwertung ist im gesetzlich zulässigen Umfang nicht gestattet.',
+        ],
+      },
+      confidentiality: {
+        paragraphs: [
+          'Informationen, die als vertraulich bereitgestellt werden oder vernünftigerweise als vertraulich verstanden werden müssen, sind vertraulich zu behandeln. Dies gilt insbesondere für Informationen aus Pilot-, Demo- oder Kooperationsgesprächen.',
+        ],
+      },
+      liability: {
+        paragraphs: [
+          'Die Website wird zu Informationszwecken auf einer As-is- und As-available-Basis bereitgestellt. Velvoix beschränkt die Haftung im gesetzlich zulässigen Umfang.',
+          'Soweit rechtlich zulässig, haftet Velvoix nicht für indirekte Schäden, Folgeschäden, entgangenen Gewinn, entgangene Chancen, Reputationsschäden oder Schäden infolge der Nutzung der Website, es sei denn, es liegt Vorsatz, bewusste Fahrlässigkeit oder eine gesetzlich nicht ausschließbare Haftung vor.',
+          'Nichts in diesen Bedingungen schließt eine Haftung aus oder beschränkt sie, soweit ein solcher Ausschluss oder eine solche Beschränkung nach anwendbarem Recht nicht zulässig ist.',
+        ],
+      },
+      'third-parties': {
+        paragraphs: [
+          'Die Website kann auf Websites, Dienste oder Materialien Dritter verweisen. Für diese externen Umgebungen gelten ihre eigenen Bedingungen, Richtlinien und Verfügbarkeiten.',
+          'Velvoix ist nicht für Inhalt, Richtigkeit oder Betrieb externer Websites oder Dienste verantwortlich, sofern zwingendes Recht nichts anderes verlangt.',
+        ],
+      },
+      privacy: {
+        paragraphs: [
+          'Für die Verarbeitung personenbezogener Daten verweist Velvoix auf die Datenschutzerklärung auf der Website. Soweit zusätzliche vertragliche Datenschutzregelungen erforderlich sind, können diese gesondert dokumentiert werden.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix kann diese Bedingungen von Zeit zu Zeit ändern. Die jeweils aktuelle Version wird auf der Website veröffentlicht und mit einem Aktualisierungsdatum versehen.',
+          'Zuletzt aktualisiert: 24. März 2026.',
+        ],
+      },
+      law: {
+        paragraphs: [
+          'Für diese Bedingungen gilt niederländisches Recht. Streitigkeiten werden dem zuständigen Gericht in den Niederlanden vorgelegt, sofern zwingendes Recht nichts anderes verlangt.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Bei Fragen zu diesen Bedingungen oder zu geschäftlichen Interaktionen rund um Velvoix können die nachstehenden Kontaktdaten genutzt werden.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          '2313 NS, Leiden, The Netherlands',
+          'founder@velvoix.com',
+          '0031610222775',
+        ],
+      },
+    },
   },
 });
 
@@ -1060,7 +1388,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     eyebrow: 'Información legal',
     title: 'Política de privacidad',
     intro:
-      'Este resumen en español sirve como orientación. La versión detallada de este texto legal se ofrece actualmente en inglés debajo de este resumen.',
+      'Esta política de privacidad explica cómo Velvoix trata datos personales en relación con el sitio web, las solicitudes de contacto, las exploraciones piloto, las colaboraciones y el uso de servicios o plataformas relacionados con Velvoix.',
     updatedLabel: 'Última actualización',
     lastUpdated: '24 de marzo de 2026',
     tocLabel: 'En esta página',
@@ -1089,12 +1417,171 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: '14. Cambios en esta política de privacidad',
       contact: '15. Contacto',
     },
+    sections: {
+      'who-we-are': {
+        paragraphs: [
+          'Velvoix Holding B.V., que opera bajo el nombre Velvoix, es en principio el responsable del tratamiento de los datos personales a los que se refiere esta política de privacidad.',
+          'Puede contactarse con Velvoix a través de founder@velvoix.com y, para cuestiones relacionadas con la privacidad, a través de support@velvoix.com.',
+        ],
+        bullets: [
+          'Entidad legal: Velvoix Holding B.V.',
+          'Nombre comercial: Velvoix',
+          'Código postal / ciudad / país: 2313 NS, Leiden, The Netherlands',
+          'Contacto general: founder@velvoix.com',
+          'Contacto de privacidad: support@velvoix.com',
+          'Número de teléfono: 0031610222775',
+        ],
+      },
+      scope: {
+        paragraphs: [
+          'Esta política de privacidad se aplica a visitantes del sitio web, personas que contactan con Velvoix, personas que exploran un piloto o una colaboración, y representantes de organizaciones asistenciales, socios u otras relaciones comerciales.',
+          'Cuando corresponda, también se aplica a usuarios de demos, pilotos o entornos empresariales de Velvoix, salvo que exista un aviso de privacidad, un acuerdo de tratamiento o una documentación contractual más específica.',
+        ],
+        bullets: [
+          'Visitantes del sitio web',
+          'Personas que envían formularios de contacto',
+          'Contactos de piloto y colaboración',
+          'Representantes de organizaciones asistenciales y socios',
+          'Usuarios de demos, pilotos o entornos empresariales, cuando corresponda',
+        ],
+      },
+      'data-we-may-process': {
+        paragraphs: [
+          'Dependiendo de la relación con Velvoix, podemos tratar datos personales como nombre, función, organización, dirección de correo electrónico, número de teléfono, contenido de mensajes, historial de comunicación, datos del sitio web y del dispositivo, datos de registro y datos necesarios para la gestión de cuentas, demos, pilotos o coordinación de proyectos.',
+          'Las páginas del sitio web de Velvoix y los flujos de contacto generales no están pensados para enviar datos sensibles de pacientes, datos médicos u otras categorías especiales de datos personales que no sean necesarios. Salvo acuerdo expreso y con las medidas de seguridad adecuadas, dichos datos no deben enviarse a través de formularios generales del sitio ni de canales de contacto generales.',
+        ],
+        bullets: [
+          'Nombre y datos de contacto',
+          'Función, organización y contexto comercial',
+          'Correos electrónicos, mensajes e historial de comunicación',
+          'Dirección IP, datos del navegador, datos del dispositivo y datos de registro',
+          'Datos de uso del sitio web, demo o piloto',
+          'Datos necesarios para la gestión de cuentas, la coordinación de proyectos o la planificación de pilotos',
+          'Datos facilitados directamente por organizaciones o usuarios',
+        ],
+      },
+      purposes: {
+        paragraphs: [
+          'Velvoix utiliza datos personales para fines empresariales y operativos acordes con el sitio web, los pilotos, las colaboraciones y los servicios relacionados con Velvoix.',
+        ],
+        bullets: [
+          'Responder a solicitudes de contacto y de información',
+          'Planificar, preparar y dar seguimiento a conversaciones de piloto',
+          'Evaluar y discutir asociaciones y oportunidades de colaboración',
+          'Gestionar la comunicación con clientes, implantaciones y socios',
+          'Gestionar cuentas, demos, pilotos o entornos empresariales',
+          'Mejorar el sitio web, los servicios, el rendimiento y la seguridad',
+          'Cumplir obligaciones legales y solicitudes de compliance',
+          'Proteger frente a usos indebidos, incidentes de seguridad o uso no autorizado',
+        ],
+      },
+      'legal-bases': {
+        paragraphs: [
+          'La base jurídica aplicable puede variar según la finalidad del tratamiento. Velvoix puede tratar datos personales sobre la base del consentimiento, cuando proceda, para la ejecución de un contrato o de medidas precontractuales, sobre la base de intereses legítimos o porque sea necesario para cumplir una obligación legal.',
+          'Cuando el consentimiento sea la base jurídica, en principio puede retirarse. Cuando el tratamiento sea necesario por razones contractuales o precontractuales, determinadas solicitudes, pilotos o servicios podrían no ser posibles sin los datos correspondientes.',
+        ],
+      },
+      cookies: {
+        paragraphs: [
+          'Velvoix utiliza tecnologías funcionales del navegador en el sitio público para apoyar el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad.',
+          'La medición analítica adicional solo se introduce cuando está realmente configurada, es jurídicamente adecuada y se refleja en esta política.',
+        ],
+        bullets: [
+          'Tecnologías funcionales para funcionamiento básico, seguridad y preferencia de idioma',
+          'Tecnologías relacionadas con formularios de contacto, tratamiento de correo y prevención de abusos',
+          'Analítica solo cuando está realmente activa y descrita en esta política',
+        ],
+      },
+      sharing: {
+        paragraphs: [
+          'Velvoix puede compartir datos personales con proveedores de servicios o con partes necesarias para hosting, infraestructura, gestión del sitio web, comunicación, CRM, soporte, implantación o colaboración, cuando ello sea necesario para la finalidad correspondiente.',
+          'Velvoix no vende datos personales. Cuando sea pertinente, puede facilitarse previa solicitud una lista de subencargados o proveedores de servicios implicados.',
+        ],
+        bullets: [
+          'Proveedores de hosting e infraestructura',
+          'Proveedores de analítica y del sitio web',
+          'Proveedores de correo electrónico y comunicación',
+          'Herramientas de CRM, soporte o colaboración',
+          'Socios de implantación o colaboración, cuando corresponda',
+          'Autoridades competentes cuando la ley lo exija',
+        ],
+      },
+      'international-transfers': {
+        paragraphs: [
+          'Si los datos personales se tratan fuera del Espacio Económico Europeo o se hacen accesibles allí, ello solo ocurrirá con garantías adecuadas, como una decisión de adecuación o medidas contractuales apropiadas.',
+          'Velvoix evalúa para cada actividad de tratamiento si son necesarias salvaguardas organizativas o contractuales adicionales para mantener un nivel de protección adecuado.',
+        ],
+      },
+      retention: {
+        paragraphs: [
+          'Velvoix no conserva los datos personales más tiempo del necesario para la finalidad para la que fueron recopilados, salvo que un plazo mayor sea exigido por ley o resulte demostrablemente necesario para un interés legítimo como la seguridad, la gestión contractual o la gestión de conflictos.',
+          'Los plazos de conservación pueden variar según la categoría de datos, por ejemplo para solicitudes de contacto, comunicación de piloto o colaboración, datos de cuenta, registros de uso u obligaciones legales de conservación. Cuando se necesite mayor detalle, Velvoix lo documentará en la documentación contractual o en acuerdos de proyecto.',
+        ],
+        bullets: [
+          'Solicitudes de contacto e información: mientras sea necesario para el seguimiento y un archivo razonable',
+          'Comunicación de piloto y colaboración: mientras sea necesario para la exploración, ejecución y evaluación',
+          'Cuentas y registros de uso: mientras sea necesario para la gestión, la seguridad y la resolución de incidencias',
+          'Datos sujetos a obligaciones legales de conservación: conforme al requisito aplicable',
+        ],
+      },
+      security: {
+        paragraphs: [
+          'Velvoix aplica medidas técnicas y organizativas adecuadas para proteger los datos personales. Estas pueden incluir restricción de acceso, registro, conexiones seguras, control de acceso basado en roles cuando corresponda y otras medidas adecuadas para la fase, la naturaleza y el contexto de los servicios.',
+          'Dado que ningún entorno puede hacerse absolutamente seguro, las organizaciones y los usuarios también deben manejar con el debido cuidado las credenciales, los canales de comunicación y el intercambio de información.',
+        ],
+      },
+      rights: {
+        paragraphs: [
+          'Dependiendo de la legislación aplicable, las personas pueden tener derechos respecto de sus datos personales. Velvoix tramita dichas solicitudes con cuidado y dentro de los plazos legales aplicables.',
+        ],
+        bullets: [
+          'Derecho a recibir información sobre el tratamiento',
+          'Derecho de acceso',
+          'Derecho de rectificación',
+          'Derecho de supresión, cuando corresponda',
+          'Derecho a la limitación del tratamiento',
+          'Derecho a la portabilidad de los datos',
+          'Derecho a oponerse a determinadas actividades de tratamiento',
+          'Derecho a retirar el consentimiento cuando el consentimiento sea la base jurídica',
+          'Derecho a presentar una reclamación ante la Autoridad Holandesa de Protección de Datos',
+        ],
+      },
+      requests: {
+        paragraphs: [
+          'Puede enviarse una solicitud relacionada con la privacidad a support@velvoix.com. Para evitar abusos, Velvoix puede pedir información adicional o verificación antes de tramitar el fondo de la solicitud.',
+          'Velvoix gestiona las solicitudes de acuerdo con la legislación aplicable e indicará cuando se requiera contexto adicional, verificación o alineación contractual.',
+        ],
+      },
+      'external-links': {
+        paragraphs: [
+          'El sitio web de Velvoix puede contener enlaces a sitios o servicios externos. Esos entornos externos se rigen por sus propias políticas de privacidad y cookies. Velvoix no es responsable del contenido ni del tratamiento realizado por terceros, salvo que la ley disponga lo contrario.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix puede actualizar esta política de privacidad cuando cambien el sitio web, los servicios, la normativa o las actividades de tratamiento. La versión más reciente se publicará en esta página.',
+          'Última actualización: 24 de marzo de 2026.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Para preguntas sobre esta política de privacidad o sobre la forma en que Velvoix trata datos personales, pueden utilizarse los datos de contacto indicados a continuación.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          '2313 NS, Leiden, The Netherlands',
+          'founder@velvoix.com',
+          'support@velvoix.com',
+          '0031610222775',
+        ],
+      },
+    },
   },
   cookies: {
     eyebrow: 'Información legal',
     title: 'Política de cookies',
     intro:
-      'Este resumen en español sirve como orientación. La versión detallada de esta política de cookies se ofrece actualmente en inglés debajo de este resumen.',
+      'Esta política de cookies explica cómo Velvoix utiliza cookies y tecnologías similares en el sitio web, qué categorías pueden emplearse y cómo pueden gestionarse las preferencias.',
     updatedLabel: 'Última actualización',
     lastUpdated: '24 de marzo de 2026',
     tocLabel: 'En esta página',
@@ -1115,12 +1602,74 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: '6. Cambios en esta política de cookies',
       contact: '7. Contacto',
     },
+    sections: {
+      'what-are-cookies': {
+        paragraphs: [
+          'Las cookies son pequeños archivos de texto que pueden almacenarse en un dispositivo a través de un sitio web. Tecnologías similares pueden utilizarse para apoyar preferencias, sesiones, seguridad o información de uso.',
+          'Velvoix utiliza estas tecnologías solo para fines compatibles con una experiencia web profesional, serena y fiable.',
+        ],
+      },
+      categories: {
+        paragraphs: [
+          'El sitio público se basa actualmente principalmente en tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. La analítica adicional u otras categorías solo se añaden cuando están realmente activas y configuradas de forma adecuada.',
+        ],
+        bullets: [
+          'Tecnologías funcionales para funcionamiento básico, seguridad y preferencias',
+          'Almacenamiento del navegador para la elección de idioma y preferencias funcionales similares',
+          'Analítica solo cuando esté expresamente activada y descrita en esta política',
+        ],
+      },
+      purposes: {
+        paragraphs: [
+          'Velvoix utiliza estas tecnologías para mantener el sitio funcionando correctamente, conservar la elección de idioma, hacer utilizables los formularios, reducir el uso indebido y, cuando corresponda, comprender mejor el rendimiento o el uso.',
+        ],
+        bullets: [
+          'Funcionamiento del sitio web y gestión de sesión',
+          'Preferencia de idioma y ajustes funcionales similares',
+          'Seguridad y prevención de abusos',
+          'Análisis de rendimiento y errores',
+          'Información de uso para mejorar el sitio web',
+        ],
+      },
+      tooling: {
+        paragraphs: [
+          'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma y la infraestructura web y de correo de Velvoix para la gestión de contacto. Las herramientas adicionales de analítica o consentimiento solo se mencionarán cuando estén realmente activas.',
+        ],
+        bullets: [
+          'Almacenamiento del navegador para preferencias funcionales de idioma en el sitio público',
+          'Infraestructura web y de correo para el procesamiento de contacto y la reducción de abusos',
+          'Los proveedores de hosting e infraestructura se contratan cuando así se requiere',
+        ],
+      },
+      preferences: {
+        paragraphs: [
+          'El sitio público actual no ofrece un centro de preferencias independiente. Aun así, la configuración del navegador puede utilizarse para bloquear o eliminar cookies, almacenamiento local u otros datos similares del navegador.',
+          'Desactivar tecnologías funcionales puede afectar a la funcionalidad, la selección de idioma o la experiencia de uso del sitio web.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix puede actualizar esta política de cookies cuando cambien el sitio web, las herramientas o los requisitos legales. La versión más reciente se publicará en esta página.',
+          'Última actualización: 24 de marzo de 2026.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Para preguntas sobre esta política de cookies o sobre el tratamiento de datos relacionados con el sitio web, pueden utilizarse los datos de contacto indicados a continuación.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          'founder@velvoix.com',
+          'support@velvoix.com',
+        ],
+      },
+    },
   },
   terms: {
     eyebrow: 'Información legal',
     title: 'Términos y condiciones',
     intro:
-      'Este resumen en español sirve como orientación. La versión detallada de estos términos se ofrece actualmente en inglés debajo de este resumen.',
+      'Estos términos y condiciones describen a alto nivel las condiciones bajo las cuales se utiliza el sitio web de Velvoix y cómo se abordan las interacciones comerciales, demos, pilotos y trayectorias relacionadas con Velvoix.',
     updatedLabel: 'Última actualización',
     lastUpdated: '24 de marzo de 2026',
     tocLabel: 'En esta página',
@@ -1147,6 +1696,100 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: '12. Cambios en estos términos',
       law: '13. Ley aplicable y tribunal competente',
       contact: '14. Contacto',
+    },
+    sections: {
+      scope: {
+        paragraphs: [
+          'Velvoix Holding B.V., que opera bajo el nombre Velvoix, utiliza estos términos para el uso del sitio web y, cuando proceda, para solicitudes de información, demos, exploraciones piloto y otras interacciones comerciales alrededor de Velvoix.',
+          'Cuando se celebren presupuestos, contratos, acuerdos piloto, acuerdos de servicio o acuerdos de tratamiento separados, esos documentos prevalecerán cuando así se haya acordado expresamente.',
+        ],
+      },
+      description: {
+        paragraphs: [
+          'Velvoix ofrece tecnología y servicios orientados a señales asistenciales, triaje, workflow de dashboard, gestión, entrada desde dispositivos y soporte operativo relacionado dentro de entornos sanitarios o vinculados a la asistencia.',
+          'El sitio web está destinado principalmente a información y orientación comercial. Cualquier entrega, implantación o uso real de Velvoix puede depender de acuerdos separados, condiciones técnicas, medidas de seguridad y configuración organizativa.',
+        ],
+      },
+      'website-use': {
+        paragraphs: [
+          'El sitio web solo puede utilizarse de forma lícita, cuidadosa y conforme a estos términos. No está permitido utilizar el sitio de manera que perjudique el funcionamiento, la disponibilidad, la seguridad o la integridad de Velvoix o de terceros.',
+        ],
+        bullets: [
+          'Ningún uso indebido ni carga no autorizada sobre el sitio web',
+          'Ningún intento de interrumpir, eludir medidas o acceder sin autorización',
+          'Ningún scraping, extracción o copia automatizada cuando no esté permitido',
+          'Ninguna distribución de código dañino o contenido engañoso',
+        ],
+      },
+      availability: {
+        paragraphs: [
+          'Velvoix procura ofrecer información actual y cuidada en el sitio web, pero no garantiza que todo el contenido sea siempre completo, esté libre de errores o disponible sin interrupciones.',
+          'El sitio web, los textos, los ejemplos, las demos, los pilotos, las vistas previas y las descripciones de producto pueden modificarse, ampliarse, limitarse o retirarse periódicamente.',
+        ],
+      },
+      'no-medical-advice': {
+        paragraphs: [
+          'Velvoix no sustituye el juicio profesional asistencial, la toma de decisiones clínicas ni la responsabilidad organizativa en la práctica sanitaria. La información del sitio web y los ejemplos de producto no constituyen consejo médico.',
+          'Cualquier salida, ejemplo o demostración de producto debe utilizarse siempre dentro de un contexto profesional, organizativo y contractual adecuado, con valoración por parte de profesionales y organizaciones competentes.',
+        ],
+      },
+      'demos-pilots': {
+        paragraphs: [
+          'Los entornos de demo y piloto pueden presentar una versión limitada, evolutiva o dependiente del contexto de Velvoix. La funcionalidad, el alcance y la disponibilidad pueden diferir de un despliegue posterior en producción.',
+          'Las responsabilidades, la seguridad, el soporte, la evaluación, el alcance, la aceptación y cualquier uso en producción se documentarán, cuando corresponda, en acuerdos o disposiciones separadas.',
+        ],
+      },
+      ip: {
+        paragraphs: [
+          'Todos los derechos sobre el sitio web, la marca, los textos, el diseño, el software, los dashboards, los conceptos, la documentación y otros materiales pertenecen a Velvoix o a sus licenciantes, salvo que se indique expresamente lo contrario.',
+          'El uso se limita a la orientación comercial permitida y, cuando corresponda, al uso contractualmente acordado. No se permite copiar, divulgar, hacer ingeniería inversa o explotar derivados sin autorización, en la medida permitida por la ley.',
+        ],
+      },
+      confidentiality: {
+        paragraphs: [
+          'La información facilitada como confidencial, o que razonablemente deba entenderse como confidencial, debe tratarse como tal. Esto se aplica en particular a la información compartida en conversaciones de piloto, demo o colaboración.',
+        ],
+      },
+      liability: {
+        paragraphs: [
+          'El sitio web se ofrece con carácter informativo y sobre una base as-is y as-available. Velvoix limita su responsabilidad en la medida permitida por la ley.',
+          'En la medida legalmente permitida, Velvoix no es responsable de daños indirectos, daños consecuenciales, pérdida de beneficios, pérdida de oportunidades, daños reputacionales o daños derivados del uso del sitio web, salvo en caso de dolo, negligencia consciente o responsabilidad que no pueda excluirse por ley.',
+          'Nada de lo dispuesto en estos términos excluye o limita la responsabilidad cuando dicha exclusión o limitación no esté permitida por la legislación aplicable.',
+        ],
+      },
+      'third-parties': {
+        paragraphs: [
+          'El sitio web puede remitir a sitios web, servicios o materiales de terceros. Esos entornos externos se rigen por sus propios términos, políticas y disponibilidad.',
+          'Velvoix no es responsable del contenido, la exactitud ni el funcionamiento de sitios o servicios externos, salvo que la normativa imperativa disponga lo contrario.',
+        ],
+      },
+      privacy: {
+        paragraphs: [
+          'Para la forma en que Velvoix trata datos personales, Velvoix remite a la Política de privacidad disponible en el sitio web. Cuando se requieran acuerdos contractuales adicionales de protección de datos, estos podrán documentarse por separado.',
+        ],
+      },
+      changes: {
+        paragraphs: [
+          'Velvoix puede modificar estos términos periódicamente. La versión más reciente se publicará en el sitio web e incluirá una fecha de última actualización.',
+          'Última actualización: 24 de marzo de 2026.',
+        ],
+      },
+      law: {
+        paragraphs: [
+          'Estos términos se rigen por la legislación neerlandesa. Las controversias se someterán al tribunal competente de los Países Bajos, salvo que una norma imperativa disponga lo contrario.',
+        ],
+      },
+      contact: {
+        paragraphs: [
+          'Para preguntas sobre estos términos o sobre interacciones comerciales alrededor de Velvoix, pueden utilizarse los datos de contacto indicados a continuación.',
+        ],
+        bullets: [
+          'Velvoix Holding B.V.',
+          '2313 NS, Leiden, The Netherlands',
+          'founder@velvoix.com',
+          '0031610222775',
+        ],
+      },
     },
   },
 });
