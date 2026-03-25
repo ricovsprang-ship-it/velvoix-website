@@ -30,6 +30,7 @@ export interface PlatformTourContent {
   nextLabel: string;
   railLabel: string;
   curatedViewsLabel: string;
+  interactionHint: string;
   slides: PlatformTourSlide[];
 }
 
@@ -81,6 +82,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Volgende',
     railLabel: 'Onderdelen van de producttour',
     curatedViewsLabel: 'geselecteerde schermen',
+    interactionHint: 'Scroll om te zoomen, sleep om te verplaatsen, 0 om te resetten.',
     slides: [
       { id: 'login', label: 'Start', title: 'Rustige toegang', text: 'De instap houdt toegang tot het platform rustig, herkenbaar en gecontroleerd.', alt: 'Velvoix login scherm', ...slideFraming.login },
       { id: 'worklist', label: 'Werkvoorraad', title: 'Meldingen in een bestuurbare lijst', text: 'Urgentie, status en eigenaarschap blijven samen leesbaar in een scanbare werkvoorraad.', alt: 'Velvoix meldingenlijst', ...slideFraming.worklist },
@@ -115,6 +117,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Next',
     railLabel: 'Product tour sections',
     curatedViewsLabel: 'selected screens',
+    interactionHint: 'Scroll to zoom, drag to move, press 0 to reset.',
     slides: [
       { id: 'login', label: 'Start', title: 'A calm entry point', text: 'The entry keeps access to the platform calm, recognisable and controlled.', alt: 'Velvoix login screen', ...slideFraming.login },
       { id: 'worklist', label: 'Worklist', title: 'Signals in one manageable list', text: 'Urgency, status and ownership stay readable together in one scannable worklist.', alt: 'Velvoix worklist', ...slideFraming.worklist },
@@ -149,6 +152,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Weiter',
     railLabel: 'Bereiche der Produkttour',
     curatedViewsLabel: 'ausgewaehlte Ansichten',
+    interactionHint: 'Scrollen zum Zoomen, ziehen zum Verschieben, 0 zum Zuruecksetzen.',
     slides: [
       { id: 'login', label: 'Start', title: 'Ruhiger Einstieg', text: 'Der Einstieg haelt den Zugang zur Plattform ruhig, klar und kontrolliert.', alt: 'Velvoix Login', ...slideFraming.login },
       { id: 'worklist', label: 'Arbeitsvorrat', title: 'Signale in einer steuerbaren Liste', text: 'Dringlichkeit, Status und Verantwortung bleiben in einem scanbaren Arbeitsvorrat zusammen lesbar.', alt: 'Velvoix Arbeitsvorrat', ...slideFraming.worklist },
@@ -183,6 +187,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Siguiente',
     railLabel: 'Secciones del recorrido',
     curatedViewsLabel: 'pantallas seleccionadas',
+    interactionHint: 'Desplace para ampliar, arrastre para mover, pulse 0 para reiniciar.',
     slides: [
       { id: 'login', label: 'Inicio', title: 'Entrada serena', text: 'La entrada mantiene el acceso a la plataforma sereno, reconocible y controlado.', alt: 'Pantalla de acceso de Velvoix', ...slideFraming.login },
       { id: 'worklist', label: 'Bandeja', title: 'Senales en una lista gobernable', text: 'Urgencia, estado y responsabilidad siguen siendo legibles dentro de una bandeja escaneable.', alt: 'Lista de trabajo de Velvoix', ...slideFraming.worklist },

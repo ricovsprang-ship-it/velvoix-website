@@ -80,7 +80,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
         <div class="platform-tour-stage" data-tour-stage>
           {sectionContent.slides.map((slide, index) => (
             <article class="platform-tour-slide" data-tour-slide data-slide-id={slide.id} hidden={index !== 0}>
-              <figure class="platform-tour-slide__figure">
+              <figure class="platform-tour-slide__figure" data-tour-figure>
                 <img
                   alt={slide.alt}
                   data-tour-src={slide.image}
@@ -97,6 +97,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
             <p class="platform-tour-copy__label" data-tour-label>{sectionContent.slides[0].label}</p>
             <h3 id="platform-tour-title" data-tour-title>{sectionContent.slides[0].title}</h3>
             <p data-tour-text>{sectionContent.slides[0].text}</p>
+            <p class="platform-tour-copy__hint">{sectionContent.interactionHint}</p>
           </div>
 
           <nav class="platform-tour-rail" aria-label={sectionContent.railLabel}>
@@ -356,7 +357,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     object-position: center center;
     background: linear-gradient(180deg, rgba(246, 249, 252, 1), rgba(241, 246, 250, 1));
     border-radius: 0.95rem;
-    transform-origin: center top;
+    transform-origin: center center;
     transition: transform 160ms ease;
     user-select: none;
     -webkit-user-drag: none;
@@ -390,12 +391,31 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     text-wrap: balance;
   }
 
-  [data-platform-tour] .platform-tour-copy__main p:last-child {
+  [data-platform-tour] .platform-tour-copy__main [data-tour-text] {
     margin-top: 0.55rem;
     font-size: 0.93rem;
     line-height: 1.66;
     text-wrap: pretty;
     color: rgb(71 85 105);
+  }
+
+  [data-platform-tour] .platform-tour-copy__hint {
+    margin-top: 0.85rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: rgb(100 116 139);
+  }
+
+  [data-platform-tour] .platform-tour-slide__figure.is-zoomable {
+    cursor: zoom-in;
+  }
+
+  [data-platform-tour] .platform-tour-slide__figure.is-pannable {
+    cursor: grab;
+  }
+
+  [data-platform-tour] .platform-tour-slide__figure.is-dragging {
+    cursor: grabbing;
   }
 
   [data-platform-tour] .platform-tour-rail {
@@ -551,6 +571,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     const titleTarget = block.querySelector('[data-tour-title]');
     const textTarget = block.querySelector('[data-tour-text]');
     const slides = Array.from(block.querySelectorAll('[data-tour-slide]'));
+    const figures = Array.from(block.querySelectorAll('[data-tour-figure]'));
     const jumpButtons = Array.from(block.querySelectorAll('[data-tour-jump]'));
     const slideData = JSON.parse(block.dataset.tourSlides ?? '[]');
     const stage = block.querySelector('[data-tour-stage]');
@@ -558,6 +579,17 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     let activeIndex = 0;
     let lastFocused = null;
     const preloaded = new Set();
+    const viewState = {
+      zoom: 1,
+      panX: 0,
+      panY: 0,
+      dragging: false,
+      pointerId: null,
+      dragStartX: 0,
+      dragStartY: 0,
+      dragPanX: 0,
+      dragPanY: 0,
+    };
 
     const focusableSelector =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -572,6 +604,13 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     };
 
     const getActiveImage = () => getSlideImage(activeIndex);
+
+    const getSlideFigure = (index) => {
+      const figure = figures[index];
+      return figure instanceof HTMLElement ? figure : null;
+    };
+
+    const getActiveFigure = () => getSlideFigure(activeIndex);
 
     const ensureSlideImage = (index, priority = 'auto') => {
       const slide = slideData[index];
@@ -588,14 +627,75 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       image.alt = slide.alt;
     };
 
+    const getFitMetrics = () => {
+      const figure = getActiveFigure();
+      const image = getActiveImage();
+      if (!(figure instanceof HTMLElement) || !(image instanceof HTMLImageElement)) return null;
+
+      const rect = figure.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
+
+      const naturalWidth = image.naturalWidth || rect.width;
+      const naturalHeight = image.naturalHeight || rect.height;
+      const fitRatio = Math.min(rect.width / naturalWidth, rect.height / naturalHeight);
+
+      return {
+        rect,
+        fittedWidth: naturalWidth * fitRatio,
+        fittedHeight: naturalHeight * fitRatio,
+      };
+    };
+
+    const clampPan = (panX, panY, zoom = viewState.zoom) => {
+      const metrics = getFitMetrics();
+      if (!metrics) return { panX, panY };
+
+      const maxX = Math.max(0, (metrics.fittedWidth * zoom - metrics.rect.width) / 2);
+      const maxY = Math.max(0, (metrics.fittedHeight * zoom - metrics.rect.height) / 2);
+
+      return {
+        panX: Math.min(maxX, Math.max(-maxX, panX)),
+        panY: Math.min(maxY, Math.max(-maxY, panY)),
+      };
+    };
+
+    const updateFigureCursor = () => {
+      figures.forEach((figure, index) => {
+        if (!(figure instanceof HTMLElement)) return;
+        figure.classList.remove('is-zoomable', 'is-pannable', 'is-dragging');
+        if (index !== activeIndex) return;
+
+        if (viewState.dragging) {
+          figure.classList.add('is-dragging');
+        } else if (viewState.zoom > 1.02) {
+          figure.classList.add('is-pannable');
+        } else {
+          figure.classList.add('is-zoomable');
+        }
+      });
+    };
+
+    const resetView = () => {
+      viewState.zoom = 1;
+      viewState.panX = 0;
+      viewState.panY = 0;
+      viewState.dragging = false;
+      viewState.pointerId = null;
+      updateFigureCursor();
+    };
+
     const applyFrame = () => {
       const image = getActiveImage();
       const meta = getSlideMeta(activeIndex);
       if (image instanceof HTMLElement) {
         image.style.objectPosition = meta.objectPosition ?? 'center top';
-        image.style.transformOrigin = meta.zoomOrigin ?? '50% 0%';
-        image.style.transform = `translate(${meta.offsetX ?? 0}px, ${meta.offsetY ?? 0}px) scale(${(meta.baseScale ?? 1) * (meta.initialZoom ?? 1)})`;
+        image.style.transformOrigin = '50% 50%';
+        const clamped = clampPan(viewState.panX, viewState.panY);
+        viewState.panX = clamped.panX;
+        viewState.panY = clamped.panY;
+        image.style.transform = `translate(${(meta.offsetX ?? 0) + viewState.panX}px, ${(meta.offsetY ?? 0) + viewState.panY}px) scale(${((meta.baseScale ?? 1) * (meta.initialZoom ?? 1)) * viewState.zoom})`;
       }
+      updateFigureCursor();
     };
 
     const preloadSlide = (index) => {
@@ -657,6 +757,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
         if (currentSlide instanceof HTMLElement) currentSlide.hidden = true;
         nextSlide.hidden = false;
         activeIndex = nextIndex;
+        resetView();
         updateRail();
         renderCopy(nextIndex, false);
         applyFrame();
@@ -671,6 +772,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
         defaults: { ease: 'power2.out' },
         onStart: () => {
           activeIndex = nextIndex;
+          resetView();
           updateRail();
           renderCopy(nextIndex, true);
           applyFrame();
@@ -683,6 +785,31 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       })
         .to(currentSlide, { autoAlpha: 0, y: -10, duration: 0.18 })
         .to(nextSlide, { autoAlpha: 1, y: 0, duration: 0.24 }, '-=0.02');
+    };
+
+    const zoomAtPoint = (targetZoom, clientX, clientY) => {
+      const figure = getActiveFigure();
+      if (!(figure instanceof HTMLElement)) return;
+
+      const metrics = getFitMetrics();
+      if (!metrics) return;
+
+      const nextZoom = Math.min(3, Math.max(1, targetZoom));
+      const ratio = nextZoom / viewState.zoom;
+      const localX = clientX - metrics.rect.left - metrics.rect.width / 2;
+      const localY = clientY - metrics.rect.top - metrics.rect.height / 2;
+
+      viewState.panX = localX - ratio * (localX - viewState.panX);
+      viewState.panY = localY - ratio * (localY - viewState.panY);
+      viewState.zoom = nextZoom;
+
+      if (viewState.zoom <= 1.01) {
+        viewState.zoom = 1;
+        viewState.panX = 0;
+        viewState.panY = 0;
+      }
+
+      applyFrame();
     };
 
     const trapFocus = (event) => {
@@ -709,6 +836,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       ensureSlideImage(activeIndex, 'high');
       preloadAround(activeIndex);
+      resetView();
       applyFrame();
       overlay.hidden = false;
       overlay.setAttribute('aria-hidden', 'false');
@@ -731,6 +859,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
         overlay.hidden = true;
         overlay.setAttribute('aria-hidden', 'true');
         document.documentElement.style.overflow = '';
+        resetView();
         if (lastFocused instanceof HTMLElement) lastFocused.focus();
       };
 
@@ -771,11 +900,84 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       });
     });
 
+    figures.forEach((figure, index) => {
+      if (!(figure instanceof HTMLElement)) return;
+
+      figure.addEventListener('wheel', (event) => {
+        if (index !== activeIndex || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+        event.preventDefault();
+        const delta = event.deltaY < 0 ? 1.18 : 1 / 1.18;
+        zoomAtPoint(viewState.zoom * delta, event.clientX, event.clientY);
+      }, { passive: false });
+
+      figure.addEventListener('dblclick', (event) => {
+        if (index !== activeIndex || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+        const nextZoom = viewState.zoom > 1.4 ? 1 : 2.1;
+        zoomAtPoint(nextZoom, event.clientX, event.clientY);
+      });
+
+      figure.addEventListener('pointerdown', (event) => {
+        if (index !== activeIndex || viewState.zoom <= 1.02 || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+        viewState.dragging = true;
+        viewState.pointerId = event.pointerId;
+        viewState.dragStartX = event.clientX;
+        viewState.dragStartY = event.clientY;
+        viewState.dragPanX = viewState.panX;
+        viewState.dragPanY = viewState.panY;
+        figure.setPointerCapture(event.pointerId);
+        updateFigureCursor();
+      });
+
+      figure.addEventListener('pointermove', (event) => {
+        if (index !== activeIndex || !viewState.dragging || viewState.pointerId !== event.pointerId) return;
+        viewState.panX = viewState.dragPanX + (event.clientX - viewState.dragStartX);
+        viewState.panY = viewState.dragPanY + (event.clientY - viewState.dragStartY);
+        applyFrame();
+      });
+
+      const releaseDrag = (event) => {
+        if (viewState.pointerId !== event.pointerId) return;
+        viewState.dragging = false;
+        viewState.pointerId = null;
+        updateFigureCursor();
+      };
+
+      figure.addEventListener('pointerup', releaseDrag);
+      figure.addEventListener('pointercancel', releaseDrag);
+      figure.addEventListener('pointerleave', (event) => {
+        if (!viewState.dragging || viewState.pointerId !== event.pointerId) return;
+        releaseDrag(event);
+      });
+    });
+
     closeButtons.forEach((button) => button.addEventListener('click', closeOverlay));
 
     overlay?.addEventListener('keydown', (event) => {
       if (!(event instanceof KeyboardEvent)) return;
       if (event.key === 'Escape') closeOverlay();
+      const isZoomInKey = event.key === '+' || event.key === '=' || event.code === 'Equal' || event.code === 'NumpadAdd';
+      const isZoomOutKey = event.key === '-' || event.key === '_' || event.code === 'Minus' || event.code === 'NumpadSubtract';
+      const isResetKey = event.key === '0' || event.code === 'Digit0' || event.code === 'Numpad0';
+
+      if (isZoomInKey) {
+        event.preventDefault();
+        const figure = getActiveFigure();
+        if (!(figure instanceof HTMLElement)) return;
+        const rect = figure.getBoundingClientRect();
+        zoomAtPoint(viewState.zoom * 1.18, rect.left + rect.width / 2, rect.top + rect.height / 2);
+      }
+      if (isZoomOutKey) {
+        event.preventDefault();
+        const figure = getActiveFigure();
+        if (!(figure instanceof HTMLElement)) return;
+        const rect = figure.getBoundingClientRect();
+        zoomAtPoint(viewState.zoom / 1.18, rect.left + rect.width / 2, rect.top + rect.height / 2);
+      }
+      if (isResetKey) {
+        event.preventDefault();
+        resetView();
+        applyFrame();
+      }
       if (event.key === 'ArrowLeft') renderSlide((activeIndex - 1 + slides.length) % slides.length);
       if (event.key === 'ArrowRight') renderSlide((activeIndex + 1) % slides.length);
       trapFocus(event);
