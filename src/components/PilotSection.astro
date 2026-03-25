@@ -12,14 +12,14 @@ const { locale, content } = Astro.props;
 const sectionContentByLocale = {
   en: {
       eyebrow: 'Pilot and partnership',
-      title: 'Explore whether a pilot fits',
+      title: 'Assess whether a pilot or partnership route fits',
       description:
-        'A pilot helps make clear how Velvoix fits existing care practice, team routines and operational processes.',
+        'Use this route to assess whether Velvoix is relevant for a pilot setting, rollout discussion or strategic fit.',
       audience:
-        'Suitable for nursing homes, long-term care, operational care teams and strategic collaboration partners.',
-      primaryCta: 'Schedule a pilot conversation',
-      secondaryCta: 'Discuss collaboration',
-      moduleTitle: 'In a pilot we explore',
+        'Relevant for healthcare organisations, operational care teams and partners exploring fit, rollout or integration.',
+      primaryCta: 'Start pilot assessment',
+      secondaryCta: 'Discuss partnership route',
+      moduleTitle: 'A pilot assessment focuses on',
       rows: [
         {
           title: 'Operational clarity',
@@ -39,20 +39,20 @@ const sectionContentByLocale = {
         },
       ],
       organisationTitle: 'For healthcare organisations',
-      organisationBody: 'Focus on workload, follow-up, clarity and reconstruction.',
+      organisationBody: 'Focus on operational relevance, work pressure, follow-up and fit with care practice.',
       partnerTitle: 'For partners',
-      partnerBody: 'Focus on fit, operational value and strengthening the care chain.',
+      partnerBody: 'Focus on rollout fit, integration scope and operational value in the care chain.',
     },
   nl: {
       eyebrow: 'Pilot en samenwerking',
-      title: 'Verken of een pilot past',
+      title: 'Toets of een pilot- of samenwerkingsroute past',
       description:
-        'Een pilot helpt om te toetsen hoe Velvoix past binnen bestaande zorgpraktijk, teamafspraken en operationele processen.',
+        'Gebruik deze route om te toetsen of Velvoix relevant is voor een pilotsetting, uitrolverkenning of samenwerkingsgesprek.',
       audience:
-        'Geschikt voor verpleeghuizen, langdurige zorg, operationele zorgteams en strategische samenwerkingspartners.',
-      primaryCta: 'Plan een pilotgesprek',
-      secondaryCta: 'Bespreek samenwerking',
-      moduleTitle: 'In een pilot onderzoeken we',
+        'Relevant voor zorgorganisaties, operationele zorgteams en partners die fit, uitrol of integratie willen verkennen.',
+      primaryCta: 'Start pilotverkenning',
+      secondaryCta: 'Bespreek samenwerkingsroute',
+      moduleTitle: 'Een pilotverkenning richt zich op',
       rows: [
         {
           title: 'Operationele duidelijkheid',
@@ -72,20 +72,20 @@ const sectionContentByLocale = {
         },
       ],
       organisationTitle: 'Voor zorgorganisaties',
-      organisationBody: 'Focus op werkdruk, opvolging, duidelijkheid en reconstructie.',
+      organisationBody: 'Focus op operationele relevantie, werkdruk, opvolging en fit met de zorgpraktijk.',
       partnerTitle: 'Voor partners',
-      partnerBody: 'Focus op inpasbaarheid, operationele meerwaarde en versterking van de zorgketen.',
+      partnerBody: 'Focus op uitrolfit, integratiescope en operationele meerwaarde in de zorgketen.',
     },
   de: {
       eyebrow: 'Pilot und Zusammenarbeit',
-      title: 'Prufen, ob ein Pilot passt',
+      title: 'Prufen, ob ein Pilot- oder Kooperationsweg passt',
       description:
-        'Ein Pilot macht sichtbar, wie Velvoix in bestehende Pflegepraxis, Teamroutinen und operative Prozesse passt.',
+        'Nutzen Sie diesen Weg, um zu prufen, ob Velvoix fur einen Pilotkontext, eine Rollout-Prufung oder eine Zusammenarbeit relevant ist.',
       audience:
-        'Geeignet fur Pflegeheime, Langzeitpflege, operative Pflegeteams und strategische Kooperationspartner.',
-      primaryCta: 'Pilotgesprach vereinbaren',
-      secondaryCta: 'Zusammenarbeit besprechen',
-      moduleTitle: 'Im Pilot betrachten wir',
+        'Relevant fur Pflegeorganisationen, operative Pflegeteams und Partner, die Passung, Rollout oder Integration prufen wollen.',
+      primaryCta: 'Pilotprufung starten',
+      secondaryCta: 'Kooperationsweg besprechen',
+      moduleTitle: 'Eine Pilotprufung konzentriert sich auf',
       rows: [
         {
           title: 'Operative Klarheit',
@@ -105,20 +105,20 @@ const sectionContentByLocale = {
         },
       ],
       organisationTitle: 'Fur Pflegeorganisationen',
-      organisationBody: 'Fokus auf Arbeitsdruck, Nachverfolgung, Klarheit und Rekonstruktion.',
+      organisationBody: 'Fokus auf operative Relevanz, Arbeitsdruck, Nachverfolgung und Passung zur Pflegepraxis.',
       partnerTitle: 'Fur Partner',
-      partnerBody: 'Fokus auf Passung, operativen Mehrwert und Starkung der Versorgungskette.',
+      partnerBody: 'Fokus auf Rollout-Passung, Integrationsumfang und operativen Mehrwert in der Versorgungskette.',
     },
   es: {
       eyebrow: 'Piloto y colaboracion',
-      title: 'Explore si un piloto tiene sentido',
+      title: 'Evale si encaja una ruta de piloto o colaboracion',
       description:
-        'Un piloto ayuda a comprobar como encaja Velvoix en la practica asistencial, las rutinas del equipo y los procesos operativos.',
+        'Utilice esta via para comprobar si Velvoix es relevante para un contexto piloto, una exploracion de despliegue o una conversacion de colaboracion.',
       audience:
-        'Adecuado para residencias, cuidados de larga duracion, equipos asistenciales operativos y socios de colaboracion estrategica.',
-      primaryCta: 'Solicitar conversacion piloto',
-      secondaryCta: 'Hablar de colaboracion',
-      moduleTitle: 'En un piloto exploramos',
+        'Relevante para organizaciones asistenciales, equipos operativos y socios que quieran explorar encaje, despliegue o integracion.',
+      primaryCta: 'Iniciar exploracion piloto',
+      secondaryCta: 'Tratar ruta de colaboracion',
+      moduleTitle: 'Una exploracion piloto se centra en',
       rows: [
         {
           title: 'Claridad operativa',
@@ -138,9 +138,9 @@ const sectionContentByLocale = {
         },
       ],
       organisationTitle: 'Para organizaciones asistenciales',
-      organisationBody: 'Foco en carga de trabajo, seguimiento, claridad y reconstruccion.',
+      organisationBody: 'Foco en relevancia operativa, carga de trabajo, seguimiento y encaje con la practica asistencial.',
       partnerTitle: 'Para socios',
-      partnerBody: 'Foco en encaje, valor operativo y refuerzo de la cadena asistencial.',
+      partnerBody: 'Foco en encaje de despliegue, alcance de integracion y valor operativo en la cadena asistencial.',
     },
 } satisfies Record<Locale, {
   eyebrow: string;
@@ -226,15 +226,16 @@ const sectionContent = sectionContentByLocale[locale];
 
   #pilot .pilot-proposition__audience {
     margin-top: 1.35rem;
-    font-size: 0.97rem;
-    line-height: 1.8;
+    max-width: 32rem;
+    font-size: 0.95rem;
+    line-height: 1.72;
     color: rgb(71 85 105);
   }
 
   #pilot .pilot-proposition__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.9rem;
+    gap: 0.8rem;
     margin-top: 1.7rem;
   }
 
