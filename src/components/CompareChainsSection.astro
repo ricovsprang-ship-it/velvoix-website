@@ -263,9 +263,15 @@ const { content } = Astro.props;
   }
 
   [data-chain-block] .chain-arrow-traditional {
+    font-size: 0;
+    color: rgb(148 163 184);
+  }
+
+  [data-chain-block] .chain-arrow-traditional::before {
+    content: '\2192';
     font-size: 0.9rem;
     font-weight: 500;
-    color: rgb(148 163 184);
+    line-height: 1;
   }
 
   [data-chain-block] .chain-arrow-velvoix {

@@ -55,7 +55,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     supporting:
       'Open de producttour voor een rustige walkthrough van de belangrijkste operationele views.',
     cta: 'Open producttour',
-    previewLabel: 'Geselecteerde view',
+    previewLabel: 'Geselecteerd scherm',
     previewTitle: 'Eventdetail met context en aanpak',
     previewBody:
       'Een voorbeeld van hoe reden, context en acties samenkomen in een rustige operationele weergave.',
@@ -86,7 +86,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     supporting:
       'Open the product tour for a calm walkthrough of the key operational views.',
     cta: 'Open product tour',
-    previewLabel: 'Selected view',
+    previewLabel: 'Selected screen',
     previewTitle: 'Event detail with context and action',
     previewBody:
       'One example of how reason, context and actions come together in a calm operational view.',
@@ -117,7 +117,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     supporting:
       'Offnen Sie die Produkttour fur einen ruhigen Durchgang durch die wichtigsten operativen Ansichten.',
     cta: 'Produkttour offnen',
-    previewLabel: 'Ausgewahlte Ansicht',
+    previewLabel: 'Ausgewahlter Bildschirm',
     previewTitle: 'Eventdetail mit Kontext und Aktion',
     previewBody:
       'Ein Beispiel dafur, wie Begrundung, Kontext und Aktionen in einer ruhigen operativen Ansicht zusammenkommen.',
@@ -148,7 +148,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     supporting:
       'Abra el recorrido del producto para una lectura tranquila de las vistas operativas clave.',
     cta: 'Abrir recorrido',
-    previewLabel: 'Vista seleccionada',
+    previewLabel: 'Pantalla seleccionada',
     previewTitle: 'Detalle del evento con contexto y accion',
     previewBody:
       'Un ejemplo de como motivo, contexto y acciones se reunen en una vista operativa serena.',

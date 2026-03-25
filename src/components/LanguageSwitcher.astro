@@ -22,6 +22,12 @@ const languages: Array<{ code: string; locale: Locale; href: string }> = [
 
 const activeLanguage = languages.find((language) => language.locale === locale) ?? languages[0];
 const otherLanguages = languages.filter((language) => language.locale !== locale);
+const ariaLabelByLocale: Record<Locale, string> = {
+  nl: 'Taalwisselaar',
+  en: 'Language switcher',
+  de: 'Sprachauswahl',
+  es: 'Selector de idioma',
+};
 ---
 
 <details class="language-switcher" data-language-switcher>
@@ -38,7 +44,7 @@ const otherLanguages = languages.filter((language) => language.locale !== locale
     </svg>
   </summary>
 
-  <div class="language-switcher__menu" role="listbox" aria-label="Language switcher">
+  <div class="language-switcher__menu" role="listbox" aria-label={ariaLabelByLocale[locale]}>
     <a
       href={activeLanguage.href}
       class="language-switcher__item is-active"
