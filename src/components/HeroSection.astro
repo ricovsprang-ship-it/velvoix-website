@@ -1,5 +1,7 @@
 ---
+import { Picture } from 'astro:assets';
 import type { HeroContent, Locale } from '../content/site';
+import heroImage from '../assets/hero-care-contact.jpg';
 
 interface Props {
   locale: Locale;
@@ -17,12 +19,19 @@ const imageAltByLocale: Record<Locale, string> = {
 
 <section id="home" class="relative overflow-hidden">
   <div class="absolute inset-0" data-hero-media>
-    <img
-      src="/media/AdobeStock_1857436642.jpeg"
+    <Picture
+      src={heroImage}
       alt={imageAltByLocale[locale]}
       class="h-full w-full scale-[1.02] object-cover object-[72%_48%] md:object-[68%_45%]"
+      pictureAttributes={{ class: 'block h-full w-full' }}
       data-hero-image
-      loading="eager"
+      widths={[640, 960, 1280, 1600, 1920, 2560]}
+      sizes="100vw"
+      formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      quality={80}
+      priority
+      decoding="async"
     />
     <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,24,48,0.7)_0%,rgba(10,24,48,0.54)_24%,rgba(10,24,48,0.22)_46%,rgba(10,24,48,0.05)_68%,rgba(10,24,48,0)_100%)]" data-hero-overlay></div>
     <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(246,249,252,0.08)_0%,rgba(246,249,252,0)_100%)]"></div>
