@@ -7,333 +7,254 @@ interface Props {
 }
 
 const { content } = Astro.props;
+const highlightedDetail = content.stepDetails[1] ?? content.stepDetails[0];
 ---
 
 <section class="section-block surface-band" id="how-it-works" data-chain-block>
   <div class="section-shell grid gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
-    <div class="max-w-[32rem] chain-intro" data-chain-intro>
+    <div class="max-w-[32rem]" data-chain-intro>
       <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.description} />
     </div>
 
-    <div class="chain-compare rounded-[1.85rem] border border-slate-200/80 bg-white/92 p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-7" data-chain-compare>
+    <div
+      class="chain-compare rounded-[1.85rem] border border-slate-200/80 bg-white/94 p-6 shadow-[0_18px_36px_rgba(31,53,87,0.06)] md:p-7"
+      data-chain-compare
+    >
       <p class="text-[0.74rem] font-bold uppercase tracking-[0.18em] text-slate-500">{content.compareLabel}</p>
 
       <div class="mt-5 space-y-4">
-        <div class="chain-row chain-row-traditional rounded-[1.15rem] border border-slate-200/90 bg-slate-50/80 px-4 py-4" data-chain-row="traditional">
-          <div class="flex flex-col gap-3">
-            <div class="shrink-0">
-              <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
-            </div>
+        <article
+          class="chain-panel chain-panel-traditional rounded-[1.3rem] border border-slate-200/88 bg-slate-50/86 p-4 md:p-5"
+          data-chain-panel
+        >
+          <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.traditionalTitle}</p>
 
-            <div class="chain-track chain-track-traditional flex min-w-0 flex-wrap items-center gap-2.5">
-              {content.traditionalSteps.map((step, index) => (
-                <>
-                  <div class="chain-module chain-module-traditional">
-                    {step}
-                  </div>
-                  {index < content.traditionalSteps.length - 1 && (
-                    <span class="chain-arrow chain-arrow-traditional" aria-hidden="true">→</span>
-                  )}
-                </>
-              ))}
-            </div>
+          <div class="chain-grid chain-grid-traditional mt-4" data-chain-grid-traditional>
+            {content.traditionalSteps.map((step, index) => (
+              <>
+                <article class="chain-step chain-step-traditional" data-chain-step>
+                  <span class="chain-step-index">{String(index + 1).padStart(2, '0')}</span>
+                  <h3 class="chain-step-label">{step}</h3>
+                </article>
+                {index < content.traditionalSteps.length - 1 && (
+                  <span class="chain-connector chain-connector-traditional" aria-hidden="true"></span>
+                )}
+              </>
+            ))}
           </div>
-        </div>
+        </article>
 
-        <div class="chain-row chain-row-velvoix rounded-[1.35rem] border border-[rgba(31,53,87,0.13)] bg-[linear-gradient(180deg,rgba(236,242,246,0.98),rgba(246,249,252,0.99))] px-4 py-4 shadow-[0_16px_32px_rgba(31,53,87,0.055)] md:px-5 md:py-5" data-chain-row="velvoix">
-          <div class="flex flex-col gap-4">
-            <div class="shrink-0">
-              <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
-            </div>
+        <article
+          class="chain-panel chain-panel-velvoix rounded-[1.45rem] border border-[rgba(31,53,87,0.13)] bg-[linear-gradient(180deg,rgba(236,242,246,0.98),rgba(246,249,252,0.99))] p-5 shadow-[0_16px_32px_rgba(31,53,87,0.055)] md:p-6"
+          data-chain-panel
+        >
+          <div class="space-y-3">
+            <p class="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-slate-500">{content.velvoixTitle}</p>
+            <p class="max-w-[46rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
+          </div>
 
-            <div class="min-w-0 space-y-4">
-              <div class="chain-flow relative grid gap-3.5" data-chain-flow>
-                <span class="chain-flow-line hidden md:block" aria-hidden="true" data-chain-flow-line></span>
-
-                <div class="chain-rail chain-rail-primary">
-                  {content.velvoixSteps.slice(0, 4).map((step, index) => (
-                    <>
-                    <button
-                      type="button"
-                      class="chain-node chain-module chain-module-velvoix"
-                      data-chain-node
-                      data-chain-node-index={index}
-                      data-chain-step-title={content.stepDetails[index]?.title}
-                      data-chain-step-description={content.stepDetails[index]?.description}
-                      aria-pressed={index === 0 ? 'true' : 'false'}
-                      aria-controls="chain-step-detail"
-                    >
-                        <span class="chain-node-label">{step}</span>
-                      </button>
-                      {index < 3 && (
-                        <span class="chain-arrow chain-arrow-velvoix" data-chain-arrow aria-hidden="true">
-                          <span class="chain-arrow-line"></span>
-                        </span>
-                      )}
-                    </>
-                  ))}
-                </div>
-
-                <div class="chain-rail chain-rail-secondary">
-                  {content.velvoixSteps.slice(4).map((step, railIndex) => {
-                    const index = railIndex + 4;
-                    return (
-                      <>
-                        <button
-                          type="button"
-                          class="chain-node chain-module chain-module-velvoix"
-                          data-chain-node
-                          data-chain-node-index={index}
-                          data-chain-step-title={content.stepDetails[index]?.title}
-                          data-chain-step-description={content.stepDetails[index]?.description}
-                          aria-pressed="false"
-                          aria-controls="chain-step-detail"
-                        >
-                          <span class="chain-node-label">{step}</span>
-                        </button>
-                        {railIndex < 2 && (
-                          <span class="chain-arrow chain-arrow-velvoix" data-chain-arrow aria-hidden="true">
-                            <span class="chain-arrow-line"></span>
-                          </span>
-                        )}
-                      </>
-                    );
-                  })}
-                </div>
-
-                <span class="chain-highlight hidden md:block" aria-hidden="true" data-chain-highlight></span>
-              </div>
-
-              <p class="max-w-[42rem] text-sm leading-6 text-slate-600">{content.velvoixSupporting}</p>
-
-              <div
-                id="chain-step-detail"
-                class="chain-detail border border-slate-200/85 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,250,252,0.95))] px-4 py-3.5"
-                data-chain-detail
-                aria-live="polite"
+          <div class="chain-grid chain-grid-velvoix mt-5" data-chain-grid-velvoix>
+            {content.velvoixSteps.map((step, index) => (
+              <article
+                class:list={['chain-step chain-step-velvoix', index === 1 && 'is-highlighted']}
+                data-chain-step
               >
-                <div class="flex items-start gap-3">
-                  <span class="mt-1.5 size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
-                  <div class="min-w-0">
-                    <p class="chain-detail-title text-[0.84rem] font-semibold uppercase tracking-[0.12em] text-slate-700" data-chain-detail-title-target>
-                      {content.stepDetails[0]?.title}
-                    </p>
-                    <p class="chain-detail-description mt-2 text-sm leading-6 text-slate-600" data-chain-detail-description-target>
-                      {content.stepDetails[0]?.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="chain-results grid gap-2.5 md:grid-cols-3" data-chain-results>
-                {content.outcomes.map((outcome) => (
-                  <div class="chain-result-item flex items-center gap-2.5 border-t border-slate-200/90 pt-2 text-[0.84rem] font-medium text-slate-700" data-chain-result>
-                    <span class="size-1.5 rounded-full bg-[var(--vx-accent)]"></span>
-                    <span>{outcome}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <span class="chain-step-index">{String(index + 1).padStart(2, '0')}</span>
+                <h3 class="chain-step-label">{step}</h3>
+              </article>
+            ))}
           </div>
-        </div>
+
+          <div
+            class="chain-context-note mt-5 rounded-[1.1rem] border border-slate-200/86 bg-white/86 px-4 py-4"
+            data-chain-context
+          >
+            <p class="chain-context-note__eyebrow">{highlightedDetail.title}</p>
+            <p class="chain-context-note__text">{highlightedDetail.description}</p>
+          </div>
+
+          <div class="chain-results mt-5 grid gap-3 md:grid-cols-3" data-chain-results>
+            {content.outcomes.map((outcome, index) => (
+              <article class="chain-result-card" data-chain-result>
+                <span class="chain-result-index">{String(index + 1).padStart(2, '0')}</span>
+                <p>{outcome}</p>
+              </article>
+            ))}
+          </div>
+        </article>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  [data-chain-block] .chain-compare {
+  [data-chain-block] .chain-panel {
     position: relative;
   }
 
-  [data-chain-block] .chain-module {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.9rem;
-    border: 1px solid rgba(31, 53, 87, 0.1);
-    background: rgba(255, 255, 255, 0.94);
-    padding: 0.7rem 0.95rem;
-    font-size: 0.92rem;
-    font-weight: 600;
-    line-height: 1.25;
-    color: rgb(30 41 59);
-    box-shadow: 0 6px 16px rgba(31, 53, 87, 0.045);
-  }
-
-  [data-chain-block] .chain-module-traditional {
-    min-height: 2.55rem;
-    border-radius: 0.8rem;
-    border-color: rgba(203, 213, 225, 0.95);
-    background: rgba(255, 255, 255, 0.88);
-    padding-inline: 0.9rem;
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: rgb(71 85 105);
-    box-shadow: none;
-  }
-
-  [data-chain-block] .chain-module-velvoix {
-    width: 100%;
-    justify-content: flex-start;
-    border-radius: 0.95rem;
-    border-color: rgba(31, 53, 87, 0.12);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.98));
-    padding: 0.82rem 0.95rem;
-    text-align: left;
-    overflow: hidden;
-  }
-
-  [data-chain-block] .chain-rail {
+  [data-chain-block] .chain-grid {
     display: grid;
-    align-items: center;
-    gap: 0.7rem;
+    gap: 0.85rem;
+    align-items: stretch;
   }
 
-  [data-chain-block] .chain-rail-primary {
-    grid-template-columns: minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr);
+  [data-chain-block] .chain-grid-traditional {
+    grid-template-columns: minmax(0, 1fr) 1rem minmax(0, 1fr) 1rem minmax(0, 1fr);
   }
 
-  [data-chain-block] .chain-rail-secondary {
-    grid-template-columns: minmax(0, 1fr) 1.2rem minmax(0, 1fr) 1.2rem minmax(0, 1fr);
+  [data-chain-block] .chain-grid-velvoix {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  [data-chain-block] .chain-flow {
-    isolation: isolate;
+  [data-chain-block] .chain-step {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    min-height: 6.2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(203, 213, 225, 0.95);
+    padding: 1rem 1rem 0.95rem;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
   }
 
-  [data-chain-block] .chain-row-traditional {
-    opacity: 0.82;
+  [data-chain-block] .chain-step-traditional {
+    background: rgba(255, 255, 255, 0.92);
   }
 
-  [data-chain-block] .chain-flow-line {
-    display: none !important;
+  [data-chain-block] .chain-step-velvoix {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.98));
   }
 
-  [data-chain-block] .chain-highlight {
-    position: absolute;
-    left: 0.8rem;
-    top: 2.45rem;
-    width: 6rem;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(25, 130, 121, 0), rgba(25, 130, 121, 0.34), rgba(25, 130, 121, 0));
-    z-index: -1;
-    pointer-events: none;
+  [data-chain-block] .chain-step-velvoix.is-highlighted {
+    border-color: rgba(25, 130, 121, 0.22);
+    background: linear-gradient(180deg, rgba(242, 249, 247, 0.98), rgba(255, 255, 255, 0.98));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.76),
+      0 10px 22px rgba(31, 53, 87, 0.06);
   }
 
-  [data-chain-block] .chain-node {
-    transition:
-      border-color 180ms ease,
-      background-color 180ms ease,
-      box-shadow 180ms ease,
-      color 180ms ease,
-      transform 180ms ease;
-    cursor: pointer;
+  [data-chain-block] .chain-step-index,
+  [data-chain-block] .chain-result-index {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(100 116 139);
   }
 
-  [data-chain-block] .chain-node[aria-pressed='true'] {
-    border-color: rgba(25, 130, 121, 0.34);
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 10px 22px rgba(31, 53, 87, 0.08);
-  }
-
-  [data-chain-block] .chain-node:is(:hover, :focus-visible) {
-    background: rgba(255, 255, 255, 1);
-    border-color: rgba(25, 130, 121, 0.26);
-    box-shadow: 0 9px 20px rgba(31, 53, 87, 0.075);
+  [data-chain-block] .chain-step-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
     color: rgb(15 23 42);
-    transform: translateY(-1px);
+    text-wrap: balance;
   }
 
-  [data-chain-block] .chain-node:focus-visible {
-    outline: 2px solid rgba(25, 130, 121, 0.22);
-    outline-offset: 2px;
-  }
-
-  [data-chain-block] .chain-node-label {
+  [data-chain-block] .chain-connector {
+    position: relative;
     display: block;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  [data-chain-block] .chain-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  [data-chain-block] .chain-arrow-traditional {
-    font-size: 0;
-    color: rgb(148 163 184);
-  }
-
-  [data-chain-block] .chain-arrow-traditional::before {
-    content: '\2192';
-    font-size: 0.9rem;
-    font-weight: 500;
-    line-height: 1;
-  }
-
-  [data-chain-block] .chain-arrow-velvoix {
-    width: 100%;
-  }
-
-  [data-chain-block] .chain-arrow-line {
-    display: block;
+    align-self: center;
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, rgba(148, 163, 184, 0.55), rgba(148, 163, 184, 0.18));
+    background: linear-gradient(90deg, rgba(148, 163, 184, 0.55), rgba(148, 163, 184, 0.16));
   }
 
-  [data-chain-block] .chain-detail {
-    min-height: 5.8rem;
-    border-radius: 0.95rem;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  [data-chain-block] .chain-connector::after {
+    content: '';
+    position: absolute;
+    right: -0.02rem;
+    top: 50%;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.55);
+    border-right: 1px solid rgba(148, 163, 184, 0.55);
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  [data-chain-block] .chain-context-note {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  [data-chain-block] .chain-context-note__eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(84 101 128);
+  }
+
+  [data-chain-block] .chain-context-note__text {
+    max-width: 42rem;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgb(71 85 105);
+    text-wrap: pretty;
   }
 
   [data-chain-block] .chain-results {
-    align-items: start;
+    align-items: stretch;
   }
 
-  [data-chain-block] .chain-result-item {
-    min-height: 2.2rem;
+  [data-chain-block] .chain-result-card {
+    display: grid;
+    gap: 0.5rem;
+    min-height: 4.7rem;
     border-top: 0;
-    padding-top: 0;
+    border-radius: 1rem;
+    border: 1px solid rgba(216, 224, 232, 0.92);
+    background: rgba(255, 255, 255, 0.84);
+    padding: 0.95rem 1rem;
+  }
+
+  [data-chain-block] .chain-result-card p {
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: rgb(51 65 85);
+    text-wrap: balance;
+  }
+
+  @media (max-width: 1180px) {
+    [data-chain-block] .chain-grid-velvoix {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   @media (max-width: 1023px) {
-    [data-chain-block] .chain-rail-primary,
-    [data-chain-block] .chain-rail-secondary {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+    [data-chain-block] .chain-grid-traditional {
+      grid-template-columns: 1fr;
     }
 
-    [data-chain-block] .chain-arrow-velvoix {
-      display: none;
+    [data-chain-block] .chain-grid-velvoix {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    [data-chain-block] .chain-flow-line,
-    [data-chain-block] .chain-highlight {
-      display: none;
+    [data-chain-block] .chain-connector {
+      width: 1px;
+      min-height: 0.9rem;
+      justify-self: center;
+      background: linear-gradient(180deg, rgba(148, 163, 184, 0.55), rgba(148, 163, 184, 0.16));
+    }
+
+    [data-chain-block] .chain-connector::after {
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: -0.02rem;
+      transform: translateX(-50%) rotate(135deg);
     }
   }
 
   @media (max-width: 767px) {
-    [data-chain-block] .chain-track-traditional {
-      gap: 0.55rem;
-    }
-
-    [data-chain-block] .chain-module-traditional {
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-    [data-chain-block] .chain-arrow-traditional {
-      display: none;
-    }
-
+    [data-chain-block] .chain-grid-velvoix,
     [data-chain-block] .chain-results {
       grid-template-columns: 1fr;
-      gap: 0.55rem;
+    }
+
+    [data-chain-block] .chain-step,
+    [data-chain-block] .chain-result-card {
+      min-height: auto;
     }
   }
 </style>
@@ -348,124 +269,46 @@ const { content } = Astro.props;
   const chainBlocks = document.querySelectorAll('[data-chain-block]');
 
   for (const block of chainBlocks) {
-    if (block instanceof HTMLElement === false) continue;
+    if (!(block instanceof HTMLElement)) continue;
     if (block.dataset.gsapBound === 'true') continue;
     block.dataset.gsapBound = 'true';
 
-    const intro = block.querySelector('[data-chain-intro]');
-    const compare = block.querySelector('[data-chain-compare]');
-    const traditionalRow = block.querySelector('[data-chain-row="traditional"]');
-    const velvoixRow = block.querySelector('[data-chain-row="velvoix"]');
-    const flowLine = block.querySelector('[data-chain-flow-line]');
-    const highlight = block.querySelector('[data-chain-highlight]');
-    const detail = block.querySelector<HTMLElement>('[data-chain-detail]');
-    const detailTitle = block.querySelector<HTMLElement>('[data-chain-detail-title-target]');
-    const detailDescription = block.querySelector<HTMLElement>('[data-chain-detail-description-target]');
-    const nodes = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-node]'));
-    const arrows = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-arrow]'));
-    const results = gsap.utils.toArray<HTMLElement>(block.querySelectorAll('[data-chain-result]'));
+    const intro = block.querySelector<HTMLElement>('[data-chain-intro]');
+    const compare = block.querySelector<HTMLElement>('[data-chain-compare]');
+    const panels = Array.from(block.querySelectorAll<HTMLElement>('[data-chain-panel]'));
+    const steps = Array.from(block.querySelectorAll<HTMLElement>('[data-chain-step]'));
+    const context = block.querySelector<HTMLElement>('[data-chain-context]');
+    const results = Array.from(block.querySelectorAll<HTMLElement>('[data-chain-result]'));
 
     if (prefersReducedMotion) {
-      gsap.set([intro, compare, traditionalRow, velvoixRow, flowLine, highlight, nodes, arrows, results, detail], {
-        clearProps: 'all',
-      });
+      gsap.set([intro, compare, ...panels, ...steps, context, ...results], { clearProps: 'all' });
+      continue;
     }
 
-    const updateActiveStep = (index: number) => {
-      const activeNode = nodes[index];
-      if (!activeNode || !detailTitle || !detailDescription || !detail) return;
+    gsap.set([intro, compare], { autoAlpha: 0, y: 18 });
+    gsap.set(panels, { autoAlpha: 0, y: 14 });
+    gsap.set(steps, { autoAlpha: 0, y: 10 });
+    gsap.set(context, { autoAlpha: 0, y: 10 });
+    gsap.set(results, { autoAlpha: 0, y: 10 });
 
-      for (const [nodeIndex, node] of nodes.entries()) {
-        node.setAttribute('aria-pressed', nodeIndex === index ? 'true' : 'false');
-      }
-
-      const nextTitle = activeNode.dataset.chainStepTitle ?? activeNode.textContent?.trim() ?? '';
-      const nextDescription = activeNode.dataset.chainStepDescription ?? '';
-
-      if (prefersReducedMotion) {
-        detailTitle.textContent = nextTitle;
-        detailDescription.textContent = nextDescription;
-        return;
-      }
-
-      gsap.killTweensOf([detailTitle, detailDescription, detail]);
-      gsap
-        .timeline({ defaults: { ease: 'power2.out' } })
-        .to([detailTitle, detailDescription], { autoAlpha: 0, y: 4, duration: 0.14 })
-        .add(() => {
-          detailTitle.textContent = nextTitle;
-          detailDescription.textContent = nextDescription;
-        })
-        .to(detail, { borderColor: 'rgba(25, 130, 121, 0.18)', duration: 0.18 }, '<')
-        .to([detailTitle, detailDescription], { autoAlpha: 1, y: 0, duration: 0.18 })
-        .to(detail, { borderColor: 'rgba(226, 232, 240, 0.8)', duration: 0.22 }, '-=0.02');
-    };
-
-    for (const [index, node] of nodes.entries()) {
-      node.addEventListener('mouseenter', () => updateActiveStep(index));
-      node.addEventListener('focus', () => updateActiveStep(index));
-      node.addEventListener('click', () => updateActiveStep(index));
-    }
-
-    if (!prefersReducedMotion) {
-      gsap.set([intro, compare], { autoAlpha: 0, y: 18 });
-      gsap.set(traditionalRow, { autoAlpha: 0, y: 12 });
-      gsap.set(velvoixRow, { autoAlpha: 1 });
-      gsap.set(nodes, { autoAlpha: 0, y: 8, scale: 0.985 });
-      gsap.set(arrows, { autoAlpha: 0, y: 4 });
-      gsap.set(flowLine, { autoAlpha: 0, scaleX: 0.36, transformOrigin: 'left center' });
-      gsap.set(highlight, { autoAlpha: 0, x: -16 });
-      gsap.set(results, { autoAlpha: 0, y: 10 });
-
-      const timeline = gsap.timeline({
-        defaults: { ease: 'power2.out' },
-        scrollTrigger: {
-          trigger: block,
-          start: 'top 72%',
-          once: true,
-        },
-      });
-
-      timeline
-        .to(intro, { autoAlpha: 1, y: 0, duration: 0.52 })
-        .to(compare, { autoAlpha: 1, y: 0, duration: 0.56 }, '-=0.32')
-        .to(traditionalRow, { autoAlpha: 0.84, y: 0, duration: 0.46 }, '-=0.18')
-        .to(
-          nodes,
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.34,
-            stagger: 0.1,
-          },
-          '-=0.02'
-        )
-        .to(
-          arrows,
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.22,
-            stagger: 0.1,
-          },
-          '<0.08'
-        )
-        .to(flowLine, { autoAlpha: 1, scaleX: 1, duration: 0.5 }, '-=0.38')
-        .to(highlight, { autoAlpha: 0.95, x: 452, duration: 0.78, ease: 'power1.inOut' })
-        .to(highlight, { autoAlpha: 0, duration: 0.12 }, '-=0.08')
-        .to(
-          results,
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.28,
-            stagger: 0.08,
-          },
-          '-=0.02'
-        );
-    }
-
-    updateActiveStep(0);
+    gsap.timeline({
+      defaults: { ease: 'power2.out' },
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 72%',
+        once: true,
+      },
+      onComplete: () => {
+        gsap.set([intro, compare, ...panels, ...steps, context, ...results], {
+          clearProps: 'opacity,visibility,transform',
+        });
+      },
+    })
+      .to(intro, { autoAlpha: 1, y: 0, duration: 0.48 })
+      .to(compare, { autoAlpha: 1, y: 0, duration: 0.5 }, '-=0.28')
+      .to(panels, { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.1 }, '-=0.14')
+      .to(steps, { autoAlpha: 1, y: 0, duration: 0.28, stagger: 0.05 }, '-=0.18')
+      .to(context, { autoAlpha: 1, y: 0, duration: 0.24 }, '-=0.12')
+      .to(results, { autoAlpha: 1, y: 0, duration: 0.24, stagger: 0.08 }, '-=0.08');
   }
 </script>
