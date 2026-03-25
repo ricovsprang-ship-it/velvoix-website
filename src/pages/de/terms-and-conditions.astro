@@ -4,8 +4,8 @@ import { legalContent } from '../../content/legal';
 import { siteContent } from '../../content/site';
 import Layout from '../../layouts/Layout.astro';
 
-const locale = 'en' as const;
-const page = legalContent[locale].privacy;
+const locale = 'de' as const;
+const page = legalContent[locale].terms;
 const footer = siteContent[locale].footer;
 ---
 
@@ -15,12 +15,12 @@ const footer = siteContent[locale].footer;
   description={page.meta.description}
   ogTitle={page.meta.ogTitle}
   ogDescription={page.meta.ogDescription}
-  path="/en/privacy-policy"
+  path="/de/terms-and-conditions"
   alternatePaths={{
-    nl: '/privacy-policy',
-    en: '/en/privacy-policy',
-    de: '/de/privacy-policy',
-    es: '/es/privacy-policy',
+    nl: '/terms-and-conditions',
+    en: '/en/terms-and-conditions',
+    de: '/de/terms-and-conditions',
+    es: '/es/terms-and-conditions',
   }}
 >
   <LegalPage
@@ -28,10 +28,10 @@ const footer = siteContent[locale].footer;
     content={page}
     footer={footer}
     languagePaths={{
-      nl: '/privacy-policy',
-      en: '/en/privacy-policy',
-      de: '/de/privacy-policy',
-      es: '/es/privacy-policy',
+      nl: '/terms-and-conditions',
+      en: '/en/terms-and-conditions',
+      de: '/de/terms-and-conditions',
+      es: '/es/terms-and-conditions',
     }}
   />
 </Layout>

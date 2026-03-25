@@ -31,7 +31,52 @@ export interface LegalLocaleContent {
   terms: LegalPageContent;
 }
 
-export const legalContent: Record<Locale, LegalLocaleContent> = {
+type LegalBaseLocale = 'nl' | 'en';
+
+type LocalizedLegalPageConfig = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  updatedLabel: string;
+  lastUpdated: string;
+  tocLabel: string;
+  meta: LegalMetaContent;
+  sectionTitles: Record<string, string>;
+};
+
+function localizeLegalPage(base: LegalPageContent, config: LocalizedLegalPageConfig): LegalPageContent {
+  return {
+    ...base,
+    eyebrow: config.eyebrow,
+    title: config.title,
+    intro: config.intro,
+    updatedLabel: config.updatedLabel,
+    lastUpdated: config.lastUpdated,
+    tocLabel: config.tocLabel,
+    meta: config.meta,
+    sections: base.sections.map((section) => ({
+      ...section,
+      title: config.sectionTitles[section.id] ?? section.title,
+    })),
+  };
+}
+
+function localizeLegalContent(
+  base: LegalLocaleContent,
+  config: {
+    privacy: LocalizedLegalPageConfig;
+    cookies: LocalizedLegalPageConfig;
+    terms: LocalizedLegalPageConfig;
+  },
+): LegalLocaleContent {
+  return {
+    privacy: localizeLegalPage(base.privacy, config.privacy),
+    cookies: localizeLegalPage(base.cookies, config.cookies),
+    terms: localizeLegalPage(base.terms, config.terms),
+  };
+}
+
+const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
   nl: {
     privacy: {
       eyebrow: 'Juridische informatie',
@@ -912,6 +957,204 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
       ],
     },
   },
+};
+
+const deLegalContent = localizeLegalContent(legalBaseContent.en, {
+  privacy: {
+    eyebrow: 'Rechtliche Hinweise',
+    title: 'Datenschutzerklärung',
+    intro:
+      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Datenschutzhinweise wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
+    updatedLabel: 'Aktualisiert am',
+    lastUpdated: '24. März 2026',
+    tocLabel: 'Auf dieser Seite',
+    meta: {
+      title: 'Velvoix | Datenschutzerklärung',
+      description:
+        'Datenschutzerklärung von Velvoix für die Website, Kontaktanfragen, Pilotverläufe, Kooperationen und weitere plattformbezogene Interaktionen.',
+      ogTitle: 'Velvoix | Datenschutzerklärung',
+      ogDescription:
+        'Lesen Sie, wie Velvoix personenbezogene Daten rund um die Website, Kontaktanfragen, Piloten und Kooperationen verarbeitet.',
+    },
+    sectionTitles: {
+      'who-we-are': '1. Wer wir sind',
+      scope: '2. Für wen diese Datenschutzerklärung gilt',
+      'data-we-may-process': '3. Welche personenbezogenen Daten wir verarbeiten können',
+      purposes: '4. Zwecke der Verarbeitung',
+      'legal-bases': '5. Rechtsgrundlagen der Verarbeitung',
+      cookies: '6. Cookies, Analytics und ähnliche Technologien',
+      sharing: '7. Mit wem wir Daten teilen können',
+      'international-transfers': '8. Internationale Übermittlungen',
+      retention: '9. Aufbewahrungsfristen',
+      security: '10. Sicherheit',
+      rights: '11. Rechte betroffener Personen',
+      requests: '12. Wie eine Anfrage eingereicht werden kann',
+      'external-links': '13. Links zu anderen Websites',
+      changes: '14. Änderungen dieser Datenschutzerklärung',
+      contact: '15. Kontakt',
+    },
+  },
+  cookies: {
+    eyebrow: 'Rechtliche Hinweise',
+    title: 'Cookie-Richtlinie',
+    intro:
+      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Cookie-Richtlinie wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
+    updatedLabel: 'Aktualisiert am',
+    lastUpdated: '24. März 2026',
+    tocLabel: 'Auf dieser Seite',
+    meta: {
+      title: 'Velvoix | Cookie-Richtlinie',
+      description:
+        'Cookie-Richtlinie von Velvoix für die öffentliche Website, funktionale Browserpräferenzen und websitebezogene Datenverarbeitung.',
+      ogTitle: 'Velvoix | Cookie-Richtlinie',
+      ogDescription:
+        'Lesen Sie, welche Cookies und browsernahen Technologien Velvoix auf der öffentlichen Website verwenden kann.',
+    },
+    sectionTitles: {
+      'what-are-cookies': '1. Was Cookies und ähnliche Technologien sind',
+      categories: '2. Welche Kategorien Velvoix nutzen kann',
+      purposes: '3. Wofür diese Technologien verwendet werden',
+      tooling: '4. Tooling und Anbieter',
+      preferences: '5. Präferenzen verwalten',
+      changes: '6. Änderungen dieser Cookie-Richtlinie',
+      contact: '7. Kontakt',
+    },
+  },
+  terms: {
+    eyebrow: 'Rechtliche Hinweise',
+    title: 'Allgemeine Geschäftsbedingungen',
+    intro:
+      'Diese deutschsprachige Übersicht dient der Orientierung. Die ausführliche Fassung dieser Bedingungen wird derzeit in englischer Sprache unterhalb dieser Zusammenfassung bereitgestellt.',
+    updatedLabel: 'Aktualisiert am',
+    lastUpdated: '24. März 2026',
+    tocLabel: 'Auf dieser Seite',
+    meta: {
+      title: 'Velvoix | Allgemeine Geschäftsbedingungen',
+      description:
+        'Allgemeine Geschäftsbedingungen von Velvoix für die Nutzung der Website, geschäftliche Orientierung, Demos, Piloten und Kooperationen rund um die Plattform.',
+      ogTitle: 'Velvoix | Allgemeine Geschäftsbedingungen',
+      ogDescription:
+        'Lesen Sie die allgemeinen Geschäftsbedingungen von Velvoix für Website-Nutzung, Demos, Piloten und geschäftliche Interaktionen.',
+    },
+    sectionTitles: {
+      scope: '1. Geltung und wer wir sind',
+      description: '2. Beschreibung von Velvoix',
+      'website-use': '3. Nutzung der Website',
+      availability: '4. Informationen und Verfügbarkeit',
+      'no-medical-advice': '5. Kein medizinischer Rat / professionelle Verantwortung',
+      'demos-pilots': '6. Demos, Piloten und Kooperationen',
+      ip: '7. Geistiges Eigentum',
+      confidentiality: '8. Vertraulichkeit',
+      liability: '9. Haftung',
+      'third-parties': '10. Dritte und externe Links',
+      privacy: '11. Datenschutz',
+      changes: '12. Änderungen dieser Bedingungen',
+      law: '13. Anwendbares Recht und zuständiges Gericht',
+      contact: '14. Kontakt',
+    },
+  },
+});
+
+const esLegalContent = localizeLegalContent(legalBaseContent.en, {
+  privacy: {
+    eyebrow: 'Información legal',
+    title: 'Política de privacidad',
+    intro:
+      'Este resumen en español sirve como orientación. La versión detallada de este texto legal se ofrece actualmente en inglés debajo de este resumen.',
+    updatedLabel: 'Última actualización',
+    lastUpdated: '24 de marzo de 2026',
+    tocLabel: 'En esta página',
+    meta: {
+      title: 'Velvoix | Política de privacidad',
+      description:
+        'Política de privacidad de Velvoix para el sitio web, formularios de contacto, trayectorias piloto, colaboraciones e interacciones relacionadas con la plataforma.',
+      ogTitle: 'Velvoix | Política de privacidad',
+      ogDescription:
+        'Lea cómo Velvoix trata datos personales en relación con el sitio web, solicitudes de contacto, pilotos y colaboraciones.',
+    },
+    sectionTitles: {
+      'who-we-are': '1. Quiénes somos',
+      scope: '2. A quién se aplica esta política de privacidad',
+      'data-we-may-process': '3. Qué datos personales podemos tratar',
+      purposes: '4. Finalidades para las que utilizamos datos personales',
+      'legal-bases': '5. Bases legales del tratamiento',
+      cookies: '6. Cookies, analítica y tecnologías similares',
+      sharing: '7. Con quién podemos compartir datos',
+      'international-transfers': '8. Transferencias internacionales',
+      retention: '9. Plazos de conservación',
+      security: '10. Seguridad',
+      rights: '11. Derechos de las personas interesadas',
+      requests: '12. Cómo presentar una solicitud',
+      'external-links': '13. Enlaces a otros sitios web',
+      changes: '14. Cambios en esta política de privacidad',
+      contact: '15. Contacto',
+    },
+  },
+  cookies: {
+    eyebrow: 'Información legal',
+    title: 'Política de cookies',
+    intro:
+      'Este resumen en español sirve como orientación. La versión detallada de esta política de cookies se ofrece actualmente en inglés debajo de este resumen.',
+    updatedLabel: 'Última actualización',
+    lastUpdated: '24 de marzo de 2026',
+    tocLabel: 'En esta página',
+    meta: {
+      title: 'Velvoix | Política de cookies',
+      description:
+        'Política de cookies de Velvoix para el sitio público, las preferencias funcionales del navegador y el tratamiento de datos relacionado con la web.',
+      ogTitle: 'Velvoix | Política de cookies',
+      ogDescription:
+        'Lea qué cookies y tecnologías del navegador puede utilizar Velvoix en el sitio público.',
+    },
+    sectionTitles: {
+      'what-are-cookies': '1. Qué son las cookies y tecnologías similares',
+      categories: '2. Qué categorías puede utilizar Velvoix',
+      purposes: '3. Para qué se utilizan estas tecnologías',
+      tooling: '4. Herramientas y proveedores',
+      preferences: '5. Gestión de preferencias',
+      changes: '6. Cambios en esta política de cookies',
+      contact: '7. Contacto',
+    },
+  },
+  terms: {
+    eyebrow: 'Información legal',
+    title: 'Términos y condiciones',
+    intro:
+      'Este resumen en español sirve como orientación. La versión detallada de estos términos se ofrece actualmente en inglés debajo de este resumen.',
+    updatedLabel: 'Última actualización',
+    lastUpdated: '24 de marzo de 2026',
+    tocLabel: 'En esta página',
+    meta: {
+      title: 'Velvoix | Términos y condiciones',
+      description:
+        'Términos y condiciones de Velvoix para el uso del sitio web, la orientación comercial, demos, pilotos y otras interacciones alrededor de la plataforma.',
+      ogTitle: 'Velvoix | Términos y condiciones',
+      ogDescription:
+        'Lea los términos y condiciones de Velvoix para el uso del sitio, demos, pilotos e interacciones comerciales.',
+    },
+    sectionTitles: {
+      scope: '1. Aplicabilidad y quiénes somos',
+      description: '2. Descripción de Velvoix',
+      'website-use': '3. Uso del sitio web',
+      availability: '4. Información y disponibilidad',
+      'no-medical-advice': '5. Sin consejo médico / responsabilidad profesional',
+      'demos-pilots': '6. Demos, pilotos y colaboraciones',
+      ip: '7. Propiedad intelectual',
+      confidentiality: '8. Confidencialidad',
+      liability: '9. Responsabilidad',
+      'third-parties': '10. Terceros y enlaces externos',
+      privacy: '11. Privacidad y protección de datos',
+      changes: '12. Cambios en estos términos',
+      law: '13. Ley aplicable y tribunal competente',
+      contact: '14. Contacto',
+    },
+  },
+});
+
+export const legalContent: Record<Locale, LegalLocaleContent> = {
+  ...legalBaseContent,
+  de: deLegalContent,
+  es: esLegalContent,
 };
 
 

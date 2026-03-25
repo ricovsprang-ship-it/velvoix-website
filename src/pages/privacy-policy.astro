@@ -16,8 +16,22 @@ const footer = siteContent[locale].footer;
   ogTitle={page.meta.ogTitle}
   ogDescription={page.meta.ogDescription}
   path="/privacy-policy"
-  alternateNlPath="/privacy-policy"
-  alternateEnPath="/en/privacy-policy"
+  alternatePaths={{
+    nl: '/privacy-policy',
+    en: '/en/privacy-policy',
+    de: '/de/privacy-policy',
+    es: '/es/privacy-policy',
+  }}
 >
-  <LegalPage locale={locale} content={page} footer={footer} languagePaths={{ nl: '/privacy-policy', en: '/en/privacy-policy' }} />
+  <LegalPage
+    locale={locale}
+    content={page}
+    footer={footer}
+    languagePaths={{
+      nl: '/privacy-policy',
+      en: '/en/privacy-policy',
+      de: '/de/privacy-policy',
+      es: '/es/privacy-policy',
+    }}
+  />
 </Layout>

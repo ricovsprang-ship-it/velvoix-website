@@ -1,5 +1,5 @@
 ---
-import { legalLocaleFallback, localeRootPaths } from '../content/site';
+import { localeRootPaths } from '../content/site';
 import type { FooterContent, Locale } from '../content/site';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 const { locale, content } = Astro.props;
 const basePath = localeRootPaths[locale];
-const legalBasePath = legalLocaleFallback[locale] === 'nl' ? '' : '/en';
+const legalBasePath = locale === 'nl' ? '' : localeRootPaths[locale].replace(/\/$/, '');
 
 const languageLinks = [
   { href: localeRootPaths.nl, locale: 'nl', label: content.languageNl },
@@ -47,15 +47,15 @@ const ariaLabels: Record<
     socials: 'Soziale Links',
     footer: 'Links im Footer',
     languages: 'Sprachen',
-    linkedin: 'LinkedIn-Link folgt spater',
-    youtube: 'YouTube-Link folgt spater',
+    linkedin: 'LinkedIn-Link folgt später',
+    youtube: 'YouTube-Link folgt später',
   },
   es: {
     socials: 'Enlaces sociales',
     footer: 'Enlaces del pie',
     languages: 'Idiomas',
-    linkedin: 'Enlace de LinkedIn mas adelante',
-    youtube: 'Enlace de YouTube mas adelante',
+    linkedin: 'Enlace de LinkedIn más adelante',
+    youtube: 'Enlace de YouTube más adelante',
   },
 };
 ---

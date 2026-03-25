@@ -16,8 +16,22 @@ const footer = siteContent[locale].footer;
   ogTitle={page.meta.ogTitle}
   ogDescription={page.meta.ogDescription}
   path="/en/terms-and-conditions"
-  alternateNlPath="/terms-and-conditions"
-  alternateEnPath="/en/terms-and-conditions"
+  alternatePaths={{
+    nl: '/terms-and-conditions',
+    en: '/en/terms-and-conditions',
+    de: '/de/terms-and-conditions',
+    es: '/es/terms-and-conditions',
+  }}
 >
-  <LegalPage locale={locale} content={page} footer={footer} languagePaths={{ nl: '/terms-and-conditions', en: '/en/terms-and-conditions' }} />
+  <LegalPage
+    locale={locale}
+    content={page}
+    footer={footer}
+    languagePaths={{
+      nl: '/terms-and-conditions',
+      en: '/en/terms-and-conditions',
+      de: '/de/terms-and-conditions',
+      es: '/es/terms-and-conditions',
+    }}
+  />
 </Layout>
