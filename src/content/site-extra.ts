@@ -32,6 +32,35 @@ export const deContent: SiteContent = {
       { value: 'Beherrschbar', label: 'Passt in bestehende Pflegeumgebungen ohne neue Meldungsschicht' },
     ],
   },
+  propositionBridge: {
+    eyebrow: 'Auf einen Blick',
+    title: 'Vom eingehenden Signal zur handhabbaren Nachverfolgung',
+    description:
+      'Rufknopfe, Spracheingaben und andere Pflegesignale erhalten durch Velvoix Kontext, Erklarung und einen handhabbaren nachsten Schritt.',
+    stages: [
+      {
+        label: 'Was eingeht',
+        title: 'Signale aus dem Pflegealltag',
+        description:
+          'Rufknopfe, Spracheingaben und andere Pflegesignale kommen kontrolliert als Ausgangspunkt fur die Nachverfolgung an.',
+        items: ['Rufknopfe', 'Spracheingaben', 'Andere Pflegesignale'],
+      },
+      {
+        label: 'Was Velvoix hinzufugt',
+        title: 'Operative Einordnung rund um das Signal',
+        description:
+          'Velvoix fugt Kontext, Triage, Erklarung und Eventbildung hinzu, damit Teams schneller verstehen, was Aufmerksamkeit braucht.',
+        items: ['Kontext', 'Triage', 'Erklarung', 'Verantwortung', 'Eventbildung'],
+      },
+      {
+        label: 'Was daraus entsteht',
+        title: 'Handhabbare Nachverfolgung',
+        description:
+          'Das fuhrt zu klareren nachsten Schritten, weniger Interpretationslast und besserer Rekonstruktion des Ablaufs.',
+        items: ['Klarere Folgeaktion', 'Weniger Interpretationslast', 'Bessere Rekonstruktion'],
+      },
+    ],
+  },
   challenge: {
     eyebrow: 'Die Herausforderung',
     title: 'Wenn ein Signal noch keine klare Pflegehandlung ist',
@@ -368,6 +397,35 @@ export const esContent: SiteContent = {
       { value: 'Explicable', label: 'De la senal a un seguimiento comprensible' },
       { value: 'Auditable', label: 'El estado y la reconstruccion siguen siendo trazables' },
       { value: 'Controlado', label: 'Se integra sin crear otra capa de alertas' },
+    ],
+  },
+  propositionBridge: {
+    eyebrow: 'De un vistazo',
+    title: 'De la senal entrante al seguimiento operativo',
+    description:
+      'Las llamadas de boton, la voz y otras senales asistenciales adquieren contexto, explicacion y un siguiente paso operativo con Velvoix.',
+    stages: [
+      {
+        label: 'Que entra',
+        title: 'Senales del trabajo asistencial',
+        description:
+          'Las llamadas de boton, la voz y otras senales asistenciales entran de forma controlada como punto de partida del seguimiento.',
+        items: ['Llamadas de boton', 'Entrada por voz', 'Otras senales asistenciales'],
+      },
+      {
+        label: 'Que aporta Velvoix',
+        title: 'Sentido operativo alrededor de la senal',
+        description:
+          'Velvoix anade contexto, triaje, explicacion y formacion del evento para que el equipo entienda antes que requiere atencion.',
+        items: ['Contexto', 'Triaje', 'Explicacion', 'Titularidad', 'Formacion del evento'],
+      },
+      {
+        label: 'Que cambia despues',
+        title: 'Seguimiento gobernable',
+        description:
+          'Eso se traduce en pasos mas claros, menos carga interpretativa y una mejor reconstruccion de lo ocurrido.',
+        items: ['Seguimiento mas claro', 'Menos carga interpretativa', 'Mejor reconstruccion'],
+      },
     ],
   },
   challenge: {

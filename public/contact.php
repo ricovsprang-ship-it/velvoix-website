@@ -52,6 +52,27 @@ function smtp_send($socket, string $command, array $expectedCodes): string
     return smtp_expect($socket, $expectedCodes);
 }
 
+function smtp_authenticate($socket, string $username, string $password): void
+{
+    $plainToken = base64_encode("\0" . $username . "\0" . $password);
+
+    fwrite($socket, 'AUTH PLAIN ' . $plainToken . "\r\n");
+    $plainResponse = smtp_read($socket);
+    $plainCode = (int) substr($plainResponse, 0, 3);
+
+    if ($plainCode === 235) {
+        return;
+    }
+
+    if ($plainCode !== 334 && $plainCode !== 535) {
+        throw new RuntimeException(trim($plainResponse));
+    }
+
+    smtp_send($socket, 'AUTH LOGIN', [334]);
+    smtp_send($socket, base64_encode($username), [334]);
+    smtp_send($socket, base64_encode($password), [235]);
+}
+
 function smtp_send_mail(array $config, string $replyToEmail, string $replyToName, string $subject, string $plainBody): void
 {
     $transport = strtolower((string) ($config['encryption'] ?? 'ssl'));
@@ -91,9 +112,7 @@ function smtp_send_mail(array $config, string $replyToEmail, string $replyToName
             smtp_send($socket, 'EHLO ' . $heloHost, [250]);
         }
 
-        smtp_send($socket, 'AUTH LOGIN', [334]);
-        smtp_send($socket, base64_encode($username), [334]);
-        smtp_send($socket, base64_encode($password), [235]);
+        smtp_authenticate($socket, $username, $password);
         smtp_send($socket, 'MAIL FROM:<' . $fromAddress . '>', [250]);
         smtp_send($socket, 'RCPT TO:<' . $toAddress . '>', [250, 251]);
         smtp_send($socket, 'DATA', [354]);
@@ -123,6 +142,7 @@ function smtp_send_mail(array $config, string $replyToEmail, string $replyToName
 function load_mailer_config(): array
 {
     $config = [];
+    $loadedFrom = 'environment';
     $candidateFiles = [
         dirname(__DIR__) . DIRECTORY_SEPARATOR . 'contact-mailer-config.php',
         __DIR__ . DIRECTORY_SEPARATOR . '.contact-mailer-config.php',
@@ -133,6 +153,7 @@ function load_mailer_config(): array
             $loaded = require $candidate;
             if (is_array($loaded)) {
                 $config = $loaded;
+                $loadedFrom = $candidate;
                 break;
             }
         }
@@ -156,12 +177,20 @@ function load_mailer_config(): array
         }
     }
 
+    foreach ($config as $key => $value) {
+        if (is_string($value)) {
+            $config[$key] = trim($value);
+        }
+    }
+
     $requiredKeys = ['host', 'port', 'encryption', 'username', 'password', 'from_address', 'from_name', 'to_address'];
     foreach ($requiredKeys as $key) {
         if (empty($config[$key])) {
             throw new RuntimeException('Missing mailer configuration key: ' . $key);
         }
     }
+
+    $config['_loaded_from'] = $loadedFrom;
 
     return $config;
 }
@@ -224,6 +253,8 @@ try {
     smtp_send_mail($config, $email, $name, $subject, $plainBody);
     echo json_encode(['ok' => true], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 } catch (Throwable $exception) {
-    error_log('[velvoix contact] ' . $exception->getMessage());
-    json_error('We could not send your message right now. Please try again later.', 500);
+    $errorId = substr(bin2hex(random_bytes(8)), 0, 8);
+    $configSource = isset($config['_loaded_from']) ? (string) $config['_loaded_from'] : 'unknown';
+    error_log('[velvoix contact][' . $errorId . '][' . $configSource . '] ' . $exception->getMessage());
+    json_error('We could not send your message right now. Reference: ' . $errorId, 500);
 }

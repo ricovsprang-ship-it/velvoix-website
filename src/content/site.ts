@@ -38,6 +38,15 @@ export interface HeroContent {
   metrics: Array<{ value: string; label: string }>;
 }
 
+export interface PropositionBridgeContent extends SectionIntroContent {
+  stages: Array<{
+    label: string;
+    title: string;
+    description: string;
+    items: string[];
+  }>;
+}
+
 export interface SectionIntroContent {
   eyebrow: string;
   title: string;
@@ -185,6 +194,7 @@ export interface SiteContent {
   nav: NavItem[];
   meta: MetaContent;
   hero: HeroContent;
+  propositionBridge: PropositionBridgeContent;
   challenge: ChallengeContent;
   flow: FlowContent;
   howItWorks: HowItWorksContent;
@@ -228,6 +238,35 @@ export const siteContent: Record<Locale, SiteContent> = {
         { value: 'Uitlegbaar', label: 'Van signaal naar begrijpelijke opvolging' },
         { value: 'Auditbaar', label: 'Statusverloop en reconstructie blijven herleidbaar' },
         { value: 'Beheersbaar', label: 'Past in bestaande zorgomgevingen zonder losse notificatielaag' },
+      ],
+    },
+    propositionBridge: {
+      eyebrow: 'In een oogopslag',
+      title: 'Van binnenkomend signaal naar werkbare opvolging',
+      description:
+        'Knopoproepen, spraakinput en andere zorgsignalen krijgen via Velvoix context, uitleg en een werkbare volgende stap.',
+      stages: [
+        {
+          label: 'Wat binnenkomt',
+          title: 'Signalen uit de zorgpraktijk',
+          description:
+            'Knopoproepen, spraakinput en andere zorgsignalen komen gecontroleerd binnen als startpunt voor opvolging.',
+          items: ['Knopoproepen', 'Spraakinput', 'Andere zorgsignalen'],
+        },
+        {
+          label: 'Wat Velvoix toevoegt',
+          title: 'Duiding rond het signaal',
+          description:
+            'Velvoix voegt context, triage, uitleg en eventvorming toe zodat een team sneller begrijpt wat aandacht vraagt.',
+          items: ['Context', 'Triage', 'Uitleg', 'Eigenaarschap', 'Eventvorming'],
+        },
+        {
+          label: 'Wat dat oplevert',
+          title: 'Werkbare opvolging',
+          description:
+            'Dat geeft duidelijkere vervolgacties, minder interpretatielast en betere reconstructie van wat er is gebeurd.',
+          items: ['Duidelijkere opvolging', 'Minder interpretatielast', 'Betere reconstructie'],
+        },
       ],
     },
     challenge: {
@@ -583,6 +622,35 @@ export const siteContent: Record<Locale, SiteContent> = {
         { value: 'Explainable', label: 'From signal to understandable follow-up' },
         { value: 'Auditable', label: 'Event flow and reconstruction remain traceable' },
         { value: 'Controlled', label: 'Fits care environments without becoming another notification layer' },
+      ],
+    },
+    propositionBridge: {
+      eyebrow: 'At a glance',
+      title: 'From incoming signal to workable follow-up',
+      description:
+        'Button calls, voice input and other care signals gain context, explanation and a workable next step through Velvoix.',
+      stages: [
+        {
+          label: 'What comes in',
+          title: 'Signals from care operations',
+          description:
+            'Button calls, voice input and other care-related signals enter in a controlled way as the start of follow-up.',
+          items: ['Button calls', 'Voice input', 'Other care signals'],
+        },
+        {
+          label: 'What Velvoix adds',
+          title: 'Operational meaning around the signal',
+          description:
+            'Velvoix adds context, triage, explanation and event shaping so teams understand faster what needs attention.',
+          items: ['Context', 'Triage', 'Explanation', 'Ownership', 'Event shaping'],
+        },
+        {
+          label: 'What that delivers',
+          title: 'Workable follow-up',
+          description:
+            'That leads to clearer next steps, less interpretation burden and better reconstruction of what happened.',
+          items: ['Clearer follow-up', 'Less interpretation burden', 'Better reconstruction'],
+        },
       ],
     },
     challenge: {

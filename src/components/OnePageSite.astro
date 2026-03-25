@@ -8,6 +8,7 @@ import Header from './Header.astro';
 import HeroSection from './HeroSection.astro';
 import HowItWorksSection from './HowItWorksSection.astro';
 import PilotSection from './PilotSection.astro';
+import PropositionBridgeSection from './PropositionBridgeSection.astro';
 import SnapshotSection from './SnapshotSection.astro';
 import TechnicalCoreSection from './TechnicalCoreSection.astro';
 import WhyDifferentSection from './WhyDifferentSection.astro';
@@ -25,6 +26,7 @@ const { locale, content } = Astro.props;
 
   <main>
     <HeroSection locale={locale} content={content.hero} />
+    <PropositionBridgeSection content={content.propositionBridge} />
 
     <ChallengeProofSection content={content.challenge} />
 
