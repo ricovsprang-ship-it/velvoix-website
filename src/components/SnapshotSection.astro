@@ -347,6 +347,11 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.72),
       0 14px 28px rgba(15, 23, 42, 0.04);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+    overscroll-behavior: contain;
   }
 
   [data-platform-tour] .platform-tour-slide__figure img {
@@ -416,6 +421,11 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
   [data-platform-tour] .platform-tour-slide__figure.is-dragging {
     cursor: grabbing;
+  }
+
+  body.platform-tour-is-dragging,
+  body.platform-tour-is-dragging * {
+    cursor: grabbing !important;
   }
 
   [data-platform-tour] .platform-tour-rail {
@@ -660,6 +670,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     };
 
     const updateFigureCursor = () => {
+      document.body.classList.toggle('platform-tour-is-dragging', viewState.dragging);
+
       figures.forEach((figure, index) => {
         if (!(figure instanceof HTMLElement)) return;
         figure.classList.remove('is-zoomable', 'is-pannable', 'is-dragging');
@@ -903,6 +915,14 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     figures.forEach((figure, index) => {
       if (!(figure instanceof HTMLElement)) return;
 
+      figure.addEventListener('dragstart', (event) => {
+        event.preventDefault();
+      });
+
+      figure.addEventListener('selectstart', (event) => {
+        event.preventDefault();
+      });
+
       figure.addEventListener('wheel', (event) => {
         if (index !== activeIndex || !(overlay instanceof HTMLElement) || overlay.hidden) return;
         event.preventDefault();
@@ -917,7 +937,16 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       });
 
       figure.addEventListener('pointerdown', (event) => {
-        if (index !== activeIndex || viewState.zoom <= 1.02 || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+        if (
+          index !== activeIndex ||
+          viewState.zoom <= 1.02 ||
+          !(overlay instanceof HTMLElement) ||
+          overlay.hidden ||
+          event.button !== 0
+        ) {
+          return;
+        }
+        event.preventDefault();
         viewState.dragging = true;
         viewState.pointerId = event.pointerId;
         viewState.dragStartX = event.clientX;
@@ -937,17 +966,18 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
 
       const releaseDrag = (event) => {
         if (viewState.pointerId !== event.pointerId) return;
+        const pointerId = viewState.pointerId;
         viewState.dragging = false;
         viewState.pointerId = null;
+        if (pointerId !== null && figure.hasPointerCapture(pointerId)) {
+          figure.releasePointerCapture(pointerId);
+        }
         updateFigureCursor();
       };
 
       figure.addEventListener('pointerup', releaseDrag);
       figure.addEventListener('pointercancel', releaseDrag);
-      figure.addEventListener('pointerleave', (event) => {
-        if (!viewState.dragging || viewState.pointerId !== event.pointerId) return;
-        releaseDrag(event);
-      });
+      figure.addEventListener('lostpointercapture', releaseDrag);
     });
 
     closeButtons.forEach((button) => button.addEventListener('click', closeOverlay));
