@@ -73,6 +73,72 @@ function smtp_authenticate($socket, string $username, string $password): void
     smtp_send($socket, base64_encode($password), [235]);
 }
 
+function sanitize_header_text(string $value): string
+{
+    return trim((string) preg_replace('/[\r\n]+/', ' ', $value));
+}
+
+function encode_header_text(string $value): string
+{
+    $safeValue = sanitize_header_text($value);
+
+    if ($safeValue === '') {
+        return '';
+    }
+
+    if (preg_match('/^[\x20-\x7E]+$/', $safeValue)) {
+        return $safeValue;
+    }
+
+    if (function_exists('mb_encode_mimeheader')) {
+        return mb_encode_mimeheader($safeValue, 'UTF-8', 'B', "\r\n");
+    }
+
+    return '=?UTF-8?B?' . base64_encode($safeValue) . '?=';
+}
+
+function format_address_header(string $displayName, string $email): string
+{
+    $safeEmail = filter_var(trim($email), FILTER_VALIDATE_EMAIL);
+    if ($safeEmail === false) {
+        throw new RuntimeException('Invalid email address provided for mail headers.');
+    }
+
+    $encodedName = encode_header_text($displayName);
+    if ($encodedName === '') {
+        return '<' . $safeEmail . '>';
+    }
+
+    return $encodedName . ' <' . $safeEmail . '>';
+}
+
+function build_mail_payload(array $config, string $replyToEmail, string $replyToName, string $subject, string $plainBody): array
+{
+    $fromAddress = (string) $config['from_address'];
+    $fromName = (string) $config['from_name'];
+    $toAddress = (string) $config['to_address'];
+    $safeSubject = sanitize_header_text($subject);
+
+    $headers = [
+        'Date: ' . date(DATE_RFC2822),
+        'From: ' . format_address_header($fromName, $fromAddress),
+        'Sender: <' . $fromAddress . '>',
+        'Reply-To: ' . format_address_header($replyToName, $replyToEmail),
+        'To: <' . $toAddress . '>',
+        'Subject: ' . encode_header_text($safeSubject),
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+        'X-Mailer: Velvoix Website Contact',
+    ];
+
+    return [
+        'subject' => $safeSubject,
+        'headers' => $headers,
+        'body' => $plainBody,
+    ];
+}
+
 function smtp_send_mail(array $config, string $replyToEmail, string $replyToName, string $subject, string $plainBody): void
 {
     $transport = strtolower((string) ($config['encryption'] ?? 'ssl'));
@@ -81,9 +147,9 @@ function smtp_send_mail(array $config, string $replyToEmail, string $replyToName
     $username = (string) $config['username'];
     $password = (string) $config['password'];
     $fromAddress = (string) $config['from_address'];
-    $fromName = (string) $config['from_name'];
     $toAddress = (string) $config['to_address'];
     $heloHost = (string) ($config['helo_host'] ?? 'velvoix.com');
+    $mailPayload = build_mail_payload($config, $replyToEmail, $replyToName, $subject, $plainBody);
 
     $remoteHost = $transport === 'ssl' ? 'ssl://' . $host : $host;
     $socket = @stream_socket_client(
@@ -117,20 +183,7 @@ function smtp_send_mail(array $config, string $replyToEmail, string $replyToName
         smtp_send($socket, 'RCPT TO:<' . $toAddress . '>', [250, 251]);
         smtp_send($socket, 'DATA', [354]);
 
-        $safeReplyToName = preg_replace('/[\r\n]+/', ' ', $replyToName) ?: 'Website contact';
-        $safeSubject = preg_replace('/[\r\n]+/', ' ', $subject) ?: 'Velvoix website contact';
-        $headers = [
-            'Date: ' . date(DATE_RFC2822),
-            'From: ' . $fromName . ' <' . $fromAddress . '>',
-            'Reply-To: ' . $safeReplyToName . ' <' . $replyToEmail . '>',
-            'To: <' . $toAddress . '>',
-            'Subject: ' . $safeSubject,
-            'MIME-Version: 1.0',
-            'Content-Type: text/plain; charset=UTF-8',
-            'Content-Transfer-Encoding: 8bit',
-        ];
-
-        $message = implode("\r\n", $headers) . "\r\n\r\n" . str_replace("\n.", "\n..", $plainBody) . "\r\n.";
+        $message = implode("\r\n", $mailPayload['headers']) . "\r\n\r\n" . str_replace("\n.", "\n..", $mailPayload['body']) . "\r\n.";
         fwrite($socket, $message . "\r\n");
         smtp_expect($socket, [250]);
         smtp_send($socket, 'QUIT', [221]);
