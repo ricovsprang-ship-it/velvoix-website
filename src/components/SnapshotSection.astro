@@ -340,7 +340,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     overflow: hidden;
     display: grid;
     place-items: center;
-    padding: clamp(0.7rem, 1vw, 1rem);
+    padding: clamp(0.55rem, 0.82vw, 0.82rem);
     border: 1px solid rgba(216, 224, 232, 0.96);
     border-radius: 1.2rem;
     background: rgba(255, 255, 255, 0.98);
@@ -734,7 +734,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       const meta = getSlideMeta(activeIndex);
       if (image instanceof HTMLElement) {
         image.style.objectPosition = meta.objectPosition ?? 'center top';
-        image.style.transformOrigin = '50% 50%';
+        image.style.transformOrigin = meta.zoomOrigin ?? '50% 50%';
         const clamped = clampPan(viewState.panX, viewState.panY);
         viewState.panX = clamped.panX;
         viewState.panY = clamped.panY;
