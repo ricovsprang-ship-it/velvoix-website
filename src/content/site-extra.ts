@@ -13,10 +13,10 @@ export const deContent: SiteContent = {
   meta: {
     title: 'Velvoix | Vom Signal zur klaren Pflegehandlung',
     description:
-      'Velvoix hilft Pflegeorganisationen dabei, Rufknöpfe, Spracheingaben und andere Pflegesignale in nachvollziehbare, priorisierte und auditierbare Pflege-Workflows zu übersetzen.',
+      'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare, nachvollziehbare und herleitbare Nachverfolgung zu übersetzen.',
     ogTitle: 'Velvoix | Klare Pflegehandlung aus Signalen',
     ogDescription:
-      'Eine Einführung in Velvoix: vom Signal zu nachvollziehbarem, priorisiertem und auditierbarem Pflege-Workflow.',
+      'Velvoix übersetzt Pflegesignale in klare Nachverfolgung mit Kontext, Triage und nachvollziehbarem Workflow.',
   },
   hero: {
     eyebrow: 'Velvoix',
@@ -382,10 +382,10 @@ export const esContent: SiteContent = {
   meta: {
     title: 'Velvoix | De la señal a una acción asistencial clara',
     description:
-      'Velvoix ayuda a las organizaciones sanitarias a convertir llamadas de botón, entradas por voz y otras señales asistenciales en un flujo asistencial explicable, priorizado y auditable.',
+      'Velvoix ayuda a las organizaciones sanitarias a convertir señales asistenciales en un seguimiento claro, explicable y trazable.',
     ogTitle: 'Velvoix | Acción asistencial clara a partir de señales',
     ogDescription:
-      'Una introducción a Velvoix: de la señal a un flujo asistencial explicable, priorizado y auditable.',
+      'Velvoix traduce señales asistenciales en seguimiento claro con contexto, triaje y workflow trazable.',
   },
   hero: {
     eyebrow: 'Velvoix',

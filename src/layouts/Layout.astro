@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '../content/site';
 import { localeRootPaths } from '../content/site';
+import { publicContactEmails } from '../content/contact-addresses';
 import '../styles/global.css';
 
 interface Props {
@@ -14,12 +15,78 @@ interface Props {
 }
 
 const { locale, title, description, ogTitle, ogDescription, path, alternatePaths = {} } = Astro.props;
-const siteUrl = 'https://velvoix.com';
+const siteUrl = Astro.site?.toString() ?? 'https://velvoix.com';
 const canonical = new URL(path, siteUrl).toString();
 const alternates: Record<Locale, string> = {
   ...localeRootPaths,
   ...alternatePaths,
 };
+const languageCodes: Record<Locale, string> = {
+  nl: 'nl-NL',
+  en: 'en',
+  de: 'de-DE',
+  es: 'es-ES',
+};
+const availableLanguages = Object.values(languageCodes);
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteUrl}#organization`,
+    name: 'Velvoix',
+    url: siteUrl,
+    logo: new URL('/favicon.svg', siteUrl).toString(),
+    email: publicContactEmails.general,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: publicContactEmails.support,
+        availableLanguage: availableLanguages,
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: publicContactEmails.partners,
+        availableLanguage: availableLanguages,
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'privacy',
+        email: publicContactEmails.privacy,
+        availableLanguage: availableLanguages,
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteUrl}#website`,
+    url: siteUrl,
+    name: 'Velvoix',
+    description,
+    inLanguage: availableLanguages,
+    publisher: {
+      '@id': `${siteUrl}#organization`,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    inLanguage: languageCodes[locale],
+    isPartOf: {
+      '@id': `${siteUrl}#website`,
+    },
+    about: {
+      '@id': `${siteUrl}#organization`,
+    },
+    primaryImageOfPage: new URL('/og-cover.svg', siteUrl).toString(),
+  },
+];
 ---
 
 <!doctype html>
@@ -29,6 +96,7 @@ const alternates: Record<Locale, string> = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#0d4f5d" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
@@ -37,6 +105,7 @@ const alternates: Record<Locale, string> = {
     <link rel="alternate" hreflang="de" href={new URL(alternates.de, siteUrl).toString()} />
     <link rel="alternate" hreflang="es" href={new URL(alternates.es, siteUrl).toString()} />
     <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, siteUrl).toString()} />
+    <meta property="og:locale" content={languageCodes[locale]} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Velvoix" />
     <meta property="og:title" content={ogTitle} />
@@ -47,6 +116,7 @@ const alternates: Record<Locale, string> = {
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={new URL('/og-cover.svg', siteUrl).toString()} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <title>{title}</title>
   </head>
   <body class="bg-slate-950 text-slate-900">

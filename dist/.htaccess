@@ -7,6 +7,11 @@ RewriteRule ^category/uncategorized/?$ - [G,L]
 RewriteRule ^tag(?:/.*)?$ - [G,L]
 RewriteRule ^author(?:/.*)?$ - [G,L]
 
+# Keep crawlers and users on the canonical non-www HTTPS host.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.velvoix\.com$ [NC]
+RewriteRule ^ https://velvoix.com%{REQUEST_URI} [R=301,L]
+
 <Files ".contact-mailer-config.php">
   Require all denied
 </Files>

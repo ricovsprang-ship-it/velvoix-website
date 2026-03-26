@@ -226,10 +226,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     meta: {
       title: 'Velvoix | Van signaal naar duidelijke zorgactie',
       description:
-        'Velvoix helpt zorgorganisaties om knopoproepen, spraakinput en andere zorgsignalen om te zetten in uitlegbare, geprioriteerde en auditbare zorgworkflow.',
+        'Velvoix helpt zorgorganisaties zorgsignalen om te zetten in duidelijke, uitlegbare en herleidbare opvolging.',
       ogTitle: 'Velvoix | Duidelijke zorgactie uit signalen',
       ogDescription:
-        'Een informatieve introductie tot Velvoix: van signaal naar uitlegbare, geprioriteerde en auditbare zorgworkflow.',
+        'Velvoix vertaalt zorgsignalen naar duidelijke opvolging met context, triage en herleidbare workflow.',
     },
     hero: {
       eyebrow: 'Velvoix',
@@ -612,10 +612,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     meta: {
       title: 'Velvoix | From signal to clear care action',
       description:
-        'Velvoix helps healthcare organisations turn button calls, voice input and other care-related signals into explainable, prioritised and auditable care workflow.',
+        'Velvoix helps healthcare organisations turn care signals into clear, explainable and traceable follow-up.',
       ogTitle: 'Velvoix | Clear care action from signals',
       ogDescription:
-        'An introduction to Velvoix: from signal to explainable, prioritised and auditable care workflow.',
+        'Velvoix translates care signals into clear follow-up with context, triage and traceable workflow.',
     },
     hero: {
       eyebrow: 'Velvoix',
