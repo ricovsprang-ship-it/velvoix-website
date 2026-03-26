@@ -82,7 +82,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Volgende',
     railLabel: 'Onderdelen van de producttour',
     curatedViewsLabel: 'geselecteerde schermen',
-    interactionHint: 'Scroll om te zoomen, sleep om te verplaatsen, 0 om te resetten.',
+    interactionHint: 'Pinch of scroll om te zoomen, sleep om te verplaatsen, 0 om te resetten.',
     slides: [
       { id: 'login', label: 'Start', title: 'Rustige toegang', text: 'De instap houdt toegang tot het platform rustig en herkenbaar, zodat teams zonder extra frictie aan de werkdag beginnen.', alt: 'Velvoix login scherm', ...slideFraming.login },
       { id: 'worklist', label: 'Werkvoorraad', title: 'Meldingen in een bestuurbare lijst', text: 'Urgentie, status en eigenaarschap blijven samen leesbaar, zodat open opvolging niet over losse signalen versnippert.', alt: 'Velvoix meldingenlijst', ...slideFraming.worklist },
@@ -117,7 +117,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Next',
     railLabel: 'Product tour sections',
     curatedViewsLabel: 'selected screens',
-    interactionHint: 'Scroll to zoom, drag to move, press 0 to reset.',
+    interactionHint: 'Pinch or scroll to zoom, drag to move, press 0 to reset.',
     slides: [
       { id: 'login', label: 'Start', title: 'A calm entry point', text: 'The entry keeps access calm and recognisable so teams can start the day without extra friction.', alt: 'Velvoix login screen', ...slideFraming.login },
       { id: 'worklist', label: 'Worklist', title: 'Signals in one manageable list', text: 'Urgency, status and ownership stay visible together so open follow-up does not fragment across separate signals.', alt: 'Velvoix worklist', ...slideFraming.worklist },
@@ -152,7 +152,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Weiter',
     railLabel: 'Bereiche der Produkttour',
     curatedViewsLabel: 'ausgewaehlte Ansichten',
-    interactionHint: 'Scrollen zum Zoomen, ziehen zum Verschieben, 0 zum Zuruecksetzen.',
+    interactionHint: 'Mit zwei Fingern oder per Scrollen zoomen, ziehen zum Verschieben, 0 zum Zuruecksetzen.',
     slides: [
       { id: 'login', label: 'Start', title: 'Ruhiger Einstieg', text: 'Der Einstieg haelt den Zugang ruhig und klar, damit Teams ohne zusaetzliche Reibung in den Arbeitstag starten.', alt: 'Velvoix Login', ...slideFraming.login },
       { id: 'worklist', label: 'Arbeitsvorrat', title: 'Signale in einer steuerbaren Liste', text: 'Dringlichkeit, Status und Verantwortung bleiben zusammen sichtbar, damit offene Nachverfolgung nicht ueber einzelne Signale zerfaellt.', alt: 'Velvoix Arbeitsvorrat', ...slideFraming.worklist },
@@ -187,7 +187,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Siguiente',
     railLabel: 'Secciones del recorrido',
     curatedViewsLabel: 'pantallas seleccionadas',
-    interactionHint: 'Desplace para ampliar, arrastre para mover, pulse 0 para reiniciar.',
+    interactionHint: 'Pellizque o desplace para ampliar, arrastre para mover, pulse 0 para reiniciar.',
     slides: [
       { id: 'login', label: 'Inicio', title: 'Entrada serena', text: 'La entrada mantiene el acceso sereno y reconocible para que el equipo comience la jornada sin friccion innecesaria.', alt: 'Pantalla de acceso de Velvoix', ...slideFraming.login },
       { id: 'worklist', label: 'Bandeja', title: 'Senales en una lista gobernable', text: 'Urgencia, estado y responsabilidad permanecen juntas para que el seguimiento abierto no se fragmente entre senales separadas.', alt: 'Lista de trabajo de Velvoix', ...slideFraming.worklist },

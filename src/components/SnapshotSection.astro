@@ -501,11 +501,11 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     }
 
     [data-platform-tour] .platform-tour-stage {
-      min-height: 18rem;
+      min-height: clamp(20rem, 58svh, 34rem);
     }
 
     [data-platform-tour] .platform-tour-slide__figure img {
-      max-height: 52vh;
+      max-height: 60svh;
     }
   }
 
@@ -548,6 +548,18 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       grid-template-rows: auto auto;
     }
 
+    [data-platform-tour] .platform-tour-stage {
+      min-height: clamp(21rem, 62svh, 32rem);
+    }
+
+    [data-platform-tour] .platform-tour-slide__figure {
+      padding: 0.55rem;
+    }
+
+    [data-platform-tour] .platform-tour-slide__figure img {
+      max-height: 64svh;
+    }
+
     [data-platform-tour] .platform-tour-rail {
       max-height: 15rem;
     }
@@ -561,6 +573,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
   gsap.registerPlugin(ScrollTrigger);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const supportsCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
   const blocks = document.querySelectorAll('[data-platform-tour]');
 
   for (const block of blocks) {
@@ -599,6 +612,17 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       dragStartY: 0,
       dragPanX: 0,
       dragPanY: 0,
+      touchMode: 'idle',
+      touchStartDistance: 0,
+      touchStartZoom: 1,
+      touchStartPanX: 0,
+      touchStartPanY: 0,
+      touchLastCenterX: 0,
+      touchLastCenterY: 0,
+      touchMoved: false,
+      lastTapAt: 0,
+      lastTapX: 0,
+      lastTapY: 0,
     };
 
     const focusableSelector =
@@ -621,6 +645,13 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
     };
 
     const getActiveFigure = () => getSlideFigure(activeIndex);
+
+    const getTouchDistance = (touchA, touchB) => Math.hypot(touchB.clientX - touchA.clientX, touchB.clientY - touchA.clientY);
+
+    const getTouchCenter = (touchA, touchB) => ({
+      x: (touchA.clientX + touchB.clientX) / 2,
+      y: (touchA.clientY + touchB.clientY) / 2,
+    });
 
     const ensureSlideImage = (index, priority = 'auto') => {
       const slide = slideData[index];
@@ -693,6 +724,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       viewState.panY = 0;
       viewState.dragging = false;
       viewState.pointerId = null;
+      viewState.touchMode = 'idle';
+      viewState.touchMoved = false;
       updateFigureCursor();
     };
 
@@ -806,7 +839,8 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       const metrics = getFitMetrics();
       if (!metrics) return;
 
-      const nextZoom = Math.min(3, Math.max(1, targetZoom));
+      const maxZoom = supportsCoarsePointer ? 4 : 3;
+      const nextZoom = Math.min(maxZoom, Math.max(1, targetZoom));
       const ratio = nextZoom / viewState.zoom;
       const localX = clientX - metrics.rect.left - metrics.rect.width / 2;
       const localY = clientY - metrics.rect.top - metrics.rect.height / 2;
@@ -942,6 +976,7 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
           viewState.zoom <= 1.02 ||
           !(overlay instanceof HTMLElement) ||
           overlay.hidden ||
+          event.pointerType === 'touch' ||
           event.button !== 0
         ) {
           return;
@@ -978,6 +1013,112 @@ const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-d
       figure.addEventListener('pointerup', releaseDrag);
       figure.addEventListener('pointercancel', releaseDrag);
       figure.addEventListener('lostpointercapture', releaseDrag);
+
+      figure.addEventListener('touchstart', (event) => {
+        if (index !== activeIndex || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+
+        if (event.touches.length === 2) {
+          const [touchA, touchB] = event.touches;
+          const center = getTouchCenter(touchA, touchB);
+          viewState.touchMode = 'pinch';
+          viewState.touchStartDistance = getTouchDistance(touchA, touchB) || 1;
+          viewState.touchStartZoom = viewState.zoom;
+          viewState.touchStartPanX = viewState.panX;
+          viewState.touchStartPanY = viewState.panY;
+          viewState.touchLastCenterX = center.x;
+          viewState.touchLastCenterY = center.y;
+          viewState.touchMoved = false;
+          viewState.dragging = false;
+          updateFigureCursor();
+          return;
+        }
+
+        if (event.touches.length === 1 && viewState.zoom > 1.02) {
+          const touch = event.touches[0];
+          viewState.touchMode = 'pan';
+          viewState.touchStartPanX = viewState.panX;
+          viewState.touchStartPanY = viewState.panY;
+          viewState.dragStartX = touch.clientX;
+          viewState.dragStartY = touch.clientY;
+          viewState.touchMoved = false;
+        }
+      }, { passive: true });
+
+      figure.addEventListener('touchmove', (event) => {
+        if (index !== activeIndex || !(overlay instanceof HTMLElement) || overlay.hidden) return;
+
+        if (event.touches.length === 2) {
+          event.preventDefault();
+          const [touchA, touchB] = event.touches;
+          const center = getTouchCenter(touchA, touchB);
+          const distance = getTouchDistance(touchA, touchB) || viewState.touchStartDistance || 1;
+          const targetZoom = viewState.touchStartZoom * (distance / (viewState.touchStartDistance || 1));
+          const deltaX = center.x - viewState.touchLastCenterX;
+          const deltaY = center.y - viewState.touchLastCenterY;
+
+          zoomAtPoint(targetZoom, center.x, center.y);
+          viewState.panX += deltaX;
+          viewState.panY += deltaY;
+          applyFrame();
+
+          viewState.touchMode = 'pinch';
+          viewState.touchLastCenterX = center.x;
+          viewState.touchLastCenterY = center.y;
+          viewState.touchMoved = true;
+          return;
+        }
+
+        if (event.touches.length === 1 && viewState.zoom > 1.02) {
+          event.preventDefault();
+          const touch = event.touches[0];
+          viewState.panX = viewState.touchStartPanX + (touch.clientX - viewState.dragStartX);
+          viewState.panY = viewState.touchStartPanY + (touch.clientY - viewState.dragStartY);
+          viewState.touchMode = 'pan';
+          viewState.touchMoved = true;
+          applyFrame();
+        }
+      }, { passive: false });
+
+      figure.addEventListener('touchend', (event) => {
+        if (index !== activeIndex) return;
+
+        if (event.touches.length === 1 && viewState.zoom > 1.02) {
+          const remainingTouch = event.touches[0];
+          viewState.touchMode = 'pan';
+          viewState.touchStartPanX = viewState.panX;
+          viewState.touchStartPanY = viewState.panY;
+          viewState.dragStartX = remainingTouch.clientX;
+          viewState.dragStartY = remainingTouch.clientY;
+          return;
+        }
+
+        if (event.touches.length > 1) return;
+
+        const endedTouch = event.changedTouches[0];
+        if (viewState.touchMode !== 'pinch' && endedTouch && !viewState.touchMoved) {
+          const isDoubleTap =
+            event.timeStamp - viewState.lastTapAt < 320 &&
+            Math.hypot(endedTouch.clientX - viewState.lastTapX, endedTouch.clientY - viewState.lastTapY) < 28;
+
+          if (isDoubleTap) {
+            const nextZoom = viewState.zoom > 1.4 ? 1 : (supportsCoarsePointer ? 2.6 : 2.1);
+            zoomAtPoint(nextZoom, endedTouch.clientX, endedTouch.clientY);
+            viewState.lastTapAt = 0;
+          } else {
+            viewState.lastTapAt = event.timeStamp;
+            viewState.lastTapX = endedTouch.clientX;
+            viewState.lastTapY = endedTouch.clientY;
+          }
+        }
+
+        viewState.touchMode = 'idle';
+        viewState.touchMoved = false;
+      });
+
+      figure.addEventListener('touchcancel', () => {
+        viewState.touchMode = 'idle';
+        viewState.touchMoved = false;
+      });
     });
 
     closeButtons.forEach((button) => button.addEventListener('click', closeOverlay));
