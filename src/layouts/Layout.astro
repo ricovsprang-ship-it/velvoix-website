@@ -12,15 +12,28 @@ interface Props {
   ogDescription: string;
   path: string;
   alternatePaths?: Partial<Record<Locale, string>>;
+  strictAlternatePaths?: boolean;
 }
 
-const { locale, title, description, ogTitle, ogDescription, path, alternatePaths = {} } = Astro.props;
+const {
+  locale,
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  path,
+  alternatePaths = {},
+  strictAlternatePaths = false,
+} = Astro.props;
 const siteUrl = Astro.site?.toString() ?? 'https://velvoix.com';
 const canonical = new URL(path, siteUrl).toString();
 const alternates: Record<Locale, string> = {
   ...localeRootPaths,
   ...alternatePaths,
 };
+const availableAlternateLocales: Locale[] = strictAlternatePaths
+  ? (Object.keys(alternatePaths) as Locale[])
+  : ['nl', 'en', 'de', 'es'];
 const languageCodes: Record<Locale, string> = {
   nl: 'nl-NL',
   en: 'en',
@@ -100,11 +113,11 @@ const structuredData = [
     <meta name="theme-color" content="#0d4f5d" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="nl-NL" href={new URL(alternates.nl, siteUrl).toString()} />
-    <link rel="alternate" hreflang="en" href={new URL(alternates.en, siteUrl).toString()} />
-    <link rel="alternate" hreflang="de" href={new URL(alternates.de, siteUrl).toString()} />
-    <link rel="alternate" hreflang="es" href={new URL(alternates.es, siteUrl).toString()} />
-    <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, siteUrl).toString()} />
+    {availableAlternateLocales.includes('nl') && <link rel="alternate" hreflang="nl-NL" href={new URL(alternates.nl, siteUrl).toString()} />}
+    {availableAlternateLocales.includes('en') && <link rel="alternate" hreflang="en" href={new URL(alternates.en, siteUrl).toString()} />}
+    {availableAlternateLocales.includes('de') && <link rel="alternate" hreflang="de" href={new URL(alternates.de, siteUrl).toString()} />}
+    {availableAlternateLocales.includes('es') && <link rel="alternate" hreflang="es" href={new URL(alternates.es, siteUrl).toString()} />}
+    {availableAlternateLocales.includes('en') && <link rel="alternate" hreflang="x-default" href={new URL(alternates.en, siteUrl).toString()} />}
     <meta property="og:locale" content={languageCodes[locale]} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Velvoix" />

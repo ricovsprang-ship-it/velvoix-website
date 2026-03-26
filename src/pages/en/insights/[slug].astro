@@ -1,0 +1,39 @@
+---
+import ResourcePage from '../../../components/ResourcePage.astro';
+import { getResourceAlternates, getResourceNav, resourceArticlesByLocale, resourceUiByLocale } from '../../../content/resources';
+import { siteContent } from '../../../content/site';
+import Layout from '../../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return resourceArticlesByLocale.en.map((article) => ({
+    params: { slug: article.slug },
+    props: {
+      article,
+      languagePaths: getResourceAlternates(article.id),
+    },
+  }));
+}
+
+const locale = 'en' as const;
+const { article, languagePaths } = Astro.props;
+---
+
+<Layout
+  locale={locale}
+  title={article.meta.title}
+  description={article.meta.description}
+  ogTitle={article.meta.ogTitle}
+  ogDescription={article.meta.ogDescription}
+  path={`/en/insights/${article.slug}`}
+  alternatePaths={languagePaths}
+  strictAlternatePaths={true}
+>
+  <ResourcePage
+    locale={locale}
+    article={article}
+    ui={resourceUiByLocale[locale]}
+    footer={siteContent[locale].footer}
+    nav={getResourceNav(locale)}
+    languagePaths={languagePaths}
+  />
+</Layout>

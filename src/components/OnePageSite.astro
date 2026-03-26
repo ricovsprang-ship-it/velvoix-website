@@ -3,6 +3,7 @@ import type { Locale, SiteContent } from '../content/site';
 import ChallengeProofSection from './ChallengeProofSection.astro';
 import CompareChainsSection from './CompareChainsSection.astro';
 import ContactForm from './ContactForm.astro';
+import EvidenceAndInsightsSection from './EvidenceAndInsightsSection.astro';
 import Footer from './Footer.astro';
 import Header from './Header.astro';
 import HeroSection from './HeroSection.astro';
@@ -39,6 +40,7 @@ const { locale, content } = Astro.props;
     <div class="surface-band">
       <SnapshotSection locale={locale} content={content.snapshots} />
     </div>
+    <EvidenceAndInsightsSection locale={locale} />
     <PilotSection locale={locale} content={content.pilot} />
     <ContactForm content={content.contact} />
   </main>

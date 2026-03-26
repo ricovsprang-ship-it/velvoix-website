@@ -131,4 +131,40 @@
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://velvoix.com/es/terms-and-conditions" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/terms-and-conditions" />
   </url>
+  <url>
+    <loc>https://velvoix.com/insights/uitlegbare-zorgtriage</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/uitlegbare-zorgtriage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/explainable-care-triage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/explainable-care-triage" />
+  </url>
+  <url>
+    <loc>https://velvoix.com/en/insights/explainable-care-triage</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/uitlegbare-zorgtriage" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/explainable-care-triage" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/explainable-care-triage" />
+  </url>
+  <url>
+    <loc>https://velvoix.com/insights/zorgworkflow-en-reconstructie</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/zorgworkflow-en-reconstructie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/care-workflow-and-reconstruction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/care-workflow-and-reconstruction" />
+  </url>
+  <url>
+    <loc>https://velvoix.com/en/insights/care-workflow-and-reconstruction</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/zorgworkflow-en-reconstructie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/care-workflow-and-reconstruction" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/care-workflow-and-reconstruction" />
+  </url>
+  <url>
+    <loc>https://velvoix.com/insights/pilotaanpak-zorgsignalen</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/pilotaanpak-zorgsignalen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/pilot-approach-care-signals" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/pilot-approach-care-signals" />
+  </url>
+  <url>
+    <loc>https://velvoix.com/en/insights/pilot-approach-care-signals</loc>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://velvoix.com/insights/pilotaanpak-zorgsignalen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://velvoix.com/en/insights/pilot-approach-care-signals" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://velvoix.com/en/insights/pilot-approach-care-signals" />
+  </url>
 </urlset>
