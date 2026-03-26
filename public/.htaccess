@@ -1,3 +1,12 @@
+RewriteEngine On
+
+# Retire known WordPress legacy routes from the public footprint.
+RewriteRule ^sample-page/?$ - [G,L]
+RewriteRule ^hello-world/?$ - [G,L]
+RewriteRule ^category/uncategorized/?$ - [G,L]
+RewriteRule ^tag(?:/.*)?$ - [G,L]
+RewriteRule ^author(?:/.*)?$ - [G,L]
+
 <Files ".contact-mailer-config.php">
   Require all denied
 </Files>

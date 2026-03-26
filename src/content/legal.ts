@@ -1,5 +1,7 @@
 ﻿import type { Locale } from './site';
 
+import { normalizePublicContactCopy } from './contact-addresses';
+
 export interface LegalMetaContent {
   title: string;
   description: string;
@@ -86,6 +88,36 @@ function localizeLegalContent(
     privacy: localizeLegalPage(base.privacy, config.privacy),
     cookies: localizeLegalPage(base.cookies, config.cookies),
     terms: localizeLegalPage(base.terms, config.terms),
+  };
+}
+
+function normalizeLegalSection(section: LegalSection): LegalSection {
+  const normalizedBullets = section.bullets?.map(normalizePublicContactCopy);
+
+  return {
+    ...section,
+    paragraphs: section.paragraphs.map(normalizePublicContactCopy),
+    ...(normalizedBullets
+      ? {
+          bullets: normalizedBullets.filter((bullet, index) => normalizedBullets.indexOf(bullet) === index),
+        }
+      : {}),
+  };
+}
+
+function normalizeLegalPage(page: LegalPageContent): LegalPageContent {
+  return {
+    ...page,
+    intro: normalizePublicContactCopy(page.intro),
+    sections: page.sections.map(normalizeLegalSection),
+  };
+}
+
+function normalizeLegalLocale(content: LegalLocaleContent): LegalLocaleContent {
+  return {
+    privacy: normalizeLegalPage(content.privacy),
+    cookies: normalizeLegalPage(content.cookies),
+    terms: normalizeLegalPage(content.terms),
   };
 }
 
@@ -1795,9 +1827,10 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
 });
 
 export const legalContent: Record<Locale, LegalLocaleContent> = {
-  ...legalBaseContent,
-  de: deLegalContent,
-  es: esLegalContent,
+  nl: normalizeLegalLocale(legalBaseContent.nl),
+  en: normalizeLegalLocale(legalBaseContent.en),
+  de: normalizeLegalLocale(deLegalContent),
+  es: normalizeLegalLocale(esLegalContent),
 };
 
 

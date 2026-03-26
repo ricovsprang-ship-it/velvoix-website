@@ -1,5 +1,7 @@
 ﻿import { deContent, esContent } from './site-extra';
 
+import { publicContactEmails } from './contact-addresses';
+
 export type Locale = 'nl' | 'en' | 'de' | 'es';
 
 export const localeRootPaths: Record<Locale, string> = {
@@ -575,7 +577,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       error:
         'Er ging iets mis bij het versturen van uw bericht. Probeer het opnieuw of neem rechtstreeks contact op.',
       directEmailLabel: 'Rechtstreeks contact',
-      directEmailValue: 'info@velvoix.com',
+      directEmailValue: publicContactEmails.general,
     },
     footer: {
       brand: 'Velvoix',
@@ -957,7 +959,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       error:
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
-      directEmailValue: 'info@velvoix.com',
+      directEmailValue: publicContactEmails.general,
     },
     footer: {
       brand: 'Velvoix',

@@ -1,3 +1,4 @@
+import { publicContactEmails } from './contact-addresses';
 import type { SiteContent } from './site';
 
 export const deContent: SiteContent = {
@@ -349,7 +350,7 @@ export const deContent: SiteContent = {
     error:
       'Beim Senden Ihrer Nachricht ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
     directEmailLabel: 'Direkter Kontakt',
-    directEmailValue: 'info@velvoix.com',
+    directEmailValue: publicContactEmails.general,
   },
   footer: {
     brand: 'Velvoix',
@@ -714,7 +715,7 @@ export const esContent: SiteContent = {
     error:
       'Se ha producido un error al envíar su mensaje. Vuelva a intentarlo o contactenos directamente.',
     directEmailLabel: 'Contacto directo',
-    directEmailValue: 'info@velvoix.com',
+    directEmailValue: publicContactEmails.general,
   },
   footer: {
     brand: 'Velvoix',
