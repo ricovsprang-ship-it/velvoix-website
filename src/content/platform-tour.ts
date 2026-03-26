@@ -68,14 +68,14 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Producttour',
     title: 'Een gecontroleerd inkijkje in het platform',
     description:
-      'Dertien geselecteerde schermen laten zien hoe Velvoix meldingen, clientcontext, opvolging en teamsturing ordent.',
+      'Dertien geselecteerde schermen laten zien hoe Velvoix signalen, clientcontext en opvolging ordent.',
     supporting:
-      'Open de producttour voor een rustig overzicht van de belangrijkste operationele schermen, van eventdetail tot clientbeeld en kwaliteitssturing.',
+      'Open de producttour voor een rustig overzicht van de belangrijkste operationele schermen.',
     cta: 'Open producttour',
     previewLabel: 'Geselecteerd scherm',
     previewTitle: 'Eventdetail met context en aanpak',
     previewBody:
-      'Een voorbeeld van hoe aanleiding, triage en vervolgacties samenkomen, zodat beoordeling en overdracht minder interpretatielast vragen.',
+      'Een voorbeeld van hoe aanleiding, triage en vervolgacties samenkomen met minder interpretatielast.',
     overlayLabel: 'Producttour',
     closeLabel: 'Sluiten',
     previousLabel: 'Vorige',
@@ -103,14 +103,14 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Product Tour',
     title: 'A controlled view into the platform',
     description:
-      'Thirteen selected screens show how Velvoix organises signals, resident context, follow-up and team steering.',
+      'Thirteen selected screens show how Velvoix organises signals, resident context and follow-up.',
     supporting:
-      'Open the product tour for a calm view of the key operational screens, from event detail to resident context and quality steering.',
+      'Open the product tour for a calm view of the key operational screens.',
     cta: 'Open product tour',
     previewLabel: 'Selected screen',
     previewTitle: 'Event detail with context and action',
     previewBody:
-      'One example of how reason, triage and next actions come together so assessment and handover require less interpretation.',
+      'One example of how reason, triage and next actions come together with less interpretation.',
     overlayLabel: 'Product Tour',
     closeLabel: 'Close',
     previousLabel: 'Previous',
@@ -138,14 +138,14 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Produkttour',
     title: 'Ein kontrollierter Einblick in die Plattform',
     description:
-      'Dreizehn ausgewaehlte Ansichten zeigen, wie Velvoix Signale, Bewohnerkontext, Nachverfolgung und Teamsteuerung ordnet.',
+      'Dreizehn ausgewaehlte Ansichten zeigen, wie Velvoix Signale, Bewohnerkontext und Nachverfolgung ordnet.',
     supporting:
-      'Oeffnen Sie die Produkttour fuer einen ruhigen Blick auf die wichtigsten operativen Ansichten, von Eventdetail bis Bewohnerkontext und Qualitaetssteuerung.',
+      'Oeffnen Sie die Produkttour fuer einen ruhigen Blick auf die wichtigsten operativen Ansichten.',
     cta: 'Produkttour oeffnen',
     previewLabel: 'Ausgewaehlte Ansicht',
     previewTitle: 'Eventdetail mit Kontext und Aktion',
     previewBody:
-      'Ein Beispiel dafuer, wie Grund, Triage und naechste Schritte zusammenkommen, damit Bewertung und Uebergabe weniger Interpretationslast erzeugen.',
+      'Ein Beispiel dafuer, wie Grund, Triage und naechste Schritte mit weniger Interpretationslast zusammenkommen.',
     overlayLabel: 'Produkttour',
     closeLabel: 'Schliessen',
     previousLabel: 'Zurueck',
@@ -163,7 +163,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'handover', label: 'Uebergabe', title: 'Uebergeben mit Nachvollziehbarkeit', text: 'Die Uebergabe haelt Grund, Verantwortung und naechsten Schritt zusammen, damit Kontext zwischen Diensten nicht verloren geht.', alt: 'Velvoix Uebergabedialog', ...slideFraming.handover },
       { id: 'resident-overview', label: 'Bewohnerbild', title: 'Aktueller Status in einer ruhigen Uebersicht', text: 'Identitaet, gekoppelte Geraete und letzte Signale stehen zusammen, damit Grundkontext nicht ueber mehrere Ansichten gesucht werden muss.', alt: 'Velvoix Bewohneruebersicht', ...slideFraming['resident-overview'] },
       { id: 'resident-history', label: 'Historie', title: 'Bewohnerhistorie, die reviewbar bleibt', text: 'Aktuelle Signale und Nachverfolgung bleiben je Bewohner sichtbar, damit Auswertung nicht auf Erinnerung oder lose Notizen angewiesen ist.', alt: 'Velvoix Bewohnerhistorie', ...slideFraming['resident-history'] },
-      { id: 'resident-context', label: 'Kontext', title: 'Triagekontext nah an der Workflow', text: 'Triagekontext, Datenschutz und Teamabsprachen bleiben an der Nachverfolgung, damit wichtige Einordnung nicht ausserhalb des Workflows verschwindet.', alt: 'Velvoix Bewohnerkontext', ...slideFraming['resident-context'] },
+      { id: 'resident-context', label: 'Kontext', title: 'Triagekontext nah am Workflow', text: 'Triagekontext, Datenschutz und Teamabsprachen bleiben an der Nachverfolgung, damit wichtige Einordnung nicht ausserhalb des Workflows verschwindet.', alt: 'Velvoix Bewohnerkontext', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Statistik', title: 'Bewohnermuster ohne Dashboard-Rauschen', text: 'Trend, Dringlichkeitsmix und Reaktionsmuster bleiben sichtbar, damit Muster pro Bewohner besprechbar bleiben ohne Dashboard-Ueberlastung.', alt: 'Velvoix Bewohnerstatistik', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Tagessteuerung', title: 'Taegliche Operation in klarem Managementfluss', text: 'Druck, Prioritaeten und SLA-Risiko werden in einer ruhigen Teamansicht sichtbar, damit Tagessteuerung frueher nachsteuern kann.', alt: 'Velvoix taegliche Pflegeoperationen', ...slideFraming['care-operations'] },
       { id: 'quality-response', label: 'Qualitaet', title: 'Reaktionsqualitaet in erklaerbarer Form', text: 'Qualitaet und Reaktion bleiben nachvollziehbar, damit Verbesserungen auf Basis echter Signale besprochen werden koennen.', alt: 'Velvoix Qualitaets- und Reaktionsuebersicht', ...slideFraming['quality-response'] },
@@ -173,14 +173,14 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Recorrido del producto',
     title: 'Una vista controlada de la plataforma',
     description:
-      'Trece pantallas seleccionadas muestran como Velvoix organiza senales, contexto del residente, seguimiento y direccion del equipo.',
+      'Trece pantallas seleccionadas muestran como Velvoix organiza senales, contexto del residente y seguimiento.',
     supporting:
-      'Abra el recorrido del producto para ver con calma las pantallas operativas clave, desde el detalle del evento hasta el contexto del residente y la calidad de respuesta.',
+      'Abra el recorrido del producto para ver con calma las pantallas operativas clave.',
     cta: 'Abrir recorrido',
     previewLabel: 'Pantalla seleccionada',
     previewTitle: 'Detalle del evento con contexto y accion',
     previewBody:
-      'Un ejemplo de como motivo, triaje y siguientes acciones se reunen para que la evaluacion y la transferencia exijan menos interpretacion.',
+      'Un ejemplo de como motivo, triaje y siguientes acciones se reunen con menos interpretacion.',
     overlayLabel: 'Recorrido del producto',
     closeLabel: 'Cerrar',
     previousLabel: 'Anterior',

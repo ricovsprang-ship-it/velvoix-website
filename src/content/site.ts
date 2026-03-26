@@ -235,9 +235,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Velvoix',
       title: 'Van signaal naar duidelijke zorgactie',
       subtitle:
-        'Velvoix helpt zorgorganisaties om knopoproepen, spraakinput en andere zorgsignalen om te zetten in uitlegbare, geprioriteerde en auditbare zorgworkflow.',
+        'Velvoix helpt zorgorganisaties knopoproepen, spraakinput en andere zorgsignalen om te zetten in duidelijke, uitlegbare opvolging.',
       supporting:
-        'Gebouwd voor zorgomgevingen waar duidelijkheid, opvolging en reconstructie tellen.',
+        'Voor teams die snelle duiding en herleidbare opvolging nodig hebben.',
       primaryCta: 'Verken Velvoix',
       secondaryCta: 'Bekijk hoe het werkt',
       metrics: [
@@ -250,25 +250,25 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'In een oogopslag',
       title: 'Van binnenkomend signaal naar werkbare opvolging',
       description:
-        'Knopoproepen, spraakinput en andere zorgsignalen krijgen via Velvoix context, uitleg en een werkbare volgende stap.',
+        'Van binnenkomend zorgsignaal naar een duidelijke volgende stap.',
       stages: [
         {
           label: 'Wat binnenkomt',
           title: 'Signalen uit de zorgpraktijk',
           description:
-            'Knopoproepen, spraakinput en andere zorgsignalen komen gecontroleerd binnen als het startpunt voor opvolging.',
+            'Knopoproepen, spraakinput en andere signalen komen gecontroleerd binnen.',
         },
         {
           label: 'Wat Velvoix toevoegt',
           title: 'Duiding rond het signaal',
           description:
-            'Velvoix voegt context, triage, uitleg, eigenaarschap en eventvorming toe zodat een team sneller begrijpt wat aandacht vraagt.',
+            'Velvoix voegt context, triage en eigenaarschap toe.',
         },
         {
           label: 'Wat dat oplevert',
           title: 'Werkbare opvolging',
           description:
-            'Dat geeft duidelijkere vervolgacties, minder interpretatielast en betere reconstructie van wat er is gebeurd.',
+            'Dat geeft duidelijkere actie, minder interpretatielast en betere reconstructie.',
         },
       ],
     },
@@ -276,7 +276,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Het probleem',
       title: 'Wanneer een signaal nog geen duidelijke zorgactie is',
       description:
-        'Veel systemen kunnen wel registreren dat er iets gebeurt, maar helpen onvoldoende bij de volgende stap: wat is er waarschijnlijk aan de hand, hoe urgent is het, welke opvolging past daarbij en hoe blijft dat achteraf goed te reconstrueren?',
+        'Veel systemen registreren wel dat er iets gebeurt, maar helpen onvoldoende bij de vraag wat aandacht vraagt, hoe urgent het is en welke opvolging past.',
       proofPanels: {
         explainabilityLabel: 'Uitlegbaarheid',
         explainabilityTitle: 'Waarom',
@@ -353,14 +353,14 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Ketenverschil',
       title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
       description:
-        'Het verschil zit in de keten: waar traditionele systemen stoppen bij een melding, voegt Velvoix context, triage en eventvorming toe zodat opvolging bestuurbaar wordt.',
+        'Traditionele systemen stoppen vaak bij de melding. Velvoix voegt context, triage en eventvorming toe zodat opvolging bestuurbaar wordt.',
       compareLabel: 'Vergelijking',
       outcomes: ['Minder interpretatielast', 'Betere prioritering', 'Betere reconstructie'],
       traditionalTitle: 'Traditionele keten',
       traditionalSteps: ['Signaal', 'Melding', 'Handmatige interpretatie'],
       velvoixTitle: 'Velvoix-keten',
       velvoixSteps: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
-      velvoixSupporting: 'Elke extra laag voegt betekenis toe en maakt opvolging, escalatie en audit bestuurbaar.',
+      velvoixSupporting: 'Elke laag maakt opvolging, escalatie en audit beter bestuurbaar.',
       stepDetails: [
         {
           title: 'Signaal',
@@ -421,7 +421,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Technische kern',
       title: 'Gebouwd voor betrouwbare opvolging onder druk',
       description:
-        'De kracht van Velvoix zit niet in een los scherm, model of signaalbron, maar in een productkern die eventwaarheid, uitlegbare triage, opvolging en beheer gecontroleerd bijeenhoudt, ook wanneer de praktijk druk is of delen van de keten beperkt werken.',
+        'De kracht van Velvoix zit in een productkern die eventwaarheid, uitlegbare triage, opvolging en beheer bijeenhoudt, ook onder druk.',
       capabilities: [
         'Backend-truth',
         'Eerlijke fallback',
@@ -435,47 +435,47 @@ export const siteContent: Record<Locale, SiteContent> = {
           index: '01',
           title: 'Blijft bruikbaar bij deeluitval',
           description:
-            'Velvoix is ontworpen zodat opvolging bruikbaar kan blijven als delen van de keten tijdelijk beperkt werken. Niet door schijnzekerheid te tonen, maar door kernstatus en vervolgstap beheerst zichtbaar te houden.',
+            'Opvolging blijft bruikbaar als delen van de keten tijdelijk beperkt werken, doordat kernstatus en vervolgstap zichtbaar blijven.',
           effect: 'Betrouwbare workflow wanneer niet alles ideaal reageert.',
         },
         {
           index: '02',
           title: 'Geen schijnzekerheid',
           description:
-            'Als context, kwaliteit of beschikbaarheid beperkt is, hoort dat zichtbaar en bestuurbaar te blijven in plaats van stil te verdwijnen achter ogenschijnlijk zekere output.',
+            'Beperkte context of beschikbaarheid blijft zichtbaar in plaats van verborgen achter schijnzekerheid.',
           effect: 'Eerlijke fallback in plaats van stille degradatie.',
         },
         {
           index: '03',
           title: 'Backend-truth als kern',
           description:
-            'De operationele waarheid over status, uitleg en opvolging wordt in de kern bewaakt, niet in losse schermlogica of afgeleide integratie-uitkomsten.',
+            'Status, uitleg en opvolging worden in de kern bewaakt, niet verspreid over schermlogica of afgeleide integraties.',
           effect: 'Backend-truth boven losse scherm- of integratielogica.',
         },
         {
           index: '04',
           title: 'Rol- en tenantzuiver',
           description:
-            'Toegang en acties blijven begrensd per organisatie, context en rol. Zo blijft Velvoix bestuurbaar wanneer meerdere teams en omgevingen naast elkaar werken.',
+            'Toegang en acties blijven begrensd per organisatie, context en rol.',
           effect: 'Harde grenzen tussen organisaties, rollen en context.',
         },
         {
           index: '05',
           title: 'Reconstructeerbaar en auditbaar',
           description:
-            'Opvolging, statusverloop en kritieke veranderingen blijven herleidbaar, zodat evaluatie en kwaliteitsverbetering niet afhankelijk worden van geheugen of losse exports.',
+            'Opvolging, statusverloop en kritieke veranderingen blijven herleidbaar voor evaluatie en kwaliteitsverbetering.',
           effect: 'Herleidbare opvolging in plaats van losse momentopnames.',
         },
         {
           index: '06',
           title: 'Operationeel beheersbaar',
           description:
-            'Observability, eigenaarschap en governance horen bij het productgedrag. Daardoor blijft zichtbaar waar aandacht nodig is en hoe een team gecontroleerd moet reageren.',
+            'Observability, eigenaarschap en governance zitten in het productgedrag, zodat teams gecontroleerd kunnen reageren.',
           effect: 'Beheersing als productdiscipline, niet als losse IT-bijlage.',
         },
       ],
       closingLine:
-        'Samen zorgen deze lagen ervoor dat Velvoix geen meldingenlaag of black-box laag wordt, maar een uitlegbaar en bestuurbaar zorgplatform blijft.',
+        'Zo blijft Velvoix uitlegbaar en bestuurbaar, ook wanneer de praktijk onder druk staat.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',
@@ -526,7 +526,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start een gerichte verkenning',
       description:
-        'Kies hieronder de route die past bij uw vraag: pilotverkenning, samenwerkingsroute of een algemene zakelijke vraag.',
+        'Kies de route die past: pilotverkenning, samenwerkingsroute of zakelijke vraag.',
       reasonsLabel: 'Routes',
       inquiryTypes: {
         pilot: 'Pilotverkenning',
@@ -534,26 +534,26 @@ export const siteContent: Record<Locale, SiteContent> = {
         general: 'Zakelijke vraag',
       },
       reasons: [
-        'Pilotverkenning voor zorgorganisaties en teams',
-        'Samenwerkingsroute voor partners en uitrolvraagstukken',
-        'Zakelijke vraag over platform, inzetcontext of planning',
+        'Pilotverkenning voor zorgorganisaties',
+        'Samenwerkingsroute voor partners en uitrol',
+        'Zakelijke vraag over platform of planning',
       ],
-      directEmailNote: 'Voor pilotverkenningen, samenwerkingsroutes en zakelijke vragen.',
+      directEmailNote: 'Voor pilots, samenwerking en zakelijke vragen.',
       routeContent: {
         pilot: {
-          helper: 'Kies deze route als u wilt toetsen of Velvoix binnen uw zorgsetting pilotwaardig en operationeel relevant is.',
+          helper: 'Kies deze route om te toetsen of Velvoix pilotwaardig en operationeel relevant is in uw zorgsetting.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
           submit: 'Verstuur pilotverkenning',
         },
         partnership: {
-          helper: 'Kies deze route als u partnerfit, uitrol, integratie of een strategische samenwerkingsroute wilt bespreken.',
+          helper: 'Kies deze route voor partnerfit, uitrol, integratie of strategische samenwerking.',
           email: publicContactEmails.partners,
           messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke samenwerkings- of uitrolroute u wilt verkennen.',
           submit: 'Verstuur samenwerkingsverkenning',
         },
         general: {
-          helper: 'Kies deze route voor een algemene zakelijke vraag over het platform, de inzetcontext of vervolgstappen.',
+          helper: 'Kies deze route voor een zakelijke vraag over platform, inzetcontext of vervolgstappen.',
           email: publicContactEmails.general,
           messagePlaceholder: 'Beschrijf kort uw vraag en welke context of planning daarbij relevant is.',
           submit: 'Verstuur zakelijke vraag',
@@ -621,9 +621,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Velvoix',
       title: 'From signal to clear care action',
       subtitle:
-        'Velvoix helps healthcare organisations turn button calls, voice input and other care-related signals into explainable, prioritised and auditable care workflow.',
+        'Velvoix helps healthcare organisations turn button calls, voice input and other care signals into clear, explainable follow-up.',
       supporting:
-        'Built for care environments where clarity, follow-up and reconstruction matter.',
+        'For teams that need fast interpretation and traceable follow-up.',
       primaryCta: 'Explore Velvoix',
       secondaryCta: 'See how it works',
       metrics: [
@@ -636,25 +636,25 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'At a glance',
       title: 'From incoming signal to workable follow-up',
       description:
-        'Button calls, voice input and other care signals gain context, explanation and a workable next step through Velvoix.',
+        'From incoming care signal to a clear next step.',
       stages: [
         {
           label: 'What comes in',
           title: 'Signals from care operations',
           description:
-            'Button calls, voice input and other care-related signals enter in a controlled way as the starting point for follow-up.',
+            'Button calls, voice input and other care signals enter in a controlled way.',
         },
         {
           label: 'What Velvoix adds',
           title: 'Operational meaning around the signal',
           description:
-            'Velvoix adds context, triage, explanation, ownership and event shaping so teams understand faster what needs attention.',
+            'Velvoix adds context, triage and ownership.',
         },
         {
           label: 'What that delivers',
           title: 'Workable follow-up',
           description:
-            'That leads to clearer next steps, less interpretation burden and better reconstruction of what happened.',
+            'That leads to clearer action, less interpretation burden and better reconstruction.',
         },
       ],
     },
@@ -662,7 +662,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'The challenge',
       title: 'When a signal is not yet a clear care action',
       description:
-        'Many systems can register that something happened, but they do not sufficiently support the next step: what is likely going on, how urgent is it, what follow-up fits the situation and how can the full sequence later be reconstructed properly?',
+        'Many systems register that something happened, but do not sufficiently support what needs attention, how urgent it is and which follow-up fits.',
       proofPanels: {
         explainabilityLabel: 'Explainability',
         explainabilityTitle: 'Why',
@@ -739,14 +739,14 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Chain difference',
       title: 'Not from alert to interpretation, but from signal to structured workflow',
       description:
-        'The difference sits in the chain: where traditional systems stop at an alert, Velvoix adds context, triage and event formation so follow-up becomes manageable.',
+        'Traditional systems often stop at the alert. Velvoix adds context, triage and event formation so follow-up becomes manageable.',
       compareLabel: 'Comparison',
       outcomes: ['Less interpretation burden', 'Better prioritisation', 'Better reconstruction'],
       traditionalTitle: 'Traditional chain',
       traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
       velvoixTitle: 'Velvoix chain',
       velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
-      velvoixSupporting: 'Each extra layer adds meaning and makes follow-up, escalation and audit manageable.',
+      velvoixSupporting: 'Each layer makes follow-up, escalation and audit more manageable.',
       stepDetails: [
         {
           title: 'Signal',
@@ -807,7 +807,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Technical core',
       title: 'Built for reliable follow-up under pressure',
       description:
-        'The strength of Velvoix does not sit in a standalone screen, model or signal source, but in a product core that keeps event truth, explainable triage, follow-up and governance together in a controlled way, even when operations are under pressure or parts of the chain are temporarily limited.',
+        'The strength of Velvoix sits in a product core that keeps event truth, explainable triage, follow-up and governance together, even under pressure.',
       capabilities: [
         'Backend truth',
         'Honest fallback',
@@ -821,47 +821,47 @@ export const siteContent: Record<Locale, SiteContent> = {
           index: '01',
           title: 'Remains usable under partial failure',
           description:
-            'Velvoix is designed so follow-up can remain usable when parts of the chain are temporarily limited. Not by pretending certainty, but by keeping core status and next action visible in a controlled way.',
+            'Follow-up remains usable when parts of the chain are temporarily limited because core status and next action stay visible.',
           effect: 'Reliable workflow when not every part of the chain reacts perfectly.',
         },
         {
           index: '02',
           title: 'No false certainty',
           description:
-            'If context, quality or availability is limited, that should remain visible and manageable instead of disappearing behind apparently certain output.',
+            'Limited context or availability stays visible instead of disappearing behind apparent certainty.',
           effect: 'Honest fallback instead of silent degradation.',
         },
         {
           index: '03',
           title: 'Backend truth at the core',
           description:
-            'The operational truth about status, explanation and follow-up is held in the core, not spread across screen logic or derived integration outcomes.',
+            'Status, explanation and follow-up are held in the core, not spread across screen logic or derived integrations.',
           effect: 'Backend-owned truth over fragmented UI or integration logic.',
         },
         {
           index: '04',
           title: 'Role- and tenant-bound',
           description:
-            'Access and actions remain bounded by organisation, context and role. That keeps Velvoix governable when multiple teams and environments operate side by side.',
+            'Access and actions remain bounded by organisation, context and role.',
           effect: 'Hard boundaries between organisations, roles and contexts.',
         },
         {
           index: '05',
           title: 'Reconstructable and auditable',
           description:
-            'Follow-up, status changes and critical decisions remain traceable, so evaluation and quality improvement do not depend on memory or disconnected exports.',
+            'Follow-up, status changes and critical decisions remain traceable for evaluation and quality improvement.',
           effect: 'Traceable follow-up instead of isolated snapshots.',
         },
         {
           index: '06',
           title: 'Operationally manageable',
           description:
-            'Observability, ownership and governance are part of product behaviour. That keeps it visible where attention is needed and how teams should respond in a controlled way.',
+            'Observability, ownership and governance are part of product behaviour so teams can respond in a controlled way.',
           effect: 'Operational control as product discipline, not an IT afterthought.',
         },
       ],
       closingLine:
-        'Together, these layers keep Velvoix from becoming a notification layer or black-box layer and make it an explainable, governable care platform.',
+        'That keeps Velvoix explainable and governable, even when operations are under pressure.',
     },
     snapshots: {
       eyebrow: 'Product snapshots',
@@ -912,7 +912,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start a focused exploration',
       description:
-        'Choose the route that fits your request: pilot exploration, partnership route or a general business question.',
+        'Choose the route that fits: pilot exploration, partnership route or business question.',
       reasonsLabel: 'Routes',
       inquiryTypes: {
         pilot: 'Pilot exploration',
@@ -920,26 +920,26 @@ export const siteContent: Record<Locale, SiteContent> = {
         general: 'Business question',
       },
       reasons: [
-        'Pilot exploration for healthcare organisations and care teams',
-        'Partnership route for partners, rollout and integration scope',
-        'Business question about platform fit, deployment context or timing',
+        'Pilot exploration for healthcare organisations',
+        'Partnership route for partners and rollout',
+        'Business question about platform or timing',
       ],
-      directEmailNote: 'For pilot explorations, partnership routes and business questions.',
+      directEmailNote: 'For pilots, partnerships and business questions.',
       routeContent: {
         pilot: {
-          helper: 'Choose this route if you want to assess whether Velvoix is pilot-ready and operationally relevant in your care setting.',
+          helper: 'Choose this route to assess whether Velvoix is pilot-ready and operationally relevant in your care setting.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration.',
           submit: 'Send pilot exploration',
         },
         partnership: {
-          helper: 'Choose this route if you want to discuss partner fit, rollout scope, integration or a strategic collaboration route.',
+          helper: 'Choose this route for partner fit, rollout, integration or strategic collaboration.',
           email: publicContactEmails.partners,
           messagePlaceholder: 'Briefly describe your organisation, role and which partnership or rollout route you want to explore.',
           submit: 'Send partnership exploration',
         },
         general: {
-          helper: 'Choose this route for a general business question about the platform, deployment context or next steps.',
+          helper: 'Choose this route for a business question about the platform, deployment context or next steps.',
           email: publicContactEmails.general,
           messagePlaceholder: 'Briefly describe your question and any context or timing that matters.',
           submit: 'Send business question',

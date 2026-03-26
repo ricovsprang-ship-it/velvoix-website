@@ -22,9 +22,9 @@ export const deContent: SiteContent = {
     eyebrow: 'Velvoix',
     title: 'Vom Signal zur klaren Pflegehandlung',
     subtitle:
-      'Velvoix hilft Pflegeorganisationen dabei, Rufknöpfe, Spracheingaben und andere Pflegesignale in nachvollziehbare, priorisierte und auditierbare Pflege-Workflows zu übersetzen.',
+      'Velvoix hilft Pflegeorganisationen dabei, Rufknöpfe, Spracheingaben und andere Pflegesignale in klare, nachvollziehbare Nachverfolgung zu übersetzen.',
     supporting:
-      'Entwickelt für Pflegeumgebungen, in denen Klarheit, Nachverfolgung und Rekonstruktion zahlen.',
+      'Für Teams, die schnelle Einordnung und nachvollziehbare Nachverfolgung brauchen.',
     primaryCta: 'Velvoix entdecken',
     secondaryCta: 'So funktioniert es',
     metrics: [
@@ -37,25 +37,25 @@ export const deContent: SiteContent = {
     eyebrow: 'Auf einen Blick',
     title: 'Vom eingehenden Signal zur handhabbaren Nachverfolgung',
     description:
-      'Rufknöpfe, Spracheingaben und andere Pflegesignale erhalten durch Velvoix Kontext, Erklärung und einen handhabbaren nächsten Schritt.',
+      'Vom eingehenden Pflegesignal zum klaren nächsten Schritt.',
     stages: [
       {
         label: 'Was eingeht',
         title: 'Signale aus dem Pflegealltag',
         description:
-          'Rufknöpfe, Spracheingaben und andere Pflegesignale kommen kontrolliert als Ausgangspunkt für die Nachverfolgung an.',
+          'Rufknöpfe, Spracheingaben und andere Pflegesignale kommen kontrolliert an.',
       },
       {
         label: 'Was Velvoix hinzufügt',
         title: 'Operative Einordnung rund um das Signal',
         description:
-          'Velvoix fügt Kontext, Triage, Erklärung, Verantwortung und Eventbildung hinzu, damit Teams schneller verstehen, was Aufmerksamkeit braucht.',
+          'Velvoix fügt Kontext, Triage und Verantwortung hinzu.',
       },
       {
         label: 'Was daraus entsteht',
         title: 'Handhabbare Nachverfolgung',
         description:
-          'Das führt zu klareren nächsten Schritten, weniger Interpretationslast und besserer Rekonstruktion des Ablaufs.',
+          'Das führt zu klarerer Aktion, weniger Interpretationslast und besserer Rekonstruktion.',
       },
     ],
   },
@@ -63,7 +63,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Die Herausforderung',
     title: 'Wenn ein Signal noch keine klare Pflegehandlung ist',
     description:
-      'Viele Systeme können zwar registrieren, dass etwas passiert ist, unterstützen aber den nächsten Schritt nicht ausreichend: Was ist wahrscheinlich los, wie dringend ist es, welche Folgeaktion passt und wie lässt sich der Ablauf später sauber rekonstruieren?',
+      'Viele Systeme registrieren zwar, dass etwas passiert ist, helfen aber zu wenig bei der Frage, was Aufmerksamkeit braucht, wie dringend es ist und welche Folgeaktion passt.',
     proofPanels: {
       explainabilityLabel: 'Erklärbarkeit',
       explainabilityTitle: 'Warum',
@@ -122,14 +122,14 @@ export const deContent: SiteContent = {
     eyebrow: 'Kettenunterschied',
     title: 'Nicht von der Meldung zur Interpretation, sondern vom Signal zum steuerbaren Workflow',
     description:
-      'Der Unterschied liegt in der Kette: Wo klassische Systeme bei einer Meldung stehen bleiben, ergänzt Velvoix Kontext, Triage und Eventbildung, damit Nachverfolgung steuerbar wird.',
+      'Klassische Systeme bleiben oft bei der Meldung stehen. Velvoix ergänzt Kontext, Triage und Eventbildung, damit Nachverfolgung steuerbar wird.',
     compareLabel: 'Vergleich',
     outcomes: ['Weniger Interpretationslast', 'Bessere Priorisierung', 'Bessere Rekonstruktion'],
     traditionalTitle: 'Klassische Kette',
     traditionalSteps: ['Signal', 'Meldung', 'Manuelle Interpretation'],
     velvoixTitle: 'Velvoix-Kette',
     velvoixSteps: ['Signal', 'Kontext', 'Triage', 'Event', 'Workflow', 'Eskalation', 'Rekonstruktion'],
-    velvoixSupporting: 'Jede zusätzliche Ebene fugt Bedeutung hinzu und macht Nachverfolgung, Eskalation und Audit steuerbar.',
+    velvoixSupporting: 'Jede Ebene macht Nachverfolgung, Eskalation und Audit besser steuerbar.',
     stepDetails: [
       {
         title: 'Signal',
@@ -190,7 +190,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Technischer Kern',
     title: 'Für verlässliche Nachverfolgung unter Druck entwickelt',
     description:
-      'Die Stärke von Velvoix liegt nicht in einem einzelnen Modell, Bildschirm oder Eingangssignal, sondern in einem Produktkern, der Event-Wahrheit, erklärbare Triage, Nachverfolgung und Governance kontrolliert zusammenhält - auch wenn der Betrieb unter Druck steht oder Teile der Kette eingeschränkt sind.',
+      'Die Stärke von Velvoix liegt in einem Produktkern, der Event-Wahrheit, erklärbare Triage, Nachverfolgung und Governance auch unter Druck zusammenhält.',
     capabilities: [
       'Backend-Wahrheit',
       'Ehrlicher Fallback',
@@ -202,49 +202,49 @@ export const deContent: SiteContent = {
     rows: [
       {
         index: '01',
-        title: 'Bleibt bei Teilstorungen nutzbar',
+        title: 'Bleibt bei Teilstörungen nutzbar',
         description:
-          'Velvoix ist so ausgelegt, dass Nachverfolgung nutzbar bleibt, wenn Teile der Kette vorübergehend eingeschränkt sind. Nicht durch Scheinsicherheit, sondern indem Kernstatus und nachste Maßnahme kontrolliert sichtbar bleiben.',
+          'Nachverfolgung bleibt nutzbar, wenn Teile der Kette vorübergehend eingeschränkt sind, weil Kernstatus und nächste Maßnahme sichtbar bleiben.',
         effect: 'Verlässlicher Workflow, auch wenn nicht jeder Teil der Kette perfekt reagiert.',
       },
       {
         index: '02',
         title: 'Keine falsche Sicherheit',
         description:
-          'Wenn Kontext, Qualität oder Verfügbarkeit begrenzt sind, bleibt das sichtbar und steuerbar, statt hinter scheinbar sicheren Ausgaben zu verschwinden.',
+          'Begrenzter Kontext oder begrenzte Verfügbarkeit bleiben sichtbar, statt hinter scheinbarer Sicherheit zu verschwinden.',
         effect: 'Ehrlicher Fallback statt stiller Degradierung.',
       },
       {
         index: '03',
         title: 'Backend-Wahrheit im Kern',
         description:
-          'Die operative Wahrheit über Status, Erklärung und Nachverfolgung liegt im Kern und nicht in UI-Logik oder abgeleiteten Integrationsergebnissen.',
+          'Status, Erklärung und Nachverfolgung liegen im Kern und nicht verteilt in UI-Logik oder abgeleiteten Integrationen.',
         effect: 'Backend-basierte Wahrheit statt fragmentierter UI- oder Integrationslogik.',
       },
       {
         index: '04',
         title: 'Rollen- und tenantgebunden',
         description:
-          'Zugriffe und Aktionen bleiben an Organisation, Kontext und Rolle gebunden. So bleibt Velvoix steuerbar, wenn mehrere Teams und Umgebungen parallel arbeiten.',
+          'Zugriffe und Aktionen bleiben an Organisation, Kontext und Rolle gebunden.',
         effect: 'Klare Grenzen zwischen Organisationen, Rollen und Kontexten.',
       },
       {
         index: '05',
         title: 'Rekonstruierbar und auditierbar',
         description:
-          'Nachverfolgung, Statusänderungen und kritische Entscheidungen bleiben nachvollziehbar, sodass Auswertung und Qualitätsverbesserung nicht von Erinnerung oder losen Exporten abhangen.',
+          'Nachverfolgung, Statusänderungen und kritische Entscheidungen bleiben für Auswertung und Qualitätsverbesserung nachvollziehbar.',
         effect: 'Nachvollziehbare Nachverfolgung statt isolierter Momentaufnahmen.',
       },
       {
         index: '06',
         title: 'Operativ steuerbar',
         description:
-          'Observability, Verantwortlichkeit und Governance gehören zum Produktverhalten. So bleibt sichtbar, wo Aufmerksamkeit nötig ist und wie Teams kontrolliert reagieren sollen.',
+          'Observability, Verantwortlichkeit und Governance gehören zum Produktverhalten, damit Teams kontrolliert reagieren können.',
         effect: 'Operative Kontrolle als Produktdisziplin statt als nachgelagerte IT-Aufgabe.',
       },
     ],
     closingLine:
-      'Zusammen sorgen diese Ebenen dafür, dass Velvoix keine Meldungsschicht oder Black-Box-Schicht bleibt, sondern eine erklärbare und steuerbare Pflegeplattform wird.',
+      'So bleibt Velvoix auch unter Druck erklärbar und steuerbar.',
   },
   snapshots: {
     eyebrow: 'Produktshowcase',
@@ -295,7 +295,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Kontakt',
     title: 'Starten Sie eine gezielte Prüfung',
     description:
-      'Wählen Sie den Weg, der zu Ihrer Anfrage passt: Pilotprüfung, Kooperationsweg oder allgemeine geschäftliche Frage.',
+      'Wählen Sie den Weg, der passt: Pilotprüfung, Kooperationsweg oder geschäftliche Frage.',
     reasonsLabel: 'Wege',
     inquiryTypes: {
       pilot: 'Pilotgespräch',
@@ -303,27 +303,27 @@ export const deContent: SiteContent = {
       general: 'Geschäftliche Frage',
     },
     reasons: [
-      'Pilotprüfung für Pflegeorganisationen und Teams',
-      'Kooperationsweg für Partner, Rollout und Integrationsumfang',
-      'Geschäftliche Frage zu Plattform, Einsatzkontext oder Planung',
+      'Pilotprüfung für Pflegeorganisationen',
+      'Kooperationsweg für Partner und Rollout',
+      'Geschäftliche Frage zu Plattform oder Planung',
     ],
-    directEmailNote: 'Für Pilotprüfungen, Kooperationswege und geschäftliche Fragen.',
+    directEmailNote: 'Für Piloten, Kooperation und geschäftliche Fragen.',
     routeContent: {
       pilot: {
         email: publicContactEmails.pilot,
-        helper: 'Wählen Sie diesen Weg, wenn Sie prüfen wollen, ob Velvoix in Ihrer Pflegeumgebung pilotfähig und operativ relevant ist.',
+        helper: 'Wählen Sie diesen Weg, um zu prüfen, ob Velvoix in Ihrer Pflegeumgebung pilotfähig und operativ relevant ist.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, den Pflegekontext und was Sie in einer Pilotprüfung bewerten möchten.',
         submit: 'Pilotprüfung senden',
       },
       partnership: {
         email: publicContactEmails.partners,
-        helper: 'Wählen Sie diesen Weg, wenn Sie Partner-Passung, Rollout, Integration oder einen strategischen Kooperationsweg besprechen möchten.',
+        helper: 'Wählen Sie diesen Weg für Partner-Passung, Rollout, Integration oder strategische Kooperation.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welchen Kooperations- oder Rollout-Weg Sie prüfen möchten.',
         submit: 'Kooperationsprüfung senden',
       },
       general: {
         email: publicContactEmails.general,
-        helper: 'Wählen Sie diesen Weg für eine allgemeine geschäftliche Frage zur Plattform, zum Einsatzkontext oder zu nächsten Schritten.',
+        helper: 'Wählen Sie diesen Weg für eine geschäftliche Frage zur Plattform, zum Einsatzkontext oder zu nächsten Schritten.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Frage und welcher Kontext oder Zeitrahmen dabei wichtig ist.',
         submit: 'Geschäftliche Frage senden',
       },
@@ -391,9 +391,9 @@ export const esContent: SiteContent = {
     eyebrow: 'Velvoix',
     title: 'De la señal a una acción asistencial clara',
     subtitle:
-      'Velvoix ayuda a las organizaciones sanitarias a convertir llamadas de botón, entradas por voz y otras señales asistenciales en un flujo asistencial explicable, priorizado y auditable.',
+      'Velvoix ayuda a las organizaciones sanitarias a convertir llamadas de botón, entradas por voz y otras señales asistenciales en un seguimiento claro y explicable.',
     supporting:
-      'Diseñado para entornos asistenciales donde importan la claridad, el seguimiento y la reconstrucción.',
+      'Para equipos que necesitan interpretación rápida y seguimiento trazable.',
     primaryCta: 'Explorar Velvoix',
     secondaryCta: 'Ver cómo funciona',
     metrics: [
@@ -406,25 +406,25 @@ export const esContent: SiteContent = {
     eyebrow: 'De un vistazo',
     title: 'De la señal entrante al seguimiento operativo',
     description:
-      'Las llamadas de botón, la voz y otras señales asistenciales adquieren contexto, explicación y un siguiente paso operativo con Velvoix.',
+      'De la señal asistencial entrante al siguiente paso claro.',
     stages: [
       {
         label: 'Qué entra',
         title: 'Señales del trabajo asistencial',
         description:
-          'Las llamadas de botón, la voz y otras señales asistenciales entran de forma controlada como punto de partida del seguimiento.',
+          'Las llamadas de botón, la voz y otras señales asistenciales entran de forma controlada.',
       },
       {
         label: 'Qué aporta Velvoix',
         title: 'Sentido operativo alrededor de la señal',
         description:
-          'Velvoix añade contexto, triaje, explicación, titularidad y formación del evento para que el equipo entienda antes qué requiere atención.',
+          'Velvoix añade contexto, triaje y titularidad.',
       },
       {
         label: 'Qué cambia después',
         title: 'Seguimiento gobernable',
         description:
-          'Eso se traduce en pasos más claros, menos carga interpretativa y una mejor reconstrucción de lo ocurrido.',
+          'Eso se traduce en acciones más claras, menos carga interpretativa y mejor reconstrucción.',
       },
     ],
   },
@@ -432,7 +432,7 @@ export const esContent: SiteContent = {
     eyebrow: 'El reto',
     title: 'Cuando una señal todavía no es una acción asistencial clara',
     description:
-      'Muchos sistemas pueden registrar que ha ocurrido algo, pero no apoyan suficientemente el siguiente paso: qué está pasando probablemente, qué urgencia tiene, qué seguimiento encaja y cómo puede reconstruirse después todo el recorrido.',
+      'Muchos sistemas registran que ha ocurrido algo, pero ayudan poco a ver qué requiere atención, qué urgencia tiene y qué seguimiento encaja.',
     proofPanels: {
       explainabilityLabel: 'Explicabilidad',
       explainabilityTitle: 'Por qué',
@@ -491,14 +491,14 @@ export const esContent: SiteContent = {
     eyebrow: 'Diferencia en la cadena',
     title: 'No de la alerta a la interpretación, sino de la señal al workflow gobernable',
     description:
-      'La diferencia está en la cadena: donde los sistemas tradicionales se detienen en una alerta, Velvoix añade contexto, triaje y formación del evento para que el seguimiento sea gobernable.',
+      'Los sistemas tradicionales suelen detenerse en la alerta. Velvoix añade contexto, triaje y formación del evento para que el seguimiento sea gobernable.',
     compareLabel: 'Comparación',
     outcomes: ['Menos carga interpretativa', 'Mejor priorización', 'Mejor reconstrucción'],
     traditionalTitle: 'Cadena tradicional',
     traditionalSteps: ['Señal', 'Alerta', 'Interpretación manual'],
     velvoixTitle: 'Cadena Velvoix',
     velvoixSteps: ['Señal', 'Contexto', 'Triaje', 'Evento', 'Flujo', 'Escalada', 'Reconstrucción'],
-    velvoixSupporting: 'Cada capa adicional aporta significado y hace gobernables el seguimiento, la escalada y la auditoría.',
+    velvoixSupporting: 'Cada capa hace más gobernables el seguimiento, la escalada y la auditoría.',
     stepDetails: [
       {
         title: 'Señal',
@@ -559,7 +559,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Núcleo técnico',
     title: 'Diseñado para un seguimiento fiable bajo presión',
     description:
-      'La fortaleza de Velvoix no reside en una pantalla, modelo o fuente de señal aislados, sino en un núcleo de producto que mantiene unidas, de forma controlada, la verdad del evento, el triaje explicable, el seguimiento y la gobernanza, incluso cuando la operación está bajo presión o parte de la cadena queda limitada.',
+      'La fortaleza de Velvoix reside en un núcleo de producto que mantiene unidas la verdad del evento, el triaje explicable, el seguimiento y la gobernanza, incluso bajo presión.',
     capabilities: [
       'Verdad backend',
       'Fallback honesto',
@@ -573,47 +573,47 @@ export const esContent: SiteContent = {
         index: '01',
         title: 'Sigue siendo utilizable ante fallos parciales',
         description:
-          'Velvoix esta diseñado para que el seguimiento siga siendo utilizable cuando partes de la cadena quedan temporalmente limitadas. No fingiendo certeza, sino manteniendo visibles de forma controlada el estado clave y la siguiente acción.',
+          'El seguimiento sigue siendo utilizable cuando partes de la cadena quedan limitadas, porque el estado clave y la siguiente acción siguen visibles.',
         effect: 'Workflow fiable incluso cuando no toda la cadena responde de forma perfecta.',
       },
       {
         index: '02',
         title: 'Sin falsa certeza',
         description:
-          'Si el contexto, la calidad o la disponibilidad son limitados, eso debe seguir siendo visible y gobernable en lugar de desaparecer detrás de una salida aparentemente segura.',
+          'El contexto o la disponibilidad limitados siguen siendo visibles en lugar de ocultarse tras una certeza aparente.',
         effect: 'Fallback honesto en lugar de degradación silenciosa.',
       },
       {
         index: '03',
         title: 'La verdad backend en el centro',
         description:
-          'La verdad operativa sobre estado, explicación y seguimiento se mantiene en el núcleo, no repartida entre la lógica de pantalla o resultados derivados de integraciónes.',
+          'La verdad sobre estado, explicación y seguimiento se mantiene en el núcleo, no repartida entre pantallas o integraciones derivadas.',
         effect: 'Verdad gobernada por backend frente a lógica fragmentada de UI o integraciónes.',
       },
       {
         index: '04',
         title: 'Ligado a roles y tenants',
         description:
-          'Los accesos y las acciones siguen ligados a la organización, al contexto y al rol. Así Velvoix sigue siendo gobernable cuando conviven varios equipos y entornos.',
+          'Los accesos y las acciones siguen ligados a la organización, al contexto y al rol.',
         effect: 'Límites claros entre organizaciones, roles y contextos.',
       },
       {
         index: '05',
         title: 'Reconstruible y auditable',
         description:
-          'El seguimiento, los cambios de estado y las decisiones críticas siguen siendo trazables, para que la evaluación y la mejora de calidad no dependan de la memoria ni de exportaciones desconectadas.',
+          'El seguimiento, los cambios de estado y las decisiones críticas siguen siendo trazables para evaluación y mejora de calidad.',
         effect: 'Seguimiento trazable en lugar de instantáneas aisladas.',
       },
       {
         index: '06',
         title: 'Gobernable operativamente',
         description:
-          'La observabilidad, la titularidad y la gobernanza forman parte del comportamiento del producto. Así se mantiene visible dónde hace falta atención y cómo debe responder el equipo de forma controlada.',
+          'La observabilidad, la titularidad y la gobernanza forman parte del producto para que el equipo responda de forma controlada.',
         effect: 'Control operativo como disciplina de producto, no como añadido de TI.',
       },
     ],
     closingLine:
-      'En conjunto, estas capas hacen que Velvoix no sea una capa de notificaciones ni una capa de caja negra, sino una plataforma asistencial explicable y gobernable.',
+      'Así Velvoix sigue siendo explicable y gobernable incluso bajo presión.',
   },
   snapshots: {
     eyebrow: 'Recorrido del producto',
@@ -664,7 +664,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Contacto',
     title: 'Inicie una exploración enfocada',
     description:
-      'Elija la vía que encaje con su solicitud: exploración piloto, ruta de colaboración o pregunta empresarial.',
+      'Elija la vía que encaja: exploración piloto, ruta de colaboración o pregunta empresarial.',
     reasonsLabel: 'Vías',
     inquiryTypes: {
       pilot: 'Exploración piloto',
@@ -672,21 +672,21 @@ export const esContent: SiteContent = {
       general: 'Pregunta empresarial',
     },
     reasons: [
-      'Exploración piloto para organizaciones y equipos asistenciales',
-      'Ruta de colaboración para socios, despliegue e integración',
-      'Pregunta empresarial sobre plataforma, contexto de uso o planificación',
+      'Exploración piloto para organizaciones asistenciales',
+      'Ruta de colaboración para socios y despliegue',
+      'Pregunta empresarial sobre plataforma o planificación',
     ],
-    directEmailNote: 'Para exploraciones piloto, rutas de colaboración y preguntas empresariales.',
+    directEmailNote: 'Para pilotos, colaboración y preguntas empresariales.',
     routeContent: {
       pilot: {
         email: publicContactEmails.pilot,
-        helper: 'Elija esta vía si quiere evaluar si Velvoix es relevante para un piloto y si encaja operativamente en su entorno asistencial.',
+        helper: 'Elija esta vía para evaluar si Velvoix encaja operativamente en un piloto.',
         messagePlaceholder: 'Describa brevemente su organización, el contexto asistencial y qué desea evaluar en una exploración piloto.',
         submit: 'Enviar exploración piloto',
       },
       partnership: {
         email: publicContactEmails.partners,
-        helper: 'Elija esta vía si quiere tratar encaje de socio, despliegue, integración o una ruta de colaboración estratégica.',
+        helper: 'Elija esta vía para tratar encaje de socio, despliegue, integración o colaboración estratégica.',
         messagePlaceholder: 'Describa brevemente su organización, su rol y qué ruta de colaboración o despliegue desea explorar.',
         submit: 'Enviar exploración de colaboración',
       },
