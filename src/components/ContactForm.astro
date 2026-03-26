@@ -61,6 +61,16 @@ const routeTexts = content.routeContent;
         <div class="mb-6 rounded-[1.05rem] border border-slate-200/80 bg-slate-50/82 px-4 py-4">
           <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500" data-route-label>{content.inquiryTypes.pilot}</p>
           <p class="mt-2 max-w-[44rem] text-sm leading-6 text-slate-600" data-route-helper>{routeTexts.pilot.helper}</p>
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            <span class="font-semibold text-slate-500">{content.routeEmailLabel}</span>
+            <a
+              class="font-semibold text-[rgb(33_65_120)] transition-colors hover:text-[rgb(27_53_99)]"
+              href={`mailto:${routeTexts.pilot.email}`}
+              data-route-email
+            >
+              {routeTexts.pilot.email}
+            </a>
+          </div>
         </div>
 
         <div class="grid gap-5 md:grid-cols-2">
@@ -112,6 +122,7 @@ const routeTexts = content.routeContent;
     const inquiryInput = form.querySelector('[data-inquiry-type-input]');
     const routeLabel = form.querySelector('[data-route-label]');
     const routeHelper = form.querySelector('[data-route-helper]');
+    const routeEmail = form.querySelector('[data-route-email]');
     const messageField = form.querySelector('[data-message-field]');
     const routeInputs = Array.from(form.querySelectorAll('input[name="inquiryType"]'));
 
@@ -121,6 +132,10 @@ const routeTexts = content.routeContent;
       if (inquiryInput instanceof HTMLInputElement) inquiryInput.value = route;
       if (routeLabel) routeLabel.textContent = selectedLabel;
       if (routeHelper) routeHelper.textContent = selected.helper;
+      if (routeEmail instanceof HTMLAnchorElement) {
+        routeEmail.textContent = selected.email;
+        routeEmail.href = `mailto:${selected.email}`;
+      }
       if (messageField instanceof HTMLTextAreaElement) messageField.placeholder = selected.messagePlaceholder;
       if (submitButton) submitButton.textContent = selected.submit;
     };

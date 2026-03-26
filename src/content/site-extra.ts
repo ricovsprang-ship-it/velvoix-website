@@ -310,16 +310,19 @@ export const deContent: SiteContent = {
     directEmailNote: 'Für Pilotprüfungen, Kooperationswege und geschäftliche Fragen.',
     routeContent: {
       pilot: {
+        email: publicContactEmails.pilot,
         helper: 'Wählen Sie diesen Weg, wenn Sie prüfen wollen, ob Velvoix in Ihrer Pflegeumgebung pilotfähig und operativ relevant ist.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, den Pflegekontext und was Sie in einer Pilotprüfung bewerten möchten.',
         submit: 'Pilotprüfung senden',
       },
       partnership: {
+        email: publicContactEmails.partners,
         helper: 'Wählen Sie diesen Weg, wenn Sie Partner-Passung, Rollout, Integration oder einen strategischen Kooperationsweg besprechen möchten.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welchen Kooperations- oder Rollout-Weg Sie prüfen möchten.',
         submit: 'Kooperationsprüfung senden',
       },
       general: {
+        email: publicContactEmails.general,
         helper: 'Wählen Sie diesen Weg für eine allgemeine geschäftliche Frage zur Plattform, zum Einsatzkontext oder zu nächsten Schritten.',
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Frage und welcher Kontext oder Zeitrahmen dabei wichtig ist.',
         submit: 'Geschäftliche Frage senden',
@@ -351,6 +354,7 @@ export const deContent: SiteContent = {
       'Beim Senden Ihrer Nachricht ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
     directEmailLabel: 'Direkter Kontakt',
     directEmailValue: publicContactEmails.general,
+    routeEmailLabel: 'Route-E-Mail',
   },
   footer: {
     brand: 'Velvoix',
@@ -675,16 +679,19 @@ export const esContent: SiteContent = {
     directEmailNote: 'Para exploraciones piloto, rutas de colaboración y preguntas empresariales.',
     routeContent: {
       pilot: {
+        email: publicContactEmails.pilot,
         helper: 'Elija esta vía si quiere evaluar si Velvoix es relevante para un piloto y si encaja operativamente en su entorno asistencial.',
         messagePlaceholder: 'Describa brevemente su organización, el contexto asistencial y qué desea evaluar en una exploración piloto.',
         submit: 'Enviar exploración piloto',
       },
       partnership: {
+        email: publicContactEmails.partners,
         helper: 'Elija esta vía si quiere tratar encaje de socio, despliegue, integración o una ruta de colaboración estratégica.',
         messagePlaceholder: 'Describa brevemente su organización, su rol y qué ruta de colaboración o despliegue desea explorar.',
         submit: 'Enviar exploración de colaboración',
       },
       general: {
+        email: publicContactEmails.general,
         helper: 'Elija esta vía para una pregunta empresarial sobre la plataforma, el contexto de implantación o los siguientes pasos.',
         messagePlaceholder: 'Describa brevemente su pregunta y qué contexto o plazo es relevante.',
         submit: 'Enviar pregunta empresarial',
@@ -715,6 +722,7 @@ export const esContent: SiteContent = {
     error:
       'Se ha producido un error al envíar su mensaje. Vuelva a intentarlo o contactenos directamente.',
     directEmailLabel: 'Contacto directo',
+    routeEmailLabel: 'Correo de la ruta',
     directEmailValue: publicContactEmails.general,
   },
   footer: {

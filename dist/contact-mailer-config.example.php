@@ -9,5 +9,10 @@ return [
     'from_address' => 'founder@velvoix.com',
     'from_name' => 'Velvoix Website',
     'to_address' => 'info@velvoix.com',
+    'route_to_addresses' => [
+        'pilot' => 'pilot@velvoix.com',
+        'partnership' => 'partners@velvoix.com',
+        'general' => 'info@velvoix.com',
+    ],
     'helo_host' => 'velvoix.com',
 ];

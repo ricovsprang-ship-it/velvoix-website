@@ -112,11 +112,10 @@ function format_address_header(string $displayName, string $email): string
     return $encodedName . ' <' . $safeEmail . '>';
 }
 
-function build_mail_payload(array $config, string $replyToEmail, string $replyToName, string $subject, string $plainBody): array
+function build_mail_payload(array $config, string $toAddress, string $replyToEmail, string $replyToName, string $subject, string $plainBody): array
 {
     $fromAddress = (string) $config['from_address'];
     $fromName = (string) $config['from_name'];
-    $toAddress = (string) $config['to_address'];
     $safeSubject = sanitize_header_text($subject);
 
     $headers = [
@@ -139,7 +138,7 @@ function build_mail_payload(array $config, string $replyToEmail, string $replyTo
     ];
 }
 
-function smtp_send_mail(array $config, string $replyToEmail, string $replyToName, string $subject, string $plainBody): void
+function smtp_send_mail(array $config, string $toAddress, string $replyToEmail, string $replyToName, string $subject, string $plainBody): void
 {
     $transport = strtolower((string) ($config['encryption'] ?? 'ssl'));
     $host = (string) $config['host'];
@@ -147,9 +146,8 @@ function smtp_send_mail(array $config, string $replyToEmail, string $replyToName
     $username = (string) $config['username'];
     $password = (string) $config['password'];
     $fromAddress = (string) $config['from_address'];
-    $toAddress = (string) $config['to_address'];
     $heloHost = (string) ($config['helo_host'] ?? 'velvoix.com');
-    $mailPayload = build_mail_payload($config, $replyToEmail, $replyToName, $subject, $plainBody);
+    $mailPayload = build_mail_payload($config, $toAddress, $replyToEmail, $replyToName, $subject, $plainBody);
 
     $remoteHost = $transport === 'ssl' ? 'ssl://' . $host : $host;
     $socket = @stream_socket_client(
@@ -248,6 +246,26 @@ function load_mailer_config(): array
     return $config;
 }
 
+function resolve_recipient_address(array $config, string $inquiryType): string
+{
+    $defaultAddress = (string) $config['to_address'];
+    $routeAddresses = [
+        'pilot' => 'pilot@velvoix.com',
+        'partnership' => 'partners@velvoix.com',
+        'general' => 'info@velvoix.com',
+    ];
+
+    if (!empty($config['route_to_addresses']) && is_array($config['route_to_addresses'])) {
+        foreach ($config['route_to_addresses'] as $route => $address) {
+            if (is_string($route) && is_string($address) && filter_var(trim($address), FILTER_VALIDATE_EMAIL)) {
+                $routeAddresses[$route] = trim($address);
+            }
+        }
+    }
+
+    return $routeAddresses[$inquiryType] ?? $defaultAddress;
+}
+
 $name = trim((string) ($_POST['name'] ?? ''));
 $organisation = trim((string) ($_POST['organisation'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -303,7 +321,8 @@ $plainBody = implode("\n", [
 
 try {
     $config = load_mailer_config();
-    smtp_send_mail($config, $email, $name, $subject, $plainBody);
+    $toAddress = resolve_recipient_address($config, $inquiryType);
+    smtp_send_mail($config, $toAddress, $email, $name, $subject, $plainBody);
     echo json_encode(['ok' => true], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 } catch (Throwable $exception) {
     $errorId = substr(bin2hex(random_bytes(8)), 0, 8);

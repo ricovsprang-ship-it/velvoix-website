@@ -1,6 +1,9 @@
 export const publicContactEmails = {
   general: 'info@velvoix.com',
-  privacy: 'info@velvoix.com',
+  privacy: 'privacy@velvoix.com',
+  support: 'support@velvoix.com',
+  partners: 'partners@velvoix.com',
+  pilot: 'pilot@velvoix.com',
 } as const;
 
 export function normalizePublicContactCopy(value: string): string {

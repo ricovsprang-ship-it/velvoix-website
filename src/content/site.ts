@@ -137,16 +137,19 @@ export interface ContactContent extends SectionIntroContent {
   routeContent: {
     pilot: {
       helper: string;
+      email: string;
       messagePlaceholder: string;
       submit: string;
     };
     partnership: {
       helper: string;
+      email: string;
       messagePlaceholder: string;
       submit: string;
     };
     general: {
       helper: string;
+      email: string;
       messagePlaceholder: string;
       submit: string;
     };
@@ -176,6 +179,7 @@ export interface ContactContent extends SectionIntroContent {
   error: string;
   directEmailLabel: string;
   directEmailValue: string;
+  routeEmailLabel: string;
 }
 
 export interface FooterContent {
@@ -538,16 +542,19 @@ export const siteContent: Record<Locale, SiteContent> = {
       routeContent: {
         pilot: {
           helper: 'Kies deze route als u wilt toetsen of Velvoix binnen uw zorgsetting pilotwaardig en operationeel relevant is.',
+          email: publicContactEmails.pilot,
           messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
           submit: 'Verstuur pilotverkenning',
         },
         partnership: {
           helper: 'Kies deze route als u partnerfit, uitrol, integratie of een strategische samenwerkingsroute wilt bespreken.',
+          email: publicContactEmails.partners,
           messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke samenwerkings- of uitrolroute u wilt verkennen.',
           submit: 'Verstuur samenwerkingsverkenning',
         },
         general: {
           helper: 'Kies deze route voor een algemene zakelijke vraag over het platform, de inzetcontext of vervolgstappen.',
+          email: publicContactEmails.general,
           messagePlaceholder: 'Beschrijf kort uw vraag en welke context of planning daarbij relevant is.',
           submit: 'Verstuur zakelijke vraag',
         },
@@ -578,6 +585,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Er ging iets mis bij het versturen van uw bericht. Probeer het opnieuw of neem rechtstreeks contact op.',
       directEmailLabel: 'Rechtstreeks contact',
       directEmailValue: publicContactEmails.general,
+      routeEmailLabel: 'Route e-mailadres',
     },
     footer: {
       brand: 'Velvoix',
@@ -920,16 +928,19 @@ export const siteContent: Record<Locale, SiteContent> = {
       routeContent: {
         pilot: {
           helper: 'Choose this route if you want to assess whether Velvoix is pilot-ready and operationally relevant in your care setting.',
+          email: publicContactEmails.pilot,
           messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration.',
           submit: 'Send pilot exploration',
         },
         partnership: {
           helper: 'Choose this route if you want to discuss partner fit, rollout scope, integration or a strategic collaboration route.',
+          email: publicContactEmails.partners,
           messagePlaceholder: 'Briefly describe your organisation, role and which partnership or rollout route you want to explore.',
           submit: 'Send partnership exploration',
         },
         general: {
           helper: 'Choose this route for a general business question about the platform, deployment context or next steps.',
+          email: publicContactEmails.general,
           messagePlaceholder: 'Briefly describe your question and any context or timing that matters.',
           submit: 'Send business question',
         },
@@ -960,6 +971,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
       directEmailValue: publicContactEmails.general,
+      routeEmailLabel: 'Route email',
     },
     footer: {
       brand: 'Velvoix',
