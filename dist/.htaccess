@@ -12,6 +12,19 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.velvoix\.com$ [NC]
 RewriteRule ^ https://velvoix.com%{REQUEST_URI} [R=301,L]
 
+ErrorDocument 503 /maintenance.html
+
+# Temporary maintenance mode for public visitors.
+# Internal preview access is granted via preview-access.php, which sets a secure cookie.
+RewriteCond %{REQUEST_URI} !^/maintenance\.html$ [NC]
+RewriteCond %{REQUEST_URI} !^/preview-access\.php$ [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)velvoix_preview=1(;|$) [NC]
+RewriteRule ^ - [R=503,L]
+
 <Files ".contact-mailer-config.php">
   Require all denied
 </Files>
+
+<IfModule mod_headers.c>
+  Header always set Retry-After "3600" "expr=%{REQUEST_STATUS} == 503"
+</IfModule>
