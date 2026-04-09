@@ -56,23 +56,23 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
   nl: {
     validation: {
       eyebrow: 'Pilotvalidatie',
-      title: 'Wat een eerste pilot concreet kan valideren',
+      title: 'Wat een eerste pilot in de praktijk moet bewijzen',
       description:
-        'Velvoix claimt geen generieke uitkomst vooraf. Een eerste pilot maakt deze vragen concreet in de eigen setting.',
+        'Een pilot maakt zichtbaar of Velvoix in jullie setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
       note:
         'Praktijkuitkomsten hangen af van teambezetting, processen, devices en bestaande systemen. Juist daarom werkt een gerichte pilot beter dan een algemene demo.',
       cards: [
         {
-          title: 'Snellere duiding',
-          description: 'Welke signalen sneller tot duidelijke opvolging leiden en waar uitleg het verschil maakt.',
+          title: 'Sneller zien wat aandacht vraagt',
+          description: 'Welke signalen sneller tot duidelijke opvolging leiden en waar extra context echt helpt.',
         },
         {
-          title: 'Werkbare eigenaarschap',
-          description: 'Hoe status, eigenaarschap en escalatie minder interpretatieruis geven in de dagelijkse praktijk.',
+          title: 'Duidelijkere opvolging en verantwoordelijkheid',
+          description: 'Hoe status, verantwoordelijkheid en escalatie minder interpretatieruis geven in de dagelijkse praktijk.',
         },
         {
-          title: 'Herleidbare reconstructie',
-          description: 'Welke audit- en evaluatievragen beter te beantwoorden zijn met eventvorming en statusverloop.',
+          title: 'Betere reconstructie voor evaluatie',
+          description: 'Welke audit- en evaluatievragen beter te beantwoorden zijn met duidelijk statusverloop en reconstructie.',
         },
       ],
     },
@@ -186,7 +186,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'uitlegbare-zorgtriage',
       title: 'Uitlegbare zorgtriage voor zorgsignalen',
       cardDescription:
-        'Waarom context en triage nodig zijn om van een binnenkomend signaal naar een verdedigbare vervolgactie te komen.',
+        'Waarom context en prioritering nodig zijn om van een binnenkomend signaal naar een duidelijke en verdedigbare vervolgactie te komen.',
       eyebrow: 'Verdieping',
       intro:
         'Een binnenkomend zorgsignaal wordt pas werkbaar als teams begrijpen waarom het aandacht vraagt, welke urgentie logisch is en welke opvolging daarbij past.',
@@ -248,7 +248,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'zorgworkflow-en-reconstructie',
       title: 'Zorgworkflow, escalatie en reconstructie',
       cardDescription:
-        'Waarom opvolging pas echt bestuurbaar wordt als status, eigenaarschap, escalatie en reconstructie in dezelfde keten blijven.',
+        'Waarom opvolging sterker werkt wanneer status, verantwoordelijkheid, escalatie en reconstructie in dezelfde operationele lijn blijven.',
       eyebrow: 'Verdieping',
       intro:
         'Een zorgsignaal is pas afgerond als opvolging, statusverloop en reconstructie in één bestuurbare lijn blijven staan.',
@@ -305,7 +305,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'pilotaanpak-zorgsignalen',
       title: 'Pilotaanpak voor zorgsignalen en opvolging',
       cardDescription:
-        'Waar een eerste pilot op moet sturen als je wilt beoordelen of Velvoix past bij processen, teams en bestaande zorgomgeving.',
+        'Waar een eerste pilot op moet sturen om te beoordelen of Velvoix past bij teams, processen en bestaande zorgomgeving.',
       eyebrow: 'Pilotaanpak',
       intro:
         'Een goede pilot is geen vrijblijvende demo, maar een gecontroleerde verkenning van operationele fit, opvolging en proceswaarde.',

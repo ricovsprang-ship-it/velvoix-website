@@ -1,7 +1,6 @@
 ---
 import type { Locale, SiteContent } from '../content/site';
 import ChallengeProofSection from './ChallengeProofSection.astro';
-import CompareChainsSection from './CompareChainsSection.astro';
 import ContactForm from './ContactForm.astro';
 import EvidenceAndInsightsSection from './EvidenceAndInsightsSection.astro';
 import Footer from './Footer.astro';
@@ -28,18 +27,14 @@ const { locale, content } = Astro.props;
   <main>
     <HeroSection locale={locale} content={content.hero} />
     <PropositionBridgeSection content={content.propositionBridge} />
-
     <ChallengeProofSection content={content.challenge} />
-
-    <CompareChainsSection content={content.compareChains} />
-
     <HowItWorksSection locale={locale} content={content.howItWorks} />
     <WhyDifferentSection locale={locale} content={content.whyVelvoix} />
-    <TechnicalCoreSection content={content.technicalCore} />
 
     <div class="surface-band">
       <SnapshotSection locale={locale} content={content.snapshots} />
     </div>
+    <TechnicalCoreSection content={content.technicalCore} />
     <EvidenceAndInsightsSection locale={locale} />
     <PilotSection locale={locale} content={content.pilot} />
     <ContactForm content={content.contact} />

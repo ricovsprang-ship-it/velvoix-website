@@ -36,7 +36,9 @@ export interface HeroContent {
   subtitle: string;
   supporting: string;
   primaryCta: string;
+  primaryHref?: string;
   secondaryCta: string;
+  secondaryHref?: string;
   metrics: Array<{ value: string; label: string }>;
 }
 
@@ -226,57 +228,59 @@ export const siteContent: Record<Locale, SiteContent> = {
     meta: {
       title: 'Velvoix | Van signaal naar duidelijke zorgactie',
       description:
-        'Velvoix helpt zorgorganisaties zorgsignalen om te zetten in duidelijke, uitlegbare en herleidbare opvolging.',
+        'Velvoix helpt zorgorganisaties zorgsignalen vertalen naar duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
       ogTitle: 'Velvoix | Duidelijke zorgactie uit signalen',
       ogDescription:
-        'Velvoix vertaalt zorgsignalen naar duidelijke opvolging met context, triage en herleidbare workflow.',
+        'Velvoix helpt teams sneller zien wat aandacht vraagt, wat eerst moet gebeuren en hoe opvolging herleidbaar blijft.',
     },
     hero: {
       eyebrow: 'Velvoix',
       title: 'Van signaal naar duidelijke zorgactie',
       subtitle:
-        'Velvoix helpt zorgorganisaties knopoproepen, spraakinput en andere zorgsignalen om te zetten in duidelijke, uitlegbare opvolging.',
+        'Veel zorgsignalen komen binnen zonder genoeg context. Daardoor moeten medewerkers onder druk zelf bepalen wat urgent is en wat eerst moet gebeuren. Velvoix maakt van een signaal direct een duidelijke zorgactie met context, prioriteit en duidelijke opvolging.',
       supporting:
-        'Voor teams die snelle duiding en herleidbare opvolging nodig hebben.',
-      primaryCta: 'Verken Velvoix',
-      secondaryCta: 'Bekijk hoe het werkt',
+        'Minder twijfel, duidelijkere prioritering en betere reconstructie achteraf.',
+      primaryCta: 'Verken een pilot',
+      primaryHref: '#pilot',
+      secondaryCta: 'Bekijk de producttour',
+      secondaryHref: '#product-tour',
       metrics: [
-        { value: 'Uitlegbaar', label: 'Van signaal naar begrijpelijke opvolging' },
-        { value: 'Auditbaar', label: 'Statusverloop en reconstructie blijven herleidbaar' },
-        { value: 'Beheersbaar', label: 'Past in bestaande zorgomgevingen zonder losse notificatielaag' },
+        { value: 'Duidelijk', label: 'Van signaal naar begrijpelijke zorgactie' },
+        { value: 'Herleidbaar', label: 'Opvolging en reconstructie blijven zichtbaar' },
+        { value: 'Bruikbaar', label: 'Past in bestaande zorgomgevingen zonder extra werkruis' },
       ],
     },
     propositionBridge: {
       eyebrow: 'In een oogopslag',
-      title: 'Van binnenkomend signaal naar werkbare opvolging',
+      title: 'Van melding naar duidelijke opvolging',
       description:
-        'Van binnenkomend zorgsignaal naar een duidelijke volgende stap.',
+        'Velvoix helpt teams sneller zien wat aandacht vraagt, wat de juiste actie is en wie moet oppakken.',
       stages: [
         {
-          label: 'Wat binnenkomt',
-          title: 'Signalen uit de zorgpraktijk',
+          label: 'Wat er binnenkomt',
+          title: 'Een melding is nog geen duidelijke actie',
           description:
-            'Knopoproepen, spraakinput en andere signalen komen gecontroleerd binnen.',
+            'Veel signalen komen binnen zonder genoeg context om direct goed te handelen.',
         },
         {
           label: 'Wat Velvoix toevoegt',
-          title: 'Duiding rond het signaal',
+          title: 'Context, prioriteit en aanbevolen actie',
           description:
-            'Velvoix voegt context, triage en eigenaarschap toe.',
+            'Velvoix helpt sneller zichtbaar maken wat urgent is en welke volgende stap past.',
         },
         {
           label: 'Wat dat oplevert',
-          title: 'Werkbare opvolging',
+          title: 'Rustigere en duidelijkere opvolging',
           description:
-            'Dat geeft duidelijkere actie, minder interpretatielast en betere reconstructie.',
+            'Status, verantwoordelijkheid en vervolg blijven zichtbaar zonder extra interpretatielast.',
         },
       ],
     },
     challenge: {
       eyebrow: 'Het probleem',
-      title: 'Wanneer een signaal nog geen duidelijke zorgactie is',
+      title: 'Wanneer een melding nog geen duidelijke actie is',
       description:
-        'Veel systemen registreren wel dat er iets gebeurt, maar helpen onvoldoende bij de vraag wat aandacht vraagt, hoe urgent het is en welke opvolging past.',
+        'Veel systemen laten wel zien dat er iets gebeurt, maar niet meteen wat aandacht vraagt, hoe urgent het is en welke actie nodig is. Daardoor moeten teams onder druk zelf blijven interpreteren.',
       proofPanels: {
         explainabilityLabel: 'Uitlegbaarheid',
         explainabilityTitle: 'Waarom',
@@ -309,11 +313,11 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     howItWorks: {
       eyebrow: 'Hoe het werkt',
-      title: 'Van input naar werkbare opvolging',
+      title: 'Van signaal naar duidelijke vervolgactie',
       description:
-        'Velvoix brengt signalen niet alleen binnen, maar verrijkt ze met context, triage en opvolgbaar eventgedrag, zodat zorgmedewerkers sneller begrijpen wat aandacht vraagt en wat logisch vervolg is.',
-      panelLabel: 'Operationele flow',
-      panelSupporting: 'Velvoix structureert input, duiding, eventvorming en opvolging als een rustige keten.',
+        'Velvoix combineert het signaal met context en prioritering, zodat zorgmedewerkers sneller zien wat er speelt en wat ze het beste kunnen doen.',
+      panelLabel: 'Van signaal naar actie',
+      panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met status, verantwoordelijkheid en reconstructie.',
       steps: [
         {
           title: 'Input',
@@ -396,39 +400,39 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     whyVelvoix: {
       eyebrow: 'Waarom Velvoix anders is',
-      title: 'Systeemverschillen die operationeel voelbaar zijn',
+      title: 'Waarom Velvoix in de praktijk anders werkt',
       description:
-        'Het operationele verschil zit in productkeuzes rond eventvorming, uitlegbare triage en een operationele waarheid.',
+        'Velvoix stopt niet bij de melding, maar helpt teams door tot duidelijke actie en herleidbare opvolging.',
       cards: [
         {
-          title: 'Geen notificatielaag',
+          title: 'Niet nog een losse melding',
           description:
-            'Velvoix laat signalen niet als losse meldingen rondzingen, maar zet ze om naar werkbare events met context, eigenaarschap en opvolging.',
+            'Velvoix helpt verder dan alleen doorgeven dat er iets is gebeurd.',
         },
         {
-          title: 'Uitlegbare triage',
+          title: 'Duidelijke prioriteit',
           description:
-            'Niet black-box scoren, maar een duidelijke combinatie van urgentie, context en aanbevolen aanpak in zorgtaal.',
+            'Teams zien sneller wat aandacht vraagt en wat eerst moet gebeuren.',
         },
         {
-          title: 'Event truth voor workflow en audit',
+          title: 'Opvolging blijft in één lijn zichtbaar',
           description:
-            'Een operationele waarheid voor status, eigenaarschap, escalatie en reconstructie.',
+            'Status, verantwoordelijkheid en vervolg blijven samen zichtbaar voor werkvloer en evaluatie.',
         },
       ],
     },
     technicalCore: {
-      eyebrow: 'Technische kern',
-      title: 'Gebouwd voor betrouwbare opvolging onder druk',
+      eyebrow: 'Betrouwbaar in de praktijk',
+      title: 'Gebouwd voor zorgsituaties waar druk en afhankelijkheden samenkomen',
       description:
-        'De kracht van Velvoix zit in een productkern die eventwaarheid, uitlegbare triage, opvolging en beheer bijeenhoudt, ook onder druk.',
+        'Velvoix blijft bruikbaar wanneer snelheid, duidelijkheid en herleidbaarheid nodig zijn. Ook als niet alles in de keten ideaal reageert, blijft zichtbaar wat er gebeurt en wat de volgende stap is.',
       capabilities: [
-        'Backend-truth',
+        'Duidelijke status',
         'Eerlijke fallback',
-        'Auditbare opvolging',
-        'Rolzuivere toegang',
-        'Tenantgescheiden',
-        'Ketenobservability',
+        'Herleidbare opvolging',
+        'Begrensde toegang',
+        'Beheersbaar gedrag',
+        'Bruikbaar onder druk',
       ],
       rows: [
         {
@@ -447,17 +451,17 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           index: '03',
-          title: 'Backend-truth als kern',
+          title: 'Duidelijke status als vertrekpunt',
           description:
-            'Status, uitleg en opvolging worden in de kern bewaakt, niet verspreid over schermlogica of afgeleide integraties.',
-          effect: 'Backend-truth boven losse scherm- of integratielogica.',
+            'Status, uitleg en opvolging blijven samen leesbaar, zodat teams niet hoeven te vertrouwen op losse interpretaties.',
+          effect: 'Eén duidelijk vertrekpunt voor opvolging.',
         },
         {
           index: '04',
-          title: 'Rol- en tenantzuiver',
+          title: 'Begrensde toegang',
           description:
             'Toegang en acties blijven begrensd per organisatie, context en rol.',
-          effect: 'Harde grenzen tussen organisaties, rollen en context.',
+          effect: 'Rustige controle over wie wat kan zien en doen.',
         },
         {
           index: '05',
@@ -468,20 +472,20 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           index: '06',
-          title: 'Operationeel beheersbaar',
+          title: 'Beheersbaar in de praktijk',
           description:
-            'Observability, eigenaarschap en governance zitten in het productgedrag, zodat teams gecontroleerd kunnen reageren.',
-          effect: 'Beheersing als productdiscipline, niet als losse IT-bijlage.',
+            'Gedrag, opvolging en terugkijken blijven beheersbaar, zodat teams gecontroleerd kunnen reageren zonder extra werkruis.',
+          effect: 'Beheersing als onderdeel van de dagelijkse praktijk.',
         },
       ],
       closingLine:
-        'Zo blijft Velvoix uitlegbaar en bestuurbaar, ook wanneer de praktijk onder druk staat.',
+        'Zo blijft Velvoix duidelijk en bruikbaar, ook wanneer de praktijk onder druk staat.',
     },
     snapshots: {
-      eyebrow: 'Product snapshots',
-      title: 'Compacte bewijsfragmenten uit het product',
+      eyebrow: 'Producttour',
+      title: 'Korte productbeelden van duidelijke opvolging',
       description:
-        'Geen volledige schermen, maar gerichte uitsneden die laten zien hoe Velvoix werkvoorraad, uitlegbaarheid, beheer en governance zichtbaar maakt.',
+        'Gerichte voorbeelden van hoe Velvoix duidelijkheid, opvolging en beheersing zichtbaar maakt.',
       cards: [
         {
           title: 'Meldingenlijst',
@@ -511,9 +515,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     pilot: {
       eyebrow: 'Pilot',
-      title: 'Verken of een pilot past',
+      title: 'Verken of Velvoix past bij jullie zorgpraktijk',
       description:
-        'Een pilot maakt zichtbaar hoe Velvoix past in uw zorgpraktijk, teamafspraken en operationele processen.',
+        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in jullie processen.',
       points: [
         'Verpleeghuizen en langdurige zorg',
         'Teams die meer duidelijkheid in opvolging willen',
@@ -524,9 +528,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'Start een gerichte verkenning',
+      title: 'Start een verkenning die past bij jullie situatie',
       description:
-        'Kies de route die past: pilotverkenning, samenwerkingsroute of zakelijke vraag.',
+        'Kies de route die past: pilot, samenwerking of een zakelijke vraag.',
       reasonsLabel: 'Routes',
       inquiryTypes: {
         pilot: 'Pilotverkenning',
@@ -534,14 +538,14 @@ export const siteContent: Record<Locale, SiteContent> = {
         general: 'Zakelijke vraag',
       },
       reasons: [
-        'Pilotverkenning voor zorgorganisaties',
-        'Samenwerkingsroute voor partners en uitrol',
+        'Pilot voor zorgorganisaties',
+        'Samenwerking voor partners en uitrol',
         'Zakelijke vraag over platform of planning',
       ],
       directEmailNote: 'Voor pilots, samenwerking en zakelijke vragen.',
       routeContent: {
         pilot: {
-          helper: 'Kies deze route om te toetsen of Velvoix pilotwaardig en operationeel relevant is in uw zorgsetting.',
+          helper: 'Kies deze route om te beoordelen of Velvoix in jullie setting helpt bij duidelijkere opvolging, prioritering en praktische inpasbaarheid.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
           submit: 'Verstuur pilotverkenning',
@@ -625,7 +629,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       supporting:
         'For teams that need fast interpretation and traceable follow-up.',
       primaryCta: 'Explore Velvoix',
+      primaryHref: '#why-velvoix',
       secondaryCta: 'See how it works',
+      secondaryHref: '#how-it-works',
       metrics: [
         { value: 'Explainable', label: 'From signal to understandable follow-up' },
         { value: 'Auditable', label: 'Event flow and reconstruction remain traceable' },

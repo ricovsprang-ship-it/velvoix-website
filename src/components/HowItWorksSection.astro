@@ -63,31 +63,31 @@ const sectionContentByLocale = {
     },
   nl: {
       eyebrow: 'Hoe het werkt',
-      title: 'Van signaal naar werkbare eventuitkomst',
+      title: 'Van signaal naar duidelijke vervolgactie',
       description:
-        'Velvoix voegt context, triage en eventlogica toe, zodat zorgmedewerkers sneller zien wat aandacht vraagt en welke opvolging logisch is.',
+        'Velvoix combineert het signaal met context en prioritering, zodat zorgmedewerkers sneller zien wat er speelt en wat ze het beste kunnen doen.',
       outcomes: [
         'Sneller zien wat aandacht vraagt',
-        'Aanpak wordt direct werkbaar',
-        'Audit en reconstructie blijven intact',
+        'Aanbevolen actie wordt direct duidelijk',
+        'Verloop en reconstructie blijven herleidbaar',
       ],
-      panelLabel: 'Eventopbouw',
-      panelSupporting: 'Van ruwe input naar een werkbaar event met context, aanpak, status en audit.',
+      panelLabel: 'Van signaal naar actie',
+      panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met status, verantwoordelijkheid en reconstructie.',
       layers: [
         {
-          label: 'Input ontvangen',
+          label: 'Stap 1',
           title: 'Signaal ontvangen',
           description: 'Knopoproep, spraakinput of ander zorgsignaal komt gecontroleerd binnen.',
         },
         {
-          label: 'Context toegevoegd',
+          label: 'Stap 2',
           title: 'Context toegevoegd',
           description: 'Historie, herhaling en situatie worden direct meegewogen.',
         },
         {
-          label: 'Triage gestructureerd',
-          title: 'Triage gestructureerd',
-          description: 'Urgentie en aanbevolen aanpak worden zichtbaar in zorgtaal.',
+          label: 'Stap 3',
+          title: 'Urgentie wordt duidelijk',
+          description: 'Prioriteit en aanbevolen aanpak worden zichtbaar in begrijpelijke zorgtaal.',
           meta: [
             { label: 'Urgentie', value: 'Direct' },
             { label: 'Waarom', value: 'Herhaald binnen korte tijd' },
@@ -96,18 +96,18 @@ const sectionContentByLocale = {
           emphasis: true,
         },
         {
-          label: 'Werkbaar event opgebouwd',
-          title: 'Werkbaar event opgebouwd',
-          description: 'Status, eigenaarschap en opvolging worden direct bestuurbaar.',
+          label: 'Stap 4',
+          title: 'Opvolging blijft zichtbaar',
+          description: 'Status, verantwoordelijkheid en vervolgactie blijven samen leesbaar voor het team.',
           meta: [
             { label: 'Status', value: 'Open' },
-            { label: 'Eigenaarschap', value: 'Nog niet toegewezen' },
-            { label: 'Opvolging', value: 'Werkbaar voor teamopvolging' },
+            { label: 'Verantwoordelijkheid', value: 'Nog niet toegewezen' },
+            { label: 'Opvolging', value: 'Duidelijk voor teamopvolging' },
           ],
         },
         {
-          label: 'Audit gekoppeld',
-          title: 'Audit gekoppeld',
+          label: 'Stap 5',
+          title: 'Verloop blijft herleidbaar',
           description: 'Statusverloop en reconstructie blijven herleidbaar.',
         },
       ],
@@ -233,7 +233,7 @@ const sectionContentByLocale = {
 const sectionContent = sectionContentByLocale[locale];
 ---
 
-<section class="section-block">
+<section id="how-it-works" class="section-block">
   <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start" data-event-assembly-block>
     <div class="max-w-[31rem]" data-event-assembly-intro>
       <SectionIntro

@@ -13,7 +13,7 @@ const sectionContent = platformTourContent[locale];
 const previewSlide = sectionContent.slides.find((slide) => slide.id === 'event-detail') ?? sectionContent.slides[0];
 ---
 
-<section class="section-block" data-platform-tour data-tour-slides={JSON.stringify(sectionContent.slides)}>
+<section id="product-tour" class="section-block" data-platform-tour data-tour-slides={JSON.stringify(sectionContent.slides)}>
   <div class="section-shell">
     <div class="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
       <div class="max-w-[33rem]" data-platform-tour-intro>

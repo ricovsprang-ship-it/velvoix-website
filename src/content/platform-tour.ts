@@ -66,16 +66,16 @@ const slideFraming = {
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
   nl: {
     eyebrow: 'Producttour',
-    title: 'Een gecontroleerd inkijkje in het platform',
+    title: 'Korte productbeelden van duidelijke opvolging',
     description:
-      'Dertien geselecteerde schermen laten zien hoe Velvoix signalen, clientcontext en opvolging ordent.',
+      'Gerichte voorbeelden laten zien hoe Velvoix duidelijkheid, opvolging en beheersing zichtbaar maakt.',
     supporting:
-      'Open de producttour voor een rustig overzicht van de belangrijkste operationele schermen.',
+      'Geen marketingmockups, maar een gecontroleerde inkijk in de belangrijkste productschermen.',
     cta: 'Open producttour',
     previewLabel: 'Geselecteerd scherm',
-    previewTitle: 'Eventdetail met context en aanpak',
+    previewTitle: 'Duidelijke actie met context en opvolging',
     previewBody:
-      'Een voorbeeld van hoe aanleiding, triage en vervolgacties samenkomen met minder interpretatielast.',
+      'Een voorbeeld van hoe aanleiding, prioriteit en vervolgactie samen zichtbaar blijven met minder interpretatielast.',
     overlayLabel: 'Producttour',
     closeLabel: 'Sluiten',
     previousLabel: 'Vorige',
@@ -85,15 +85,15 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     interactionHint: 'Pinch of scroll om te zoomen, sleep om te verplaatsen, 0 om te resetten.',
     slides: [
       { id: 'login', label: 'Start', title: 'Rustige toegang', text: 'De instap houdt toegang tot het platform rustig en herkenbaar, zodat teams zonder extra frictie aan de werkdag beginnen.', alt: 'Velvoix login scherm', ...slideFraming.login },
-      { id: 'worklist', label: 'Werkvoorraad', title: 'Meldingen in een bestuurbare lijst', text: 'Urgentie, status en eigenaarschap blijven samen leesbaar, zodat open opvolging niet over losse signalen versnippert.', alt: 'Velvoix meldingenlijst', ...slideFraming.worklist },
-      { id: 'notifications', label: 'Notificaties', title: 'Nieuwe signalen zonder werkruis', text: 'Het notificatiepaneel laat nieuwe signalen opvallen zonder dat de hele workflow verdrinkt in ruis.', alt: 'Velvoix notificaties en snelle opvolging', ...slideFraming.notifications },
-      { id: 'event-detail', label: 'Eventdetail', title: 'Waarom, context en actie bijeen', text: 'Aanleiding, transcript, triage en actieadvies blijven samen zichtbaar, zodat snelle beoordeling minder interpretatielast vraagt.', alt: 'Velvoix eventdetail', ...slideFraming['event-detail'] },
+      { id: 'worklist', label: 'Werkvoorraad', title: 'Meldingen in een duidelijke lijst', text: 'Urgentie, status en verantwoordelijkheid blijven samen leesbaar, zodat open opvolging niet over losse signalen versnippert.', alt: 'Velvoix meldingenlijst', ...slideFraming.worklist },
+      { id: 'notifications', label: 'Notificaties', title: 'Nieuwe signalen zonder werkruis', text: 'Nieuwe signalen vallen op zonder dat de hele workflow verdrinkt in ruis.', alt: 'Velvoix notificaties en snelle opvolging', ...slideFraming.notifications },
+      { id: 'event-detail', label: 'Detail', title: 'Waarom, context en actie bijeen', text: 'Aanleiding, context en aanbevolen actie blijven samen zichtbaar, zodat snelle beoordeling minder interpretatielast vraagt.', alt: 'Velvoix eventdetail', ...slideFraming['event-detail'] },
       { id: 'resolve', label: 'Afhandeling', title: 'Afronden met expliciete uitkomst', text: 'Afhandelen dwingt een expliciete uitkomst af, zodat afsluiting en latere reconstructie niet vaag blijven.', alt: 'Velvoix afhandel dialoog', ...slideFraming.resolve },
-      { id: 'assign', label: 'Toewijzen', title: 'Snel de juiste collega koppelen', text: 'Toewijzen maakt eigenaarschap direct zichtbaar, zodat signalen niet tussen collega\'s blijven hangen.', alt: 'Velvoix toewijzen dialoog', ...slideFraming.assign },
+      { id: 'assign', label: 'Toewijzen', title: 'Snel de juiste collega koppelen', text: 'Toewijzen maakt verantwoordelijkheid direct zichtbaar, zodat signalen niet tussen collega\'s blijven hangen.', alt: 'Velvoix toewijzen dialoog', ...slideFraming.assign },
       { id: 'handover', label: 'Overdracht', title: 'Overdragen met traceerbaarheid', text: 'Overdracht houdt reden, eigenaar en vervolg bij elkaar, zodat context tussen diensten niet wegvalt.', alt: 'Velvoix overdracht dialoog', ...slideFraming.handover },
       { id: 'resident-overview', label: 'Clientbeeld', title: 'Actuele status direct in beeld', text: 'Clientidentiteit, koppelingen en recente meldingen staan samen in beeld, zodat basiscontext niet over losse schermen gezocht hoeft te worden.', alt: 'Velvoix clientoverzicht', ...slideFraming['resident-overview'] },
       { id: 'resident-history', label: 'Historie', title: 'Historie per client die navolgbaar blijft', text: 'Recente meldingen en afhandeling blijven per client terug te zien, zodat evaluatie niet op geheugen of losse notities leunt.', alt: 'Velvoix clienthistorie', ...slideFraming['resident-history'] },
-      { id: 'resident-context', label: 'Context', title: 'Triagecontext dicht bij de workflow', text: 'Triagecontext, privacy en teamafspraken blijven bij de workflow, zodat belangrijke duiding niet buiten de opvolging verdwijnt.', alt: 'Velvoix clientcontext', ...slideFraming['resident-context'] },
+      { id: 'resident-context', label: 'Context', title: 'Context dicht bij de opvolging', text: 'Context, privacy en teamafspraken blijven dicht bij de opvolging, zodat belangrijke informatie niet buiten de workflow verdwijnt.', alt: 'Velvoix clientcontext', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Statistiek', title: 'Patronen per client zonder dashboardruis', text: 'Trend, urgentiemix en respons blijven zichtbaar, zodat patronen per client bespreekbaar worden zonder dashboardoverlast.', alt: 'Velvoix clientstatistieken', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Dagsturing', title: 'Dagelijkse operatie in een heldere managementflow', text: 'Druk, prioriteit en SLA-risico worden in een rustig teamoverzicht zichtbaar, zodat dagsturing sneller kan bijsturen.', alt: 'Velvoix dagelijks zorgoverzicht', ...slideFraming['care-operations'] },
       { id: 'quality-response', label: 'Kwaliteit', title: 'Responskwaliteit in een uitlegbare laag', text: 'Kwaliteit en respons worden navolgbaar, zodat verbeterpunten bespreekbaar blijven op basis van echte signalen.', alt: 'Velvoix kwaliteit en respons overzicht', ...slideFraming['quality-response'] },
