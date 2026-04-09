@@ -11,121 +11,109 @@ const { locale, content } = Astro.props;
 
 const sectionContentByLocale = {
   en: {
-      eyebrow: 'Why Velvoix is different',
-      title: 'Why Velvoix works differently in operations',
-      description:
-        'Velvoix is built to structure care situations into explainable, manageable and auditable workflow.',
-      rows: [
-        {
-            index: '01',
-            title: 'Not a notification layer',
-            description:
-              'Signals become workable events with context, ownership and follow-up.',
-            effect: 'Less interpretation burden, tighter follow-up.',
-        },
-        {
-            index: '02',
-            title: 'Explainable triage',
-            description:
-              'Velvoix shows urgency, why attention is needed and which follow-up fits.',
-            effect: 'Better prioritisation, clearer action.',
-        },
-        {
-            index: '03',
-            title: 'Event truth for workflow and audit',
-            description:
-              'Status, ownership, escalation and reconstruction build on one operational truth.',
-            effect: 'Consistent workflow, traceable reconstruction.',
-        },
-      ],
-    },
+    eyebrow: 'Why Velvoix is different',
+    title: 'Why Velvoix works differently in practice',
+    description:
+      'Velvoix does not stop at the alert, but helps teams move toward clear action and traceable follow-up.',
+    rows: [
+      {
+        index: '01',
+        title: 'Not just another alert',
+        description: 'Velvoix goes further than simply passing on that something happened.',
+        effect: 'Less interpretation burden, calmer follow-up.',
+      },
+      {
+        index: '02',
+        title: 'Clearer priority',
+        description: 'Teams see faster what needs attention and what should happen first.',
+        effect: 'Better prioritisation, clearer action.',
+      },
+      {
+        index: '03',
+        title: 'Follow-up stays visible in one flow',
+        description: 'Status, responsibility and next steps stay visible together for the care team and for review.',
+        effect: 'Clearer follow-up, better reconstruction.',
+      },
+    ],
+  },
   nl: {
-      eyebrow: 'Waarom Velvoix anders is',
-      title: 'Waarom Velvoix in de praktijk anders werkt',
-      description:
-        'Velvoix stopt niet bij de melding, maar helpt teams door tot duidelijke actie en herleidbare opvolging.',
-      rows: [
-        {
-            index: '01',
-            title: 'Niet nog een losse melding',
-            description:
-              'Velvoix helpt verder dan alleen doorgeven dat er iets is gebeurd.',
-            effect: 'Minder interpretatielast, rustigere opvolging.',
-        },
-        {
-            index: '02',
-            title: 'Duidelijke prioriteit',
-            description:
-              'Teams zien sneller wat aandacht vraagt en wat eerst moet gebeuren.',
-            effect: 'Betere prioritering, duidelijkere actie.',
-        },
-        {
-            index: '03',
-            title: 'Opvolging blijft in één lijn zichtbaar',
-            description:
-              'Status, verantwoordelijkheid en vervolg blijven samen zichtbaar voor werkvloer en evaluatie.',
-            effect: 'Duidelijkere opvolging, betere reconstructie.',
-        },
-      ],
-    },
+    eyebrow: 'Waarom Velvoix anders is',
+    title: 'Waarom Velvoix in de praktijk anders werkt',
+    description:
+      'Velvoix stopt niet bij de melding, maar helpt teams door tot duidelijke actie en herleidbare opvolging.',
+    rows: [
+      {
+        index: '01',
+        title: 'Niet nog een losse melding',
+        description: 'Velvoix helpt verder dan alleen doorgeven dat er iets is gebeurd.',
+        effect: 'Minder interpretatielast, rustigere opvolging.',
+      },
+      {
+        index: '02',
+        title: 'Duidelijke prioriteit',
+        description: 'Teams zien sneller wat aandacht vraagt en wat eerst moet gebeuren.',
+        effect: 'Betere prioritering, duidelijkere actie.',
+      },
+      {
+        index: '03',
+        title: 'Opvolging blijft in één lijn zichtbaar',
+        description: 'Status, verantwoordelijkheid en vervolg blijven samen zichtbaar voor werkvloer en evaluatie.',
+        effect: 'Duidelijkere opvolging, betere reconstructie.',
+      },
+    ],
+  },
   de: {
-      eyebrow: 'Warum Velvoix anders ist',
-      title: 'Warum Velvoix operativ anders arbeitet',
-      description:
-        'Velvoix ist dafür gebaut, Pflegesituationen in einen erklärbaren, steuerbaren und auditierbaren Workflow zu überführen.',
-      rows: [
-        {
-          index: '01',
-          title: 'Keine Benachrichtigungsschicht',
-          description:
-            'Signale werden zu handhabbaren Events mit Kontext, Verantwortung und Nachverfolgung.',
-          effect: 'Weniger Interpretationslast, straffere Nachverfolgung.',
-        },
-        {
-          index: '02',
-          title: 'Erklärbare Triage',
-          description:
-            'Velvoix zeigt Dringlichkeit, warum etwas Aufmerksamkeit braucht und welche Folgeaktion sinnvoll ist.',
-          effect: 'Bessere Priorisierung, klarere Aktion.',
-        },
-        {
-          index: '03',
-          title: 'Event-Wahrheit für Workflow und Audit',
-          description:
-            'Status, Verantwortung, Eskalation und Rekonstruktion bauen auf einer operativen Wahrheit auf.',
-          effect: 'Konsistenter Workflow, nachvollziehbare Rekonstruktion.',
-        },
-      ],
-    },
+    eyebrow: 'Warum Velvoix anders ist',
+    title: 'Warum Velvoix in der Praxis anders funktioniert',
+    description:
+      'Velvoix bleibt nicht bei der Meldung stehen, sondern hilft Teams bis hin zu einer klaren Handlung und nachvollziehbaren Nachverfolgung.',
+    rows: [
+      {
+        index: '01',
+        title: 'Nicht nur noch eine Meldung',
+        description: 'Velvoix geht weiter, als nur weiterzugeben, dass etwas passiert ist.',
+        effect: 'Weniger Interpretationslast, ruhigere Nachverfolgung.',
+      },
+      {
+        index: '02',
+        title: 'Klare Priorität',
+        description: 'Teams sehen schneller, was Aufmerksamkeit braucht und was zuerst geschehen muss.',
+        effect: 'Bessere Priorisierung, klarere Handlung.',
+      },
+      {
+        index: '03',
+        title: 'Nachverfolgung bleibt in einer Linie sichtbar',
+        description: 'Status, Verantwortung und nächster Schritt bleiben für Team und Auswertung zusammen sichtbar.',
+        effect: 'Klarere Nachverfolgung, bessere Rekonstruktion.',
+      },
+    ],
+  },
   es: {
-      eyebrow: 'Por qué Velvoix es diferente',
-      title: 'Por qué Velvoix funciona de otra manera en la operación',
-      description:
-        'Velvoix está pensado para estructurar situaciones asistenciales en un workflow explicable, gobernable y auditable.',
-      rows: [
-        {
-          index: '01',
-          title: 'No es una capa de notificaciones',
-          description:
-            'Las señales se convierten en eventos operativos con contexto, titularidad y seguimiento.',
-          effect: 'Menos carga interpretativa y un seguimiento más estricto.',
-        },
-        {
-          index: '02',
-          title: 'Triaje explicable',
-          description:
-            'Velvoix muestra urgencia, por qué algo requiere atención y qué seguimiento tiene sentido.',
-          effect: 'Mejor priorización y acción más clara.',
-        },
-        {
-          index: '03',
-          title: 'Verdad del evento para workflow y auditoría',
-          description:
-            'Estado, titularidad, escalada y reconstrucción se apoyan en una verdad operativa.',
-          effect: 'Workflow coherente y reconstrucción trazable.',
-        },
-      ],
-    },
+    eyebrow: 'Por qué Velvoix es diferente',
+    title: 'Por qué Velvoix funciona de forma distinta en la práctica',
+    description:
+      'Velvoix no se queda en la alerta, sino que ayuda a los equipos a llegar a una acción clara y a un seguimiento trazable.',
+    rows: [
+      {
+        index: '01',
+        title: 'No es solo otra alerta',
+        description: 'Velvoix va más allá de limitarse a avisar de que algo ha ocurrido.',
+        effect: 'Menos carga interpretativa y un seguimiento más sereno.',
+      },
+      {
+        index: '02',
+        title: 'Prioridad más clara',
+        description: 'Los equipos ven antes qué requiere atención y qué debe hacerse primero.',
+        effect: 'Mejor priorización y acción más clara.',
+      },
+      {
+        index: '03',
+        title: 'El seguimiento sigue visible en una misma línea',
+        description: 'El estado, la responsabilidad y el siguiente paso permanecen visibles juntos para el equipo y para la revisión posterior.',
+        effect: 'Seguimiento más claro y mejor reconstrucción.',
+      },
+    ],
+  },
 } satisfies Record<Locale, {
   eyebrow: string;
   title: string;

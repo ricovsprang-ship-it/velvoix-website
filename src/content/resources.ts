@@ -89,21 +89,21 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Pilot validation',
       title: 'What a first pilot can validate in practice',
       description:
-        'Velvoix does not promise a generic outcome upfront. A first pilot makes these questions concrete in the local setting.',
+        'A pilot shows whether Velvoix really helps your setting prioritise faster, follow up more clearly and reconstruct events more effectively.',
       note:
         'Practical outcomes depend on staffing, processes, devices and existing systems. That is why a targeted pilot is more useful than a generic demo.',
       cards: [
         {
-          title: 'Faster interpretation',
-          description: 'Which signals lead to clearer follow-up sooner, and where explainability changes decisions.',
+          title: 'Seeing faster what needs attention',
+          description: 'Which signals lead to clearer follow-up sooner, and where additional context genuinely changes decisions.',
         },
         {
-          title: 'Workable ownership',
-          description: 'How status, ownership and escalation reduce interpretation noise in daily operations.',
+          title: 'Clearer follow-up and responsibility',
+          description: 'How status, responsibility and escalation reduce interpretation noise in day-to-day work.',
         },
         {
-          title: 'Traceable reconstruction',
-          description: 'Which audit and evaluation questions become easier to answer with event logic and status flow.',
+          title: 'Better reconstruction for review',
+          description: 'Which audit and evaluation questions become easier to answer with clearer status progression and reconstruction.',
         },
       ],
     },
@@ -111,16 +111,16 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Further reading',
       title: 'More context for decision-makers and teams',
       description:
-        'Three deeper pages on triage, workflow and pilot design for care signals.',
+        'Three deeper pages on how Velvoix helps translate care signals into clear follow-up, better prioritisation and traceable reconstruction.',
       linkLabel: 'Read page',
     },
   },
   de: {
     validation: {
       eyebrow: 'Pilotvalidierung',
-      title: 'Was ein erster Pilot konkret validieren kann',
+      title: 'Was ein erster Pilot in der Praxis belegen sollte',
       description:
-        'Velvoix verspricht keine generische Wirkung im Voraus. Ein erster Pilot macht diese Fragen in der eigenen Umgebung konkret.',
+        'Ein Pilot macht sichtbar, ob Velvoix in Ihrer Umgebung wirklich hilft, schneller zu priorisieren, klarer nachzuverfolgen und besser zu rekonstruieren.',
       note:
         'Praktische Ergebnisse hängen von Teams, Prozessen, Geräten und bestehenden Systemen ab. Gerade deshalb ist ein gezielter Pilot wertvoller als eine allgemeine Demo.',
       cards: [

@@ -11,209 +11,209 @@ const { locale, content } = Astro.props;
 
 const sectionContentByLocale = {
   en: {
-      eyebrow: 'How it works',
-      title: 'From signal to workable event outcome',
-      description:
-        'Velvoix adds context, triage and event flow so care teams see faster what needs attention and what follow-up fits.',
-      outcomes: [
-        'See faster what needs attention',
-        'Turn recommended action into workable follow-up',
-        'Keep audit and reconstruction intact',
-      ],
-      panelLabel: 'Event assembly',
-      panelSupporting: 'From raw input to a workable event with context, action, status and audit.',
-      layers: [
-        {
-          label: 'Input received',
-          title: 'Signal received',
-          description: 'A button call, voice input or other care signal enters in a controlled way.',
-        },
-        {
-          label: 'Context added',
-          title: 'Context added',
-          description: 'History, repetition and situation are added immediately.',
-        },
-        {
-          label: 'Triage structured',
-          title: 'Triage structured',
-          description: 'Urgency and recommended action become visible in care language.',
-          meta: [
-            { label: 'Urgency', value: 'Direct' },
-            { label: 'Why', value: 'Repeated within a short interval' },
-            { label: 'Action', value: 'Go directly to the resident; check the situation' },
-          ],
-          emphasis: true,
-        },
-        {
-          label: 'Operational event created',
-          title: 'Operational event created',
-          description: 'Status, ownership and follow-up become directly manageable.',
-          meta: [
-            { label: 'Status', value: 'Open' },
-            { label: 'Ownership', value: 'Not yet assigned' },
-            { label: 'Follow-up', value: 'Workable for team handling' },
-          ],
-        },
-        {
-          label: 'Audit attached',
-          title: 'Audit attached',
-          description: 'Status flow and reconstruction remain traceable.',
-        },
-      ],
-    },
+    eyebrow: 'How it works',
+    title: 'From signal to a clear next action',
+    description:
+      'Velvoix combines the signal with context and prioritisation, so care teams see faster what is happening and what they should do next.',
+    outcomes: [
+      'See faster what needs attention',
+      'Make the recommended action clear immediately',
+      'Keep progression and reconstruction traceable',
+    ],
+    panelLabel: 'From signal to action',
+    panelSupporting: 'Not just another alert, but a clear next step with status, responsibility and reconstruction.',
+    layers: [
+      {
+        label: 'Step 1',
+        title: 'Signal received',
+        description: 'A button call, voice input or other care signal enters in a controlled way.',
+      },
+      {
+        label: 'Step 2',
+        title: 'Context added',
+        description: 'History, repetition and the current situation are weighed in straight away.',
+      },
+      {
+        label: 'Step 3',
+        title: 'Urgency becomes clear',
+        description: 'Priority and recommended action become visible in clear care language.',
+        meta: [
+          { label: 'Urgency', value: 'Direct' },
+          { label: 'Why', value: 'Repeated within a short interval' },
+          { label: 'Action', value: 'Go directly to the resident; check the situation' },
+        ],
+        emphasis: true,
+      },
+      {
+        label: 'Step 4',
+        title: 'Follow-up stays visible',
+        description: 'Status, responsibility and the next step remain visible together for the team.',
+        meta: [
+          { label: 'Status', value: 'Open' },
+          { label: 'Responsibility', value: 'Not yet assigned' },
+          { label: 'Follow-up', value: 'Clear for team handling' },
+        ],
+      },
+      {
+        label: 'Step 5',
+        title: 'Progression remains traceable',
+        description: 'Status changes and reconstruction remain traceable.',
+      },
+    ],
+  },
   nl: {
-      eyebrow: 'Hoe het werkt',
-      title: 'Van signaal naar duidelijke vervolgactie',
-      description:
-        'Velvoix combineert het signaal met context en prioritering, zodat zorgmedewerkers sneller zien wat er speelt en wat ze het beste kunnen doen.',
-      outcomes: [
-        'Sneller zien wat aandacht vraagt',
-        'Aanbevolen actie wordt direct duidelijk',
-        'Verloop en reconstructie blijven herleidbaar',
-      ],
-      panelLabel: 'Van signaal naar actie',
-      panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met status, verantwoordelijkheid en reconstructie.',
-      layers: [
-        {
-          label: 'Stap 1',
-          title: 'Signaal ontvangen',
-          description: 'Knopoproep, spraakinput of ander zorgsignaal komt gecontroleerd binnen.',
-        },
-        {
-          label: 'Stap 2',
-          title: 'Context toegevoegd',
-          description: 'Historie, herhaling en situatie worden direct meegewogen.',
-        },
-        {
-          label: 'Stap 3',
-          title: 'Urgentie wordt duidelijk',
-          description: 'Prioriteit en aanbevolen aanpak worden zichtbaar in begrijpelijke zorgtaal.',
-          meta: [
-            { label: 'Urgentie', value: 'Direct' },
-            { label: 'Waarom', value: 'Herhaald binnen korte tijd' },
-            { label: 'Aanpak', value: 'Ga direct naar bewoner; controleer situatie' },
-          ],
-          emphasis: true,
-        },
-        {
-          label: 'Stap 4',
-          title: 'Opvolging blijft zichtbaar',
-          description: 'Status, verantwoordelijkheid en vervolgactie blijven samen leesbaar voor het team.',
-          meta: [
-            { label: 'Status', value: 'Open' },
-            { label: 'Verantwoordelijkheid', value: 'Nog niet toegewezen' },
-            { label: 'Opvolging', value: 'Duidelijk voor teamopvolging' },
-          ],
-        },
-        {
-          label: 'Stap 5',
-          title: 'Verloop blijft herleidbaar',
-          description: 'Statusverloop en reconstructie blijven herleidbaar.',
-        },
-      ],
-    },
+    eyebrow: 'Hoe het werkt',
+    title: 'Van signaal naar duidelijke vervolgactie',
+    description:
+      'Velvoix combineert het signaal met context en prioritering, zodat zorgmedewerkers sneller zien wat er speelt en wat ze het beste kunnen doen.',
+    outcomes: [
+      'Sneller zien wat aandacht vraagt',
+      'Aanbevolen actie wordt direct duidelijk',
+      'Verloop en reconstructie blijven herleidbaar',
+    ],
+    panelLabel: 'Van signaal naar actie',
+    panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met status, verantwoordelijkheid en reconstructie.',
+    layers: [
+      {
+        label: 'Stap 1',
+        title: 'Signaal ontvangen',
+        description: 'Knopoproep, spraakinput of ander zorgsignaal komt gecontroleerd binnen.',
+      },
+      {
+        label: 'Stap 2',
+        title: 'Context toegevoegd',
+        description: 'Historie, herhaling en situatie worden direct meegewogen.',
+      },
+      {
+        label: 'Stap 3',
+        title: 'Urgentie wordt duidelijk',
+        description: 'Prioriteit en aanbevolen aanpak worden zichtbaar in begrijpelijke zorgtaal.',
+        meta: [
+          { label: 'Urgentie', value: 'Direct' },
+          { label: 'Waarom', value: 'Herhaald binnen korte tijd' },
+          { label: 'Aanpak', value: 'Ga direct naar bewoner; controleer situatie' },
+        ],
+        emphasis: true,
+      },
+      {
+        label: 'Stap 4',
+        title: 'Opvolging blijft zichtbaar',
+        description: 'Status, verantwoordelijkheid en vervolgactie blijven samen leesbaar voor het team.',
+        meta: [
+          { label: 'Status', value: 'Open' },
+          { label: 'Verantwoordelijkheid', value: 'Nog niet toegewezen' },
+          { label: 'Opvolging', value: 'Duidelijk voor teamopvolging' },
+        ],
+      },
+      {
+        label: 'Stap 5',
+        title: 'Verloop blijft herleidbaar',
+        description: 'Statusverloop en reconstructie blijven herleidbaar.',
+      },
+    ],
+  },
   de: {
-      eyebrow: 'Wie es funktioniert',
-      title: 'Vom Signal zum handhabbaren Eventergebnis',
-      description:
-        'Velvoix ergänzt Signale um Kontext, Triage und Eventlogik, damit Pflegeteams schneller sehen, was Aufmerksamkeit braucht und welche Folgeaktion sinnvoll ist.',
-      outcomes: [
-        'Schneller sehen, was Aufmerksamkeit braucht',
-        'Empfohlene Maßnahme wird sofort handhabbar',
-        'Audit und Rekonstruktion bleiben intakt',
-      ],
-      panelLabel: 'Eventaufbau',
-      panelSupporting: 'Von roher Eingabe zu einem handhabbaren Event mit Kontext, Maßnahme, Status und Audit.',
-      layers: [
-        {
-          label: 'Eingang registriert',
-          title: 'Signal empfangen',
-          description: 'Ein Rufknopf, Spracheingabe oder anderes Pflegesignal kommt kontrolliert an.',
-        },
-        {
-          label: 'Kontext ergänzt',
-          title: 'Kontext ergänzt',
-          description: 'Historie, Wiederholungen und Situation werden sofort mit einbezogen.',
-        },
-        {
-          label: 'Triage strukturiert',
-          title: 'Triage strukturiert',
-          description: 'Dringlichkeit und empfohlene Maßnahme werden in Pflegesprache sichtbar.',
-          meta: [
-            { label: 'Dringlichkeit', value: 'Direkt' },
-            { label: 'Warum', value: 'Mehrfach innerhalb kurzer Zeit' },
-            { label: 'Maßnahme', value: 'Direkt zur Bewohnerin oder zum Bewohner gehen und die Situation prüfen' },
-          ],
-          emphasis: true,
-        },
-        {
-          label: 'Operatives Event erstellt',
-          title: 'Operatives Event erstellt',
-          description: 'Status, Verantwortung und Nachverfolgung werden direkt steuerbar.',
-          meta: [
-            { label: 'Status', value: 'Offen' },
-            { label: 'Verantwortung', value: 'Noch nicht zugewiesen' },
-            { label: 'Nachverfolgung', value: 'Handhabbar für das Team' },
-          ],
-        },
-        {
-          label: 'Audit verknupft',
-          title: 'Audit verknupft',
-          description: 'Statusverlauf und Rekonstruktion bleiben nachvollziehbar.',
-        },
-      ],
-    },
+    eyebrow: 'Wie es funktioniert',
+    title: 'Vom Signal zur klaren nächsten Handlung',
+    description:
+      'Velvoix verbindet das Signal mit Kontext und Priorisierung, damit Pflegeteams schneller sehen, was geschieht und was als Nächstes zu tun ist.',
+    outcomes: [
+      'Schneller sehen, was Aufmerksamkeit braucht',
+      'Die empfohlene Maßnahme wird sofort klar',
+      'Verlauf und Rekonstruktion bleiben nachvollziehbar',
+    ],
+    panelLabel: 'Vom Signal zur Handlung',
+    panelSupporting: 'Nicht nur eine Meldung, sondern ein klarer nächster Schritt mit Status, Verantwortung und Rekonstruktion.',
+    layers: [
+      {
+        label: 'Schritt 1',
+        title: 'Signal empfangen',
+        description: 'Ein Rufknopf, eine Spracheingabe oder ein anderes Pflegesignal kommt kontrolliert an.',
+      },
+      {
+        label: 'Schritt 2',
+        title: 'Kontext ergänzt',
+        description: 'Historie, Wiederholungen und die aktuelle Situation werden sofort mit einbezogen.',
+      },
+      {
+        label: 'Schritt 3',
+        title: 'Dringlichkeit wird klar',
+        description: 'Priorität und empfohlene Maßnahme werden in verständlicher Pflegesprache sichtbar.',
+        meta: [
+          { label: 'Dringlichkeit', value: 'Direkt' },
+          { label: 'Warum', value: 'Wiederholt innerhalb kurzer Zeit' },
+          { label: 'Maßnahme', value: 'Gehen Sie direkt zur Bewohnerin oder zum Bewohner und prüfen Sie die Situation' },
+        ],
+        emphasis: true,
+      },
+      {
+        label: 'Schritt 4',
+        title: 'Nachverfolgung bleibt sichtbar',
+        description: 'Status, Verantwortung und nächster Schritt bleiben für das Team zusammen sichtbar.',
+        meta: [
+          { label: 'Status', value: 'Offen' },
+          { label: 'Verantwortung', value: 'Noch nicht zugewiesen' },
+          { label: 'Nachverfolgung', value: 'Klar für das Team' },
+        ],
+      },
+      {
+        label: 'Schritt 5',
+        title: 'Verlauf bleibt nachvollziehbar',
+        description: 'Statusverlauf und Rekonstruktion bleiben nachvollziehbar.',
+      },
+    ],
+  },
   es: {
-      eyebrow: 'Cómo funciona',
-      title: 'De la señal a un resultado operativo manejable',
-      description:
-        'Velvoix añade contexto, triaje y lógica de evento para que los equipos asistenciales vean antes qué requiere atención y qué seguimiento tiene sentido.',
-      outcomes: [
-        'Ver antes qué requiere atención',
-        'La acción recomendada se vuelve operativa de inmediato',
-        'La auditoría y la reconstrucción permanecen intactas',
-      ],
-      panelLabel: 'Construccion del evento',
-      panelSupporting: 'De la entrada en bruto a un evento manejable con contexto, acción, estado y auditoría.',
-      layers: [
-        {
-          label: 'Entrada recibida',
-          title: 'Señal recibida',
-          description: 'Una llamada de botón, una entrada por voz u otra señal asistencial se recibe de forma controlada.',
-        },
-        {
-          label: 'Contexto añadido',
-          title: 'Contexto añadido',
-          description: 'Se incorporan de inmediato historial, repetición y situación.',
-        },
-        {
-          label: 'Triaje estructurado',
-          title: 'Triaje estructurado',
-          description: 'La urgencia y la acción recomendada se vuelven visibles en lenguaje asistencial.',
-          meta: [
-            { label: 'Urgencia', value: 'Directa' },
-            { label: 'Por qué', value: 'Repetido en un intervalo corto' },
-            { label: 'Acción', value: 'Acuda directamente al residente y compruebe la situación' },
-          ],
-          emphasis: true,
-        },
-        {
-          label: 'Evento operativo creado',
-          title: 'Evento operativo creado',
-          description: 'El estado, la titularidad y el seguimiento pasan a ser gobernables.',
-          meta: [
-            { label: 'Estado', value: 'Abierto' },
-            { label: 'Titularidad', value: 'Aún sin asignar' },
-            { label: 'Seguimiento', value: 'Gestionable por el equipo' },
-          ],
-        },
-        {
-          label: 'Auditoría vinculada',
-          title: 'Auditoría vinculada',
-          description: 'La evolución del estado y la reconstrucción siguen siendo trazables.',
-        },
-      ],
-    },
+    eyebrow: 'Cómo funciona',
+    title: 'De la señal a la siguiente acción clara',
+    description:
+      'Velvoix combina la señal con contexto y priorización para que los equipos asistenciales vean antes qué ocurre y qué deben hacer a continuación.',
+    outcomes: [
+      'Ver antes qué requiere atención',
+      'La acción recomendada queda clara de inmediato',
+      'La evolución y la reconstrucción siguen siendo trazables',
+    ],
+    panelLabel: 'De la señal a la acción',
+    panelSupporting: 'No solo una alerta, sino un siguiente paso claro con estado, responsabilidad y reconstrucción.',
+    layers: [
+      {
+        label: 'Paso 1',
+        title: 'Señal recibida',
+        description: 'Una llamada de botón, una entrada por voz u otra señal asistencial se recibe de forma controlada.',
+      },
+      {
+        label: 'Paso 2',
+        title: 'Contexto añadido',
+        description: 'Se incorporan de inmediato el historial, la repetición y la situación actual.',
+      },
+      {
+        label: 'Paso 3',
+        title: 'La urgencia queda clara',
+        description: 'La prioridad y la acción recomendada se hacen visibles en un lenguaje asistencial claro.',
+        meta: [
+          { label: 'Urgencia', value: 'Directa' },
+          { label: 'Por qué', value: 'Repetido en un intervalo corto' },
+          { label: 'Acción', value: 'Acuda directamente al residente y compruebe la situación' },
+        ],
+        emphasis: true,
+      },
+      {
+        label: 'Paso 4',
+        title: 'El seguimiento sigue visible',
+        description: 'El estado, la responsabilidad y el siguiente paso permanecen visibles para el equipo.',
+        meta: [
+          { label: 'Estado', value: 'Abierto' },
+          { label: 'Responsabilidad', value: 'Aún sin asignar' },
+          { label: 'Seguimiento', value: 'Claro para el equipo' },
+        ],
+      },
+      {
+        label: 'Paso 5',
+        title: 'La evolución sigue siendo trazable',
+        description: 'La evolución del estado y la reconstrucción siguen siendo trazables.',
+      },
+    ],
+  },
 } satisfies Record<Locale, {
   eyebrow: string;
   title: string;

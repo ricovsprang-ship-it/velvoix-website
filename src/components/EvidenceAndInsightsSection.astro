@@ -10,23 +10,106 @@ interface Props {
 const { locale } = Astro.props;
 const content = resourceUiByLocale[locale];
 const articles = hasResourcePages(locale) ? resourceArticlesByLocale[locale] : [];
-const validationContent =
-  locale === 'nl'
-    ? {
-        ...content.validation,
-        title: 'Wat een eerste pilot in de praktijk moet bewijzen',
-        description:
-          'Een pilot maakt zichtbaar of Velvoix in jullie setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
-      }
-    : content.validation;
-const hubContent =
-  locale === 'nl'
-    ? {
-        ...content.hub,
-        description:
-          'Drie verdiepende pagina’s over hoe Velvoix zorgsignalen helpt vertalen naar duidelijke opvolging, betere prioritering en herleidbare reconstructie.',
-      }
-    : content.hub;
+
+const validationOverrides = {
+  nl: {
+    title: 'Wat een eerste pilot in de praktijk moet bewijzen',
+    description:
+      'Een pilot maakt zichtbaar of Velvoix in jullie setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
+  },
+  en: {
+    title: 'What a first pilot can validate in practice',
+    description:
+      'A pilot shows whether Velvoix really helps your setting prioritise faster, follow up more clearly and reconstruct events more effectively.',
+    cards: [
+      {
+        title: 'Seeing faster what needs attention',
+        description: 'Which signals lead to clearer follow-up sooner, and where additional context genuinely changes decisions.',
+      },
+      {
+        title: 'Clearer follow-up and responsibility',
+        description: 'How status, responsibility and escalation reduce interpretation noise in day-to-day work.',
+      },
+      {
+        title: 'Better reconstruction for review',
+        description: 'Which audit and evaluation questions become easier to answer with clearer status progression and reconstruction.',
+      },
+    ],
+  },
+  de: {
+    eyebrow: 'Pilotvalidierung',
+    title: 'Was ein erster Pilot in der Praxis belegen sollte',
+    description:
+      'Ein Pilot macht sichtbar, ob Velvoix in Ihrer Umgebung wirklich hilft, schneller zu priorisieren, klarer nachzuverfolgen und besser zu rekonstruieren.',
+    note:
+      'Praktische Ergebnisse hängen von Teams, Prozessen, Geräten und bestehenden Systemen ab. Gerade deshalb ist ein gezielter Pilot wertvoller als eine allgemeine Demo.',
+    cards: [
+      {
+        title: 'Schneller sehen, was Aufmerksamkeit braucht',
+        description: 'Welche Signale schneller zu klarer Nachverfolgung führen und wo zusätzlicher Kontext Entscheidungen wirklich verbessert.',
+      },
+      {
+        title: 'Klarere Nachverfolgung und Verantwortung',
+        description: 'Wie Status, Verantwortung und Eskalation die tägliche Interpretationslast im Alltag senken.',
+      },
+      {
+        title: 'Bessere Rekonstruktion für Auswertung',
+        description: 'Welche Audit- und Evaluationsfragen sich mit klarem Statusverlauf und Rekonstruktion besser beantworten lassen.',
+      },
+    ],
+  },
+  es: {
+    eyebrow: 'Validación piloto',
+    title: 'Qué debe demostrar un primer piloto en la práctica',
+    description:
+      'Un piloto hace visible si Velvoix realmente ayuda en su entorno a priorizar antes, hacer un seguimiento más claro y reconstruir mejor lo ocurrido.',
+    note:
+      'Los resultados prácticos dependen de equipos, procesos, dispositivos y sistemas existentes. Por eso un piloto enfocado aporta más que una demo genérica.',
+    cards: [
+      {
+        title: 'Ver antes qué requiere atención',
+        description: 'Qué señales conducen antes a un seguimiento claro y dónde el contexto adicional cambia realmente las decisiones.',
+      },
+      {
+        title: 'Seguimiento y responsabilidad más claros',
+        description: 'Cómo el estado, la responsabilidad y la escalada reducen el ruido interpretativo en la operación diaria.',
+      },
+      {
+        title: 'Mejor reconstrucción para la revisión',
+        description: 'Qué preguntas de auditoría y evaluación se responden mejor con una evolución del estado y una reconstrucción más claras.',
+      },
+    ],
+  },
+} as const;
+
+const hubOverrides = {
+  nl: {
+    description:
+      'Drie verdiepende pagina’s over hoe Velvoix zorgsignalen helpt vertalen naar duidelijke opvolging, betere prioritering en herleidbare reconstructie.',
+  },
+  de: {
+    title: 'Mehr Kontext für Entscheidungsträger und Teams',
+    description:
+      'Drei vertiefende Seiten zu Triage, Workflow und Pilotansatz für Pflegesignale.',
+    linkLabel: 'Seite lesen',
+  },
+  es: {
+    title: 'Más contexto para responsables y equipos',
+    description:
+      'Tres páginas de profundidad sobre triaje, flujo de trabajo y enfoque piloto para señales asistenciales.',
+    linkLabel: 'Leer página',
+  },
+} as const;
+
+const validationContent = {
+  ...content.validation,
+  ...(validationOverrides[locale] ?? {}),
+};
+
+const hubContent = {
+  ...content.hub,
+  ...(hubOverrides[locale as 'nl' | 'de' | 'es'] ?? {}),
+};
 ---
 
 <section class="section-block surface-band-alt" id="insights">

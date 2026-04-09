@@ -11,137 +11,137 @@ const { locale, content } = Astro.props;
 
 const sectionContentByLocale = {
   en: {
-      eyebrow: 'Pilot and partnership',
-      title: 'Assess whether a pilot or partnership route fits',
-      description:
-        'Use this route to assess whether Velvoix fits a pilot, rollout or partnership discussion.',
-      audience:
-        'Relevant for healthcare organisations, care teams and partners exploring rollout or integration.',
-      primaryCta: 'Start pilot assessment',
-      secondaryCta: 'Discuss partnership route',
-      moduleTitle: 'A pilot assessment looks at',
-      rows: [
-        {
-          title: 'Operational clarity',
-          description: 'See faster what needs attention, why that is the case and which follow-up fits.',
-        },
-        {
-          title: 'Workable follow-up',
-          description: 'Organise ownership, status and next action more clearly.',
-        },
-        {
-          title: 'Reconstruction and evaluation',
-          description: 'Use status flow and reconstruction for quality improvement.',
-        },
-        {
-          title: 'Integration and rollout',
-          description: 'Explore fit with teams, processes, devices and the existing environment.',
-        },
-      ],
-      organisationTitle: 'For healthcare organisations',
-      organisationBody: 'Focus on operational relevance, work pressure and follow-up in care practice.',
-      partnerTitle: 'For partners',
-      partnerBody: 'Focus on rollout scope, integration approach and operational value.',
-    },
+    eyebrow: 'Pilot and partnership',
+    title: 'Explore whether Velvoix fits your care practice',
+    description:
+      'An initial exploration shows whether Velvoix helps create clearer follow-up, less interpretation burden and a better fit with your processes.',
+    audience:
+      'Relevant for healthcare organisations, care teams and partners exploring a pilot, rollout or integration.',
+    primaryCta: 'Plan an exploration',
+    secondaryCta: 'Get in touch',
+    moduleTitle: 'A first exploration looks at',
+    rows: [
+      {
+        title: 'Seeing faster what needs attention',
+        description: 'Test whether teams can prioritise faster and which situations require immediate action.',
+      },
+      {
+        title: 'Clearer follow-up',
+        description: 'Assess whether responsibility, status and the next action can be organised more calmly.',
+      },
+      {
+        title: 'Better reconstruction',
+        description: 'Make visible whether status progression and reconstruction are useful for evaluation and quality improvement.',
+      },
+      {
+        title: 'Fit with practice',
+        description: 'Explore how Velvoix fits teams, processes, devices and the existing environment.',
+      },
+    ],
+    organisationTitle: 'For healthcare organisations',
+    organisationBody: 'Focus on clearer follow-up, work pressure and practical fit in day-to-day care.',
+    partnerTitle: 'For partners',
+    partnerBody: 'Focus on rollout scope, integration approach and operational value.',
+  },
   nl: {
-      eyebrow: 'Pilot en samenwerking',
-      title: 'Verken of Velvoix past bij jullie zorgpraktijk',
-      description:
-        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in jullie processen.',
-      audience:
-        'Relevant voor zorgorganisaties, zorgteams en partners die pilot, uitrol of integratie willen verkennen.',
-      primaryCta: 'Plan een verkenning',
-      secondaryCta: 'Neem contact op',
-      moduleTitle: 'Een eerste verkenning kijkt naar',
-      rows: [
-        {
-          title: 'Sneller zien wat aandacht vraagt',
-          description: 'Toets of teams sneller kunnen prioriteren en welke situaties direct actie vragen.',
-        },
-        {
-          title: 'Duidelijkere opvolging',
-          description: 'Beoordeel of verantwoordelijkheid, status en vervolgactie rustiger georganiseerd kunnen worden.',
-        },
-        {
-          title: 'Betere reconstructie',
-          description: 'Maak zichtbaar of statusverloop en reconstructie bruikbaar zijn voor evaluatie en kwaliteitsverbetering.',
-        },
-        {
-          title: 'Inpasbaarheid',
-          description: 'Verkennen hoe Velvoix past bij teams, processen, devices en bestaande omgeving.',
-        },
-      ],
-      organisationTitle: 'Voor zorgorganisaties',
-      organisationBody: 'Focus op duidelijkere opvolging, werkdruk en praktische inpasbaarheid in de zorgpraktijk.',
-      partnerTitle: 'Voor partners',
-      partnerBody: 'Focus op uitrolscope, integratieaanpak en operationele meerwaarde.',
-    },
+    eyebrow: 'Pilot en samenwerking',
+    title: 'Verken of Velvoix past bij jullie zorgpraktijk',
+    description:
+      'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in jullie processen.',
+    audience:
+      'Relevant voor zorgorganisaties, zorgteams en partners die pilot, uitrol of integratie willen verkennen.',
+    primaryCta: 'Plan een verkenning',
+    secondaryCta: 'Neem contact op',
+    moduleTitle: 'Een eerste verkenning kijkt naar',
+    rows: [
+      {
+        title: 'Sneller zien wat aandacht vraagt',
+        description: 'Toets of teams sneller kunnen prioriteren en welke situaties direct actie vragen.',
+      },
+      {
+        title: 'Duidelijkere opvolging',
+        description: 'Beoordeel of verantwoordelijkheid, status en vervolgactie rustiger georganiseerd kunnen worden.',
+      },
+      {
+        title: 'Betere reconstructie',
+        description: 'Maak zichtbaar of statusverloop en reconstructie bruikbaar zijn voor evaluatie en kwaliteitsverbetering.',
+      },
+      {
+        title: 'Inpasbaarheid',
+        description: 'Verkennen hoe Velvoix past bij teams, processen, devices en bestaande omgeving.',
+      },
+    ],
+    organisationTitle: 'Voor zorgorganisaties',
+    organisationBody: 'Focus op duidelijkere opvolging, werkdruk en praktische inpasbaarheid in de zorgpraktijk.',
+    partnerTitle: 'Voor partners',
+    partnerBody: 'Focus op uitrolscope, integratieaanpak en operationele meerwaarde.',
+  },
   de: {
-      eyebrow: 'Pilot und Zusammenarbeit',
-      title: 'Prüfen, ob ein Pilot- oder Kooperationsweg passt',
-      description:
-        'Nutzen Sie diesen Weg, um zu prüfen, ob Velvoix zu einem Pilot, Rollout oder Kooperationsgespräch passt.',
-      audience:
-        'Relevant für Pflegeorganisationen, Pflegeteams und Partner, die Rollout oder Integration prüfen wollen.',
-      primaryCta: 'Pilotprüfung starten',
-      secondaryCta: 'Kooperationsweg besprechen',
-      moduleTitle: 'Eine Pilotprüfung betrachtet',
-      rows: [
-        {
-          title: 'Operative Klarheit',
-          description: 'Schneller sehen, was Aufmerksamkeit braucht, warum das so ist und welche Folgeaktion passt.',
-        },
-        {
-          title: 'Handhabbare Nachverfolgung',
-          description: 'Verantwortung, Status und nächste Maßnahme klarer organisieren.',
-        },
-        {
-          title: 'Rekonstruktion und Auswertung',
-          description: 'Statusverlauf und Rekonstruktion für Qualitätsverbesserung nutzbar machen.',
-        },
-        {
-          title: 'Integration und Rollout',
-          description: 'Prüfen, wie Velvoix zu Teams, Prozessen, Geräten und der bestehenden Umgebung passt.',
-        },
-      ],
-      organisationTitle: 'Für Pflegeorganisationen',
-      organisationBody: 'Fokus auf operative Relevanz, Arbeitsdruck und Nachverfolgung in der Pflegepraxis.',
-      partnerTitle: 'Für Partner',
-      partnerBody: 'Fokus auf Rollout-Umfang, Integrationsansatz und operativen Mehrwert.',
-    },
+    eyebrow: 'Pilot und Zusammenarbeit',
+    title: 'Prüfen, ob Velvoix zu Ihrer Pflegepraxis passt',
+    description:
+      'Eine erste Erkundung zeigt, ob Velvoix zu klarerer Nachverfolgung, weniger Interpretationslast und einer besseren Einpassung in Ihre Prozesse beiträgt.',
+    audience:
+      'Relevant für Pflegeorganisationen, Pflegeteams und Partner, die Pilot, Rollout oder Integration prüfen möchten.',
+    primaryCta: 'Erkundung planen',
+    secondaryCta: 'Kontakt aufnehmen',
+    moduleTitle: 'Eine erste Erkundung betrachtet',
+    rows: [
+      {
+        title: 'Schneller sehen, was Aufmerksamkeit braucht',
+        description: 'Prüfen Sie, ob Teams schneller priorisieren können und welche Situationen sofortiges Handeln verlangen.',
+      },
+      {
+        title: 'Klarere Nachverfolgung',
+        description: 'Beurteilen Sie, ob Verantwortung, Status und nächster Schritt ruhiger organisiert werden können.',
+      },
+      {
+        title: 'Bessere Rekonstruktion',
+        description: 'Machen Sie sichtbar, ob Statusverlauf und Rekonstruktion für Auswertung und Qualitätsverbesserung nutzbar sind.',
+      },
+      {
+        title: 'Passung zur Praxis',
+        description: 'Erkunden Sie, wie Velvoix zu Teams, Prozessen, Geräten und der bestehenden Umgebung passt.',
+      },
+    ],
+    organisationTitle: 'Für Pflegeorganisationen',
+    organisationBody: 'Fokus auf klarere Nachverfolgung, Arbeitsdruck und praktische Einpassung in den Pflegealltag.',
+    partnerTitle: 'Für Partner',
+    partnerBody: 'Fokus auf Rollout-Umfang, Integrationsansatz und operativen Mehrwert.',
+  },
   es: {
-      eyebrow: 'Piloto y colaboración',
-      title: 'Evalúe si una ruta de piloto o colaboración encaja',
-      description:
-        'Utilice esta vía para comprobar si Velvoix encaja en un piloto, despliegue o conversación de colaboración.',
-      audience:
-        'Relevante para organizaciones asistenciales, equipos y socios que quieran explorar despliegue o integración.',
-      primaryCta: 'Iniciar exploración piloto',
-      secondaryCta: 'Tratar ruta de colaboración',
-      moduleTitle: 'Una exploración piloto mira',
-      rows: [
-        {
-          title: 'Claridad operativa',
-          description: 'Ver antes qué requiere atención, por qué ocurre y qué seguimiento encaja.',
-        },
-        {
-          title: 'Seguimiento claro',
-          description: 'Organizar mejor la titularidad, el estado y la siguiente acción.',
-        },
-        {
-          title: 'Reconstrucción y evaluación',
-          description: 'Hacer utilizables la evolución del estado y la reconstrucción para mejorar calidad.',
-        },
-        {
-          title: 'Integración y despliegue',
-          description: 'Explorar cómo Velvoix encaja con equipos, procesos, dispositivos y el entorno existente.',
-        },
-      ],
-      organisationTitle: 'Para organizaciones asistenciales',
-      organisationBody: 'Foco en relevancia operativa, carga de trabajo y seguimiento en la práctica asistencial.',
-      partnerTitle: 'Para socios',
-      partnerBody: 'Foco en alcance de despliegue, integración y valor operativo.',
-    },
+    eyebrow: 'Piloto y colaboración',
+    title: 'Explore si Velvoix encaja en su práctica asistencial',
+    description:
+      'Una primera exploración muestra si Velvoix ayuda a lograr un seguimiento más claro, menos carga interpretativa y una mejor integración en sus procesos.',
+    audience:
+      'Relevante para organizaciones asistenciales, equipos y socios que quieran explorar un piloto, despliegue o integración.',
+    primaryCta: 'Planificar una exploración',
+    secondaryCta: 'Ponerse en contacto',
+    moduleTitle: 'Una primera exploración analiza',
+    rows: [
+      {
+        title: 'Ver antes qué requiere atención',
+        description: 'Compruebe si los equipos pueden priorizar más rápido y qué situaciones exigen una acción inmediata.',
+      },
+      {
+        title: 'Seguimiento más claro',
+        description: 'Evalúe si la responsabilidad, el estado y la siguiente acción pueden organizarse con más calma.',
+      },
+      {
+        title: 'Mejor reconstrucción',
+        description: 'Haga visible si la evolución del estado y la reconstrucción resultan útiles para la evaluación y la mejora de la calidad.',
+      },
+      {
+        title: 'Encaje con la práctica',
+        description: 'Explore cómo encaja Velvoix con los equipos, los procesos, los dispositivos y el entorno existente.',
+      },
+    ],
+    organisationTitle: 'Para organizaciones asistenciales',
+    organisationBody: 'Enfoque en un seguimiento más claro, la presión de trabajo y el encaje práctico en la atención diaria.',
+    partnerTitle: 'Para socios',
+    partnerBody: 'Enfoque en el alcance del despliegue, la integración y el valor operativo.',
+  },
 } satisfies Record<Locale, {
   eyebrow: string;
   title: string;
@@ -364,5 +364,3 @@ const sectionContent = sectionContentByLocale[locale];
     }
   }
 </style>
-
-
