@@ -24,7 +24,7 @@ if (isset($_GET['logout'])) {
         'samesite' => 'Lax',
     ]);
 
-    header('Location: /maintenance.html', true, 302);
+    header('Location: /', true, 302);
     exit;
 }
 
