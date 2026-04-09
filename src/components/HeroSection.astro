@@ -9,20 +9,27 @@ interface Props {
 }
 
 const { locale, content } = Astro.props;
+const usesExpandedHeroFrame = locale === 'en' || locale === 'de';
 const imageAltByLocale: Record<Locale, string> = {
   nl: 'Handcontact in een zorgomgeving',
   en: 'Hand contact in a care setting',
   de: 'Handkontakt in einer Pflegeumgebung',
   es: 'Contacto de manos en un entorno asistencial',
 };
+const heroImageClass = usesExpandedHeroFrame
+  ? 'h-full w-full object-cover object-[72%_50%] md:object-[68%_47%]'
+  : 'h-full w-full object-cover object-[72%_48%] md:object-[68%_45%]';
+const heroFrameClass = usesExpandedHeroFrame
+  ? 'mx-auto flex min-h-[30.5rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[35rem] md:px-10 md:py-10 xl:min-h-[38rem] xl:max-h-[39rem]'
+  : 'mx-auto flex min-h-[28.75rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[32.5rem] md:px-10 md:py-10 xl:min-h-[35rem] xl:max-h-[36.25rem]';
 ---
 
-<section id="home" class="relative overflow-hidden">
+<section id="home" class="relative overflow-hidden" data-hero-layout={usesExpandedHeroFrame ? 'expanded' : 'default'}>
   <div class="absolute inset-0" data-hero-media>
     <Picture
       src={heroImage}
       alt={imageAltByLocale[locale]}
-      class="h-full w-full scale-[1.02] object-cover object-[72%_48%] md:object-[68%_45%]"
+      class={heroImageClass}
       pictureAttributes={{ class: 'block h-full w-full' }}
       data-hero-image
       widths={[640, 960, 1280, 1600, 1920, 2560]}
@@ -38,7 +45,7 @@ const imageAltByLocale: Record<Locale, string> = {
   </div>
 
   <div class="relative" data-hero-block>
-    <div class="mx-auto flex min-h-[28.75rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[32.5rem] md:px-10 md:py-10 xl:min-h-[35rem] xl:max-h-[36.25rem]">
+    <div class={heroFrameClass}>
       <div class="max-w-[34rem] text-white" data-hero-content>
         <p class="text-[0.8rem] font-bold uppercase tracking-[0.26em] text-white/76" data-hero-eyebrow>{content.eyebrow}</p>
         <h1
@@ -94,6 +101,7 @@ const imageAltByLocale: Record<Locale, string> = {
     const content = heroBlock.querySelector<HTMLElement>('[data-hero-content]');
     const image = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-image]');
     const overlay = heroBlock.parentElement?.querySelector<HTMLElement>('[data-hero-overlay]');
+    const usesExpandedHeroFrame = heroBlock.parentElement?.dataset.heroLayout === 'expanded';
 
     if (prefersReducedMotion) {
       gsap.set([eyebrow, title, subtitle, ctas, supporting, content, image, overlay], { clearProps: 'all' });
@@ -102,7 +110,7 @@ const imageAltByLocale: Record<Locale, string> = {
 
     gsap.set([eyebrow, title, subtitle, ctas, supporting], { autoAlpha: 0, y: 14 });
     gsap.set(title, { autoAlpha: 0, y: 18 });
-    gsap.set(image, { scale: 1.035, y: 0 });
+    gsap.set(image, { scale: usesExpandedHeroFrame ? 1.015 : 1.035, y: 0 });
     gsap.set(content, { y: 0 });
     gsap.set(overlay, { opacity: 1 });
 
@@ -127,7 +135,17 @@ const imageAltByLocale: Record<Locale, string> = {
         const isTablet = Boolean(context.conditions?.tablet);
         const imageShift = isDesktop ? 12 : isTablet ? 9 : 6;
         const contentShift = isDesktop ? -16 : isTablet ? -12 : -8;
-        const imageScaleEnd = isDesktop ? 1 : isTablet ? 1.006 : 1.01;
+        const imageScaleEnd = usesExpandedHeroFrame
+          ? isDesktop
+            ? 1
+            : isTablet
+              ? 1.003
+              : 1.007
+          : isDesktop
+            ? 1
+            : isTablet
+              ? 1.006
+              : 1.01;
         const overlayOpacityEnd = isDesktop ? 0.9 : isTablet ? 0.93 : 0.96;
         const scrubValue = isDesktop ? 0.75 : 0.55;
         const scrollEnd = isDesktop ? 'bottom top' : '85% top';
