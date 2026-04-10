@@ -16,30 +16,30 @@ export const deContent: SiteContent = {
       'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare nächste Schritte, bessere Priorisierung und nachvollziehbare Nachverfolgung zu übersetzen.',
     ogTitle: 'Velvoix | Klare Pflegehandlung aus Signalen',
     ogDescription:
-      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was zuerst zu tun ist und wie Nachverfolgung nachvollziehbar bleibt.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was zuerst ansteht und wie Nachverfolgung nachvollziehbar bleibt.',
   },
   hero: {
     eyebrow: 'Velvoix',
     title: 'Vom Signal zur klaren Handlung in der Pflege',
     subtitle:
-      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal direkt eine klare nächste Handlung mit Kontext, Priorität und nachvollziehbarer Nachverfolgung.',
+      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal direkt einen klaren nächsten Schritt mit Kontext, Priorität und nachvollziehbarer Nachverfolgung.',
     supporting:
-      'Weniger Zweifel, klarere Priorisierung und bessere Rekonstruktion im Nachhinein.',
+      'Weniger Zweifel, klarere Priorisierung und bessere Rekonstruktion im Rückblick.',
     primaryCta: 'Pilot erkunden',
     primaryHref: '#pilot',
     secondaryCta: 'Produkttour ansehen',
     secondaryHref: '#product-tour',
     metrics: [
-      { value: 'Klar', label: 'Vom Signal zur verständlichen Handlung in der Pflege' },
+      { value: 'Klar', label: 'Vom Signal zur gut verständlichen Handlung in der Pflege' },
       { value: 'Nachvollziehbar', label: 'Nachverfolgung und Rekonstruktion bleiben sichtbar' },
-      { value: 'Praxistauglich', label: 'Passt in bestehende Pflegeumgebungen ohne zusätzliche Arbeitsgeräusche' },
+      { value: 'Praxistauglich', label: 'Passt in bestehende Pflegeumgebungen ohne zusätzlichen Arbeitslärm' },
     ],
   },
   propositionBridge: {
     eyebrow: 'Auf einen Blick',
     title: 'Von der Meldung zur klaren Nachverfolgung',
     description:
-      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welche Handlung sinnvoll ist und wer sie übernehmen sollte.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welcher Schritt sinnvoll ist und wer ihn übernehmen sollte.',
     stages: [
       {
         label: 'Was hereinkommt',
@@ -49,12 +49,12 @@ export const deContent: SiteContent = {
       {
         label: 'Was Velvoix ergänzt',
         title: 'Kontext, Priorität und empfohlene Handlung',
-        description: 'Velvoix macht schneller sichtbar, was dringend ist und welcher nächste Schritt passt.',
+        description: 'Velvoix macht schneller sichtbar, was dringend ist und welcher nächste Schritt sinnvoll ist.',
       },
       {
         label: 'Was das bringt',
         title: 'Ruhigere und klarere Nachverfolgung',
-        description: 'Status, Verantwortung und weiterer Verlauf bleiben sichtbar, ohne zusätzliche Interpretationslast.',
+        description: 'Status, Verantwortung und der weitere Verlauf bleiben sichtbar, ohne zusätzlichen Interpretationsaufwand.',
       },
     ],
   },
@@ -88,7 +88,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Was Velvoix tut',
     title: 'Velvoix bringt Struktur zwischen Signal und Nachverfolgung',
     description:
-      'Velvoix übersetzt Signale in einen klaren operativen Ablauf mit Kontext, Priorisierung und Nachverfolgung.',
+      'Velvoix übersetzt Signale in einen klaren Ablauf mit Kontext, Priorisierung und Nachverfolgung.',
     flow: ['Signal', 'Kontext', 'Priorisierung', 'Handlung', 'Workflow', 'Eskalation', 'Rekonstruktion'],
     supporting:
       'So wird Nachverfolgung übersichtlicher, konsistenter und besser nachvollziehbar.',
@@ -99,13 +99,13 @@ export const deContent: SiteContent = {
     description:
       'Velvoix verbindet das Signal mit Kontext und Priorisierung, damit Pflegeteams schneller sehen, was geschieht und was als Nächstes zu tun ist.',
     panelLabel: 'Vom Signal zur Handlung',
-    panelSupporting: 'Nicht nur eine Meldung, sondern ein klarer nächster Schritt mit Status, Verantwortung und Rekonstruktion.',
+    panelSupporting: 'Nicht nur eine Meldung, sondern ein klarer nächster Schritt mit sichtbarem Status, klarer Verantwortung und nachvollziehbarer Rekonstruktion.',
     steps: [
       { title: 'Eingang', description: 'Rufknopf, Sprache oder anderes Pflegesignal.' },
       { title: 'Kontext', description: 'Historie, Auslöser und Situation werden mit einbezogen.' },
       { title: 'Priorisierung', description: 'Dringlichkeit und Erklärung werden strukturiert.' },
       { title: 'Handlung', description: 'Es entsteht ein klarer nächster Schritt für das Team.' },
-      { title: 'Workflow', description: 'Nachverfolgung, Verantwortung und Status bleiben steuerbar.' },
+      { title: 'Workflow', description: 'Nachverfolgung, Verantwortung und Status bleiben gut im Blick.' },
       { title: 'Auswertung', description: 'Rekonstruktion und Evaluation bleiben nachvollziehbar.' },
     ],
     stepNotes: [
@@ -119,16 +119,16 @@ export const deContent: SiteContent = {
   },
   compareChains: {
     eyebrow: 'Kettenunterschied',
-    title: 'Nicht von der Meldung zur Interpretation, sondern vom Signal zur klaren Nachverfolgung',
+    title: 'Nicht von der Meldung zur Interpretation, sondern vom Signal zum klaren nächsten Schritt',
     description:
-      'Klassische Systeme bleiben oft bei der Meldung stehen. Velvoix ergänzt Kontext und Priorisierung, damit Nachverfolgung klarer und besser steuerbar wird.',
+      'Klassische Systeme bleiben oft bei der Meldung stehen. Velvoix ergänzt Kontext und Priorisierung, damit klarer wird, was als Nächstes zu tun ist.',
     compareLabel: 'Vergleich',
     outcomes: ['Weniger Interpretationslast', 'Bessere Priorisierung', 'Bessere Rekonstruktion'],
     traditionalTitle: 'Klassische Kette',
     traditionalSteps: ['Signal', 'Meldung', 'Manuelle Interpretation'],
     velvoixTitle: 'Velvoix-Kette',
     velvoixSteps: ['Signal', 'Kontext', 'Priorisierung', 'Handlung', 'Workflow', 'Eskalation', 'Rekonstruktion'],
-    velvoixSupporting: 'Jede Ebene macht Nachverfolgung, Eskalation und Auswertung besser steuerbar.',
+    velvoixSupporting: 'Jede Ebene macht Nachverfolgung, Eskalation und Auswertung klarer greifbar.',
     stepDetails: [
       {
         title: 'Signal',
@@ -144,7 +144,7 @@ export const deContent: SiteContent = {
       },
       {
         title: 'Handlung',
-        description: 'Die Auswertung wird zu einem klaren Arbeitskontext für Status, Verantwortung und nächsten Schritt.',
+        description: 'Aus dem Signal wird ein klarer nächster Schritt mit Status, Verantwortung und Anschluss im Ablauf.',
       },
       {
         title: 'Workflow',
@@ -164,18 +164,18 @@ export const deContent: SiteContent = {
     eyebrow: 'Warum Velvoix anders ist',
     title: 'Warum Velvoix in der Praxis anders funktioniert',
     description:
-      'Velvoix bleibt nicht bei der Meldung stehen, sondern hilft Teams bis hin zu einer klaren Handlung und nachvollziehbaren Nachverfolgung.',
+      'Velvoix bleibt nicht bei der Meldung stehen, sondern unterstützt Teams bis zum klaren nächsten Schritt und einer nachvollziehbaren Nachverfolgung.',
     cards: [
       {
         title: 'Mehr als nur eine weitere Meldung',
-        description: 'Velvoix geht über den bloßen Hinweis hinaus, dass etwas passiert ist.',
+        description: 'Velvoix macht nicht nur sichtbar, dass etwas passiert ist.',
       },
       {
         title: 'Klare Priorität',
         description: 'Teams sehen schneller, was Aufmerksamkeit braucht und was zuerst geschehen muss.',
       },
       {
-        title: 'Nachverfolgung bleibt in einem klaren Ablauf sichtbar',
+        title: 'Nachverfolgung bleibt in einem klaren Ablauf',
         description: 'Status, Verantwortung und nächster Schritt bleiben für Team und Auswertung zusammen sichtbar.',
       },
     ],
@@ -248,10 +248,10 @@ export const deContent: SiteContent = {
     eyebrow: 'Pilot',
     title: 'Prüfen, ob Velvoix zu Ihrer Pflegepraxis passt',
     description:
-      'Eine erste Erkundung zeigt, ob Velvoix zu klarerer Nachverfolgung, weniger Interpretationslast und einer besseren Einpassung in Ihre Prozesse beiträgt.',
+      'Eine erste Erkundung zeigt, ob Velvoix zu klarerer Nachverfolgung, weniger Interpretationsaufwand und einer besseren Einbindung in Ihre Abläufe beiträgt.',
     points: [
       'Pflegeheime und Langzeitpflege',
-      'Teams, die klarere Nachverfolgung suchen',
+      'Teams, die sich klarere Nachverfolgung wünschen',
       'Partner, die die Passung zu Prozessen und Integrationen prüfen möchten',
     ],
     primaryCta: 'Pilotgespräch planen',
@@ -261,37 +261,37 @@ export const deContent: SiteContent = {
     eyebrow: 'Kontakt',
     title: 'Starten Sie eine Erkundung, die zu Ihrer Situation passt',
     description:
-      'Wählen Sie den Weg, der passt: Piloterkundung, Zusammenarbeit oder eine geschäftliche Frage.',
+      'Wählen Sie den passenden Weg: Piloterkundung, Zusammenarbeit oder eine geschäftliche Anfrage.',
     reasonsLabel: 'Wege',
     inquiryTypes: {
       pilot: 'Piloterkundung',
       partnership: 'Zusammenarbeit',
-      general: 'Geschäftliche Frage',
+      general: 'Geschäftliche Anfrage',
     },
     reasons: [
       'Piloterkundung für Pflegeorganisationen',
-      'Zusammenarbeit für Partner und Rollout',
-      'Geschäftliche Frage zu Plattform oder Planung',
+      'Zusammenarbeit, Rollout oder Integration',
+      'Geschäftliche Anfrage zu Plattform oder Planung',
     ],
-    directEmailNote: 'Für Piloten, Zusammenarbeit und geschäftliche Fragen.',
+    directEmailNote: 'Für Piloten, Zusammenarbeit und geschäftliche Anfragen.',
     routeContent: {
       pilot: {
-        helper: 'Wählen Sie diesen Weg, um zu prüfen, ob Velvoix in Ihrer Umgebung für klarere Nachverfolgung, bessere Priorisierung und eine gute praktische Passung sorgt.',
+        helper: 'Wählen Sie diesen Weg, wenn Sie prüfen möchten, ob Velvoix in Ihrer Umgebung klarere Nachverfolgung, bessere Priorisierung und eine gute praktische Passung unterstützt.',
         email: publicContactEmails.pilot,
-        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihren Pflegekontext und was Sie in einer Piloterkundung prüfen möchten.',
+        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihren Pflegekontext und was Sie in einer Piloterkundung überprüfen möchten.',
         submit: 'Piloterkundung senden',
       },
       partnership: {
-        helper: 'Wählen Sie diesen Weg für Partnerfit, Rollout, Integration oder strategische Zusammenarbeit.',
+        helper: 'Wählen Sie diesen Weg für Fragen zu Zusammenarbeit, Rollout, Integration oder strategischer Abstimmung.',
         email: publicContactEmails.partners,
-        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welchen Kooperations- oder Rollout-Weg Sie erkunden möchten.',
+        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welche Form der Zusammenarbeit oder des Rollouts Sie erkunden möchten.',
         submit: 'Erkundung zur Zusammenarbeit senden',
       },
       general: {
-        helper: 'Wählen Sie diesen Weg für eine geschäftliche Frage zur Plattform, zum Einsatzkontext oder zu den nächsten Schritten.',
+        helper: 'Wählen Sie diesen Weg für eine geschäftliche Anfrage zur Plattform, zum Einsatz in der Praxis oder zum weiteren Vorgehen.',
         email: publicContactEmails.general,
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Frage und welcher Kontext oder Zeitrahmen dafür wichtig ist.',
-        submit: 'Geschäftliche Frage senden',
+        submit: 'Geschäftliche Anfrage senden',
       },
     },
     labels: {
@@ -307,7 +307,7 @@ export const deContent: SiteContent = {
       organisation: 'Name Ihrer Organisation',
       email: 'name@organisation.de',
       phone: '+49 170 1234567',
-      message: 'Beschreiben Sie kurz, was Sie erkunden oder worüber Sie mehr erfahren möchten.',
+      message: 'Beschreiben Sie kurz, was Sie erkunden möchten oder worüber Sie mehr erfahren wollen.',
     },
     errors: {
       required: 'Dieses Feld ist erforderlich.',
@@ -320,7 +320,7 @@ export const deContent: SiteContent = {
       'Beim Senden Ihrer Nachricht ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
     directEmailLabel: 'Direkter Kontakt',
     directEmailValue: publicContactEmails.general,
-    routeEmailLabel: 'E-Mail-Adresse für diesen Weg',
+    routeEmailLabel: 'E-Mail-Adresse für dieses Anliegen',
   },
   footer: {
     brand: 'Velvoix',
