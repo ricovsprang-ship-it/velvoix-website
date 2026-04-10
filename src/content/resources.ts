@@ -547,7 +547,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       intro:
         'Ein eingehendes Pflegesignal wird erst dann wirklich handhabbar, wenn Teams verstehen, warum es Aufmerksamkeit braucht, wie dringend es ist und welcher nächste Schritt dazu passt.',
       summary:
-        'Erklärbare Triage bedeutet nicht nur Priorität, sondern nachvollziehbare Einordnung im Pflegekontext.',
+        'Erklärbare Triage bedeutet nicht nur Priorität, sondern eine nachvollziehbare Einordnung im Pflegekontext.',
       points: [
         'Warum ein Hinweis ohne Kontext zu wenig sagt',
         'Wie Triage und Kontext zusammenwirken',
@@ -619,7 +619,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Vom Signal zur klaren Nachverfolgung',
           paragraphs: [
-            'Velvoix macht aus einem Signal ein Ereignis, das Teams zuweisen, verfolgen und abschließen können. Dadurch bleibt es praktikabel, statt nur sichtbar zu sein.',
+            'Velvoix macht aus einem Signal einen Vorgang, den Teams zuweisen, verfolgen und abschließen können. So bleibt Nachverfolgung praktikabel, statt nur sichtbar zu sein.',
             'Das ist besonders relevant in Umgebungen, in denen mehrere Personen dieselbe Bewohnerin, denselben Bewohner, Raum oder Fall berühren.',
           ],
         },
@@ -676,7 +676,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Was ein erster Pilot beantworten sollte',
           paragraphs: [
-            'Ein Pilot sollte nicht versuchen, alles gleichzeitig zu beweisen. Meist geht es im Kern darum, ob Velvoix Teams hilft, schneller einzuordnen, klarer nachzuverfolgen und verlässlicher zu rekonstruieren.',
+            'Ein Pilot sollte nicht versuchen, alles auf einmal zu beweisen. Meist geht es im Kern darum, ob Velvoix Teams hilft, schneller einzuordnen, klarer nachzuverfolgen und verlässlicher zu rekonstruieren.',
             'So entsteht ein brauchbares Bild der praktischen Passung, ohne zu früh weitreichende Rollout-Aussagen zu machen.',
           ],
         },
@@ -764,7 +764,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           ],
         },
       ],
-      ctaTitle: 'Tratar el triaje explicable en un piloto',
+      ctaTitle: 'Evaluar el triaje explicable en un piloto',
       ctaBody:
         'Use un primer piloto para comprobar qué señales de su entorno se benefician más del contexto y del triaje explicable.',
       ctaLabel: 'Hablar del piloto',
@@ -797,7 +797,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'De la señal a un seguimiento claro',
           paragraphs: [
-            'Velvoix convierte una señal en un evento que los equipos pueden asignar, seguir y cerrar. Así sigue siendo operativo en lugar de quedarse solo visible.',
+            'Velvoix convierte una señal en un caso que los equipos pueden asignar, seguir y cerrar. Así el seguimiento sigue siendo operativo en lugar de quedarse solo en algo visible.',
             'Esto importa sobre todo en entornos donde varias personas intervienen sobre la misma residente, el mismo residente, habitación o situación.',
           ],
         },
@@ -854,7 +854,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Qué debe responder un primer piloto',
           paragraphs: [
-            'Un piloto no debería intentar demostrarlo todo a la vez. Las preguntas centrales suelen ser si Velvoix ayuda a los equipos a interpretar antes, hacer un seguimiento más claro y reconstruir con más fiabilidad.',
+            'Un piloto no debería intentar demostrarlo todo de una vez. Las preguntas centrales suelen ser si Velvoix ayuda a los equipos a interpretar antes, hacer un seguimiento más claro y reconstruir con más fiabilidad.',
             'Eso genera una visión útil del encaje operativo sin hacer demasiado pronto promesas amplias de despliegue.',
           ],
         },

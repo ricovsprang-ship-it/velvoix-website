@@ -263,6 +263,7 @@ export const deContent: SiteContent = {
     description:
       'Wählen Sie den Weg, der am besten passt: Piloterkundung, Zusammenarbeit oder eine geschäftliche Anfrage.',
     reasonsLabel: 'Wege',
+    inquiryGroupLabel: 'Anfrageart',
     inquiryTypes: {
       pilot: 'Piloterkundung',
       partnership: 'Zusammenarbeit',
@@ -278,19 +279,19 @@ export const deContent: SiteContent = {
       pilot: {
         helper: 'Wählen Sie diesen Weg, wenn Sie prüfen möchten, ob Velvoix in Ihrer Umgebung klarere Nachverfolgung, bessere Priorisierung und eine gute praktische Passung unterstützt.',
         email: publicContactEmails.pilot,
-        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihren Pflegekontext und was Sie in einer Piloterkundung überprüfen möchten.',
+        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihren Pflegekontext und was Sie in einer Piloterkundung überprüfen möchten…',
         submit: 'Piloterkundung senden',
       },
       partnership: {
         helper: 'Wählen Sie diesen Weg für Fragen zu Zusammenarbeit, Rollout, Integration oder strategischer Abstimmung.',
         email: publicContactEmails.partners,
-        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welche Form der Zusammenarbeit oder des Rollouts Sie erkunden möchten.',
+        messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihre Rolle und welche Form der Zusammenarbeit oder des Rollouts Sie erkunden möchten…',
         submit: 'Erkundung zur Zusammenarbeit senden',
       },
       general: {
         helper: 'Wählen Sie diesen Weg für eine geschäftliche Anfrage zur Plattform, zum Einsatz in der Praxis oder zum weiteren Vorgehen.',
         email: publicContactEmails.general,
-        messagePlaceholder: 'Beschreiben Sie kurz Ihre Frage und welcher Kontext oder Zeitrahmen dafür wichtig ist.',
+        messagePlaceholder: 'Beschreiben Sie kurz Ihre Frage und welcher Kontext oder Zeitrahmen dafür wichtig ist…',
         submit: 'Geschäftliche Anfrage senden',
       },
     },
@@ -598,6 +599,7 @@ export const esContent: SiteContent = {
     description:
       'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta de negocio.',
     reasonsLabel: 'Vías',
+    inquiryGroupLabel: 'Tipo de consulta',
     inquiryTypes: {
       pilot: 'Exploración piloto',
       partnership: 'Colaboración',
@@ -613,19 +615,19 @@ export const esContent: SiteContent = {
       pilot: {
         helper: 'Elija esta vía para valorar si Velvoix aporta un seguimiento más claro, mejor priorización y una buena adaptación práctica a su entorno.',
         email: publicContactEmails.pilot,
-        messagePlaceholder: 'Describa brevemente su organización, su contexto asistencial y qué desea evaluar en una exploración piloto.',
+        messagePlaceholder: 'Describa brevemente su organización, su contexto asistencial y qué desea evaluar en una exploración piloto…',
         submit: 'Enviar exploración piloto',
       },
       partnership: {
         helper: 'Elija esta vía para consultas sobre colaboración, despliegue, integración o coordinación estratégica.',
         email: publicContactEmails.partners,
-        messagePlaceholder: 'Describa brevemente su organización, su función y qué tipo de colaboración o despliegue desea explorar.',
+        messagePlaceholder: 'Describa brevemente su organización, su función y qué tipo de colaboración o despliegue desea explorar…',
         submit: 'Enviar exploración de colaboración',
       },
       general: {
         helper: 'Elija esta vía para una consulta empresarial sobre la plataforma, su uso en la práctica o los siguientes pasos.',
         email: publicContactEmails.general,
-        messagePlaceholder: 'Describa brevemente su consulta y qué contexto o calendario es relevante.',
+        messagePlaceholder: 'Describa brevemente su consulta y qué contexto o calendario es relevante…',
         submit: 'Enviar consulta empresarial',
       },
     },

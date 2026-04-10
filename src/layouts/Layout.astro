@@ -41,6 +41,12 @@ const languageCodes: Record<Locale, string> = {
   es: 'es-ES',
 };
 const availableLanguages = Object.values(languageCodes);
+const skipLinkLabelByLocale: Record<Locale, string> = {
+  nl: 'Ga naar hoofdinhoud',
+  en: 'Skip to main content',
+  de: 'Zum Hauptinhalt springen',
+  es: 'Ir al contenido principal',
+};
 const structuredData = [
   {
     '@context': 'https://schema.org',
@@ -133,6 +139,7 @@ const structuredData = [
     <title>{title}</title>
   </head>
   <body class="bg-slate-950 text-slate-900">
+    <a class="skip-link" href="#main-content">{skipLinkLabelByLocale[locale]}</a>
     <slot />
     <script is:inline define:vars={{ localeRootPaths }}>
       (() => {

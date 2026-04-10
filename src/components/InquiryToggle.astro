@@ -1,5 +1,6 @@
 ---
 interface Props {
+  ariaLabel: string;
   labels: {
     pilot: string;
     partnership: string;
@@ -7,20 +8,20 @@ interface Props {
   };
 }
 
-const { labels } = Astro.props;
+const { ariaLabel, labels } = Astro.props;
 ---
 
 <div class="mb-6 rounded-[1.35rem] border border-slate-200/85 bg-slate-50/72 p-2">
-  <div class="grid gap-2 sm:grid-cols-3" role="radiogroup" aria-label="Inquiry type">
-    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] hover:border-slate-300 hover:bg-white">
+  <div class="grid gap-2 sm:grid-cols-3" role="radiogroup" aria-label={ariaLabel}>
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] has-[:focus-visible]:border-[rgba(33,65,120,0.34)] has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-[rgba(33,65,120,0.14)] has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-white hover:border-slate-300 hover:bg-white">
       <input class="sr-only" type="radio" name="inquiryType" value="pilot" checked />
       {labels.pilot}
     </label>
-    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] hover:border-slate-300 hover:bg-white">
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] has-[:focus-visible]:border-[rgba(33,65,120,0.34)] has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-[rgba(33,65,120,0.14)] has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-white hover:border-slate-300 hover:bg-white">
       <input class="sr-only" type="radio" name="inquiryType" value="partnership" />
       {labels.partnership}
     </label>
-    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] hover:border-slate-300 hover:bg-white">
+    <label class="cursor-pointer rounded-[0.95rem] border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 transition-[border-color,background-color,color,box-shadow] duration-150 has-[:checked]:border-[rgba(33,65,120,0.28)] has-[:checked]:bg-[linear-gradient(180deg,rgba(33,65,120,0.98),rgba(27,53,99,0.98))] has-[:checked]:text-white has-[:checked]:shadow-[0_12px_24px_rgba(33,65,120,0.16)] has-[:focus-visible]:border-[rgba(33,65,120,0.34)] has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-[rgba(33,65,120,0.14)] has-[:focus-visible]:ring-offset-2 has-[:focus-visible]:ring-offset-white hover:border-slate-300 hover:bg-white">
       <input class="sr-only" type="radio" name="inquiryType" value="general" />
       {labels.general}
     </label>

@@ -129,6 +129,7 @@ export interface PilotContent extends SectionIntroContent {
 
 export interface ContactContent extends SectionIntroContent {
   reasonsLabel: string;
+  inquiryGroupLabel: string;
   inquiryTypes: {
     pilot: string;
     partnership: string;
@@ -532,6 +533,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Kies wat het beste past: een pilot, samenwerking of een zakelijke vraag.',
       reasonsLabel: 'Onderwerpen',
+      inquiryGroupLabel: 'Type aanvraag',
       inquiryTypes: {
         pilot: 'Pilot',
         partnership: 'Samenwerking',
@@ -547,19 +549,19 @@ export const siteContent: Record<Locale, SiteContent> = {
         pilot: {
           helper: 'Kies dit onderwerp om te beoordelen of Velvoix in uw organisatie helpt bij duidelijkere opvolging, prioritering en een goede aansluiting op de praktijk.',
           email: publicContactEmails.pilot,
-          messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
+          messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen…',
           submit: 'Verstuur pilotverkenning',
         },
         partnership: {
           helper: 'Kies dit onderwerp voor vragen over samenwerking, uitrol, integratie of strategische afstemming.',
           email: publicContactEmails.partners,
-          messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke vorm van samenwerking of uitrol u wilt verkennen.',
+          messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke vorm van samenwerking of uitrol u wilt verkennen…',
           submit: 'Verstuur samenwerkingsverkenning',
         },
         general: {
           helper: 'Kies dit onderwerp voor een zakelijke vraag over het platform, de inzet in de praktijk of de volgende stap.',
           email: publicContactEmails.general,
-          messagePlaceholder: 'Beschrijf kort uw vraag en welke context of planning daarbij relevant is.',
+          messagePlaceholder: 'Beschrijf kort uw vraag en welke context of planning daarbij relevant is…',
           submit: 'Verstuur zakelijke vraag',
         },
       },
@@ -920,6 +922,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Choose the route that fits best: a pilot, a collaboration discussion or a business question.',
       reasonsLabel: 'Topics',
+      inquiryGroupLabel: 'Inquiry type',
       inquiryTypes: {
         pilot: 'Pilot',
         partnership: 'Collaboration',
@@ -935,19 +938,19 @@ export const siteContent: Record<Locale, SiteContent> = {
         pilot: {
           helper: 'Choose this option to assess whether Velvoix supports clearer follow-up, better prioritisation and a practical fit in your organisation.',
           email: publicContactEmails.pilot,
-          messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration.',
+          messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration…',
           submit: 'Send pilot inquiry',
         },
         partnership: {
           helper: 'Choose this option for questions about collaboration, rollout, integration or strategic alignment.',
           email: publicContactEmails.partners,
-          messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration or rollout you want to explore.',
+          messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration or rollout you want to explore…',
           submit: 'Send collaboration inquiry',
         },
         general: {
           helper: 'Choose this option for a business question about the platform, how it could be used in practice or what comes next.',
           email: publicContactEmails.general,
-          messagePlaceholder: 'Briefly describe your question and any context or timing that matters.',
+          messagePlaceholder: 'Briefly describe your question and any context or timing that matters…',
           submit: 'Send business question',
         },
       },

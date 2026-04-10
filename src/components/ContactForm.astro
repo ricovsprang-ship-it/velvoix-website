@@ -52,11 +52,12 @@ const routeTexts = content.routeContent;
         action="/contact.php"
         method="post"
         data-contact-form
+        aria-describedby="contact-form-status"
         novalidate
       >
-        <InquiryToggle labels={content.inquiryTypes} />
+        <InquiryToggle ariaLabel={content.inquiryGroupLabel} labels={content.inquiryTypes} />
         <input type="hidden" name="inquiryTypeValue" value="pilot" data-inquiry-type-input />
-        <input class="sr-only" type="text" name="companyWebsite" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="companyWebsite" value="" />
 
         <div class="mb-6 rounded-[1.05rem] border border-slate-200/80 bg-slate-50/82 px-4 py-4">
           <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500" data-route-label>{content.inquiryTypes.pilot}</p>
@@ -76,34 +77,34 @@ const routeTexts = content.routeContent;
         <div class="grid gap-5 md:grid-cols-2">
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.name}</span>
-            <input class="field-input" name="name" type="text" placeholder={content.placeholders.name} data-required="true" />
-            <span class="field-error" data-error-for="name"></span>
+            <input class="field-input" id="contact-name" name="name" type="text" placeholder={content.placeholders.name} autocomplete="name" inputmode="text" data-required="true" data-validate-field required />
+            <span class="field-error" id="contact-name-error" data-error-for="name"></span>
           </label>
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.organisation}</span>
-            <input class="field-input" name="organisation" type="text" placeholder={content.placeholders.organisation} data-required="true" />
-            <span class="field-error" data-error-for="organisation"></span>
+            <input class="field-input" id="contact-organisation" name="organisation" type="text" placeholder={content.placeholders.organisation} autocomplete="organization" inputmode="text" data-required="true" data-validate-field required />
+            <span class="field-error" id="contact-organisation-error" data-error-for="organisation"></span>
           </label>
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.email}</span>
-            <input class="field-input" name="email" type="email" placeholder={content.placeholders.email} data-required="true" />
-            <span class="field-error" data-error-for="email"></span>
+            <input class="field-input" id="contact-email" name="email" type="email" placeholder={content.placeholders.email} autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off" data-required="true" data-validate-field required />
+            <span class="field-error" id="contact-email-error" data-error-for="email"></span>
           </label>
           <label class="block">
             <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.phone}</span>
-            <input class="field-input" name="phone" type="tel" placeholder={content.placeholders.phone} />
-            <span class="field-error" data-error-for="phone"></span>
+            <input class="field-input" id="contact-phone" name="phone" type="tel" placeholder={content.placeholders.phone} autocomplete="tel" inputmode="tel" data-validate-field />
+            <span class="field-error" id="contact-phone-error" data-error-for="phone"></span>
           </label>
         </div>
 
         <label class="mt-5 block">
           <span class="mb-2 block text-sm font-semibold text-slate-700">{content.labels.message}</span>
-          <textarea class="field-input min-h-40 resize-y" name="message" placeholder={routeTexts.pilot.messagePlaceholder} data-message-field data-required="true"></textarea>
-          <span class="field-error" data-error-for="message"></span>
+          <textarea class="field-input min-h-40 resize-y" id="contact-message" name="message" placeholder={routeTexts.pilot.messagePlaceholder} autocomplete="off" rows="6" data-message-field data-required="true" data-validate-field required></textarea>
+          <span class="field-error" id="contact-message-error" data-error-for="message"></span>
         </label>
 
         <div class="mt-6 flex flex-col gap-4 border-t border-slate-200/80 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p class="status-copy text-slate-500" data-form-status></p>
+          <p class="status-copy text-slate-500" id="contact-form-status" data-form-status tabindex="-1" role="status" aria-live="polite" aria-atomic="true"></p>
           <button class="button-primary" type="submit" data-submit-button>{routeTexts.pilot.submit}</button>
         </div>
       </form>
@@ -125,6 +126,45 @@ const routeTexts = content.routeContent;
     const routeEmail = form.querySelector('[data-route-email]');
     const messageField = form.querySelector('[data-message-field]');
     const routeInputs = Array.from(form.querySelectorAll('input[name="inquiryType"]'));
+    const fields = Array.from(form.querySelectorAll('[data-validate-field]'));
+
+    const getErrorNode = (field) => form.querySelector(`[data-error-for="${field.name}"]`);
+
+    const clearFieldError = (field) => {
+      const errorNode = getErrorNode(field);
+      if (errorNode) errorNode.textContent = '';
+      field.removeAttribute('aria-invalid');
+      field.removeAttribute('aria-describedby');
+    };
+
+    const setFieldError = (field, message) => {
+      const errorNode = getErrorNode(field);
+      if (errorNode) {
+        errorNode.textContent = message;
+        if (errorNode.id) {
+          field.setAttribute('aria-describedby', errorNode.id);
+        }
+      }
+      field.setAttribute('aria-invalid', 'true');
+    };
+
+    const setStatus = (message, state) => {
+      if (!statusNode) return;
+      statusNode.textContent = message;
+      statusNode.dataset.state = state;
+      statusNode.setAttribute('aria-live', state === 'error' ? 'assertive' : 'polite');
+      statusNode.setAttribute('role', state === 'error' ? 'alert' : 'status');
+    };
+
+    for (const field of fields) {
+      if (!(field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement)) continue;
+      field.addEventListener('input', () => {
+        clearFieldError(field);
+        if (statusNode?.dataset.state === 'error') {
+          setStatus('', '');
+        }
+      });
+    }
 
     const applyRoute = (route) => {
       const selected = routeTexts[route] ?? routeTexts.pilot;
@@ -153,42 +193,38 @@ const routeTexts = content.routeContent;
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       let hasErrors = false;
+      let firstInvalidField = null;
 
-      const fields = Array.from(form.querySelectorAll('input, textarea'));
       for (const field of fields) {
-        const errorNode = form.querySelector(`[data-error-for="${field.name}"]`);
-        if (errorNode) {
-          errorNode.textContent = '';
-        }
+        if (!(field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement)) continue;
+        clearFieldError(field);
 
         const value = field.value.trim();
         if (field.dataset.required === 'true' && !value) {
           hasErrors = true;
-          if (errorNode) errorNode.textContent = formTexts.required;
+          setFieldError(field, formTexts.required);
+          firstInvalidField ??= field;
           continue;
         }
 
         if (field.name === 'email' && value && !emailRegex.test(value)) {
           hasErrors = true;
-          if (errorNode) errorNode.textContent = formTexts.email;
+          setFieldError(field, formTexts.email);
+          firstInvalidField ??= field;
         }
 
         if (field.name === 'phone' && value && !phoneRegex.test(value)) {
           hasErrors = true;
-          if (errorNode) errorNode.textContent = formTexts.phone;
+          setFieldError(field, formTexts.phone);
+          firstInvalidField ??= field;
         }
       }
 
-      if (statusNode) {
-        statusNode.textContent = '';
-        statusNode.dataset.state = '';
-      }
+      setStatus('', '');
 
       if (hasErrors) {
-        if (statusNode) {
-          statusNode.textContent = formTexts.generic;
-          statusNode.dataset.state = 'error';
-        }
+        setStatus(formTexts.generic, 'error');
+        firstInvalidField?.focus();
         return;
       }
 
@@ -213,15 +249,16 @@ const routeTexts = content.routeContent;
 
         form.reset();
         applyRoute('pilot');
-        if (statusNode) {
-          statusNode.textContent = formTexts.success;
-          statusNode.dataset.state = 'success';
+        for (const field of fields) {
+          if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
+            clearFieldError(field);
+          }
         }
+        setStatus(formTexts.success, 'success');
+        statusNode?.focus();
       } catch (error) {
-        if (statusNode) {
-          statusNode.textContent = error instanceof Error && error.message ? error.message : formTexts.generic;
-          statusNode.dataset.state = 'error';
-        }
+        setStatus(error instanceof Error && error.message ? error.message : formTexts.generic, 'error');
+        statusNode?.focus();
       } finally {
         submitButton?.removeAttribute('disabled');
         submitButton?.removeAttribute('aria-busy');

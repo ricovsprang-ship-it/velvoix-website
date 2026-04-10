@@ -24,7 +24,7 @@ const { locale, content } = Astro.props;
 <div class="site-shell">
   <Header locale={locale} nav={content.nav} />
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <HeroSection locale={locale} content={content.hero} />
     <PropositionBridgeSection content={content.propositionBridge} />
     <ChallengeProofSection content={content.challenge} />
