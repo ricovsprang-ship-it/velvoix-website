@@ -111,7 +111,7 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Further reading',
       title: 'More context for decision-makers and teams',
       description:
-        'Three deeper pages on how Velvoix helps translate care signals into clear follow-up, better prioritisation and traceable reconstruction.',
+        'Three deeper pages on how Velvoix turns care signals into clear follow-up, better prioritisation and traceable reconstruction.',
       linkLabel: 'Read page',
     },
   },
@@ -364,12 +364,12 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'explainable-care-triage',
       title: 'Explainable care triage for care signals',
       cardDescription:
-        'Why context and triage are needed to move from an incoming signal to a defensible next action.',
+        'Why context and triage are needed to move from an incoming signal to clear, well-grounded follow-up.',
       eyebrow: 'Deep dive',
       intro:
-        'An incoming care signal only becomes workable when teams understand why it needs attention, how urgent it is and which follow-up makes sense.',
+        'An incoming care signal only becomes actionable when teams understand why it needs attention, how urgent it is and what follow-up makes sense.',
       summary:
-        'Explainable triage is not just about priority, but about defensible interpretation in care context.',
+        'Explainable triage is not just about priority, but about clear reasoning in a care context.',
       points: [
         'Why an alert without context says too little',
         'How triage and event context reinforce each other',
@@ -391,8 +391,8 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'How context and triage work together',
           paragraphs: [
-            'Velvoix combines incoming signals with event context, history and operational logic. That makes triage more than a colour or priority flag.',
-            'The result is follow-up that is easier to defend in team discussions, quality reviews and day-to-day care operations.',
+            'Velvoix combines incoming signals with event context, history and triage logic. That makes triage more than a colour or priority flag.',
+            'The result is follow-up that is easier to explain in team discussions, quality reviews and day-to-day care operations.',
           ],
           bullets: [
             'History and trigger are part of the assessment',
@@ -410,15 +410,15 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ],
       ctaTitle: 'Discuss explainable triage in a pilot',
       ctaBody:
-        'Use a first pilot to test which signals in your setting benefit most from context and explainable triage.',
+        'Use an initial pilot to test which signals in your organisation benefit most from context and explainable triage.',
       ctaLabel: 'Start pilot assessment',
       meta: {
         title: 'Explainable care triage for care signals | Velvoix',
         description:
-          'Learn how explainable care triage turns care signals into clear follow-up with context, urgency and defensible reasoning.',
+          'Learn how explainable care triage turns care signals into clear follow-up with context, urgency and clear reasoning.',
         ogTitle: 'Explainable care triage for care signals | Velvoix',
         ogDescription:
-          'Velvoix shows how context and triage turn care signals into clear and defensible follow-up.',
+          'Velvoix shows how context and triage turn care signals into clear, well-grounded follow-up.',
       },
     },
     {
@@ -431,17 +431,17 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       intro:
         'A care signal is only complete when follow-up, status flow and reconstruction stay aligned in one manageable line.',
       summary:
-        'Workable workflow is not only about assigning tasks, but about ownership, escalation and traceability in the same operational chain.',
+        'A strong workflow is not only about assigning tasks, but about ownership, escalation and traceability in the same operational chain.',
       points: [
-        'From event to manageable follow-up',
+        'From signal to clear follow-up',
         'Why escalation and status belong together',
         'How reconstruction supports evaluation and audit',
       ],
       sections: [
         {
-          title: 'From event to manageable follow-up',
+          title: 'From signal to clear follow-up',
           paragraphs: [
-            'Velvoix turns a signal into an event that teams can assign, track and close. That keeps it workable rather than merely visible.',
+            'Velvoix turns a signal into a follow-up item that teams can assign, track and close. That keeps it actionable rather than merely visible.',
             'This matters most in environments where several people touch the same resident, room or situation.',
           ],
         },
@@ -468,11 +468,11 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ctaTitle: 'Explore workflow and reconstruction in your setting',
       ctaBody:
         'Use a pilot to assess where status flow, escalation and reconstruction create the most operational value for your teams.',
-      ctaLabel: 'Discuss partnership route',
+      ctaLabel: 'Discuss collaboration',
       meta: {
         title: 'Care workflow, escalation and reconstruction | Velvoix',
         description:
-          'Read how Velvoix turns care signals into manageable workflow with ownership, escalation and traceable reconstruction.',
+          'Read how Velvoix turns care signals into a manageable workflow with ownership, escalation and traceable reconstruction.',
         ogTitle: 'Care workflow, escalation and reconstruction | Velvoix',
         ogDescription:
           'Velvoix connects workflow, escalation and reconstruction in one traceable follow-up chain.',
@@ -486,7 +486,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'What a first pilot should focus on when you want to assess whether Velvoix fits your teams, processes and existing care environment.',
       eyebrow: 'Pilot approach',
       intro:
-        'A strong pilot is not a loose demo, but a controlled way to assess operational fit, follow-up quality and process value.',
+        'A strong pilot is not a generic demo, but a focused way to assess practical fit, follow-up quality and process value.',
       summary:
         'A first pilot should clarify what you want to validate, which teams participate and how follow-up decisions will be grounded.',
       points: [
@@ -499,7 +499,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'What a first pilot should answer',
           paragraphs: [
             'A pilot should not try to prove everything at once. The core questions are usually whether Velvoix helps teams interpret faster, follow up more clearly and reconstruct more reliably.',
-            'That creates a useful picture of operational fit without making broad rollout claims too early.',
+            'That creates a useful picture of practical fit without making broad rollout claims too early.',
           ],
         },
         {
@@ -532,7 +532,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           'Learn how a first Velvoix pilot can fairly validate care signals, follow-up and reconstruction in your own care setting.',
         ogTitle: 'Pilot approach for care signals and follow-up | Velvoix',
         ogDescription:
-          'Velvoix outlines how a first pilot can validate operational fit, follow-up and reconstruction in care context.',
+          'Velvoix outlines how a first pilot can validate practical fit, follow-up and reconstruction in a care context.',
       },
     },
   ],

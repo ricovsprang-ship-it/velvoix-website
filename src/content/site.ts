@@ -642,7 +642,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'At a glance',
       title: 'From alert to clear follow-up',
       description:
-        'Velvoix helps teams see faster what needs attention, which action fits and who should take it on.',
+        'Velvoix helps teams see sooner what needs attention, what action makes sense and who should take the next step.',
       stages: [
         {
           label: 'What comes in',
@@ -654,13 +654,13 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'What Velvoix adds',
           title: 'Context, priority and recommended action',
           description:
-            'Velvoix helps teams see sooner what is urgent and what the right next step is.',
+            'Velvoix helps teams see sooner what is urgent and what the next step should be.',
         },
         {
           label: 'What that delivers',
           title: 'Calmer and clearer follow-up',
           description:
-            'Status, responsibility and next steps remain visible without adding more interpretation burden.',
+            'Status, responsibility and next steps remain visible without creating more interpretation work.',
         },
       ],
     },
@@ -694,18 +694,18 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'What Velvoix does',
       title: 'Velvoix adds structure between signal and follow-up',
       description:
-        'Velvoix turns signals into a workable operational outcome with context, triage and follow-up.',
-      flow: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
+        'Velvoix turns signals into clear follow-up with context, triage and status.',
+      flow: ['Signal', 'Context', 'Triage', 'Action', 'Follow-up', 'Escalation', 'Reconstruction'],
       supporting:
         'That makes follow-up more structured, more consistent and easier to reconstruct.',
     },
     howItWorks: {
       eyebrow: 'How it works',
-      title: 'From input to workable follow-up',
+      title: 'From signal to clear follow-up',
       description:
-        'Velvoix does more than receive signals. It adds context, triage and a clear operational flow, so care teams understand faster what needs attention and what should happen next.',
+        'Velvoix does more than receive signals. It adds context, triage and a clear follow-up flow, so care teams understand sooner what needs attention and what should happen next.',
       panelLabel: 'Operational flow',
-      panelSupporting: 'From input to context, triage and workable follow-up.',
+      panelSupporting: 'From incoming signal to context, triage and clear follow-up.',
       steps: [
         {
           title: 'Input',
@@ -720,39 +720,39 @@ export const siteContent: Record<Locale, SiteContent> = {
           description: 'Urgency and explanation are structured.',
         },
         {
-          title: 'Event',
-          description: 'A workable operational unit is created.',
+          title: 'Action',
+          description: 'The signal becomes a clear action for follow-up.',
         },
         {
-          title: 'Workflow',
-          description: 'Follow-up, ownership and status become manageable.',
+          title: 'Follow-up',
+          description: 'Follow-up, ownership and status stay clear and manageable.',
         },
         {
-          title: 'Audit',
-          description: 'Reconstruction and evaluation remain traceable.',
+          title: 'Review',
+          description: 'Reconstruction and evaluation remain easy to trace.',
         },
       ],
       stepNotes: [
         'Input enters in a controlled way',
         'Context enriches interpretation',
         'Triage makes urgency explainable',
-        'The event gives follow-up a clear structure',
-        'Workflow keeps status manageable',
-        'Audit keeps reconstruction intact',
+        'A clear action gives follow-up structure',
+        'Follow-up keeps status manageable',
+        'Review keeps reconstruction intact',
       ],
     },
     compareChains: {
       eyebrow: 'Chain difference',
-      title: 'Not from alert to interpretation, but from signal to structured workflow',
+      title: 'Not from alert to manual interpretation, but from signal to clear follow-up',
       description:
-        'Traditional systems often stop at the alert. Velvoix adds context and prioritisation so follow-up becomes clearer and more manageable.',
+        'Traditional systems often stop at the alert. Velvoix adds context and prioritisation so follow-up becomes clearer and easier to manage.',
       compareLabel: 'Comparison',
-      outcomes: ['Less interpretation burden', 'Better prioritisation', 'Better reconstruction'],
+      outcomes: ['Less interpretation work', 'Better prioritisation', 'Better reconstruction'],
       traditionalTitle: 'Traditional chain',
       traditionalSteps: ['Signal', 'Alert', 'Manual interpretation'],
       velvoixTitle: 'Velvoix chain',
-      velvoixSteps: ['Signal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalation', 'Reconstruction'],
-      velvoixSupporting: 'Each layer makes follow-up, escalation and audit more manageable.',
+      velvoixSteps: ['Signal', 'Context', 'Triage', 'Action', 'Follow-up', 'Escalation', 'Reconstruction'],
+      velvoixSupporting: 'Each layer makes follow-up, escalation and review easier to manage.',
       stepDetails: [
         {
           title: 'Signal',
@@ -768,13 +768,13 @@ export const siteContent: Record<Locale, SiteContent> = {
           description: 'Urgency and recommended action become visible with explainable care wording.',
         },
         {
-          title: 'Event',
+          title: 'Action',
           description:
-            'The outcome becomes one workable operational unit for status, ownership and next steps.',
+            'The outcome becomes a clear action with status, ownership and next steps.',
         },
         {
-          title: 'Workflow',
-          description: 'Follow-up becomes manageable through actions, status flow and clear responsibility.',
+          title: 'Follow-up',
+          description: 'Follow-up stays manageable through actions, status flow and clear responsibility.',
         },
         {
           title: 'Escalation',
@@ -813,7 +813,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Reliable in practice',
       title: 'Built for care situations where pressure and dependencies meet',
       description:
-        'Velvoix remains useful when speed, clarity and traceability matter. Even when not every part of the chain responds ideally, it stays visible what is happening and what the next step should be.',
+        'Velvoix remains useful when speed, clarity and traceability matter. Even when not every part of the chain responds ideally, it remains clear what is happening and what the next step should be.',
       capabilities: [
         'Clear status',
         'Honest fallback',
@@ -895,7 +895,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: 'Governance and profiles',
-          caption: 'Governance remains controlled through profiles and prioritisation management.',
+          caption: 'Governance stays manageable through profiles and prioritisation controls.',
           image: '/products/proof-governance.png',
           tone: 'Governance',
         },
@@ -905,7 +905,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Pilot',
       title: 'Explore whether Velvoix fits your care practice',
       description:
-        'An initial exploration shows whether Velvoix helps create clearer follow-up, less interpretation burden and a better fit with your processes.',
+        'An initial exploration shows whether Velvoix supports clearer follow-up, less interpretation work and a better fit with your processes.',
       points: [
         'Nursing homes and long-term care',
         'Teams looking for clearer follow-up',
@@ -918,34 +918,34 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start an exploration that fits your situation',
       description:
-        'Choose the route that fits: pilot exploration, collaboration or a business question.',
-      reasonsLabel: 'Routes',
+        'Choose the option that fits best: a pilot, a collaboration discussion or a business question.',
+      reasonsLabel: 'Topics',
       inquiryTypes: {
-        pilot: 'Pilot exploration',
+        pilot: 'Pilot',
         partnership: 'Collaboration',
         general: 'Business question',
       },
       reasons: [
-        'Pilot exploration for healthcare organisations',
-        'Collaboration for partners and rollout',
+        'Pilot for healthcare organisations',
+        'Collaboration, rollout or integration',
         'Business question about the platform or timing',
       ],
       directEmailNote: 'For pilots, collaborations and business questions.',
       routeContent: {
         pilot: {
-          helper: 'Choose this route to assess whether Velvoix helps create clearer follow-up, better prioritisation and practical fit in your setting.',
+          helper: 'Choose this option to assess whether Velvoix supports clearer follow-up, better prioritisation and a practical fit in your organisation.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration.',
           submit: 'Send pilot enquiry',
         },
         partnership: {
-          helper: 'Choose this route for partner fit, rollout, integration or strategic collaboration.',
+          helper: 'Choose this option for questions about collaboration, rollout, integration or strategic alignment.',
           email: publicContactEmails.partners,
-          messagePlaceholder: 'Briefly describe your organisation, role and which partnership or rollout route you want to explore.',
+          messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration or rollout you want to explore.',
           submit: 'Send collaboration enquiry',
         },
         general: {
-          helper: 'Choose this route for a business question about the platform, deployment context or next steps.',
+          helper: 'Choose this option for a business question about the platform, how it could be used in practice or what comes next.',
           email: publicContactEmails.general,
           messagePlaceholder: 'Briefly describe your question and any context or timing that matters.',
           submit: 'Send business question',
@@ -977,7 +977,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
       directEmailValue: publicContactEmails.general,
-      routeEmailLabel: 'Email for this route',
+      routeEmailLabel: 'Email for this topic',
     },
     footer: {
       brand: 'Velvoix',
