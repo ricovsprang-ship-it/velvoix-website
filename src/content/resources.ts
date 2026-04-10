@@ -156,16 +156,16 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
         'Los resultados prácticos dependen de equipos, procesos, dispositivos y sistemas existentes. Por eso un piloto enfocado aporta más que una demo genérica.',
       cards: [
         {
-          title: 'Interpretación más rápida',
-          description: 'Qué señales llevan antes a un seguimiento claro y dónde la explicabilidad cambia decisiones.',
+          title: 'Ver antes qué requiere atención',
+          description: 'Qué señales llevan antes a un seguimiento claro y dónde una explicación más clara cambia decisiones.',
         },
         {
-          title: 'Responsabilidad clara',
-          description: 'Cómo el estado, la responsabilidad y la escalada reducen el ruido de interpretación en la operación diaria.',
+          title: 'Seguimiento y responsabilidad más claros',
+          description: 'Cómo el estado, la responsabilidad y la escalada reducen el esfuerzo de interpretación en la operación diaria.',
         },
         {
-          title: 'Reconstrucción trazable',
-          description: 'Qué preguntas de auditoría y evaluación se responden mejor con lógica de evento y evolución de estado.',
+          title: 'Mejor reconstrucción para la revisión',
+          description: 'Qué preguntas de auditoría y evaluación se responden mejor con una evolución del estado y una reconstrucción más claras.',
         },
       ],
     },
@@ -173,7 +173,7 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Lecturas complementarias',
       title: 'Más contexto para responsables y equipos',
       description:
-        'Tres páginas de profundidad sobre cómo Velvoix ayuda a traducir señales asistenciales en un seguimiento claro, mejor priorización y reconstrucción trazable.',
+        'Tres páginas de profundidad sobre triaje, flujo de trabajo y enfoque piloto en torno a las señales asistenciales.',
       linkLabel: 'Leer página',
     },
   },
@@ -720,7 +720,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'triaje-asistencial-explicable',
       title: 'Triaje asistencial explicable para señales asistenciales',
       cardDescription:
-        'Por qué se necesitan contexto y priorización para pasar de una señal entrante a una siguiente acción clara y defendible.',
+        'Por qué se necesitan contexto y priorización para pasar de una señal entrante a un siguiente paso claro y defendible.',
       eyebrow: 'Profundización',
       intro:
         'Una señal asistencial entrante solo se vuelve operativa cuando los equipos entienden por qué requiere atención, qué urgencia tiene y qué seguimiento encaja mejor.',
@@ -728,8 +728,8 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'El triaje explicable no trata solo de prioridad, sino de una interpretación defendible dentro del contexto asistencial.',
       points: [
         'Por qué una alerta sin contexto dice demasiado poco',
-        'Cómo se refuerzan entre sí el triaje y el contexto del evento',
-        'Qué ganancia operativa pueden esperar los equipos',
+        'Cómo trabajan juntos el triaje y el contexto',
+        'Qué aporta esto en la práctica a los equipos',
       ],
       sections: [
         {
@@ -748,7 +748,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Cómo trabajan juntos el contexto y el triaje',
           paragraphs: [
             'Velvoix combina las señales entrantes con el contexto del evento, el historial y la lógica operativa. Así, el triaje pasa a ser algo más que un color o una etiqueta de prioridad.',
-            'El resultado es un seguimiento más fácil de sostener en conversaciones de equipo, revisiones de calidad y la práctica asistencial diaria.',
+            'El resultado es un seguimiento más fácil de explicar en conversaciones de equipo, revisiones de calidad y la práctica asistencial diaria.',
           ],
           bullets: [
             'El historial y el detonante forman parte de la valoración',
@@ -767,7 +767,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ctaTitle: 'Tratar el triaje explicable en un piloto',
       ctaBody:
         'Use un primer piloto para comprobar qué señales de su entorno se benefician más del contexto y del triaje explicable.',
-      ctaLabel: 'Iniciar evaluación piloto',
+      ctaLabel: 'Hablar del piloto',
       meta: {
         title: 'Triaje asistencial explicable para señales asistenciales | Velvoix',
         description:
@@ -782,20 +782,20 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'flujo-asistencial-escalada-reconstruccion',
       title: 'Flujo asistencial, escalada y reconstrucción',
       cardDescription:
-        'Por qué el seguimiento funciona mejor cuando estado, responsabilidad, escalada y reconstrucción permanecen en la misma línea operativa.',
+        'Por qué el seguimiento funciona mejor cuando estado, responsabilidad, escalada y reconstrucción permanecen en el mismo flujo.',
       eyebrow: 'Profundización',
       intro:
-        'Una señal asistencial solo queda realmente cerrada cuando el seguimiento, la evolución del estado y la reconstrucción permanecen alineados en una línea manejable.',
+        'Una señal asistencial solo queda realmente cerrada cuando el seguimiento, la evolución del estado y la reconstrucción permanecen alineados en un mismo flujo.',
       summary:
-        'Un flujo de trabajo operativo no trata solo de repartir tareas, sino de mantener responsabilidad, escalada y trazabilidad dentro de la misma cadena operativa.',
+        'Un flujo de trabajo sólido no trata solo de repartir tareas, sino de mantener responsabilidad, escalada y trazabilidad dentro del mismo flujo.',
       points: [
-        'Del evento a un seguimiento gestionable',
+        'De la señal a un seguimiento claro',
         'Por qué la escalada y el estado deben ir juntos',
         'Qué añade la reconstrucción para evaluación y auditoría',
       ],
       sections: [
         {
-          title: 'Del evento a un seguimiento gestionable',
+          title: 'De la señal a un seguimiento claro',
           paragraphs: [
             'Velvoix convierte una señal en un evento que los equipos pueden asignar, seguir y cerrar. Así sigue siendo operativo en lugar de quedarse solo visible.',
             'Esto importa sobre todo en entornos donde varias personas intervienen sobre la misma residente, el mismo residente, habitación o situación.',
@@ -823,7 +823,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ],
       ctaTitle: 'Explorar flujo y reconstrucción en su entorno',
       ctaBody:
-        'Use un piloto para valorar dónde la evolución del estado, la escalada y la reconstrucción generan más valor operativo para sus equipos.',
+        'Use un piloto para valorar dónde la evolución del estado, la escalada y la reconstrucción generan más valor práctico para sus equipos.',
       ctaLabel: 'Planificar conversación',
       meta: {
         title: 'Flujo asistencial, escalada y reconstrucción | Velvoix',
@@ -842,9 +842,9 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'En qué debe centrarse un primer piloto para evaluar si Velvoix encaja con sus equipos, procesos y entorno asistencial existente.',
       eyebrow: 'Enfoque piloto',
       intro:
-        'Un buen piloto no es una demo informal, sino una forma controlada de evaluar el encaje operativo, la calidad del seguimiento y el valor del proceso.',
+        'Un buen piloto no es una demo informal, sino una forma concreta de evaluar el encaje operativo, la calidad del seguimiento y el valor del proceso.',
       summary:
-        'Un primer piloto debe aclarar qué se quiere validar, qué equipos participan y cómo se fundamentarán las decisiones posteriores.',
+        'Un primer piloto debe aclarar qué se quiere validar, qué equipos participan y cómo se apoyarán las decisiones posteriores.',
       points: [
         'Qué preguntas debe responder un primer piloto',
         'Qué equipos, dispositivos y procesos conviene incluir',
@@ -874,14 +874,14 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Cómo decidir el siguiente paso',
           paragraphs: [
             'Un buen piloto no termina con una impresión general, sino con hallazgos concretos sobre triaje, flujo de trabajo, reconstrucción y encaje.',
-            'Eso facilita decidir si una siguiente fase está justificada, qué integraciones importan y dónde siguen abiertas decisiones de diseño.',
+            'Eso facilita decidir si una siguiente fase está justificada, qué integraciones importan y qué decisiones de diseño siguen abiertas.',
           ],
         },
       ],
       ctaTitle: 'Usar el piloto para evaluar el encaje real',
       ctaBody:
         'Alineen de antemano qué señales, equipos y resultados de su entorno deben determinar si Velvoix pasa a la siguiente fase.',
-      ctaLabel: 'Planificar contacto',
+      ctaLabel: 'Planificar conversación',
       meta: {
         title: 'Enfoque piloto para señales asistenciales y seguimiento | Velvoix',
         description:

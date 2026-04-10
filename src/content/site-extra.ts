@@ -351,7 +351,7 @@ export const esContent: SiteContent = {
       'Velvoix ayuda a las organizaciones asistenciales a traducir señales en acciones claras, mejor priorización y seguimiento trazable.',
     ogTitle: 'Velvoix | Acción asistencial clara a partir de señales',
     ogDescription:
-      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué debe hacerse primero y cómo mantener un seguimiento trazable.',
+      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué debe hacerse primero y cómo mantener el seguimiento trazable.',
   },
   hero: {
     eyebrow: 'Velvoix',
@@ -359,7 +359,7 @@ export const esContent: SiteContent = {
     subtitle:
       'Muchas señales asistenciales llegan sin suficiente contexto. Eso obliga a los profesionales a decidir bajo presión qué es urgente y qué debe hacerse primero. Velvoix convierte una señal directamente en una acción asistencial clara con contexto, prioridad y seguimiento trazable.',
     supporting:
-      'Menos dudas, una priorización más clara y mejor reconstrucción posterior.',
+      'Menos dudas, una priorización más clara y una mejor reconstrucción posterior.',
     primaryCta: 'Explorar un piloto',
     primaryHref: '#pilot',
     secondaryCta: 'Ver el recorrido del producto',
@@ -374,7 +374,7 @@ export const esContent: SiteContent = {
     eyebrow: 'De un vistazo',
     title: 'De la alerta al seguimiento claro',
     description:
-      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué acción encaja y quién debe asumirla.',
+      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué acción tiene sentido y quién debe asumirla.',
     stages: [
       {
         label: 'Lo que entra',
@@ -384,12 +384,12 @@ export const esContent: SiteContent = {
       {
         label: 'Lo que añade Velvoix',
         title: 'Contexto, prioridad y acción recomendada',
-        description: 'Velvoix ayuda a ver antes qué es urgente y cuál debe ser el siguiente paso.',
+        description: 'Velvoix ayuda a ver antes qué es urgente y cuál debería ser el siguiente paso.',
       },
       {
         label: 'Lo que eso aporta',
         title: 'Seguimiento más sereno y más claro',
-        description: 'El estado, la responsabilidad y la continuidad siguen visibles sin añadir más carga interpretativa.',
+        description: 'El estado, la responsabilidad y la continuidad siguen visibles sin añadir más esfuerzo de interpretación.',
       },
     ],
   },
@@ -423,7 +423,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Qué hace Velvoix',
     title: 'Velvoix aporta estructura entre la señal y el seguimiento',
     description:
-      'Velvoix traduce señales en una acción operativa clara con contexto, priorización y seguimiento.',
+      'Velvoix traduce señales en un siguiente paso claro con contexto, priorización y seguimiento.',
     flow: ['Señal', 'Contexto', 'Priorización', 'Acción', 'Flujo', 'Escalada', 'Reconstrucción'],
     supporting:
       'Así el seguimiento resulta más claro, más consistente y más fácil de revisar.',
@@ -434,13 +434,13 @@ export const esContent: SiteContent = {
     description:
       'Velvoix combina la señal con contexto y priorización para que los equipos asistenciales vean antes qué ocurre y qué deben hacer a continuación.',
     panelLabel: 'De la señal a la acción',
-    panelSupporting: 'No solo una alerta, sino un siguiente paso claro con estado, responsabilidad y reconstrucción.',
+    panelSupporting: 'No solo una alerta, sino un siguiente paso claro con estado, responsabilidad y reconstrucción visibles.',
     steps: [
       { title: 'Entrada', description: 'Botón, voz u otra señal asistencial.' },
       { title: 'Contexto', description: 'Se tienen en cuenta el historial, el desencadenante y la situación.' },
       { title: 'Priorización', description: 'Se estructuran la urgencia y la explicación.' },
       { title: 'Acción', description: 'Se genera el siguiente paso claro para el equipo.' },
-      { title: 'Flujo', description: 'El seguimiento, la responsabilidad y el estado siguen siendo fáciles de gestionar.' },
+      { title: 'Flujo', description: 'El seguimiento, la responsabilidad y el estado siguen siendo fáciles de seguir.' },
       { title: 'Evaluación', description: 'La reconstrucción y la evaluación siguen siendo trazables.' },
     ],
     stepNotes: [
@@ -456,14 +456,14 @@ export const esContent: SiteContent = {
     eyebrow: 'Diferencia en la cadena',
     title: 'No de la alerta a la interpretación, sino de la señal al seguimiento claro',
     description:
-      'Los sistemas tradicionales suelen quedarse en la alerta. Velvoix añade contexto y priorización para que el seguimiento resulte más claro y más fácil de gestionar.',
+      'Los sistemas tradicionales suelen quedarse en la alerta. Velvoix añade contexto y priorización para que quede más claro qué debe hacerse después.',
     compareLabel: 'Comparación',
     outcomes: ['Menos carga interpretativa', 'Mejor priorización', 'Mejor reconstrucción'],
     traditionalTitle: 'Cadena tradicional',
     traditionalSteps: ['Señal', 'Alerta', 'Interpretación manual'],
     velvoixTitle: 'Cadena Velvoix',
     velvoixSteps: ['Señal', 'Contexto', 'Priorización', 'Acción', 'Flujo', 'Escalada', 'Reconstrucción'],
-    velvoixSupporting: 'Cada capa hace más manejables el seguimiento, la escalada y la evaluación.',
+    velvoixSupporting: 'Cada capa hace más claros el seguimiento, la escalada y la evaluación.',
     stepDetails: [
       {
         title: 'Señal',
@@ -479,7 +479,7 @@ export const esContent: SiteContent = {
       },
       {
         title: 'Acción',
-        description: 'La valoración se convierte en una acción clara para el estado, la responsabilidad y el siguiente paso.',
+        description: 'La valoración se convierte en una acción clara con estado, responsabilidad y siguiente paso.',
       },
       {
         title: 'Flujo',
@@ -503,7 +503,7 @@ export const esContent: SiteContent = {
     cards: [
       {
         title: 'No es solo otra alerta',
-        description: 'Velvoix va más allá de limitarse a avisar de que algo ha ocurrido.',
+        description: 'Velvoix no se limita a avisar de que algo ha ocurrido.',
       },
       {
         title: 'Prioridad más clara',
@@ -583,7 +583,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Piloto',
     title: 'Explore si Velvoix encaja en su práctica asistencial',
     description:
-      'Una primera exploración muestra si Velvoix aporta un seguimiento más claro, menos carga interpretativa y una mejor integración en sus procesos.',
+      'Una primera exploración muestra si Velvoix aporta un seguimiento más claro, menos esfuerzo de interpretación y una mejor integración en sus procesos.',
     points: [
       'Residencias y atención de larga duración',
       'Equipos que buscan un seguimiento más claro',
@@ -596,7 +596,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Contacto',
     title: 'Inicie una exploración que encaje con su situación',
     description:
-      'Elija la vía adecuada: exploración piloto, colaboración o una consulta empresarial.',
+      'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta empresarial.',
     reasonsLabel: 'Vías',
     inquiryTypes: {
       pilot: 'Exploración piloto',
@@ -605,25 +605,25 @@ export const esContent: SiteContent = {
     },
     reasons: [
       'Exploración piloto para organizaciones asistenciales',
-      'Colaboración para socios y despliegue',
+      'Colaboración, despliegue o integración',
       'Consulta empresarial sobre la plataforma o la planificación',
     ],
     directEmailNote: 'Para pilotos, colaboraciones y consultas empresariales.',
     routeContent: {
       pilot: {
-        helper: 'Elija esta vía para valorar si Velvoix aporta un seguimiento más claro, mejor priorización y encaje práctico en su entorno.',
+        helper: 'Elija esta vía para valorar si Velvoix aporta un seguimiento más claro, mejor priorización y una buena adaptación práctica a su entorno.',
         email: publicContactEmails.pilot,
         messagePlaceholder: 'Describa brevemente su organización, su contexto asistencial y qué desea evaluar en una exploración piloto.',
         submit: 'Enviar exploración piloto',
       },
       partnership: {
-        helper: 'Elija esta vía para encaje de socios, despliegue, integración o colaboración estratégica.',
+        helper: 'Elija esta vía para consultas sobre colaboración, despliegue, integración o coordinación estratégica.',
         email: publicContactEmails.partners,
-        messagePlaceholder: 'Describa brevemente su organización, su función y qué vía de colaboración o despliegue desea explorar.',
+        messagePlaceholder: 'Describa brevemente su organización, su función y qué tipo de colaboración o despliegue desea explorar.',
         submit: 'Enviar exploración de colaboración',
       },
       general: {
-        helper: 'Elija esta vía para una consulta empresarial sobre la plataforma, el contexto de uso o los siguientes pasos.',
+        helper: 'Elija esta vía para una consulta empresarial sobre la plataforma, su uso en la práctica o los siguientes pasos.',
         email: publicContactEmails.general,
         messagePlaceholder: 'Describa brevemente su consulta y qué contexto o calendario es relevante.',
         submit: 'Enviar consulta empresarial',
@@ -655,7 +655,7 @@ export const esContent: SiteContent = {
       'Se ha producido un error al enviar su mensaje. Inténtelo de nuevo o contacte con nosotros directamente.',
     directEmailLabel: 'Contacto directo',
     directEmailValue: publicContactEmails.general,
-    routeEmailLabel: 'Correo de la vía',
+    routeEmailLabel: 'Correo para esta vía',
   },
   footer: {
     brand: 'Velvoix',
