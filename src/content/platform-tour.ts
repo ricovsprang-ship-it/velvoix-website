@@ -103,7 +103,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Product Tour',
     title: 'Short product views of clear follow-up',
     description:
-      'Focused examples show how Velvoix makes clarity, follow-up and control visible.',
+      'Focused examples show how Velvoix brings clarity, follow-up and control together.',
     supporting:
       'Not marketing mockups, but a controlled view of the product screens that matter most in practice.',
     cta: 'Open product tour',
@@ -138,7 +138,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Produkttour',
     title: 'Kurze Produktansichten klarer Nachverfolgung',
     description:
-      'Gezielte Beispiele zeigen, wie Velvoix Klarheit, Nachverfolgung und Steuerbarkeit sichtbar macht.',
+      'Gezielte Beispiele zeigen, wie Velvoix Klarheit, Nachverfolgung und Kontrolle sichtbar macht.',
     supporting:
       'Keine Marketing-Mockups, sondern ein kontrollierter Einblick in die wichtigsten Produktschirme.',
     cta: 'Produkttour öffnen',
@@ -152,7 +152,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Weiter',
     railLabel: 'Bereiche der Produkttour',
     curatedViewsLabel: 'ausgewählte Ansichten',
-    interactionHint: 'Zum Zoomen mit zwei Fingern oder per Scrollen arbeiten, zum Verschieben ziehen, mit 0 zurücksetzen.',
+    interactionHint: 'Mit zwei Fingern oder dem Mausrad zoomen, zum Verschieben ziehen, mit 0 zurücksetzen.',
     slides: [
       { id: 'login', label: 'Start', title: 'Ruhiger Einstieg', text: 'Der Einstieg hält den Zugang ruhig und klar, damit Teams ohne zusätzliche Reibung in den Arbeitstag starten.', alt: 'Velvoix Login', ...slideFraming.login },
       { id: 'worklist', label: 'Arbeitsvorrat', title: 'Signale in einer steuerbaren Liste', text: 'Dringlichkeit, Status und Verantwortung bleiben zusammen sichtbar, damit offene Nachverfolgung nicht über einzelne Signale zerfällt.', alt: 'Velvoix Arbeitsvorrat', ...slideFraming.worklist },
@@ -173,7 +173,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     eyebrow: 'Recorrido del producto',
     title: 'Vistas breves del producto con seguimiento claro',
     description:
-      'Ejemplos concretos muestran cómo Velvoix hace visibles la claridad, la acción posterior y el control.',
+      'Ejemplos concretos muestran cómo Velvoix aporta claridad, seguimiento y control.',
     supporting:
       'No son maquetas de marketing, sino una vista controlada de las pantallas del producto que más importan en la práctica.',
     cta: 'Abrir recorrido',

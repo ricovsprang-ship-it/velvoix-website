@@ -16,7 +16,7 @@ export const deContent: SiteContent = {
       'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare Folgeaktionen, bessere Priorisierung und nachvollziehbare Nachverfolgung zu übersetzen.',
     ogTitle: 'Velvoix | Klare Pflegehandlung aus Signalen',
     ogDescription:
-      'Velvoix hilft Teams schneller zu sehen, was Aufmerksamkeit braucht, was zuerst geschehen muss und wie Nachverfolgung nachvollziehbar bleibt.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was zuerst zu tun ist und wie Nachverfolgung nachvollziehbar bleibt.',
   },
   hero: {
     eyebrow: 'Velvoix',
@@ -39,7 +39,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Auf einen Blick',
     title: 'Von der Meldung zur klaren Nachverfolgung',
     description:
-      'Velvoix hilft Teams schneller zu sehen, was Aufmerksamkeit braucht, welche Handlung passt und wer übernehmen soll.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welche Handlung sinnvoll ist und wer sie übernehmen sollte.',
     stages: [
       {
         label: 'Was hereinkommt',
@@ -167,8 +167,8 @@ export const deContent: SiteContent = {
       'Velvoix bleibt nicht bei der Meldung stehen, sondern hilft Teams bis hin zu einer klaren Handlung und nachvollziehbaren Nachverfolgung.',
     cards: [
       {
-        title: 'Nicht nur noch eine Meldung',
-        description: 'Velvoix geht weiter, als nur weiterzugeben, dass etwas passiert ist.',
+        title: 'Mehr als nur eine weitere Meldung',
+        description: 'Velvoix geht weiter, als nur zu melden, dass etwas passiert ist.',
       },
       {
         title: 'Klare Priorität',
@@ -236,7 +236,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Produkttour',
     title: 'Kurze Produktansichten klarer Nachverfolgung',
     description:
-      'Gezielte Beispiele zeigen, wie Velvoix Klarheit, Folgeaktion und Steuerbarkeit sichtbar macht.',
+      'Gezielte Beispiele zeigen, wie Velvoix Klarheit, Nachverfolgung und Kontrolle sichtbar macht.',
     cards: [
       { title: 'Meldungsliste', caption: 'Dringlichkeit, Bewohnerin oder Bewohner und Kernsignal bleiben in einer ruhigen Arbeitsliste direkt erfassbar.', image: '/products/proof-operations.png', tone: 'Operations' },
       { title: 'Meldungsdetail', caption: 'Warum und empfohlene Maßnahme werden als nachvollziehbare Begründung sichtbar.', image: '/products/proof-explainability.png', tone: 'Explainability' },
@@ -276,7 +276,7 @@ export const deContent: SiteContent = {
     directEmailNote: 'Für Piloten, Zusammenarbeit und geschäftliche Fragen.',
     routeContent: {
       pilot: {
-        helper: 'Wählen Sie diesen Weg, um zu prüfen, ob Velvoix in Ihrer Umgebung zu klarerer Nachverfolgung, besserer Priorisierung und praktischer Einpassung beiträgt.',
+        helper: 'Wählen Sie diesen Weg, um zu prüfen, ob Velvoix in Ihrer Umgebung für klarere Nachverfolgung, bessere Priorisierung und eine gute praktische Passung sorgt.',
         email: publicContactEmails.pilot,
         messagePlaceholder: 'Beschreiben Sie kurz Ihre Organisation, Ihren Pflegekontext und was Sie in einer Piloterkundung prüfen möchten.',
         submit: 'Piloterkundung senden',
@@ -384,7 +384,7 @@ export const esContent: SiteContent = {
       {
         label: 'Lo que añade Velvoix',
         title: 'Contexto, prioridad y acción recomendada',
-        description: 'Velvoix ayuda a hacer visible antes qué es urgente y cuál es el siguiente paso adecuado.',
+        description: 'Velvoix ayuda a ver antes qué es urgente y cuál debe ser el siguiente paso.',
       },
       {
         label: 'Lo que eso aporta',
@@ -405,7 +405,7 @@ export const esContent: SiteContent = {
       explainabilitySupporting: 'Basado en reglas de triaje y en el contexto de la alerta.',
       explainabilityItems: [
         { label: 'Señal principal', value: 'Solicitud de ayuda repetida' },
-        { label: 'Observación clave', value: 'Es probable que haga falta una nueva actuación.' },
+        { label: 'Observación clave', value: 'Es probable que sea necesaria una nueva intervención.' },
         { label: 'Base del triaje', value: 'Repetición en poco tiempo y contexto de esta alerta.' },
       ],
       followUpLabel: 'Seguimiento práctico',
@@ -571,7 +571,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Recorrido del producto',
     title: 'Vistas breves del producto con seguimiento claro',
     description:
-      'Ejemplos concretos muestran cómo Velvoix hace visibles la claridad, la acción posterior y el control.',
+      'Ejemplos concretos muestran cómo Velvoix aporta claridad, seguimiento y control.',
     cards: [
       { title: 'Lista de alertas', caption: 'La urgencia, el residente y la señal principal se mantienen visibles en una lista de trabajo tranquila.', image: '/products/proof-operations.png', tone: 'Operations' },
       { title: 'Detalle de la alerta', caption: 'El porqué y la acción recomendada se muestran como una justificación comprensible.', image: '/products/proof-explainability.png', tone: 'Explainability' },
@@ -583,7 +583,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Piloto',
     title: 'Explore si Velvoix encaja en su práctica asistencial',
     description:
-      'Una primera exploración muestra si Velvoix ayuda a lograr un seguimiento más claro, menos carga interpretativa y una mejor integración en sus procesos.',
+      'Una primera exploración muestra si Velvoix aporta un seguimiento más claro, menos carga interpretativa y una mejor integración en sus procesos.',
     points: [
       'Residencias y atención de larga duración',
       'Equipos que buscan un seguimiento más claro',

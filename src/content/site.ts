@@ -654,7 +654,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'What Velvoix adds',
           title: 'Context, priority and recommended action',
           description:
-            'Velvoix helps make visible sooner what is urgent and which next step fits.',
+            'Velvoix helps teams see sooner what is urgent and what the right next step is.',
         },
         {
           label: 'What that delivers',
@@ -676,7 +676,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         explainabilitySupporting: 'Based on triage rules and alert context.',
         explainabilityItems: [
           { label: 'Primary signal', value: 'Repeated help request' },
-          { label: 'Core observation', value: 'Further follow-up is likely needed.' },
+          { label: 'Core observation', value: 'Further follow-up will likely be needed.' },
           { label: 'Triage basis', value: 'Repeat trigger in a short interval and the context of this alert.' },
         ],
         followUpLabel: 'Practical follow-up',
@@ -703,7 +703,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'How it works',
       title: 'From input to workable follow-up',
       description:
-        'Velvoix does not only ingest signals, but enriches them with context, triage and actionable event flow, so care teams understand faster what needs attention and what the next step should be.',
+        'Velvoix does more than receive signals. It adds context, triage and a clear operational flow, so care teams understand faster what needs attention and what should happen next.',
       panelLabel: 'Operational flow',
       panelSupporting: 'From input to context, triage and workable follow-up.',
       steps: [
@@ -736,7 +736,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Input enters in a controlled way',
         'Context enriches interpretation',
         'Triage makes urgency explainable',
-        'Event shaping makes follow-up workable',
+        'The event gives follow-up a clear structure',
         'Workflow keeps status manageable',
         'Audit keeps reconstruction intact',
       ],
@@ -873,7 +873,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Product tour',
       title: 'Short product views of clear follow-up',
       description:
-        'Focused examples show how Velvoix makes clarity, follow-up and control visible.',
+        'Focused examples show how Velvoix brings clarity, follow-up and control together.',
       cards: [
         {
           title: 'Alert list',
@@ -977,7 +977,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
       directEmailValue: publicContactEmails.general,
-      routeEmailLabel: 'Route email',
+      routeEmailLabel: 'Route email address',
     },
     footer: {
       brand: 'Velvoix',
