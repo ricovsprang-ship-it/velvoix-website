@@ -58,9 +58,9 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Pilotvalidatie',
       title: 'Wat een eerste pilot in de praktijk moet bewijzen',
       description:
-        'Een pilot maakt zichtbaar of Velvoix in jullie setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
+        'Een pilot maakt zichtbaar of Velvoix in uw setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
       note:
-        'Praktijkuitkomsten hangen af van teambezetting, processen, devices en bestaande systemen. Juist daarom werkt een gerichte pilot beter dan een algemene demo.',
+        'Praktijkuitkomsten hangen af van teambezetting, processen, apparaten en bestaande systemen. Juist daarom werkt een gerichte pilot beter dan een algemene demo.',
       cards: [
         {
           title: 'Sneller zien wat aandacht vraagt',
@@ -91,7 +91,7 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       description:
         'A pilot shows whether Velvoix really helps your setting prioritise faster, follow up more clearly and reconstruct events more effectively.',
       note:
-        'Practical outcomes depend on staffing, processes, devices and existing systems. That is why a targeted pilot is more useful than a generic demo.',
+        'Practical outcomes depend on staffing, processes, equipment and existing systems. That is why a targeted pilot is more useful than a generic demo.',
       cards: [
         {
           title: 'Seeing faster what needs attention',
@@ -160,8 +160,8 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
           description: 'Qué señales llevan antes a un seguimiento claro y dónde la explicabilidad cambia decisiones.',
         },
         {
-          title: 'Titularidad gobernable',
-          description: 'Cómo estado, titularidad y escalada reducen ruido de interpretación en la operación diaria.',
+          title: 'Responsabilidad clara',
+          description: 'Cómo el estado, la responsabilidad y la escalada reducen el ruido de interpretación en la operación diaria.',
         },
         {
           title: 'Reconstrucción trazable',
@@ -232,7 +232,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ],
       ctaTitle: 'Bespreek uitlegbare triage in een pilot',
       ctaBody:
-        'Gebruik een eerste verkenning om te toetsen welke signalen in jullie setting vooral baat hebben bij context en uitlegbare triage.',
+        'Gebruik een eerste verkenning om te toetsen welke signalen in uw setting vooral baat hebben bij context en uitlegbare triage.',
       ctaLabel: 'Start pilotverkenning',
       meta: {
         title: 'Uitlegbare zorgtriage voor zorgsignalen | Velvoix',
@@ -287,9 +287,9 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           ],
         },
       ],
-      ctaTitle: 'Verken workflow en reconstructie in jullie setting',
+      ctaTitle: 'Verken workflow en reconstructie in uw setting',
       ctaBody:
-        'Gebruik een pilot om te beoordelen hoe statusverloop, escalatie en reconstructie in jullie workflow het meeste opleveren.',
+        'Gebruik een pilot om te beoordelen hoe statusverloop, escalatie en reconstructie in uw workflow het meeste opleveren.',
       ctaLabel: 'Bespreek samenwerkingsroute',
       meta: {
         title: 'Zorgworkflow, escalatie en reconstructie | Velvoix',
@@ -313,7 +313,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'Een eerste pilot moet scherp maken wat je wilt valideren, welke teams meedoen en hoe vervolgkeuzes worden onderbouwd.',
       points: [
         'Welke vragen een eerste pilot moet beantwoorden',
-        'Welke teams, devices en processen je meeneemt',
+        'Welke teams, apparaten en processen je meeneemt',
         'Hoe je uitkomst en vervolg bepaalt',
       ],
       sections: [
@@ -327,7 +327,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Welke setting je meeneemt',
           paragraphs: [
-            'De waarde van een pilot hangt sterk af van de gekozen setting: type signalen, teambezetting, devices, processen en escalatielijnen.',
+            'De waarde van een pilot hangt sterk af van de gekozen setting: type signalen, teambezetting, apparaten, processen en escalatielijnen.',
             'Juist daarom is het verstandig om pilotdoelen vooraf aan een concrete zorgcontext te koppelen.',
           ],
           bullets: [
@@ -346,7 +346,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ],
       ctaTitle: 'Gebruik de pilot om echte fit te beoordelen',
       ctaBody:
-        'Bespreek vooraf welke signalen, teams en uitkomsten in jullie setting bepalend zijn voor een vervolgroute.',
+        'Bespreek vooraf welke signalen, teams en uitkomsten in uw setting bepalend zijn voor een vervolgroute.',
       ctaLabel: 'Plan een verkenning',
       meta: {
         title: 'Pilotaanpak voor zorgsignalen en opvolging | Velvoix',
@@ -491,7 +491,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'A first pilot should clarify what you want to validate, which teams participate and how follow-up decisions will be grounded.',
       points: [
         'Which questions a first pilot should answer',
-        'Which teams, devices and processes to include',
+        'Which teams, equipment and processes to include',
         'How to evaluate outcomes and next steps honestly',
       ],
       sections: [
@@ -505,7 +505,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Which setting to include',
           paragraphs: [
-            'The value of a pilot depends heavily on the chosen setting: signal types, staffing, devices, processes and escalation lines.',
+            'The value of a pilot depends heavily on the chosen setting: signal types, staffing, equipment, processes and escalation lines.',
             'That is why pilot goals should be tied to a concrete care context from the start.',
           ],
           bullets: [
@@ -542,10 +542,10 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'erklaerbare-pflege-triage',
       title: 'Erklärbare Pflege-Triage für Pflegesignale',
       cardDescription:
-        'Warum Kontext und Priorisierung nötig sind, um aus einem eingehenden Signal eine klare und begründbare Folgeaktion zu machen.',
+        'Warum Kontext und Priorisierung nötig sind, um aus einem eingehenden Signal einen klaren und begründbaren nächsten Schritt zu machen.',
       eyebrow: 'Vertiefung',
       intro:
-        'Ein eingehendes Pflegesignal wird erst dann praktikabel, wenn Teams verstehen, warum es Aufmerksamkeit braucht, wie dringend es ist und welche Folgeaktion dazu passt.',
+        'Ein eingehendes Pflegesignal wird erst dann praktikabel, wenn Teams verstehen, warum es Aufmerksamkeit braucht, wie dringend es ist und welcher nächste Schritt dazu passt.',
       summary:
         'Erklärbare Triage bedeutet nicht nur Priorität, sondern nachvollziehbare Einordnung im Pflegekontext.',
       points: [
@@ -570,7 +570,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Wie Kontext und Triage zusammenarbeiten',
           paragraphs: [
             'Velvoix verbindet eingehende Signale mit Ereigniskontext, Historie und operativer Logik. Dadurch wird Triage mehr als nur eine Farbe oder ein Prioritätslabel.',
-            'Das Ergebnis ist eine Folgeaktion, die sich in Teambesprechungen, Qualitätsgesprächen und im Pflegealltag besser vertreten lässt.',
+            'Das Ergebnis ist ein nächster Schritt, der sich in Teambesprechungen, Qualitätsgesprächen und im Pflegealltag besser vertreten lässt.',
           ],
           bullets: [
             'Historie und Auslöser fließen in die Bewertung ein',
@@ -582,7 +582,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Was Teams davon praktisch haben',
           paragraphs: [
             'Erklärbare Triage reduziert Interpretationsrauschen und hilft Teams schneller zu erkennen, was jetzt Aufmerksamkeit braucht.',
-            'Gleichzeitig entsteht eine bessere Grundlage für Auswertung, weil Signale und Folgeaktionen in derselben Logik verbunden bleiben.',
+            'Gleichzeitig entsteht eine bessere Grundlage für Auswertung, weil Signale und nächste Schritte in derselben Logik verbunden bleiben.',
           ],
         },
       ],
@@ -593,7 +593,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       meta: {
         title: 'Erklärbare Pflege-Triage für Pflegesignale | Velvoix',
         description:
-          'Lesen Sie, wie erklärbare Pflege-Triage Pflegesignale mit Kontext, Dringlichkeit und begründbarer Folgeaktion übersetzt.',
+          'Lesen Sie, wie erklärbare Pflege-Triage Pflegesignale mit Kontext, Dringlichkeit und einem begründbaren nächsten Schritt übersetzt.',
         ogTitle: 'Erklärbare Pflege-Triage für Pflegesignale | Velvoix',
         ogDescription:
           'Velvoix zeigt, wie Kontext und Triage Pflegesignale in klare und begründbare Nachverfolgung übersetzen.',
@@ -627,7 +627,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Warum Eskalation und Status zusammengehören',
           paragraphs: [
             'Wenn Status von Verantwortung und Eskalation getrennt bleibt, enden Teams trotzdem wieder mit losen Meldungen und zusätzlichen Interpretationsrunden.',
-            'Wenn Eskalation Teil derselben Linie bleibt, wird klarer, wann Risiko steigt, wann Folgeaktionen stocken und wer reagieren muss.',
+            'Wenn Eskalation Teil derselben Linie bleibt, wird klarer, wann Risiko steigt, wann nächste Schritte stocken und wer reagieren muss.',
           ],
           bullets: [
             'Verantwortung bleibt sichtbar',

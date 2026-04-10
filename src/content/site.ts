@@ -228,10 +228,10 @@ export const siteContent: Record<Locale, SiteContent> = {
     meta: {
       title: 'Velvoix | Van signaal naar duidelijke zorgactie',
       description:
-        'Velvoix helpt zorgorganisaties zorgsignalen vertalen naar duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
+        'Velvoix helpt zorgorganisaties zorgsignalen te vertalen naar duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
       ogTitle: 'Velvoix | Duidelijke zorgactie uit signalen',
       ogDescription:
-        'Velvoix helpt teams sneller zien wat aandacht vraagt, wat eerst moet gebeuren en hoe opvolging herleidbaar blijft.',
+        'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat eerst moet gebeuren en hoe opvolging herleidbaar blijft.',
     },
     hero: {
       eyebrow: 'Velvoix',
@@ -254,7 +254,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'In een oogopslag',
       title: 'Van melding naar duidelijke opvolging',
       description:
-        'Velvoix helpt teams sneller zien wat aandacht vraagt, wat de juiste actie is en wie moet oppakken.',
+        'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat de juiste actie is en wie moet oppakken.',
       stages: [
         {
           label: 'Wat er binnenkomt',
@@ -266,7 +266,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'Wat Velvoix toevoegt',
           title: 'Context, prioriteit en aanbevolen actie',
           description:
-            'Velvoix helpt sneller zichtbaar maken wat urgent is en welke volgende stap past.',
+            'Velvoix helpt sneller zichtbaar te maken wat urgent is en welke volgende stap past.',
         },
         {
           label: 'Wat dat oplevert',
@@ -299,7 +299,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: 'SLA-status', value: 'SLA kritisch' },
           { label: 'Verantwoordelijke', value: 'Nog niet toegewezen' },
         ],
-        followUpAction: 'Pak op',
+        followUpAction: 'Pak melding op',
       },
     },
     flow: {
@@ -489,7 +489,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       cards: [
         {
           title: 'Meldingenlijst',
-          caption: 'Urgentie, bewoner en kernsignaal blijven direct scanbaar in een rustige worklist.',
+          caption: 'Urgentie, bewoner en kernsignaal blijven direct scanbaar in een rustige werklijst.',
           image: '/products/proof-operations.png',
           tone: 'Operations',
         },
@@ -507,7 +507,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           title: 'Governance en profielen',
-          caption: 'Governance blijft productmatig beheerst via profielkaarten en triagebeheer.',
+          caption: 'Governance blijft beheersbaar via profielkaarten en triagebeheer.',
           image: '/products/proof-governance.png',
           tone: 'Governance',
         },
@@ -515,9 +515,9 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     pilot: {
       eyebrow: 'Pilot',
-      title: 'Verken of Velvoix past bij jullie zorgpraktijk',
+      title: 'Verken of Velvoix past bij uw zorgpraktijk',
       description:
-        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in jullie processen.',
+        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in uw processen.',
       points: [
         'Verpleeghuizen en langdurige zorg',
         'Teams die meer duidelijkheid in opvolging willen',
@@ -528,7 +528,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'Start een verkenning die past bij jullie situatie',
+      title: 'Start een verkenning die past bij uw situatie',
       description:
         'Kies de route die past: pilot, samenwerking of een zakelijke vraag.',
       reasonsLabel: 'Routes',
@@ -545,7 +545,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       directEmailNote: 'Voor pilots, samenwerking en zakelijke vragen.',
       routeContent: {
         pilot: {
-          helper: 'Kies deze route om te beoordelen of Velvoix in jullie setting helpt bij duidelijkere opvolging, prioritering en praktische inpasbaarheid.',
+          helper: 'Kies deze route om te beoordelen of Velvoix in uw setting helpt bij duidelijkere opvolging, prioritering en praktische inpasbaarheid.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
           submit: 'Verstuur pilotverkenning',
@@ -589,7 +589,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Er ging iets mis bij het versturen van uw bericht. Probeer het opnieuw of neem rechtstreeks contact op.',
       directEmailLabel: 'Rechtstreeks contact',
       directEmailValue: publicContactEmails.general,
-      routeEmailLabel: 'Route e-mailadres',
+      routeEmailLabel: 'E-mailadres voor deze route',
     },
     footer: {
       brand: 'Velvoix',
@@ -795,7 +795,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Not just another alert',
           description:
-            'Velvoix goes further than simply passing on that something happened.',
+            'Velvoix goes beyond simply flagging that something happened.',
         },
         {
           title: 'Clearer priority',
@@ -803,7 +803,7 @@ export const siteContent: Record<Locale, SiteContent> = {
             'Teams see faster what needs attention and what should happen first.',
         },
         {
-          title: 'Follow-up stays visible in one flow',
+          title: 'Follow-up stays visible in one place',
           description:
             'Status, responsibility and next steps stay visible together for the care team and for review.',
         },
@@ -977,7 +977,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Something went wrong while sending your message. Please try again or contact us directly.',
       directEmailLabel: 'Direct contact',
       directEmailValue: publicContactEmails.general,
-      routeEmailLabel: 'Route email address',
+      routeEmailLabel: 'Email for this route',
     },
     footer: {
       brand: 'Velvoix',

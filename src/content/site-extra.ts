@@ -13,7 +13,7 @@ export const deContent: SiteContent = {
   meta: {
     title: 'Velvoix | Vom Signal zur klaren Handlung in der Pflege',
     description:
-      'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare Folgeaktionen, bessere Priorisierung und nachvollziehbare Nachverfolgung zu übersetzen.',
+      'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare nächste Schritte, bessere Priorisierung und nachvollziehbare Nachverfolgung zu übersetzen.',
     ogTitle: 'Velvoix | Klare Pflegehandlung aus Signalen',
     ogDescription:
       'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was zuerst zu tun ist und wie Nachverfolgung nachvollziehbar bleibt.',
@@ -22,7 +22,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Velvoix',
     title: 'Vom Signal zur klaren Handlung in der Pflege',
     subtitle:
-      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal unmittelbar eine klare Folgeaktion mit Kontext, Priorität und nachvollziehbarer Nachverfolgung.',
+      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal direkt eine klare nächste Handlung mit Kontext, Priorität und nachvollziehbarer Nachverfolgung.',
     supporting:
       'Weniger Zweifel, klarere Priorisierung und bessere Rekonstruktion im Nachhinein.',
     primaryCta: 'Pilot erkunden',
@@ -70,10 +70,10 @@ export const deContent: SiteContent = {
       explainabilitySupporting: 'Basierend auf Triage-Regeln und dem Kontext der Meldung.',
       explainabilityItems: [
         { label: 'Primäres Signal', value: 'Wiederholter Hilferuf' },
-        { label: 'Kernbeobachtung', value: 'Eine erneute Folgeaktion ist wahrscheinlich nötig.' },
+        { label: 'Kernbeobachtung', value: 'Ein weiterer Schritt ist wahrscheinlich nötig.' },
         { label: 'Triage-Basis', value: 'Wiederholung in kurzer Zeit und Kontext dieser Meldung.' },
       ],
-      followUpLabel: 'Praktische Folgeaktion',
+      followUpLabel: 'Praktisches Vorgehen',
       followUpTitle: 'Empfohlene Maßnahme',
       followUpSummary: 'Gehen Sie direkt zur Bewohnerin oder zum Bewohner und prüfen Sie die Situation.',
       followUpItems: [
@@ -88,7 +88,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Was Velvoix tut',
     title: 'Velvoix bringt Struktur zwischen Signal und Nachverfolgung',
     description:
-      'Velvoix übersetzt Signale in eine klare operative Folgeaktion mit Kontext, Priorisierung und Nachverfolgung.',
+      'Velvoix übersetzt Signale in einen klaren operativen Ablauf mit Kontext, Priorisierung und Nachverfolgung.',
     flow: ['Signal', 'Kontext', 'Priorisierung', 'Handlung', 'Workflow', 'Eskalation', 'Rekonstruktion'],
     supporting:
       'So wird Nachverfolgung übersichtlicher, konsistenter und besser nachvollziehbar.',
@@ -144,7 +144,7 @@ export const deContent: SiteContent = {
       },
       {
         title: 'Handlung',
-        description: 'Die Auswertung wird zu einer klaren Folgeaktion für Status, Verantwortung und nächsten Schritt.',
+        description: 'Die Auswertung wird zu einem klaren Arbeitskontext für Status, Verantwortung und nächsten Schritt.',
       },
       {
         title: 'Workflow',
@@ -168,14 +168,14 @@ export const deContent: SiteContent = {
     cards: [
       {
         title: 'Mehr als nur eine weitere Meldung',
-        description: 'Velvoix geht weiter, als nur zu melden, dass etwas passiert ist.',
+        description: 'Velvoix geht über den bloßen Hinweis hinaus, dass etwas passiert ist.',
       },
       {
         title: 'Klare Priorität',
         description: 'Teams sehen schneller, was Aufmerksamkeit braucht und was zuerst geschehen muss.',
       },
       {
-        title: 'Nachverfolgung bleibt in einer Linie sichtbar',
+        title: 'Nachverfolgung bleibt in einem klaren Ablauf sichtbar',
         description: 'Status, Verantwortung und nächster Schritt bleiben für Team und Auswertung zusammen sichtbar.',
       },
     ],
@@ -206,7 +206,7 @@ export const deContent: SiteContent = {
         title: 'Klarer Status als Ausgangspunkt',
         description:
           'Status, Erklärung und Nachverfolgung bleiben zusammen lesbar, sodass Teams sich nicht auf verstreute Interpretationen verlassen müssen.',
-        effect: 'Ein klares gemeinsames Ausgangsbild für die Folgeaktion.',
+        effect: 'Ein klares gemeinsames Ausgangsbild für den nächsten Schritt.',
       },
       {
         index: '04',
@@ -225,7 +225,7 @@ export const deContent: SiteContent = {
         index: '06',
         title: 'In der Praxis steuerbar',
         description:
-          'Verhalten, Folgeaktion und Rückblick bleiben steuerbar, damit Teams kontrolliert reagieren können, ohne zusätzlichen Arbeitslärm.',
+          'Verhalten, Nachverfolgung und Rückblick bleiben steuerbar, damit Teams kontrolliert reagieren können, ohne zusätzlichen Arbeitslärm.',
         effect: 'Steuerbarkeit als Teil der täglichen Praxis.',
       },
     ],
@@ -320,7 +320,7 @@ export const deContent: SiteContent = {
       'Beim Senden Ihrer Nachricht ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
     directEmailLabel: 'Direkter Kontakt',
     directEmailValue: publicContactEmails.general,
-    routeEmailLabel: 'E-Mail-Adresse der Route',
+    routeEmailLabel: 'E-Mail-Adresse für diesen Weg',
   },
   footer: {
     brand: 'Velvoix',
@@ -440,7 +440,7 @@ export const esContent: SiteContent = {
       { title: 'Contexto', description: 'Se tienen en cuenta el historial, el desencadenante y la situación.' },
       { title: 'Priorización', description: 'Se estructuran la urgencia y la explicación.' },
       { title: 'Acción', description: 'Se genera el siguiente paso claro para el equipo.' },
-      { title: 'Flujo', description: 'El seguimiento, la responsabilidad y el estado siguen siendo gobernables.' },
+      { title: 'Flujo', description: 'El seguimiento, la responsabilidad y el estado siguen siendo fáciles de gestionar.' },
       { title: 'Evaluación', description: 'La reconstrucción y la evaluación siguen siendo trazables.' },
     ],
     stepNotes: [
@@ -456,14 +456,14 @@ export const esContent: SiteContent = {
     eyebrow: 'Diferencia en la cadena',
     title: 'No de la alerta a la interpretación, sino de la señal al seguimiento claro',
     description:
-      'Los sistemas tradicionales suelen quedarse en la alerta. Velvoix añade contexto y priorización para que el seguimiento resulte más claro y más gobernable.',
+      'Los sistemas tradicionales suelen quedarse en la alerta. Velvoix añade contexto y priorización para que el seguimiento resulte más claro y más fácil de gestionar.',
     compareLabel: 'Comparación',
     outcomes: ['Menos carga interpretativa', 'Mejor priorización', 'Mejor reconstrucción'],
     traditionalTitle: 'Cadena tradicional',
     traditionalSteps: ['Señal', 'Alerta', 'Interpretación manual'],
     velvoixTitle: 'Cadena Velvoix',
     velvoixSteps: ['Señal', 'Contexto', 'Priorización', 'Acción', 'Flujo', 'Escalada', 'Reconstrucción'],
-    velvoixSupporting: 'Cada capa hace más gobernables el seguimiento, la escalada y la evaluación.',
+    velvoixSupporting: 'Cada capa hace más manejables el seguimiento, la escalada y la evaluación.',
     stepDetails: [
       {
         title: 'Señal',
@@ -483,7 +483,7 @@ export const esContent: SiteContent = {
       },
       {
         title: 'Flujo',
-        description: 'El seguimiento se vuelve gobernable mediante acciones, evolución del estado y responsabilidad clara.',
+        description: 'El seguimiento se vuelve más manejable mediante acciones, evolución del estado y responsabilidad clara.',
       },
       {
         title: 'Escalada',
@@ -520,7 +520,7 @@ export const esContent: SiteContent = {
     title: 'Diseñado para situaciones asistenciales en las que coinciden presión y dependencias',
     description:
       'Velvoix sigue siendo útil cuando hacen falta rapidez, claridad y trazabilidad. Incluso cuando no todo en la cadena responde de forma ideal, sigue siendo visible qué ocurre y cuál es el siguiente paso.',
-    capabilities: ['Estado claro', 'Fallback honesto', 'Seguimiento trazable', 'Acceso limitado', 'Comportamiento gobernable', 'Útil bajo presión'],
+    capabilities: ['Estado claro', 'Fallback honesto', 'Seguimiento trazable', 'Acceso limitado', 'Comportamiento controlable', 'Útil bajo presión'],
     rows: [
       {
         index: '01',
@@ -560,7 +560,7 @@ export const esContent: SiteContent = {
         index: '06',
         title: 'Gobernable en la práctica',
         description:
-          'El comportamiento, la acción posterior y la revisión siguen siendo gobernables para que los equipos puedan responder de forma controlada sin añadir ruido operativo.',
+          'El comportamiento, la acción posterior y la revisión siguen siendo manejables para que los equipos puedan responder de forma controlada sin añadir ruido operativo.',
         effect: 'Gobernabilidad como parte de la práctica diaria.',
       },
     ],
@@ -575,7 +575,7 @@ export const esContent: SiteContent = {
     cards: [
       { title: 'Lista de alertas', caption: 'La urgencia, el residente y la señal principal se mantienen visibles en una lista de trabajo tranquila.', image: '/products/proof-operations.png', tone: 'Operations' },
       { title: 'Detalle de la alerta', caption: 'El porqué y la acción recomendada se muestran como una justificación comprensible.', image: '/products/proof-explainability.png', tone: 'Explainability' },
-      { title: 'Vinculación y control', caption: 'El control operativo sigue siendo sereno y gobernable en la capa de gestión.', image: '/products/proof-control.png', tone: 'Control' },
+      { title: 'Vinculación y control', caption: 'El control operativo sigue siendo sereno y manejable en la capa de gestión.', image: '/products/proof-control.png', tone: 'Control' },
       { title: 'Gobernanza y perfiles', caption: 'La gobernanza se mantiene controlada mediante perfiles y gestión de la priorización.', image: '/products/proof-governance.png', tone: 'Governance' },
     ],
   },
