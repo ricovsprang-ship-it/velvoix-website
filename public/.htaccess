@@ -12,6 +12,15 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} ^www\.velvoix\.com$ [NC]
 RewriteRule ^ https://velvoix.com%{REQUEST_URI} [R=301,L]
 
+<IfModule mod_headers.c>
+  # Keep HTML and PHP responses fresh so locale pages cannot get stuck on stale cached markup.
+  <FilesMatch "\.(?:html?|php)$">
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+  </FilesMatch>
+</IfModule>
+
 <Files ".contact-mailer-config.php">
   Require all denied
 </Files>
