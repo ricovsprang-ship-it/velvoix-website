@@ -1,6 +1,6 @@
 # Velvoix Website
 
-Publieke, tweetalige one-page website voor `velvoix.com`.
+Publieke, meertalige one-page website voor `velvoix.com`.
 
 Stack:
 - Astro
@@ -10,6 +10,8 @@ Stack:
 Routes:
 - `/` Nederlands
 - `/en/` English
+- `/de/` Deutsch
+- `/es/` Español
 
 ## Lokaal starten
 
@@ -29,6 +31,36 @@ De statische output staat daarna in:
 ```text
 dist/
 ```
+
+## Locale route smoke-check
+
+Om snel te detecteren of een locale-route per ongeluk de verkeerde taalvariant serveert, staat er een kleine smoke-check op de build-output.
+
+Deze check valideert voor:
+- `/`
+- `/en/`
+- `/de/`
+- `/es/`
+
+Per route controleert de smoke-check:
+- `html lang`
+- `<title>`
+- hero `<h1>`
+- stabiele locale-markers in de navigatie
+
+Lokaal draaien:
+
+```sh
+npm run verify:locales
+```
+
+Alleen de guard draaien op bestaande build-output:
+
+```sh
+npm run smoke:locales
+```
+
+De check faalt expliciet als bijvoorbeeld `/de/` Nederlandse hero-content of andere locale-markers bevat.
 
 ## cPanel deployment
 

@@ -8,6 +8,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "smoke:locales": "node scripts/locale-route-smoke.mjs",
+    "verify:locales": "npm run build && npm run smoke:locales",
     "preview": "astro preview",
     "astro": "astro"
   },
