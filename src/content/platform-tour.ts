@@ -65,7 +65,7 @@ const slideFraming = {
   'facility-linking': { image: '/products/platformtour/facility-linking.webp', ...defaultFraming },
   'access-control': { image: '/products/platformtour/access-control.webp', ...defaultFraming },
   'audit-log': { image: '/products/platformtour/audit-log.webp', ...defaultFraming },
-  'mobile-summary': { image: '/products/platformtour/mobile-care-collage-plain.png', ...defaultFraming },
+  'mobile-summary': { image: '/products/platformtour/mobile-care-collage-plain.webp', ...defaultFraming },
 } as const;
 
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
