@@ -1,6 +1,6 @@
 import type { Locale } from './site';
 
-export type ResourceLocale = 'nl' | 'en';
+export type ResourceLocale = 'nl' | 'en' | 'de' | 'es';
 export type ResourceId = 'explainable-triage' | 'workflow-reconstruction' | 'pilot-readiness';
 
 export interface ResourceMetaContent {
@@ -140,10 +140,10 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
     },
     hub: {
       eyebrow: 'Vertiefende Seiten',
-      title: 'Weitere Kontextseiten folgen',
+      title: 'Mehr Kontext für Entscheidungsträger und Teams',
       description:
-        'Für Deutsch ergänzen wir die vertiefenden Ressourcen im nächsten Schritt. Die Pilotvalidierung steht bereits im Vordergrund.',
-      linkLabel: 'Read page',
+        'Drei vertiefende Seiten dazu, wie Velvoix Pflegesignale in klare Nachverfolgung, bessere Priorisierung und nachvollziehbare Rekonstruktion übersetzt.',
+      linkLabel: 'Seite lesen',
     },
   },
   es: {
@@ -171,10 +171,10 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
     },
     hub: {
       eyebrow: 'Lecturas complementarias',
-      title: 'Más recursos llegarán después',
+      title: 'Más contexto para responsables y equipos',
       description:
-        'Para español añadiremos las páginas de profundidad en una siguiente iteración. Por ahora priorizamos la capa de validación piloto.',
-      linkLabel: 'Read page',
+        'Tres páginas de profundidad sobre cómo Velvoix ayuda a traducir señales asistenciales en un seguimiento claro, mejor priorización y reconstrucción trazable.',
+      linkLabel: 'Leer página',
     },
   },
 };
@@ -536,10 +536,366 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       },
     },
   ],
+  de: [
+    {
+      id: 'explainable-triage',
+      slug: 'erklaerbare-pflege-triage',
+      title: 'Erklärbare Pflege-Triage für Pflegesignale',
+      cardDescription:
+        'Warum Kontext und Priorisierung nötig sind, um aus einem eingehenden Signal eine klare und begründbare Folgeaktion zu machen.',
+      eyebrow: 'Vertiefung',
+      intro:
+        'Ein eingehendes Pflegesignal wird erst dann praktikabel, wenn Teams verstehen, warum es Aufmerksamkeit braucht, wie dringend es ist und welche Folgeaktion dazu passt.',
+      summary:
+        'Erklärbare Triage bedeutet nicht nur Priorität, sondern nachvollziehbare Einordnung im Pflegekontext.',
+      points: [
+        'Warum ein Hinweis ohne Kontext zu wenig sagt',
+        'Wie Triage und Ereigniskontext sich gegenseitig verstärken',
+        'Welchen operativen Nutzen Teams dadurch gewinnen',
+      ],
+      sections: [
+        {
+          title: 'Warum Meldungen allein nicht ausreichen',
+          paragraphs: [
+            'Viele traditionelle Umgebungen erfassen zwar, dass etwas passiert ist, überlassen die eigentliche Einordnung aber dem Team.',
+            'Das verlangsamt die Nachverfolgung und macht es schwerer zu erklären, warum ein Signal sofortiges Handeln erforderte und ein anderes nicht.',
+          ],
+          bullets: [
+            'Ein Signal ohne Kontext sagt wenig über Dringlichkeit aus',
+            'Teams verlieren Zeit durch wiederholte Interpretation',
+            'Entscheidungen lassen sich im Nachhinein schwerer begründen',
+          ],
+        },
+        {
+          title: 'Wie Kontext und Triage zusammenarbeiten',
+          paragraphs: [
+            'Velvoix verbindet eingehende Signale mit Ereigniskontext, Historie und operativer Logik. Dadurch wird Triage mehr als nur eine Farbe oder ein Prioritätslabel.',
+            'Das Ergebnis ist eine Folgeaktion, die sich in Teambesprechungen, Qualitätsgesprächen und im Pflegealltag besser vertreten lässt.',
+          ],
+          bullets: [
+            'Historie und Auslöser fließen in die Bewertung ein',
+            'Dringlichkeit wird sichtbar begründet',
+            'Der nächste Schritt wird für das Team klarer',
+          ],
+        },
+        {
+          title: 'Was Teams davon praktisch haben',
+          paragraphs: [
+            'Erklärbare Triage reduziert Interpretationsrauschen und hilft Teams schneller zu erkennen, was jetzt Aufmerksamkeit braucht.',
+            'Gleichzeitig entsteht eine bessere Grundlage für Auswertung, weil Signale und Folgeaktionen in derselben Logik verbunden bleiben.',
+          ],
+        },
+      ],
+      ctaTitle: 'Erklärbare Triage in einem Pilot prüfen',
+      ctaBody:
+        'Nutzen Sie eine erste Pilotphase, um zu testen, welche Signale in Ihrer Umgebung besonders von Kontext und erklärbarer Triage profitieren.',
+      ctaLabel: 'Pilot starten',
+      meta: {
+        title: 'Erklärbare Pflege-Triage für Pflegesignale | Velvoix',
+        description:
+          'Lesen Sie, wie erklärbare Pflege-Triage Pflegesignale mit Kontext, Dringlichkeit und begründbarer Folgeaktion übersetzt.',
+        ogTitle: 'Erklärbare Pflege-Triage für Pflegesignale | Velvoix',
+        ogDescription:
+          'Velvoix zeigt, wie Kontext und Triage Pflegesignale in klare und begründbare Nachverfolgung übersetzen.',
+      },
+    },
+    {
+      id: 'workflow-reconstruction',
+      slug: 'pflege-workflow-eskalation-rekonstruktion',
+      title: 'Pflege-Workflow, Eskalation und Rekonstruktion',
+      cardDescription:
+        'Warum Nachverfolgung stärker wird, wenn Status, Verantwortung, Eskalation und Rekonstruktion in derselben operativen Linie bleiben.',
+      eyebrow: 'Vertiefung',
+      intro:
+        'Ein Pflegesignal ist erst dann wirklich abgeschlossen, wenn Nachverfolgung, Statusverlauf und Rekonstruktion in einer steuerbaren Linie zusammenbleiben.',
+      summary:
+        'Praktikabler Workflow bedeutet nicht nur Aufgaben zu verteilen, sondern Verantwortung, Eskalation und Nachvollziehbarkeit in derselben operativen Kette zu halten.',
+      points: [
+        'Vom Ereignis zur steuerbaren Nachverfolgung',
+        'Warum Eskalation und Status zusammengehören',
+        'Was Rekonstruktion für Auswertung und Audit ergänzt',
+      ],
+      sections: [
+        {
+          title: 'Vom Ereignis zur steuerbaren Nachverfolgung',
+          paragraphs: [
+            'Velvoix macht aus einem Signal ein Ereignis, das Teams zuweisen, verfolgen und abschließen können. Dadurch bleibt es praktikabel, statt nur sichtbar zu sein.',
+            'Das ist besonders relevant in Umgebungen, in denen mehrere Personen dieselbe Bewohnerin, denselben Bewohner, Raum oder Fall berühren.',
+          ],
+        },
+        {
+          title: 'Warum Eskalation und Status zusammengehören',
+          paragraphs: [
+            'Wenn Status von Verantwortung und Eskalation getrennt bleibt, enden Teams trotzdem wieder mit losen Meldungen und zusätzlichen Interpretationsrunden.',
+            'Wenn Eskalation Teil derselben Linie bleibt, wird klarer, wann Risiko steigt, wann Folgeaktionen stocken und wer reagieren muss.',
+          ],
+          bullets: [
+            'Verantwortung bleibt sichtbar',
+            'Eskalation folgt aus Status und Risiko',
+            'Nachverfolgung bleibt für Teams und Leitung logisch',
+          ],
+        },
+        {
+          title: 'Was Rekonstruktion ergänzt',
+          paragraphs: [
+            'Rekonstruktion zeigt, was passiert ist, wie die Nachverfolgung verlief und wo Verzögerung oder Unklarheit entstanden sind.',
+            'Das hilft nicht nur bei Audits, sondern auch beim Lernen im Team, bei Qualitätsverbesserung und bei der Überprüfung von Prozessen.',
+          ],
+        },
+      ],
+      ctaTitle: 'Workflow und Rekonstruktion in Ihrer Umgebung prüfen',
+      ctaBody:
+        'Nutzen Sie einen Pilot, um zu bewerten, wo Statusverlauf, Eskalation und Rekonstruktion für Ihre Teams den größten operativen Nutzen bringen.',
+      ctaLabel: 'Austausch planen',
+      meta: {
+        title: 'Pflege-Workflow, Eskalation und Rekonstruktion | Velvoix',
+        description:
+          'Lesen Sie, wie Velvoix Pflegesignale in steuerbaren Workflow mit Verantwortung, Eskalation und nachvollziehbarer Rekonstruktion übersetzt.',
+        ogTitle: 'Pflege-Workflow, Eskalation und Rekonstruktion | Velvoix',
+        ogDescription:
+          'Velvoix verbindet Workflow, Eskalation und Rekonstruktion in einer nachvollziehbaren Nachverfolgungskette.',
+      },
+    },
+    {
+      id: 'pilot-readiness',
+      slug: 'pilotansatz-pflegesignale',
+      title: 'Pilotansatz für Pflegesignale und Nachverfolgung',
+      cardDescription:
+        'Worauf ein erster Pilot ausgerichtet sein sollte, wenn Sie beurteilen wollen, ob Velvoix zu Teams, Prozessen und bestehender Pflegeumgebung passt.',
+      eyebrow: 'Pilotansatz',
+      intro:
+        'Ein guter Pilot ist keine unverbindliche Demo, sondern eine kontrollierte Prüfung von operativer Passung, Nachverfolgung und Prozessnutzen.',
+      summary:
+        'Ein erster Pilot sollte schärfen, was validiert werden soll, welche Teams teilnehmen und wie Folgeentscheidungen begründet werden.',
+      points: [
+        'Welche Fragen ein erster Pilot beantworten sollte',
+        'Welche Teams, Geräte und Prozesse einbezogen werden',
+        'Wie Ergebnisse und nächste Schritte bewertet werden',
+      ],
+      sections: [
+        {
+          title: 'Was ein erster Pilot beantworten sollte',
+          paragraphs: [
+            'Ein Pilot sollte nicht versuchen, alles gleichzeitig zu beweisen. Meist geht es im Kern darum, ob Velvoix Teams hilft, schneller einzuordnen, klarer nachzuverfolgen und verlässlicher zu rekonstruieren.',
+            'So entsteht ein brauchbares Bild der operativen Passung, ohne zu früh weitreichende Rollout-Aussagen zu machen.',
+          ],
+        },
+        {
+          title: 'Welche Umgebung einbezogen werden sollte',
+          paragraphs: [
+            'Der Wert eines Piloten hängt stark von der gewählten Umgebung ab: Signaltypen, Teambelegung, Geräte, Prozesse und Eskalationslinien.',
+            'Gerade deshalb sollten Pilotziele von Anfang an mit einem konkreten Pflegekontext verbunden werden.',
+          ],
+          bullets: [
+            'Welche Signale im Umfang enthalten sind',
+            'Welche Teams die Nachverfolgung übernehmen',
+            'Welche bestehenden Prozesse berücksichtigt werden müssen',
+          ],
+        },
+        {
+          title: 'Wie über den nächsten Schritt entschieden wird',
+          paragraphs: [
+            'Ein guter Pilot endet nicht mit einem allgemeinen Eindruck, sondern mit konkreten Erkenntnissen zu Triage, Workflow, Rekonstruktion und Passung.',
+            'Damit lässt sich klarer entscheiden, ob eine nächste Phase sinnvoll ist, welche Integrationen wichtig werden und wo noch Gestaltungsentscheidungen offen sind.',
+          ],
+        },
+      ],
+      ctaTitle: 'Den Pilot nutzen, um echte Passung zu prüfen',
+      ctaBody:
+        'Besprechen Sie vorab, welche Signale, Teams und Ergebnisse in Ihrer Umgebung darüber entscheiden, ob Velvoix in die nächste Phase geht.',
+      ctaLabel: 'Gespräch planen',
+      meta: {
+        title: 'Pilotansatz für Pflegesignale und Nachverfolgung | Velvoix',
+        description:
+          'Lesen Sie, wie ein erster Velvoix-Pilot Pflegesignale, Nachverfolgung und Rekonstruktion fair in Ihrer eigenen Pflegeumgebung validieren kann.',
+        ogTitle: 'Pilotansatz für Pflegesignale und Nachverfolgung | Velvoix',
+        ogDescription:
+          'Velvoix beschreibt, wie ein erster Pilot operative Passung, Nachverfolgung und Rekonstruktion im Pflegekontext validieren kann.',
+      },
+    },
+  ],
+  es: [
+    {
+      id: 'explainable-triage',
+      slug: 'triaje-asistencial-explicable',
+      title: 'Triaje asistencial explicable para señales asistenciales',
+      cardDescription:
+        'Por qué se necesitan contexto y priorización para pasar de una señal entrante a una siguiente acción clara y defendible.',
+      eyebrow: 'Profundización',
+      intro:
+        'Una señal asistencial entrante solo se vuelve operativa cuando los equipos entienden por qué requiere atención, qué urgencia tiene y qué seguimiento encaja mejor.',
+      summary:
+        'El triaje explicable no trata solo de prioridad, sino de una interpretación defendible dentro del contexto asistencial.',
+      points: [
+        'Por qué una alerta sin contexto dice demasiado poco',
+        'Cómo se refuerzan entre sí el triaje y el contexto del evento',
+        'Qué ganancia operativa pueden esperar los equipos',
+      ],
+      sections: [
+        {
+          title: 'Por qué las alertas por sí solas no bastan',
+          paragraphs: [
+            'Muchos entornos tradicionales registran que algo ha sucedido, pero dejan la interpretación real en manos del equipo.',
+            'Eso retrasa el seguimiento y hace más difícil explicar después por qué una señal requería acción inmediata y otra no.',
+          ],
+          bullets: [
+            'Una señal sin contexto dice poco sobre la urgencia',
+            'Los equipos pierden tiempo reinterpretando',
+            'Después cuesta más defender por qué una decisión fue lógica',
+          ],
+        },
+        {
+          title: 'Cómo trabajan juntos el contexto y el triaje',
+          paragraphs: [
+            'Velvoix combina las señales entrantes con el contexto del evento, el historial y la lógica operativa. Así, el triaje pasa a ser algo más que un color o una etiqueta de prioridad.',
+            'El resultado es un seguimiento más fácil de sostener en conversaciones de equipo, revisiones de calidad y la práctica asistencial diaria.',
+          ],
+          bullets: [
+            'El historial y el detonante forman parte de la valoración',
+            'La urgencia queda visiblemente fundamentada',
+            'El siguiente paso se vuelve más claro para el equipo',
+          ],
+        },
+        {
+          title: 'Qué aporta esto en la práctica',
+          paragraphs: [
+            'El triaje explicable reduce el ruido interpretativo y ayuda a los equipos a ver antes qué requiere atención inmediata.',
+            'Además, crea una mejor base para la evaluación porque las señales y el seguimiento permanecen unidos en la misma lógica.',
+          ],
+        },
+      ],
+      ctaTitle: 'Tratar el triaje explicable en un piloto',
+      ctaBody:
+        'Use un primer piloto para comprobar qué señales de su entorno se benefician más del contexto y del triaje explicable.',
+      ctaLabel: 'Iniciar evaluación piloto',
+      meta: {
+        title: 'Triaje asistencial explicable para señales asistenciales | Velvoix',
+        description:
+          'Descubra cómo el triaje asistencial explicable convierte señales asistenciales en un seguimiento claro con contexto, urgencia y razonamiento defendible.',
+        ogTitle: 'Triaje asistencial explicable para señales asistenciales | Velvoix',
+        ogDescription:
+          'Velvoix muestra cómo el contexto y el triaje convierten señales asistenciales en un seguimiento claro y defendible.',
+      },
+    },
+    {
+      id: 'workflow-reconstruction',
+      slug: 'flujo-asistencial-escalada-reconstruccion',
+      title: 'Flujo asistencial, escalada y reconstrucción',
+      cardDescription:
+        'Por qué el seguimiento funciona mejor cuando estado, responsabilidad, escalada y reconstrucción permanecen en la misma línea operativa.',
+      eyebrow: 'Profundización',
+      intro:
+        'Una señal asistencial solo queda realmente cerrada cuando el seguimiento, la evolución del estado y la reconstrucción permanecen alineados en una línea manejable.',
+      summary:
+        'Un flujo de trabajo operativo no trata solo de repartir tareas, sino de mantener responsabilidad, escalada y trazabilidad dentro de la misma cadena operativa.',
+      points: [
+        'Del evento a un seguimiento gestionable',
+        'Por qué la escalada y el estado deben ir juntos',
+        'Qué añade la reconstrucción para evaluación y auditoría',
+      ],
+      sections: [
+        {
+          title: 'Del evento a un seguimiento gestionable',
+          paragraphs: [
+            'Velvoix convierte una señal en un evento que los equipos pueden asignar, seguir y cerrar. Así sigue siendo operativo en lugar de quedarse solo visible.',
+            'Esto importa sobre todo en entornos donde varias personas intervienen sobre la misma residente, el mismo residente, habitación o situación.',
+          ],
+        },
+        {
+          title: 'Por qué la escalada y el estado deben ir juntos',
+          paragraphs: [
+            'Si el estado queda desconectado de la responsabilidad y la escalada, los equipos terminan igualmente con alertas separadas y rondas extra de interpretación.',
+            'Al mantener la escalada dentro del mismo flujo, queda más claro cuándo aumenta el riesgo, cuándo se detiene el seguimiento y quién debe responder.',
+          ],
+          bullets: [
+            'La responsabilidad sigue visible',
+            'La escalada se deriva del estado y del riesgo',
+            'El seguimiento sigue siendo lógico para equipos y responsables',
+          ],
+        },
+        {
+          title: 'Qué añade la reconstrucción',
+          paragraphs: [
+            'La reconstrucción muestra qué ocurrió, cómo avanzó el seguimiento y dónde aparecieron retrasos o ambigüedad.',
+            'Eso ayuda en auditorías, pero también en el aprendizaje del equipo, la mejora de calidad y la revisión de procesos.',
+          ],
+        },
+      ],
+      ctaTitle: 'Explorar flujo y reconstrucción en su entorno',
+      ctaBody:
+        'Use un piloto para valorar dónde la evolución del estado, la escalada y la reconstrucción generan más valor operativo para sus equipos.',
+      ctaLabel: 'Planificar conversación',
+      meta: {
+        title: 'Flujo asistencial, escalada y reconstrucción | Velvoix',
+        description:
+          'Lea cómo Velvoix convierte señales asistenciales en un flujo gestionable con responsabilidad, escalada y reconstrucción trazable.',
+        ogTitle: 'Flujo asistencial, escalada y reconstrucción | Velvoix',
+        ogDescription:
+          'Velvoix conecta flujo, escalada y reconstrucción en una sola cadena de seguimiento trazable.',
+      },
+    },
+    {
+      id: 'pilot-readiness',
+      slug: 'enfoque-piloto-senales-asistenciales',
+      title: 'Enfoque piloto para señales asistenciales y seguimiento',
+      cardDescription:
+        'En qué debe centrarse un primer piloto para evaluar si Velvoix encaja con sus equipos, procesos y entorno asistencial existente.',
+      eyebrow: 'Enfoque piloto',
+      intro:
+        'Un buen piloto no es una demo informal, sino una forma controlada de evaluar el encaje operativo, la calidad del seguimiento y el valor del proceso.',
+      summary:
+        'Un primer piloto debe aclarar qué se quiere validar, qué equipos participan y cómo se fundamentarán las decisiones posteriores.',
+      points: [
+        'Qué preguntas debe responder un primer piloto',
+        'Qué equipos, dispositivos y procesos conviene incluir',
+        'Cómo valorar los resultados y los siguientes pasos',
+      ],
+      sections: [
+        {
+          title: 'Qué debe responder un primer piloto',
+          paragraphs: [
+            'Un piloto no debería intentar demostrarlo todo a la vez. Las preguntas centrales suelen ser si Velvoix ayuda a los equipos a interpretar antes, hacer un seguimiento más claro y reconstruir con más fiabilidad.',
+            'Eso genera una visión útil del encaje operativo sin hacer demasiado pronto promesas amplias de despliegue.',
+          ],
+        },
+        {
+          title: 'Qué entorno conviene incluir',
+          paragraphs: [
+            'El valor de un piloto depende mucho del entorno elegido: tipos de señal, dotación de equipos, dispositivos, procesos y líneas de escalada.',
+            'Por eso los objetivos del piloto deberían vincularse desde el principio a un contexto asistencial concreto.',
+          ],
+          bullets: [
+            'Qué señales quedan dentro del alcance',
+            'Qué equipos se encargan del seguimiento',
+            'Qué procesos existentes deben contemplarse',
+          ],
+        },
+        {
+          title: 'Cómo decidir el siguiente paso',
+          paragraphs: [
+            'Un buen piloto no termina con una impresión general, sino con hallazgos concretos sobre triaje, flujo de trabajo, reconstrucción y encaje.',
+            'Eso facilita decidir si una siguiente fase está justificada, qué integraciones importan y dónde siguen abiertas decisiones de diseño.',
+          ],
+        },
+      ],
+      ctaTitle: 'Usar el piloto para evaluar el encaje real',
+      ctaBody:
+        'Alineen de antemano qué señales, equipos y resultados de su entorno deben determinar si Velvoix pasa a la siguiente fase.',
+      ctaLabel: 'Planificar contacto',
+      meta: {
+        title: 'Enfoque piloto para señales asistenciales y seguimiento | Velvoix',
+        description:
+          'Descubra cómo un primer piloto de Velvoix puede validar con honestidad señales asistenciales, seguimiento y reconstrucción en su propio entorno.',
+        ogTitle: 'Enfoque piloto para señales asistenciales y seguimiento | Velvoix',
+        ogDescription:
+          'Velvoix expone cómo un primer piloto puede validar encaje operativo, seguimiento y reconstrucción en contexto asistencial.',
+      },
+    },
+  ],
 };
 
 export function hasResourcePages(locale: Locale): locale is ResourceLocale {
-  return locale === 'nl' || locale === 'en';
+  return locale === 'nl' || locale === 'en' || locale === 'de' || locale === 'es';
 }
 
 export function getResourcePath(locale: ResourceLocale, article: ResourceArticleContent): string {
@@ -550,6 +906,8 @@ export function getResourceAlternates(id: ResourceId): Record<ResourceLocale, st
   return {
     nl: getResourcePath('nl', resourceArticlesByLocale.nl.find((article) => article.id === id)!),
     en: getResourcePath('en', resourceArticlesByLocale.en.find((article) => article.id === id)!),
+    de: getResourcePath('de', resourceArticlesByLocale.de.find((article) => article.id === id)!),
+    es: getResourcePath('es', resourceArticlesByLocale.es.find((article) => article.id === id)!),
   };
 }
 
@@ -563,6 +921,26 @@ export function getResourceNav(locale: ResourceLocale) {
       { label: 'Waarom Velvoix', href: `${basePath}#why-velvoix` },
       { label: 'Pilot', href: `${basePath}#pilot` },
       { label: 'Contact', href: `${basePath}#contact` },
+    ];
+  }
+
+  if (locale === 'de') {
+    return [
+      { label: 'Start', href: `${basePath}#home` },
+      { label: 'Wie es funktioniert', href: `${basePath}#how-it-works` },
+      { label: 'Warum Velvoix', href: `${basePath}#why-velvoix` },
+      { label: 'Pilot', href: `${basePath}#pilot` },
+      { label: 'Kontakt', href: `${basePath}#contact` },
+    ];
+  }
+
+  if (locale === 'es') {
+    return [
+      { label: 'Inicio', href: `${basePath}#home` },
+      { label: 'Cómo funciona', href: `${basePath}#how-it-works` },
+      { label: 'Por qué Velvoix', href: `${basePath}#why-velvoix` },
+      { label: 'Piloto', href: `${basePath}#pilot` },
+      { label: 'Contacto', href: `${basePath}#contact` },
     ];
   }
 

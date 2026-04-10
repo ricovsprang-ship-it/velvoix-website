@@ -17,10 +17,34 @@ interface Props {
 const { locale, article, ui, footer, nav, languagePaths } = Astro.props;
 const homePath = locale === 'nl' ? '/' : `/${locale}/`;
 const relatedArticles = resourceArticlesByLocale[locale].filter((candidate) => candidate.id !== article.id);
-const backLabel = locale === 'nl' ? 'Terug naar homepage' : 'Back to homepage';
-const summaryLabel = locale === 'nl' ? 'Kern in het kort' : 'Core in brief';
-const pointsLabel = locale === 'nl' ? 'Wat deze pagina behandelt' : 'What this page covers';
-const relatedLabel = locale === 'nl' ? 'Verder lezen' : 'Related reading';
+const labelsByLocale = {
+  nl: {
+    back: 'Terug naar homepage',
+    summary: 'Kern in het kort',
+    points: 'Wat deze pagina behandelt',
+    related: 'Verder lezen',
+  },
+  en: {
+    back: 'Back to homepage',
+    summary: 'Core in brief',
+    points: 'What this page covers',
+    related: 'Related reading',
+  },
+  de: {
+    back: 'Zurück zur Startseite',
+    summary: 'Kern in Kürze',
+    points: 'Was diese Seite behandelt',
+    related: 'Weiterlesen',
+  },
+  es: {
+    back: 'Volver al inicio',
+    summary: 'Resumen breve',
+    points: 'Qué cubre esta página',
+    related: 'Lecturas relacionadas',
+  },
+} satisfies Record<ResourceLocale, { back: string; summary: string; points: string; related: string }>;
+
+const { back: backLabel, summary: summaryLabel, points: pointsLabel, related: relatedLabel } = labelsByLocale[locale];
 ---
 
 <div class="site-shell">
