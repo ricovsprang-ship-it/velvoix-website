@@ -80,6 +80,7 @@ const ariaLabelByLocale: Record<Locale, string> = {
 <style>
   .language-switcher {
     position: relative;
+    isolation: isolate;
   }
 
   .language-switcher__summary {
@@ -133,6 +134,10 @@ const ariaLabelByLocale: Record<Locale, string> = {
     box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
   }
 
+  .language-switcher[open] {
+    z-index: 30;
+  }
+
   .language-switcher__item {
     display: inline-flex;
     align-items: center;
@@ -156,5 +161,21 @@ const ariaLabelByLocale: Record<Locale, string> = {
   .language-switcher__item.is-active {
     color: rgb(15 23 42);
     background: rgba(241, 245, 249, 0.95);
+  }
+
+  @media (max-width: 1023px) {
+    .language-switcher {
+      width: fit-content;
+    }
+
+    .language-switcher__menu {
+      position: static;
+      right: auto;
+      top: auto;
+      margin-top: 0.7rem;
+      min-width: 7.2rem;
+      background: rgb(255 255 255);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+    }
   }
 </style>

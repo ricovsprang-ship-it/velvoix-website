@@ -10,11 +10,33 @@ interface Props {
 }
 
 const { locale, nav, languagePaths } = Astro.props;
+const orderedLocales: Locale[] = ['nl', 'en', 'de', 'es'];
+const hasScopedLanguagePaths = Boolean(languagePaths && Object.keys(languagePaths).length > 0);
+const languageCodeByLocale: Record<Locale, string> = {
+  nl: 'NL',
+  en: 'EN',
+  de: 'DE',
+  es: 'ES',
+};
+const mobileLanguages = orderedLocales
+  .filter((candidate) => !hasScopedLanguagePaths || Boolean(languagePaths?.[candidate]))
+  .map((candidate) => ({
+    locale: candidate,
+    code: languageCodeByLocale[candidate],
+    href: languagePaths?.[candidate] ?? localeRootPaths[candidate],
+    isActive: candidate === locale,
+  }));
 const menuLabelByLocale: Record<Locale, string> = {
   nl: 'Menu',
   en: 'Menu',
   de: 'Menu',
   es: 'Menu',
+};
+const languageLabelByLocale: Record<Locale, string> = {
+  nl: 'Talen',
+  en: 'Languages',
+  de: 'Sprachen',
+  es: 'Idiomas',
 };
 ---
 
@@ -42,7 +64,25 @@ const menuLabelByLocale: Record<Locale, string> = {
       </summary>
       <div class="panel absolute right-0 top-14 w-[18rem] rounded-3xl p-4">
         <div class="mb-4">
-          <LanguageSwitcher locale={locale} languagePaths={languagePaths} />
+          <p class="mb-3 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-slate-500">{languageLabelByLocale[locale]}</p>
+          <div class="grid grid-cols-4 gap-2" aria-label={languageLabelByLocale[locale]}>
+            {mobileLanguages.map((language) => (
+              <a
+                href={language.href}
+                class:list={[
+                  'inline-flex min-h-11 items-center justify-center rounded-[0.95rem] border text-sm font-bold tracking-[0.08em]',
+                  language.isActive
+                    ? 'border-slate-200 bg-slate-100 text-slate-950'
+                    : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:text-slate-950',
+                ]}
+                aria-current={language.isActive ? 'page' : undefined}
+                data-language-link
+                data-language-locale={language.locale}
+              >
+                {language.code}
+              </a>
+            ))}
+          </div>
         </div>
         <div class="flex flex-col gap-1">
           {nav.map((item) => (
