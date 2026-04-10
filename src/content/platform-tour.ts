@@ -65,6 +65,7 @@ const slideFraming = {
   'facility-linking': { image: '/products/platformtour/facility-linking.webp', ...defaultFraming },
   'access-control': { image: '/products/platformtour/access-control.webp', ...defaultFraming },
   'audit-log': { image: '/products/platformtour/audit-log.webp', ...defaultFraming },
+  'mobile-summary': { image: '/products/platformtour/mobile-care-collage-plain.png', ...defaultFraming },
 } as const;
 
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
@@ -104,7 +105,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'quality-response', label: 'Kwaliteit', title: 'Responskwaliteit in een uitlegbare laag', text: 'Kwaliteit en respons worden navolgbaar, zodat verbeterpunten bespreekbaar blijven op basis van echte signalen.', alt: 'Velvoix kwaliteit en respons overzicht', ...slideFraming['quality-response'] },
       { id: 'facility-linking', label: 'Koppelingen', title: 'Koppelingen rustig beheren', text: 'Bewoners, kamers en boxen blijven in één beheerlaag koppelbaar, zodat basisinrichting niet versnipperd raakt.', alt: 'Velvoix koppelingen en beheer', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Toegang', title: 'Accounts en rollen beheersbaar houden', text: 'Accounts, rollen en toegang blijven overzichtelijk, zodat beheer duidelijk blijft per locatie en team.', alt: 'Velvoix accounts en toegang', ...slideFraming['access-control'] },
-      { id: 'audit-log', label: 'Audit', title: 'Auditlog direct terug te lezen', text: 'Wijzigingen, statusacties en systeemgebeurtenissen blijven terug te lezen, zodat evaluatie en verantwoording niet op losse notities leunen.', alt: 'Velvoix auditlog', ...slideFraming['audit-log'] },
+      { id: 'mobile-summary', label: 'Mobiel', title: 'Mobiele schermen in één beeld', text: 'Een compacte samenvatting van de echte mobiele app-schermen, zodat login, overzicht, werklijst en detail in één oogopslag zichtbaar zijn.', alt: 'Samenvatting van meerdere Velvoix CARE mobiele schermen zonder toestelrand', ...slideFraming['mobile-summary'] },
     ],
   },
   en: {
@@ -143,7 +144,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'quality-response', label: 'Quality', title: 'Response quality in one explainable layer', text: 'Quality and response remain reviewable so improvement points can be discussed on the basis of actual signals.', alt: 'Velvoix quality and response overview', ...slideFraming['quality-response'] },
       { id: 'facility-linking', label: 'Linking', title: 'Manage resident linking in one place', text: 'Residents, rooms and boxes stay linkable in one management layer so core setup does not become fragmented.', alt: 'Velvoix resident linking and control', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Access', title: 'Keep accounts and roles manageable', text: 'Accounts, roles and access controls stay organised so administration remains clear across locations and teams.', alt: 'Velvoix accounts and access control', ...slideFraming['access-control'] },
-      { id: 'audit-log', label: 'Audit', title: 'Audit trail easy to review', text: 'Changes, status actions and system events remain easy to review so evaluation and accountability do not rely on loose notes.', alt: 'Velvoix audit trail', ...slideFraming['audit-log'] },
+      { id: 'mobile-summary', label: 'Mobile', title: 'Mobile screens in one view', text: 'A compact summary of the real mobile app screens so login, overview, worklist and detail are visible at a glance.', alt: 'Summary of multiple Velvoix CARE mobile screens without device frames', ...slideFraming['mobile-summary'] },
     ],
   },
   de: {
@@ -182,7 +183,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'quality-response', label: 'Qualität', title: 'Reaktionsqualität nachvollziehbar im Blick', text: 'Qualität und Reaktion bleiben nachvollziehbar, damit Verbesserungen auf Basis echter Signale besprochen werden können.', alt: 'Velvoix Qualitäts- und Reaktionsübersicht', ...slideFraming['quality-response'] },
       { id: 'facility-linking', label: 'Verknüpfung', title: 'Verknüpfungen ruhig verwalten', text: 'Bewohner, Zimmer und Boxen bleiben in einer Verwaltungsebene verknüpfbar, damit die Grundeinrichtung nicht zersplittert.', alt: 'Velvoix Verknüpfungen und Verwaltung', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Zugang', title: 'Konten und Rollen beherrschbar halten', text: 'Konten, Rollen und Zugriffssteuerung bleiben übersichtlich, damit die Verwaltung je Standort und Team klar bleibt.', alt: 'Velvoix Konten und Zugänge', ...slideFraming['access-control'] },
-      { id: 'audit-log', label: 'Audit', title: 'Auditlog direkt nachvollziehen', text: 'Änderungen, Statusaktionen und Systemereignisse bleiben nachvollziehbar, damit Auswertung und Verantwortung nicht von losen Notizen abhängen.', alt: 'Velvoix Auditlog', ...slideFraming['audit-log'] },
+      { id: 'mobile-summary', label: 'Mobil', title: 'Mobile Ansichten in einem Bild', text: 'Eine kompakte Zusammenfassung der echten mobilen App-Ansichten, damit Login, Uebersicht, Arbeitsliste und Detail direkt sichtbar sind.', alt: 'Zusammenfassung mehrerer mobiler Velvoix CARE Ansichten ohne Geraeterahmen', ...slideFraming['mobile-summary'] },
     ],
   },
   es: {
@@ -221,7 +222,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'quality-response', label: 'Calidad', title: 'Calidad de respuesta en una vista explicable', text: 'La calidad y la respuesta siguen siendo revisables para que los puntos de mejora se discutan sobre señales reales.', alt: 'Vista de calidad y respuesta en Velvoix', ...slideFraming['quality-response'] },
       { id: 'facility-linking', label: 'Vinculación', title: 'Gestionar vinculaciones con calma', text: 'Residentes, habitaciones y boxes pueden vincularse desde una misma capa de gestión para que la configuración básica no se disperse.', alt: 'Velvoix vinculaciones y gestión', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Acceso', title: 'Mantener cuentas y roles bajo control', text: 'Las cuentas, los roles y los controles de acceso siguen organizados para que la administración permanezca clara por centro y equipo.', alt: 'Velvoix cuentas y accesos', ...slideFraming['access-control'] },
-      { id: 'audit-log', label: 'Auditoría', title: 'Registro de auditoría fácil de revisar', text: 'Los cambios, las acciones de estado y los eventos del sistema siguen siendo revisables para que la evaluación y la responsabilidad no dependan de notas sueltas.', alt: 'Velvoix registro de auditoría', ...slideFraming['audit-log'] },
+      { id: 'mobile-summary', label: 'Movil', title: 'Pantallas moviles en una sola vista', text: 'Un resumen compacto de las pantallas reales de la app movil para ver acceso, resumen, bandeja y detalle de un vistazo.', alt: 'Resumen de varias pantallas moviles de Velvoix CARE sin marcos de dispositivo', ...slideFraming['mobile-summary'] },
     ],
   },
 };
