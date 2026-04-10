@@ -58,7 +58,7 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Pilotvalidatie',
       title: 'Wat een eerste pilot in de praktijk moet bewijzen',
       description:
-        'Een pilot maakt zichtbaar of Velvoix in uw setting echt helpt om sneller te prioriteren, duidelijker op te volgen en beter te reconstrueren.',
+        'Een pilot laat zien of Velvoix in uw organisatie helpt om sneller te prioriteren, duidelijker op te volgen en beter terug te kijken.',
       note:
         'Praktijkuitkomsten hangen af van teambezetting, processen, apparaten en bestaande systemen. Juist daarom werkt een gerichte pilot beter dan een algemene demo.',
       cards: [
@@ -77,10 +77,10 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       ],
     },
     hub: {
-      eyebrow: 'Verdiepende pagina’s',
+      eyebrow: 'Verdiepende pagina\'s',
       title: 'Meer context voor beslissers en teams',
       description:
-        'Drie verdiepende pagina’s over triage, workflow en pilotaanpak voor zorgsignalen.',
+        'Drie verdiepende pagina\'s over triage, opvolging en pilotaanpak voor zorgsignalen.',
       linkLabel: 'Lees pagina',
     },
   },
@@ -186,23 +186,23 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'uitlegbare-zorgtriage',
       title: 'Uitlegbare zorgtriage voor zorgsignalen',
       cardDescription:
-        'Waarom context en prioritering nodig zijn om van een binnenkomend signaal naar een duidelijke en verdedigbare vervolgactie te komen.',
+        'Waarom context en prioritering nodig zijn om van een binnenkomend signaal tot duidelijke en goed uitlegbare opvolging te komen.',
       eyebrow: 'Verdieping',
       intro:
         'Een binnenkomend zorgsignaal wordt pas werkbaar als teams begrijpen waarom het aandacht vraagt, welke urgentie logisch is en welke opvolging daarbij past.',
       summary:
-        'Uitlegbare triage gaat niet alleen over prioriteit, maar over verdedigbare duiding in zorgcontext.',
+        'Uitlegbare triage gaat niet alleen over prioriteit, maar over duidelijke duiding in de zorgcontext.',
       points: [
         'Waarom melding zonder context te weinig zegt',
-        'Hoe triage en eventcontext elkaar versterken',
-        'Welke operationele winst teams hierdoor ervaren',
+        'Hoe triage en context elkaar versterken',
+        'Welke praktische winst teams hierdoor ervaren',
       ],
       sections: [
         {
           title: 'Waarom meldingen alleen niet genoeg zijn',
           paragraphs: [
             'Veel traditionele omgevingen registreren dat er iets gebeurt, maar laten de echte interpretatie bij het team liggen.',
-            'Dat vertraagt opvolging en maakt moeilijker uitlegbaar waarom één signaal direct aandacht vroeg en een ander signaal niet.',
+            'Dat vertraagt opvolging en maakt het moeilijker uit te leggen waarom het ene signaal direct aandacht vroeg en een ander niet.',
           ],
           bullets: [
             'Een signaal zonder context zegt weinig over urgentie',
@@ -213,8 +213,8 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Hoe context en triage samenwerken',
           paragraphs: [
-            'Velvoix combineert binnenkomende signalen met eventcontext, historie en operationele logica. Daardoor wordt triage meer dan een kleur of prioriteitslabel.',
-            'De uitkomst is een opvolging die beter verdedigbaar is in teamoverleg, kwaliteitsgesprekken en dagelijkse zorgpraktijk.',
+            'Velvoix combineert binnenkomende signalen met relevante context, historie en triagelogica. Daardoor wordt triage meer dan een kleur of prioriteitslabel.',
+            'De uitkomst is opvolging die duidelijker te bespreken is in teamoverleg, kwaliteitsgesprekken en de dagelijkse zorgpraktijk.',
           ],
           bullets: [
             'Historie en trigger worden meegewogen',
@@ -232,15 +232,15 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ],
       ctaTitle: 'Bespreek uitlegbare triage in een pilot',
       ctaBody:
-        'Gebruik een eerste verkenning om te toetsen welke signalen in uw setting vooral baat hebben bij context en uitlegbare triage.',
+        'Gebruik een eerste verkenning om te toetsen bij welke signalen extra context en uitlegbare triage het meeste verschil maken.',
       ctaLabel: 'Start pilotverkenning',
       meta: {
         title: 'Uitlegbare zorgtriage voor zorgsignalen | Velvoix',
         description:
-          'Lees hoe uitlegbare zorgtriage zorgsignalen vertaalt naar duidelijke opvolging met context, urgentie en verdedigbare uitleg.',
+          'Lees hoe uitlegbare zorgtriage zorgsignalen vertaalt naar duidelijke opvolging met context, urgentie en heldere uitleg.',
         ogTitle: 'Uitlegbare zorgtriage voor zorgsignalen | Velvoix',
         ogDescription:
-          'Velvoix laat zien hoe context en triage zorgsignalen omzetten in duidelijke en verdedigbare opvolging.',
+          'Velvoix laat zien hoe context en triage zorgsignalen omzetten in duidelijke en goed uitlegbare opvolging.',
       },
     },
     {
@@ -248,22 +248,22 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'zorgworkflow-en-reconstructie',
       title: 'Zorgworkflow, escalatie en reconstructie',
       cardDescription:
-        'Waarom opvolging sterker werkt wanneer status, verantwoordelijkheid, escalatie en reconstructie in dezelfde operationele lijn blijven.',
+        'Waarom opvolging sterker werkt wanneer status, verantwoordelijkheid, escalatie en reconstructie in dezelfde lijn blijven.',
       eyebrow: 'Verdieping',
       intro:
-        'Een zorgsignaal is pas afgerond als opvolging, statusverloop en reconstructie in één bestuurbare lijn blijven staan.',
+        'Een zorgsignaal is pas afgerond als opvolging, statusverloop en reconstructie in één duidelijke lijn blijven staan.',
       summary:
-        'Werkbare workflow gaat niet alleen over taken verdelen, maar over eigenaarschap, escalatie en terugkijkbaarheid in dezelfde operationele keten.',
+        'Goede workflow gaat niet alleen over taken verdelen, maar over eigenaarschap, escalatie en terugkijken in dezelfde lijn.',
       points: [
-        'Van event naar bestuurbare opvolging',
+        'Van signaal naar duidelijke opvolging',
         'Waarom escalatie en status samen horen',
         'Wat reconstructie toevoegt voor evaluatie',
       ],
       sections: [
         {
-          title: 'Van event naar bestuurbare opvolging',
+          title: 'Van signaal naar duidelijke opvolging',
           paragraphs: [
-            'Velvoix maakt van een signaal een event dat teams kunnen toewijzen, volgen en afsluiten. Daardoor blijft het werkbaar in plaats van alleen zichtbaar.',
+            'Velvoix maakt van een signaal een opvolging die teams kunnen toewijzen, volgen en afronden. Daardoor blijft het werkbaar in plaats van alleen zichtbaar.',
             'Dat helpt vooral in omgevingen waar meerdere mensen dezelfde bewoner, kamer of situatie raken.',
           ],
         },
@@ -287,17 +287,17 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           ],
         },
       ],
-      ctaTitle: 'Verken workflow en reconstructie in uw setting',
+      ctaTitle: 'Verken workflow en reconstructie in uw organisatie',
       ctaBody:
-        'Gebruik een pilot om te beoordelen hoe statusverloop, escalatie en reconstructie in uw workflow het meeste opleveren.',
+        'Gebruik een pilot om te beoordelen hoe statusverloop, escalatie en reconstructie in uw werkwijze het meeste opleveren.',
       ctaLabel: 'Bespreek samenwerkingsroute',
       meta: {
         title: 'Zorgworkflow, escalatie en reconstructie | Velvoix',
         description:
-          'Lees hoe Velvoix zorgsignalen omzet in bestuurbare workflow met eigenaarschap, escalatie en herleidbare reconstructie.',
+          'Lees hoe Velvoix zorgsignalen omzet in duidelijke opvolging met eigenaarschap, escalatie en reconstructie.',
         ogTitle: 'Zorgworkflow, escalatie en reconstructie | Velvoix',
         ogDescription:
-          'Velvoix verbindt workflow, escalatie en reconstructie in één traceerbare opvolgketen.',
+          'Velvoix verbindt workflow, escalatie en reconstructie in één navolgbare opvolglijn.',
       },
     },
     {
@@ -305,12 +305,12 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       slug: 'pilotaanpak-zorgsignalen',
       title: 'Pilotaanpak voor zorgsignalen en opvolging',
       cardDescription:
-        'Waar een eerste pilot op moet sturen om te beoordelen of Velvoix past bij teams, processen en bestaande zorgomgeving.',
+        'Wat een eerste pilot moet laten zien om te beoordelen of Velvoix past bij teams, processen en de bestaande zorgomgeving.',
       eyebrow: 'Pilotaanpak',
       intro:
-        'Een goede pilot is geen vrijblijvende demo, maar een gecontroleerde verkenning van operationele fit, opvolging en proceswaarde.',
+        'Een goede pilot is geen vrijblijvende demo, maar een gerichte verkenning van praktische aansluiting, opvolging en proceswaarde.',
       summary:
-        'Een eerste pilot moet scherp maken wat je wilt valideren, welke teams meedoen en hoe vervolgkeuzes worden onderbouwd.',
+        'Een eerste pilot moet duidelijk maken wat je wilt valideren, welke teams meedoen en hoe vervolgkeuzes worden onderbouwd.',
       points: [
         'Welke vragen een eerste pilot moet beantwoorden',
         'Welke teams, apparaten en processen je meeneemt',
@@ -321,7 +321,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           title: 'Wat een eerste pilot moet beantwoorden',
           paragraphs: [
             'Een pilot moet niet proberen alles tegelijk te bewijzen. De kern is meestal: helpt Velvoix om sneller te duiden, duidelijker op te volgen en beter te reconstrueren.',
-            'Daarmee ontstaat een bruikbaar beeld van operationele fit zonder te vroeg brede uitrolclaims te doen.',
+            'Daarmee ontstaat een bruikbaar beeld van praktische aansluiting zonder te vroeg brede uitrolclaims te doen.',
           ],
         },
         {
@@ -339,22 +339,22 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         {
           title: 'Hoe je vervolg bepaalt',
           paragraphs: [
-            'Een goede pilot eindigt niet met een algemeen gevoel, maar met concrete bevindingen over triage, workflow, reconstructie en inpasbaarheid.',
+            'Een goede pilot eindigt niet met een algemeen gevoel, maar met concrete bevindingen over triage, workflow, reconstructie en praktische inpassing.',
             'Dat maakt het eenvoudiger om te beslissen of een volgende stap logisch is, welke integraties nodig zijn en waar nog ontwerpkeuzes liggen.',
           ],
         },
       ],
       ctaTitle: 'Gebruik de pilot om echte fit te beoordelen',
       ctaBody:
-        'Bespreek vooraf welke signalen, teams en uitkomsten in uw setting bepalend zijn voor een vervolgroute.',
+        'Bespreek vooraf welke signalen, teams en uitkomsten in uw organisatie bepalend zijn voor de vervolgstap.',
       ctaLabel: 'Plan een verkenning',
       meta: {
         title: 'Pilotaanpak voor zorgsignalen en opvolging | Velvoix',
         description:
-          'Lees hoe een eerste pilot met Velvoix zorgsignalen, opvolging en reconstructie eerlijk kan valideren in de eigen zorgsetting.',
+          'Lees hoe een eerste pilot met Velvoix zorgsignalen, opvolging en reconstructie zorgvuldig kan valideren in de eigen zorgpraktijk.',
         ogTitle: 'Pilotaanpak voor zorgsignalen en opvolging | Velvoix',
         ogDescription:
-          'Velvoix beschrijft hoe een eerste pilot operationele fit, opvolging en reconstructie in zorgcontext kan valideren.',
+          'Velvoix beschrijft hoe een eerste pilot praktische aansluiting, opvolging en reconstructie in zorgcontext kan valideren.',
       },
     },
   ],

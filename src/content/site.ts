@@ -228,7 +228,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     meta: {
       title: 'Velvoix | Van signaal naar duidelijke zorgactie',
       description:
-        'Velvoix helpt zorgorganisaties zorgsignalen te vertalen naar duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
+        'Velvoix helpt zorgorganisaties zorgsignalen te vertalen naar een duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
       ogTitle: 'Velvoix | Duidelijke zorgactie uit signalen',
       ogDescription:
         'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat eerst moet gebeuren en hoe opvolging herleidbaar blijft.',
@@ -254,7 +254,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'In een oogopslag',
       title: 'Van melding naar duidelijke opvolging',
       description:
-        'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat de juiste actie is en wie moet oppakken.',
+        'Velvoix helpt teams sneller te zien wat aandacht vraagt, welke actie past en wie aan zet is.',
       stages: [
         {
           label: 'Wat er binnenkomt',
@@ -266,13 +266,13 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'Wat Velvoix toevoegt',
           title: 'Context, prioriteit en aanbevolen actie',
           description:
-            'Velvoix helpt sneller zichtbaar te maken wat urgent is en welke volgende stap past.',
+            'Velvoix maakt sneller zichtbaar wat urgent is en welke vervolgstap past.',
         },
         {
           label: 'Wat dat oplevert',
           title: 'Rustigere en duidelijkere opvolging',
           description:
-            'Status, verantwoordelijkheid en vervolg blijven zichtbaar zonder extra interpretatielast.',
+            'Status, verantwoordelijkheid en vervolg blijven zichtbaar zonder extra interpretatieruis.',
         },
       ],
     },
@@ -306,8 +306,8 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Wat Velvoix doet',
       title: 'Velvoix brengt structuur tussen signaal en opvolging',
       description:
-        'Velvoix vertaalt signalen naar een werkbare operationele uitkomst met context, triage en opvolging.',
-      flow: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
+        'Velvoix vertaalt signalen naar duidelijke opvolging met context, triage en status.',
+      flow: ['Signaal', 'Context', 'Triage', 'Actie', 'Opvolging', 'Escalatie', 'Reconstructie'],
       supporting:
         'Zo wordt opvolging overzichtelijker, consistenter en beter herleidbaar.',
     },
@@ -315,9 +315,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Hoe het werkt',
       title: 'Van signaal naar duidelijke vervolgactie',
       description:
-        'Velvoix combineert het signaal met context en prioritering, zodat zorgmedewerkers sneller zien wat er speelt en wat ze het beste kunnen doen.',
+        'Velvoix combineert signalen met context en prioritering, zodat zorgmedewerkers sneller zien wat aandacht vraagt en wat de juiste vervolgstap is.',
       panelLabel: 'Van signaal naar actie',
-      panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met status, verantwoordelijkheid en reconstructie.',
+      panelSupporting: 'Geen losse melding, maar een duidelijke vervolgstap met zicht op status, verantwoordelijkheid en reconstructie.',
       steps: [
         {
           title: 'Input',
@@ -332,39 +332,39 @@ export const siteContent: Record<Locale, SiteContent> = {
           description: 'Urgentie en uitleg worden gestructureerd.',
         },
         {
-          title: 'Event',
-          description: 'Werkbare operationele eenheid ontstaat.',
+          title: 'Actie',
+          description: 'Het signaal wordt een duidelijke actie voor opvolging.',
         },
         {
-          title: 'Workflow',
-          description: 'Opvolging, eigenaarschap en status worden bestuurbaar.',
+          title: 'Opvolging',
+          description: 'Opvolging, eigenaarschap en status blijven overzichtelijk.',
         },
         {
-          title: 'Audit',
-          description: 'Reconstructie en evaluatie blijven herleidbaar.',
+          title: 'Evaluatie',
+          description: 'Reconstructie en evaluatie blijven goed te volgen.',
         },
       ],
       stepNotes: [
         'Input komt gecontroleerd binnen',
         'Context maakt duiding rijker',
         'Triage maakt urgentie uitlegbaar',
-        'Eventvorming maakt opvolging werkbaar',
-        'Workflow maakt status bestuurbaar',
-        'Audit houdt reconstructie intact',
+        'Een duidelijke actie maakt opvolging werkbaar',
+        'Opvolging houdt status overzichtelijk',
+        'Evaluatie houdt reconstructie intact',
       ],
     },
     compareChains: {
       eyebrow: 'Ketenverschil',
-      title: 'Niet van melding naar interpretatie, maar van signaal naar bestuurbare workflow',
+      title: 'Niet van melding naar losse interpretatie, maar van signaal naar duidelijke opvolging',
       description:
-        'Traditionele systemen stoppen vaak bij de melding. Velvoix voegt context, triage en eventvorming toe zodat opvolging bestuurbaar wordt.',
+        'Traditionele systemen stoppen vaak bij de melding. Velvoix voegt context en triage toe, zodat opvolging duidelijker en beter te sturen wordt.',
       compareLabel: 'Vergelijking',
-      outcomes: ['Minder interpretatielast', 'Betere prioritering', 'Betere reconstructie'],
+      outcomes: ['Minder interpretatieruis', 'Betere prioritering', 'Betere reconstructie'],
       traditionalTitle: 'Traditionele keten',
-      traditionalSteps: ['Signaal', 'Melding', 'Handmatige interpretatie'],
+      traditionalSteps: ['Signaal', 'Melding', 'Handmatige duiding'],
       velvoixTitle: 'Velvoix-keten',
-      velvoixSteps: ['Signaal', 'Context', 'Triage', 'Event', 'Workflow', 'Escalatie', 'Reconstructie'],
-      velvoixSupporting: 'Elke laag maakt opvolging, escalatie en audit beter bestuurbaar.',
+      velvoixSteps: ['Signaal', 'Context', 'Triage', 'Actie', 'Opvolging', 'Escalatie', 'Reconstructie'],
+      velvoixSupporting: 'Elke laag maakt opvolging, escalatie en reconstructie beter hanteerbaar.',
       stepDetails: [
         {
           title: 'Signaal',
@@ -380,13 +380,13 @@ export const siteContent: Record<Locale, SiteContent> = {
           description: 'Urgentie en aanbevolen aanpak worden zichtbaar onderbouwd in zorgtaal.',
         },
         {
-          title: 'Event',
+          title: 'Actie',
           description:
-            'De uitkomst wordt een werkbare operationele eenheid voor status, eigenaarschap en vervolg.',
+            'De uitkomst wordt een duidelijke actie met status, eigenaarschap en vervolg.',
         },
         {
-          title: 'Workflow',
-          description: 'Opvolging wordt bestuurbaar met acties, statusverloop en duidelijke verantwoordelijkheid.',
+          title: 'Opvolging',
+          description: 'Opvolging blijft overzichtelijk met acties, statusverloop en duidelijke verantwoordelijkheid.',
         },
         {
           title: 'Escalatie',
@@ -506,8 +506,8 @@ export const siteContent: Record<Locale, SiteContent> = {
           tone: 'Control',
         },
         {
-          title: 'Governance en profielen',
-          caption: 'Governance blijft beheersbaar via profielkaarten en triagebeheer.',
+          title: 'Sturing en profielen',
+          caption: 'Sturing blijft beheersbaar via profielkaarten en triagebeheer.',
           image: '/products/proof-governance.png',
           tone: 'Governance',
         },
@@ -517,7 +517,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Pilot',
       title: 'Verken of Velvoix past bij uw zorgpraktijk',
       description:
-        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, lagere interpretatielast en betere inpasbaarheid in uw processen.',
+        'Een eerste verkenning laat zien of Velvoix helpt bij duidelijkere opvolging, minder interpretatieruis en een goede aansluiting op uw processen.',
       points: [
         'Verpleeghuizen en langdurige zorg',
         'Teams die meer duidelijkheid in opvolging willen',
@@ -530,34 +530,34 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start een verkenning die past bij uw situatie',
       description:
-        'Kies de route die past: pilot, samenwerking of een zakelijke vraag.',
-      reasonsLabel: 'Routes',
+        'Kies wat het beste past: een pilot, samenwerking of een zakelijke vraag.',
+      reasonsLabel: 'Onderwerpen',
       inquiryTypes: {
-        pilot: 'Pilotverkenning',
-        partnership: 'Samenwerkingsroute',
+        pilot: 'Pilot',
+        partnership: 'Samenwerking',
         general: 'Zakelijke vraag',
       },
       reasons: [
         'Pilot voor zorgorganisaties',
-        'Samenwerking voor partners en uitrol',
+        'Samenwerking of uitrol voor partners',
         'Zakelijke vraag over platform of planning',
       ],
       directEmailNote: 'Voor pilots, samenwerking en zakelijke vragen.',
       routeContent: {
         pilot: {
-          helper: 'Kies deze route om te beoordelen of Velvoix in uw setting helpt bij duidelijkere opvolging, prioritering en praktische inpasbaarheid.',
+          helper: 'Kies dit onderwerp om te beoordelen of Velvoix in uw organisatie helpt bij duidelijkere opvolging, prioritering en een goede aansluiting op de praktijk.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Beschrijf kort uw organisatie, zorgcontext en wat u in een pilotverkenning wilt toetsen.',
           submit: 'Verstuur pilotverkenning',
         },
         partnership: {
-          helper: 'Kies deze route voor partnerfit, uitrol, integratie of strategische samenwerking.',
+          helper: 'Kies dit onderwerp voor vragen over samenwerking, uitrol, integratie of strategische afstemming.',
           email: publicContactEmails.partners,
-          messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke samenwerkings- of uitrolroute u wilt verkennen.',
+          messagePlaceholder: 'Beschrijf kort uw organisatie, rol en welke vorm van samenwerking of uitrol u wilt verkennen.',
           submit: 'Verstuur samenwerkingsverkenning',
         },
         general: {
-          helper: 'Kies deze route voor een zakelijke vraag over platform, inzetcontext of vervolgstappen.',
+          helper: 'Kies dit onderwerp voor een zakelijke vraag over het platform, de inzet in de praktijk of de volgende stap.',
           email: publicContactEmails.general,
           messagePlaceholder: 'Beschrijf kort uw vraag en welke context of planning daarbij relevant is.',
           submit: 'Verstuur zakelijke vraag',
@@ -587,9 +587,9 @@ export const siteContent: Record<Locale, SiteContent> = {
       success: 'Bedankt. We hebben uw bericht ontvangen en nemen zo spoedig mogelijk contact met u op.',
       error:
         'Er ging iets mis bij het versturen van uw bericht. Probeer het opnieuw of neem rechtstreeks contact op.',
-      directEmailLabel: 'Rechtstreeks contact',
+      directEmailLabel: 'Direct contact',
       directEmailValue: publicContactEmails.general,
-      routeEmailLabel: 'E-mailadres voor deze route',
+      routeEmailLabel: 'E-mailadres voor dit onderwerp',
     },
     footer: {
       brand: 'Velvoix',
