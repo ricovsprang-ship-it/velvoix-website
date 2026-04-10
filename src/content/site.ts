@@ -231,7 +231,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Velvoix helpt zorgorganisaties zorgsignalen te vertalen naar een duidelijke zorgactie, betere prioritering en herleidbare opvolging.',
       ogTitle: 'Velvoix | Duidelijke zorgactie uit signalen',
       ogDescription:
-        'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat eerst moet gebeuren en hoe opvolging herleidbaar blijft.',
+        'Velvoix helpt teams sneller te zien wat aandacht vraagt, wat voorrang heeft en hoe opvolging herleidbaar blijft.',
     },
     hero: {
       eyebrow: 'Velvoix',
@@ -254,7 +254,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'In een oogopslag',
       title: 'Van melding naar duidelijke opvolging',
       description:
-        'Velvoix helpt teams sneller te zien wat aandacht vraagt, welke actie past en wie aan zet is.',
+        'Velvoix helpt teams sneller te zien wat aandacht vraagt, welke vervolgstap past en wie aan zet is.',
       stages: [
         {
           label: 'Wat er binnenkomt',
@@ -266,7 +266,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'Wat Velvoix toevoegt',
           title: 'Context, prioriteit en aanbevolen actie',
           description:
-            'Velvoix maakt sneller zichtbaar wat urgent is en welke vervolgstap past.',
+            'Velvoix laat sneller zien wat urgent is en welke vervolgstap daarbij past.',
         },
         {
           label: 'Wat dat oplevert',
@@ -642,7 +642,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'At a glance',
       title: 'From alert to clear follow-up',
       description:
-        'Velvoix helps teams see sooner what needs attention, what action makes sense and who should take the next step.',
+        'Velvoix helps teams see sooner what needs attention, which next step fits and who should take it.',
       stages: [
         {
           label: 'What comes in',
@@ -654,7 +654,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'What Velvoix adds',
           title: 'Context, priority and recommended action',
           description:
-            'Velvoix helps teams see sooner what is urgent and what the next step should be.',
+            'Velvoix helps teams see sooner what is urgent and which next step fits the situation.',
         },
         {
           label: 'What that delivers',
@@ -918,7 +918,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start an exploration that fits your situation',
       description:
-        'Choose the option that fits best: a pilot, a collaboration discussion or a business question.',
+        'Choose the route that fits best: a pilot, a collaboration discussion or a business question.',
       reasonsLabel: 'Topics',
       inquiryTypes: {
         pilot: 'Pilot',
@@ -936,13 +936,13 @@ export const siteContent: Record<Locale, SiteContent> = {
           helper: 'Choose this option to assess whether Velvoix supports clearer follow-up, better prioritisation and a practical fit in your organisation.',
           email: publicContactEmails.pilot,
           messagePlaceholder: 'Briefly describe your organisation, care context and what you want to assess in a pilot exploration.',
-          submit: 'Send pilot enquiry',
+          submit: 'Send pilot inquiry',
         },
         partnership: {
           helper: 'Choose this option for questions about collaboration, rollout, integration or strategic alignment.',
           email: publicContactEmails.partners,
           messagePlaceholder: 'Briefly describe your organisation, role and what kind of collaboration or rollout you want to explore.',
-          submit: 'Send collaboration enquiry',
+          submit: 'Send collaboration inquiry',
         },
         general: {
           helper: 'Choose this option for a business question about the platform, how it could be used in practice or what comes next.',

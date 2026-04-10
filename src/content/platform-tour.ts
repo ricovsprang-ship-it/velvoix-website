@@ -86,7 +86,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     nextLabel: 'Volgende',
     railLabel: 'Onderdelen van de producttour',
     curatedViewsLabel: 'geselecteerde schermen',
-    interactionHint: 'Zoom met twee vingers of met het scrollwiel, sleep om te verplaatsen en druk op 0 om terug te zetten.',
+    interactionHint: 'Gebruik twee vingers of het scrollwiel om te zoomen, sleep om te verplaatsen en druk op 0 om de weergave te resetten.',
     slides: [
       { id: 'login', label: 'Start', title: 'Rustige start', text: 'De start houdt toegang tot het platform rustig en herkenbaar, zodat teams zonder extra drempels aan de werkdag beginnen.', alt: 'Velvoix inlogscherm', ...slideFraming.login },
       { id: 'worklist', label: 'Werkvoorraad', title: 'Meldingen in een duidelijke lijst', text: 'Urgentie, status en verantwoordelijkheid blijven samen leesbaar, zodat open opvolging niet versnipperd raakt.', alt: 'Velvoix meldingenlijst', ...slideFraming.worklist },
@@ -118,7 +118,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     previewLabel: 'Selected screen',
     previewTitle: 'Clear action with context and follow-up',
     previewBody:
-      'One example of how why it matters, its priority and the next action stay visible together, with less interpretation work.',
+      'One example of how the reason, priority and next action stay visible together, with less interpretation work.',
     overlayLabel: 'Product Tour',
     closeLabel: 'Close',
     previousLabel: 'Previous',
@@ -157,7 +157,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     previewLabel: 'Ausgewählte Ansicht',
     previewTitle: 'Klare Handlung mit Kontext und Nachverfolgung',
     previewBody:
-      'Ein Beispiel dafür, wie Anlass, Priorität und nächster Schritt zusammen sichtbar bleiben und den Interpretationsaufwand verringern.',
+      'Ein Beispiel dafür, wie Anlass, Priorität und nächster Schritt zusammen sichtbar bleiben, damit weniger Interpretationsaufwand entsteht.',
     overlayLabel: 'Produkttour',
     closeLabel: 'Schließen',
     previousLabel: 'Zurück',
@@ -196,14 +196,14 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
     previewLabel: 'Pantalla seleccionada',
     previewTitle: 'Acción clara con contexto y seguimiento',
     previewBody:
-      'Un ejemplo de cómo el motivo, la prioridad y la siguiente acción permanecen visibles en conjunto con menos esfuerzo de interpretación.',
+      'Un ejemplo de cómo el motivo, la prioridad y la siguiente acción permanecen visibles a la vez, con menos esfuerzo de interpretación.',
     overlayLabel: 'Recorrido del producto',
     closeLabel: 'Cerrar',
     previousLabel: 'Anterior',
     nextLabel: 'Siguiente',
     railLabel: 'Secciones del recorrido',
     curatedViewsLabel: 'pantallas seleccionadas',
-    interactionHint: 'Pellizque o use la rueda para ampliar. Arrastre para mover. Pulse 0 para reiniciar.',
+    interactionHint: 'Use dos dedos o la rueda para ampliar, arrastre para mover y pulse 0 para restablecer la vista.',
     slides: [
       { id: 'login', label: 'Inicio', title: 'Entrada serena', text: 'La entrada mantiene el acceso sereno y reconocible para que el equipo empiece la jornada sin fricción innecesaria.', alt: 'Pantalla de acceso de Velvoix', ...slideFraming.login },
       { id: 'worklist', label: 'Bandeja', title: 'Señales en una lista clara', text: 'La urgencia, el estado y la responsabilidad permanecen juntos para que el seguimiento abierto no se fragmente entre señales aisladas.', alt: 'Lista de trabajo de Velvoix', ...slideFraming.worklist },

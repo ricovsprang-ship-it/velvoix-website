@@ -16,16 +16,16 @@ export const deContent: SiteContent = {
       'Velvoix hilft Pflegeorganisationen, Pflegesignale in klare nächste Schritte, bessere Priorisierung und nachvollziehbare Nachverfolgung zu übersetzen.',
     ogTitle: 'Velvoix | Klare Pflegehandlung aus Signalen',
     ogDescription:
-      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was zuerst ansteht und wie Nachverfolgung nachvollziehbar bleibt.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, was Vorrang hat und wie der weitere Verlauf nachvollziehbar bleibt.',
   },
   hero: {
     eyebrow: 'Velvoix',
     title: 'Vom Signal zur klaren Handlung in der Pflege',
     subtitle:
-      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal direkt einen klaren nächsten Schritt mit Kontext, Priorität und nachvollziehbarer Nachverfolgung.',
+      'Viele Pflegesignale gehen ohne ausreichenden Kontext ein. Dadurch müssen Mitarbeitende unter Druck selbst entscheiden, was dringend ist und was zuerst geschehen muss. Velvoix macht aus einem Signal direkt einen klaren nächsten Schritt mit Kontext, Priorität und klarer Nachverfolgung.',
     supporting:
       'Weniger Zweifel, klarere Priorisierung und bessere Rekonstruktion im Rückblick.',
-    primaryCta: 'Pilot erkunden',
+    primaryCta: 'Pilot besprechen',
     primaryHref: '#pilot',
     secondaryCta: 'Produkttour ansehen',
     secondaryHref: '#product-tour',
@@ -39,7 +39,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Auf einen Blick',
     title: 'Von der Meldung zur klaren Nachverfolgung',
     description:
-      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welcher Schritt sinnvoll ist und wer ihn übernehmen sollte.',
+      'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welcher nächste Schritt sinnvoll ist und wer ihn übernehmen sollte.',
     stages: [
       {
         label: 'Was hereinkommt',
@@ -49,7 +49,7 @@ export const deContent: SiteContent = {
       {
         label: 'Was Velvoix ergänzt',
         title: 'Kontext, Priorität und empfohlene Handlung',
-        description: 'Velvoix macht schneller sichtbar, was dringend ist und welcher nächste Schritt sinnvoll ist.',
+        description: 'Velvoix zeigt schneller, was dringend ist und welcher nächste Schritt passt.',
       },
       {
         label: 'Was das bringt',
@@ -261,7 +261,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Kontakt',
     title: 'Starten Sie eine Erkundung, die zu Ihrer Situation passt',
     description:
-      'Wählen Sie den passenden Weg: Piloterkundung, Zusammenarbeit oder eine geschäftliche Anfrage.',
+      'Wählen Sie den Weg, der am besten passt: Piloterkundung, Zusammenarbeit oder eine geschäftliche Anfrage.',
     reasonsLabel: 'Wege',
     inquiryTypes: {
       pilot: 'Piloterkundung',
@@ -351,13 +351,13 @@ export const esContent: SiteContent = {
       'Velvoix ayuda a las organizaciones asistenciales a traducir señales en acciones claras, mejor priorización y seguimiento trazable.',
     ogTitle: 'Velvoix | Acción asistencial clara a partir de señales',
     ogDescription:
-      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué debe hacerse primero y cómo mantener el seguimiento trazable.',
+      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué debería tener prioridad y cómo mantener el seguimiento trazable.',
   },
   hero: {
     eyebrow: 'Velvoix',
     title: 'De la señal a una acción asistencial clara',
     subtitle:
-      'Muchas señales asistenciales llegan sin suficiente contexto. Eso obliga a los profesionales a decidir bajo presión qué es urgente y qué debe hacerse primero. Velvoix convierte una señal directamente en una acción asistencial clara con contexto, prioridad y seguimiento trazable.',
+      'Muchas señales asistenciales llegan sin suficiente contexto. Eso obliga a los equipos a decidir bajo presión qué es urgente y qué debe hacerse primero. Velvoix convierte cada señal en una acción asistencial clara, con contexto, prioridad y seguimiento trazable.',
     supporting:
       'Menos dudas, una priorización más clara y una mejor reconstrucción posterior.',
     primaryCta: 'Explorar un piloto',
@@ -374,7 +374,7 @@ export const esContent: SiteContent = {
     eyebrow: 'De un vistazo',
     title: 'De la alerta al seguimiento claro',
     description:
-      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué acción tiene sentido y quién debe asumirla.',
+      'Velvoix ayuda a los equipos a ver antes qué requiere atención, qué siguiente paso encaja y quién debe asumirlo.',
     stages: [
       {
         label: 'Lo que entra',
@@ -384,7 +384,7 @@ export const esContent: SiteContent = {
       {
         label: 'Lo que añade Velvoix',
         title: 'Contexto, prioridad y acción recomendada',
-        description: 'Velvoix ayuda a ver antes qué es urgente y cuál debería ser el siguiente paso.',
+        description: 'Velvoix ayuda a ver antes qué es urgente y qué siguiente paso encaja mejor.',
       },
       {
         label: 'Lo que eso aporta',
@@ -596,7 +596,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Contacto',
     title: 'Inicie una exploración que encaje con su situación',
     description:
-      'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta empresarial.',
+      'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta de negocio.',
     reasonsLabel: 'Vías',
     inquiryTypes: {
       pilot: 'Exploración piloto',

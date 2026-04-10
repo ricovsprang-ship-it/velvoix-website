@@ -408,10 +408,10 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
           ],
         },
       ],
-      ctaTitle: 'Discuss explainable triage in a pilot',
+      ctaTitle: 'Explore explainable triage in a pilot',
       ctaBody:
         'Use an initial pilot to test which signals in your organisation benefit most from context and explainable triage.',
-      ctaLabel: 'Start pilot assessment',
+      ctaLabel: 'Start a pilot conversation',
       meta: {
         title: 'Explainable care triage for care signals | Velvoix',
         description:
@@ -525,7 +525,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ctaTitle: 'Use the pilot to assess real fit',
       ctaBody:
         'Discuss upfront which signals, teams and outcomes in your setting should determine whether Velvoix moves to the next phase.',
-      ctaLabel: 'Plan a conversation',
+      ctaLabel: 'Plan an initial conversation',
       meta: {
         title: 'Pilot approach for care signals and follow-up | Velvoix',
         description:
@@ -824,7 +824,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ctaTitle: 'Explorar flujo y reconstrucción en su entorno',
       ctaBody:
         'Use un piloto para valorar dónde la evolución del estado, la escalada y la reconstrucción generan más valor práctico para sus equipos.',
-      ctaLabel: 'Planificar conversación',
+      ctaLabel: 'Planificar una conversación',
       meta: {
         title: 'Flujo asistencial, escalada y reconstrucción | Velvoix',
         description:
@@ -881,7 +881,7 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
       ctaTitle: 'Usar el piloto para evaluar el encaje real',
       ctaBody:
         'Alineen de antemano qué señales, equipos y resultados de su entorno deben determinar si Velvoix pasa a la siguiente fase.',
-      ctaLabel: 'Planificar conversación',
+      ctaLabel: 'Planificar una conversación',
       meta: {
         title: 'Enfoque piloto para señales asistenciales y seguimiento | Velvoix',
         description:

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { locale, content } = Astro.props;
-const usesExpandedHeroFrame = locale === 'en' || locale === 'de';
+const usesExpandedHeroFrame = locale !== 'nl';
 const usesRelaxedHeroSpacing = locale === 'de' || locale === 'es';
 const imageAltByLocale: Record<Locale, string> = {
   nl: 'Handcontact in een zorgomgeving',
@@ -20,23 +20,25 @@ const imageAltByLocale: Record<Locale, string> = {
 const heroImageClass = usesExpandedHeroFrame
   ? 'h-full w-full object-cover object-[72%_50%] md:object-[68%_47%]'
   : 'h-full w-full object-cover object-[72%_48%] md:object-[68%_45%]';
-const heroFrameClass = usesExpandedHeroFrame
-  ? 'mx-auto flex min-h-[30.5rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[35rem] md:px-10 md:py-10 xl:min-h-[38rem] xl:max-h-[39rem]'
-  : 'mx-auto flex min-h-[28.75rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[32.5rem] md:px-10 md:py-10 xl:min-h-[35rem] xl:max-h-[36.25rem]';
+const heroFrameClass = usesRelaxedHeroSpacing
+  ? 'mx-auto flex min-h-[31.5rem] w-full max-w-[1280px] items-center px-5 py-10 md:min-h-[36.5rem] md:px-10 md:py-12 xl:min-h-[39.5rem] xl:max-h-[40.5rem]'
+  : usesExpandedHeroFrame
+    ? 'mx-auto flex min-h-[30.5rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[35rem] md:px-10 md:py-10 xl:min-h-[38rem] xl:max-h-[39rem]'
+    : 'mx-auto flex min-h-[28.75rem] w-full max-w-[1280px] items-center px-5 py-8 md:min-h-[32.5rem] md:px-10 md:py-10 xl:min-h-[35rem] xl:max-h-[36.25rem]';
 const heroContentClass = usesRelaxedHeroSpacing
-  ? 'max-w-[36rem] text-white'
+  ? 'max-w-[37.5rem] text-white'
   : 'max-w-[34rem] text-white';
 const heroTitleClass = usesRelaxedHeroSpacing
-  ? 'mt-5 max-w-[13.2ch] text-[2.22rem] font-extrabold leading-[0.97] tracking-[-0.048em] text-white sm:text-[2.55rem] md:mt-6 md:text-[2.95rem] lg:text-[3.28rem]'
+  ? 'mt-6 max-w-[13.4ch] text-[2.22rem] font-extrabold leading-[0.98] tracking-[-0.048em] text-white sm:text-[2.55rem] md:mt-7 md:text-[2.95rem] lg:text-[3.28rem]'
   : 'mt-4 max-w-[10.8ch] text-[2.55rem] font-extrabold leading-[0.96] tracking-[-0.055em] text-white sm:text-[2.95rem] md:text-[3.45rem] lg:text-[3.95rem]';
 const heroSubtitleClass = usesRelaxedHeroSpacing
-  ? 'mt-5 max-w-[33rem] text-[0.93rem] leading-[1.62] text-slate-100 md:mt-6 md:text-[0.98rem] md:leading-[1.62]'
+  ? 'mt-6 max-w-[34rem] text-[0.93rem] leading-[1.68] text-slate-100 md:mt-7 md:text-[0.98rem] md:leading-[1.68]'
   : 'mt-5 max-w-[31rem] text-[0.98rem] leading-7 text-slate-100 md:text-[1.04rem] md:leading-7';
 const heroCtasClass = usesRelaxedHeroSpacing
-  ? 'mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-7'
+  ? 'mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap md:mt-8'
   : 'mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap';
 const heroSupportingClass = usesRelaxedHeroSpacing
-  ? 'mt-5 max-w-[33rem] text-[0.84rem] font-medium leading-[1.52] text-white/74 md:mt-6 md:text-[0.88rem]'
+  ? 'mt-6 max-w-[34rem] text-[0.84rem] font-medium leading-[1.58] text-white/74 md:mt-7 md:text-[0.88rem]'
   : 'mt-6 max-w-[31rem] text-[0.92rem] font-medium leading-6 text-white/74';
 ---
 
