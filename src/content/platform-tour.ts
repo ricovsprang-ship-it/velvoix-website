@@ -61,6 +61,10 @@ const slideFraming = {
   'resident-statistics': { image: '/products/platformtour/resident-statistics.webp', ...defaultFraming },
   'care-operations': { image: '/products/platformtour/care-operations.webp', ...defaultFraming },
   'quality-response': { image: '/products/platformtour/quality-response.webp', ...defaultFraming },
+  'workload-hotspots': { image: '/products/platformtour/workload-hotspots.webp', ...defaultFraming },
+  'facility-linking': { image: '/products/platformtour/facility-linking.webp', ...defaultFraming },
+  'access-control': { image: '/products/platformtour/access-control.webp', ...defaultFraming },
+  'audit-log': { image: '/products/platformtour/audit-log.webp', ...defaultFraming },
 } as const;
 
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
@@ -96,7 +100,11 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'resident-context', label: 'Context', title: 'Context dicht bij de opvolging', text: 'Context, privacy en teamafspraken blijven dicht bij de opvolging, zodat belangrijke informatie niet buiten het werkproces verdwijnt.', alt: 'Velvoix clientcontext', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Statistiek', title: 'Patronen per client zonder dashboardruis', text: 'Trend, urgentiemix en respons blijven zichtbaar, zodat patronen per client bespreekbaar worden zonder extra dashboardruis.', alt: 'Velvoix clientstatistieken', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Dagsturing', title: 'Dagelijkse operatie in een helder teamoverzicht', text: 'Druk, prioriteit en SLA-risico worden in een rustig teamoverzicht zichtbaar, zodat teams sneller kunnen bijsturen.', alt: 'Velvoix dagelijks zorgoverzicht', ...slideFraming['care-operations'] },
+      { id: 'workload-hotspots', label: 'Werkdruk', title: 'Werkdruk en hotspots sneller in beeld', text: 'Volume, herhaling en locaties met meldingsdruk worden samen zichtbaar, zodat teams eerder zien waar extra sturing nodig is.', alt: 'Velvoix werkdruk en hotspots', ...slideFraming['workload-hotspots'] },
       { id: 'quality-response', label: 'Kwaliteit', title: 'Responskwaliteit in een uitlegbare laag', text: 'Kwaliteit en respons worden navolgbaar, zodat verbeterpunten bespreekbaar blijven op basis van echte signalen.', alt: 'Velvoix kwaliteit en respons overzicht', ...slideFraming['quality-response'] },
+      { id: 'facility-linking', label: 'Koppelingen', title: 'Koppelingen rustig beheren', text: 'Bewoners, kamers en boxen blijven in één beheerlaag koppelbaar, zodat basisinrichting niet versnipperd raakt.', alt: 'Velvoix koppelingen en beheer', ...slideFraming['facility-linking'] },
+      { id: 'access-control', label: 'Toegang', title: 'Accounts en rollen beheersbaar houden', text: 'Accounts, rollen en toegang blijven overzichtelijk, zodat beheer duidelijk blijft per locatie en team.', alt: 'Velvoix accounts en toegang', ...slideFraming['access-control'] },
+      { id: 'audit-log', label: 'Audit', title: 'Auditlog direct terug te lezen', text: 'Wijzigingen, statusacties en systeemgebeurtenissen blijven terug te lezen, zodat evaluatie en verantwoording niet op losse notities leunen.', alt: 'Velvoix auditlog', ...slideFraming['audit-log'] },
     ],
   },
   en: {
@@ -131,7 +139,11 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'resident-context', label: 'Context', title: 'Triage context close to the workflow', text: 'Triage context, privacy and team agreements stay close to follow-up so important context does not drift outside the workflow.', alt: 'Velvoix resident context', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Statistics', title: 'Resident patterns without dashboard noise', text: 'Trend, urgency mix and response patterns remain visible so resident-level patterns can be discussed without extra dashboard clutter.', alt: 'Velvoix resident statistics', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Operations', title: 'Daily operations in one clear team overview', text: 'Pressure, priorities and SLA risk become visible in one calm overview so teams can step in earlier.', alt: 'Velvoix daily care operations overview', ...slideFraming['care-operations'] },
+      { id: 'workload-hotspots', label: 'Hotspots', title: 'Workload hotspots in view', text: 'Volume, repeats and high-pressure locations become visible together so teams can see earlier where extra steering is needed.', alt: 'Velvoix workload and hotspots overview', ...slideFraming['workload-hotspots'] },
       { id: 'quality-response', label: 'Quality', title: 'Response quality in one explainable layer', text: 'Quality and response remain reviewable so improvement points can be discussed on the basis of actual signals.', alt: 'Velvoix quality and response overview', ...slideFraming['quality-response'] },
+      { id: 'facility-linking', label: 'Linking', title: 'Manage resident linking in one place', text: 'Residents, rooms and boxes stay linkable in one management layer so core setup does not become fragmented.', alt: 'Velvoix resident linking and control', ...slideFraming['facility-linking'] },
+      { id: 'access-control', label: 'Access', title: 'Keep accounts and roles manageable', text: 'Accounts, roles and access controls stay organised so administration remains clear across locations and teams.', alt: 'Velvoix accounts and access control', ...slideFraming['access-control'] },
+      { id: 'audit-log', label: 'Audit', title: 'Audit trail easy to review', text: 'Changes, status actions and system events remain easy to review so evaluation and accountability do not rely on loose notes.', alt: 'Velvoix audit trail', ...slideFraming['audit-log'] },
     ],
   },
   de: {
@@ -166,7 +178,11 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'resident-context', label: 'Kontext', title: 'Kontext nah an der Nachverfolgung', text: 'Triagekontext, Datenschutz und Teamabsprachen bleiben an der Nachverfolgung, damit wichtige Einordnung nicht außerhalb des Workflows verschwindet.', alt: 'Velvoix Bewohnerkontext', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Statistik', title: 'Bewohnermuster ohne Dashboard-Rauschen', text: 'Trend, Dringlichkeitsmix und Reaktionsmuster bleiben sichtbar, damit Muster pro Bewohner besprechbar bleiben, ohne das Dashboard zu überladen.', alt: 'Velvoix Bewohnerstatistik', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Tagessteuerung', title: 'Tägliche Steuerung in einer klaren Managementansicht', text: 'Druck, Prioritäten und SLA-Risiko werden in einer ruhigen Teamansicht sichtbar, damit die Tagessteuerung früher nachsteuern kann.', alt: 'Velvoix tägliche Pflegeübersicht', ...slideFraming['care-operations'] },
+      { id: 'workload-hotspots', label: 'Hotspots', title: 'Arbeitsdruck und Hotspots schneller im Blick', text: 'Volumen, Wiederholungen und meldungsstarke Bereiche werden gemeinsam sichtbar, damit Teams früher sehen, wo zusätzliche Steuerung nötig ist.', alt: 'Velvoix Arbeitsdruck und Hotspots', ...slideFraming['workload-hotspots'] },
       { id: 'quality-response', label: 'Qualität', title: 'Reaktionsqualität in erklärbarer Form', text: 'Qualität und Reaktion bleiben nachvollziehbar, damit Verbesserungen auf Basis echter Signale besprochen werden können.', alt: 'Velvoix Qualitäts- und Reaktionsübersicht', ...slideFraming['quality-response'] },
+      { id: 'facility-linking', label: 'Verknüpfung', title: 'Verknüpfungen ruhig verwalten', text: 'Bewohner, Zimmer und Boxen bleiben in einer Verwaltungsebene verknüpfbar, damit die Grundeinrichtung nicht zersplittert.', alt: 'Velvoix Verknüpfungen und Verwaltung', ...slideFraming['facility-linking'] },
+      { id: 'access-control', label: 'Zugang', title: 'Konten und Rollen beherrschbar halten', text: 'Konten, Rollen und Zugriffssteuerung bleiben übersichtlich, damit die Verwaltung je Standort und Team klar bleibt.', alt: 'Velvoix Konten und Zugänge', ...slideFraming['access-control'] },
+      { id: 'audit-log', label: 'Audit', title: 'Auditlog direkt nachvollziehen', text: 'Änderungen, Statusaktionen und Systemereignisse bleiben nachvollziehbar, damit Auswertung und Verantwortung nicht von losen Notizen abhängen.', alt: 'Velvoix Auditlog', ...slideFraming['audit-log'] },
     ],
   },
   es: {
@@ -201,7 +217,11 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'resident-context', label: 'Contexto', title: 'Contexto cerca del seguimiento', text: 'El contexto de triaje, la privacidad y los acuerdos del equipo permanecen junto al seguimiento para que la interpretación importante no salga del flujo de trabajo.', alt: 'Contexto del residente en Velvoix', ...slideFraming['resident-context'] },
       { id: 'resident-statistics', label: 'Estadísticas', title: 'Patrones del residente sin ruido de paneles', text: 'La tendencia, la mezcla de urgencia y la respuesta siguen visibles para que los patrones por residente puedan comentarse sin sobrecargar los paneles.', alt: 'Estadísticas del residente en Velvoix', ...slideFraming['resident-statistics'] },
       { id: 'care-operations', label: 'Operación', title: 'Operación diaria en una vista de gestión clara', text: 'La presión, las prioridades y el riesgo SLA se vuelven visibles en una vista serena del equipo para que la operación diaria pueda corregirse antes.', alt: 'Vista diaria de operaciones asistenciales en Velvoix', ...slideFraming['care-operations'] },
+      { id: 'workload-hotspots', label: 'Hotspots', title: 'Carga y focos de presión a la vista', text: 'El volumen, las repeticiones y las ubicaciones con mayor presión de señales se vuelven visibles a la vez para que los equipos detecten antes dónde hace falta más dirección.', alt: 'Velvoix carga y focos de presión', ...slideFraming['workload-hotspots'] },
       { id: 'quality-response', label: 'Calidad', title: 'Calidad de respuesta en una capa explicable', text: 'La calidad y la respuesta siguen siendo revisables para que los puntos de mejora se discutan sobre señales reales.', alt: 'Vista de calidad y respuesta en Velvoix', ...slideFraming['quality-response'] },
+      { id: 'facility-linking', label: 'Vinculación', title: 'Gestionar vinculaciones con calma', text: 'Residentes, habitaciones y boxes pueden vincularse desde una misma capa de gestión para que la configuración básica no se disperse.', alt: 'Velvoix vinculaciones y gestión', ...slideFraming['facility-linking'] },
+      { id: 'access-control', label: 'Acceso', title: 'Mantener cuentas y roles bajo control', text: 'Las cuentas, los roles y los controles de acceso siguen organizados para que la administración permanezca clara por centro y equipo.', alt: 'Velvoix cuentas y accesos', ...slideFraming['access-control'] },
+      { id: 'audit-log', label: 'Auditoría', title: 'Registro de auditoría fácil de revisar', text: 'Los cambios, las acciones de estado y los eventos del sistema siguen siendo revisables para que la evaluación y la responsabilidad no dependan de notas sueltas.', alt: 'Velvoix registro de auditoría', ...slideFraming['audit-log'] },
     ],
   },
 };
