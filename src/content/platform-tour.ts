@@ -65,7 +65,7 @@ const slideFraming = {
   'facility-linking': { image: '/products/platformtour/facility-linking.webp', ...defaultFraming },
   'access-control': { image: '/products/platformtour/access-control.webp', ...defaultFraming },
   'audit-log': { image: '/products/platformtour/audit-log.webp', ...defaultFraming },
-  'mobile-summary': { image: '/products/platformtour/mobile-care-collage-plain.webp', ...defaultFraming },
+  'mobile-summary': { image: '/products/platformtour/mobile-care-collage-plain.png', ...defaultFraming },
 } as const;
 
 export const platformTourContent: Record<Locale, PlatformTourContent> = {
@@ -106,6 +106,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'facility-linking', label: 'Koppelingen', title: 'Koppelingen rustig beheren', text: 'Bewoners, kamers en boxen blijven in één beheerlaag koppelbaar, zodat basisinrichting niet versnipperd raakt.', alt: 'Velvoix koppelingen en beheer', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Toegang', title: 'Accounts en rollen beheersbaar houden', text: 'Accounts, rollen en toegang blijven overzichtelijk, zodat beheer duidelijk blijft per locatie en team.', alt: 'Velvoix accounts en toegang', ...slideFraming['access-control'] },
       { id: 'mobile-summary', label: 'Mobiel', title: 'Mobiele schermen in één beeld', text: 'Een compacte samenvatting van de echte mobiele app-schermen, zodat login, overzicht, werklijst en detail in één oogopslag zichtbaar zijn.', alt: 'Samenvatting van meerdere Velvoix CARE mobiele schermen zonder toestelrand', ...slideFraming['mobile-summary'] },
+      { id: 'audit-log', label: 'Auditlog', title: 'Audit en systeemacties direct terug te zien', text: 'Wijzigingen, systeemacties en actorcontext blijven samen zichtbaar, zodat reconstructie en controle niet buiten het platform hoeven te worden gezocht.', alt: 'Velvoix auditlog met systeemacties en gebruikersacties', ...slideFraming['audit-log'] },
     ],
   },
   en: {
@@ -145,6 +146,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'facility-linking', label: 'Linking', title: 'Manage resident linking in one place', text: 'Residents, rooms and boxes stay linkable in one management layer so core setup does not become fragmented.', alt: 'Velvoix resident linking and control', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Access', title: 'Keep accounts and roles manageable', text: 'Accounts, roles and access controls stay organised so administration remains clear across locations and teams.', alt: 'Velvoix accounts and access control', ...slideFraming['access-control'] },
       { id: 'mobile-summary', label: 'Mobile', title: 'Mobile screens in one view', text: 'A compact summary of the real mobile app screens so login, overview, worklist and detail are visible at a glance.', alt: 'Summary of multiple Velvoix CARE mobile screens without device frames', ...slideFraming['mobile-summary'] },
+      { id: 'audit-log', label: 'Audit Log', title: 'Audit and system actions remain reviewable', text: 'Changes, system actions and actor context stay visible together so reconstruction and control remain inside the product instead of outside it.', alt: 'Velvoix audit log with system and user actions', ...slideFraming['audit-log'] },
     ],
   },
   de: {
@@ -184,6 +186,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'facility-linking', label: 'Verknüpfung', title: 'Verknüpfungen ruhig verwalten', text: 'Bewohner, Zimmer und Boxen bleiben in einer Verwaltungsebene verknüpfbar, damit die Grundeinrichtung nicht zersplittert.', alt: 'Velvoix Verknüpfungen und Verwaltung', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Zugang', title: 'Konten und Rollen beherrschbar halten', text: 'Konten, Rollen und Zugriffssteuerung bleiben übersichtlich, damit die Verwaltung je Standort und Team klar bleibt.', alt: 'Velvoix Konten und Zugänge', ...slideFraming['access-control'] },
       { id: 'mobile-summary', label: 'Mobil', title: 'Mobile Ansichten in einem Bild', text: 'Eine kompakte Zusammenfassung der echten mobilen App-Ansichten, damit Login, Uebersicht, Arbeitsliste und Detail direkt sichtbar sind.', alt: 'Zusammenfassung mehrerer mobiler Velvoix CARE Ansichten ohne Geraeterahmen', ...slideFraming['mobile-summary'] },
+      { id: 'audit-log', label: 'Auditlog', title: 'Audit und Systemaktionen bleiben nachvollziehbar', text: 'Aenderungen, Systemaktionen und Akteurskontext bleiben gemeinsam sichtbar, damit Rekonstruktion und Kontrolle im Produkt selbst bleiben.', alt: 'Velvoix Auditlog mit System- und Benutzeraktionen', ...slideFraming['audit-log'] },
     ],
   },
   es: {
@@ -223,6 +226,7 @@ export const platformTourContent: Record<Locale, PlatformTourContent> = {
       { id: 'facility-linking', label: 'Vinculación', title: 'Gestionar vinculaciones con calma', text: 'Residentes, habitaciones y boxes pueden vincularse desde una misma capa de gestión para que la configuración básica no se disperse.', alt: 'Velvoix vinculaciones y gestión', ...slideFraming['facility-linking'] },
       { id: 'access-control', label: 'Acceso', title: 'Mantener cuentas y roles bajo control', text: 'Las cuentas, los roles y los controles de acceso siguen organizados para que la administración permanezca clara por centro y equipo.', alt: 'Velvoix cuentas y accesos', ...slideFraming['access-control'] },
       { id: 'mobile-summary', label: 'Movil', title: 'Pantallas moviles en una sola vista', text: 'Un resumen compacto de las pantallas reales de la app movil para ver acceso, resumen, bandeja y detalle de un vistazo.', alt: 'Resumen de varias pantallas moviles de Velvoix CARE sin marcos de dispositivo', ...slideFraming['mobile-summary'] },
+      { id: 'audit-log', label: 'Auditoria', title: 'Auditoria y acciones del sistema en una sola vista', text: 'Los cambios, las acciones del sistema y el contexto del actor permanecen juntos para que la reconstruccion y el control sigan dentro del producto.', alt: 'Registro de auditoria de Velvoix con acciones del sistema y de usuarios', ...slideFraming['audit-log'] },
     ],
   },
 };
