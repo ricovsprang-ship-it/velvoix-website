@@ -1,6 +1,6 @@
 # Velvoix Website
 
-Publieke, meertalige one-page website voor `velvoix.com`.
+Publieke, meertalige one-page website voor `velvoix.app`.
 
 Stack:
 - Astro
@@ -62,24 +62,25 @@ npm run smoke:locales
 
 De check faalt expliciet als bijvoorbeeld `/de/` Nederlandse hero-content of andere locale-markers bevat.
 
-## cPanel deployment
+## Deployment
 
-Deze site is bedoeld voor eenvoudige deployment via cPanel Git Version Control.
+De site draait live op AWS en wordt als statische build uitgezet via S3 + CloudFront.
 
-Gebruik in cPanel:
-- clone een aparte repository-map
-- deploy daarna `dist/` naar de live domeinmap
+Gebruik voor deployment:
+- build de site met `npm run build`
+- sync daarna `dist/` naar de S3 bucket van de website
+- doe een CloudFront invalidation na release
 
-De deploy-config staat in:
+De build-output staat in:
 
 ```text
-.cpanel.yml
+dist/
 ```
 
-Live doelmap:
+Live domein:
 
 ```text
-/home/msntjkfwsr/velvoix.com/
+https://velvoix.app
 ```
 
 ## Contactformulier
@@ -89,7 +90,7 @@ Het contactformulier gebruikt nu een nette mock submit-flow met validatie en suc
 Later kan dit eenvoudig worden aangesloten op:
 - Formspree
 - een eenvoudige mail endpoint
-- een cPanel form handler
+- een serverless mail endpoint of backend route achter AWS
 
 De koppeling zit logisch geconcentreerd in:
 

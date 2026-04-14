@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://velvoix.com',
+  site: 'https://velvoix.app',
   devToolbar: {
     enabled: false,
   },
