@@ -1,99 +1,134 @@
 # Velvoix Website
 
-Publieke, meertalige one-page website voor `velvoix.app`.
+This repository contains the public Velvoix marketing website for
+`https://velvoix.app`.
 
-Stack:
+It is a standalone repository with its own deployment path, Git history, and
+release workflow.
+
+## Stack
+
 - Astro
 - Tailwind CSS
-- statische build
+- static build output
 
-Routes:
-- `/` Nederlands
+## Repository Purpose
+
+This repo is for the public-facing website only.
+
+It should not be used for:
+
+- backend application logic
+- dashboard runtime behavior
+- mobile workflows
+- box-agent contracts
+
+Cross-repo product or policy changes should be coordinated with the relevant
+Velvoix repositories instead of being silently redefined here.
+
+## Routes
+
+- `/` Dutch
 - `/en/` English
-- `/de/` Deutsch
-- `/es/` Español
+- `/de/` German
+- `/es/` Spanish
 
-## Lokaal starten
+## Local Development
 
-```sh
+```bash
 npm install
 npm run dev
 ```
 
-## Production build
+## Quality Gates
 
-```sh
+Build:
+
+```bash
 npm run build
 ```
 
-De statische output staat daarna in:
+Locale smoke-check on a fresh build:
 
-```text
-dist/
-```
-
-## Locale route smoke-check
-
-Om snel te detecteren of een locale-route per ongeluk de verkeerde taalvariant serveert, staat er een kleine smoke-check op de build-output.
-
-Deze check valideert voor:
-- `/`
-- `/en/`
-- `/de/`
-- `/es/`
-
-Per route controleert de smoke-check:
-- `html lang`
-- `<title>`
-- hero `<h1>`
-- stabiele locale-markers in de navigatie
-
-Lokaal draaien:
-
-```sh
+```bash
 npm run verify:locales
 ```
 
-Alleen de guard draaien op bestaande build-output:
+Locale smoke-check on an existing build:
 
-```sh
+```bash
 npm run smoke:locales
 ```
 
-De check faalt expliciet als bijvoorbeeld `/de/` Nederlandse hero-content of andere locale-markers bevat.
+The smoke-check verifies that each locale route serves the expected:
 
-## Deployment
+- `html lang`
+- page title
+- hero heading
+- locale-specific navigation markers
 
-De site draait live op AWS en wordt als statische build uitgezet via S3 + CloudFront.
+## Deployment Model
 
-Gebruik voor deployment:
-- build de site met `npm run build`
-- sync daarna `dist/` naar de S3 bucket van de website
-- doe een CloudFront invalidation na release
+This repo uses a static deployment flow.
 
-De build-output staat in:
+Important rule:
 
-```text
-dist/
-```
+- `dist/` is intentionally committed in this repository for the current cPanel
+  deployment workflow
 
-Live domein:
+Deployment artifact flow:
 
-```text
-https://velvoix.app
-```
+1. build the site with `npm run build`
+2. commit the updated `dist/` output when the release flow requires it
+3. cPanel deploy copies `dist/` into the live document root via `.cpanel.yml`
 
-## Contactformulier
+Deployment file:
 
-Het contactformulier gebruikt nu een nette mock submit-flow met validatie en success/error state.
+- `.cpanel.yml`
 
-Later kan dit eenvoudig worden aangesloten op:
-- Formspree
-- een eenvoudige mail endpoint
-- een serverless mail endpoint of backend route achter AWS
+## Repository Layout
 
-De koppeling zit logisch geconcentreerd in:
+- `src/`
+  Astro pages, layouts, and components
+- `public/`
+  static public assets
+- `scripts/locale-route-smoke.mjs`
+  locale correctness guard for build output
+- `dist/`
+  committed deployment artifact for the current hosting model
 
-```text
-src/components/ContactForm.astro
-```
+## Contribution Rules
+
+See:
+
+- `CONTRIBUTING.md`
+
+At a minimum:
+
+- keep changes small and reviewable
+- run the relevant website gates before merge
+- keep copy changes semantically consistent across locales
+- do not mix unrelated infrastructure or product logic into this repo
+
+## Security
+
+See:
+
+- `SECURITY.md`
+
+Do not commit:
+
+- secrets
+- hosting credentials
+- private contact-form endpoints
+- temporary local artifacts
+
+## Support
+
+See:
+
+- `SUPPORT.md`
+
+## Maintainer
+
+- `@ricovsprang-ship-it`
