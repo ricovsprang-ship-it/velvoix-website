@@ -12,6 +12,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+artifacts/
+coverage/
 
 # environment variables
 .env
@@ -24,3 +26,6 @@ dist/.contact-mailer-config.php
 
 # jetbrains setting folder
 .idea/
+
+# local editor folders
+.vscode/
