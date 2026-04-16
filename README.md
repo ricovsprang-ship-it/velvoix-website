@@ -1,10 +1,16 @@
 # Velvoix Website
 
 This repository contains the public Velvoix marketing website for
-`https://velvoix.app`.
+`https://velvoix.com`.
 
 It is a standalone repository with its own deployment path, Git history, and
 release workflow.
+
+Domain boundary:
+
+- public website: `https://velvoix.com`
+- product dashboard: `https://velvoix.app`
+- backend API: `https://api.velvoix.app`
 
 ## Stack
 

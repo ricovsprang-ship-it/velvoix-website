@@ -25,7 +25,7 @@ const {
   alternatePaths = {},
   strictAlternatePaths = false,
 } = Astro.props;
-const siteUrl = Astro.site?.toString() ?? 'https://velvoix.app';
+const siteUrl = Astro.site?.toString() ?? 'https://velvoix.com';
 const canonical = new URL(path, siteUrl).toString();
 const alternates: Record<Locale, string> = {
   ...localeRootPaths,
