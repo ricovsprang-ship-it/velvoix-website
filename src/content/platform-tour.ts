@@ -50,7 +50,7 @@ const slideFraming = {
     zoomOrigin: '50% 50%',
   },
   worklist: { image: '/products/platformtour/worklist-20260425.webp', ...defaultFraming },
-  notifications: { image: '/products/platformtour/notifications.webp', ...defaultFraming },
+  notifications: { image: '/products/platformtour/notifications-20260425.webp', ...defaultFraming },
   'event-detail': { image: '/products/platformtour/event-detail-20260425.webp', ...defaultFraming },
   resolve: { image: '/products/platformtour/resolve.webp', ...defaultFraming },
   assign: { image: '/products/platformtour/assign.webp', ...defaultFraming },
