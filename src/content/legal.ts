@@ -129,7 +129,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'Deze privacyverklaring legt uit hoe Velvoix persoonsgegevens verwerkt in verband met de website, contactaanvragen, pilotverkenningen, samenwerkingen en het gebruik van aan Velvoix gerelateerde diensten of platforms.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '24 maart 2026',
+      lastUpdated: '12 mei 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Privacyverklaring',
@@ -218,12 +218,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Cookies, analytics en vergelijkbare technieken',
           paragraphs: [
             'Velvoix gebruikt op de publieke website functionele browsertechnieken om basiswerking, taalvoorkeur, contactafhandeling en beveiliging te ondersteunen.',
-            'Aanvullende analytische metingen worden alleen ingezet wanneer die expliciet zijn ingericht, juridisch passend zijn en ook in dit beleid zijn verwerkt.',
+            'Velvoix gebruikt Plausible Analytics voor privacyvriendelijke, cookieloze website-analyse. Deze meting helpt om paginaweergaven, verwijzende bronnen en campagneparameters op geaggregeerd niveau te begrijpen, zonder individuele bezoekersprofielen op te bouwen.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en taalvoorkeur',
             'Technieken rond contactformulieren, mailafhandeling en misbruikpreventie',
-            'Analytische metingen alleen wanneer deze expliciet live staan en in dit beleid zijn verwerkt',
+            'Plausible Analytics voor cookieloze, geaggregeerde website-inzichten',
           ],
         },
         {
@@ -310,7 +310,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '14. Wijzigingen in deze privacyverklaring',
           paragraphs: [
             'Velvoix kan deze privacyverklaring aanpassen wanneer de website, dienstverlening, wetgeving of verwerking verandert. De meest recente versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: 24 maart 2026.',
+            'Laatste update: 12 mei 2026.',
           ],
         },
         {
@@ -335,7 +335,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'Dit cookiebeleid legt uit hoe Velvoix cookies en vergelijkbare technieken gebruikt op de website, welke categorieen cookies kunnen worden ingezet en hoe voorkeuren kunnen worden beheerd.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '24 maart 2026',
+      lastUpdated: '12 mei 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Cookiebeleid',
@@ -358,12 +358,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'welke-categorieen',
           title: '2. Welke categorieen Velvoix kan gebruiken',
           paragraphs: [
-            'De publieke website gebruikt op dit moment vooral functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Aanvullende analytische metingen of andere categorieen worden alleen toegevoegd wanneer die daadwerkelijk live staan en passend zijn ingericht.',
+            'De publieke website gebruikt functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Daarnaast gebruikt Velvoix Plausible Analytics voor cookieloze, geaggregeerde website-analyse.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en voorkeuren',
             'Browseropslag voor taalkeuze en vergelijkbare functionele voorkeuren',
-            'Analytische metingen alleen wanneer deze expliciet zijn ingeschakeld en in dit beleid zijn verwerkt',
+            'Plausible Analytics voor privacyvriendelijke pagina-, bron- en campagne-inzichten',
           ],
         },
         {
@@ -384,11 +384,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling en leveranciers',
           paragraphs: [
-            'De publieke website gebruikt browseropslag voor taalvoorkeur en de website- en mailinrichting van Velvoix voor contactafhandeling. Aanvullende analytics- of consenttooling wordt pas benoemd zodra die daadwerkelijk live staat.',
+            'De publieke website gebruikt browseropslag voor taalvoorkeur, de website- en mailinrichting van Velvoix voor contactafhandeling en Plausible Analytics voor cookieloze, geaggregeerde website-analyse.',
           ],
           bullets: [
             'Browseropslag voor functionele taalvoorkeuren op de publieke site',
             'Website- en mailinfrastructuur voor contactverwerking en misbruikbeperking',
+            'Plausible Analytics als privacyvriendelijke analyticsprovider',
             'Hosting- en infrastructuurleveranciers worden waar nodig contractueel ingezet',
           ],
         },
@@ -405,7 +406,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Wijzigingen in dit cookiebeleid',
           paragraphs: [
             'Velvoix kan dit cookiebeleid aanpassen wanneer de website, de gebruikte tooling of wettelijke vereisten veranderen. De meest actuele versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: 24 maart 2026.',
+            'Laatste update: 12 mei 2026.',
           ],
         },
         {
@@ -569,7 +570,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'This privacy policy explains how Velvoix processes personal data in connection with the website, contact requests, pilot explorations, partnerships, and the use of Velvoix-related services or platforms.',
       updatedLabel: 'Last updated',
-      lastUpdated: '24 March 2026',
+      lastUpdated: '12 May 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Privacy Policy',
@@ -658,12 +659,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Cookies, analytics and similar technologies',
           paragraphs: [
             'Velvoix uses functional browser technologies on the public website to support core operation, language preference, contact handling and security.',
-            'Additional analytics measurement is only introduced where it has been explicitly configured, is legally appropriate and is reflected in this policy.',
+            'Velvoix uses Plausible Analytics for privacy-friendly, cookieless website analytics. This helps Velvoix understand page views, referrers and campaign parameters at an aggregated level without building individual visitor profiles.',
           ],
           bullets: [
             'Functional technologies for core operation, security and language preference',
             'Technologies related to contact forms, mail handling and misuse prevention',
-            'Analytics measurement only where it is explicitly live and described in this policy',
+            'Plausible Analytics for cookieless, aggregated website insights',
           ],
         },
         {
@@ -750,7 +751,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '14. Changes to this privacy policy',
           paragraphs: [
             'Velvoix may update this privacy policy when the website, services, law or processing activities change. The most recent version will be published on this page.',
-            'Last updated: 24 March 2026.',
+            'Last updated: 12 May 2026.',
           ],
         },
         {
@@ -775,7 +776,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'This cookie policy explains how Velvoix uses cookies and similar technologies on the website, which categories may be used and how preferences can be managed.',
       updatedLabel: 'Last updated',
-      lastUpdated: '24 March 2026',
+      lastUpdated: '12 May 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Cookie Policy',
@@ -798,12 +799,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'categories',
           title: '2. Which categories Velvoix may use',
           paragraphs: [
-            'The public website currently relies primarily on functional browser technologies for core operation, language preference and contact handling. Additional analytics measurement or other categories are only added where they are actually live and appropriately configured.',
+            'The public website uses functional browser technologies for core operation, language preference and contact handling. Velvoix also uses Plausible Analytics for cookieless, aggregated website analytics.',
           ],
           bullets: [
             'Functional technologies for core operation, security and preferences',
             'Browser storage for language choice and similar functional preferences',
-            'Analytics measurement only where it has been explicitly enabled and reflected in this policy',
+            'Plausible Analytics for privacy-friendly page, source and campaign insights',
           ],
         },
         {
@@ -824,11 +825,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling and providers',
           paragraphs: [
-            'The public website uses browser storage for language preference and Velvoix website and mail infrastructure for contact handling. Additional analytics or consent tooling will only be named once it is actually live.',
+            'The public website uses browser storage for language preference, Velvoix website and mail infrastructure for contact handling, and Plausible Analytics for cookieless, aggregated website analytics.',
           ],
           bullets: [
             'Browser storage for functional language preferences on the public site',
             'Website and mail infrastructure for contact processing and misuse reduction',
+            'Plausible Analytics as privacy-friendly analytics provider',
             'Hosting and infrastructure providers are engaged contractually where required',
           ],
         },
@@ -845,7 +847,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Changes to this cookie policy',
           paragraphs: [
             'Velvoix may update this cookie policy when the website, tooling or legal requirements change. The most current version will be published on this page.',
-            'Last updated: 24 March 2026.',
+            'Last updated: 12 May 2026.',
           ],
         },
         {
@@ -1011,7 +1013,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Diese Datenschutzerklärung erläutert, wie Velvoix personenbezogene Daten im Zusammenhang mit der Website, Kontaktanfragen, Pilotprüfungen, Kooperationen und der Nutzung von Velvoix-bezogenen Diensten oder Plattformen verarbeitet.',
     updatedLabel: 'Zuletzt aktualisiert',
-    lastUpdated: '24. März 2026',
+    lastUpdated: '12. Mai 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
       title: 'Velvoix | Datenschutzerklärung',
@@ -1105,12 +1107,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       cookies: {
         paragraphs: [
           'Velvoix nutzt auf der öffentlichen Website funktionale Browsertechnologien, um den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit zu unterstützen.',
-          'Zusätzliche Analytik wird nur eingesetzt, wenn sie tatsächlich eingerichtet, rechtlich passend und in dieser Erklärung beschrieben ist.',
+          'Velvoix verwendet Plausible Analytics für datenschutzfreundliche, cookielose Website-Analyse. Diese Messung hilft, Seitenaufrufe, Verweisquellen und Kampagnenparameter aggregiert zu verstehen, ohne individuelle Besucherprofile aufzubauen.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Sprachpräferenz',
           'Technologien im Zusammenhang mit Kontaktformularen, Mailverarbeitung und Missbrauchsprävention',
-          'Analytik nur dann, wenn sie tatsächlich live ist und in dieser Erklärung beschrieben wird',
+          'Plausible Analytics für cookielose, aggregierte Website-Einblicke',
         ],
       },
       sharing: {
@@ -1181,7 +1183,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix kann diese Datenschutzerklärung aktualisieren, wenn sich die Website, die Dienste, die Rechtslage oder Verarbeitungstätigkeiten ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
-          'Zuletzt aktualisiert: 24. März 2026.',
+          'Zuletzt aktualisiert: 12. Mai 2026.',
         ],
       },
       contact: {
@@ -1204,7 +1206,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Diese Cookie-Richtlinie erläutert, wie Velvoix Cookies und ähnliche Technologien auf der Website verwendet, welche Kategorien eingesetzt werden können und wie Präferenzen verwaltet werden können.',
     updatedLabel: 'Zuletzt aktualisiert',
-    lastUpdated: '24. März 2026',
+    lastUpdated: '12. Mai 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
       title: 'Velvoix | Cookie-Richtlinie',
@@ -1232,12 +1234,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       categories: {
         paragraphs: [
-          'Die öffentliche Website stützt sich derzeit in erster Linie auf funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Zusätzliche Analytik oder andere Kategorien werden nur dann ergänzt, wenn sie tatsächlich live und angemessen eingerichtet sind.',
+          'Die öffentliche Website verwendet funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Velvoix verwendet außerdem Plausible Analytics für cookielose, aggregierte Website-Analyse.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Präferenzen',
           'Browserspeicher für die Sprachauswahl und ähnliche funktionale Präferenzen',
-          'Analytik nur dann, wenn sie ausdrücklich aktiviert und in dieser Richtlinie beschrieben ist',
+          'Plausible Analytics für datenschutzfreundliche Seiten-, Quellen- und Kampagneneinblicke',
         ],
       },
       purposes: {
@@ -1254,11 +1256,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       tooling: {
         paragraphs: [
-          'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz sowie die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung. Zusätzliche Analytik- oder Consent-Tools werden erst benannt, wenn sie tatsächlich live sind.',
+          'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz, die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung sowie Plausible Analytics für cookielose, aggregierte Website-Analyse.',
         ],
         bullets: [
           'Browserspeicher für funktionale Sprachpräferenzen auf der öffentlichen Website',
           'Website- und Mail-Infrastruktur für Kontaktverarbeitung und Missbrauchsreduktion',
+          'Plausible Analytics als datenschutzfreundlicher Analytics-Anbieter',
           'Hosting- und Infrastrukturanbieter werden, soweit erforderlich, vertraglich eingebunden',
         ],
       },
@@ -1271,7 +1274,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix kann diese Cookie-Richtlinie aktualisieren, wenn sich die Website, das Tooling oder die rechtlichen Anforderungen ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
-          'Zuletzt aktualisiert: 24. März 2026.',
+          'Zuletzt aktualisiert: 12. Mai 2026.',
         ],
       },
       contact: {
@@ -1422,7 +1425,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Esta política de privacidad explica cómo Velvoix trata datos personales en relación con el sitio web, las solicitudes de contacto, las exploraciones piloto, las colaboraciones y el uso de servicios o plataformas relacionados con Velvoix.',
     updatedLabel: 'Última actualización',
-    lastUpdated: '24 de marzo de 2026',
+    lastUpdated: '12 de mayo de 2026',
     tocLabel: 'En esta página',
     meta: {
       title: 'Velvoix | Política de privacidad',
@@ -1516,12 +1519,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       cookies: {
         paragraphs: [
           'Velvoix utiliza tecnologías funcionales del navegador en el sitio público para apoyar el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad.',
-          'La medición analítica adicional solo se introduce cuando está realmente configurada, es jurídicamente adecuada y se refleja en esta política.',
+          'Velvoix utiliza Plausible Analytics para analítica web respetuosa con la privacidad y sin cookies. Esta medición ayuda a comprender páginas vistas, fuentes de referencia y parámetros de campaña de forma agregada, sin crear perfiles individuales de visitantes.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencia de idioma',
           'Tecnologías relacionadas con formularios de contacto, tratamiento de correo y prevención de abusos',
-          'Analítica solo cuando está realmente activa y descrita en esta política',
+          'Plausible Analytics para información web agregada y sin cookies',
         ],
       },
       sharing: {
@@ -1592,7 +1595,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix puede actualizar esta política de privacidad cuando cambien el sitio web, los servicios, la normativa o las actividades de tratamiento. La versión más reciente se publicará en esta página.',
-          'Última actualización: 24 de marzo de 2026.',
+          'Última actualización: 12 de mayo de 2026.',
         ],
       },
       contact: {
@@ -1615,7 +1618,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Esta política de cookies explica cómo Velvoix utiliza cookies y tecnologías similares en el sitio web, qué categorías pueden emplearse y cómo pueden gestionarse las preferencias.',
     updatedLabel: 'Última actualización',
-    lastUpdated: '24 de marzo de 2026',
+    lastUpdated: '12 de mayo de 2026',
     tocLabel: 'En esta página',
     meta: {
       title: 'Velvoix | Política de cookies',
@@ -1643,12 +1646,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       categories: {
         paragraphs: [
-          'El sitio público se basa actualmente principalmente en tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. La analítica adicional u otras categorías solo se añaden cuando están realmente activas y configuradas de forma adecuada.',
+          'El sitio público utiliza tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. Velvoix también utiliza Plausible Analytics para analítica web agregada y sin cookies.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencias',
           'Almacenamiento del navegador para la elección de idioma y preferencias funcionales similares',
-          'Analítica solo cuando esté expresamente activada y descrita en esta política',
+          'Plausible Analytics para información respetuosa con la privacidad sobre páginas, fuentes y campañas',
         ],
       },
       purposes: {
@@ -1665,11 +1668,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       tooling: {
         paragraphs: [
-          'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma y la infraestructura web y de correo de Velvoix para la gestión de contacto. Las herramientas adicionales de analítica o consentimiento solo se mencionarán cuando estén realmente activas.',
+          'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma, la infraestructura web y de correo de Velvoix para la gestión de contacto y Plausible Analytics para analítica web agregada y sin cookies.',
         ],
         bullets: [
           'Almacenamiento del navegador para preferencias funcionales de idioma en el sitio público',
           'Infraestructura web y de correo para el procesamiento de contacto y la reducción de abusos',
+          'Plausible Analytics como proveedor de analítica respetuosa con la privacidad',
           'Los proveedores de hosting e infraestructura se contratan cuando así se requiere',
         ],
       },
@@ -1682,7 +1686,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix puede actualizar esta política de cookies cuando cambien el sitio web, las herramientas o los requisitos legales. La versión más reciente se publicará en esta página.',
-          'Última actualización: 24 de marzo de 2026.',
+          'Última actualización: 12 de mayo de 2026.',
         ],
       },
       contact: {
@@ -1832,6 +1836,3 @@ export const legalContent: Record<Locale, LegalLocaleContent> = {
   de: normalizeLegalLocale(deLegalContent),
   es: normalizeLegalLocale(esLegalContent),
 };
-
-
-

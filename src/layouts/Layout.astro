@@ -135,6 +135,7 @@ const structuredData = [
     <meta name="twitter:title" content={ogTitle} />
     <meta name="twitter:description" content={ogDescription} />
     <meta name="twitter:image" content={new URL('/og-cover.svg', siteUrl).toString()} />
+    <script defer data-domain="velvoix.com" src="https://plausible.io/js/script.js"></script>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <title>{title}</title>
   </head>
