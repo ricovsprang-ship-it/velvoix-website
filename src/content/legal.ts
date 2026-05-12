@@ -1,4 +1,4 @@
-﻿import type { Locale } from './site';
+import type { Locale } from './site';
 
 import { normalizePublicContactCopy } from './contact-addresses';
 
@@ -218,12 +218,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Cookies, analytics en vergelijkbare technieken',
           paragraphs: [
             'Velvoix gebruikt op de publieke website functionele browsertechnieken om basiswerking, taalvoorkeur, contactafhandeling en beveiliging te ondersteunen.',
-            'Velvoix gebruikt Plausible Analytics voor privacyvriendelijke, cookieloze website-analyse. Deze meting helpt om paginaweergaven, verwijzende bronnen en campagneparameters op geaggregeerd niveau te begrijpen, zonder individuele bezoekersprofielen op te bouwen.',
+            'Velvoix gebruikt Cloudflare Web Analytics voor privacyvriendelijke, cookieloze website-analyse. Deze meting helpt om paginaweergaven, verwijzende bronnen en technische prestatie-indicatoren op geaggregeerd niveau te begrijpen, zonder individuele bezoekersprofielen op te bouwen.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en taalvoorkeur',
             'Technieken rond contactformulieren, mailafhandeling en misbruikpreventie',
-            'Plausible Analytics voor cookieloze, geaggregeerde website-inzichten',
+            'Cloudflare Web Analytics voor cookieloze, geaggregeerde website-inzichten',
           ],
         },
         {
@@ -358,12 +358,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'welke-categorieen',
           title: '2. Welke categorieen Velvoix kan gebruiken',
           paragraphs: [
-            'De publieke website gebruikt functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Daarnaast gebruikt Velvoix Plausible Analytics voor cookieloze, geaggregeerde website-analyse.',
+            'De publieke website gebruikt functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Daarnaast gebruikt Velvoix Cloudflare Web Analytics voor cookieloze, geaggregeerde website-analyse.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en voorkeuren',
             'Browseropslag voor taalkeuze en vergelijkbare functionele voorkeuren',
-            'Plausible Analytics voor privacyvriendelijke pagina-, bron- en campagne-inzichten',
+            'Cloudflare Web Analytics voor privacyvriendelijke pagina-, bron- en prestatie-inzichten',
           ],
         },
         {
@@ -384,12 +384,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling en leveranciers',
           paragraphs: [
-            'De publieke website gebruikt browseropslag voor taalvoorkeur, de website- en mailinrichting van Velvoix voor contactafhandeling en Plausible Analytics voor cookieloze, geaggregeerde website-analyse.',
+            'De publieke website gebruikt browseropslag voor taalvoorkeur, de website- en mailinrichting van Velvoix voor contactafhandeling en Cloudflare Web Analytics voor cookieloze, geaggregeerde website-analyse.',
           ],
           bullets: [
             'Browseropslag voor functionele taalvoorkeuren op de publieke site',
             'Website- en mailinfrastructuur voor contactverwerking en misbruikbeperking',
-            'Plausible Analytics als privacyvriendelijke analyticsprovider',
+            'Cloudflare Web Analytics als privacyvriendelijke analyticsprovider',
             'Hosting- en infrastructuurleveranciers worden waar nodig contractueel ingezet',
           ],
         },
@@ -659,12 +659,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Cookies, analytics and similar technologies',
           paragraphs: [
             'Velvoix uses functional browser technologies on the public website to support core operation, language preference, contact handling and security.',
-            'Velvoix uses Plausible Analytics for privacy-friendly, cookieless website analytics. This helps Velvoix understand page views, referrers and campaign parameters at an aggregated level without building individual visitor profiles.',
+            'Velvoix uses Cloudflare Web Analytics for privacy-friendly, cookieless website analytics. This helps Velvoix understand page views, referrers and technical performance indicators at an aggregated level without building individual visitor profiles.',
           ],
           bullets: [
             'Functional technologies for core operation, security and language preference',
             'Technologies related to contact forms, mail handling and misuse prevention',
-            'Plausible Analytics for cookieless, aggregated website insights',
+            'Cloudflare Web Analytics for cookieless, aggregated website insights',
           ],
         },
         {
@@ -799,12 +799,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'categories',
           title: '2. Which categories Velvoix may use',
           paragraphs: [
-            'The public website uses functional browser technologies for core operation, language preference and contact handling. Velvoix also uses Plausible Analytics for cookieless, aggregated website analytics.',
+            'The public website uses functional browser technologies for core operation, language preference and contact handling. Velvoix also uses Cloudflare Web Analytics for cookieless, aggregated website analytics.',
           ],
           bullets: [
             'Functional technologies for core operation, security and preferences',
             'Browser storage for language choice and similar functional preferences',
-            'Plausible Analytics for privacy-friendly page, source and campaign insights',
+            'Cloudflare Web Analytics for privacy-friendly page, source and performance insights',
           ],
         },
         {
@@ -825,12 +825,12 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'tooling',
           title: '4. Tooling and providers',
           paragraphs: [
-            'The public website uses browser storage for language preference, Velvoix website and mail infrastructure for contact handling, and Plausible Analytics for cookieless, aggregated website analytics.',
+            'The public website uses browser storage for language preference, Velvoix website and mail infrastructure for contact handling, and Cloudflare Web Analytics for cookieless, aggregated website analytics.',
           ],
           bullets: [
             'Browser storage for functional language preferences on the public site',
             'Website and mail infrastructure for contact processing and misuse reduction',
-            'Plausible Analytics as privacy-friendly analytics provider',
+            'Cloudflare Web Analytics as privacy-friendly analytics provider',
             'Hosting and infrastructure providers are engaged contractually where required',
           ],
         },
@@ -1107,12 +1107,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       cookies: {
         paragraphs: [
           'Velvoix nutzt auf der öffentlichen Website funktionale Browsertechnologien, um den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit zu unterstützen.',
-          'Velvoix verwendet Plausible Analytics für datenschutzfreundliche, cookielose Website-Analyse. Diese Messung hilft, Seitenaufrufe, Verweisquellen und Kampagnenparameter aggregiert zu verstehen, ohne individuelle Besucherprofile aufzubauen.',
+          'Velvoix verwendet Cloudflare Web Analytics für datenschutzfreundliche, cookielose Website-Analyse. Diese Messung hilft, Seitenaufrufe, Verweisquellen und technische Leistungsindikatoren aggregiert zu verstehen, ohne individuelle Besucherprofile aufzubauen.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Sprachpräferenz',
           'Technologien im Zusammenhang mit Kontaktformularen, Mailverarbeitung und Missbrauchsprävention',
-          'Plausible Analytics für cookielose, aggregierte Website-Einblicke',
+          'Cloudflare Web Analytics für cookielose, aggregierte Website-Einblicke',
         ],
       },
       sharing: {
@@ -1234,12 +1234,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       categories: {
         paragraphs: [
-          'Die öffentliche Website verwendet funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Velvoix verwendet außerdem Plausible Analytics für cookielose, aggregierte Website-Analyse.',
+          'Die öffentliche Website verwendet funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Velvoix verwendet außerdem Cloudflare Web Analytics für cookielose, aggregierte Website-Analyse.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Präferenzen',
           'Browserspeicher für die Sprachauswahl und ähnliche funktionale Präferenzen',
-          'Plausible Analytics für datenschutzfreundliche Seiten-, Quellen- und Kampagneneinblicke',
+          'Cloudflare Web Analytics für datenschutzfreundliche Seiten-, Quellen- und Leistungseinblicke',
         ],
       },
       purposes: {
@@ -1256,12 +1256,12 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       tooling: {
         paragraphs: [
-          'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz, die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung sowie Plausible Analytics für cookielose, aggregierte Website-Analyse.',
+          'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz, die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung sowie Cloudflare Web Analytics für cookielose, aggregierte Website-Analyse.',
         ],
         bullets: [
           'Browserspeicher für funktionale Sprachpräferenzen auf der öffentlichen Website',
           'Website- und Mail-Infrastruktur für Kontaktverarbeitung und Missbrauchsreduktion',
-          'Plausible Analytics als datenschutzfreundlicher Analytics-Anbieter',
+          'Cloudflare Web Analytics als datenschutzfreundlicher Analytics-Anbieter',
           'Hosting- und Infrastrukturanbieter werden, soweit erforderlich, vertraglich eingebunden',
         ],
       },
@@ -1519,12 +1519,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       cookies: {
         paragraphs: [
           'Velvoix utiliza tecnologías funcionales del navegador en el sitio público para apoyar el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad.',
-          'Velvoix utiliza Plausible Analytics para analítica web respetuosa con la privacidad y sin cookies. Esta medición ayuda a comprender páginas vistas, fuentes de referencia y parámetros de campaña de forma agregada, sin crear perfiles individuales de visitantes.',
+          'Velvoix utiliza Cloudflare Web Analytics para analítica web respetuosa con la privacidad y sin cookies. Esta medición ayuda a comprender páginas vistas, fuentes de referencia e indicadores técnicos de rendimiento de forma agregada, sin crear perfiles individuales de visitantes.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencia de idioma',
           'Tecnologías relacionadas con formularios de contacto, tratamiento de correo y prevención de abusos',
-          'Plausible Analytics para información web agregada y sin cookies',
+          'Cloudflare Web Analytics para información web agregada y sin cookies',
         ],
       },
       sharing: {
@@ -1646,12 +1646,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       categories: {
         paragraphs: [
-          'El sitio público utiliza tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. Velvoix también utiliza Plausible Analytics para analítica web agregada y sin cookies.',
+          'El sitio público utiliza tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. Velvoix también utiliza Cloudflare Web Analytics para analítica web agregada y sin cookies.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencias',
           'Almacenamiento del navegador para la elección de idioma y preferencias funcionales similares',
-          'Plausible Analytics para información respetuosa con la privacidad sobre páginas, fuentes y campañas',
+          'Cloudflare Web Analytics para información respetuosa con la privacidad sobre páginas, fuentes y rendimiento',
         ],
       },
       purposes: {
@@ -1668,12 +1668,12 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       tooling: {
         paragraphs: [
-          'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma, la infraestructura web y de correo de Velvoix para la gestión de contacto y Plausible Analytics para analítica web agregada y sin cookies.',
+          'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma, la infraestructura web y de correo de Velvoix para la gestión de contacto y Cloudflare Web Analytics para analítica web agregada y sin cookies.',
         ],
         bullets: [
           'Almacenamiento del navegador para preferencias funcionales de idioma en el sitio público',
           'Infraestructura web y de correo para el procesamiento de contacto y la reducción de abusos',
-          'Plausible Analytics como proveedor de analítica respetuosa con la privacidad',
+          'Cloudflare Web Analytics como proveedor de analítica respetuosa con la privacidad',
           'Los proveedores de hosting e infraestructura se contratan cuando así se requiere',
         ],
       },
