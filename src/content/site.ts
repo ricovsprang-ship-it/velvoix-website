@@ -283,24 +283,24 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Veel systemen laten wel zien dat er iets gebeurt, maar niet meteen wat aandacht vraagt, hoe urgent het is en welke actie nodig is. Daardoor moeten teams onder druk zelf blijven interpreteren.',
       proofPanels: {
-        explainabilityLabel: 'Uitlegbaarheid',
+        explainabilityLabel: 'Melding & onderbouwing',
         explainabilityTitle: 'Waarom',
-        explainabilitySummary: 'Helpknop is herhaald binnen korte tijd.',
-        explainabilitySupporting: 'Gebaseerd op triageregels en meldingscontext.',
+        explainabilitySummary: 'Een bewoner meldt te zijn gevallen en niet meer te kunnen opstaan.',
+        explainabilitySupporting: 'Reden, context en onderbouwing blijven samen zichtbaar voor snelle beoordeling.',
         explainabilityItems: [
-          { label: 'Primair signaal', value: 'Herhaalde helpoproep' },
-          { label: 'Kernwaarneming', value: 'Opvolging is waarschijnlijk opnieuw nodig.' },
-          { label: 'Triagebasis', value: 'Herhaling in korte tijd en context van deze melding.' },
+          { label: 'Transcript', value: '"Ik ben gevallen en kan niet meer opstaan."' },
+          { label: 'Actuele situatie', value: 'De melding staat open in de werkvoorraad.' },
+          { label: 'Onderbouwing', value: 'Signaal, relevante context en effect blijven samen zichtbaar.' },
         ],
-        followUpLabel: 'Werkbare opvolging',
-        followUpTitle: 'Aanbevolen aanpak',
-        followUpSummary: 'Ga direct naar bewoner; controleer situatie.',
+        followUpLabel: 'Afhandeling',
+        followUpTitle: 'Actie nu',
+        followUpSummary: 'Ga direct naar de bewoner en beoordeel de situatie.',
         followUpItems: [
-          { label: 'Urgentie', value: 'Direct' },
           { label: 'SLA-status', value: 'SLA kritisch' },
-          { label: 'Verantwoordelijke', value: 'Nog niet toegewezen' },
+          { label: 'Toegewezen aan', value: 'Nog niet toegewezen' },
+          { label: 'Kernstatus', value: 'Open' },
         ],
-        followUpAction: 'Pak melding op',
+        followUpAction: 'Pak op',
       },
     },
     flow: {
@@ -672,24 +672,24 @@ export const siteContent: Record<Locale, SiteContent> = {
       description:
         'Many systems show that something is happening, but not immediately what needs attention, how urgent it is and which action is required. That leaves teams interpreting under pressure.',
       proofPanels: {
-        explainabilityLabel: 'Explainability',
+        explainabilityLabel: 'Alert & rationale',
         explainabilityTitle: 'Why',
-        explainabilitySummary: 'Help button was triggered repeatedly within a short interval.',
-        explainabilitySupporting: 'Based on triage rules and alert context.',
+        explainabilitySummary: 'A resident reports having fallen and being unable to get up.',
+        explainabilitySupporting: 'Reason, context and rationale stay visible together for rapid assessment.',
         explainabilityItems: [
-          { label: 'Primary signal', value: 'Repeated help request' },
-          { label: 'Core observation', value: 'Further follow-up will likely be needed.' },
-          { label: 'Triage basis', value: 'Repeat trigger in a short interval and the context of this alert.' },
+          { label: 'Transcript', value: '"I have fallen and cannot get up."' },
+          { label: 'Current situation', value: 'The alert is open in the work queue.' },
+          { label: 'Rationale', value: 'Signal, relevant context and effect stay visible together.' },
         ],
-        followUpLabel: 'Practical follow-up',
-        followUpTitle: 'Recommended action',
-        followUpSummary: 'Go directly to the resident; check the situation.',
+        followUpLabel: 'Handling',
+        followUpTitle: 'Action now',
+        followUpSummary: 'Go directly to the resident and assess the situation.',
         followUpItems: [
-          { label: 'Urgency', value: 'Direct' },
           { label: 'SLA status', value: 'SLA critical' },
-          { label: 'Owner', value: 'Not yet assigned' },
+          { label: 'Assigned to', value: 'Not yet assigned' },
+          { label: 'Core status', value: 'Open' },
         ],
-        followUpAction: 'Take ownership',
+        followUpAction: 'Pick up',
       },
     },
     flow: {
@@ -998,5 +998,3 @@ export const siteContent: Record<Locale, SiteContent> = {
   de: deContent,
   es: esContent,
 };
-
-
