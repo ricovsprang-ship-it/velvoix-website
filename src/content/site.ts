@@ -238,7 +238,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Velvoix',
       title: 'Van signaal naar duidelijke zorgactie',
       subtitle:
-        'Veel zorgsignalen komen binnen zonder genoeg context. Daardoor moeten medewerkers onder druk zelf bepalen wat urgent is en wat eerst moet gebeuren. Velvoix maakt van een signaal direct een duidelijke zorgactie met context, prioriteit en duidelijke opvolging.',
+        'Veel zorgsignalen komen binnen zonder genoeg context. Daardoor moeten medewerkers onder druk zelf bepalen wat urgent is en wat eerst moet gebeuren. Velvoix maakt van een signaal direct een duidelijke zorgactie met context, prioriteit en heldere opvolging.',
       supporting:
         'Minder twijfel, duidelijkere prioritering en betere reconstructie achteraf.',
       primaryCta: 'Verken een pilot',
@@ -286,7 +286,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         explainabilityLabel: 'Melding & onderbouwing',
         explainabilityTitle: 'Waarom',
         explainabilitySummary: 'Een bewoner meldt te zijn gevallen en niet meer te kunnen opstaan.',
-        explainabilitySupporting: 'Reden, context en onderbouwing blijven samen zichtbaar voor snelle beoordeling.',
+        explainabilitySupporting: 'Reden, context en onderbouwing blijven samen zichtbaar voor een snelle beoordeling.',
         explainabilityItems: [
           { label: 'Transcript', value: '"Ik ben gevallen en kan niet meer opstaan."' },
           { label: 'Actuele situatie', value: 'De melding staat open in de werkvoorraad.' },
@@ -486,7 +486,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Producttour',
       title: 'Korte productbeelden van duidelijke opvolging',
       description:
-        'Gerichte voorbeelden van hoe Velvoix duidelijkheid, opvolging en beheersing zichtbaar maakt.',
+        'Gerichte voorbeelden laten zien hoe Velvoix duidelijkheid, opvolging en beheersing zichtbaar maakt.',
       cards: [
         {
           title: 'Meldingenlijst',
@@ -495,7 +495,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           tone: 'Operations',
         },
         {
-          title: 'Meldingdetail',
+          title: 'Meldingsdetail',
           caption: 'Waarom en aanbevolen aanpak worden zichtbaar als uitlegbare onderbouwing.',
           image: '/products/proof-explainability.png',
           tone: 'Explainability',
@@ -621,7 +621,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         'Velvoix helps healthcare organisations turn care signals into clear action, better prioritisation and traceable follow-up.',
       ogTitle: 'Velvoix | Clear care action from signals',
       ogDescription:
-        'Velvoix helps teams see faster what needs attention, what should happen first and how follow-up stays traceable.',
+        'Velvoix helps teams see sooner what needs attention, what should happen first and how follow-up stays traceable.',
     },
     hero: {
       eyebrow: 'Velvoix',
@@ -644,7 +644,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'At a glance',
       title: 'From alert to clear follow-up',
       description:
-        'Velvoix helps teams see sooner what needs attention, which next step fits and who should take it.',
+        'Velvoix helps teams see sooner what needs attention, which next step is appropriate and who should take it.',
       stages: [
         {
           label: 'What comes in',
@@ -656,7 +656,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           label: 'What Velvoix adds',
           title: 'Context, priority and recommended action',
           description:
-            'Velvoix helps teams see sooner what is urgent and which next step fits the situation.',
+            'Velvoix helps teams see sooner what is urgent and which next step is appropriate.',
         },
         {
           label: 'What that delivers',
@@ -674,12 +674,12 @@ export const siteContent: Record<Locale, SiteContent> = {
       proofPanels: {
         explainabilityLabel: 'Alert & rationale',
         explainabilityTitle: 'Why',
-        explainabilitySummary: 'A resident reports having fallen and being unable to get up.',
+        explainabilitySummary: 'A resident reports that they have fallen and cannot get up.',
         explainabilitySupporting: 'Reason, context and rationale stay visible together for rapid assessment.',
         explainabilityItems: [
           { label: 'Transcript', value: '"I have fallen and cannot get up."' },
           { label: 'Current situation', value: 'The alert is open in the work queue.' },
-          { label: 'Rationale', value: 'Signal, relevant context and effect stay visible together.' },
+          { label: 'Rationale', value: 'The signal, relevant context and effect stay visible together.' },
         ],
         followUpLabel: 'Handling',
         followUpTitle: 'Action now',
@@ -689,7 +689,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: 'Assigned to', value: 'Not yet assigned' },
           { label: 'Core status', value: 'Open' },
         ],
-        followUpAction: 'Pick up',
+        followUpAction: 'Pick up alert',
       },
     },
     flow: {
@@ -792,7 +792,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Why Velvoix is different',
       title: 'Why Velvoix works differently in practice',
       description:
-        'Velvoix does not stop at the alert, but helps teams move toward clear action and traceable follow-up.',
+        'Velvoix does not stop at the alert; it helps teams move toward clear action and traceable follow-up.',
       cards: [
         {
           title: 'Not just another alert',
@@ -802,7 +802,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         {
           title: 'Clearer priority',
           description:
-            'Teams see faster what needs attention and what should happen first.',
+            'Teams see sooner what needs attention and what should happen first.',
         },
         {
           title: 'Follow-up stays visible in one place',
@@ -855,7 +855,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         },
         {
           index: '05',
-          title: 'Reconstructable and auditable',
+          title: 'Reconstructible and auditable',
           description:
             'Follow-up, status changes and critical decisions remain traceable for evaluation and quality improvement.',
           effect: 'Traceable follow-up instead of isolated snapshots.',
@@ -920,20 +920,20 @@ export const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Contact',
       title: 'Start an exploration that fits your situation',
       description:
-        'Choose the route that fits best: a pilot, a collaboration discussion or a business question.',
+        'Choose the route that fits best: a pilot, a collaboration discussion or a business inquiry.',
       reasonsLabel: 'Topics',
       inquiryGroupLabel: 'Inquiry type',
       inquiryTypes: {
         pilot: 'Pilot',
         partnership: 'Collaboration',
-        general: 'Business question',
+        general: 'Business inquiry',
       },
       reasons: [
         'Pilot for healthcare organisations',
         'Collaboration, rollout or integration',
-        'Business question about the platform or timing',
+        'Business inquiry about the platform or timing',
       ],
-      directEmailNote: 'For pilots, collaborations and business questions.',
+      directEmailNote: 'For pilots, collaborations and business inquiries.',
       routeContent: {
         pilot: {
           helper: 'Choose this option to assess whether Velvoix supports clearer follow-up, better prioritisation and a practical fit in your organisation.',
@@ -948,10 +948,10 @@ export const siteContent: Record<Locale, SiteContent> = {
           submit: 'Send collaboration inquiry',
         },
         general: {
-          helper: 'Choose this option for a business question about the platform, how it could be used in practice or what comes next.',
+          helper: 'Choose this option for a business inquiry about the platform, how it could be used in practice or what comes next.',
           email: publicContactEmails.general,
           messagePlaceholder: 'Briefly describe your question and any context or timing that matters…',
-          submit: 'Send business question',
+          submit: 'Send business inquiry',
         },
       },
       labels: {

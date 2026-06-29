@@ -32,7 +32,7 @@ export const deContent: SiteContent = {
     metrics: [
       { value: 'Klar', label: 'Vom Signal zur gut verständlichen Handlung in der Pflege' },
       { value: 'Nachvollziehbar', label: 'Nachverfolgung und Rekonstruktion bleiben sichtbar' },
-      { value: 'Praxistauglich', label: 'Passt in bestehende Pflegeumgebungen ohne zusätzlichen Arbeitslärm' },
+      { value: 'Praxistauglich', label: 'Passt in bestehende Pflegeumgebungen ohne zusätzlichen operativen Aufwand' },
     ],
   },
   propositionBridge: {
@@ -42,7 +42,7 @@ export const deContent: SiteContent = {
       'Velvoix hilft Teams, schneller zu erkennen, was Aufmerksamkeit braucht, welcher nächste Schritt sinnvoll ist und wer ihn übernehmen sollte.',
     stages: [
       {
-        label: 'Was hereinkommt',
+        label: 'Was eingeht',
         title: 'Eine Meldung ist noch keine klare Handlung',
         description: 'Viele Signale kommen ohne genügend Kontext an, um sofort richtig zu handeln.',
       },
@@ -74,7 +74,7 @@ export const deContent: SiteContent = {
         { label: 'Begründung', value: 'Signal, relevanter Kontext und Wirkung bleiben zusammen sichtbar.' },
       ],
       followUpLabel: 'Bearbeitung',
-      followUpTitle: 'Aktion jetzt',
+      followUpTitle: 'Jetzt handeln',
       followUpSummary: 'Gehen Sie direkt zur Bewohnerin oder zum Bewohner und beurteilen Sie die Situation.',
       followUpItems: [
         { label: 'SLA-Status', value: 'SLA kritisch' },
@@ -97,7 +97,7 @@ export const deContent: SiteContent = {
     eyebrow: 'Wie es funktioniert',
     title: 'Vom Signal zur klaren nächsten Handlung',
     description:
-      'Velvoix verbindet das Signal mit Kontext und Priorisierung, damit Pflegeteams schneller sehen, was geschieht und was als Nächstes zu tun ist.',
+      'Velvoix verbindet das Signal mit Kontext und Priorisierung, damit Pflegeteams schneller sehen, was Aufmerksamkeit braucht und was als Nächstes zu tun ist.',
     panelLabel: 'Vom Signal zur Handlung',
     panelSupporting: 'Nicht nur eine Meldung, sondern ein klarer nächster Schritt mit sichtbarem Status, klarer Verantwortung und nachvollziehbarer Rekonstruktion.',
     steps: [
@@ -225,7 +225,7 @@ export const deContent: SiteContent = {
         index: '06',
         title: 'In der Praxis steuerbar',
         description:
-          'Verhalten, Nachverfolgung und Rückblick bleiben steuerbar, damit Teams kontrolliert reagieren können, ohne zusätzlichen Arbeitslärm.',
+          'Verhalten, Nachverfolgung und Rückblick bleiben steuerbar, damit Teams kontrolliert reagieren können, ohne zusätzlichen operativen Aufwand.',
         effect: 'Steuerbarkeit als Teil der täglichen Praxis.',
       },
     ],
@@ -402,7 +402,7 @@ export const esContent: SiteContent = {
     proofPanels: {
       explainabilityLabel: 'Alerta y fundamento',
       explainabilityTitle: 'Por qué',
-      explainabilitySummary: 'Una persona residente informa de una caída y no puede levantarse.',
+      explainabilitySummary: 'Una persona residente comunica que se ha caído y no puede levantarse.',
       explainabilitySupporting: 'El motivo, el contexto y el fundamento permanecen visibles para una evaluación rápida.',
       explainabilityItems: [
         { label: 'Transcripción', value: '"Me he caído y no puedo levantarme."' },
@@ -411,11 +411,11 @@ export const esContent: SiteContent = {
       ],
       followUpLabel: 'Gestión',
       followUpTitle: 'Acción ahora',
-      followUpSummary: 'Acuda directamente al residente y evalúe la situación.',
+      followUpSummary: 'Acuda directamente a la persona residente y evalúe la situación.',
       followUpItems: [
         { label: 'Estado SLA', value: 'SLA crítico' },
         { label: 'Asignado a', value: 'Aún sin asignar' },
-        { label: 'Estado clave', value: 'Abierta' },
+        { label: 'Estado principal', value: 'Abierta' },
       ],
       followUpAction: 'Asumir',
     },
@@ -504,14 +504,14 @@ export const esContent: SiteContent = {
     cards: [
       {
         title: 'No es solo otra alerta',
-        description: 'Velvoix no se limita a avisar de que algo ha ocurrido.',
+        description: 'Velvoix no se limita a indicar que algo ha ocurrido.',
       },
       {
         title: 'Prioridad más clara',
         description: 'Los equipos ven antes qué requiere atención y qué debe hacerse primero.',
       },
       {
-        title: 'El seguimiento sigue visible en una misma línea',
+        title: 'El seguimiento permanece visible en una misma línea',
         description: 'El estado, la responsabilidad y el siguiente paso permanecen visibles juntos para el equipo y para la revisión posterior.',
       },
     ],
@@ -521,7 +521,7 @@ export const esContent: SiteContent = {
     title: 'Diseñado para situaciones asistenciales en las que coinciden presión y dependencias',
     description:
       'Velvoix sigue siendo útil cuando hacen falta rapidez, claridad y trazabilidad. Incluso cuando no todo en la cadena responde de forma ideal, sigue siendo visible qué ocurre y cuál es el siguiente paso.',
-    capabilities: ['Estado claro', 'Fallback honesto', 'Seguimiento trazable', 'Acceso limitado', 'Comportamiento controlable', 'Útil bajo presión'],
+    capabilities: ['Estado claro', 'Alternativa honesta', 'Seguimiento trazable', 'Acceso limitado', 'Comportamiento controlable', 'Útil bajo presión'],
     rows: [
       {
         index: '01',
@@ -535,7 +535,7 @@ export const esContent: SiteContent = {
         title: 'Sin falsa seguridad',
         description:
           'El contexto limitado o la disponibilidad parcial siguen siendo visibles en lugar de quedar ocultos detrás de una aparente certeza.',
-        effect: 'Fallback honesto en lugar de degradación silenciosa.',
+        effect: 'Alternativa honesta en lugar de degradación silenciosa.',
       },
       {
         index: '03',
@@ -559,10 +559,10 @@ export const esContent: SiteContent = {
       },
       {
         index: '06',
-        title: 'Gobernable en la práctica',
+        title: 'Controlable en la práctica',
         description:
           'El comportamiento, la acción posterior y la revisión siguen siendo manejables para que los equipos puedan responder de forma controlada sin añadir ruido operativo.',
-        effect: 'Gobernabilidad como parte de la práctica diaria.',
+        effect: 'Control como parte de la práctica diaria.',
       },
     ],
     closingLine:
@@ -597,7 +597,7 @@ export const esContent: SiteContent = {
     eyebrow: 'Contacto',
     title: 'Inicie una exploración que encaje con su situación',
     description:
-      'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta de negocio.',
+      'Elija la vía que mejor encaje: exploración piloto, colaboración o una consulta empresarial.',
     reasonsLabel: 'Vías',
     inquiryGroupLabel: 'Tipo de consulta',
     inquiryTypes: {
@@ -622,7 +622,7 @@ export const esContent: SiteContent = {
         helper: 'Elija esta vía para consultas sobre colaboración, despliegue, integración o coordinación estratégica.',
         email: publicContactEmails.partners,
         messagePlaceholder: 'Describa brevemente su organización, su función y qué tipo de colaboración o despliegue desea explorar…',
-        submit: 'Enviar exploración de colaboración',
+        submit: 'Enviar consulta de colaboración',
       },
       general: {
         helper: 'Elija esta vía para una consulta empresarial sobre la plataforma, su uso en la práctica o los siguientes pasos.',

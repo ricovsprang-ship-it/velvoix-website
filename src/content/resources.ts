@@ -89,12 +89,12 @@ export const resourceUiByLocale: Record<Locale, ResourceUiContent> = {
       eyebrow: 'Pilot validation',
       title: 'What a first pilot can validate in practice',
       description:
-        'A pilot shows whether Velvoix really helps your setting prioritise faster, follow up more clearly and reconstruct events more effectively.',
+        'A pilot shows whether Velvoix really helps your setting prioritise sooner, follow up more clearly and reconstruct events more effectively.',
       note:
         'Practical outcomes depend on staffing, processes, equipment and existing systems. That is why a targeted pilot is more useful than a generic demo.',
       cards: [
         {
-          title: 'Seeing faster what needs attention',
+          title: 'Seeing sooner what needs attention',
           description: 'Which signals lead to clearer follow-up sooner, and where additional context genuinely changes decisions.',
         },
         {
