@@ -129,7 +129,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'Deze privacyverklaring legt uit hoe Velvoix persoonsgegevens verwerkt in verband met de website, contactaanvragen, pilotverkenningen, samenwerkingen en het gebruik van aan Velvoix gerelateerde diensten of platforms.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '12 mei 2026',
+      lastUpdated: '29 juni 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Privacyverklaring',
@@ -144,11 +144,11 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'wie-wij-zijn',
           title: '1. Wie wij zijn',
           paragraphs: [
-            'Velvoix Holding B.V, handelend onder de naam Velvoix, is in beginsel de verwerkingsverantwoordelijke voor de persoonsgegevens waarop deze privacyverklaring ziet.',
-            'Velvoix is bereikbaar via founder@velvoix.com en voor privacygerelateerde vragen via support@velvoix.com.',
+            'Velvoix Holding B.V., handelend onder de naam Velvoix, is in beginsel de verwerkingsverantwoordelijke voor de persoonsgegevens waarop deze privacyverklaring ziet.',
+            'Velvoix is bereikbaar via founder@velvoix.com. Privacygerelateerde vragen of verzoeken kunnen worden gestuurd naar support@velvoix.com. Als voor een specifieke pilot of samenwerking aanvullende privacyrollen, contactpunten of verwerkersafspraken gelden, worden die apart vastgelegd.',
           ],
           bullets: [
-            'Juridische entiteit: Velvoix Holding B.V',
+            'Juridische entiteit: Velvoix Holding B.V.',
             'Handelsnaam: Velvoix',
             'Postcode / plaats / land: 2313 NS, Leiden, The Netherlands',
             'Algemeen contact: founder@velvoix.com',
@@ -175,8 +175,8 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'welke-gegevens',
           title: '3. Welke persoonsgegevens wij kunnen verwerken',
           paragraphs: [
-            'Afhankelijk van de relatie met Velvoix kunnen wij persoonsgegevens verwerken zoals naam, functie, organisatie, e-mailadres, telefoonnummer, inhoud van berichten, communicatiehistorie, website- en apparaatgegevens, loggegevens en gegevens die nodig zijn voor accountbeheer, demo\'s, pilots of projectcoordinatie.',
-            'Velvoix is niet bedoeld om via algemene websiteformulieren onnodig gevoelige patientgegevens, medische informatie of andere bijzondere persoonsgegevens aan te leveren. Tenzij dit uitdrukkelijk is afgesproken en passend beveiligd gebeurt, vragen wij om dergelijke gegevens niet via algemene contactkanalen te versturen.',
+            'Afhankelijk van de relatie met Velvoix kunnen wij persoonsgegevens verwerken zoals naam, functie, organisatie, e-mailadres, telefoonnummer, inhoud van berichten, communicatiehistorie, website- en apparaatgegevens, loggegevens en gegevens die nodig zijn voor accountbeheer, demo\'s, pilots of projectcoördinatie.',
+            'Velvoix is niet bedoeld om via algemene websiteformulieren onnodig gevoelige patiëntgegevens, medische informatie of andere bijzondere categorieën persoonsgegevens aan te leveren. Tenzij dit uitdrukkelijk is afgesproken en passend beveiligd gebeurt, vragen wij om dergelijke gegevens niet via algemene contactkanalen te versturen.',
           ],
           bullets: [
             'Naam en contactgegevens',
@@ -184,7 +184,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'E-mailverkeer, berichten en communicatiehistorie',
             'IP-adres, browsergegevens, apparaatgegevens en loggegevens',
             'Gebruik van de website, demo-omgeving of pilotomgeving',
-            'Gegevens die nodig zijn voor accountbeheer, projectafstemming of pilotcoordinatie',
+            'Gegevens die nodig zijn voor accountbeheer, projectafstemming of pilotcoördinatie',
             'Gegevens die door organisaties of gebruikers zelf aan Velvoix worden verstrekt',
           ],
         },
@@ -193,6 +193,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '4. Voor welke doeleinden wij persoonsgegevens gebruiken',
           paragraphs: [
             'Velvoix gebruikt persoonsgegevens voor zakelijke en operationele doeleinden die passen bij de website, pilots, samenwerkingen en aan Velvoix gerelateerde diensten.',
+            'De publieke website gebruikt geen profilering of uitsluitend geautomatiseerde besluitvorming die rechtsgevolgen heeft of iemand op vergelijkbare wijze aanzienlijk treft. Eventuele beslisondersteuning, pilotfunctionaliteit of workflowafspraken worden in een passende professionele en contractuele context beoordeeld en vastgelegd.',
           ],
           bullets: [
             'Het beantwoorden van contactaanvragen en informatieverzoeken',
@@ -217,13 +218,15 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'cookies',
           title: '6. Cookies, analytics en vergelijkbare technieken',
           paragraphs: [
-            'Velvoix gebruikt op de publieke website functionele browsertechnieken om basiswerking, taalvoorkeur, contactafhandeling en beveiliging te ondersteunen.',
+            'Velvoix gebruikt op de publieke website functionele browsertechnieken en lokale browseropslag om basiswerking, taalvoorkeur, contactafhandeling en beveiliging te ondersteunen.',
             'Velvoix gebruikt Cloudflare Web Analytics voor privacyvriendelijke, cookieloze website-analyse. Deze meting helpt om paginaweergaven, verwijzende bronnen en technische prestatie-indicatoren op geaggregeerd niveau te begrijpen, zonder individuele bezoekersprofielen op te bouwen.',
+            'De publieke website gebruikt op dit moment geen advertentie- of trackingcookies. Als het gebruik van cookies of vergelijkbare technieken wezenlijk verandert, wordt dit beleid aangepast en worden waar nodig aanvullende keuzes of toestemming gevraagd.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en taalvoorkeur',
             'Technieken rond contactformulieren, mailafhandeling en misbruikpreventie',
             'Cloudflare Web Analytics voor cookieloze, geaggregeerde website-inzichten',
+            'Geen advertentie- of trackingcookies op de huidige publieke website',
           ],
         },
         {
@@ -277,6 +280,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '11. Rechten van betrokkenen',
           paragraphs: [
             'Afhankelijk van de toepasselijke wetgeving kunnen betrokkenen rechten hebben met betrekking tot hun persoonsgegevens. Velvoix behandelt dergelijke verzoeken zorgvuldig en binnen de toepasselijke wettelijke termijnen.',
+            'Deze rechten zijn niet in alle situaties absoluut. Soms kan Velvoix een verzoek niet volledig uitvoeren, bijvoorbeeld vanwege wettelijke verplichtingen, beveiliging, bewijsvoering of de rechten en vrijheden van anderen. In dat geval licht Velvoix dit toe.',
           ],
           bullets: [
             'Recht op informatie over de verwerking',
@@ -310,7 +314,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '14. Wijzigingen in deze privacyverklaring',
           paragraphs: [
             'Velvoix kan deze privacyverklaring aanpassen wanneer de website, dienstverlening, wetgeving of verwerking verandert. De meest recente versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: 12 mei 2026.',
+            'Laatste update: 29 juni 2026.',
           ],
         },
         {
@@ -320,7 +324,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'Voor vragen over deze privacyverklaring of over de manier waarop Velvoix persoonsgegevens verwerkt, kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             '2313 NS, Leiden, The Netherlands',
             'founder@velvoix.com',
             'support@velvoix.com',
@@ -333,9 +337,9 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       eyebrow: 'Juridische informatie',
       title: 'Cookiebeleid',
       intro:
-        'Dit cookiebeleid legt uit hoe Velvoix cookies en vergelijkbare technieken gebruikt op de website, welke categorieen cookies kunnen worden ingezet en hoe voorkeuren kunnen worden beheerd.',
+        'Dit cookiebeleid legt uit hoe Velvoix cookies, lokale browseropslag en vergelijkbare technieken gebruikt op de website, welke categorieën kunnen worden ingezet en hoe voorkeuren kunnen worden beheerd.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '12 mei 2026',
+      lastUpdated: '29 juni 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Cookiebeleid',
@@ -351,19 +355,20 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '1. Wat zijn cookies en vergelijkbare technieken',
           paragraphs: [
             'Cookies zijn kleine tekstbestanden die via een website op een apparaat kunnen worden geplaatst. Vergelijkbare technieken kunnen worden gebruikt om voorkeuren, sessies, beveiliging of gebruiksinformatie te ondersteunen.',
-            'Velvoix gebruikt deze technieken alleen voor doelen die passen bij een professionele, rustige en betrouwbare website-ervaring.',
+            'Velvoix gebruikt deze technieken alleen voor doelen die passen bij een professionele, rustige en betrouwbare website-ervaring. De huidige publieke website gebruikt geen advertentie- of trackingcookies.',
           ],
         },
         {
           id: 'welke-categorieen',
-          title: '2. Welke categorieen Velvoix kan gebruiken',
+          title: '2. Welke categorieën Velvoix kan gebruiken',
           paragraphs: [
-            'De publieke website gebruikt functionele browsertechnieken voor basiswerking, taalvoorkeur en contactafhandeling. Daarnaast gebruikt Velvoix Cloudflare Web Analytics voor cookieloze, geaggregeerde website-analyse.',
+            'De publieke website gebruikt functionele browsertechnieken en lokale browseropslag voor basiswerking, taalvoorkeur, contactafhandeling en beveiliging. Daarnaast gebruikt Velvoix Cloudflare Web Analytics voor cookieloze, geaggregeerde website-analyse.',
           ],
           bullets: [
             'Functionele technieken voor basiswerking, beveiliging en voorkeuren',
             'Browseropslag voor taalkeuze en vergelijkbare functionele voorkeuren',
             'Cloudflare Web Analytics voor privacyvriendelijke pagina-, bron- en prestatie-inzichten',
+            'Geen advertentie- of trackingcookies op de huidige publieke website',
           ],
         },
         {
@@ -371,6 +376,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '3. Waarvoor deze technieken worden gebruikt',
           paragraphs: [
             'Velvoix gebruikt deze technieken om de website goed te laten functioneren, taalkeuzes vast te houden, formulieren werkbaar te houden, misbruik te beperken en waar relevant prestaties of gebruik te begrijpen.',
+            'De taalvoorkeur wordt lokaal in de browser opgeslagen, zodat bezoekers niet telkens opnieuw een taal hoeven te kiezen. Deze opslag is functioneel voor de gebruikservaring van de website.',
           ],
           bullets: [
             'Websitefunctionaliteit en sessiebeheer',
@@ -385,6 +391,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '4. Tooling en leveranciers',
           paragraphs: [
             'De publieke website gebruikt browseropslag voor taalvoorkeur, de website- en mailinrichting van Velvoix voor contactafhandeling en Cloudflare Web Analytics voor cookieloze, geaggregeerde website-analyse.',
+            'Cloudflare Web Analytics is bedoeld voor geaggregeerde website-inzichten zonder trackingcookies of individuele bezoekersprofielen. Hosting-, infrastructuur- en mailleveranciers kunnen daarnaast technische gegevens verwerken voor werking, beveiliging en aflevering.',
           ],
           bullets: [
             'Browseropslag voor functionele taalvoorkeuren op de publieke site',
@@ -399,6 +406,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           paragraphs: [
             'De huidige publieke website biedt geen apart voorkeurencentrum. Browserinstellingen kunnen wel worden gebruikt om cookies, lokale opslag of vergelijkbare browsergegevens te blokkeren of te verwijderen.',
             'Het uitschakelen van functionele technieken kan gevolgen hebben voor de werking, taalkeuze of gebruikservaring van de website.',
+            'Als Velvoix in de toekomst technieken inzet waarvoor voorafgaande toestemming of een keuze vereist is, wordt de website daarop aangepast.',
           ],
         },
         {
@@ -406,7 +414,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Wijzigingen in dit cookiebeleid',
           paragraphs: [
             'Velvoix kan dit cookiebeleid aanpassen wanneer de website, de gebruikte tooling of wettelijke vereisten veranderen. De meest actuele versie wordt op deze pagina gepubliceerd.',
-            'Laatste update: 12 mei 2026.',
+            'Laatste update: 29 juni 2026.',
           ],
         },
         {
@@ -416,7 +424,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'Voor vragen over dit cookiebeleid of over de manier waarop websitegegevens worden verwerkt, kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             'founder@velvoix.com',
             'support@velvoix.com',
           ],
@@ -429,23 +437,23 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'Deze algemene voorwaarden beschrijven op hoofdlijnen onder welke voorwaarden de website van Velvoix wordt gebruikt en hoe zakelijke interacties, demo\'s, pilots en overige trajecten rondom Velvoix worden benaderd.',
       updatedLabel: 'Laatste update',
-      lastUpdated: '24 maart 2026',
+      lastUpdated: '29 juni 2026',
       tocLabel: 'Op deze pagina',
       meta: {
         title: 'Velvoix | Algemene voorwaarden',
         description:
-          'Algemene voorwaarden van Velvoix voor websitegebruik, zakelijke orientatie, demo\'s, pilots en andere interacties rondom het platform.',
+          'Algemene voorwaarden van Velvoix voor websitegebruik, zakelijke oriëntatie, demo\'s, pilots en andere interacties rondom het platform.',
         ogTitle: 'Velvoix | Algemene voorwaarden',
         ogDescription:
-          'Lees de algemene voorwaarden van Velvoix voor websitegebruik, zakelijke orientatie, demo\'s en pilots.',
+          'Lees de algemene voorwaarden van Velvoix voor websitegebruik, zakelijke oriëntatie, demo\'s en pilots.',
       },
       sections: [
         {
           id: 'toepasselijkheid',
           title: '1. Toepasselijkheid en wie wij zijn',
           paragraphs: [
-            'Velvoix Holding B.V, handelend onder de naam Velvoix, gebruikt deze voorwaarden voor het gebruik van de website en, waar relevant, voor informatieverzoeken, demo\'s, pilotverkenningen en overige zakelijke interacties rondom Velvoix.',
-            'Wanneer afzonderlijke offertes, overeenkomsten, pilotovereenkomsten, serviceafspraken of verwerkersafspraken worden gesloten, hebben die voorrang voor zover dat uitdrukkelijk is afgesproken.',
+            'Velvoix Holding B.V., handelend onder de naam Velvoix, gebruikt deze voorwaarden voor het gebruik van de website en, waar relevant, voor informatieverzoeken, demo\'s, pilotverkenningen en overige zakelijke interacties rondom Velvoix.',
+            'Deze voorwaarden zijn primair bedoeld voor zakelijke bezoekers, zorgorganisaties, partners en andere professionele relaties. Wanneer afzonderlijke offertes, overeenkomsten, pilotovereenkomsten, serviceafspraken of verwerkersafspraken worden gesloten, hebben die voorrang voor zover dat uitdrukkelijk is afgesproken.',
           ],
         },
         {
@@ -453,7 +461,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '2. Omschrijving van Velvoix',
           paragraphs: [
             'Velvoix biedt technologie en diensten gericht op zorgsignalen, triage, dashboardworkflow, beheer, device-input en gerelateerde operationele ondersteuning binnen zorgomgevingen of zorggerelateerde contexten.',
-            'De website is primair bedoeld voor informatieve en zakelijke orientatie. Verdere levering, implementatie of inzet van Velvoix kan afhankelijk zijn van afzonderlijke afspraken, technische voorwaarden, beveiligingsafspraken en organisatorische inrichting.',
+            'De website is primair bedoeld voor informatieve en zakelijke oriëntatie. Verdere levering, implementatie of inzet van Velvoix kan afhankelijk zijn van afzonderlijke afspraken, technische voorwaarden, beveiligingsafspraken en organisatorische inrichting.',
           ],
         },
         {
@@ -465,8 +473,9 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           bullets: [
             'Geen misbruik of ongeoorloofde belasting van de website',
             'Geen pogingen tot verstoring, omzeiling of ongeautoriseerde toegang',
-            'Geen scraping, extractie of geautomatiseerd kopieren waar dat niet is toegestaan',
+            'Geen scraping, extractie of geautomatiseerd kopiëren waar dat niet is toegestaan',
             'Geen verspreiding van schadelijke code of misleidende inhoud',
+            'Geen aanlevering van onnodige patiëntgegevens, medische gegevens of andere bijzondere categorieën persoonsgegevens via algemene websiteformulieren',
           ],
         },
         {
@@ -475,6 +484,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           paragraphs: [
             'Velvoix streeft naar actuele en zorgvuldige informatie op de website, maar garandeert niet dat alle inhoud altijd volledig, foutloos of ononderbroken beschikbaar is.',
             'De website, teksten, voorbeelden, demo\'s, pilots, previews en productomschrijvingen kunnen van tijd tot tijd worden aangepast, uitgebreid, beperkt of verwijderd.',
+            'Informatie op de website vormt geen bindend aanbod en schept geen verplichting tot levering, implementatie of samenwerking, tenzij dit uitdrukkelijk schriftelijk is overeengekomen.',
           ],
         },
         {
@@ -498,7 +508,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '7. Intellectueel eigendom',
           paragraphs: [
             'Alle rechten op de website, merkuitingen, teksten, vormgeving, software, dashboards, concepten, documentatie en overige materialen berusten bij Velvoix of diens licentiegevers, tenzij uitdrukkelijk anders is vermeld.',
-            'Gebruik is beperkt tot toegestane zakelijke orientatie en, waar van toepassing, contractueel overeengekomen inzet. Ongeoorloofde kopie, openbaarmaking, reverse engineering of afgeleide exploitatie is niet toegestaan voor zover de wet dit toelaat.',
+            'Gebruik is beperkt tot toegestane zakelijke oriëntatie en, waar van toepassing, contractueel overeengekomen inzet. Ongeoorloofde kopie, openbaarmaking, reverse engineering of afgeleide exploitatie is niet toegestaan voor zover de wet dit toelaat.',
           ],
         },
         {
@@ -537,7 +547,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '12. Wijzigingen in deze voorwaarden',
           paragraphs: [
             'Velvoix kan deze voorwaarden van tijd tot tijd wijzigen. De meest actuele versie wordt op de website gepubliceerd en voorzien van een datum van laatste update.',
-            'Laatste update: 24 maart 2026.',
+            'Laatste update: 29 juni 2026.',
           ],
         },
         {
@@ -554,7 +564,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'Voor vragen over deze voorwaarden of zakelijke interacties rondom Velvoix kan contact worden opgenomen via onderstaande contactgegevens.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             '2313 NS, Leiden, The Netherlands',
             'founder@velvoix.com',
             '0031610222775',
@@ -570,7 +580,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'This privacy policy explains how Velvoix processes personal data in connection with the website, contact requests, pilot explorations, partnerships, and the use of Velvoix-related services or platforms.',
       updatedLabel: 'Last updated',
-      lastUpdated: '12 May 2026',
+      lastUpdated: '29 June 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Privacy Policy',
@@ -585,11 +595,11 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'who-we-are',
           title: '1. Who we are',
           paragraphs: [
-            'Velvoix Holding B.V, trading under the name Velvoix, is generally the controller for the personal data covered by this privacy policy.',
-            'Velvoix can be contacted via founder@velvoix.com and for privacy-related questions via support@velvoix.com.',
+            'Velvoix Holding B.V., trading under the name Velvoix, is generally the controller for the personal data covered by this privacy policy.',
+            'Velvoix can be contacted via founder@velvoix.com. Privacy-related questions or requests can be sent to support@velvoix.com. If a specific pilot or partnership requires additional privacy roles, contact points or data processing arrangements, these are documented separately.',
           ],
           bullets: [
-            'Legal entity: Velvoix Holding B.V',
+            'Legal entity: Velvoix Holding B.V.',
             'Trade name: Velvoix',
             'Postal code / city / country: 2313 NS, Leiden, The Netherlands',
             'General contact: founder@velvoix.com',
@@ -634,6 +644,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '4. The purposes for which we use personal data',
           paragraphs: [
             'Velvoix uses personal data for business and operational purposes that fit the website, pilots, partnerships and Velvoix-related services.',
+            'The public website does not use profiling or solely automated decision-making that produces legal effects or similarly significantly affects a person. Any decision-support, pilot functionality or workflow arrangements are assessed and documented in an appropriate professional and contractual context.',
           ],
           bullets: [
             'Responding to contact requests and information requests',
@@ -658,13 +669,15 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'cookies',
           title: '6. Cookies, analytics and similar technologies',
           paragraphs: [
-            'Velvoix uses functional browser technologies on the public website to support core operation, language preference, contact handling and security.',
+            'Velvoix uses functional browser technologies and local browser storage on the public website to support core operation, language preference, contact handling and security.',
             'Velvoix uses Cloudflare Web Analytics for privacy-friendly, cookieless website analytics. This helps Velvoix understand page views, referrers and technical performance indicators at an aggregated level without building individual visitor profiles.',
+            'The public website currently does not use advertising or tracking cookies. If the use of cookies or similar technologies changes materially, this policy will be updated and additional choices or consent will be requested where required.',
           ],
           bullets: [
             'Functional technologies for core operation, security and language preference',
             'Technologies related to contact forms, mail handling and misuse prevention',
             'Cloudflare Web Analytics for cookieless, aggregated website insights',
+            'No advertising or tracking cookies on the current public website',
           ],
         },
         {
@@ -718,6 +731,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '11. Data subject rights',
           paragraphs: [
             'Depending on applicable law, individuals may have rights regarding their personal data. Velvoix handles such requests carefully and within applicable legal timelines.',
+            'These rights are not absolute in every situation. In some cases Velvoix may be unable to fully comply with a request, for example because of legal obligations, security, evidence preservation or the rights and freedoms of others. If so, Velvoix will explain this.',
           ],
           bullets: [
             'Right to information about processing',
@@ -751,7 +765,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '14. Changes to this privacy policy',
           paragraphs: [
             'Velvoix may update this privacy policy when the website, services, law or processing activities change. The most recent version will be published on this page.',
-            'Last updated: 12 May 2026.',
+            'Last updated: 29 June 2026.',
           ],
         },
         {
@@ -761,7 +775,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'For questions about this privacy policy or the way Velvoix processes personal data, the contact details below can be used.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             '2313 NS, Leiden, The Netherlands',
             'founder@velvoix.com',
             'support@velvoix.com',
@@ -774,9 +788,9 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       eyebrow: 'Legal information',
       title: 'Cookie Policy',
       intro:
-        'This cookie policy explains how Velvoix uses cookies and similar technologies on the website, which categories may be used and how preferences can be managed.',
+        'This cookie policy explains how Velvoix uses cookies, local browser storage and similar technologies on the website, which categories may be used and how preferences can be managed.',
       updatedLabel: 'Last updated',
-      lastUpdated: '12 May 2026',
+      lastUpdated: '29 June 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Cookie Policy',
@@ -792,19 +806,20 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '1. What cookies and similar technologies are',
           paragraphs: [
             'Cookies are small text files that may be placed on a device through a website. Similar technologies may be used to support preferences, sessions, security or usage insight.',
-            'Velvoix uses these technologies only for purposes that fit a professional, calm and reliable website experience.',
+            'Velvoix uses these technologies only for purposes that fit a professional, calm and reliable website experience. The current public website does not use advertising or tracking cookies.',
           ],
         },
         {
           id: 'categories',
           title: '2. Which categories Velvoix may use',
           paragraphs: [
-            'The public website uses functional browser technologies for core operation, language preference and contact handling. Velvoix also uses Cloudflare Web Analytics for cookieless, aggregated website analytics.',
+            'The public website uses functional browser technologies and local browser storage for core operation, language preference, contact handling and security. Velvoix also uses Cloudflare Web Analytics for cookieless, aggregated website analytics.',
           ],
           bullets: [
             'Functional technologies for core operation, security and preferences',
             'Browser storage for language choice and similar functional preferences',
             'Cloudflare Web Analytics for privacy-friendly page, source and performance insights',
+            'No advertising or tracking cookies on the current public website',
           ],
         },
         {
@@ -812,6 +827,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '3. The purposes for which these technologies are used',
           paragraphs: [
             'Velvoix uses these technologies to keep the website functioning properly, retain language choices, keep forms workable, reduce misuse and, where relevant, understand performance or usage.',
+            'The language preference is stored locally in the browser so visitors do not have to choose a language again on every visit. This storage is functional for the website experience.',
           ],
           bullets: [
             'Website functionality and session handling',
@@ -826,6 +842,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '4. Tooling and providers',
           paragraphs: [
             'The public website uses browser storage for language preference, Velvoix website and mail infrastructure for contact handling, and Cloudflare Web Analytics for cookieless, aggregated website analytics.',
+            'Cloudflare Web Analytics is intended to provide aggregated website insights without tracking cookies or individual visitor profiles. Hosting, infrastructure and mail providers may also process technical data for operation, security and delivery.',
           ],
           bullets: [
             'Browser storage for functional language preferences on the public site',
@@ -840,6 +857,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           paragraphs: [
             'The current public website does not offer a separate preference centre. Browser settings can still be used to block or remove cookies, local storage or similar browser data.',
             'Disabling functional technologies may affect the functionality, language selection or user experience of the website.',
+            'If Velvoix uses technologies in the future that require prior consent or a user choice, the website will be adapted accordingly.',
           ],
         },
         {
@@ -847,7 +865,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '6. Changes to this cookie policy',
           paragraphs: [
             'Velvoix may update this cookie policy when the website, tooling or legal requirements change. The most current version will be published on this page.',
-            'Last updated: 12 May 2026.',
+            'Last updated: 29 June 2026.',
           ],
         },
         {
@@ -857,7 +875,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'For questions about this cookie policy or about the processing of website-related data, the contact details below can be used.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             'founder@velvoix.com',
             'support@velvoix.com',
           ],
@@ -870,7 +888,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
       intro:
         'These terms and conditions describe at a high level the conditions under which the Velvoix website is used and how business interactions, demos, pilots and related trajectories around Velvoix are approached.',
       updatedLabel: 'Last updated',
-      lastUpdated: '24 March 2026',
+      lastUpdated: '29 June 2026',
       tocLabel: 'On this page',
       meta: {
         title: 'Velvoix | Terms & Conditions',
@@ -885,8 +903,8 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           id: 'scope',
           title: '1. Applicability and who we are',
           paragraphs: [
-            'Velvoix Holding B.V, trading under the name Velvoix, uses these terms for the use of the website and, where relevant, for information requests, demos, pilot explorations and other business interactions around Velvoix.',
-            'Where separate quotations, agreements, pilot agreements, service arrangements or processor agreements are concluded, those documents prevail where expressly agreed.',
+            'Velvoix Holding B.V., trading under the name Velvoix, uses these terms for the use of the website and, where relevant, for information requests, demos, pilot explorations and other business interactions around Velvoix.',
+            'These terms are primarily intended for business visitors, healthcare organisations, partners and other professional relationships. Where separate quotations, agreements, pilot agreements, service arrangements or processor agreements are concluded, those documents prevail where expressly agreed.',
           ],
         },
         {
@@ -908,6 +926,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'No attempts to disrupt, bypass or gain unauthorised access',
             'No scraping, extraction or automated copying where not permitted',
             'No distribution of harmful code or misleading content',
+            'No submission of unnecessary patient data, medical data or other special categories of personal data through general website forms',
           ],
         },
         {
@@ -916,6 +935,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           paragraphs: [
             'Velvoix aims to provide current and careful information on the website, but does not guarantee that all content will always be complete, error-free or uninterrupted.',
             'The website, texts, examples, demos, pilots, previews and product descriptions may be changed, expanded, limited or removed from time to time.',
+            'Information on the website does not constitute a binding offer and does not create an obligation to deliver, implement or collaborate unless this has been expressly agreed in writing.',
           ],
         },
         {
@@ -978,7 +998,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
           title: '12. Changes to these terms',
           paragraphs: [
             'Velvoix may amend these terms from time to time. The most current version will be published on the website and marked with a last updated date.',
-            'Last updated: 24 March 2026.',
+            'Last updated: 29 June 2026.',
           ],
         },
         {
@@ -995,7 +1015,7 @@ const legalBaseContent: Record<LegalBaseLocale, LegalLocaleContent> = {
             'For questions about these terms or business interactions around Velvoix, the contact details below can be used.',
           ],
           bullets: [
-            'Velvoix Holding B.V',
+            'Velvoix Holding B.V.',
             '2313 NS, Leiden, The Netherlands',
             'founder@velvoix.com',
             '0031610222775',
@@ -1013,7 +1033,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Diese Datenschutzerklärung erläutert, wie Velvoix personenbezogene Daten im Zusammenhang mit der Website, Kontaktanfragen, Pilotprüfungen, Kooperationen und der Nutzung von Velvoix-bezogenen Diensten oder Plattformen verarbeitet.',
     updatedLabel: 'Zuletzt aktualisiert',
-    lastUpdated: '12. Mai 2026',
+    lastUpdated: '29. Juni 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
       title: 'Velvoix | Datenschutzerklärung',
@@ -1044,7 +1064,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       'who-we-are': {
         paragraphs: [
           'Velvoix Holding B.V., handelnd unter dem Namen Velvoix, ist grundsätzlich Verantwortliche für die personenbezogenen Daten, auf die sich diese Datenschutzerklärung bezieht.',
-          'Velvoix ist unter founder@velvoix.com erreichbar; für datenschutzbezogene Fragen kann support@velvoix.com genutzt werden.',
+          'Velvoix ist unter founder@velvoix.com erreichbar. Datenschutzbezogene Fragen oder Anfragen können an support@velvoix.com gesendet werden. Wenn für einen bestimmten Piloten oder eine Zusammenarbeit zusätzliche Datenschutzrollen, Kontaktstellen oder Auftragsverarbeitungsvereinbarungen erforderlich sind, werden diese gesondert dokumentiert.',
         ],
         bullets: [
           'Rechtliche Einheit: Velvoix Holding B.V.',
@@ -1086,6 +1106,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       purposes: {
         paragraphs: [
           'Velvoix nutzt personenbezogene Daten für geschäftliche und operative Zwecke, die zur Website, zu Piloten, Kooperationen und zu Velvoix-bezogenen Diensten passen.',
+          'Die öffentliche Website verwendet kein Profiling und keine ausschließlich automatisierte Entscheidungsfindung, die rechtliche Wirkung entfaltet oder eine Person in ähnlicher Weise erheblich beeinträchtigt. Etwaige Entscheidungsunterstützung, Pilotfunktionalität oder Workflow-Absprachen werden in einem passenden fachlichen und vertraglichen Kontext bewertet und dokumentiert.',
         ],
         bullets: [
           'Beantwortung von Kontaktanfragen und Informationsersuchen',
@@ -1106,13 +1127,15 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       cookies: {
         paragraphs: [
-          'Velvoix nutzt auf der öffentlichen Website funktionale Browsertechnologien, um den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit zu unterstützen.',
+          'Velvoix nutzt auf der öffentlichen Website funktionale Browsertechnologien und lokalen Browserspeicher, um den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit zu unterstützen.',
           'Velvoix verwendet Cloudflare Web Analytics für datenschutzfreundliche, cookielose Website-Analyse. Diese Messung hilft, Seitenaufrufe, Verweisquellen und technische Leistungsindikatoren aggregiert zu verstehen, ohne individuelle Besucherprofile aufzubauen.',
+          'Die öffentliche Website verwendet derzeit keine Werbe- oder Tracking-Cookies. Wenn sich der Einsatz von Cookies oder ähnlichen Technologien wesentlich ändert, wird diese Erklärung aktualisiert und es werden, soweit erforderlich, zusätzliche Auswahlmöglichkeiten oder Einwilligungen eingeholt.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Sprachpräferenz',
           'Technologien im Zusammenhang mit Kontaktformularen, Mailverarbeitung und Missbrauchsprävention',
           'Cloudflare Web Analytics für cookielose, aggregierte Website-Einblicke',
+          'Keine Werbe- oder Tracking-Cookies auf der aktuellen öffentlichen Website',
         ],
       },
       sharing: {
@@ -1156,6 +1179,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       rights: {
         paragraphs: [
           'Je nach anwendbarem Recht können betroffene Personen Rechte in Bezug auf ihre personenbezogenen Daten haben. Velvoix behandelt solche Anfragen sorgfältig und innerhalb der geltenden gesetzlichen Fristen.',
+          'Diese Rechte gelten nicht in jeder Situation uneingeschränkt. In manchen Fällen kann Velvoix einem Antrag nicht vollständig entsprechen, etwa wegen gesetzlicher Pflichten, Sicherheit, Beweissicherung oder der Rechte und Freiheiten anderer Personen. In diesem Fall erläutert Velvoix dies.',
         ],
         bullets: [
           'Recht auf Information über die Verarbeitung',
@@ -1183,7 +1207,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix kann diese Datenschutzerklärung aktualisieren, wenn sich die Website, die Dienste, die Rechtslage oder Verarbeitungstätigkeiten ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
-          'Zuletzt aktualisiert: 12. Mai 2026.',
+          'Zuletzt aktualisiert: 29. Juni 2026.',
         ],
       },
       contact: {
@@ -1206,7 +1230,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Diese Cookie-Richtlinie erläutert, wie Velvoix Cookies und ähnliche Technologien auf der Website verwendet, welche Kategorien eingesetzt werden können und wie Präferenzen verwaltet werden können.',
     updatedLabel: 'Zuletzt aktualisiert',
-    lastUpdated: '12. Mai 2026',
+    lastUpdated: '29. Juni 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
       title: 'Velvoix | Cookie-Richtlinie',
@@ -1229,22 +1253,24 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       'what-are-cookies': {
         paragraphs: [
           'Cookies sind kleine Textdateien, die über eine Website auf einem Gerät gespeichert werden können. Ähnliche Technologien können eingesetzt werden, um Präferenzen, Sitzungen, Sicherheit oder Nutzungseinblicke zu unterstützen.',
-          'Velvoix verwendet diese Technologien ausschließlich für Zwecke, die zu einer professionellen, ruhigen und verlässlichen Website-Erfahrung passen.',
+          'Velvoix verwendet diese Technologien ausschließlich für Zwecke, die zu einer professionellen, ruhigen und verlässlichen Website-Erfahrung passen. Die aktuelle öffentliche Website verwendet keine Werbe- oder Tracking-Cookies.',
         ],
       },
       categories: {
         paragraphs: [
-          'Die öffentliche Website verwendet funktionale Browsertechnologien für den Kernbetrieb, die Sprachpräferenz und die Kontaktabwicklung. Velvoix verwendet außerdem Cloudflare Web Analytics für cookielose, aggregierte Website-Analyse.',
+          'Die öffentliche Website verwendet funktionale Browsertechnologien und lokalen Browserspeicher für den Kernbetrieb, die Sprachpräferenz, die Kontaktabwicklung und die Sicherheit. Velvoix verwendet außerdem Cloudflare Web Analytics für cookielose, aggregierte Website-Analyse.',
         ],
         bullets: [
           'Funktionale Technologien für Kernbetrieb, Sicherheit und Präferenzen',
           'Browserspeicher für die Sprachauswahl und ähnliche funktionale Präferenzen',
           'Cloudflare Web Analytics für datenschutzfreundliche Seiten-, Quellen- und Leistungseinblicke',
+          'Keine Werbe- oder Tracking-Cookies auf der aktuellen öffentlichen Website',
         ],
       },
       purposes: {
         paragraphs: [
           'Velvoix verwendet diese Technologien, um die Website funktionsfähig zu halten, Sprachwahlen zu speichern, Formulare nutzbar zu machen, Missbrauch zu verringern und, soweit relevant, Leistung oder Nutzung besser zu verstehen.',
+          'Die Sprachpräferenz wird lokal im Browser gespeichert, damit Besucherinnen und Besucher nicht bei jedem Besuch erneut eine Sprache auswählen müssen. Diese Speicherung ist funktional für die Nutzungserfahrung der Website.',
         ],
         bullets: [
           'Website-Funktionalität und Sitzungsverwaltung',
@@ -1257,6 +1283,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       tooling: {
         paragraphs: [
           'Die öffentliche Website verwendet Browserspeicher für die Sprachpräferenz, die Website- und Mail-Infrastruktur von Velvoix für die Kontaktabwicklung sowie Cloudflare Web Analytics für cookielose, aggregierte Website-Analyse.',
+          'Cloudflare Web Analytics dient aggregierten Website-Einblicken ohne Tracking-Cookies oder individuelle Besucherprofile. Hosting-, Infrastruktur- und Mailanbieter können außerdem technische Daten für Betrieb, Sicherheit und Zustellung verarbeiten.',
         ],
         bullets: [
           'Browserspeicher für funktionale Sprachpräferenzen auf der öffentlichen Website',
@@ -1269,12 +1296,13 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
         paragraphs: [
           'Die aktuelle öffentliche Website bietet kein separates Präferenzzentrum. Browsereinstellungen können dennoch verwendet werden, um Cookies, Local Storage oder ähnliche Browserdaten zu blockieren oder zu löschen.',
           'Die Deaktivierung funktionaler Technologien kann die Funktionalität, die Sprachauswahl oder die Nutzererfahrung der Website beeinträchtigen.',
+          'Wenn Velvoix künftig Technologien einsetzt, für die eine vorherige Einwilligung oder Auswahl erforderlich ist, wird die Website entsprechend angepasst.',
         ],
       },
       changes: {
         paragraphs: [
           'Velvoix kann diese Cookie-Richtlinie aktualisieren, wenn sich die Website, das Tooling oder die rechtlichen Anforderungen ändern. Die jeweils aktuelle Version wird auf dieser Seite veröffentlicht.',
-          'Zuletzt aktualisiert: 12. Mai 2026.',
+          'Zuletzt aktualisiert: 29. Juni 2026.',
         ],
       },
       contact: {
@@ -1295,7 +1323,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Diese allgemeinen Geschäftsbedingungen beschreiben in groben Zügen, unter welchen Bedingungen die Velvoix-Website genutzt wird und wie geschäftliche Interaktionen, Demos, Piloten und verwandte Vorhaben rund um Velvoix eingeordnet werden.',
     updatedLabel: 'Zuletzt aktualisiert',
-    lastUpdated: '24. März 2026',
+    lastUpdated: '29. Juni 2026',
     tocLabel: 'Auf dieser Seite',
     meta: {
       title: 'Velvoix | Allgemeine Geschäftsbedingungen',
@@ -1325,7 +1353,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       scope: {
         paragraphs: [
           'Velvoix Holding B.V., handelnd unter dem Namen Velvoix, verwendet diese Bedingungen für die Nutzung der Website und, soweit relevant, für Informationsanfragen, Demos, Pilotprüfungen und andere geschäftliche Interaktionen rund um Velvoix.',
-          'Werden gesonderte Angebote, Verträge, Pilotvereinbarungen, Leistungsvereinbarungen oder Auftragsverarbeitungsvereinbarungen geschlossen, gehen diese Dokumente vor, soweit dies ausdrücklich vereinbart wurde.',
+          'Diese Bedingungen richten sich in erster Linie an geschäftliche Besucher, Pflegeorganisationen, Partner und andere professionelle Beziehungen. Werden gesonderte Angebote, Verträge, Pilotvereinbarungen, Leistungsvereinbarungen oder Auftragsverarbeitungsvereinbarungen geschlossen, gehen diese Dokumente vor, soweit dies ausdrücklich vereinbart wurde.',
         ],
       },
       description: {
@@ -1343,12 +1371,14 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
           'Keine Versuche, den Betrieb zu stören, Schutzmaßnahmen zu umgehen oder unbefugten Zugriff zu erlangen',
           'Kein Scraping, keine Extraktion und keine automatisierte Vervielfältigung, soweit dies nicht erlaubt ist',
           'Keine Verbreitung schädlichen Codes oder irreführender Inhalte',
+          'Keine Übermittlung unnötiger Patientendaten, medizinischer Daten oder anderer besonderer Kategorien personenbezogener Daten über allgemeine Website-Formulare',
         ],
       },
       availability: {
         paragraphs: [
           'Velvoix bemüht sich, auf der Website aktuelle und sorgfältige Informationen bereitzustellen, garantiert jedoch nicht, dass sämtliche Inhalte jederzeit vollständig, fehlerfrei oder unterbrechungsfrei verfügbar sind.',
           'Die Website, Texte, Beispiele, Demos, Piloten, Vorschauen und Produktbeschreibungen können von Zeit zu Zeit geändert, erweitert, eingeschränkt oder entfernt werden.',
+          'Informationen auf der Website stellen kein verbindliches Angebot dar und begründen keine Verpflichtung zur Lieferung, Implementierung oder Zusammenarbeit, sofern dies nicht ausdrücklich schriftlich vereinbart wurde.',
         ],
       },
       'no-medical-advice': {
@@ -1395,7 +1425,7 @@ const deLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix kann diese Bedingungen von Zeit zu Zeit ändern. Die jeweils aktuelle Version wird auf der Website veröffentlicht und mit einem Aktualisierungsdatum versehen.',
-          'Zuletzt aktualisiert: 24. März 2026.',
+          'Zuletzt aktualisiert: 29. Juni 2026.',
         ],
       },
       law: {
@@ -1425,7 +1455,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Esta política de privacidad explica cómo Velvoix trata datos personales en relación con el sitio web, las solicitudes de contacto, las exploraciones piloto, las colaboraciones y el uso de servicios o plataformas relacionados con Velvoix.',
     updatedLabel: 'Última actualización',
-    lastUpdated: '12 de mayo de 2026',
+    lastUpdated: '29 de junio de 2026',
     tocLabel: 'En esta página',
     meta: {
       title: 'Velvoix | Política de privacidad',
@@ -1456,7 +1486,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       'who-we-are': {
         paragraphs: [
           'Velvoix Holding B.V., que opera bajo el nombre Velvoix, es en principio el responsable del tratamiento de los datos personales a los que se refiere esta política de privacidad.',
-          'Puede contactarse con Velvoix a través de founder@velvoix.com y, para cuestiones relacionadas con la privacidad, a través de support@velvoix.com.',
+          'Puede contactarse con Velvoix a través de founder@velvoix.com. Las preguntas o solicitudes relacionadas con la privacidad pueden enviarse a support@velvoix.com. Si un piloto o una colaboración concretos requieren funciones de privacidad, puntos de contacto o acuerdos de tratamiento adicionales, estos se documentarán por separado.',
         ],
         bullets: [
           'Entidad legal: Velvoix Holding B.V.',
@@ -1498,6 +1528,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       purposes: {
         paragraphs: [
           'Velvoix utiliza datos personales para fines empresariales y operativos acordes con el sitio web, los pilotos, las colaboraciones y los servicios relacionados con Velvoix.',
+          'El sitio web público no utiliza elaboración de perfiles ni decisiones basadas exclusivamente en un tratamiento automatizado que produzcan efectos jurídicos o afecten significativamente de modo similar a una persona. Cualquier soporte a la decisión, funcionalidad piloto o acuerdo de workflow se evaluará y documentará en un contexto profesional y contractual adecuado.',
         ],
         bullets: [
           'Responder a solicitudes de contacto y de información',
@@ -1518,13 +1549,15 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       },
       cookies: {
         paragraphs: [
-          'Velvoix utiliza tecnologías funcionales del navegador en el sitio público para apoyar el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad.',
+          'Velvoix utiliza tecnologías funcionales del navegador y almacenamiento local del navegador en el sitio público para apoyar el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad.',
           'Velvoix utiliza Cloudflare Web Analytics para analítica web respetuosa con la privacidad y sin cookies. Esta medición ayuda a comprender páginas vistas, fuentes de referencia e indicadores técnicos de rendimiento de forma agregada, sin crear perfiles individuales de visitantes.',
+          'El sitio web público no utiliza actualmente cookies publicitarias ni de seguimiento. Si el uso de cookies o tecnologías similares cambia de forma significativa, esta política se actualizará y se solicitarán opciones adicionales o consentimiento cuando sea necesario.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencia de idioma',
           'Tecnologías relacionadas con formularios de contacto, tratamiento de correo y prevención de abusos',
           'Cloudflare Web Analytics para información web agregada y sin cookies',
+          'Sin cookies publicitarias ni de seguimiento en el sitio público actual',
         ],
       },
       sharing: {
@@ -1568,6 +1601,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       rights: {
         paragraphs: [
           'Dependiendo de la legislación aplicable, las personas pueden tener derechos respecto de sus datos personales. Velvoix tramita dichas solicitudes con cuidado y dentro de los plazos legales aplicables.',
+          'Estos derechos no son absolutos en todas las situaciones. En algunos casos Velvoix puede no poder atender una solicitud por completo, por ejemplo debido a obligaciones legales, seguridad, conservación de pruebas o los derechos y libertades de otras personas. En tal caso, Velvoix lo explicará.',
         ],
         bullets: [
           'Derecho a recibir información sobre el tratamiento',
@@ -1595,7 +1629,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix puede actualizar esta política de privacidad cuando cambien el sitio web, los servicios, la normativa o las actividades de tratamiento. La versión más reciente se publicará en esta página.',
-          'Última actualización: 12 de mayo de 2026.',
+          'Última actualización: 29 de junio de 2026.',
         ],
       },
       contact: {
@@ -1616,9 +1650,9 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     eyebrow: 'Información legal',
     title: 'Política de cookies',
     intro:
-      'Esta política de cookies explica cómo Velvoix utiliza cookies y tecnologías similares en el sitio web, qué categorías pueden emplearse y cómo pueden gestionarse las preferencias.',
+      'Esta política de cookies explica cómo Velvoix utiliza cookies, almacenamiento local del navegador y tecnologías similares en el sitio web, qué categorías pueden emplearse y cómo pueden gestionarse las preferencias.',
     updatedLabel: 'Última actualización',
-    lastUpdated: '12 de mayo de 2026',
+    lastUpdated: '29 de junio de 2026',
     tocLabel: 'En esta página',
     meta: {
       title: 'Velvoix | Política de cookies',
@@ -1641,22 +1675,24 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       'what-are-cookies': {
         paragraphs: [
           'Las cookies son pequeños archivos de texto que pueden almacenarse en un dispositivo a través de un sitio web. Tecnologías similares pueden utilizarse para apoyar preferencias, sesiones, seguridad o información de uso.',
-          'Velvoix utiliza estas tecnologías solo para fines compatibles con una experiencia web profesional, serena y fiable.',
+          'Velvoix utiliza estas tecnologías solo para fines compatibles con una experiencia web profesional, serena y fiable. El sitio público actual no utiliza cookies publicitarias ni de seguimiento.',
         ],
       },
       categories: {
         paragraphs: [
-          'El sitio público utiliza tecnologías funcionales del navegador para el funcionamiento básico, la preferencia de idioma y la gestión de contacto. Velvoix también utiliza Cloudflare Web Analytics para analítica web agregada y sin cookies.',
+          'El sitio público utiliza tecnologías funcionales del navegador y almacenamiento local del navegador para el funcionamiento básico, la preferencia de idioma, la gestión de contacto y la seguridad. Velvoix también utiliza Cloudflare Web Analytics para analítica web agregada y sin cookies.',
         ],
         bullets: [
           'Tecnologías funcionales para funcionamiento básico, seguridad y preferencias',
           'Almacenamiento del navegador para la elección de idioma y preferencias funcionales similares',
           'Cloudflare Web Analytics para información respetuosa con la privacidad sobre páginas, fuentes y rendimiento',
+          'Sin cookies publicitarias ni de seguimiento en el sitio público actual',
         ],
       },
       purposes: {
         paragraphs: [
           'Velvoix utiliza estas tecnologías para mantener el sitio funcionando correctamente, conservar la elección de idioma, hacer utilizables los formularios, reducir el uso indebido y, cuando corresponda, comprender mejor el rendimiento o el uso.',
+          'La preferencia de idioma se almacena localmente en el navegador para que los visitantes no tengan que elegir idioma de nuevo en cada visita. Este almacenamiento es funcional para la experiencia del sitio web.',
         ],
         bullets: [
           'Funcionamiento del sitio web y gestión de sesión',
@@ -1669,6 +1705,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       tooling: {
         paragraphs: [
           'El sitio público utiliza almacenamiento del navegador para la preferencia de idioma, la infraestructura web y de correo de Velvoix para la gestión de contacto y Cloudflare Web Analytics para analítica web agregada y sin cookies.',
+          'Cloudflare Web Analytics está orientado a obtener información agregada del sitio web sin cookies de seguimiento ni perfiles individuales de visitantes. Los proveedores de hosting, infraestructura y correo también pueden tratar datos técnicos para funcionamiento, seguridad y entrega.',
         ],
         bullets: [
           'Almacenamiento del navegador para preferencias funcionales de idioma en el sitio público',
@@ -1681,12 +1718,13 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
         paragraphs: [
           'El sitio público actual no ofrece un centro de preferencias independiente. Aun así, la configuración del navegador puede utilizarse para bloquear o eliminar cookies, almacenamiento local u otros datos similares del navegador.',
           'Desactivar tecnologías funcionales puede afectar a la funcionalidad, la selección de idioma o la experiencia de uso del sitio web.',
+          'Si Velvoix utiliza en el futuro tecnologías que requieran consentimiento previo o una elección del usuario, el sitio web se adaptará en consecuencia.',
         ],
       },
       changes: {
         paragraphs: [
           'Velvoix puede actualizar esta política de cookies cuando cambien el sitio web, las herramientas o los requisitos legales. La versión más reciente se publicará en esta página.',
-          'Última actualización: 12 de mayo de 2026.',
+          'Última actualización: 29 de junio de 2026.',
         ],
       },
       contact: {
@@ -1707,7 +1745,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
     intro:
       'Estos términos y condiciones describen a alto nivel las condiciones bajo las cuales se utiliza el sitio web de Velvoix y cómo se abordan las interacciones comerciales, demos, pilotos y trayectorias relacionadas con Velvoix.',
     updatedLabel: 'Última actualización',
-    lastUpdated: '24 de marzo de 2026',
+    lastUpdated: '29 de junio de 2026',
     tocLabel: 'En esta página',
     meta: {
       title: 'Velvoix | Términos y condiciones',
@@ -1737,7 +1775,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       scope: {
         paragraphs: [
           'Velvoix Holding B.V., que opera bajo el nombre Velvoix, utiliza estos términos para el uso del sitio web y, cuando proceda, para solicitudes de información, demos, exploraciones piloto y otras interacciones comerciales alrededor de Velvoix.',
-          'Cuando se celebren presupuestos, contratos, acuerdos piloto, acuerdos de servicio o acuerdos de tratamiento separados, esos documentos prevalecerán cuando así se haya acordado expresamente.',
+          'Estos términos están dirigidos principalmente a visitantes empresariales, organizaciones asistenciales, socios y otras relaciones profesionales. Cuando se celebren presupuestos, contratos, acuerdos piloto, acuerdos de servicio o acuerdos de tratamiento separados, esos documentos prevalecerán cuando así se haya acordado expresamente.',
         ],
       },
       description: {
@@ -1755,12 +1793,14 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
           'Ningún intento de interrumpir, eludir medidas o acceder sin autorización',
           'Ningún scraping, extracción o copia automatizada cuando no esté permitido',
           'Ninguna distribución de código dañino o contenido engañoso',
+          'Ningún envío de datos innecesarios de pacientes, datos médicos u otras categorías especiales de datos personales a través de formularios generales del sitio web',
         ],
       },
       availability: {
         paragraphs: [
           'Velvoix procura ofrecer información actual y cuidada en el sitio web, pero no garantiza que todo el contenido sea siempre completo, esté libre de errores o disponible sin interrupciones.',
           'El sitio web, los textos, los ejemplos, las demos, los pilotos, las vistas previas y las descripciones de producto pueden modificarse, ampliarse, limitarse o retirarse periódicamente.',
+          'La información del sitio web no constituye una oferta vinculante ni crea obligación de entrega, implantación o colaboración salvo que se haya acordado expresamente por escrito.',
         ],
       },
       'no-medical-advice': {
@@ -1807,7 +1847,7 @@ const esLegalContent = localizeLegalContent(legalBaseContent.en, {
       changes: {
         paragraphs: [
           'Velvoix puede modificar estos términos periódicamente. La versión más reciente se publicará en el sitio web e incluirá una fecha de última actualización.',
-          'Última actualización: 24 de marzo de 2026.',
+          'Última actualización: 29 de junio de 2026.',
         ],
       },
       law: {
