@@ -189,50 +189,79 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'Waarom context en prioritering nodig zijn om van een binnenkomend signaal tot duidelijke en goed uitlegbare opvolging te komen.',
       eyebrow: 'Verdieping',
       intro:
-        'Een binnenkomend zorgsignaal wordt pas werkbaar als teams begrijpen waarom het aandacht vraagt, welke urgentie logisch is en welke opvolging daarbij past.',
+        'Een binnenkomend zorgsignaal wordt pas werkbaar als duidelijk is waarom het aandacht vraagt, welke urgentie logisch is en welke opvolging daarbij past. Velvoix helpt teams om signalen niet als losse meldingen te behandelen, maar als zorgsituaties met context, prioriteit en een uitlegbare vervolgstap.',
       summary:
-        'Uitlegbare triage gaat niet alleen over prioriteit, maar over duidelijke duiding in de zorgcontext.',
+        'Uitlegbare zorgtriage gaat niet alleen over sneller prioriteren. Het gaat om een duidelijke vertaling van signaal naar zorgactie, zodat teams begrijpen waarom iets aandacht vraagt en achteraf kunnen reconstrueren waarom een keuze logisch was.',
       points: [
-        'Waarom melding zonder context te weinig zegt',
-        'Hoe triage en context elkaar versterken',
-        'Welke praktische winst teams hierdoor ervaren',
+        'Waarom een melding zonder context te weinig zegt',
+        'Hoe Velvoix context, urgentie en opvolging bij elkaar brengt',
+        'Waarom uitlegbaarheid belangrijk is voor teams, leiding en evaluatie',
       ],
       sections: [
         {
-          title: 'Waarom meldingen alleen niet genoeg zijn',
+          title: 'Waarom een zorgsignaal context nodig heeft',
           paragraphs: [
-            'Veel traditionele omgevingen registreren dat er iets gebeurt, maar laten de echte interpretatie bij het team liggen.',
-            'Dat vertraagt opvolging en maakt het moeilijker uit te leggen waarom het ene signaal direct aandacht vroeg en een ander niet.',
+            'Een melding laat vaak alleen zien dat er iets gebeurt. Voor goede opvolging is dat meestal niet genoeg. Dezelfde melding kan in de ene situatie laag risico zijn, maar in een andere situatie direct aandacht vragen.',
+            'Daarom is context belangrijk: wat voor signaal is het, wat gebeurde ervoor, is er sprake van herhaling, is er al opvolging gestart en past het bij wat bekend is over de situatie? Zonder die context blijft het team zelf onder tijdsdruk interpreteren.',
           ],
           bullets: [
-            'Een signaal zonder context zegt weinig over urgentie',
-            'Teams verliezen tijd aan herinterpretatie',
-            'Achteraf is moeilijker uit te leggen waarom een keuze logisch was',
+            'Een los signaal zegt weinig over urgentie',
+            'Herhaling, timing en situatie kunnen de betekenis veranderen',
+            'Teams verliezen tijd wanneer zij telkens opnieuw moeten duiden',
           ],
         },
         {
-          title: 'Hoe context en triage samenwerken',
+          title: 'Wat Velvoix toevoegt aan een binnenkomend signaal',
           paragraphs: [
-            'Velvoix combineert binnenkomende signalen met relevante context, historie en triagelogica. Daardoor wordt triage meer dan een kleur of prioriteitslabel.',
-            'De uitkomst is opvolging die duidelijker te bespreken is in teamoverleg, kwaliteitsgesprekken en de dagelijkse zorgpraktijk.',
+            'Velvoix kijkt naar een zorgsignaal als onderdeel van een bredere situatie. Niet alleen de melding telt, maar ook de context eromheen: recente signalen, opvolgingsstatus, verantwoordelijkheid en relevante procesinformatie.',
+            'Daarmee ontstaat een duidelijker beeld van wat aandacht vraagt. De triage wordt niet alleen zichtbaar als prioriteit, maar ook als uitleg: waarom vraagt dit signaal nu aandacht en welke vervolgstap ligt voor de hand?',
           ],
           bullets: [
-            'Historie en trigger worden meegewogen',
-            'Urgentie wordt zichtbaar onderbouwd',
-            'De volgende stap wordt duidelijker voor het team',
+            'Signaal en context worden samen bekeken',
+            'Urgentie wordt beter onderbouwd',
+            'De vervolgstap wordt concreter voor het team',
           ],
         },
         {
-          title: 'Wat teams hier praktisch aan hebben',
+          title: 'Waarom uitlegbaarheid belangrijk is',
           paragraphs: [
-            'Uitlegbare triage vermindert interpretatieruis en helpt teams sneller te zien wat directe actie vraagt.',
-            'Daarnaast ontstaat een beter spoor voor evaluatie, omdat signalen en vervolgacties in dezelfde logica blijven staan.',
+            'In de zorg is het niet genoeg dat een systeem iets markeert als belangrijk. Teams moeten kunnen begrijpen waarom een signaal aandacht vraagt. Dat maakt opvolging rustiger, beter bespreekbaar en minder afhankelijk van losse interpretatie.',
+            'Uitlegbaarheid helpt ook leidinggevenden en kwaliteitsrollen. Zij kunnen beter terugzien welke signalen speelden, waarom een bepaalde prioriteit logisch was en hoe de opvolging is verlopen.',
+          ],
+          bullets: [
+            'Teams zien niet alleen dát iets aandacht vraagt, maar ook waarom',
+            'Keuzes worden beter bespreekbaar tijdens overdracht en evaluatie',
+            'Leiding en kwaliteitsrollen krijgen meer houvast bij terugkijken',
+          ],
+        },
+        {
+          title: 'Van triage naar werkbare opvolging',
+          paragraphs: [
+            'De waarde van triage zit niet alleen in het bepalen van urgentie. De uitkomst moet leiden tot een werkbare actie: wie moet kijken, wat moet worden gecontroleerd en hoe blijft zichtbaar of opvolging is gestart of afgerond.',
+            'Velvoix verbindt daarom triage met opvolging. Zo blijft een signaal niet hangen als losse melding, maar wordt het onderdeel van een duidelijke zorgworkflow.',
+          ],
+          bullets: [
+            'Prioriteit wordt gekoppeld aan opvolging',
+            'Status en verantwoordelijkheid blijven zichtbaar',
+            'Teams zien sneller wat nu actie vraagt',
+          ],
+        },
+        {
+          title: 'Wat dit betekent voor evaluatie en kwaliteit',
+          paragraphs: [
+            'Wanneer signalen, triage en opvolging in dezelfde lijn blijven staan, wordt terugkijken eenvoudiger. Niet alleen wat er gebeurde is zichtbaar, maar ook waarom iets aandacht kreeg en hoe daarop is gereageerd.',
+            'Dat helpt bij evaluatie, kwaliteitsgesprekken en het verbeteren van processen. De focus ligt niet op meer registratie, maar op beter begrijpen hoe zorgsignalen tot actie leiden.',
+          ],
+          bullets: [
+            'Reconstructie wordt eenvoudiger omdat signaal, uitleg en opvolging verbonden blijven',
+            'Teams kunnen beter leren van terugkerende situaties',
+            'Kwaliteitsgesprekken krijgen meer concrete context',
           ],
         },
       ],
       ctaTitle: 'Bespreek uitlegbare triage in een pilot',
       ctaBody:
-        'Gebruik een eerste verkenning om te toetsen bij welke signalen extra context en uitlegbare triage het meeste verschil maken.',
+        'Gebruik een eerste verkenning om te toetsen bij welke zorgsignalen extra context, uitlegbaarheid en duidelijke opvolging het meeste verschil maken.',
       ctaLabel: 'Start pilotverkenning',
       meta: {
         title: 'Uitlegbare zorgtriage voor zorgsignalen | Velvoix',
@@ -367,50 +396,79 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'Why context and triage are needed to move from an incoming signal to clear, well-grounded follow-up.',
       eyebrow: 'Deep dive',
       intro:
-        'An incoming care signal only becomes actionable when teams understand why it needs attention, how urgent it is and what follow-up makes sense.',
+        'An incoming care signal only becomes actionable when it is clear why it needs attention, which level of urgency makes sense and what follow-up should happen next. Velvoix helps teams treat signals not as isolated alerts, but as care situations with context, priority and an explainable next step.',
       summary:
-        'Explainable triage is not just about priority, but about clear reasoning in a care context.',
+        'Explainable care triage is not only about prioritising faster. It is about translating a signal into a clear care action, so teams understand why something needs attention and can reconstruct afterwards why a decision made sense.',
       points: [
         'Why an alert without context says too little',
-        'How triage and event context reinforce each other',
-        'What operational gain teams can expect',
+        'How Velvoix brings context, urgency and follow-up together',
+        'Why explainability matters for teams, leadership and evaluation',
       ],
       sections: [
         {
-          title: 'Why alerts alone are not enough',
+          title: 'Why a care signal needs context',
           paragraphs: [
-            'Many traditional environments record that something happened, but leave most interpretation with the team.',
-            'That slows follow-up and makes it harder to explain afterwards why one signal required immediate action and another did not.',
+            'An alert often only shows that something has happened. For effective follow-up, that is usually not enough. The same alert may be low risk in one situation and require immediate attention in another.',
+            'Context is therefore essential: what type of signal is it, what happened before it, is there repetition, has follow-up already started and does it fit what is known about the situation? Without that context, the team still has to interpret under time pressure.',
           ],
           bullets: [
-            'A signal without context says little about urgency',
-            'Teams lose time on repeated interpretation',
-            'It becomes harder to defend decisions afterwards',
+            'An isolated signal says little about urgency',
+            'Repetition, timing and situation can change the meaning',
+            'Teams lose time when they have to interpret the same type of event again and again',
           ],
         },
         {
-          title: 'How context and triage work together',
+          title: 'What Velvoix adds to an incoming signal',
           paragraphs: [
-            'Velvoix combines incoming signals with event context, history and triage logic. That makes triage more than a colour or priority flag.',
-            'The result is follow-up that is easier to explain in team discussions, quality reviews and day-to-day care operations.',
+            'Velvoix looks at a care signal as part of a broader situation. The alert itself matters, but so does the context around it: recent signals, follow-up status, responsibility and relevant process information.',
+            'This creates a clearer picture of what needs attention. Triage becomes visible not only as a priority, but also as an explanation: why does this signal need attention now, and what next step is most logical?',
           ],
           bullets: [
-            'History and trigger are part of the assessment',
-            'Urgency becomes visibly grounded',
-            'The next step becomes clearer for the team',
+            'Signal and context are considered together',
+            'Urgency is better grounded',
+            'The next step becomes more concrete for the team',
           ],
         },
         {
-          title: 'What teams gain in practice',
+          title: 'Why explainability matters',
           paragraphs: [
-            'Explainable triage reduces interpretation noise and helps teams see faster what needs attention now.',
-            'It also creates a better basis for evaluation, because signals and follow-up remain linked in the same logic.',
+            'In care, it is not enough for a system to mark something as important. Teams need to understand why a signal needs attention. That makes follow-up calmer, easier to discuss and less dependent on individual interpretation.',
+            'Explainability also supports managers and quality roles. They can look back more clearly at which signals were present, why a certain priority made sense and how follow-up progressed.',
+          ],
+          bullets: [
+            'Teams see not only that something needs attention, but why',
+            'Decisions become easier to discuss during handover and evaluation',
+            'Leadership and quality roles have more concrete context when reviewing',
+          ],
+        },
+        {
+          title: 'From triage to workable follow-up',
+          paragraphs: [
+            'The value of triage is not only in determining urgency. The outcome has to lead to a workable action: who should check, what should be checked and how it remains visible whether follow-up has started or been completed.',
+            'Velvoix therefore connects triage with follow-up. A signal does not remain an isolated alert, but becomes part of a clear care workflow.',
+          ],
+          bullets: [
+            'Priority is connected to follow-up',
+            'Status and responsibility remain visible',
+            'Teams see faster what needs action now',
+          ],
+        },
+        {
+          title: 'What this means for evaluation and quality',
+          paragraphs: [
+            'When signals, triage and follow-up remain connected in the same flow, reviewing afterwards becomes easier. It is visible not only what happened, but also why something needed attention and how the team responded.',
+            'That supports evaluation, quality conversations and process improvement. The focus is not on more documentation, but on better understanding how care signals lead to action.',
+          ],
+          bullets: [
+            'Reconstruction is easier because signal, explanation and follow-up remain connected',
+            'Teams can learn more effectively from recurring situations',
+            'Quality conversations get more concrete context',
           ],
         },
       ],
       ctaTitle: 'Explore explainable triage in a pilot',
       ctaBody:
-        'Use an initial pilot to test which signals in your organisation benefit most from context and explainable triage.',
+        'Use an initial exploration to test which care signals benefit most from additional context, explainability and clear follow-up.',
       ctaLabel: 'Start a pilot conversation',
       meta: {
         title: 'Explainable care triage for care signals | Velvoix',
@@ -545,50 +603,79 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'Warum Kontext und Priorisierung nötig sind, damit aus einem eingehenden Signal ein klarer und begründbarer nächster Schritt wird.',
       eyebrow: 'Vertiefung',
       intro:
-        'Ein eingehendes Pflegesignal wird erst dann wirklich handhabbar, wenn Teams verstehen, warum es Aufmerksamkeit braucht, wie dringend es ist und welcher nächste Schritt dazu passt.',
+        'Ein eingehendes Pflegesignal wird erst dann handhabbar, wenn klar ist, warum es Aufmerksamkeit braucht, welche Dringlichkeit plausibel ist und welche Nachverfolgung dazu passt. Velvoix hilft Teams, Signale nicht als einzelne Meldungen zu behandeln, sondern als Pflegesituationen mit Kontext, Priorität und einem erklärbaren nächsten Schritt.',
       summary:
-        'Erklärbare Triage bedeutet nicht nur Priorität, sondern eine nachvollziehbare Einordnung im Pflegekontext.',
+        'Erklärbare Pflege-Triage bedeutet nicht nur, schneller zu priorisieren. Es geht darum, ein Signal verständlich in eine Pflegehandlung zu übersetzen, damit Teams verstehen, warum etwas Aufmerksamkeit braucht, und später rekonstruieren können, warum eine Entscheidung sinnvoll war.',
       points: [
-        'Warum ein Hinweis ohne Kontext zu wenig sagt',
-        'Wie Triage und Kontext zusammenwirken',
-        'Was Teams davon im Alltag haben',
+        'Warum eine Meldung ohne Kontext zu wenig aussagt',
+        'Wie Velvoix Kontext, Dringlichkeit und Nachverfolgung zusammenführt',
+        'Warum Erklärbarkeit für Teams, Leitung und Auswertung wichtig ist',
       ],
       sections: [
         {
-          title: 'Warum Meldungen allein nicht ausreichen',
+          title: 'Warum ein Pflegesignal Kontext braucht',
           paragraphs: [
-            'Viele traditionelle Umgebungen erfassen zwar, dass etwas passiert ist, überlassen die eigentliche Einordnung aber dem Team.',
-            'Das verlangsamt die Nachverfolgung und macht es schwerer zu erklären, warum ein Signal sofortiges Handeln erforderte und ein anderes nicht.',
+            'Eine Meldung zeigt oft nur, dass etwas passiert. Für gute Nachverfolgung reicht das meist nicht aus. Dieselbe Meldung kann in einer Situation ein geringes Risiko bedeuten, in einer anderen aber sofortige Aufmerksamkeit erfordern.',
+            'Darum ist Kontext wichtig: Um welches Signal geht es, was geschah davor, gibt es Wiederholung, wurde bereits nachverfolgt und passt es zu dem, was über die Situation bekannt ist? Ohne diesen Kontext muss das Team unter Zeitdruck selbst interpretieren.',
           ],
           bullets: [
-            'Ein Signal ohne Kontext sagt wenig über Dringlichkeit aus',
-            'Teams verlieren Zeit durch wiederholte Interpretation',
-            'Entscheidungen lassen sich im Nachhinein schwerer begründen',
+            'Ein einzelnes Signal sagt wenig über Dringlichkeit aus',
+            'Wiederholung, Zeitpunkt und Situation können die Bedeutung verändern',
+            'Teams verlieren Zeit, wenn sie immer wieder neu einordnen müssen',
           ],
         },
         {
-          title: 'Wie Kontext und Triage zusammenarbeiten',
+          title: 'Was Velvoix einem eingehenden Signal hinzufügt',
           paragraphs: [
-            'Velvoix verbindet eingehende Signale mit Ereigniskontext, Historie und operativer Logik. Dadurch wird Triage mehr als nur eine Farbe oder ein Prioritätslabel.',
-            'Das Ergebnis ist ein nächster Schritt, der sich in Teambesprechungen, Qualitätsgesprächen und im Pflegealltag besser erklären lässt.',
+            'Velvoix betrachtet ein Pflegesignal als Teil einer größeren Situation. Nicht nur die Meldung zählt, sondern auch der Kontext darum herum: aktuelle Signale, Nachverfolgungsstatus, Verantwortung und relevante Prozessinformationen.',
+            'So entsteht ein klareres Bild davon, was Aufmerksamkeit braucht. Triage wird nicht nur als Priorität sichtbar, sondern auch als Erklärung: Warum braucht dieses Signal jetzt Aufmerksamkeit, und welcher nächste Schritt liegt nahe?',
           ],
           bullets: [
-            'Historie und Auslöser fließen in die Bewertung ein',
-            'Dringlichkeit wird sichtbar begründet',
-            'Der nächste Schritt wird für das Team klarer',
+            'Signal und Kontext werden gemeinsam betrachtet',
+            'Dringlichkeit wird besser begründet',
+            'Der nächste Schritt wird für das Team konkreter',
           ],
         },
         {
-          title: 'Was Teams davon praktisch haben',
+          title: 'Warum Erklärbarkeit wichtig ist',
           paragraphs: [
-            'Erklärbare Triage reduziert Interpretationsrauschen und hilft Teams, schneller zu erkennen, was jetzt Aufmerksamkeit braucht.',
-            'Gleichzeitig entsteht eine bessere Grundlage für Auswertung, weil Signale und nächste Schritte in derselben Logik verbunden bleiben.',
+            'In der Pflege reicht es nicht, dass ein System etwas als wichtig markiert. Teams müssen verstehen können, warum ein Signal Aufmerksamkeit braucht. Das macht Nachverfolgung ruhiger, besser besprechbar und weniger abhängig von einzelner Interpretation.',
+            'Erklärbarkeit unterstützt auch Leitung und Qualitätsrollen. Sie können besser nachvollziehen, welche Signale vorlagen, warum eine bestimmte Priorität sinnvoll war und wie die Nachverfolgung verlaufen ist.',
+          ],
+          bullets: [
+            'Teams sehen nicht nur, dass etwas Aufmerksamkeit braucht, sondern auch warum',
+            'Entscheidungen lassen sich bei Übergabe und Auswertung besser besprechen',
+            'Leitung und Qualitätsrollen bekommen beim Zurückblicken mehr Orientierung',
+          ],
+        },
+        {
+          title: 'Von Triage zu handhabbarer Nachverfolgung',
+          paragraphs: [
+            'Der Wert von Triage liegt nicht nur darin, Dringlichkeit zu bestimmen. Das Ergebnis muss zu einer handhabbaren Aktion führen: Wer soll prüfen, was soll kontrolliert werden und wie bleibt sichtbar, ob Nachverfolgung begonnen oder abgeschlossen wurde?',
+            'Velvoix verbindet deshalb Triage mit Nachverfolgung. So bleibt ein Signal keine einzelne Meldung, sondern wird Teil eines klaren Pflege-Workflows.',
+          ],
+          bullets: [
+            'Priorität wird mit Nachverfolgung verbunden',
+            'Status und Verantwortung bleiben sichtbar',
+            'Teams erkennen schneller, was jetzt Handlung erfordert',
+          ],
+        },
+        {
+          title: 'Was das für Auswertung und Qualität bedeutet',
+          paragraphs: [
+            'Wenn Signale, Triage und Nachverfolgung im selben Ablauf verbunden bleiben, wird das Zurückblicken einfacher. Sichtbar ist nicht nur, was passiert ist, sondern auch, warum etwas Aufmerksamkeit bekam und wie darauf reagiert wurde.',
+            'Das unterstützt Auswertung, Qualitätsgespräche und Prozessverbesserung. Im Mittelpunkt steht nicht zusätzliche Dokumentation, sondern ein besseres Verständnis dafür, wie Pflegesignale zu Handlungen führen.',
+          ],
+          bullets: [
+            'Rekonstruktion wird einfacher, weil Signal, Erklärung und Nachverfolgung verbunden bleiben',
+            'Teams können besser aus wiederkehrenden Situationen lernen',
+            'Qualitätsgespräche erhalten konkreteren Kontext',
           ],
         },
       ],
       ctaTitle: 'Erklärbare Triage in einem Pilot prüfen',
       ctaBody:
-        'Nutzen Sie eine erste Pilotphase, um zu testen, welche Signale in Ihrer Umgebung besonders von Kontext und erklärbarer Triage profitieren.',
+        'Nutzen Sie eine erste Sondierung, um zu prüfen, welche Pflegesignale besonders von zusätzlichem Kontext, Erklärbarkeit und klarer Nachverfolgung profitieren.',
       ctaLabel: 'Pilot besprechen',
       meta: {
         title: 'Erklärbare Pflege-Triage für Pflegesignale | Velvoix',
@@ -723,50 +810,79 @@ export const resourceArticlesByLocale: Record<ResourceLocale, ResourceArticleCon
         'Por qué se necesitan contexto y priorización para pasar de una señal entrante a un siguiente paso claro y defendible.',
       eyebrow: 'Profundización',
       intro:
-        'Una señal asistencial entrante solo se vuelve operativa cuando los equipos entienden por qué requiere atención, qué urgencia tiene y qué seguimiento encaja mejor.',
+        'Una señal asistencial entrante solo se vuelve operativa cuando queda claro por qué requiere atención, qué urgencia tiene sentido y qué seguimiento encaja mejor. Velvoix ayuda a los equipos a tratar las señales no como alertas aisladas, sino como situaciones asistenciales con contexto, prioridad y un siguiente paso explicable.',
       summary:
-        'El triaje explicable no trata solo de prioridad, sino de una interpretación defendible dentro del contexto asistencial.',
+        'El triaje asistencial explicable no consiste solo en priorizar más rápido. Consiste en traducir una señal en una acción asistencial clara, para que los equipos entiendan por qué algo requiere atención y puedan reconstruir después por qué una decisión fue lógica.',
       points: [
         'Por qué una alerta sin contexto dice demasiado poco',
-        'Cómo trabajan juntos el triaje y el contexto',
-        'Qué aporta esto en la práctica a los equipos',
+        'Cómo Velvoix reúne contexto, urgencia y seguimiento',
+        'Por qué la explicabilidad importa para equipos, dirección y evaluación',
       ],
       sections: [
         {
-          title: 'Por qué las alertas por sí solas no bastan',
+          title: 'Por qué una señal asistencial necesita contexto',
           paragraphs: [
-            'Muchos entornos tradicionales registran que algo ha sucedido, pero dejan la interpretación real en manos del equipo.',
-            'Eso retrasa el seguimiento y hace más difícil explicar después por qué una señal requería acción inmediata y otra no.',
+            'Una alerta suele mostrar solo que algo ha ocurrido. Para un buen seguimiento, normalmente eso no basta. La misma alerta puede representar bajo riesgo en una situación y requerir atención inmediata en otra.',
+            'Por eso el contexto importa: qué tipo de señal es, qué ocurrió antes, si hay repetición, si ya se inició el seguimiento y si encaja con lo que se sabe de la situación. Sin ese contexto, el equipo sigue teniendo que interpretar bajo presión.',
           ],
           bullets: [
-            'Una señal sin contexto dice poco sobre la urgencia',
-            'Los equipos pierden tiempo reinterpretando',
-            'Después cuesta más defender por qué una decisión fue lógica',
+            'Una señal aislada dice poco sobre la urgencia',
+            'La repetición, el momento y la situación pueden cambiar el significado',
+            'Los equipos pierden tiempo cuando tienen que volver a interpretar',
           ],
         },
         {
-          title: 'Cómo trabajan juntos el contexto y el triaje',
+          title: 'Qué añade Velvoix a una señal entrante',
           paragraphs: [
-            'Velvoix combina las señales entrantes con el contexto del evento, el historial y la lógica operativa. Así, el triaje pasa a ser algo más que un color o una etiqueta de prioridad.',
-            'El resultado es un seguimiento más fácil de explicar en conversaciones de equipo, revisiones de calidad y la práctica asistencial diaria.',
+            'Velvoix observa una señal asistencial como parte de una situación más amplia. No cuenta solo la alerta, sino también el contexto que la rodea: señales recientes, estado del seguimiento, responsabilidad e información de proceso relevante.',
+            'Así aparece una imagen más clara de lo que requiere atención. El triaje no se muestra solo como prioridad, sino también como explicación: por qué esta señal requiere atención ahora y qué siguiente paso resulta más lógico.',
           ],
           bullets: [
-            'El historial y el detonante forman parte de la valoración',
-            'La urgencia queda visiblemente fundamentada',
-            'El siguiente paso se vuelve más claro para el equipo',
+            'Señal y contexto se consideran juntos',
+            'La urgencia queda mejor fundamentada',
+            'El siguiente paso se vuelve más concreto para el equipo',
           ],
         },
         {
-          title: 'Qué aporta esto en la práctica',
+          title: 'Por qué importa la explicabilidad',
           paragraphs: [
-            'El triaje explicable reduce el ruido interpretativo y ayuda a los equipos a ver antes qué requiere atención inmediata.',
-            'Además, crea una mejor base para la evaluación porque las señales y el seguimiento permanecen unidos en la misma lógica.',
+            'En la atención asistencial no basta con que un sistema marque algo como importante. Los equipos deben poder entender por qué una señal requiere atención. Eso hace que el seguimiento sea más sereno, más fácil de comentar y menos dependiente de interpretaciones aisladas.',
+            'La explicabilidad también ayuda a responsables y perfiles de calidad. Pueden revisar mejor qué señales estaban presentes, por qué una prioridad determinada tenía sentido y cómo evolucionó el seguimiento.',
+          ],
+          bullets: [
+            'Los equipos ven no solo que algo requiere atención, sino también por qué',
+            'Las decisiones se comentan mejor durante el traspaso y la evaluación',
+            'Dirección y calidad tienen más apoyo concreto al revisar',
+          ],
+        },
+        {
+          title: 'Del triaje a un seguimiento operativo',
+          paragraphs: [
+            'El valor del triaje no está solo en determinar la urgencia. El resultado debe conducir a una acción operativa: quién debe revisar, qué debe comprobarse y cómo queda visible si el seguimiento se ha iniciado o cerrado.',
+            'Por eso Velvoix conecta el triaje con el seguimiento. Así, una señal no queda como alerta aislada, sino que pasa a formar parte de un flujo asistencial claro.',
+          ],
+          bullets: [
+            'La prioridad se conecta con el seguimiento',
+            'El estado y la responsabilidad permanecen visibles',
+            'Los equipos ven antes qué requiere acción ahora',
+          ],
+        },
+        {
+          title: 'Qué significa esto para evaluación y calidad',
+          paragraphs: [
+            'Cuando señales, triaje y seguimiento permanecen conectados en un mismo flujo, revisar después resulta más sencillo. No solo se ve qué ocurrió, sino también por qué algo recibió atención y cómo se respondió.',
+            'Eso ayuda en la evaluación, las conversaciones de calidad y la mejora de procesos. El foco no está en añadir más registro, sino en entender mejor cómo las señales asistenciales conducen a la acción.',
+          ],
+          bullets: [
+            'La reconstrucción es más sencilla porque señal, explicación y seguimiento permanecen conectados',
+            'Los equipos pueden aprender mejor de situaciones recurrentes',
+            'Las conversaciones de calidad tienen contexto más concreto',
           ],
         },
       ],
       ctaTitle: 'Evaluar el triaje explicable en un piloto',
       ctaBody:
-        'Use un primer piloto para comprobar qué señales de su entorno se benefician más del contexto y del triaje explicable.',
+        'Use una primera exploración para comprobar qué señales asistenciales se benefician más de contexto adicional, explicabilidad y seguimiento claro.',
       ctaLabel: 'Hablar del piloto',
       meta: {
         title: 'Triaje asistencial explicable para señales asistenciales | Velvoix',
