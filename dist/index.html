@@ -201,16 +201,88 @@ const routeTexts = {"pilot":{"helper":"Kies dit onderwerp om te beoordelen of Ve
         const currentLocale = detectLocaleFromPath(path);
         window.localStorage.setItem(storageKey, currentLocale);
 
+        const getHashTarget = () => {
+          if (!window.location.hash) return null;
+
+          const rawHash = window.location.hash.slice(1);
+          const decodedHash = (() => {
+            try {
+              return decodeURIComponent(rawHash);
+            } catch {
+              return rawHash;
+            }
+          })();
+
+          return document.getElementById(decodedHash);
+        };
+
+        const scrollToHashTarget = (behavior = 'auto') => {
+          const target = getHashTarget();
+          if (!target) return;
+
+          const header = document.querySelector('header');
+          const headerOffset = header instanceof HTMLElement ? header.getBoundingClientRect().height + 12 : 0;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+          window.scrollTo({
+            top: Math.max(0, top),
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : behavior,
+          });
+        };
+
+        const scheduleHashScroll = (behavior = 'auto') => {
+          window.requestAnimationFrame(() => {
+            scrollToHashTarget(behavior);
+            window.setTimeout(() => scrollToHashTarget('auto'), 160);
+            window.setTimeout(() => scrollToHashTarget('auto'), 520);
+          });
+        };
+
+        if (window.location.hash) {
+          scheduleHashScroll('auto');
+          window.addEventListener('load', () => scheduleHashScroll('auto'), { once: true });
+        }
+
+        window.addEventListener('hashchange', () => scheduleHashScroll('smooth'));
+
         document.addEventListener('click', (event) => {
           const target = event.target;
           if (!(target instanceof Element)) return;
 
           const link = target.closest('[data-language-link]');
-          if (!(link instanceof HTMLElement)) return;
+          if (link instanceof HTMLElement) {
+            const selectedLocale = link.dataset.languageLocale;
+            if (selectedLocale && supportedLocales.includes(selectedLocale)) {
+              window.localStorage.setItem(storageKey, selectedLocale);
+            }
+          }
 
-          const selectedLocale = link.dataset.languageLocale;
-          if (selectedLocale && supportedLocales.includes(selectedLocale)) {
-            window.localStorage.setItem(storageKey, selectedLocale);
+          const anchorLink = target.closest('a[href*="#"]');
+          if (!(anchorLink instanceof HTMLAnchorElement) || !anchorLink.hash) return;
+
+          const anchorUrl = new URL(anchorLink.href, window.location.href);
+          const isSamePage =
+            anchorUrl.origin === window.location.origin &&
+            anchorUrl.pathname === window.location.pathname &&
+            anchorUrl.search === window.location.search;
+
+          if (!isSamePage) return;
+
+          const targetId = (() => {
+            try {
+              return decodeURIComponent(anchorUrl.hash.slice(1));
+            } catch {
+              return anchorUrl.hash.slice(1);
+            }
+          })();
+
+          if (!document.getElementById(targetId)) return;
+
+          event.preventDefault();
+          window.history.pushState(null, '', anchorUrl.hash);
+          scheduleHashScroll('smooth');
+          if (anchorUrl.hash === '#main-content') {
+            document.getElementById('main-content')?.focus({ preventScroll: true });
           }
         });
       })();
